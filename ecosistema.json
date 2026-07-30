@@ -1,7 +1,7 @@
 {
-  "generado": "2026-07-30T14:38:27-0500",
+  "generado": "2026-07-30T14:45:17-0500",
   "fecha": "2026-07-30",
-  "commit": "57e4607",
+  "commit": "37895ff",
   "vivo": false,
   "rojoDias": 30,
   "ocultas": 1,
@@ -2174,6 +2174,51 @@
       "rojos": 2
     },
     {
+      "repo": "dotrino-index",
+      "tipo": "informe",
+      "interna": true,
+      "stack": "—",
+      "subdominio": "index.dotrino.com",
+      "paquete": null,
+      "version": null,
+      "commit": "775cac6",
+      "fecha": "2026-07-30",
+      "catalogo": null,
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-07-30",
+          "dias": 0,
+          "commits": 0,
+          "tope": true,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": false,
+          "existe": true,
+          "fecha": "2026-07-30",
+          "dias": 0,
+          "commits": 0,
+          "tope": true,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "rojo": false
+        }
+      },
+      "faltan": [],
+      "versiones": [],
+      "vivo": null,
+      "rojos": 0
+    },
+    {
       "repo": "dotrino-android-launcher",
       "tipo": "landing",
       "interna": false,
@@ -2522,7 +2567,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "57e4607",
+      "commit": "37895ff",
       "fecha": "2026-07-30",
       "catalogo": null,
       "frescura": {
