@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Índice Dotrino">
+  <rect width="64" height="64" rx="14" fill="#00658c"/>
+  <g fill="#ffffff">
+    <circle cx="17" cy="21" r="3.5"/>
+    <rect x="26" y="18" width="24" height="6" rx="3"/>
+    <circle cx="17" cy="32" r="3.5"/>
+    <rect x="26" y="29" width="18" height="6" rx="3"/>
+    <circle cx="17" cy="43" r="3.5"/>
+    <rect x="26" y="40" width="21" height="6" rx="3"/>
+  </g>
+</svg>

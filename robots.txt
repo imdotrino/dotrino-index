@@ -1,0 +1,4 @@
+# Página interna (CONVENCIONES-APPS §7): es el estado del ecosistema, no algo
+# que buscar en Google. Se comparte por enlace con quien trabaja en él.
+User-agent: *
+Disallow: /
