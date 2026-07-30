@@ -5,19 +5,38 @@ Dotrino: qué le falta a cada repo, qué pilar tiene atrasado y qué se dejó de
 contar (README, portada y ficha del catálogo). Sirve para repartir el trabajo:
 la vista **Por problema** agrupa cada fallo con la lista de repos que lo tienen.
 
-## No se edita a mano
+## Cómo generar tu parte (con dos repos alcanza)
 
-`index.html` y `ecosistema.json` son **generados**. Se escriben desde el
-superrepo del ecosistema (`dotrino-project`, privado) con:
+El generador vive **acá dentro** (`indice.mjs` + `indice-web.mjs`) y mira **la
+carpeta que contiene a este repo**: sus hermanos son los repos del ecosistema.
+Clónalo al lado de los repos que tengas:
 
-```bash
-node indice.mjs --web          # rápido, solo git + archivos
-node indice.mjs --vivo --web   # además: versiones reales de npm y qué commit sirve cada dominio
+```
+<una carpeta cualquiera>/
+  dotrino-index/     ← este repo
+  dotrino-chess/     ← los repos que tengas
+  dotrino-eco/
 ```
 
-y se publican con un `git push` desde este repo. Cualquier cambio hecho a mano
-en `index.html` se pierde en la siguiente generación: lo que hay que tocar es
-`indice-web.mjs` (la plantilla) o `indice.mjs` (los datos).
+```bash
+git -C dotrino-index pull          # 1. parte de lo ya publicado (importante)
+node dotrino-index/indice.mjs --web   # 2. mide lo que tengas y suma
+git -C dotrino-index add -A && git -C dotrino-index commit -m "medido: <lo tuyo>"
+git -C dotrino-index push          # 3. publica (a main va por PR)
+```
+
+Con `--vivo` además consulta npm y qué commit sirve cada dominio (tarda más).
+No hace falta tener el ecosistema entero: lo que no esté se conserva como
+estaba. Comprobado — medir solo dos repos da **exactamente los mismos datos**
+que la pasada completa, salvo la fecha de medición de esos dos.
+
+## No se edita a mano
+
+`index.html` y `ecosistema.json` son **generados**. Cualquier cambio hecho a
+mano en `index.html` se pierde en la siguiente pasada: lo que hay que tocar es
+`indice-web.mjs` (la plantilla) o `indice.mjs` (los datos). El script escribe
+además `INDICE.md` y `ECOSISTEMA.json` en la carpeta de arriba: son tu copia
+local para leer, no se publican.
 
 ## Se genera SUMANDO, no reemplazando
 
@@ -26,15 +45,19 @@ encuentra y deja intactos los demás**, con la fecha y el nombre de quien los
 midió la última vez (sale debajo del nombre del repo en la tabla). Quien tiene
 dos carpetas actualiza esas dos filas; las otras 58 siguen ahí.
 
-Para que eso funcione hay que **partir de lo ya publicado**: se genera con este
-repo clonado y su `ecosistema.json` al día (`git pull` antes, `git push`
-después). Lo mismo vale para lo que la pasada no puede comprobar: sin
-`dotrino-home` en el disco no se puede saber si una app está en el catálogo ni
-cuándo se tocó su ficha, así que **eso se hereda** en vez de acusar en falso.
+Para que eso funcione hay que **partir de lo ya publicado**: el `ecosistema.json`
+de este repo al día (`git pull` antes, `git push` después). Por eso el generador
+vive acá y no en el superrepo privado — el script y su punto de partida viajan
+juntos.
+
+Lo mismo vale para lo que una pasada no puede comprobar, que **se hereda** en vez
+de acusar en falso: sin `dotrino-home` en el disco no se puede saber si una app
+está en el catálogo ni cuándo se tocó su ficha, y sin los repos de los pilares no
+se sabe qué versión está publicada de cada uno.
 
 ```bash
-node indice.mjs --web            # suma: actualiza lo que ve, conserva el resto
-node indice.mjs --web --podar    # "esta pasada las vio todas": borra lo que no aparezca
+node dotrino-index/indice.mjs --web            # suma: actualiza lo que ve, conserva el resto
+node dotrino-index/indice.mjs --web --podar    # "esta pasada las vio todas": borra lo que falte
 ```
 
 `--podar` es para cuando un repo se renombra o desaparece, y solo tiene sentido
