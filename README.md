@@ -19,6 +19,27 @@ y se publican con un `git push` desde este repo. Cualquier cambio hecho a mano
 en `index.html` se pierde en la siguiente generación: lo que hay que tocar es
 `indice-web.mjs` (la plantilla) o `indice.mjs` (los datos).
 
+## Se genera SUMANDO, no reemplazando
+
+Nadie tiene los ~60 repos en su disco. Cada pasada **mide los repos que
+encuentra y deja intactos los demás**, con la fecha y el nombre de quien los
+midió la última vez (sale debajo del nombre del repo en la tabla). Quien tiene
+dos carpetas actualiza esas dos filas; las otras 58 siguen ahí.
+
+Para que eso funcione hay que **partir de lo ya publicado**: se genera con este
+repo clonado y su `ecosistema.json` al día (`git pull` antes, `git push`
+después). Lo mismo vale para lo que la pasada no puede comprobar: sin
+`dotrino-home` en el disco no se puede saber si una app está en el catálogo ni
+cuándo se tocó su ficha, así que **eso se hereda** en vez de acusar en falso.
+
+```bash
+node indice.mjs --web            # suma: actualiza lo que ve, conserva el resto
+node indice.mjs --web --podar    # "esta pasada las vio todas": borra lo que no aparezca
+```
+
+`--podar` es para cuando un repo se renombra o desaparece, y solo tiene sentido
+desde una copia que sí tenga el ecosistema completo.
+
 ## Qué no se publica
 
 - **Los repos privados** (`dotrino-project`, `dotrino-docs`). Por norma (§11.6) no
