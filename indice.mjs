@@ -131,6 +131,31 @@ const PORTADA = [
 ]
 
 /**
+ * Archivos de FONTANERIA: cambiarlos no es nada que un README deba contar. Se
+ * excluyen al fechar "la ultima vez que el repo se movio", porque si no una tanda
+ * mecanica que pasa por 50 repos el mismo dia (fijar una version, anadir un
+ * tsconfig, regenerar un lock) marca los 50 README como desactualizados a la vez,
+ * y el indicador pasa de medir algo a medir el ultimo `sed` que corri.
+ */
+const FONTANERIA = [
+  ':(exclude)package.json', ':(exclude)*/package.json',
+  ':(exclude)package-lock.json', ':(exclude)*/package-lock.json',
+  ':(exclude)tsconfig*.json', ':(exclude)*/tsconfig*.json',
+  ':(exclude)*.d.ts',
+  ':(exclude).npmrc', ':(exclude).gitignore', ':(exclude).nojekyll',
+  ':(exclude).github/**'
+]
+
+/**
+ * Fecha del ultimo commit que toco algo que NO es fontaneria. Si un repo solo
+ * tiene commits de fontaneria (raro), se cae a la fecha de HEAD en vez de quedarse
+ * sin fecha.
+ */
+const fechaConSustancia = (dir) =>
+  git(dir, 'log', '-1', '--format=%cs', '--', '.', ...FONTANERIA) ||
+  git(dir, 'log', '-1', '--format=%cs')
+
+/**
  * Última vez que se tocó alguna de `rutas`, y cuánto se movió el repo desde entonces.
  * `desdeElInicio` = sigue como en el commit inicial. Importa decirlo: la historia
  * anterior a la migración desde CloserClick NO está en estos repos, así que ahí la
@@ -299,6 +324,9 @@ function analizar (nombre, catalogo) {
       : git(dir, 'rev-parse', '--short', 'HEAD'),
     raizSitio,
     fecha: git(dir, 'log', '-1', '--format=%cs'),
+    // Fecha del último commit que cuenta ALGO. Ver FONTANERIA: una tanda mecanica
+    // que pasa por 50 repos no vuelve viejos 50 README de un dia para otro.
+    fechaSustancia: fechaConSustancia(dir),
     rama,
     remoto,
     sucio: (git(dir, 'status', '--porcelain') || '').split('\n').filter(Boolean).length,
@@ -309,8 +337,8 @@ function analizar (nombre, catalogo) {
   // vive en OTRO repo y se mide de una vez para todas las apps).
   const raiz = git(dir, 'rev-list', '--max-parents=0', 'HEAD')
   const fresco = {
-    readme: frescura(dir, ['README.md', 'readme.md'], g.fecha, raiz),
-    portada: frescura(dir, PORTADA, g.fecha, raiz),
+    readme: frescura(dir, ['README.md', 'readme.md'], g.fechaSustancia, raiz),
+    portada: frescura(dir, PORTADA, g.fechaSustancia, raiz),
     catalogo: null
   }
 
