@@ -377,8 +377,86 @@ function analizar (nombre, catalogo) {
     frescura: fresco,
     catalogo: catalogo[nombre] || null,
     dotrinoDeps: Object.fromEntries(Object.entries(deps).filter(([k]) => k.startsWith('@dotrino/'))),
+    secretos: secretosRastreados(dir),
+    instalado: instaladoVsPedido(dir, deps),
+    binarios: fuentesBinarias(dir),
     conv
   }
+}
+
+// ─── indicadores que salieron de tropezar con ellos ─────────────────────────
+
+/**
+ * SECRETOS RASTREADOS POR GIT. `CLAUDE.md`: *"Nunca commitear secretos (`.env`,
+ * `.jks`, `keystore.properties`, tokens de npm)"*. Es la regla más cara de romper y
+ * no la comprobaba nadie: se confiaba en acordarse. Mira lo que git TIENE, no lo que
+ * hay en el disco — un `.env` sin rastrear es normal y no se reporta.
+ */
+const PATRON_SECRETO = /(^|\/)(\.env(\..*)?|\.npmrc|keystore\.properties|.*\.(jks|keystore|pem|p12|pfx|key)|id_rsa|id_ed25519)$/i
+/** Lo que hace secreto a un archivo de configuración: que lleve una credencial dentro. */
+const CREDENCIAL = /(_authToken|_auth\s*=|_password|BEGIN [A-Z ]*PRIVATE KEY)/i
+function secretosRastreados (dir) {
+  const salida = git(dir, 'ls-files')
+  if (!salida) return []
+  return salida.split('\n').filter(f => {
+    if (!f || !PATRON_SECRETO.test(f)) return false
+    // `.env.example` / `.env.sample` son plantillas SIN valores: se publican a
+    // propósito para que alguien sepa qué variables hacen falta.
+    if (/\.(example|sample|template|dist)$/i.test(f)) return false
+    // POR CONTENIDO, no por nombre. El `.npmrc` de endurecimiento (§1.1) es
+    // OBLIGATORIO commitearlo y no lleva nada dentro: marcarlo por llamarse
+    // `.npmrc` daba 39 falsas alarmas de golpe — y un indicador que grita en falso
+    // 39 veces se aprende a ignorar, que es peor que no tenerlo.
+    const t = leer(join(dir, f))
+    if (t !== null) return CREDENCIAL.test(t)
+    // Binario (un `.jks`, un `.p12`): no se puede mirar dentro, y ahí el nombre
+    // basta — un almacén de llaves no tiene otra cosa que llaves.
+    return true
+  })
+}
+
+/**
+ * LO QUE PIDE ≠ LO QUE TIENE INSTALADO. La deriva de más arriba compara con npm; esta
+ * compara con `node_modules`, que es lo que de verdad se ejecuta y se depura. Es un
+ * fallo distinto y más traicionero: el `package.json` dice una versión, las pruebas
+ * corren contra otra, y se depura contra código que no es el que corre. Estaba escrito
+ * como riesgo en el plan del vault y nos pasó igual (el topbar y la consola del vault
+ * se compilaban contra un identity cuatro versiones viejo).
+ */
+function instaladoVsPedido (dir, deps) {
+  const fuera = []
+  for (const [dep, pide] of Object.entries(deps || {})) {
+    if (!dep.startsWith('@dotrino/') || String(pide).startsWith('file:')) continue
+    const pkg = leerJson(join(dir, 'node_modules', dep, 'package.json'))
+    if (!pkg) continue // sin instalar no es deriva: es un repo sin `npm install`
+    const limpio = String(pide).replace(/^[\^~]/, '')
+    if (pkg.version !== limpio) fuera.push({ dep, pide: limpio, instalado: pkg.version })
+  }
+  return fuera
+}
+
+/**
+ * FUENTES QUE LAS HERRAMIENTAS LEEN COMO BINARIAS. Un byte NUL literal dentro de una
+ * cadena (`\0` escrito como el byte y no como `\u0000`) es JavaScript válido y corre
+ * perfecto — pero `file` da el archivo por binario y **`grep` deja de encontrar nada
+ * en él, sin decirlo**. Aparecieron dos el mismo día en `dotrino-vault`, y uno se comió
+ * varias búsquedas de una investigación antes de que nadie sospechara del archivo en
+ * vez de la búsqueda. Un fallo que se manifiesta como «aquí no hay nada» es de los
+ * caros: se cierra la línea de investigación equivocada.
+ */
+const EXT_FUENTE = /\.(js|mjs|cjs|ts|tsx|jsx|vue|json|md|css|html|yml|yaml|sh)$/i
+function fuentesBinarias (dir) {
+  const salida = git(dir, 'ls-files')
+  if (!salida) return []
+  const malos = []
+  for (const f of salida.split('\n')) {
+    if (!f || !EXT_FUENTE.test(f)) continue
+    try {
+      const b = readFileSync(join(dir, f))
+      if (b.includes(0)) malos.push(f)
+    } catch { /* borrado del disco pero aún rastreado: no es cosa de este indicador */ }
+  }
+  return malos
 }
 
 // ─── qué convenciones aplican a cada tipo (§13; las exenciones son del doc) ──
@@ -494,6 +572,18 @@ function informe (piezas, pilares, enNpm) {
          `${cuenta('servicio')} servicios · ${cuenta('landing')} landings · ` +
          `${cuenta('informe')} informes · ${cuenta('otro')} otros`, '')
 
+  // 0. SECRETOS COMMITEADOS. Va primero porque no hay nada más urgente: lo demás se
+  // arregla cuando toque, esto se arregla hoy y además hay que rotar la credencial.
+  const conSecretos = piezas.filter(p => p.secretos?.length)
+  if (conSecretos.length) {
+    L.push('## ⚠️ Secretos rastreados por git', '')
+    L.push('> `CLAUDE.md`: *"Nunca commitear secretos (`.env`, `.jks`, `keystore.properties`, tokens de npm)"*.', '')
+    L.push('> Sacarlo del árbol NO basta: sigue en el historial. Hay que **rotar la credencial** y luego limpiarlo.', '')
+    L.push('| Repo | Archivo |', '|---|---|')
+    for (const p of conSecretos) for (const f of p.secretos) L.push(`| \`${p.repo}\` | \`${f}\` |`)
+    L.push('')
+  }
+
   // 1. Lo que está fuera de sincronía con su remoto — lo más urgente
   const desincronizado = piezas.filter(p => p.git.sinPushear > 0 || p.git.sucio > 0 || !p.git.remoto)
   L.push('## Sin sincronizar con el remoto', '')
@@ -533,6 +623,31 @@ function informe (piezas, pilares, enNpm) {
     L.push(`<details><summary>${locales.length} deps locales \`file:\` (a propósito, no son deriva)</summary>`, '')
     for (const f of locales) L.push(`- \`${f[0]}\` → ${f[1]} \`${f[2]}\``)
     L.push('', '</details>', '')
+  }
+
+  // 2b. Lo que PIDE contra lo que tiene INSTALADO. Distinto de lo de arriba: aquí no
+  // se está viejo respecto a npm, se está mintiendo respecto a uno mismo.
+  const instal = piezas.flatMap(p => (p.instalado || []).map(d => ({ repo: p.repo, ...d })))
+  L.push('## Instalado ≠ lo que pide el `package.json`', '')
+  L.push('> Lo de arriba compara con npm; esto compara con `node_modules`, que es **lo que de verdad corre**.', '')
+  L.push('> Mientras no coincidan, se depura contra código que no es el que se ejecuta.', '')
+  if (!instal.length) L.push('Todo coincide.', '')
+  else {
+    L.push(`**${instal.length}** en ${new Set(instal.map(d => d.repo)).size} repos. Se arregla con \`npm install\` en cada uno.`, '')
+    L.push('| Repo | Paquete | Pide | Instalado |', '|---|---|---|---|')
+    for (const d of instal) L.push(`| \`${d.repo}\` | ${d.dep} | ${d.pide} | **${d.instalado}** |`)
+    L.push('')
+  }
+
+  // 2c. Fuentes que las herramientas ven como binarias.
+  const bin = piezas.flatMap(p => (p.binarios || []).map(f => ({ repo: p.repo, f })))
+  if (bin.length) {
+    L.push('## Fuentes que `grep` no puede leer', '')
+    L.push('> Llevan un byte NUL literal dentro de una cadena. El código corre igual, pero `file` las da', '')
+    L.push('> por binarias y **`grep` deja de encontrar nada en ellas sin avisar** — se cierra la línea de', '')
+    L.push('> investigación equivocada. Se arregla escribiendo el byte como escape (`\\u0000`), mismo valor.', '')
+    for (const b of bin) L.push(`- \`${b.repo}/${b.f}\``)
+    L.push('')
   }
 
   // 3. Convenciones incumplidas, agrupadas por norma
@@ -637,7 +752,12 @@ function informe (piezas, pilares, enNpm) {
 const catalogo = leerCatalogo()
 const nombres = readdirSync(RAIZ).filter(d =>
   (d.startsWith('dotrino-') || d === 'android-launcher') &&
-  (existsSync(join(RAIZ, d, '.git')) || existsSync(join(RAIZ, d, 'package.json'))))
+  (existsSync(join(RAIZ, d, '.git')) || existsSync(join(RAIZ, d, 'package.json'))) &&
+  // Y que sea SU repo, no el de más arriba. Una carpeta con un `.git` vacío —sobra
+  // del renombrado desde CloserClick— hacía que git resolviera hacia la raíz: la
+  // pieza aparecía en el informe con los cambios sin commitear DEL SUPERREPO
+  // colgados de ella. Un dato inventado es peor que ninguno.
+  (!existsSync(join(RAIZ, d, '.git')) || git(join(RAIZ, d), 'rev-parse', '--show-toplevel') === join(RAIZ, d)))
 
 const piezas = nombres.map(n => analizar(n, catalogo))
 
