@@ -99,6 +99,33 @@ function textoDelFrente (dir) {
   return trozos.join('\n')
 }
 
+/**
+ * ¿La versión publicada CABE en lo que pide el package.json?
+ *
+ * Comparar a pelo quitando el `^` marcaba como deriva un `^0.3.0` con 0.3.2
+ * publicado, que es justo lo que ese rango permite. Un rango solo es deriva si
+ * lo publicado se le queda fuera; un pin exacto, si no coincide.
+ *
+ * Ojo con el caret en 0.x: `^0.3.0` NO llega a 0.4.0 (npm trata la minor como
+ * la major mientras la major sea 0), así que un pilar que sube de minor sí sale
+ * en rojo, que es lo que se quiere.
+ */
+function satisface (spec, version) {
+  const num = (v) => String(v).split('.').map((n) => parseInt(n, 10) || 0)
+  const cmp = (a, b) => { for (let i = 0; i < 3; i++) { if (a[i] !== b[i]) return a[i] - b[i] } return 0 }
+  const v = num(version)
+  const m = /^([\^~>=]*)\s*(\d+\.\d+\.\d+)/.exec(String(spec).trim())
+  if (!m) return true                       // rango raro: no acusar en falso
+  const [, op, base] = m
+  const b = num(base)
+  if (op === '') return cmp(v, b) === 0
+  if (op === '>=') return cmp(v, b) >= 0
+  const tope = op === '~' || b[0] === 0
+    ? (op === '~' ? [b[0], b[1] + 1, 0] : (b[0] === 0 ? [0, b[1] + 1, 0] : [b[0] + 1, 0, 0]))
+    : [b[0] + 1, 0, 0]
+  return cmp(v, b) >= 0 && cmp(v, tope) < 0
+}
+
 // ─── frescura: ¿se cuenta lo que se hace? ──────────────────────────────────
 
 /**
@@ -386,10 +413,22 @@ function analizar (nombre, catalogo) {
   // en la raíz y `@dotrino/vault` en `lib/`. Si no se mira un nivel para adentro,
   // el índice reporta un pilar publicado como "sin publicar" y esconde su deriva.
   const subPaquetes = {}
+  // Y sus DEPENDENCIAS, que hasta ahora no las miraba nadie: solo se leían las
+  // del package.json de la raíz. Ahí se escondía deriva de verdad — el agente
+  // publicado `@dotrino/terminal-agent` (dotrino-terminal/agent) pedía
+  // proxy-client 0.6.4 con 0.10.1 publicado, cuatro minors atrás y sin el canje
+  // de la cita, o sea que el emparejamiento por código corto no le funcionaba.
+  // El índice decía "todo al día" mientras tanto.
+  const subDeps = {}
   for (const e of (() => { try { return readdirSync(dir, { withFileTypes: true }) } catch { return [] } })()) {
     if (!e.isDirectory() || ['node_modules', 'dist', 'test', '.git'].includes(e.name)) continue
     const sub = leerJson(join(dir, e.name, 'package.json'))
-    if (sub?.name?.startsWith('@dotrino/')) subPaquetes[sub.name] = { version: sub.version, ruta: `${nombre}/${e.name}` }
+    if (!sub) continue
+    if (sub.name?.startsWith('@dotrino/')) subPaquetes[sub.name] = { version: sub.version, ruta: `${nombre}/${e.name}` }
+    const d = Object.fromEntries(
+      Object.entries({ ...sub.dependencies, ...sub.devDependencies }).filter(([k]) => k.startsWith('@dotrino/'))
+    )
+    if (Object.keys(d).length) subDeps[`${nombre}/${e.name}`] = d
   }
 
   return {
@@ -399,6 +438,7 @@ function analizar (nombre, catalogo) {
     paquete: pkg?.name || null,
     version: pkg?.version || null,
     subPaquetes,
+    subDeps,
     subdominio: cname ? cname.trim() : null,
     stack,
     git: g,
@@ -630,14 +670,16 @@ function informe (piezas, pilares, enNpm) {
   const filas = []
   const locales = []
   for (const p of piezas) {
-    for (const [dep, pide] of Object.entries(p.dotrinoDeps)) {
+    const porUnidad = [[p.repo, p.dotrinoDeps], ...Object.entries(p.subDeps || {})]
+    for (const [unidad, deps] of porUnidad) {
+    for (const [dep, pide] of Object.entries(deps)) {
       // `file:../dotrino-x` es una dep local a propósito (los bots corren contra
       // los hermanos del disco): no es deriva, no se cuenta como desajuste.
-      if (String(pide).startsWith('file:')) { locales.push([p.repo, dep, pide]); continue }
-      const limpio = String(pide).replace(/^[\^~]/, '')
+      if (String(pide).startsWith('file:')) { locales.push([unidad, dep, pide]); continue }
       const publicado = pilares[dep]
-      if (!publicado) filas.push([p.repo, dep, pide, '— (sin publicar)'])
-      else if (limpio !== publicado) filas.push([p.repo, dep, pide, publicado])
+      if (!publicado) filas.push([unidad, dep, pide, '— (sin publicar)'])
+      else if (!satisface(pide, publicado)) filas.push([unidad, dep, pide, publicado])
+    }
     }
   }
   if (!filas.length) L.push('Todo al día.', '')
