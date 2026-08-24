@@ -1,19 +1,19 @@
 {
-  "generado": "2026-08-18T23:26:37-0500",
-  "fecha": "2026-08-18",
+  "generado": "2026-08-23T21:07:50-0500",
+  "fecha": "2026-08-23",
   "por": "seyacat",
-  "commit": "8d825f8",
+  "commit": "1909241",
   "vivo": false,
   "rojoDias": 30,
   "ocultas": 1,
-  "medidasAhora": 62,
+  "medidasAhora": 65,
   "heredadas": 0,
   "pilares": {
     "dotrino-base64": "1.0.0",
     "@dotrino/bots": "0.1.0",
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
-    "dotrino-content": "0.1.0",
+    "dotrino-content": "0.3.5",
     "critters": "0.1.0",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
@@ -27,22 +27,22 @@
     "frontend": "0.0.0",
     "dotrino-ia": "0.1.0",
     "@dotrino/ia-agent": "0.5.0",
-    "@dotrino/identity": "0.53.0",
+    "@dotrino/identity": "0.60.2",
     "@dotrino/install": "0.3.1",
     "@dotrino/lobby": "0.4.0",
     "dotrino-messenger": "0.1.0",
     "dotrino-mundial": "0.1.0",
     "myip": "0.1.0",
-    "@dotrino/nav": "0.2.2",
+    "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.3.0",
     "@dotrino/profile": "0.16.0",
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
     "websocket-proxy": "1.0.1",
-    "@dotrino/proxy-client": "0.10.1",
+    "@dotrino/proxy-client": "0.11.0",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
-    "@dotrino/remote-agent": "0.3.2",
+    "@dotrino/remote-agent": "0.5.2",
     "@dotrino/reputation": "0.9.0",
     "dotrino-reputation-app": "0.1.0",
     "@dotrino/share": "0.3.0",
@@ -55,21 +55,24 @@
     "dotrino-terminal": "0.1.0",
     "@dotrino/terminal-agent": "0.2.15",
     "test": "0.2.0",
-    "@dotrino/topbar": "0.8.1",
+    "@dotrino/topbar": "0.8.2",
     "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.41.0",
-    "@dotrino/vault": "0.26.0",
+    "@dotrino/vaultd": "0.50.1",
+    "@dotrino/vault": "0.33.2",
     "@dotrino/verifier": "0.1.0",
-    "wallet": "0.2.0"
+    "wallet": "0.2.0",
+    "@dotrino/content-client": "0.2.2",
+    "dotrino-social-bot": "0.1.0",
+    "@dotrino/env": "0.33.2"
   },
   "enNpm": {},
   "consumidores": [
     {
       "pilar": "@dotrino/identity",
-      "version": "0.53.0",
+      "version": "0.60.2",
       "enNpm": false,
       "repos": [
         "dotrino-base64",
@@ -97,6 +100,7 @@
         "dotrino-qrreader",
         "dotrino-remote-agent",
         "dotrino-reputation-app",
+        "dotrino-social-bot",
         "dotrino-sudoku",
         "dotrino-terminal",
         "dotrino-trivia",
@@ -141,7 +145,7 @@
     },
     {
       "pilar": "@dotrino/topbar",
-      "version": "0.8.1",
+      "version": "0.8.2",
       "enNpm": false,
       "repos": [
         "dotrino-base64",
@@ -198,8 +202,33 @@
       ]
     },
     {
+      "pilar": "@dotrino/proxy-client",
+      "version": "0.11.0",
+      "enNpm": false,
+      "repos": [
+        "dotrino-bots",
+        "dotrino-chat",
+        "dotrino-chess",
+        "dotrino-critters",
+        "dotrino-cuarenta",
+        "dotrino-diamonds",
+        "dotrino-eco",
+        "dotrino-gridgame",
+        "dotrino-ia",
+        "dotrino-identity",
+        "dotrino-messenger",
+        "dotrino-pronostico-mundialista",
+        "dotrino-proxy",
+        "dotrino-remote-agent",
+        "dotrino-social-bot",
+        "dotrino-terminal",
+        "dotrino-trueque",
+        "dotrino-vault"
+      ]
+    },
+    {
       "pilar": "@dotrino/nav",
-      "version": "0.2.2",
+      "version": "0.3.0",
       "enNpm": false,
       "repos": [
         "dotrino-chat",
@@ -220,30 +249,6 @@
         "dotrino-trivia",
         "dotrino-trueque",
         "dotrino-wallet"
-      ]
-    },
-    {
-      "pilar": "@dotrino/proxy-client",
-      "version": "0.10.1",
-      "enNpm": false,
-      "repos": [
-        "dotrino-bots",
-        "dotrino-chat",
-        "dotrino-chess",
-        "dotrino-critters",
-        "dotrino-cuarenta",
-        "dotrino-diamonds",
-        "dotrino-eco",
-        "dotrino-gridgame",
-        "dotrino-ia",
-        "dotrino-identity",
-        "dotrino-messenger",
-        "dotrino-pronostico-mundialista",
-        "dotrino-proxy",
-        "dotrino-remote-agent",
-        "dotrino-terminal",
-        "dotrino-trueque",
-        "dotrino-vault"
       ]
     },
     {
@@ -336,6 +341,28 @@
       ]
     },
     {
+      "pilar": "@dotrino/remote-agent",
+      "version": "0.5.2",
+      "enNpm": false,
+      "repos": [
+        "dotrino-content",
+        "dotrino-ia",
+        "dotrino-social-bot",
+        "dotrino-vault"
+      ]
+    },
+    {
+      "pilar": "@dotrino/vault",
+      "version": "0.33.2",
+      "enNpm": false,
+      "repos": [
+        "dotrino-content",
+        "dotrino-proxy",
+        "dotrino-remote-agent",
+        "dotrino-social-bot"
+      ]
+    },
+    {
       "pilar": "@dotrino/lobby",
       "version": "0.4.0",
       "enNpm": false,
@@ -346,30 +373,22 @@
       ]
     },
     {
-      "pilar": "@dotrino/remote-agent",
-      "version": "0.3.2",
-      "enNpm": false,
-      "repos": [
-        "dotrino-content",
-        "dotrino-ia",
-        "dotrino-vault"
-      ]
-    },
-    {
       "pilar": "@dotrino/geo",
       "version": "0.2.1",
       "enNpm": false,
       "repos": [
         "dotrino-eco",
+        "dotrino-social-bot",
         "dotrino-trueque"
       ]
     },
     {
-      "pilar": "@dotrino/vault",
-      "version": "0.26.0",
+      "pilar": "@dotrino/content-client",
+      "version": "0.2.2",
       "enNpm": false,
       "repos": [
-        "dotrino-proxy"
+        "dotrino-eco",
+        "dotrino-social-bot"
       ]
     },
     {
@@ -395,7 +414,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -451,7 +470,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -487,11 +506,65 @@
         {
           "k": "topbar",
           "etiqueta": "<dotrino-topbar> (§5)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 2
+      "rojos": 3
+    },
+    {
+      "repo": "dotrino-app",
+      "tipo": "otro",
+      "interna": false,
+      "stack": "—",
+      "subdominio": null,
+      "paquete": null,
+      "version": null,
+      "commit": "650a2f4",
+      "fecha": "2026-08-23",
+      "catalogo": null,
+      "deps": [],
+      "medido": {
+        "fecha": "2026-08-23",
+        "por": "seyacat"
+      },
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-08-22",
+          "dias": 1,
+          "commits": 1,
+          "tope": false,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "rojo": false
+        }
+      },
+      "faltan": [],
+      "versiones": [],
+      "vivo": null,
+      "rojos": 0
     },
     {
       "repo": "dotrino-base64",
@@ -517,7 +590,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -549,10 +622,26 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 4
     },
     {
       "repo": "dotrino-bots",
@@ -571,7 +660,7 @@
         "@dotrino/proxy-client"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -603,10 +692,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-chat",
@@ -635,7 +729,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -675,11 +769,36 @@
         {
           "k": "sw",
           "etiqueta": "service worker (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 3
+      "rojos": 8
     },
     {
       "repo": "dotrino-chess",
@@ -689,7 +808,7 @@
       "subdominio": "chess.dotrino.com",
       "paquete": "simple-websocket-chess",
       "version": "0.0.0",
-      "commit": "6b19854",
+      "commit": "3a8241d",
       "fecha": "2026-08-18",
       "catalogo": {
         "nombre": "Dotrino Chess",
@@ -710,7 +829,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -719,7 +838,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 13,
-          "commits": 11,
+          "commits": 12,
           "tope": false,
           "rojo": false
         },
@@ -728,7 +847,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 13,
-          "commits": 15,
+          "commits": 16,
           "tope": false,
           "rojo": false
         },
@@ -750,22 +869,47 @@
         {
           "k": "sw",
           "etiqueta": "service worker (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 3
+      "rojos": 8
     },
     {
       "repo": "dotrino-content",
       "tipo": "landing",
-      "interna": false,
+      "interna": true,
       "stack": "vanilla",
       "subdominio": "content.dotrino.com",
       "paquete": "dotrino-content",
-      "version": "0.1.0",
-      "commit": "7d85f72",
-      "fecha": "2026-08-18",
+      "version": "0.3.5",
+      "commit": "0b3d9b9",
+      "fecha": "2026-08-22",
       "catalogo": {
         "nombre": "Content",
         "url": "https://content.dotrino.com/",
@@ -775,39 +919,40 @@
       },
       "deps": [
         "@dotrino/identity",
-        "@dotrino/remote-agent"
+        "@dotrino/remote-agent",
+        "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-17",
-          "dias": 0,
-          "commits": 7,
+          "fecha": "2026-08-21",
+          "dias": 1,
+          "commits": 5,
           "tope": false,
           "rojo": false
         },
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-07-09",
-          "dias": 39,
-          "commits": 12,
+          "fecha": "2026-08-21",
+          "dias": 1,
+          "commits": 24,
           "tope": false,
-          "rojo": true
+          "rojo": false
         },
         "catalogo": {
-          "aplica": true,
+          "aplica": false,
           "existe": true,
           "fecha": "2026-07-09",
-          "dias": 40,
+          "dias": 44,
           "commits": null,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [
@@ -816,9 +961,25 @@
           "etiqueta": "<dotrino-topbar> (§5)"
         }
       ],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.57.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "0.5.1",
+          "publicado": "0.5.2"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.30.0",
+          "publicado": "0.33.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-critters",
@@ -850,7 +1011,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -882,10 +1043,36 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 2
+      "rojos": 7
     },
     {
       "repo": "dotrino-cuarenta",
@@ -917,7 +1104,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -949,10 +1136,36 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 5
     },
     {
       "repo": "dotrino-deploy-listener",
@@ -967,7 +1180,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -999,10 +1212,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-diamonds",
@@ -1032,7 +1250,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1064,10 +1282,36 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 6
     },
     {
       "repo": "dotrino-eco",
@@ -1077,8 +1321,8 @@
       "subdominio": "eco.dotrino.com",
       "paquete": "eco",
       "version": "0.1.0",
-      "commit": "368ae90",
-      "fecha": "2026-08-18",
+      "commit": "1caf283",
+      "fecha": "2026-08-22",
       "catalogo": {
         "nombre": "Eco",
         "url": "https://eco.dotrino.com/",
@@ -1087,6 +1331,7 @@
         "wip": false
       },
       "deps": [
+        "@dotrino/content-client",
         "@dotrino/geo",
         "@dotrino/identity",
         "@dotrino/install",
@@ -1099,25 +1344,25 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-07-16",
-          "dias": 13,
-          "commits": 9,
+          "fecha": "2026-08-21",
+          "dias": 1,
+          "commits": 3,
           "tope": false,
           "rojo": false
         },
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-07-16",
-          "dias": 13,
-          "commits": 12,
+          "fecha": "2026-08-22",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "rojo": false
         },
@@ -1125,16 +1370,32 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-06-18",
-          "dias": 61,
+          "dias": 65,
           "commits": null,
           "tope": false,
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 4
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -1155,7 +1416,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1195,11 +1456,15 @@
         {
           "k": "commitMeta",
           "etiqueta": "meta commit (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-favicon-generator",
@@ -1224,7 +1489,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1256,10 +1521,26 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 4
     },
     {
       "repo": "dotrino-feedback",
@@ -1276,7 +1557,7 @@
         "@dotrino/reputation"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1308,10 +1589,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-geo",
@@ -1328,7 +1614,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1360,10 +1646,21 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 2
     },
     {
       "repo": "dotrino-gridgame",
@@ -1391,7 +1688,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1431,11 +1728,36 @@
         {
           "k": "sw",
           "etiqueta": "service worker (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 3
+      "rojos": 8
     },
     {
       "repo": "dotrino-gymbro",
@@ -1456,7 +1778,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1496,11 +1818,15 @@
         {
           "k": "commitMeta",
           "etiqueta": "meta commit (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-here",
@@ -1525,7 +1851,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1557,10 +1883,26 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 4
     },
     {
       "repo": "dotrino-home",
@@ -1583,7 +1925,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1615,10 +1957,31 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 4
     },
     {
       "repo": "dotrino-ia",
@@ -1648,7 +2011,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1680,10 +2043,41 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "0.3.2",
+          "publicado": "0.5.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 2
+      "rojos": 8
     },
     {
       "repo": "dotrino-identity",
@@ -1692,15 +2086,15 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/identity",
-      "version": "0.53.0",
-      "commit": "010f6e2",
-      "fecha": "2026-08-18",
+      "version": "0.60.2",
+      "commit": "d780ae7",
+      "fecha": "2026-08-22",
       "catalogo": null,
       "deps": [
         "@dotrino/proxy-client"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1708,8 +2102,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 32,
-          "commits": 57,
+          "dias": 37,
+          "commits": 69,
           "tope": false,
           "rojo": true
         },
@@ -1732,10 +2126,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-index",
@@ -1745,12 +2144,12 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "8d825f8",
+      "commit": "1909241",
       "fecha": "2026-08-18",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1759,7 +2158,7 @@
           "existe": true,
           "fecha": "2026-07-30",
           "dias": 19,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "rojo": false
         },
@@ -1768,7 +2167,7 @@
           "existe": true,
           "fecha": "2026-08-18",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "rojo": false
         },
@@ -1806,7 +2205,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1838,10 +2237,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-lobby",
@@ -1856,7 +2260,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1888,10 +2292,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-messenger",
@@ -1923,7 +2332,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -1955,10 +2364,36 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 6
     },
     {
       "repo": "dotrino-middlebot",
@@ -1979,7 +2414,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2015,11 +2450,15 @@
         {
           "k": "topbar",
           "etiqueta": "<dotrino-topbar> (§5)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-mundial",
@@ -2039,7 +2478,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2071,10 +2510,26 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 3
     },
     {
       "repo": "dotrino-myip",
@@ -2100,7 +2555,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2132,10 +2587,26 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 2
+      "rojos": 5
     },
     {
       "repo": "dotrino-nav",
@@ -2144,24 +2615,24 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/nav",
-      "version": "0.2.2",
-      "commit": "92bbc8a",
-      "fecha": "2026-08-18",
+      "version": "0.3.0",
+      "commit": "3fad4d6",
+      "fecha": "2026-08-22",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-07-16",
-          "dias": 33,
-          "commits": 2,
+          "fecha": "2026-08-22",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         },
         "portada": {
           "aplica": false,
@@ -2182,7 +2653,12 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
       "rojos": 1
@@ -2200,7 +2676,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2232,10 +2708,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-padel-contador",
@@ -2256,7 +2737,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2296,11 +2777,15 @@
         {
           "k": "commitMeta",
           "etiqueta": "meta commit (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-profile",
@@ -2315,7 +2800,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2347,10 +2832,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-profile-app",
@@ -2376,7 +2866,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2416,11 +2906,26 @@
         {
           "k": "sw",
           "etiqueta": "service worker (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 4
+      "rojos": 7
     },
     {
       "repo": "dotrino-pronostico-mundialista",
@@ -2447,7 +2952,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2479,10 +2984,36 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 5
     },
     {
       "repo": "dotrino-proxy",
@@ -2492,8 +3023,8 @@
       "subdominio": null,
       "paquete": "websocket-proxy",
       "version": "1.0.1",
-      "commit": "aa545d0",
-      "fecha": "2026-08-18",
+      "commit": "3b35e60",
+      "fecha": "2026-08-22",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -2501,7 +3032,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2509,8 +3040,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-17",
-          "dias": 0,
-          "commits": 5,
+          "dias": 5,
+          "commits": 10,
           "tope": false,
           "rojo": false
         },
@@ -2533,10 +3064,31 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.57.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.30.0",
+          "publicado": "0.33.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 4
     },
     {
       "repo": "dotrino-proxy-client",
@@ -2545,13 +3097,13 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/proxy-client",
-      "version": "0.10.1",
-      "commit": "91af45b",
-      "fecha": "2026-08-18",
+      "version": "0.11.0",
+      "commit": "e06e797",
+      "fecha": "2026-08-22",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2559,8 +3111,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-18",
-          "dias": 0,
-          "commits": 0,
+          "dias": 4,
+          "commits": 1,
           "tope": false,
           "rojo": false
         },
@@ -2583,10 +3135,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-qrgenerator",
@@ -2612,7 +3169,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2644,10 +3201,26 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 4
     },
     {
       "repo": "dotrino-qrreader",
@@ -2673,7 +3246,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2705,10 +3278,26 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 4
     },
     {
       "repo": "dotrino-qrshare",
@@ -2729,7 +3318,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2777,11 +3366,15 @@
         {
           "k": "commitMeta",
           "etiqueta": "meta commit (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-remote-agent",
@@ -2790,25 +3383,26 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/remote-agent",
-      "version": "0.3.2",
-      "commit": "5fef51f",
-      "fecha": "2026-08-18",
+      "version": "0.5.2",
+      "commit": "0afe91e",
+      "fecha": "2026-08-22",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
-        "@dotrino/proxy-client"
+        "@dotrino/proxy-client",
+        "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-10",
-          "dias": 7,
-          "commits": 4,
+          "fecha": "2026-08-22",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "rojo": false
         },
@@ -2831,10 +3425,31 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.56.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.30.0",
+          "publicado": "0.33.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 4
     },
     {
       "repo": "dotrino-reputation",
@@ -2849,7 +3464,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2914,7 +3529,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -2946,10 +3561,31 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 5
     },
     {
       "repo": "dotrino-results",
@@ -2964,7 +3600,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3014,7 +3650,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3046,10 +3682,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-shortener",
@@ -3064,7 +3705,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3096,10 +3737,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-signer",
@@ -3114,7 +3760,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3146,10 +3792,93 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
+    },
+    {
+      "repo": "dotrino-social-bot",
+      "tipo": "servicio",
+      "interna": false,
+      "stack": "—",
+      "subdominio": null,
+      "paquete": "dotrino-social-bot",
+      "version": "0.1.0",
+      "commit": "d1dd1c6",
+      "fecha": "2026-08-22",
+      "catalogo": null,
+      "deps": [
+        "@dotrino/content-client",
+        "@dotrino/geo",
+        "@dotrino/identity",
+        "@dotrino/proxy-client",
+        "@dotrino/remote-agent",
+        "@dotrino/vault"
+      ],
+      "medido": {
+        "fecha": "2026-08-23",
+        "por": "seyacat"
+      },
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-08-22",
+          "dias": 0,
+          "commits": 0,
+          "tope": false,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "rojo": false
+        }
+      },
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.57.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.30.0",
+          "publicado": "0.33.2"
+        }
+      ],
+      "vivo": null,
+      "rojos": 4
     },
     {
       "repo": "dotrino-sso",
@@ -3164,7 +3893,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3214,7 +3943,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3246,10 +3975,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-sudoku",
@@ -3280,7 +4014,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3312,10 +4046,31 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 5
     },
     {
       "repo": "dotrino-support",
@@ -3332,7 +4087,7 @@
         "@dotrino/store"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3364,10 +4119,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-telegram-claude-bot",
@@ -3390,7 +4150,7 @@
         "@dotrino/tunnel"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3426,11 +4186,15 @@
         {
           "k": "og",
           "etiqueta": "og.jpg (§10)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-terminal",
@@ -3459,7 +4223,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3491,10 +4255,36 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 6
     },
     {
       "repo": "dotrino-test",
@@ -3509,7 +4299,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3553,11 +4343,15 @@
         {
           "k": "pwa",
           "etiqueta": "manifest PWA (§3)"
+        },
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
         }
       ],
       "versiones": [],
       "vivo": null,
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-topbar",
@@ -3566,16 +4360,16 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/topbar",
-      "version": "0.8.1",
-      "commit": "fb0a7e2",
-      "fecha": "2026-08-18",
+      "version": "0.8.2",
+      "commit": "603ccfe",
+      "fecha": "2026-08-22",
       "catalogo": null,
       "deps": [
         "@dotrino/nav",
         "@dotrino/support"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3584,7 +4378,7 @@
           "existe": true,
           "fecha": "2026-07-26",
           "dias": 0,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "rojo": false
         },
@@ -3607,10 +4401,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-trivia",
@@ -3639,7 +4438,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3671,10 +4470,31 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 5
     },
     {
       "repo": "dotrino-trueque",
@@ -3705,7 +4525,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3737,10 +4557,36 @@
           "rojo": true
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 1
+      "rojos": 6
     },
     {
       "repo": "dotrino-tunnel",
@@ -3761,7 +4607,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3793,10 +4639,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-tutorial",
@@ -3811,7 +4662,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3843,10 +4694,15 @@
           "rojo": false
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
       "versiones": [],
       "vivo": null,
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-vault",
@@ -3855,9 +4711,9 @@
       "stack": "vite",
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.41.0",
-      "commit": "f412fc3",
-      "fecha": "2026-08-18",
+      "version": "0.50.1",
+      "commit": "75a298f",
+      "fecha": "2026-08-23",
       "catalogo": {
         "nombre": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -3871,25 +4727,25 @@
         "@dotrino/remote-agent"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-17",
-          "dias": 1,
-          "commits": 28,
+          "fecha": "2026-08-23",
+          "dias": 0,
+          "commits": 1,
           "tope": false,
           "rojo": false
         },
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-18",
+          "fecha": "2026-08-23",
           "dias": 0,
-          "commits": 5,
+          "commits": 0,
           "tope": false,
           "rojo": false
         },
@@ -3897,16 +4753,32 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-27",
-          "dias": 22,
+          "dias": 27,
           "commits": null,
           "tope": false,
           "rojo": false
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "^0.58.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "^0.10.1",
+          "publicado": "0.11.0"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "^0.3.2",
+          "publicado": "0.5.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 3
     },
     {
       "repo": "dotrino-verifier",
@@ -3923,7 +4795,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -3955,10 +4827,21 @@
           "rojo": false
         }
       },
-      "faltan": [],
-      "versiones": [],
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        }
+      ],
       "vivo": null,
-      "rojos": 0
+      "rojos": 2
     },
     {
       "repo": "dotrino-wallet",
@@ -3987,7 +4870,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-08-18",
+        "fecha": "2026-08-23",
         "por": "seyacat"
       },
       "frescura": {
@@ -4019,10 +4902,81 @@
           "rojo": true
         }
       },
+      "faltan": [
+        {
+          "k": "wiki",
+          "etiqueta": "documentación en el wiki (§9.2)"
+        }
+      ],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.53.0",
+          "publicado": "0.60.2"
+        },
+        {
+          "dep": "@dotrino/nav",
+          "pide": "0.2.2",
+          "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.8.1",
+          "publicado": "0.8.2"
+        }
+      ],
+      "vivo": null,
+      "rojos": 5
+    },
+    {
+      "repo": "dotrino-wiki",
+      "tipo": "otro",
+      "interna": false,
+      "stack": "—",
+      "subdominio": null,
+      "paquete": null,
+      "version": null,
+      "commit": "2674ea2",
+      "fecha": "2026-08-23",
+      "catalogo": null,
+      "deps": [],
+      "medido": {
+        "fecha": "2026-08-23",
+        "por": "seyacat"
+      },
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-08-23",
+          "dias": 0,
+          "commits": 0,
+          "tope": true,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "rojo": false
+        }
+      },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "rojos": 1
+      "rojos": 0
     }
   ]
 }

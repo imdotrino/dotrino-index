@@ -387,6 +387,9 @@ function analizar (nombre, catalogo) {
   const robots = leer(join(dir, cual(dir, ...ROBOTS) || 'no-existe')) || ''
   const interna = /noindex/.test(texto) || /Disallow:\s*\/\s*$/m.test(robots)
   const conv = {
+    // §9.2: la documentación de uso vive en el wiki; sin el clon de dotrino-wiki al
+    // lado, se da por cumplida (no se acusa a ciegas).
+    wiki: REPOS_EN_WIKI ? REPOS_EN_WIKI.has(nombre) : true,
     npmrc: hay(dir, '.npmrc'),
     topbar: Boolean(etiqueta) || /@dotrino\/topbar/.test(texto) || Boolean(deps['@dotrino/topbar']),
     // §6.1: el botón de perfil es el atributo/propiedad `profile` del topbar.
@@ -527,18 +530,44 @@ function fuentesBinarias (dir) {
   return malos
 }
 
+/**
+ * §9.2: LA DOCUMENTACIÓN DE USO VA AL WIKI. Una pieza está migrada si el contenido del
+ * wiki la referencia (enlace a su repo o su nombre en un código/página). Se lee del
+ * clon hermano `dotrino-wiki/content`; sin ese clon, el indicador no se evalúa (null)
+ * en vez de acusar a todos de deuda.
+ */
+const REPOS_EN_WIKI = (() => {
+  const dir = join(RAIZ, 'dotrino-wiki', 'content')
+  if (!existsSync(dir)) return null
+  const set = new Set(['dotrino-wiki'])
+  const walk = (d) => {
+    for (const e of readdirSync(d, { withFileTypes: true })) {
+      const f = join(d, e.name)
+      if (e.isDirectory()) walk(f)
+      else if (e.name.endsWith('.md')) {
+        const t = leer(f) || ''
+        for (const m of t.matchAll(/imdotrino\/([a-z0-9-]+)/g)) set.add(m[1])
+        for (const m of t.matchAll(/\bdotrino-[a-z0-9-]+/g)) set.add(m[0])
+      }
+    }
+  }
+  try { walk(dir) } catch { /* un wiki a medio clonar no tumba el índice */ }
+  return set
+})()
+
 // ─── qué convenciones aplican a cada tipo (§13; las exenciones son del doc) ──
 
 const APLICA = {
   // landing de servicio (§1.2): sin PWA ni perfil, pero con SEO/support/topbar
-  landing: ['topbar', 'support', 'seo', 'og', 'catalogo'],
-  app: ['npmrc', 'topbar', 'profile', 'support', 'pwa', 'sw', 'commitMeta', 'seo', 'og', 'deploy', 'catalogo'],
+  landing: ['topbar', 'support', 'seo', 'og', 'catalogo', 'wiki'],
+  app: ['npmrc', 'topbar', 'profile', 'support', 'pwa', 'sw', 'commitMeta', 'seo', 'og', 'deploy', 'catalogo', 'wiki'],
   // informe generado (index.dotrino.com): una página estática interna (§7), sin
   // usuario ni instalación. Lo que sí se le exige: decir de qué commit sale, no
   // dejarse indexar y desplegarse sola.
   informe: ['commitMeta', 'seo', 'deploy'],
-  paquete: [],   // §1.1 exime del .npmrc a los publicables (llevan el token)
-  servicio: [],
+  // §9.2: paquetes y servicios también deben su documentación de uso al wiki
+  paquete: ['wiki'],   // §1.1 exime del .npmrc a los publicables (llevan el token)
+  servicio: ['wiki'],
   otro: []
 }
 /**
@@ -583,7 +612,8 @@ const ETIQUETA = {
   npmrc: '.npmrc (§1.1)', topbar: '<dotrino-topbar> (§5)', profile: 'perfil (§6.1)',
   support: 'support (§6)', pwa: 'manifest PWA (§3)', sw: 'service worker (§3)',
   commitMeta: 'meta commit (§3)', seo: 'robots+sitemap (§7)', og: 'og.jpg (§10)',
-  deploy: 'deploy (§11.3)', catalogo: 'en el catálogo (§11.4)'
+  deploy: 'deploy (§11.3)', catalogo: 'en el catálogo (§11.4)',
+  wiki: 'documentación en el wiki (§9.2)'
 }
 
 // ─── red (opcional) ────────────────────────────────────────────────────────
