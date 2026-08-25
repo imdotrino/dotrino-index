@@ -81,7 +81,7 @@ const hay = (dir, ...rutas) => Boolean(cual(dir, ...rutas))
 /** Concatena el HTML y el `src/` de un repo (para buscar componentes y metas). */
 function textoDelFrente (dir) {
   const trozos = []
-  for (const f of ['index.html', 'web/index.html', 'vite.config.js', 'vite.config.ts']) {
+  for (const f of ['index.html', 'web/index.html', 'landing/index.html', 'vite.config.js', 'vite.config.ts']) {
     const t = leer(join(dir, f)); if (t) trozos.push(t)
   }
   const recorrer = (d, prof) => {
@@ -96,6 +96,7 @@ function textoDelFrente (dir) {
   }
   recorrer(join(dir, 'src'), 0)
   recorrer(join(dir, 'web'), 0)
+  recorrer(join(dir, 'landing'), 0)
   return trozos.join('\n')
 }
 
@@ -302,14 +303,16 @@ function analizar (nombre, catalogo) {
   // Las landings de servicio (§1.2) que se construyen con Vite bajo `web/` dejan
   // sus assets en `web/public/` — mirarlas solo en `web/` daba por incumplidoras a
   // tunnel, vault y android-launcher, que sí tienen og.jpg, robots y sitemap.
-  const CNAMES = ['public/CNAME', 'CNAME', 'web/public/CNAME', 'web/CNAME']
+  // `landing/`: cuando `web/` ya es la UI local de la herramienta (el Inspector
+  // sirve la suya desde la máquina del usuario), la página pública vive aparte.
+  const CNAMES = ['public/CNAME', 'CNAME', 'web/public/CNAME', 'web/CNAME', 'landing/CNAME']
   let cname = leer(join(dir, cual(dir, ...CNAMES) || 'no-existe'))
   // Varias piezas NO tienen archivo CNAME: el dominio está fijado en los ajustes
   // de Pages (o lo sirve un VPS, como la web del túnel). Sin respaldo, el
   // inventario las mostraba sin subdominio teniéndolo. El `canonical`/`og:url`
   // del propio HTML lo dice, y no cuesta red.
   if (!cname) {
-    const html = leer(join(dir, cual(dir, 'index.html', 'web/index.html') || 'no-existe')) || ''
+    const html = leer(join(dir, cual(dir, 'landing/index.html', 'index.html', 'web/index.html') || 'no-existe')) || ''
     const m = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']https?:\/\/([^/"']+)/i) ||
               html.match(/<meta[^>]+property=["']og:url["'][^>]+content=["']https?:\/\/([^/"']+)/i)
     if (m && m[1].endsWith('dotrino.com')) cname = m[1]
@@ -382,10 +385,16 @@ function analizar (nombre, catalogo) {
     ...[...texto.matchAll(/['"]dotrino-topbar['"]\s*,\s*\{[\s\S]{0,1200}?\}/g)].map(m => m[0])
   ].join('\n')
   // App interna (§7): no se indexa, así que no le corresponden sitemap ni OG.
-  const ROBOTS = ['public/robots.txt', 'robots.txt', 'web/public/robots.txt', 'web/robots.txt']
-  const SITEMAP = ['public/sitemap.xml', 'sitemap.xml', 'web/public/sitemap.xml', 'web/sitemap.xml']
+  const ROBOTS = ['landing/robots.txt', 'public/robots.txt', 'robots.txt', 'web/public/robots.txt', 'web/robots.txt']
+  const SITEMAP = ['landing/sitemap.xml', 'public/sitemap.xml', 'sitemap.xml', 'web/public/sitemap.xml', 'web/sitemap.xml']
   const robots = leer(join(dir, cual(dir, ...ROBOTS) || 'no-existe')) || ''
-  const interna = /noindex/.test(texto) || /Disallow:\s*\/\s*$/m.test(robots)
+  // Una pieza puede tener las dos cosas: una UI que corre en la máquina del
+  // usuario y NO se indexa, y una landing pública que sí. Si hay landing, manda
+  // ella: si no, el `noindex` de la UI local eximía al repo de tener ficha en el
+  // catálogo y OG, escondiendo la deuda en vez de contarla.
+  const landingPublica = hay(dir, 'landing/robots.txt') &&
+    !/Disallow:\s*\/\s*$/m.test(leer(join(dir, 'landing/robots.txt')) || '')
+  const interna = !landingPublica && (/noindex/.test(texto) || /Disallow:\s*\/\s*$/m.test(robots))
   const conv = {
     // §9.2: la documentación de uso vive en el wiki; sin el clon de dotrino-wiki al
     // lado, se da por cumplida (no se acusa a ciegas).
@@ -404,7 +413,7 @@ function analizar (nombre, catalogo) {
     // §7: una app INTERNA cumple con `noindex` + robots `Disallow: /` y NO debe
     // llevar sitemap ni OG. Exigírselos era acusarla de incumplir por cumplir.
     seo: interna ? hay(dir, ...ROBOTS) : hay(dir, ...ROBOTS) && hay(dir, ...SITEMAP),
-    og: hay(dir, 'public/og.jpg', 'og.jpg', 'web/public/og.jpg', 'web/og.jpg'),
+    og: hay(dir, 'public/og.jpg', 'og.jpg', 'web/public/og.jpg', 'web/og.jpg', 'landing/og.jpg'),
     // Cualquier workflow sirve: qrshare lo llama `deploy-pages.yml`. Exigir el
     // nombre exacto `deploy.yml` lo reportaba sin deploy teniéndolo.
     deploy: hay(dir, '.nojekyll') ||
