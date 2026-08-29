@@ -79,6 +79,17 @@ const cual = (dir, ...rutas) => rutas.find(r => existsSync(join(dir, r))) || nul
 const hay = (dir, ...rutas) => Boolean(cual(dir, ...rutas))
 
 /** Concatena el HTML y el `src/` de un repo (para buscar componentes y metas). */
+/**
+ * Los workflows de despliegue, en crudo. Hacen falta porque hay apps sin build que
+ * estampan el `<meta name="commit">` (§3) con un `sed` en el propio workflow: el
+ * repo no lo tiene, pero el dominio sí lo sirve.
+ */
+function textoDeWorkflows (dir) {
+  const d = join(dir, '.github', 'workflows')
+  let entradas; try { entradas = readdirSync(d) } catch { return '' }
+  return entradas.filter(f => /\.ya?ml$/.test(f)).map(f => leer(join(d, f)) || '').join('\n')
+}
+
 function textoDelFrente (dir) {
   const trozos = []
   for (const f of ['index.html', 'web/index.html', 'landing/index.html', 'vite.config.js', 'vite.config.ts']) {
@@ -425,7 +436,12 @@ function analizar (nombre, catalogo) {
     // §3: con VitePWA el sw y el manifest los genera el build, no son archivos
     pwa: hay(dir, 'public/manifest.webmanifest', 'manifest.webmanifest', 'web/public/manifest.webmanifest') || Boolean(deps['vite-plugin-pwa']),
     sw: hay(dir, 'public/sw.js', 'sw.js', 'web/public/sw.js') || Boolean(deps['vite-plugin-pwa']),
-    commitMeta: /<meta\s+name=["']commit["']/.test(texto) || /rev-parse|commitMeta/.test(texto),
+    // §3: el meta puede venir del HTML, de un plugin del build (Vite) o del propio
+    // workflow, que lo estampa con `sed` al desplegar. Ese último caso no se veía
+    // —`textoDelFrente` no entra en `.github/`— y daba por incumplidoras a cuatro
+    // apps vanilla que SÍ lo sirven (comprobado en sus dominios).
+    commitMeta: /<meta\s+name=["']commit["']/.test(texto) || /rev-parse|commitMeta/.test(texto) ||
+      /name=\\?["']commit\\?["']/.test(textoDeWorkflows(dir)),
     // §7: una app INTERNA cumple con `noindex` + robots `Disallow: /` y NO debe
     // llevar sitemap ni OG. Exigírselos era acusarla de incumplir por cumplir.
     seo: interna ? hay(dir, ...ROBOTS) : hay(dir, ...ROBOTS) && hay(dir, ...SITEMAP),
@@ -473,7 +489,15 @@ function analizar (nombre, catalogo) {
     frescura: fresco,
     catalogo: catalogo[nombre] || null,
     dotrinoDeps: Object.fromEntries(Object.entries(deps).filter(([k]) => k.startsWith('@dotrino/'))),
-    auditoria: aud && { ...aud, commits: commitsDesdeAuditoria },
+    // Los desvíos ya decididos se apartan del veredicto (siguen a la vista, en
+    // «Desvíos declarados»): si contaran, el auditor los volvería a encontrar en
+    // cada pasada y el repo nunca bajaría de ahí.
+    auditoria: aud && {
+      ...aud,
+      commits: commitsDesdeAuditoria,
+      hallazgos: (aud.hallazgos || []).filter(h => !esDesvioDeclarado(nombre, h)),
+      desvios: (aud.hallazgos || []).filter(h => esDesvioDeclarado(nombre, h))
+    },
     secretos: secretosRastreados(dir),
     instalado: instaladoVsPedido(dir, deps),
     binarios: fuentesBinarias(dir),
@@ -637,8 +661,34 @@ const EXCEPCIONES = {
   },
   'dotrino-pronostico-mundialista': {
     catalogo: 'Ídem: quitada del catálogo el 2026-07-29 por ser de un evento puntual.'
+  },
+  'dotrino-test': {
+    pwa: 'No lleva manifest a propósito: esta página existe para probar qué pasa ' +
+      'FUERA de una PWA (abrir un enlace en el navegador completo y no en un Custom ' +
+      'Tab). Su sw.js es el autodestructivo que mata al de la versión anterior. ' +
+      'Ponerle manifest le quitaría su razón de ser (motivo escrito en su index.html).'
   }
 }
+
+/**
+ * Lo mismo, para la auditoría por IA: hallazgos que son una decisión y no un
+ * incumplimiento. El auditor lee un repo aislado y no puede saber lo que se decidió
+ * fuera de él, así que sin esto vuelve a encontrarlos en cada pasada, para siempre.
+ * Se emparejan por regla + archivo, y se listan igual que los otros desvíos.
+ */
+const EXCEPCIONES_AUDITORIA = {
+  'dotrino-android-launcher': [{
+    regla: 'pillars',
+    archivo: 'app/src/main/java/com/seyacat/launcheroculto/ui/SupportCoin.kt',
+    motivo: 'La moneda de support es Compose nativo porque esto es una app Android, ' +
+      'no una página: un Web Component no corre ahí. La landing del mismo repo ' +
+      '(`web/`) sí usa <dotrino-topbar> con el <dotrino-support> de siempre.'
+  }]
+}
+
+/** ¿Este hallazgo es un desvío ya decidido? */
+const esDesvioDeclarado = (repo, h) =>
+  (EXCEPCIONES_AUDITORIA[repo] || []).some(e => e.regla === h.regla && e.archivo === h.archivo)
 
 /**
  * Qué se le exige a ESTA pieza. Las exenciones no son mías: salen del doc.
@@ -835,11 +885,17 @@ function informe (piezas, pilares, enNpm) {
 
   // 3b. Los desvíos que SÍ están decididos — visibles, no escondidos
   const conExcepcion = Object.entries(EXCEPCIONES)
-  if (conExcepcion.length) {
+  const desviosAuditoria = Object.entries(EXCEPCIONES_AUDITORIA)
+  if (conExcepcion.length || desviosAuditoria.length) {
     L.push('### Desvíos declarados (decisiones, no incumplimientos)', '')
     for (const [repo, reglas] of conExcepcion) {
       for (const [k, motivo] of Object.entries(reglas)) {
         L.push(`- \`${repo}\` — **${ETIQUETA[k]}**: ${motivo}`)
+      }
+    }
+    for (const [repo, casos] of desviosAuditoria) {
+      for (const c of casos) {
+        L.push(`- \`${repo}\` — **${REGLA_IA[c.regla] || c.regla}** en \`${c.archivo}\`: ${c.motivo}`)
       }
     }
     L.push('')

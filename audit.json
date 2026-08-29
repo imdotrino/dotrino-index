@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-28T23:23:14-0500",
+  "generado": "2026-08-29T00:50:09-0500",
   "reglas": [
     "voseo",
     "english",
@@ -24,72 +24,15 @@
       "duracionMs": 16407
     },
     "dotrino-android-launcher": {
-      "commit": "9462737",
-      "fecha": "2026-08-28",
+      "commit": "db2344d",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "voseo",
-          "archivo": "app/src/main/java/com/seyacat/launcheroculto/ui/LauncherScreen.kt",
-          "linea": 504,
-          "cita": "\"No hay apps ocultas. Entrá a Configuración para ocultar alguna.\"",
-          "porque": "Copy de usuario en voseo ('Entrá') en vez de tuteo; se repite en 4 sitios de este archivo (líneas 504, 611, 679, 728)",
-          "arreglo": "Cambiar a 'Entra a Configuración para ocultar alguna.', 'Apoya el proyecto', 'Elige qué apps ocultar', 'Define un PIN...'"
-        },
-        {
-          "regla": "voseo",
-          "archivo": "app/src/main/java/com/seyacat/launcheroculto/ui/SupportCoin.kt",
-          "linea": 107,
-          "cita": "\"...Si te sirve, invitame un café, sumate a la comunidad o difundilo.\"",
-          "porque": "Copy de usuario en voseo ('invitame', 'sumate', 'difundilo') en el diálogo de soporte",
-          "arreglo": "Usar tuteo: 'invítame un café, únete a la comunidad o compártelo'"
-        },
-        {
-          "regla": "voseo",
-          "archivo": "app/src/main/java/com/seyacat/launcheroculto/Authenticator.kt",
-          "linea": 52,
-          "cita": ".setSubtitle(\"Verificá tu identidad\")",
-          "porque": "Subtítulo del prompt biométrico en voseo ('Verificá') en vez de tuteo",
-          "arreglo": "Cambiar a 'Verifica tu identidad'"
-        },
-        {
-          "regla": "plain",
-          "archivo": "app/src/main/java/com/seyacat/launcheroculto/ui/SupportCoin.kt",
-          "linea": 109,
-          "cita": "\"Dotrino is self-hosted, with no ads or trackers. If it helps you...\"",
-          "porque": "El diálogo de soporte (texto de UI) usa el término prohibido 'self-hosted'/'autohosteado' en vez de explicar el beneficio",
-          "arreglo": "Reemplazar por el beneficio concreto, p. ej. 'Dotrino corre en tu propio servidor, sin anuncios ni rastreadores'"
-        },
-        {
-          "regla": "english",
-          "archivo": "app/src/main/java/com/seyacat/launcheroculto/LauncherViewModel.kt",
-          "linea": 178,
-          "cita": "Log.e(\"LauncherOculto\", \"No se pudo $what\", e)",
-          "porque": "El mensaje de log de error va en español; los `what` que recibe ('abrir info de $pkg', 'desinstalar $pkg') también, así que la traza queda toda en español",
-          "arreglo": "Loguear en inglés, p. ej. Log.e(\"LauncherOculto\", \"Failed to $what\", e) con $what también en inglés"
-        },
-        {
-          "regla": "english",
-          "archivo": "app/src/main/java/com/seyacat/launcheroculto/LauncherViewModel.kt",
-          "linea": 26,
-          "cita": "app.getSharedPreferences(\"launcher_oculto\", Context.MODE_PRIVATE)",
-          "porque": "La clave de almacenamiento/configuración está en español",
-          "arreglo": "Usar una clave en inglés, p. ej. 'launcher_prefs'"
-        },
-        {
-          "regla": "pillars",
-          "archivo": "app/src/main/java/com/seyacat/launcheroculto/ui/SupportCoin.kt",
-          "linea": 34,
-          "cita": "/** Moneda de soporte (versión nativa Compose del Web Component compartido <dotrino-support>)...",
-          "porque": "El propio comentario documenta que reimplementa a mano (donar/Discord/compartir) el pilar de UI compartida <dotrino-support> en vez de usarlo",
-          "arreglo": "Extraer la lógica a un paquete compartido del ecosistema (p. ej. dotrino-support-android) en vez de reimplementarla dentro de la app, como ya sugiere el propio comentario"
-        }
-      ],
-      "revisados": 9,
-      "notas": "Es una app nativa Android/Kotlin sin dependencias @dotrino/*, sin WebSocket ni proxy-client, así que la regla 'sealed' no aplica aquí (no hay mensajería dirigida); la reimplementación de SupportCoin tiene una justificación técnica real (Web Component solo renderiza en WebView) documentada en el propio código, se reporta igual porque la regla dice 'aunque funcione'.",
-      "costoUSD": 0.32398000000000005,
-      "duracionMs": 109594
+      "hallazgos": [],
+      "revisados": 14,
+      "notas": "El repo es una app Android nativa (Kotlin/Compose), sin capa web/proxy/store propia del ecosistema Dotrino visible en el código; no se encontró uso de WebSocket, crypto de identidad ni mensajería dirigida, así que las reglas pillars y sealed no tuvieron dónde aplicar. El único voseo detectado ('mantené', LauncherScreen.kt:523) está en un comentario KDoc, exento por la regla. El naming heredado 'launcheroculto' (paquete/clase/tema) está documentado en el propio código como deuda ligada al applica",
+      "costoUSD": 0.4312822,
+      "duracionMs": 92869
     },
     "dotrino-app": {
       "commit": "650a2f4",
@@ -103,79 +46,29 @@
       "duracionMs": 7792
     },
     "dotrino-base64": {
-      "commit": "b65cd95",
-      "fecha": "2026-08-28",
+      "commit": "57ba22f",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "english",
-          "archivo": "src/services/identity.js",
-          "linea": 9,
-          "cita": "console.warn('[identity] vault inalcanzable:', e && e.message)",
-          "porque": "es una traza de diagnóstico de fallo de conexión al vault (no copy de UI), y §8.1 exige que logs y mensajes de error vayan en inglés",
-          "arreglo": "usar console.warn('[identity] vault unreachable:', e && e.message)"
-        }
-      ],
-      "revisados": 7,
-      "notas": "Repo pequeño (una sola app estática); no encontré rutas ni backend propios que auditar para 'pillars'/'sealed' más allá de identity.js y reputation.js, que ya usan los paquetes @dotrino/* correctamente.",
-      "costoUSD": 0.24724359999999998,
-      "duracionMs": 63468
+      "hallazgos": [],
+      "revisados": 9,
+      "notas": "Repo pequeño y autocontenido; se revisaron todos los archivos de src/, index.html, vite.config.js, package.json y public/robots.txt. No hay carpeta web/, lib/, agent/ ni server/ en este repo. Identidad y reputación se delegan correctamente a @dotrino/identity y @dotrino/reputation, y el topbar/install son los componentes oficiales; no hay WebSocket, crypto ni mensajería dirigida propios.",
+      "costoUSD": 0.18865820000000003,
+      "duracionMs": 31394
     },
     "dotrino-bots": {
-      "commit": "df8baac",
-      "fecha": "2026-08-28",
+      "commit": "4651dc0",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "voseo",
-          "archivo": "src/core/brain.js",
-          "linea": 162,
-          "cita": "'no había pensado en eso, ¿vos qué opinás?'",
-          "porque": "es el mensaje de chat que se envía tal cual al usuario humano cuando DeepSeek falla, y usa 'vos' en vez de tuteo",
-          "arreglo": "cambiar a '¿y tú qué opinas?'"
-        },
-        {
-          "regla": "voseo",
-          "archivo": "src/core/brain.js",
-          "linea": 159,
-          "cita": "'nada, dejá'",
-          "porque": "texto de fallback que se envía como mensaje de chat al usuario, con imperativo voseante 'dejá'",
-          "arreglo": "cambiar a 'nada, deja'"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/bot-process.js",
-          "linea": 99,
-          "cita": "throw new Error('BOT_DIR requerido')",
-          "porque": "el texto de un throw new Error es diagnóstico y debe ir en inglés según la regla",
-          "arreglo": "throw new Error('BOT_DIR is required')"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/bot-process.js",
-          "linea": 107,
-          "cita": "throw new Error(`App no soportada todavía: ${BOT_APP}`)",
-          "porque": "mensaje de error en español dentro de un throw, que debe ir en inglés",
-          "arreglo": "throw new Error(`Unsupported app: ${BOT_APP}`)"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/core/brain.js",
-          "linea": 61,
-          "cita": "throw new Error('deepseek: respuesta vacía')",
-          "porque": "mensaje de error en español dentro de un throw, que debe ir en inglés",
-          "arreglo": "throw new Error('deepseek: empty response')"
-        }
-      ],
-      "revisados": 15,
-      "notas": "chat-bot.js cifra el payload de chat con identity.encrypt() antes de mandarlo por sendByPubkey/send (CHAT_ENC), así que no lo reporto como infracción de sealed aunque no usa sendSealed/requireSealed; no revisé README.md, tsconfig.json, bots.config.json, chess-fen.js ni chess-stockfish.js.",
-      "costoUSD": 0.5449734000000002,
-      "duracionMs": 151775
+      "hallazgos": [],
+      "revisados": 21,
+      "notas": "dotrino-bots es un daemon headless (sin UI web, sin index.html, sin i18n/locales): revisé todo src/ (bots, core, transport, engines) más ecosystem.config.cjs. Los mensajes que los bots publican en el chat (brain.js, chat-bot.js) están en tuteo neutro y el propio system-prompt a DeepSeek prohíbe voseo explícitamente. Logs y errores (console.log/error, throw new Error) están en inglés en todos los archivos revisados; los comentarios en español son mayoría y están permitidos. transport.js usa @dotr",
+      "costoUSD": 0.7357475,
+      "duracionMs": 105834
     },
     "dotrino-chat": {
-      "commit": "1bda4cc",
+      "commit": "0ec2fe8",
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
@@ -185,402 +78,91 @@
           "archivo": "src/stores/connectionStore.js",
           "linea": 118,
           "cita": "await wsProxyClient.send(toTokens, rawMessage)",
-          "porque": "sendMessage() es el único canal de salida para mensajes dirigidos y usa send() (no sendSealed), y el cliente se crea con getWebSocketProxyClient()/updateConfig sin requireSealed: true en ninguna parte del repo; por él viajan sin sellar el nickname (JOIN_ANNOUNCE, LEAVE_ANNOUNCE, HEARTBEAT, HEARTBEAT_ACK en roomStore.js:133-141,174-180,600-605,641-646) y los datos de reputación (RATING_QUERY/RATING",
-          "arreglo": "Usar sendSealed() para todo mensaje dirigido con datos del usuario y arrancar wsProxyClient con requireSealed: true."
-        },
-        {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 9,
-          "cita": "mensajería P2P por WebRTC con caída automática al proxy.",
-          "porque": "La meta description es copy pública (la ve quien comparte o busca la página) y nombra 'proxy', término técnico de la lista prohibida por §9.1, en vez de explicar el beneficio para quien no programa.",
-          "arreglo": "Describir el beneficio, p. ej. \"Chat en tiempo real con salas públicas que sigue funcionando aunque la conexión directa falle\", sin nombrar proxy/WebRTC/P2P."
+          "porque": "sendMessage() es el único canal de mensajes dirigidos de la app y usa send() (no sendSealed) sin requireSealed en ninguna parte del repo; roomStore.js lo usa para JOIN_ANNOUNCE, LEAVE_ANNOUNCE, HEARTBEAT, HEARTBEAT_ACK, RATING_QUERY y RATING_REPLY con el nickname, el pubkey sujeto y las notas de calificación en claro, y hasta el propio CHAT_ENC manda el nickname en claro junto al envelope cifrado ",
+          "arreglo": "Cambiar wsProxyClient.send a wsProxyClient.sendSealed en connectionStore.js y arrancar getWebSocketProxyClient con { requireSealed: true }."
         }
       ],
-      "revisados": 16,
-      "notas": "UserSettingsModal.vue tiene copy en español en tuteo correcto (sin voseo) pero no pasa por i18.js y expone 'pubkey' directo al usuario; no lo reporto como hallazgo porque el componente no está importado en ningún otro archivo de src/ (código muerto). El cifrado de chat vía @dotrino/identity antes de enviar (roomStore.js:243) es cifrado propio del payload hecho por la app antes de mandar, tal como contempla la excepción de la regla sealed.",
-      "costoUSD": 0.8483542000000001,
-      "duracionMs": 112244
+      "revisados": 19,
+      "notas": "El texto del mensaje de chat sí se cifra en la propia app con @dotrino/identity (id.encrypt) antes de mandarlo, lo cual no es infracción per las reglas; el hallazgo es que el resto de campos (nickname, ratings, notas) viajan en claro por el mismo canal dirigido sin sendSealed/requireSealed.",
+      "costoUSD": 0.6102977,
+      "duracionMs": 104379
     },
     "dotrino-chess": {
-      "commit": "15efbf9",
-      "fecha": "2026-08-28",
+      "commit": "36672c3",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "english",
-          "archivo": "src/App.vue",
-          "linea": 271,
-          "cita": "console.log('Conectando automáticamente al servidor WebSocket proxy...')",
-          "porque": "son trazas de diagnóstico (log de arranque/fallo de conexión), no copy que lee el usuario, y deben ir en inglés; se repite en las líneas 273, 275, 318 y 337 del mismo archivo (5 veces)",
-          "arreglo": "traducir los console.log/console.error de este archivo al inglés, ej. 'Connecting automatically to WebSocket proxy server...'"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/stores/lobbyController.js",
-          "linea": 291,
-          "cita": "console.warn('No se pudo guardar el nick en tu identidad:', e?.message || e)",
-          "porque": "es un log de diagnóstico interno, no interfaz de usuario, y debe ir en inglés",
-          "arreglo": "usar algo como console.warn('Could not save nickname to identity:', e?.message || e)"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/components/chess/PhaserChessGame.vue",
-          "linea": 335,
-          "cita": "console.log('No es tu turno')",
-          "porque": "trazas de diagnóstico del motor Phaser en español; se repite en las líneas 366 ('Movimiento realizado') y 427 ('Error inicializando juego Phaser:') del mismo archivo (3 veces)",
-          "arreglo": "traducir estos console.log/console.error al inglés"
-        },
-        {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 10,
-          "cita": "content=\"Ajedrez online multijugador con transporte P2P por WebRTC...\"",
-          "porque": "la meta description (copy pública) nombra el mecanismo de transporte (P2P/WebRTC) en vez de explicar el beneficio para quien no sabe de tecnología; la misma frase se repite en las líneas 16, 23 y 34",
-          "arreglo": "cambiar por un beneficio, ej. 'juega en tiempo real, sin depender de un servidor central'"
-        },
-        {
-          "regla": "plain",
-          "archivo": "src/i18n.js",
-          "linea": 92,
-          "cita": "tokenLabel: 'Token',",
-          "porque": "'Token' es argot técnico explícitamente prohibido en copy de UI; se muestra tal cual en el modal de calificación de rival (PeerRatingModal.vue:7)",
-          "arreglo": "usar un término plano como 'Código' en vez de 'Token'"
-        }
-      ],
-      "revisados": 18,
-      "notas": "No se encontraron infracciones de voseo (i18n.js ya declara tuteo explícito y lo cumple), ni de pillars/sealed (todo el envío de mensajes queda encapsulado dentro de @dotrino/lobby y @dotrino/proxy-client, sin sendByPubkey/send propio visible en el repo); ConnectionPanel.vue y WSConnectionDemo.vue tienen texto en español fuera de i18n y logs en español, pero son código muerto (no se importan desde main.js/App.vue), así que no los reporté como hallazgos activos.",
-      "costoUSD": 1.1759331999999998,
-      "duracionMs": 225443
+      "hallazgos": [],
+      "revisados": 17,
+      "notas": "El repo ya pasó varias rondas de auditoría (ver git log); i18n.js, App.vue, lobbyController.js y los modales de identidad/perfil usan tuteo correcto y los pilares @dotrino/* (topbar, share, profile, proxy-client, identity, lobby, reputation) en vez de reimplementarlos. ConnectionPanel.vue y WSConnectionDemo.vue quedan como código huérfano (no se importan desde App.vue) con texto/demo del protocolo WS viejo, pero al no ser alcanzables por el usuario no los reporté como hallazgo — vale la pena que",
+      "costoUSD": 0.7872849000000002,
+      "duracionMs": 98314
     },
     "dotrino-content": {
-      "commit": "509f5d8",
-      "fecha": "2026-08-28",
+      "commit": "b14dd8d",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "english",
-          "archivo": "src/server.js",
-          "linea": 52,
-          "cita": "if (err.code === 'ETOOBIG') return json(res, 413, { error: 'blob demasiado grande' })",
-          "porque": "las respuestas de error del API HTTP (protocolo, no copy de usuario) van en español; el mismo tipo de contrato en src/ops.js (plano de control remoto) está en inglés. Se repite en 7 sitios del archivo (líneas 52,53,74,76,83,136,141).",
-          "arreglo": "usar mensajes de error en inglés en el JSON de la API, igual que ops.js ('invalid cid', 'not found', 'method not allowed', etc.)."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/vaultEnv.js",
-          "linea": 127,
-          "cita": "log(`[vault] llegó la configuración después de arrancar: me reinicio para tomarla`)",
-          "porque": "trazas de arranque/estado del daemon de configuración (etiqueta [vault]) en español; se repite en 8 sitios del archivo (líneas 98,109,114,115,127,128,142,148).",
-          "arreglo": "traducir los logs con prefijo [vault] al inglés, como el resto de trazas de diagnóstico del ecosistema."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/storage.js",
-          "linea": 151,
-          "cita": "log('[almacén] sigo en LOCAL: un almacén a medio configurar es peor que ninguno')",
-          "porque": "trazas de decisión del backend de almacenamiento (etiqueta [almacén]) en español; se repite en 7 sitios del archivo (líneas 146,150,151,163,165,166,171).",
-          "arreglo": "traducir los logs con prefijo [almacén] al inglés."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/announce.js",
-          "linea": 54,
-          "cita": "if (!client) throw new Error('startAnnounce: falta client')",
-          "porque": "throws de precondición y logs del daemon de anuncio en español; se repite en 5 sitios (throws en líneas 54,55,123; logs en 76,85).",
-          "arreglo": "usar mensajes en inglés, p.ej. 'startAnnounce: client is required', igual que el mismo patrón en lib/public.js:53."
-        },
-        {
-          "regla": "english",
-          "archivo": "lib/thumb.js",
-          "linea": 57,
-          "cita": "if (!ctx) throw new Error('sin canvas 2d en este navegador')",
-          "porque": "throws de error de runtime en español; se repite en 3 sitios (líneas 57, 65, 69).",
-          "arreglo": "usar mensajes en inglés, p.ej. 'no 2d canvas in this browser'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/blobstore-s3.js",
-          "linea": 36,
-          "cita": "if (!isValidCid(cid)) throw new Error(`cid inválido: ${cid}`)",
-          "porque": "throws en español; se repite en 3 sitios (líneas 36, 49, 66).",
-          "arreglo": "usar mensajes en inglés, p.ej. 'invalid cid'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/s3.js",
-          "linea": 145,
-          "cita": "throw new Error('S3Bucket: faltan endpoint, bucket o credenciales')",
-          "porque": "throws en español; se repite en 2 sitios (líneas 145, 201).",
-          "arreglo": "usar mensajes en inglés, p.ej. 'S3Bucket: missing endpoint, bucket or credentials'."
-        },
-        {
-          "regla": "english",
-          "archivo": "lib/ref.js",
-          "linea": 34,
-          "cita": "if (!owner) throw new Error('buildRef: falta owner')",
-          "porque": "throws en español en una librería isomórfica; se repite en 2 sitios (líneas 34, 35).",
-          "arreglo": "usar mensajes en inglés, p.ej. 'buildRef: owner is required'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/agent.js",
-          "linea": 56,
-          "cita": "if (!node) throw new Error('startContentAgent: falta node')",
-          "porque": "throws en español; se repite en 2 sitios (líneas 56, 59).",
-          "arreglo": "usar mensajes en inglés, p.ej. 'startContentAgent: node is required'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/node.js",
-          "linea": 25,
-          "cita": "if (!opts?.dir) throw new Error('falta opts.dir')",
-          "porque": "throws en español; se repite en 2 sitios (líneas 25, 64).",
-          "arreglo": "usar mensajes en inglés, p.ej. 'opts.dir is required'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/blobstore.js",
-          "linea": 47,
-          "cita": "if (!isValidCid(cid)) throw new Error(`cid inválido: ${cid}`)",
-          "porque": "throw en español.",
-          "arreglo": "usar mensaje en inglés, p.ej. 'invalid cid'."
-        },
-        {
-          "regla": "english",
-          "archivo": "lib/crypto.js",
-          "linea": 67,
-          "cita": "if (buf.length <= 12) throw new Error('blob cifrado incompleto')",
-          "porque": "throw en español en librería isomórfica publicada.",
-          "arreglo": "usar mensaje en inglés, p.ej. 'incomplete encrypted blob'."
-        },
-        {
-          "regla": "pillars",
-          "archivo": "lib/crypto.js",
-          "linea": 27,
-          "cita": "crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, true, ['encrypt', 'decrypt'])",
-          "porque": "cifra a mano con WebCrypto (AES-256-GCM) en vez de apoyarse en @dotrino/identity, que está listado como peerDependency en lib/package.json:22 y ya expone primitivas AES-GCM equivalentes en su módulo vault/content.js.",
-          "arreglo": "evaluar si el cifrado por blob puede apoyarse en las primitivas de @dotrino/identity en vez de duplicar generateKey/encrypt/decrypt con crypto.subtle."
-        },
-        {
-          "regla": "pillars",
-          "archivo": "web/index.html",
-          "linea": 60,
-          "cita": "/* Topbar estándar Dotrino (§5): marca izquierda, acciones derecha (idioma + moneda). */",
-          "porque": "la topbar de la landing se arma a mano con flex-wrap y un @media propio (línea 62 y 77) en vez de usar <dotrino-topbar>.",
-          "arreglo": "reemplazar el bloque .topbar hecho a mano por el componente <dotrino-topbar> del ecosistema."
-        }
-      ],
-      "revisados": 22,
-      "notas": "No reporto sealed: src/fetch.js y lib/public.js usan client.send/sendByPubkey sin sendSealed/requireSealed (que no aparecen en ningún lugar del repo), pero el contenido que mueven ya está marcado acl==='public' && !enc —lo mismo que sirve en claro el puerto HTTP público—, así que no está claro que sea 'algo del usuario' en el sentido confidencial que la regla protege; el plano de control privado no usa send directo, pasa por session.send() de @dotrino/remote-agent, que sella el payload por su cu",
-      "costoUSD": 1.4351955,
-      "duracionMs": 185497
+      "hallazgos": [],
+      "revisados": 19,
+      "notas": "Repo pequeño y bien alineado: CLI en tuteo consistente, logs/errores de red en inglés, landing (web/index.html) usa <dotrino-topbar> y copy sin jerga técnica, S3 y sendByPubkey solo aparecen en protocolo externo (S3) y en tests/docs (exentos). No se revisaron test/*.test.js, docs/DISENO.md, docs/HANDOFF.md, src/blobstore-s3.js ni lib/node_modules/@dotrino/* (vendored, terceros) por estar exentos o fuera de presupuesto.",
+      "costoUSD": 0.7849347,
+      "duracionMs": 141957
     },
     "dotrino-critters": {
-      "commit": "edf6884",
-      "fecha": "2026-08-28",
+      "commit": "3c7afff",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "english",
-          "archivo": "src/i18n.js",
-          "linea": 31,
-          "cita": "campana: 'Campaña', coleccion: 'Colección', equipo: 'Equipo', invocar: 'Invocar',",
-          "porque": "las claves del diccionario de traducción (campos que usa el código vía t('campana'), t('coleccion')...) están en español; se repite en ~90 claves de STR.es/STR.en y se consume así en todos los componentes",
-          "arreglo": "usar claves en inglés (campaign, collection, team, summon...) y dejar el español solo en los valores traducidos"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/connection.js",
-          "linea": 47,
-          "cita": "console.warn('No se pudo conectar al proxy:', e)",
-          "porque": "es un log de diagnóstico de arranque/fallo de conexión, y debe ir en inglés",
-          "arreglo": "console.warn('Could not connect to proxy:', e)"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/connection.js",
-          "linea": 29,
-          "cita": "console.warn('identify (vault) falló:', e)",
-          "porque": "log de diagnóstico en español dentro de un catch",
-          "arreglo": "console.warn('identify (vault) failed:', e)"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/identity.js",
-          "linea": 13,
-          "cita": "console.warn('Identity vault inalcanzable:', e)",
-          "porque": "log de diagnóstico en español",
-          "arreglo": "console.warn('Identity vault unreachable:', e)"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/reputation.js",
-          "linea": 15,
-          "cita": "console.warn('Reputación inalcanzable:', e)",
-          "porque": "log de diagnóstico en español",
-          "arreglo": "console.warn('Reputation unreachable:', e)"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/store.js",
-          "linea": 28,
-          "cita": "console.warn('[critters] store no disponible, usando localStorage:', ...)",
-          "porque": "log de diagnóstico en español (traza de fallback de backend)",
-          "arreglo": "console.warn('[critters] store unavailable, falling back to localStorage:', ...)"
-        }
-      ],
-      "revisados": 18,
-      "notas": "No hay uso directo de sendByPubkey/send/sendSealed en el código de la app (la mensajería dirigida vive dentro de @dotrino/notifications, que está exenta); tampoco hay WebSocket ni crypto propios (el crypto.subtle.digest de render3d.js es un hash de caché de assets, no identidad). El topbar, la identidad, el store, la reputación y el compartir usan sus pilares correctamente; no se auditaron tests/ ni dist/.",
-      "costoUSD": 0.6422235,
-      "duracionMs": 144188
+      "hallazgos": [],
+      "revisados": 17,
+      "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
+      "costoUSD": 0.5311372,
+      "duracionMs": 103882
     },
     "dotrino-cuarenta": {
-      "commit": "9a83c66",
+      "commit": "77f50e2",
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 9,
-          "cita": "Transporte P2P por WebRTC, identidad propia, sin cuentas ni rastreadores.",
-          "porque": "La meta description (copy pública) expone jerga de implementación (P2P, WebRTC) en vez de traducirla a un beneficio; se repite en og:description (línea 25) y en public/manifest.webmanifest:4.",
-          "arreglo": "Decir algo como 'Juega directo con tus amigos, sin servidores que guarden tus datos' en vez de nombrar el protocolo de transporte."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/stores/lobbyController.js",
-          "linea": 348,
-          "cita": "console.warn('No se pudo guardar el nick en tu identidad:', e?.message || e)",
-          "porque": "Es un log de diagnóstico a la consola (no copy de la UI) y está en español; debe ir en inglés como el resto de errores del archivo (p. ej. 'Identity vault not available').",
-          "arreglo": "console.warn('Could not save nickname to identity:', e?.message || e)"
-        }
-      ],
-      "revisados": 17,
-      "notas": "El transporte real de la app es WebSocket vía @dotrino/proxy-client (sin WebRTC propio), y las cinco reglas de pilares/sealed/voseo se cumplen en el resto del código revisado (i18n.js, App.vue, LobbyView.vue, CuarentaGame.vue, cuarentaEngine.js, UserSettingsModal.vue, PeerRatingModal.vue, tutorial.js, main.js, cuarentaRules.js, rating.js, PlayingCard.vue); no se auditaron node_modules/@dotrino/* ni dist/.",
-      "costoUSD": 1.0098059000000001,
-      "duracionMs": 237939
+      "hallazgos": [],
+      "revisados": 21,
+      "notas": "El repo es una app consumidora (juego 'Cuarenta'), no un paquete pilar. Todo el copy en español usa tuteo correcto, logs/errores en inglés, y usa componentes oficiales (dotrino-topbar, dotrino-profile, dotrino-share) y paquetes (@dotrino/identity, @dotrino/proxy-client vía @dotrino/lobby) sin reimplementaciones caseras. No se invoca sendByPubkey/send directamente, por lo que la regla sealed no aplica en este repo. Punto de atención menor sin llegar a hallazgo: manifest.webmanifest usa 'P2P' en l",
+      "costoUSD": 0.6077274,
+      "duracionMs": 16917
     },
     "dotrino-deploy-listener": {
-      "commit": "4a70c44",
-      "fecha": "2026-08-28",
+      "commit": "ce92332",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "voseo",
-          "archivo": "install.sh",
-          "linea": 13,
-          "cita": "Falta $DIR/deploy.config.json — copiá un deploy.config.*.example.json y editá el secret.",
-          "porque": "install.sh es una CLI que imprime este texto a quien la corre, y usa imperativos voseantes (copiá, editá); se repite en las líneas 37 y 44 (corré, revisá, agregá).",
-          "arreglo": "Usar tuteo: 'copia un deploy.config.*.example.json y edita el secret', 'corre estos pasos... revisa la lista', 'agrega el location...'."
-        },
-        {
-          "regla": "english",
-          "archivo": "server.js",
-          "linea": 111,
-          "cita": "log(`rechazado: firma inválida (${req.socket.remoteAddress})`);",
-          "porque": "server.js es un daemon systemd sin interfaz CLI: sus logs y errores son diagnóstico, no copy, y deben ir en inglés; se repite en líneas 31, 32, 72, 127, 133, 138, 139 y 141 ('config.secret faltante...', 'repo sin dir/branch', 'encolado deploy', 'escuchando en', 'config recargada', 'recarga de config falló', 'SIGTERM, saliendo').",
-          "arreglo": "Traducir los mensajes de log/throw a inglés, p.ej. 'rejected: invalid signature' o 'config reload failed: ...'."
-        }
-      ],
-      "revisados": 8,
-      "notas": "El repo no tiene UI ni usa paquetes @dotrino/*, así que las reglas plain, pillars y sealed no aplican aquí (no hay copy pública ni cliente WebSocket/crypto/almacén propio que reimplemente un pilar).",
-      "costoUSD": 0.1847698,
-      "duracionMs": 63025
+      "hallazgos": [],
+      "revisados": 11,
+      "notas": "Repo mínimo sin src/, sin UI ni landing (tsconfig referencia src/ y bin/ que no existen); es un webhook de deploy interno, así que las reglas plain, pillars y sealed no tienen superficie aplicable. Los echo de install.sh usan tuteo y los logs/errores de server.js están en inglés. Encontré voseo ('Copiala', 'poné', 'cargás') en los campos _comment de deploy.config.proxy1.example.json:2 y deploy.config.proxy2.example.json:2, pero no lo reporto como hallazgo porque son notas de configuración tipo d",
+      "costoUSD": 0.3243302,
+      "duracionMs": 12129
     },
     "dotrino-diamonds": {
-      "commit": "c113e39",
+      "commit": "9ce34f8",
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "english",
-          "archivo": "src/connection.js",
-          "linea": 32,
-          "cita": "console.warn('identify (vault) falló:', e); ... console.warn('No se pudo conectar al proxy:', e)",
-          "porque": "son logs de diagnóstico (console.warn en catch de conexión), no copy que lea el usuario, y van en español en vez de inglés; aparece 2 veces en el archivo (líneas 32 y 51)",
-          "arreglo": "usar mensajes en inglés, p.ej. 'identify (vault) failed:' y 'could not connect to proxy:'"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/identity.js",
-          "linea": 14,
-          "cita": "console.warn('Identity vault inalcanzable:', e)",
-          "porque": "log de diagnóstico (fallo al conectar el vault) en español; debe ir en inglés",
-          "arreglo": "usar 'Identity vault unreachable:' en el console.warn"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/store.js",
-          "linea": 33,
-          "cita": "console.warn('[diamonds] store no disponible, usando localStorage:', (e && e.message) || e)",
-          "porque": "log de diagnóstico de fallback de almacenamiento en español; debe ir en inglés",
-          "arreglo": "usar '[diamonds] store unavailable, falling back to localStorage:' en el console.warn"
-        }
-      ],
-      "revisados": 14,
-      "notas": "No se abrieron tests/e2e ni los estilos restantes (solo topbar.css) por presupuesto; no se detectaron infracciones de voseo, plain, pillars ni sealed — connection.js usa @dotrino/proxy-client (getWebSocketProxyClient/identify) sin WebSocket propio, identity.js/reputation.js/store.js delegan en sus paquetes @dotrino/*, y el envío de acuses de referido pasa por @dotrino/notifications (createShareReceipts), no por sendByPubkey/send directo en la app.",
-      "costoUSD": 0.4259703999999999,
-      "duracionMs": 73216
+      "hallazgos": [],
+      "revisados": 22,
+      "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
+      "costoUSD": 0.5538252,
+      "duracionMs": 11451
     },
     "dotrino-eco": {
-      "commit": "b14ec95",
-      "fecha": "2026-08-28",
+      "commit": "148da0b",
+      "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "english",
-          "archivo": "src/services/proxy.js",
-          "linea": 27,
-          "cita": "throw new Error('vault sin pubkey; no se puede identificar')",
-          "porque": "Mensajes de error/log puramente diagnósticos (se capturan y solo van a console.warn, nunca se muestran al usuario) escritos en español; se repite 3 veces en el archivo (líneas 27, 50 y 58).",
-          "arreglo": "Escribir los mensajes en inglés, p. ej. \"vault has no pubkey; cannot identify\"."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/services/identity.js",
-          "linea": 17,
-          "cita": "console.warn('[identity] vault inalcanzable, modo standalone:', e.message)",
-          "porque": "Log de diagnóstico y errores internos en español; también en líneas 142 y 147, y estos últimos ni siquiera se loguean (feedStore.js:290 los descarta con catch(_){}), confirmando que son puramente para depuración.",
-          "arreglo": "Escribir los mensajes en inglés, p. ej. \"vault unreachable, standalone mode\"."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/feed/feedStore.js",
-          "linea": 456,
-          "cita": "console.warn('[feed] discover falló', e.message)",
-          "porque": "Traza de diagnóstico de arranque/fallo que va a la consola, en español.",
-          "arreglo": "Escribir el mensaje en inglés, p. ej. \"[feed] discover failed\"."
-        },
-        {
-          "regla": "pillars",
-          "archivo": "src/App.vue",
-          "linea": 246,
-          "cita": "{ key: 'whatsapp', label: 'WhatsApp', color: '#25D366', href: `https://wa.me/?text=${text}%20${u}` },",
-          "porque": "Modal de compartir armado a mano (SVGs inline, colores e intents propios de WhatsApp/X/Facebook) en vez de un componente compartido del ecosistema; el resto del archivo sí usa correctamente <dotrino-topbar>, <dotrino-profile> y <dotrino-notifications>, y el paquete de compartir no figura entre las dependencias.",
-          "arreglo": "Usar el Web Component compartido de compartir del ecosistema en vez de reimplementar SHARE_ICONS/shareTargets/el modal."
-        },
-        {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 34,
-          "cita": "content=\"Tu voz, en tu zona, bajo tus reglas. Descubrimiento por geo, archivo en tu store, sin trackers.\"",
-          "porque": "La copy pública (Twitter Card) nombra el pilar técnico \"store\" en vez de explicar el beneficio, a diferencia del og:description de la línea 25 que sí lo resuelve bien (\"sólo sobreviven en tu archivo local\").",
-          "arreglo": "Reemplazar \"archivo en tu store\" por algo como \"queda guardado en tu propio archivo\"."
-        }
-      ],
+      "hallazgos": [],
       "revisados": 22,
-      "notas": "No se instaló node_modules, así que no pude confirmar si existe un paquete @dotrino/share en el ecosistema (el hallazgo de pillars se basa en que no está entre las dependencias y en el patrón descrito en las reglas); tampoco se auditó dist/ (generado) ni e2e/ (scripts de prueba, con console.log/error en español que no reporté por no ser código de producción).",
-      "costoUSD": 0.9844843000000001,
-      "duracionMs": 196631
+      "notas": "No se abrieron README.md, DESIGN.md, test/*.test.mjs ni e2e/geo.mjs (excluidos: docs y tests están exentos de voseo/english/pillars por las reglas dadas). El repo ya trae comentarios que citan las convenciones (§4.1, §8.1, §9.1) y coincide con varios commits recientes de auditoría; no se encontraron incumplimientos de las cinco reglas en lo revisado.",
+      "costoUSD": 0.7727859999999999,
+      "duracionMs": 142583
     },
     "dotrino-ecuavoley-contador": {
       "commit": "36db2cd",
@@ -605,32 +187,15 @@
       "duracionMs": 41707
     },
     "dotrino-feedback": {
-      "commit": "f91ff84",
+      "commit": "090c42f",
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [
-        {
-          "regla": "pillars",
-          "archivo": "src/index.js",
-          "linea": 193,
-          "cita": "function canonicalStringify(value) { ... } // idéntico a @dotrino/reputation y al vault.",
-          "porque": "reimplementa a mano una función que @dotrino/reputation ya exporta (y que este mismo archivo ya importa de ese paquete), en vez de importarla.",
-          "arreglo": "usar `import { canonicalStringify } from '@dotrino/reputation'` en vez de la copia local."
-        },
-        {
-          "regla": "pillars",
-          "archivo": "src/index.js",
-          "linea": 201,
-          "cita": "await crypto.subtle.importKey('jwk', ...); await crypto.subtle.verify({ name: 'ECDSA', ... })",
-          "porque": "implementa verificación de firma ECDSA a mano con crypto.subtle en vez de delegarla en @dotrino/identity.",
-          "arreglo": "usar la verificación de firma que expone @dotrino/identity en vez de crypto.subtle directo."
-        }
-      ],
-      "revisados": 7,
-      "notas": "El repo es solo un Cloudflare Worker backend (src/index.js) sin UI, HTML ni i18n propios, así que las reglas voseo y plain no tienen superficie donde aplicar (el HTML del email es contenido administrativo hacia imdotrino@gmail.com, no copy pública de producto). Tampoco usa @dotrino/proxy-client, así que la regla sealed no aplica aquí.",
-      "costoUSD": 0.32765240000000007,
-      "duracionMs": 100646
+      "hallazgos": [],
+      "revisados": 5,
+      "notas": "El repo es un Worker de Cloudflare (relay de email) sin UI ni landing propias: no hay i18n/locales, no hay HTML con copy pública, y no usa @dotrino/proxy-client ni WebSockets, por lo que las reglas plain y sealed no tienen superficie aplicable aquí. Se revisaron src/index.js, wrangler.toml, package.json, tsconfig.json y package-lock.json (solo para ver dependencias @dotrino/*); README.md quedó fuera por estar explícitamente excluido de voseo/plain.",
+      "costoUSD": 0.5204137,
+      "duracionMs": 11924
     },
     "dotrino-gymbro": {
       "commit": "c9764f8",
