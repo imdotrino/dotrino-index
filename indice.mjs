@@ -372,6 +372,22 @@ function analizar (nombre, catalogo) {
     catalogo: null
   }
 
+  // La auditoría por IA: el veredicto y su frescura son dos cosas distintas y se
+  // guardan aparte. `commits` en `null` = la auditoría la hizo otra persona sobre un
+  // commit que este clon no tiene, así que la brecha no se puede medir (y se dice,
+  // en vez de darla por 0).
+  const aud = AUDITORIA.repos?.[nombre] || null
+  const commitsDesdeAuditoria = !aud ? null
+    : git(dir, 'cat-file', '-e', aud.commit) === null ? null
+      : Number(git(dir, 'rev-list', '--count', `${aud.commit}..HEAD`, '--', '.', ...FONTANERIA) ?? 0) || 0
+  fresco.auditoria = {
+    existe: Boolean(aud),
+    fecha: aud?.fecha || null,
+    dias: diasEntre(aud?.fecha, g.fechaSustancia),
+    commits: commitsDesdeAuditoria,
+    desdeElInicio: false
+  }
+
   // El topbar y sus atributos: la etiqueta abre y cierra en varias líneas.
   // OJO: hay que juntar TODAS las apariciones, no la primera. Varias apps
   // mencionan `<dotrino-topbar>` en un comentario antes de usarlo de verdad, y
@@ -457,6 +473,7 @@ function analizar (nombre, catalogo) {
     frescura: fresco,
     catalogo: catalogo[nombre] || null,
     dotrinoDeps: Object.fromEntries(Object.entries(deps).filter(([k]) => k.startsWith('@dotrino/'))),
+    auditoria: aud && { ...aud, commits: commitsDesdeAuditoria },
     secretos: secretosRastreados(dir),
     instalado: instaladoVsPedido(dir, deps),
     binarios: fuentesBinarias(dir),
@@ -564,6 +581,34 @@ const REPOS_EN_WIKI = (() => {
   return set
 })()
 
+/**
+ * LA AUDITORÍA DE CONVENCIONES POR IA (`audit.mjs`, en este mismo repo). Es el único
+ * indicador que no sale de mirar archivos y fechas: voseo en la copy, código o logs
+ * en español, jerga en la portada, un pilar reimplementado a mano, un mensaje
+ * dirigido sin sellar. Nada de eso es un patrón — hay que leer y entender.
+ *
+ * Vive en OTRO script porque cuesta dinero y minutos, y este se corre a cada rato.
+ * Acá solo se LEE su resultado, y da DOS indicadores distintos:
+ *
+ *   · **el veredicto** — los hallazgos, cada uno con su archivo, su línea y su cita
+ *   · **la frescura** — cuánto se movió el repo desde que se auditó. Una auditoría
+ *     de hace 40 commits describe otro código, igual que un README de hace 40.
+ *
+ * Los umbrales se leen del propio archivo (no se copian acá) para que el informe no
+ * pueda llamar «atrasada» a una auditoría que el auditor da por vigente.
+ */
+const AUDITORIA = leerJson(join(AQUI, 'audit.json')) || { repos: {} }
+const UMBRAL_AUDITORIA = { commits: 10, dias: ROJO_DIAS, ...(AUDITORIA.umbrales || {}) }
+
+/** Las cinco reglas que revisa el auditor, con el nombre con que se leen. */
+const REGLA_IA = {
+  voseo: 'voseo en la copy de usuario (§9)',
+  english: 'código, rutas o logs en español (§8.1)',
+  plain: 'jerga en la copy pública (§9.1)',
+  pillars: 'pilar reimplementado a mano (regla principal)',
+  sealed: 'mensaje dirigido sin sellar (§4.1)'
+}
+
 // ─── qué convenciones aplican a cada tipo (§13; las exenciones son del doc) ──
 
 const APLICA = {
@@ -609,13 +654,29 @@ const aplica = (p) => (APLICA[p.tipo] || []).filter(k =>
  * solo la tiene lo que se sirve (app o landing); la ficha, lo que va al catálogo
  * (§11.4) — y eso ya lo decide `aplica`, con sus exenciones e internas.
  */
-const CLAVES_FRESCURA = ['readme', 'portada', 'catalogo']
+const CLAVES_FRESCURA = ['readme', 'portada', 'catalogo', 'auditoria']
 const aplicaFrescura = (p, k) =>
   k === 'readme' ? true
-    : k === 'portada' ? (p.tipo === 'app' || p.tipo === 'landing')
-      : aplica(p).includes('catalogo')
+    : k === 'auditoria' ? true
+      : k === 'portada' ? (p.tipo === 'app' || p.tipo === 'landing')
+        : aplica(p).includes('catalogo')
+/**
+ * Una auditoría deja de valer con el MISMO criterio con que `audit.mjs` decide
+ * volver a mirar: sin auditoría, auditada en un commit que no está en este clon, o
+ * el repo se movió por encima del umbral (commits con sustancia, o días de brecha).
+ * No se mide en días a secas como el README: un repo puede estar quieto un mes y su
+ * auditoría seguir siendo exacta.
+ */
+const auditoriaAtrasada = (p) => {
+  const f = p.frescura.auditoria
+  if (!f?.existe || f.commits === null) return true
+  if (f.commits >= UMBRAL_AUDITORIA.commits) return true
+  return f.commits > 0 && f.dias >= UMBRAL_AUDITORIA.dias
+}
 const desactualizado = (p, k) =>
-  aplicaFrescura(p, k) && (!p.frescura[k]?.existe || p.frescura[k].dias >= ROJO_DIAS)
+  aplicaFrescura(p, k) && (k === 'auditoria'
+    ? auditoriaAtrasada(p)
+    : (!p.frescura[k]?.existe || p.frescura[k].dias >= ROJO_DIAS))
 
 const ETIQUETA = {
   npmrc: '.npmrc (§1.1)', topbar: '<dotrino-topbar> (§5)', profile: 'perfil (§6.1)',
@@ -784,8 +845,49 @@ function informe (piezas, pilares, enNpm) {
     L.push('')
   }
 
+  // 3c. La auditoría por IA: lo que ningún `grep` puede decir.
+  L.push('## Auditoría de convenciones (IA)', '')
+  L.push('> La escribe `audit.mjs` (un `claude -p` de solo lectura por repo). Mira las cinco reglas que ' +
+         'no son un patrón: voseo en la copy (§9), código/rutas/logs en español (§8.1), jerga en la copy ' +
+         'pública (§9.1), pilares reimplementados a mano y mensajes dirigidos sin sellar (§4.1).', '')
+  const auditados = piezas.filter(p => p.auditoria)
+  const hallazgos = auditados.flatMap(p => (p.auditoria.hallazgos || []).map(h => ({ repo: p.repo, ...h })))
+  // Los repos privados no se auditan (sus hallazgos acabarían publicados en este
+  // repo, que es público), así que tampoco cuentan como deuda de auditoría.
+  const auditables = piezas.filter(p => !PRIVADOS.has(p.repo))
+  const sinAuditar = auditables.filter(p => !p.auditoria)
+  L.push(`**${auditados.length} de ${auditables.length} piezas auditadas** · ` +
+    `${hallazgos.length} hallazgo(s) en ${new Set(hallazgos.map(h => h.repo)).size} repos · ` +
+    `se vuelve a auditar a los ${UMBRAL_AUDITORIA.commits} commits o ${UMBRAL_AUDITORIA.dias} días.`, '')
+  if (sinAuditar.length) {
+    L.push(`<details><summary>${sinAuditar.length} piezas sin auditar todavía</summary>`, '')
+    L.push(sinAuditar.map(p => `\`${p.repo}\``).join(', '), '')
+    L.push('Se arregla con `node dotrino-index/audit.mjs` (audita por tandas: `--limit 10`).', '')
+    L.push('</details>', '')
+  }
+  const atrasadas = auditados.filter(p => auditoriaAtrasada(p))
+  if (atrasadas.length) {
+    L.push(`Auditoría atrasada (${atrasadas.length}): ` +
+      atrasadas.map(p => `\`${p.repo}\` (${p.frescura.auditoria.commits ?? '?'} c)`).join(', '), '')
+  }
+  if (!hallazgos.length) L.push(auditados.length ? 'Sin hallazgos en lo auditado.' : '_Nada auditado aún._', '')
+  else {
+    const porRegla = {}
+    for (const h of hallazgos) (porRegla[h.regla] ||= []).push(h)
+    for (const [regla, hs] of Object.entries(porRegla).sort((a, b) => b[1].length - a[1].length)) {
+      L.push(`### ${REGLA_IA[regla] || regla} — ${hs.length}`, '')
+      for (const h of hs) {
+        const donde = h.archivo ? `\`${h.archivo}${h.linea ? `:${h.linea}` : ''}\`` : '—'
+        L.push(`- \`${h.repo}\` ${donde} — ${h.porque}` +
+          (h.cita ? `\n  > \`${h.cita.replace(/`/g, "'")}\`` : '') +
+          (h.arreglo ? `\n  → ${h.arreglo}` : ''))
+      }
+      L.push('')
+    }
+  }
+
   // 4. Frescura: ¿lo que se CUENTA sigue el ritmo de lo que se HACE?
-  L.push(`## Frescura: README · portada · ficha (rojo a los ${ROJO_DIAS} días)`, '')
+  L.push(`## Frescura: README · portada · ficha · auditoría (rojo a los ${ROJO_DIAS} días)`, '')
   L.push('> Brecha entre el **último commit del repo** y la última vez que se tocó cada cosa. ' +
          'No mira el contenido —no juzga si está bien escrito—, solo si se actualizó. Un repo ' +
          'quieto no envejece: si el código tampoco se movió, la brecha es 0.', '')
@@ -795,19 +897,25 @@ function informe (piezas, pilares, enNpm) {
 
   L.push('> `≥` = sigue como en el commit inicial del repo. La historia anterior a la ' +
          'migración desde CloserClick no está, así que ahí la brecha real es **al menos** esa.', '')
+  L.push(`> *Auditoría* = la de IA, y NO se mide en días a secas: un repo quieto un mes conserva su ` +
+         `veredicto. Se pone en rojo a los ${UMBRAL_AUDITORIA.commits} commits con sustancia desde el ` +
+         `commit auditado, o a los ${UMBRAL_AUDITORIA.dias} días si además se movió.`, '')
 
   const celda = (p, k) => {
     if (!aplicaFrescura(p, k)) return '·'
     const f = p.frescura[k]
-    if (!f?.existe) return '**no tiene**'
+    if (!f?.existe) return k === 'auditoria' ? '**sin auditar**' : '**no tiene**'
     const txt = `${f.fecha} · ${f.desdeElInicio ? '≥' : ''}${f.dias} d${f.commits ? ` / ${f.commits} c` : ''}`
-    return f.dias >= ROJO_DIAS ? `**🔴 ${txt}**` : txt
+    // El rojo lo decide `desactualizado`, que para la auditoría cuenta commits y no
+    // solo días: comparar `dias` acá daría por vigente una auditoría de 40 commits.
+    return desactualizado(p, k) ? `**🔴 ${txt}**` : txt
   }
-  const fila = (p) => `| \`${p.repo}\` | ${celda(p, 'readme')} | ${celda(p, 'portada')} | ${celda(p, 'catalogo')} |`
+  const fila = (p) => `| \`${p.repo}\` | ${celda(p, 'readme')} | ${celda(p, 'portada')} | ` +
+    `${celda(p, 'catalogo')} | ${celda(p, 'auditoria')} |`
   const peor = (p) => Math.max(...CLAVES_FRESCURA.map(k =>
     !aplicaFrescura(p, k) ? -1 : (!p.frescura[k]?.existe ? Infinity : p.frescura[k].dias)))
   const porPeor = (a, b) => peor(b) - peor(a) || a.repo.localeCompare(b.repo)
-  const CABECERA = ['| Repo | README | Portada | Ficha en el catálogo |', '|---|---|---|---|']
+  const CABECERA = ['| Repo | README | Portada | Ficha en el catálogo | Auditoría |', '|---|---|---|---|---|']
   const viejas = piezas.filter(p => CLAVES_FRESCURA.some(k => desactualizado(p, k)))
   if (!viejas.length) L.push(`Nada por encima de ${ROJO_DIAS} días.`, '')
   else {
@@ -956,6 +1064,16 @@ function datosWeb () {
         rojo: desactualizado(p, k)
       }]))
       const vivo = p.vivo ? { http: p.vivo.http, sinPublicar: p.vivo.sinPublicar } : null
+      // El veredicto de la auditoría. Su FRESCURA ya viaja en `frescura.auditoria`,
+      // como la del README: son dos indicadores y se leen por separado.
+      const auditoria = p.auditoria ? {
+        por: p.auditoria.por || null,
+        modelo: p.auditoria.modelo || null,
+        notas: p.auditoria.notas || '',
+        hallazgos: (p.auditoria.hallazgos || []).map(h => ({
+          regla: h.regla, archivo: h.archivo, linea: h.linea, porque: h.porque, arreglo: h.arreglo
+        }))
+      } : null
       const fichaHeredada = heredarCatalogo(p.repo, faltan, frescura)
       return {
         repo: p.repo,
@@ -976,8 +1094,10 @@ function datosWeb () {
         faltan,
         versiones,
         vivo,
+        auditoria,
         rojos: faltan.length + versiones.length +
           CLAVES_FRESCURA.filter(k => frescura[k].rojo).length +
+          (auditoria?.hallazgos.length || 0) +
           (vivo?.sinPublicar > 0 ? 1 : 0)
       }
   })
@@ -999,6 +1119,10 @@ function datosWeb () {
     commit: git(AQUI, 'rev-parse', '--short', 'HEAD'),
     vivo: VIVO,
     rojoDias: ROJO_DIAS,
+    // Con qué vara se marca la auditoría en rojo. Sale de `audit.json`, no de acá:
+    // la página no puede llamar «atrasado» a lo que el auditor da por vigente.
+    umbralAuditoria: UMBRAL_AUDITORIA,
+    reglasIA: REGLA_IA,
     ocultas: piezas.length - publicas.length,
     medidasAhora: medidas.length,
     heredadas: heredadas.length,
@@ -1025,8 +1149,13 @@ if (WEB) {
 }
 
 const faltas = piezas.reduce((n, p) => n + aplica(p).filter(k => !p.conv[k]).length, 0)
-const viejas = piezas.filter(p => CLAVES_FRESCURA.some(k => desactualizado(p, k))).length
+// La auditoría se cuenta aparte de la frescura de lo que se cuenta: son dos cosas y
+// se arreglan con dos comandos distintos (una, escribiendo; la otra, `audit.mjs`).
+const viejas = piezas.filter(p => ['readme', 'portada', 'catalogo'].some(k => desactualizado(p, k))).length
+const hallazgos = piezas.reduce((n, p) => n + (p.auditoria?.hallazgos?.length || 0), 0)
+const porAuditar = piezas.filter(p => !PRIVADOS.has(p.repo) && desactualizado(p, 'auditoria')).length
 console.log(`${piezas.length} piezas · ${faltas} incumplimientos · ` +
   `${piezas.filter(p => p.git.sinPushear || p.git.sucio).length} repos sin sincronizar · ` +
-  `${viejas} con README/portada/ficha de más de ${ROJO_DIAS} días`)
+  `${viejas} con README/portada/ficha de más de ${ROJO_DIAS} días · ` +
+  `${hallazgos} hallazgos de auditoría · ${porAuditar} sin auditar o atrasadas`)
 console.log('→ ECOSISTEMA.json + INDICE.md')

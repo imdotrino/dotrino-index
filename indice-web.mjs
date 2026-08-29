@@ -71,6 +71,7 @@ td.repo{white-space:nowrap}
 td.repo b{font-weight:600}
 td.fecha{white-space:nowrap;font-variant-numeric:tabular-nums}
 td.fecha small{display:block;font-size:.8em}
+td.auditoria small{display:block;font-size:.78em;font-variant-numeric:tabular-nums}
 .cuenta{display:inline-block;min-width:1.4em;text-align:center;border-radius:999px;
   padding:.05rem .35rem;font-size:.75rem;background:var(--rojo-bg);color:var(--rojo);
   font-weight:600;margin-left:.35rem;vertical-align:1px}
@@ -101,9 +102,16 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
   <h1>Estado del ecosistema</h1>
   <p class="sub">Una fila por pieza con todo lo que le falta. Se genera desde los repos
   con <code>node indice.mjs --web</code>; no se edita a mano. En rojo, lo que hay que
-  arreglar: convenciones incumplidas (§13), versiones de pilares atrasadas y lo que
+  arreglar: convenciones incumplidas (§13), versiones de pilares atrasadas, lo que
   se dejó de contar (README, portada y ficha del catálogo con más de
-  ${datos.rojoDias} días de brecha).</p>
+  ${datos.rojoDias} días de brecha) y lo que encontró la auditoría de IA.</p>
+  <p class="sub">La columna <b>Auditoría</b> es la única que sale de <i>leer</i> el
+  código y no de mirar fechas: la escribe <code>node audit.mjs</code> (un Claude de
+  solo lectura por repo) y revisa las cinco reglas que no son un patrón — voseo en la
+  copy, código o logs en español, jerga en la copy pública, pilares reimplementados a
+  mano y mensajes dirigidos sin sellar. Se vuelve a auditar un repo a los
+  ${datos.umbralAuditoria ? datos.umbralAuditoria.commits : 10} commits o
+  ${datos.umbralAuditoria ? datos.umbralAuditoria.dias : 30} días, no en cada pasada.</p>
   <p class="sub">Cada quien mide <b>los repos que tiene en su disco</b> y esa pasada
   <b>suma</b>: actualiza sus filas y deja intactas las demás, con la fecha y el nombre
   de quien las midió la última vez. Por eso una fila puede ser de hoy y la de al lado
@@ -137,6 +145,7 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
           <th data-orden="readme">README</th>
           <th data-orden="portada">Portada</th>
           <th data-orden="ficha">Ficha</th>
+          <th data-orden="auditoria">Auditoría</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -169,7 +178,10 @@ $('#cifras').innerHTML = [
   ['mal', conRojo.length, 'con algo en rojo'],
   ['mal', faltasTotales, 'convenciones incumplidas'],
   ['mal', derivas, 'pilares atrasados'],
-  ['mal', viejas.length, 'con README/portada/ficha de +' + D.rojoDias + ' d']
+  ['mal', viejas.length, 'con README/portada/ficha de +' + D.rojoDias + ' d'],
+  ['mal', D.piezas.reduce((n, p) => n + (p.auditoria ? p.auditoria.hallazgos.length : 0), 0),
+    'hallazgos de auditoría'],
+  ['', D.piezas.filter(p => p.auditoria).length + '/' + D.piezas.length, 'piezas auditadas']
 ].map(([c, n, t]) => '<div class="cifra ' + c + '"><b>' + n + '</b><span>' + t + '</span></div>').join('')
 
 /* ── vista "por repo" ───────────────────────────────────────────────────── */
@@ -178,6 +190,25 @@ const celdaFrescura = (f) => {
   if (!f.existe) return '<td class="fecha"><span class="rojo">no tiene</span></td>'
   return '<td class="fecha">' + f.fecha + '<small class="' + (f.rojo ? 'rojo' : 'na') + '">' +
     (f.tope ? '≥' : '') + f.dias + ' d' + (f.commits ? ' / ' + f.commits + ' c' : '') + '</small></td>'
+}
+/** Etiqueta corta de cada regla del auditor; la larga va en el title del chip. */
+const REGLA = { voseo: 'voseo', english: 'en español', plain: 'jerga', pillars: 'pilar a mano', sealed: 'sin sellar' }
+/**
+ * La auditoría en una celda: el VEREDICTO (qué encontró, por regla) y su FRESCURA
+ * (cuándo y cuántos commits atrás). Son dos indicadores y por eso se ven los dos: un
+ * ✓ de hace 40 commits no dice lo mismo que un ✓ de hoy.
+ */
+const celdaAuditoria = (p) => {
+  const f = (p.frescura && p.frescura.auditoria) || { existe: false }
+  if (!f.existe) return '<td><span class="rojo">sin auditar</span></td>'
+  const cuenta = {}
+  for (const h of (p.auditoria ? p.auditoria.hallazgos : [])) cuenta[h.regla] = (cuenta[h.regla] || 0) + 1
+  const marcas = Object.entries(cuenta).map(([r, n]) =>
+    '<span class="chip mal" title="' + esc((D.reglasIA || {})[r] || r) + '">' +
+    (REGLA[r] || r) + (n > 1 ? ' ×' + n : '') + '</span>').join('') || '<span class="bien">✓</span>'
+  const sello = '<small class="' + (f.rojo ? 'rojo' : 'na') + '">' + f.fecha +
+    ' · ' + (f.commits === null ? '?' : f.commits) + ' c</small>'
+  return '<td class="auditoria">' + marcas + sello + '</td>'
 }
 const chips = (xs, clase) => xs.length
   ? xs.map(x => '<span class="chip ' + clase + '">' + esc(x) + '</span>').join('')
@@ -199,7 +230,9 @@ function filas () {
     versiones: (p) => -p.versiones.length,
     readme: (p) => -(p.frescura.readme.dias ?? 9999),
     portada: (p) => -(p.frescura.portada.dias ?? 9999),
-    ficha: (p) => -(p.frescura.catalogo.dias ?? 9999)
+    ficha: (p) => -(p.frescura.catalogo.dias ?? 9999),
+    auditoria: (p) => -((p.auditoria ? p.auditoria.hallazgos.length : 0) * 1000 +
+      (p.frescura.auditoria && p.frescura.auditoria.existe ? (p.frescura.auditoria.commits || 0) : 9999))
   }[orden]
   return [...xs].sort((a, b) => {
     const ka = clave(a); const kb = clave(b)
@@ -229,6 +262,7 @@ function pintar () {
       celdaFrescura(p.frescura.readme) +
       celdaFrescura(p.frescura.portada) +
       celdaFrescura(p.frescura.catalogo) +
+      celdaAuditoria(p) +
       '</tr>'
   }).join('')
   $('#pie-tabla').innerHTML = xs.length + ' de ' + D.piezas.length + ' piezas' +
@@ -262,6 +296,17 @@ function grupos () {
       .map(p => p.repo + (p.frescura[k].existe ? ' (' + p.frescura[k].dias + ' d)' : ' (no tiene)'))
     if (repos.length) g.push([nombre, repos])
   }
+  const porRegla = {}
+  for (const p of D.piezas) for (const h of (p.auditoria ? p.auditoria.hallazgos : [])) {
+    (porRegla[(D.reglasIA || {})[h.regla] || h.regla] ||= [])
+      .push(p.repo + (h.archivo ? ' (' + h.archivo + (h.linea ? ':' + h.linea : '') + ')' : ''))
+  }
+  for (const [k, repos] of Object.entries(porRegla).sort((a, b) => b[1].length - a[1].length)) {
+    g.push([k, repos])
+  }
+  const porAuditar = D.piezas.filter(p => p.frescura.auditoria && p.frescura.auditoria.rojo)
+    .map(p => p.repo + (p.frescura.auditoria.existe ? ' (' + p.frescura.auditoria.commits + ' c)' : ' (nunca)'))
+  if (porAuditar.length) g.push(['Auditoría pendiente o atrasada', porAuditar])
   const porPilar = {}
   for (const p of D.piezas) for (const v of p.versiones) {
     (porPilar[v.dep + ' → ' + v.publicado] ||= []).push(p.repo + ' (' + v.pide + ')')
