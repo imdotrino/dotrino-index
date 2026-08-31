@@ -1,8 +1,8 @@
 {
-  "generado": "2026-08-30T22:44:53-0500",
+  "generado": "2026-08-30T23:04:17-0500",
   "fecha": "2026-08-30",
   "por": "seyacat",
-  "commit": "ee7e666",
+  "commit": "f3dc8f9",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -2272,7 +2272,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "ee7e666",
+      "commit": "f3dc8f9",
       "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [],
@@ -2286,7 +2286,7 @@
           "existe": true,
           "fecha": "2026-08-28",
           "dias": 2,
-          "commits": 10,
+          "commits": 12,
           "tope": false,
           "rojo": false
         },
@@ -2311,9 +2311,9 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-29",
-          "dias": 1,
-          "commits": 9,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 1,
           "tope": false,
           "rojo": false
         }
@@ -2324,32 +2324,39 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "El repo es pequeño (indice.mjs, indice-web.mjs, audit.mjs, README.md, robots.txt); no hay src/, i18n/ ni componentes @dotrino/* que evaluar para pillars/sealed, y la copy de la página (tuteo, sin jerga) cumple las reglas 1 y 3. audit.mjs en sí está mayormente en inglés salvo un par de identificadores sueltos (diasEntre, motivoDeAuditar), demasiado menor para reportar aparte.",
+        "notas": "Repo pequeño y sin src/web/lib: solo indice.mjs, indice-web.mjs, audit.mjs, README.md e index.html (parcial, es un volcado de datos generado). ecosistema.json y audit.json se ignoraron por ser generados. No hay copy pública dirigida a no-técnicos (el propio README dice que esto no es una app sino un informe interno para colaboradores), así que no se evaluó 'plain'. No se encontró código de WebSocket, criptografía ni mensajería (sendByPubkey/sendSealed), así que 'pillars' y 'sealed' no aplican aq",
         "hallazgos": [
           {
             "regla": "english",
             "archivo": "indice.mjs",
-            "linea": 35,
-            "porque": "los nombres de archivo del generador ('indice.mjs', 'indice-web.mjs') están en español; §8.1 exige inglés en lo que lee una máquina, incluidos los nombres de archivo.",
-            "arreglo": "renombrar a algo como 'index.mjs' e 'index-web.mjs'."
+            "linea": 1,
+            "porque": "los nombres de archivo del generador están en español, mientras el HTML que producen ya se llama index.html en inglés",
+            "arreglo": "renombrar a index.mjs / index-web.mjs (o equivalente en inglés)"
           },
           {
             "regla": "english",
             "archivo": "indice.mjs",
             "linea": 310,
-            "porque": "casi todos los identificadores de nivel superior del archivo están en español (analizar, informe, frescura, leerCatalogo, textoDelFrente, satisface, secretosRastreados, instaladoVsPedido, fuentesBinarias, commitsSinPublicar, versionesNpm, commitEnVivo, esDesvioDeclarado, entre ~25 más); §8.1 pide variables, funciones y campos en inglés.",
-            "arreglo": "renombrar funciones y variables a inglés (analyze, report, freshness, readCatalog, frontText, satisfies, trackedSecrets, installedVsRequested, binarySources, commitsUnpublished, npmVersions, liveCommit, isDeclaredException…)."
+            "porque": "la mayoría de funciones y variables del archivo están en español (analizar, frescura, leerJson, leerCatalogo, bloquesCatalogo, frescuraCatalogo, secretosRastreados, instaladoVsPedido, fuentesBinarias, textoDelFrente, satisface, cual, hay, leer…), unas 30+ apariciones",
+            "arreglo": "renombrar los identificadores a inglés (analyze, freshness, readJson, trackedSecrets…), dejando los comentarios en español"
           },
           {
             "regla": "english",
             "archivo": "indice-web.mjs",
             "linea": 14,
-            "porque": "los identificadores principales del generador de la página están en español (paginaWeb, embebido, celdaFrescura, celdaAuditoria, filtro, orden, texto, filas, pintar, grupos, porNorma, porRegla, porAuditar, porPilar); §8.1 pide inglés para lo que lee una máquina o quien programa.",
-            "arreglo": "renombrar a inglés (webPage, embed, freshnessCell, auditCell, filter, sortKey, searchText, rows, render, groups, byRule, byPillar…)."
+            "porque": "funciones y variables del módulo en español (paginaWeb, embebido, celdaFrescura, celdaAuditoria, chips, filas, pintar, grupos), unas 8 apariciones",
+            "arreglo": "renombrar a inglés (webPage, embed, freshnessCell, render, groups…)"
+          },
+          {
+            "regla": "english",
+            "archivo": "audit.mjs",
+            "linea": 144,
+            "porque": "algunos identificadores del archivo siguen en español (motivoDeAuditar, UMBRAL_COMMITS, UMBRAL_DIAS, PRIVADOS, FONTANERIA) mientras el resto del archivo ya usa inglés (extractJson, normalize, runClaude)",
+            "arreglo": "renombrar a inglés (reasonToAudit, THRESHOLD_COMMITS, THRESHOLD_DAYS) para ser consistente con el resto del archivo"
           }
         ]
       },
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-inspector",
@@ -3157,7 +3164,7 @@
       "subdominio": "padel.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "a4766c3",
+      "commit": "f559d33",
       "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "Contador Pádel",
@@ -3177,7 +3184,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 45,
-          "commits": 4,
+          "commits": 5,
           "tope": false,
           "rojo": true
         },
@@ -3204,7 +3211,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 0,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "rojo": false
         }
@@ -5378,12 +5385,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -5395,8 +5402,42 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 2
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "produccion/pc/*.js (client.js, signature.js, sealing.js, webrtc.js, canonical.js) parece ser una copia vendorizada del propio paquete @dotrino/proxy-client (sealing.js delega explícitamente en @dotrino/identity como peer dependency y client.js implementa correctamente sendSealed/requireSealed), así que no lo cuento como incumplimiento de 'pillars'; tampoco encontré voseo real (solo un falso positivo de 'acá' dentro de un comentario, que no cuenta) ni jerga técnica en copy pública (la única págin",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "smoke/interfaz.mjs",
+            "linea": 1,
+            "porque": "10 nombres de archivo dentro de smoke/ están en español (interfaz, dispositivos, consola, configuracion, navegador, gestor, demonio, dos-bovedas, pairing-corto, caja) en vez de inglés; los scripts de package.json (smoke:dispositivos, smoke:gestor, etc.) replican los mismos nombres.",
+            "arreglo": "Renombrar a interface.mjs, devices.mjs, console.mjs, config.mjs, browser.mjs, manager.mjs, daemon.mjs, two-vaults.mjs, short-pairing.mjs, box.js, y actualizar los scripts de package.json en consecuencia."
+          },
+          {
+            "regla": "english",
+            "archivo": "produccion/timbre.mjs",
+            "linea": 1,
+            "porque": "El directorio 'produccion' y el archivo 'timbre.mjs' ('timbre' = doorbell/bell) están en español; también el script npm 'prod:timbre'.",
+            "arreglo": "Renombrar a production/ y bell.mjs (o push-wake.mjs), y ajustar el script 'prod:timbre' en package.json."
+          },
+          {
+            "regla": "english",
+            "archivo": "smoke/lib/harness.js",
+            "linea": 107,
+            "porque": "Mensajes de error y de log de diagnóstico en español (líneas 51, 107, 128, 138, 164, 199, 271, 274, 277, 280 de este archivo); el mismo patrón de throw/console en español se repite en casi todos los smoke/*.mjs (run.mjs, tui.mjs, navegador.mjs, demonio.mjs, gestor.mjs, configuracion.mjs, dispositivos.mjs, pairing-corto.mjs, interfaz.mjs, consola.mjs).",
+            "arreglo": "Traducir los mensajes de error y de log a inglés, p. ej. `vault ${name} did not start`."
+          },
+          {
+            "regla": "english",
+            "archivo": "produccion/pc/client.js",
+            "linea": 467,
+            "porque": "4 mensajes de error lanzados en español en este archivo (líneas 467, 528, 531, 538) en vez de inglés, pese a que el resto del archivo documenta la API en inglés.",
+            "arreglo": "Traducir a inglés, p. ej. 'WebRTC is disabled on this client', 'Service Worker not supported in this environment', 'Push API not supported in this browser', 'Proxy does not have Web Push enabled'."
+          }
+        ]
+      },
+      "rojos": 5
     },
     {
       "repo": "dotrino-topbar",
@@ -5447,18 +5488,31 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "El repo es un único paquete de componente (@dotrino/topbar): solo src/index.js, src/index.d.ts, package.json, README.md y tsconfig.json tienen contenido relevante; no hay i18n/locales, rutas de app, ni llamadas de red (WebSocket/sendByPubkey) que auditar para plain/pillars/sealed, y este mismo paquete es el pilar de topbar, por lo que implementarlo no es una infracción de 'pillars'. README.md está exento de voseo/plain por ser documentación.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/index.js",
+            "linea": 235,
+            "porque": "Nombres de métodos y variables internas (código que lee quien programa) están en español en vez de inglés; se repite en al menos 8 sitios del mismo archivo: `_cerrarMenu`/`_abrirMenu` (líneas 135,136,180,208-287), `_irAMiPerfil` (180,287), `_fueraListener` (136,217-219), y variables locales `lista`, `filas`, `nombre`, `evento` (249-280).",
+            "arreglo": "Renombrar a `_closeMenu`, `_openMenu`, `_goToMyProfile`, `_outsideListener`, `list`, `rows`, `name`, `event`."
+          }
+        ]
+      },
       "rojos": 1
     },
     {
@@ -5521,12 +5575,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -5538,8 +5592,35 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 5
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "src/store.js implementa un shim sobre localStorage cuando @dotrino/store falla, pero está documentado explícitamente como fallback de degradación (offline/bloqueado), no como almacén paralelo de primera clase, así que no lo cuento como violación de 'pillars'; no hay uso de @dotrino/proxy-client, sendByPubkey ni mensajería dirigida en el repo, por lo que la regla 'sealed' no aplica aquí.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/store.js",
+            "linea": 47,
+            "porque": "es un log de diagnóstico interno (consola del navegador) y está en español, no en inglés",
+            "arreglo": "console.warn('[trivia] store unavailable, falling back to localStorage:', e?.message || e);"
+          },
+          {
+            "regla": "english",
+            "archivo": "src/services/identity.js",
+            "linea": 16,
+            "porque": "log de diagnóstico interno en español; debe ir en inglés como el resto de logs del repo",
+            "arreglo": "console.warn('[trivia] vault unreachable:', e?.message || e);"
+          },
+          {
+            "regla": "english",
+            "archivo": "public/sw.js",
+            "linea": 35,
+            "porque": "nombre de variable de código en español (también reutilizada en la línea 36)",
+            "arreglo": "renombrar a isNavigation"
+          }
+        ]
+      },
+      "rojos": 7
     },
     {
       "repo": "dotrino-trueque",
@@ -5603,12 +5684,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -5620,8 +5701,28 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 4
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "Repo pequeño y ya bien alineado con las convenciones: i18n en tuteo, pillars (@dotrino/topbar, nav, profile, identity, geo, reputation, proxy-client) bien usados, sendSealed/requireSealed correctos en el flujo de contacto. No revisé package.json ni configs de build por no ser relevantes a las 5 reglas.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/services/proxy.js",
+            "linea": 29,
+            "porque": "es un mensaje de error de diagnóstico (throw) y debe ir en inglés, no en la copy del usuario",
+            "arreglo": "throw new Error('vault has no pubkey; cannot identify')"
+          },
+          {
+            "regla": "english",
+            "archivo": "src/services/identity.js",
+            "linea": 58,
+            "porque": "es un error interno (se distingue por e.code, no por el texto) que va a console.warn como diagnóstico, y debe ir en inglés",
+            "arreglo": "new Error('listing has no encryption key')"
+          }
+        ]
+      },
+      "rojos": 5
     },
     {
       "repo": "dotrino-tunnel",
@@ -5675,19 +5776,88 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "El repo no tiene src/, agent/ ni locales/ en la raíz; solo lib/, server/ y web/. No se reportan hallazgos de voseo (la i18n de web/src/App.vue y la ayuda de lib/bin/cli.js ya están en tuteo correcto) ni de sealed: el repo no usa @dotrino/proxy-client en absoluto — implementa su propio WebSocket contra r.dotrino.com, que es el propio servicio de este pilar (dotrino-tunnel), no una re-implementación de proxy.dotrino.com, así que tampoco lo cuento como incumplimiento de pillars. No inspeccioné el c",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "lib/index.js",
+            "linea": 86,
+            "porque": "identificadores de código en español (también soltarCandado en línea 136 y reintento en línea 137); el código debe nombrarse en inglés",
+            "arreglo": "renombrar a inUse, releaseLock y retryTimer"
+          },
+          {
+            "regla": "english",
+            "archivo": "lib/index.js",
+            "linea": 92,
+            "porque": "mensaje de un throw new Error (traza de fallo, no copy de interfaz) escrito en español",
+            "arreglo": "escribir el mensaje del Error en inglés, p.ej. 'a tunnel with this key is already running in this process...'"
+          },
+          {
+            "regla": "english",
+            "archivo": "lib/index.js",
+            "linea": 105,
+            "porque": "mismo caso que la línea 92: throw new Error en español en vez de inglés",
+            "arreglo": "traducir el mensaje del Error a inglés"
+          },
+          {
+            "regla": "english",
+            "archivo": "lib/index.js",
+            "linea": 147,
+            "porque": "log de diagnóstico de la librería en español (también líneas 162 y 166: 'otra copia tomó...' y 'reconectando…'); como la CLI llama a createTunnel con quiet:true, este log solo lo ve quien integra la librería en su propio código, no el usuario final de la CLI",
+            "arreglo": "escribir los logs internos en inglés: 'ready →', 'replaced by another instance...', 'reconnecting…'"
+          },
+          {
+            "regla": "english",
+            "archivo": "server/index.js",
+            "linea": 142,
+            "porque": "mensaje de rechazo de protocolo agente-relay en español, mientras el resto de errores del relay ('tunnel not connected', 'payload too large', etc.) están en inglés",
+            "arreglo": "usar 'invalid key (16-48 alphanumeric chars)' para mantener consistencia con los demás errores del relay"
+          },
+          {
+            "regla": "english",
+            "archivo": "server/index.js",
+            "linea": 159,
+            "porque": "log de diagnóstico del daemon en español (también línea 169: '[agent] desconectado')",
+            "arreglo": "usar '[agent] connected key=... (n tunnels)' / '[agent] disconnected key=...'"
+          },
+          {
+            "regla": "english",
+            "archivo": "server/index.js",
+            "linea": 185,
+            "porque": "traza de arranque del daemon en español (también línea 186: 'límite payload...')",
+            "arreglo": "escribir la traza de arranque en inglés, p.ej. 'dotrino-tunnel relay listening on...'"
+          },
+          {
+            "regla": "plain",
+            "archivo": "web/index.html",
+            "linea": 9,
+            "porque": "'autohospedado' (self-hosted) es jerga técnica prohibida en copy pública; se repite en las líneas 10, 22, 23 y 39 (meta description, og:description y JSON-LD)",
+            "arreglo": "explicar el beneficio sin el término, p.ej. 'túnel reverso que corre en tu propia máquina, sin depender de terceros'"
+          },
+          {
+            "regla": "pillars",
+            "archivo": "lib/crypto.js",
+            "linea": 34,
+            "porque": "genera, firma y verifica pares de llaves ECDSA P-256 a mano (WebCrypto) en vez de usar @dotrino/identity; el propio comentario de cabecera admite que replica 'la curva de la identidad Dotrino' (aunque hoy no se importa desde ningún otro archivo del repo)",
+            "arreglo": "eliminar el archivo si es código muerto, o delegar la identidad/firma del túnel en @dotrino/identity si se necesita"
+          }
+        ]
+      },
+      "rojos": 9
     },
     {
       "repo": "dotrino-tutorial",
@@ -5735,19 +5905,24 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "Repo pequeño y de un solo paquete (Web Component sin red/almacenamiento propio); revisé src/index.js, src/index.d.ts, preview.html y README.md, que cubren todo el código y copy no generados del repo.",
+        "hallazgos": []
+      },
+      "rojos": 0
     },
     {
       "repo": "dotrino-vault",
@@ -5806,19 +5981,53 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 2
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "src/sealer.js, lib/src/sealed.js y web/src/Vault.vue (sealing local) cifran el payload por su cuenta con ECDH+AES-GCM antes de sendByPubkey (patrón documentado en docs/secretos-sellados.md); es el caso 'NO es infracción' de la regla sealed, no un hallazgo. No se abrieron src/ctl.js completo, web/src/Console.vue completo, ni test/ ni docs/ más allá de greps puntuales.",
+        "hallazgos": [
+          {
+            "regla": "voseo",
+            "archivo": "bin/dotrino-vaultd.js",
+            "linea": 69,
+            "porque": "'Emparejá' y 'pegá' (línea 72) son imperativos voseantes en texto que la CLI imprime directamente a quien la usa al pasar --pair; aparece 2 veces en el mismo bloque.",
+            "arreglo": "Usar tuteo: 'Empareja un dispositivo...' y 'O pega este código:'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/secretsStore.js",
+            "linea": 431,
+            "porque": "Es una aserción interna de integridad del store (no llega como copy al usuario, se traga o cae en logs del daemon) y mezcla un prefijo en inglés ('putWrap:') con el mensaje en español; se repite en la línea 438.",
+            "arreglo": "Escribir el mensaje en inglés, p. ej. `putWrap: generation ${gen} of ${owner} does not exist`."
+          },
+          {
+            "regla": "english",
+            "archivo": "lib/src/atrest.js",
+            "linea": 173,
+            "porque": "Es un error interno de verificación de la migración a cifrado en reposo (se propaga a un log/crash del daemon, no es copy de la CLI), y mezcla el prefijo inglés 'at-rest:' con el resto en español.",
+            "arreglo": "Escribir en inglés, p. ej. `at-rest: verification failed, original left untouched`."
+          },
+          {
+            "regla": "plain",
+            "archivo": "web/src/App.vue",
+            "linea": 152,
+            "porque": "Es el texto visible de un enlace en la landing pública (se renderiza en App.vue:469/479 vía wikiTitles), y usa 'scope', que está en la lista de argot prohibido en copy pública.",
+            "arreglo": "Cambiar a un beneficio en lenguaje llano, p. ej. 'Encryption, storage and permissions' (la versión es ya lo hace: 'Cifrado, store y alcance' evita 'scope', aunque 'store' sin traducir también convendría cambiarlo a 'guardado')."
+          }
+        ]
+      },
+      "rojos": 5
     },
     {
       "repo": "dotrino-verifier",
@@ -5868,19 +6077,46 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "Repo mínimo (src/index.js, test/verifier.test.js, README.md); sin i18n/locales, sin UI, sin uso de WebSocket/proxy-client ni cripto propia — no aplican voseo (no hay copy de usuario), plain ni pillars/sealed.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/index.js",
+            "linea": 83,
+            "porque": "Es un throw new Error(...) — texto de diagnóstico para quien programa, debe ir en inglés; se repite igual en la línea 124 y con otros mensajes en 84 y 87 (4 ocurrencias en total).",
+            "arreglo": "Usar mensajes en inglés, p. ej. throw new Error('unsupported service: ' + service)."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/index.js",
+            "linea": 84,
+            "porque": "Mensaje de error de validación de argumentos en español; va a quien integra la librería, no es copy de usuario.",
+            "arreglo": "throw new Error('sign() is required')."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/index.js",
+            "linea": 87,
+            "porque": "Mensaje de error de validación de tipo en español; es diagnóstico de programación, no interfaz de usuario.",
+            "arreglo": "throw new Error('sign() must return the base64 signature')."
+          }
+        ]
+      },
+      "rojos": 3
     },
     {
       "repo": "dotrino-wallet",
@@ -5942,12 +6178,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -5959,8 +6195,28 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 3
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "No existen carpetas web/src, lib/, agent/ ni server/ en el repo (solo src/). twa/app/build/ es salida generada y se ignoró; de twa/ solo se inspeccionaron strings.xml y FileImportActivity.java como muestra, sin recorrer el resto de recursos ni las demás Activities.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/lib/pkpass.js",
+            "linea": 39,
+            "porque": "Es un error interno de diagnóstico (se captura y se reemplaza por t('pkpassError') antes de mostrarse), así que debe ir en inglés; se repite igual en la línea 93 ('El .pkpass no contiene pass.json').",
+            "arreglo": "Usar mensajes en inglés, p. ej. 'Not a valid ZIP (.pkpass)' y 'The .pkpass does not contain pass.json'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/App.vue",
+            "linea": 177,
+            "porque": "Es un volcado de depuración (prefijo 'DBG', campos internos crudos) que termina en el toast que ve el usuario en vez de ir a un log en inglés; onImport ya usa el toast correcto con t('imported') justo arriba.",
+            "arreglo": "Quitar este toast de depuración (o convertirlo en console.debug en inglés) y usar copy normal vía t(), como hace onImport."
+          }
+        ]
+      },
+      "rojos": 4
     },
     {
       "repo": "dotrino-wiki",
@@ -5970,7 +6226,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "77d3ee6",
+      "commit": "82d7658",
       "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [],
@@ -5984,7 +6240,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 7,
-          "commits": 21,
+          "commits": 22,
           "tope": true,
           "rojo": false
         },
@@ -6008,19 +6264,39 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "El repo es solo el generador estático del wiki (build.mjs) más content/es|en/**.md; no hay src/, web/src/, lib/, agent/ ni server/. Se hizo grep completo sobre content/es para voseo (sin resultados) y jerga técnica prohibida; no se abrieron los 58 archivos es/ uno por uno, solo una muestra representativa de secciones públicas (empezar, empresa, herramientas) además de los que dieron señal en el grep. La sección desarrollo/ y las páginas vault/*.md con jerga (certificador, CA, headless, scope, da",
+        "hallazgos": [
+          {
+            "regla": "plain",
+            "archivo": "content/es/empezar/que-es.md",
+            "linea": 44,
+            "porque": "La página de onboarding 'Qué es Dotrino' traduce cuidadosamente el resto de conceptos técnicos a beneficios, pero aquí usa 'certificador'/'CA' (línea 54 también: 'tu certificador personal') sin explicar el beneficio.",
+            "arreglo": "Sustituir 'certificador'/'CA' por algo como 'la autoridad que decide qué aparatos son tuyos', sin nombrar el concepto técnico."
+          },
+          {
+            "regla": "english",
+            "archivo": "build.mjs",
+            "linea": 252,
+            "porque": "Es la traza final que imprime el script de build (diagnóstico para quien ejecuta `node build.mjs`, no copy de la app) y mezcla inglés con la palabra española 'páginas'.",
+            "arreglo": "Usar 'pages' en vez de 'páginas' para que el log de build quede íntegramente en inglés."
+          }
+        ]
+      },
+      "rojos": 2
     }
   ]
 }
