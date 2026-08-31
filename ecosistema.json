@@ -1,8 +1,8 @@
 {
-  "generado": "2026-08-30T22:25:59-0500",
+  "generado": "2026-08-30T22:35:31-0500",
   "fecha": "2026-08-30",
   "por": "seyacat",
-  "commit": "aafbdac",
+  "commit": "5127cf7",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -2272,7 +2272,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "aafbdac",
+      "commit": "5127cf7",
       "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [],
@@ -2286,7 +2286,7 @@
           "existe": true,
           "fecha": "2026-08-28",
           "dias": 2,
-          "commits": 6,
+          "commits": 8,
           "tope": false,
           "rojo": false
         },
@@ -2313,7 +2313,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 1,
-          "commits": 5,
+          "commits": 7,
           "tope": false,
           "rojo": false
         }
@@ -3580,12 +3580,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -3597,8 +3597,42 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 2
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "No se revisaron los componentes .vue completos (solo grep dirigido) ni server/ (no existe en este repo); no se encontraron más ocurrencias de voseo o argot fuera de lo listado.",
+        "hallazgos": [
+          {
+            "regla": "pillars",
+            "archivo": "src/lib/proxy.ts",
+            "linea": 130,
+            "porque": "El propio comentario del archivo (líneas 23-26) admite que no se usa `@dotrino/proxy-client` y que se reimplementó a mano el subconjunto del protocolo de cable (formatMessage/parseMessage, pair-redeem, IDENTIFY_CHALLENGE/RESPONSE) contra `wss://proxy.dotrino.com`.",
+            "arreglo": "Resolver el token a identidad usando `@dotrino/proxy-client` (ya integrado en connection.ts) en vez de un cliente WebSocket propio."
+          },
+          {
+            "regla": "sealed",
+            "archivo": "src/lib/roomSync.ts",
+            "linea": 93,
+            "porque": "`env` es un sobre solo FIRMADO (buildMemberEnvelope en room.ts usa signBlob, no cifrado) con el pronóstico del usuario, y se manda con `sendByPubkey`/`send` en claro; lo mismo ocurre en roomSync.ts:121 y en inbox.ts:62 (ROOM_INVITE). `sendSealed`/`requireSealed` no aparecen en ningún archivo del repo.",
+            "arreglo": "Usar `sendSealed()` para ROOM_PREDICTION y ROOM_INVITE, y arrancar el cliente de connection.ts con `requireSealed: true`."
+          },
+          {
+            "regla": "voseo",
+            "archivo": "src/i18n.ts",
+            "linea": 345,
+            "porque": "\"Reintentá\" es imperativo voseante; se repite igual en la línea 350 (`publishError`). El resto del archivo usa tuteo consistentemente.",
+            "arreglo": "Cambiar a \"Reintenta\" en ambas claves (officialOffline y publishError)."
+          },
+          {
+            "regla": "plain",
+            "archivo": "src/i18n.ts",
+            "linea": 444,
+            "porque": "Copy de la UI del panel de Identidad (IdentityPanel.vue) usa el argot prohibido \"proxy\" y \"token\" (también en `tokenWord: 'token'`, línea 445) en vez de explicar el beneficio en términos llanos.",
+            "arreglo": "Reemplazar \"proxy\"/\"token\" por algo como \"pídele su código corto; debe tener la app abierta para confirmarlo\"."
+          }
+        ]
+      },
+      "rojos": 5
     },
     {
       "repo": "dotrino-proxy",
@@ -3650,19 +3684,60 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "Este repo es el propio proxy (pilar de transporte), no una app cliente: no hay src/, web/, i18n, HTML ni UI propia, así que las reglas 'plain' (copy pública) y 'pillars'/'sealed' (reimplementación de un pilar por una app cliente, o mensajes dirigidos sin sellar) no tienen superficie aplicable aquí — el propio proxy hablando su protocolo y derivando ids con crypto no es una infracción. README/DEPLOY/SELF-HOSTING/.env.example usan voseo pero están explícitamente exentos por ser documentación, no c",
+        "hallazgos": [
+          {
+            "regla": "voseo",
+            "archivo": "server.js",
+            "linea": 2665,
+            "porque": "el código de emparejamiento es texto que un humano lee y usa (según el propio docstring de pairingCodes.js), y 'pedí' es un imperativo voseante en vez de tuteo",
+            "arreglo": "usar 'código ambiguo: pide uno nuevo'"
+          },
+          {
+            "regla": "english",
+            "archivo": "server.js",
+            "linea": 1760,
+            "porque": "son mensajes de protocolo WebSocket (campo 'error' de las respuestas type:'error') devueltos a quien integra el proxy, y deben ir en inglés; se repite en las líneas 1777, 1800 y 1814 del mismo archivo",
+            "arreglo": "traducir los mensajes de error de protocolo al inglés, p. ej. 'Invalid message format: must contain \"to\" or \"to_publickey\" and \"message\"'"
+          },
+          {
+            "regla": "english",
+            "archivo": "nodeIdentity.js",
+            "linea": 64,
+            "porque": "es un throw de validación interna (diagnóstico para quien programa), y va en español en vez de inglés; se repite en la línea 68 ('coordenadas de longitud inesperada')",
+            "arreglo": "usar 'pubkey is not an EC P-256 JWK' (y el equivalente en inglés para la línea 68)"
+          },
+          {
+            "regla": "english",
+            "archivo": "tokenManager.js",
+            "linea": 79,
+            "porque": "es un error de diagnóstico interno y debe ir en inglés según §8.1",
+            "arreglo": "usar 'Could not generate a unique instance'"
+          },
+          {
+            "regla": "english",
+            "archivo": "turnCredentials.js",
+            "linea": 132,
+            "porque": "es un error de integración con una API externa (diagnóstico), mezclado en español cuando el resto del mensaje (línea 128) ya está en inglés",
+            "arreglo": "usar 'Cloudflare TURN API: response missing iceServers'"
+          }
+        ]
+      },
+      "rojos": 5
     },
     {
       "repo": "dotrino-proxy-client",
@@ -3710,19 +3785,39 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "El repo es la librería @dotrino/proxy-client (sin UI ni landing), así que las reglas plain y pillars no tienen superficie aplicable: no hay copy pública de marketing ni topbar/perfil/almacén propios que reimplementen otro pilar. sendByPubkey/send solo se ven usados de forma cruda internamente para señalización WebRTC (_rtc), no para contenido de usuario, así que no se marcó como incumplimiento de sealed; el uso de ECDSA propio en signature.js está documentado en el README como identidad local di",
+        "hallazgos": [
+          {
+            "regla": "voseo",
+            "archivo": "sw/closer-click-push-sw.js",
+            "linea": 19,
+            "porque": "es el cuerpo de la notificación push que ve la persona usuaria, y usa voseo ('Tenés') en vez de tuteo",
+            "arreglo": "cambiar a 'Tienes mensajes nuevos'"
+          },
+          {
+            "regla": "english",
+            "archivo": "src/client.js",
+            "linea": 467,
+            "porque": "son mensajes de error (van a un throw/catch, no a la UI) y están en español; se repite en 5 sitios del archivo (líneas 467, 528, 531, 538, 945)",
+            "arreglo": "traducir los mensajes de Error al inglés, p.ej. 'WebRTC is disabled on this client'"
+          }
+        ]
+      },
+      "rojos": 2
     },
     {
       "repo": "dotrino-qrgenerator",
@@ -3781,12 +3876,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -3798,7 +3893,20 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "Repo pequeño (sin agent/server/lib/web); revisé todo src/, index.html, package.json y vite.config.js. No se abrió src/style.css por no contener copy ni código relevante a las reglas.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/services/identity.js",
+            "linea": 9,
+            "porque": "es un log de diagnóstico (va a la consola, no es copy de UI) y está en español en vez de inglés",
+            "arreglo": "usar console.warn('[identity] vault unreachable:', e && e.message)"
+          }
+        ]
+      },
       "rojos": 3
     },
     {
@@ -3858,12 +3966,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -3875,7 +3983,20 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "No se pudo leer ../CONVENCIONES-APPS.md por vivir fuera de este repo, pero no hizo falta: toda la copy en español usa tuteo correcto (ninguna instancia de voseo). No se encontró reimplementación de pilares (identity/reputation/topbar/install vía @dotrino/*), ni WebSocket, crypto.subtle o sendByPubkey — la app no tiene mensajería dirigida, así que la regla 'sealed' no aplica. La copy pública (tagline, meta description, README) usa lenguaje llano sin jerga técnica.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/services/identity.js",
+            "linea": 9,
+            "porque": "es un mensaje de diagnóstico que va a la consola/log (catch de conexión fallida), y la regla exige que logs y mensajes de error vayan en inglés",
+            "arreglo": "usar console.warn('[identity] vault unreachable:', e && e.message)"
+          }
+        ]
+      },
       "rojos": 3
     },
     {
@@ -3930,19 +4051,60 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 3
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "No se abrieron los workflows de CI (.github/workflows/deploy-pages.yml) ni los binarios de icono; el resto de i18n no existe como carpeta separada porque toda la copy vive inline en app.js/index.html/manifest.webmanifest.",
+        "hallazgos": [
+          {
+            "regla": "pillars",
+            "archivo": "app.js",
+            "linea": 30,
+            "porque": "Es un cliente WebSocket casero que reimplementa a mano el protocolo del proxy de Dotrino (tokens, to/message) en vez de usar @dotrino/proxy-client.",
+            "arreglo": "Sustituir la clase WebSocket propia por @dotrino/proxy-client para conectar y enrutar mensajes por token/pubkey."
+          },
+          {
+            "regla": "sealed",
+            "archivo": "app.js",
+            "linea": 392,
+            "porque": "Manda mensajes dirigidos (SDP/ICE) en claro por el proxy sin sendSealed ni requireSealed en ninguna parte del repo.",
+            "arreglo": "Migrar a @dotrino/proxy-client y usar sendSealed() con requireSealed: true para el intercambio de señalización."
+          },
+          {
+            "regla": "pillars",
+            "archivo": "index.html",
+            "linea": 113,
+            "porque": "Es un modal de compartir armado a mano (HTML/CSS/JS propios) en vez de usar el componente <dotrino-share> del ecosistema.",
+            "arreglo": "Reemplazar el modal #qrModal por <dotrino-share> para mostrar el QR y la URL."
+          },
+          {
+            "regla": "english",
+            "archivo": "sw.js",
+            "linea": 34,
+            "porque": "Es un identificador de código (variable) en español; el código debe ir en inglés.",
+            "arreglo": "Renombrar a isNavigation."
+          },
+          {
+            "regla": "plain",
+            "archivo": "index.html",
+            "linea": 10,
+            "porque": "La meta description es copy pública y usa argot técnico prohibido ('proxy', 'peers') en vez de explicar el beneficio.",
+            "arreglo": "Decir algo como 'nadie más que tú y quien recibe ve el archivo; solo se conectan directo entre sí'."
+          }
+        ]
+      },
+      "rojos": 7
     },
     {
       "repo": "dotrino-remote-agent",
@@ -3994,19 +4156,60 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "No hay copy de usuario en este repo (es middleware sin UI/CLI propia, lo consumen dotrino-terminal y dotrino-ia), así que voseo y plain no aplican aquí. Sobre sealed: el repo NO usa sendSealed()/requireSealed de @dotrino/proxy-client, pero cifra el payload DATA por su cuenta (e2e.js: seal/open con AES-GCM) antes de sendByPubkey, que es la excepción explícita de la regla — se anota, no se reporta como hallazgo.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/client.js",
+            "linea": 73,
+            "porque": "un throw new Error es diagnóstico de la librería (no copy de usuario) y debe ir en inglés; se repite en las líneas 73, 119, 120 y 121 de este archivo.",
+            "arreglo": "traducir los mensajes de error al inglés, p. ej. 'missing target agent address'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/agent.js",
+            "linea": 89,
+            "porque": "el error que lanza startRemoteAgent() es diagnóstico para quien integra la librería, no copy de usuario, y debe ir en inglés.",
+            "arreglo": "usar algo como 'this machine is not linked yet — run enroll() first'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/agent.js",
+            "linea": 214,
+            "porque": "el campo error de los mensajes de protocolo ra.error viaja al otro extremo del wire y debe ir en inglés; se repite en las líneas 214, 218, 221, 222, 245 y 248.",
+            "arreglo": "traducir los strings de error del protocolo al inglés, p. ej. 'incomplete handshake'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/agent.js",
+            "linea": 239,
+            "porque": "son trazas de arranque/operación del agente (van a consola/daemon), no copy de una CLI interactiva, y deben ir en inglés; se repite en las líneas 268 y 285.",
+            "arreglo": "usar mensajes de log en inglés, p. ej. 'session authorized', 'agent revoked by vault', 'agent ready'."
+          },
+          {
+            "regla": "pillars",
+            "archivo": "e2e.js",
+            "linea": 37,
+            "porque": "reimplementa a mano ECDH+HKDF+AES-GCM para el canal de sesión en vez de usar las primitivas de sellado que ya expone @dotrino/identity/content (wrapForMember/openWrap), las mismas que @dotrino/proxy-client/sealing.js envuelve para cifrar mensajes dirigidos.",
+            "arreglo": "levantar el secreto de sesión con las primitivas de @dotrino/identity/content en vez de crypto.subtle propio."
+          }
+        ]
+      },
+      "rojos": 5
     },
     {
       "repo": "dotrino-reputation",
@@ -4054,19 +4257,53 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "no se abrieron server/node_modules, node_modules, DEPLOY.md ni SELF-HOSTING.md (docs, exentos de las reglas de copy/código); no hay UI ni landing en este repo, por lo que la regla plain no aplica; no se detectó uso de @dotrino/proxy-client ni de criptografía propia fuera del server (verificación de firma en el servidor está exenta por la regla pillars).",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "server/server.js",
+            "linea": 94,
+            "porque": "los mensajes de error de la API HTTP/JSON (campo `error`) son mensajes de protocolo para quien consume el servicio, no copy de una UI; van en español en más de 60 sitios del archivo",
+            "arreglo": "traducir los mensajes de `error` al inglés, p.ej. 'you cannot rate yourself'"
+          },
+          {
+            "regla": "english",
+            "archivo": "server/server.js",
+            "linea": 393,
+            "porque": "es una traza de arranque al log del proceso, no copy de usuario, y está en español",
+            "arreglo": "usar inglés, p.ej. 'listening on :${PORT}'"
+          },
+          {
+            "regla": "english",
+            "archivo": "src/index.js",
+            "linea": 45,
+            "porque": "son mensajes de `throw new Error` que llegan a quien integra la librería (consola/issue), y están en español en 24 sitios del archivo",
+            "arreglo": "traducir los mensajes de error al inglés, p.ej. 'no fetch available; inject it via opts.fetch'"
+          },
+          {
+            "regla": "english",
+            "archivo": "src/subject.js",
+            "linea": 80,
+            "porque": "mensajes de `throw new Error` de una función de librería, en español, en 8 sitios del archivo",
+            "arreglo": "traducir al inglés, p.ej. 'subjectRef profile: a P-256 JWK is required'"
+          }
+        ]
+      },
+      "rojos": 4
     },
     {
       "repo": "dotrino-reputation-app",
@@ -4129,12 +4366,12 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
@@ -4146,7 +4383,20 @@
         }
       ],
       "vivo": null,
-      "auditoria": null,
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "Repo pequeño y sin carpetas web/, lib/, agent/ ni server/; se revisó todo el código fuente propio (src/ e index.html). No se encontró WebSocket, crypto.subtle, sendByPubkey ni almacenes/UI caseros: usa @dotrino/identity, @dotrino/store, @dotrino/reputation, @dotrino/topbar y @dotrino/install correctamente.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/services/identity.js",
+            "linea": 9,
+            "porque": "Es una traza de diagnóstico en un catch (console.warn), no copy de interfaz, y está en español en vez de inglés.",
+            "arreglo": "console.warn('[identity] vault unreachable:', e && e.message)"
+          }
+        ]
+      },
       "rojos": 4
     },
     {
@@ -4195,19 +4445,46 @@
         },
         "auditoria": {
           "aplica": true,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "existe": true,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "rojo": true
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [],
       "vivo": null,
-      "auditoria": null,
-      "rojos": 1
+      "auditoria": {
+        "por": "seyacat",
+        "modelo": "sonnet",
+        "notas": "Repo es un relay backend puro (results.dotrino.com), sin UI, CLI ni i18n propios, así que voseo y plain no tienen dónde aplicar; signature.js/sign.js implementan ECDSA a mano pero es el lado servidor del protocolo de identidad (verifica sobres de vault y firma con clave de servicio propia), lo cual está explícitamente exceptuado de pillars/sealed.",
+        "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "server/server.js",
+            "linea": 52,
+            "porque": "Las trazas de arranque/diagnóstico van a la consola en español; se repite en líneas 140, 180 y 184 (cambio(s), proveedores, escuchando en).",
+            "arreglo": "Traducir los logs a inglés, p.ej. 'refresh: N matches merged'."
+          },
+          {
+            "regla": "english",
+            "archivo": "server/server.js",
+            "linea": 131,
+            "porque": "Los mensajes de error del protocolo HTTP (falta data, firma inválida, no autorizado, sobre vencido, competición no coincide, matches debe ser un arreglo, demasiadas solicitudes) van en español, e inconsisten con los de readBody (líneas 118 y 123) que sí están en inglés; se repite en líneas 132, 133, 135, 137, 138, 161 y 167.",
+            "arreglo": "Usar mensajes de error en inglés uniformes, p.ej. 'missing data', 'invalid signature', 'unauthorized'."
+          },
+          {
+            "regla": "english",
+            "archivo": "server/sign.js",
+            "linea": 22,
+            "porque": "Los logs de fallo/arranque de la clave de servicio van en español; se repite en líneas 30 y 32.",
+            "arreglo": "Traducir a inglés, p.ej. 'invalid RESULTS_PRIVATE_JWK, ignoring'."
+          }
+        ]
+      },
+      "rojos": 3
     },
     {
       "repo": "dotrino-share",
