@@ -1,8 +1,8 @@
 {
-  "generado": "2026-08-30T08:16:11-0500",
+  "generado": "2026-08-30T22:25:59-0500",
   "fecha": "2026-08-30",
   "por": "seyacat",
-  "commit": "83994cd",
+  "commit": "aafbdac",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -71,7 +71,7 @@
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.54.1",
+    "@dotrino/vaultd": "0.55.0",
     "@dotrino/vault": "0.35.0",
     "@dotrino/verifier": "0.1.0",
     "wallet": "0.2.0",
@@ -80,7 +80,7 @@
     "@dotrino/env": "0.33.2",
     "@dotrino/inspector": "0.2.0",
     "dotrino-passmanager": "0.7.0",
-    "@dotrino/passmanager-extension": "0.31.0",
+    "@dotrino/passmanager-extension": "0.32.0",
     "@dotrino/passmanager": "0.9.0"
   },
   "enNpm": {},
@@ -1681,8 +1681,8 @@
       "subdominio": null,
       "paquete": "@dotrino/geo",
       "version": "0.2.2",
-      "commit": "1168dee",
-      "fecha": "2026-08-29",
+      "commit": "a4153aa",
+      "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [
         "@dotrino/identity"
@@ -1696,10 +1696,10 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 0,
-          "commits": 4,
+          "dias": 45,
+          "commits": 6,
           "tope": false,
-          "rojo": false
+          "rojo": true
         },
         "portada": {
           "aplica": false,
@@ -1722,7 +1722,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-29",
+          "fecha": "2026-08-30",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -1735,46 +1735,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Este repo es un paquete cliente + servidor (geo.dotrino.com) sin UI ni i18n/locales ni landing, así que las reglas voseo y plain no encuentran superficie real donde aplicar (no hay copy de usuario ni portada pública); server/signature.js hace verificación ECDSA propia con node:crypto, pero es el lado servidor de un protocolo verificando firmas ya hechas por @dotrino/identity, cae en la excepción explícita y no se reporta; @dotrino/proxy-client no se usa en ningún .js del repo (solo se menciona e",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "src/index.js",
-            "linea": 40,
-            "porque": "los mensajes de throw new Error están en español en vez de inglés; se repite en 6 sitios (líneas 40, 43, 97, 130, 131, 159)",
-            "arreglo": "traducir todos los mensajes de error a inglés, p.ej. 'signData and getPublicKeyJwk are required'"
-          },
-          {
-            "regla": "english",
-            "archivo": "server/server.js",
-            "linea": 268,
-            "porque": "logs de arranque y diagnóstico en español; se repite en 7 líneas (177, 257, 258, 268, 286, 291, 294)",
-            "arreglo": "traducir todos los console.log/warn/error de este archivo a inglés"
-          },
-          {
-            "regla": "english",
-            "archivo": "server/here.js",
-            "linea": 133,
-            "porque": "los mensajes de error de la API HTTP (protocolo) están en español; se repite en unas 16 respuestas de error de este archivo",
-            "arreglo": "traducir los mensajes de error de la API a inglés, p.ej. 'missing data'"
-          },
-          {
-            "regla": "english",
-            "archivo": "server/server.js",
-            "linea": 92,
-            "porque": "igual que en here.js, mensajes de error/protocolo HTTP en español; se repite en unas 19 respuestas de este archivo",
-            "arreglo": "traducir los mensajes de error de la API a inglés"
-          },
-          {
-            "regla": "english",
-            "archivo": "package.json",
-            "linea": 4,
-            "porque": "el campo description del paquete (leído por npm y por quien busca la librería) está en español; lo mismo pasa en server/package.json:4",
-            "arreglo": "traducir la descripción del paquete a inglés en ambos package.json"
-          }
-        ]
+        "notas": "El repo es una librería cliente (src/) + servidor HTTP/PostGIS (server/) sin UI, landing ni i18n, así que las reglas voseo y plain no tienen superficie aplicable. server/signature.js:38-52 verifica firmas ECDSA con node:crypto en el servidor en vez de @dotrino/identity, pero como es verificación server-side de claves ajenas (no firma con identidad propia) queda en el límite de la regla pillars y no se reporta por duda razonable.",
+        "hallazgos": []
       },
-      "rojos": 5
+      "rojos": 1
     },
     {
       "repo": "dotrino-gridgame",
@@ -1890,8 +1854,8 @@
       "subdominio": "gymbro.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "c9764f8",
-      "fecha": "2026-08-24",
+      "commit": "216a03a",
+      "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "GymBro Timer",
         "url": "https://gymbro.dotrino.com/",
@@ -1909,17 +1873,17 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 10,
-          "commits": 3,
+          "dias": 45,
+          "commits": 4,
           "tope": false,
-          "rojo": false
+          "rojo": true
         },
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-07-26",
+          "fecha": "2026-08-30",
           "dias": 0,
-          "commits": 2,
+          "commits": 0,
           "tope": false,
           "rojo": false
         },
@@ -1927,7 +1891,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-06-18",
-          "dias": 67,
+          "dias": 73,
           "commits": null,
           "tope": false,
           "rojo": true
@@ -1935,7 +1899,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-28",
+          "fecha": "2026-08-30",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -1948,16 +1912,8 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Repo pequeño y estático (sin src/, lib/, i18n): revisé index.html, sw.js, README.md, manifest.webmanifest, .npmrc, .github/workflows/pages.yml y robots.txt, que es todo el contenido relevante. No hay uso de WebSocket, crypto, proxy-client ni almacenamiento propio de contenido de usuario (el localStorage solo guarda config/estado local del timer, uso permitido); el topbar usa <dotrino-topbar> del ecosistema correctamente, y no hay logs ni mensajes de error con texto (los catch son silenciosos).",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "index.html",
-            "linea": 385,
-            "porque": "Casi todos los nombres de función y variable del script (más de 25: cargarCfg, guardarCfg, guardarEstado, limpiarEstado, avisoCuenta, avisoCambio, avisoFin, vibrar, pedirNotif, notificar, pedirWake, soltarWake, primeraFase, siguienteFase, entrarFase, terminar, pararTick, arrancarTick, elTiempoActivo, iniciar, pausar, reiniciar, saltar, ajustar, esFaseActiva, ajustarVivo, abrirConfig, cerrarConfig,",
-            "arreglo": "Renombrar a inglés: loadConfig, saveConfig, saveState, nextPhase, enterPhase, stopTick, startTick, start, pause, reset, etc."
-          }
-        ]
+        "notas": "Repo estático y pequeño (landing/PWA sin backend); no hay src/, i18n/ ni mensajería dirigida, así que las reglas english/plain/sealed tienen poca superficie donde fallar.",
+        "hallazgos": []
       },
       "rojos": 2
     },
@@ -1969,8 +1925,8 @@
       "subdominio": "here.dotrino.com",
       "paquete": "here",
       "version": "0.0.0",
-      "commit": "3edaddf",
-      "fecha": "2026-08-29",
+      "commit": "6e29e46",
+      "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "here",
         "url": "https://here.dotrino.com/",
@@ -1992,17 +1948,17 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 13,
-          "commits": 9,
+          "dias": 45,
+          "commits": 13,
           "tope": false,
-          "rojo": false
+          "rojo": true
         },
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-07-16",
-          "dias": 13,
-          "commits": 12,
+          "fecha": "2026-08-30",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "rojo": false
         },
@@ -2010,7 +1966,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-06-18",
-          "dias": 72,
+          "dias": 73,
           "commits": null,
           "tope": false,
           "rojo": true
@@ -2018,9 +1974,9 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-29",
+          "fecha": "2026-08-30",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "rojo": false
         }
@@ -2037,32 +1993,46 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No se encontró WebSocket, crypto.subtle, sendByPubkey/sendSealed reales en el código (solo un TODO en comentario en circles.js:135), ni @dotrino/proxy-client como dependencia, así que la regla 'sealed' no aplica todavía: no hay envío dirigido de datos de usuario implementado. El cifrado de la clave del círculo usa identity.encrypt del vault (correcto, no reimplementa cripto). El topbar, perfil y reputación usan los paquetes @dotrino/* correspondientes. No se revisó tests/e2e/here.spec.js ni publ",
+        "notas": "No se reportó la regla sealed: sendByPubkey solo aparece mencionado en un comentario TODO (circles.js:134-137), no hay código ejecutable que use send/sendByPubkey hoy, así que no hay una infracción real que evaluar todavía.",
         "hallazgos": [
           {
             "regla": "english",
+            "archivo": "public/sw.js",
+            "linea": 37,
+            "porque": "código real del service worker con nombre de variable en español; el resto del archivo usa inglés",
+            "arreglo": "renombrar a isNavigation"
+          },
+          {
+            "regla": "english",
             "archivo": "src/lib/identity.js",
-            "linea": 106,
-            "porque": "es un mensaje de error (throw) en español; según §8.1 los logs/errores deben ir en inglés aunque el resto del archivo tenga comentarios en español",
-            "arreglo": "usar throw new Error('postRevokeToBridge: missing circleId/nonce'); mismo patrón para las otras 4 apariciones del archivo (líneas 25, 74, 124, 139)"
+            "linea": 105,
+            "porque": "mensaje de error de código (body.error) en español, mientras el resto de errores de la misma función van en inglés",
+            "arreglo": "usar 'no vault' o 'vault not connected'"
           },
           {
-            "regla": "english",
+            "regla": "plain",
+            "archivo": "index.html",
+            "linea": 16,
+            "porque": "meta description pública que usa jerga interna del ecosistema ('pilar geo') en vez de explicar el beneficio; se repite en la línea 46 (JSON-LD)",
+            "arreglo": "quitar la referencia a 'pilar' y describir el beneficio directamente, p.ej. 'comparte tu ubicación de forma privada con tu familia'"
+          },
+          {
+            "regla": "plain",
+            "archivo": "src/lib/i18n.js",
+            "linea": 56,
+            "porque": "label visible al usuario en la pantalla de config (ConfigView.vue:40) con abreviatura técnica cripto ('cert') sin traducir a un concepto entendible",
+            "arreglo": "usar solo 'Contraseña' o explicar sin jerga, p.ej. 'Contraseña (clave de acceso del dispositivo)'"
+          },
+          {
+            "regla": "pillars",
             "archivo": "src/lib/circles.js",
-            "linea": 84,
-            "porque": "mensajes de error en español (throw new Error); deben ir en inglés al ser diagnóstico de máquina/consola, no copy de usuario",
-            "arreglo": "usar throw new Error('encryptCircleKey: missing circleKey') y equivalente en las otras 2 apariciones del archivo (líneas 86 y 99)"
-          },
-          {
-            "regla": "english",
-            "archivo": "src/lib/reputation.js",
-            "linea": 18,
-            "porque": "console.warn es log de diagnóstico y debe ir en inglés, no en español",
-            "arreglo": "usar console.warn('[here] reputation unreachable:', e && e.message)"
+            "linea": 170,
+            "porque": "almacén propio en localStorage para el contenido del usuario (círculos, miembros, dispositivos, claves) en vez de @dotrino/store; el propio código lo marca como TODO pendiente pero es el comportamiento real y activo hoy",
+            "arreglo": "migrar la persistencia de círculos a @dotrino/store como ya indica el TODO del propio archivo"
           }
         ]
       },
-      "rojos": 5
+      "rojos": 8
     },
     {
       "repo": "dotrino-home",
@@ -2151,8 +2121,8 @@
       "subdominio": "ia.dotrino.com",
       "paquete": "dotrino-ia",
       "version": "0.1.0",
-      "commit": "eb89db4",
-      "fecha": "2026-08-29",
+      "commit": "828e22d",
+      "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "Dotrino IA",
         "url": "https://ia.dotrino.com/",
@@ -2179,8 +2149,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 1,
           "tope": false,
           "rojo": false
         },
@@ -2188,8 +2158,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 44,
-          "commits": 42,
+          "dias": 45,
+          "commits": 43,
           "tope": false,
           "rojo": true
         },
@@ -2197,7 +2167,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-19",
-          "dias": 41,
+          "dias": 42,
           "commits": null,
           "tope": false,
           "rojo": true
@@ -2205,7 +2175,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-29",
+          "fecha": "2026-08-30",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -2224,18 +2194,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No se abrieron package-lock.json, PLAN.md/CHECKLIST.md (docs, exentos de voseo/english) ni las plantillas Docker/Podman en detalle; el uso de @dotrino/proxy-client, @dotrino/topbar, @dotrino/reputation e @dotrino/identity en src/ y agent/ es siempre delegado a los pilares, sin reimplementación propia detectada.",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "public/sw.js",
-            "linea": 33,
-            "porque": "Identificador de código en español, mezclado con el resto de nombres en inglés del mismo archivo (CACHE, ASSETS, cached, network).",
-            "arreglo": "Renombrar a isNavigation."
-          }
-        ]
+        "notas": "No se abrieron agent/templates/Dockerfile, docker-compose.yml, .dockerignore, .containerignore, .gitignore (plantillas simétricas a las de Podman ya revisadas) ni el contenido completo de PLAN.md/README.md/CHECKLIST.md (documentos de diseño, exentos de las 5 reglas). El repo real (src/, agent/, index.html, configs) no presenta voseo, código en español, jerga técnica en copy pública, reimplementaciones de pilares ni envío sin sellar: usa @dotrino/identity, @dotrino/remote-agent, @dotrino/topbar, ",
+        "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 3
     },
     {
       "repo": "dotrino-identity",
@@ -2245,8 +2207,8 @@
       "subdominio": null,
       "paquete": "@dotrino/identity",
       "version": "0.62.0",
-      "commit": "02c1fe0",
-      "fecha": "2026-08-29",
+      "commit": "83c57aa",
+      "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -2258,8 +2220,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 42,
-          "commits": 74,
+          "dias": 45,
+          "commits": 79,
           "tope": false,
           "rojo": true
         },
@@ -2284,7 +2246,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-29",
+          "fecha": "2026-08-30",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -2297,53 +2259,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No se abrieron los tests ni vault/vendor/ (copias vendorizadas de @dotrino/vault y @dotrino/proxy-client), tratados como código de terceros/generado según las instrucciones.",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "vault/core.js",
-            "linea": 1140,
-            "porque": "los mensajes de error que lanza la librería (leídos por quien programa/depura, no por el usuario final) están en español en vez de inglés; se repite en 5 sitios de este archivo ('perfil bloqueado' x2 en 1140/1149, 'perfil no existe' x3 en 1434/1440/1451) más 2 console.warn en español (593, 2317).",
-            "arreglo": "traducir esos throw new Error/console.warn a inglés, p. ej. 'profile locked' / 'profile does not exist'."
-          },
-          {
-            "regla": "english",
-            "archivo": "vault/core.js",
-            "linea": 2181,
-            "porque": "el mismo throw new Error mezcla inglés y español, con una frase completa de instrucciones que además parece dirigida al usuario final incrustada en un mensaje de error de la librería.",
-            "arreglo": "dejar el mensaje de error íntegro en inglés; si hace falta explicarle algo al usuario, que lo resuelva la copy de la app que consume la librería, no el texto del Error."
-          },
-          {
-            "regla": "english",
-            "archivo": "vault/remote.js",
-            "linea": 213,
-            "porque": "mensaje de error en español en un archivo cuyo resto de errores está en inglés; se repite también en 248 ('faltan datos de emparejamiento') y 301 ('faltan datos del dispositivo').",
-            "arreglo": "traducir los tres mensajes a inglés, en línea con el resto de throw new Error del archivo."
-          },
-          {
-            "regla": "english",
-            "archivo": "vault/acta.js",
-            "linea": 278,
-            "porque": "varios throw new Error de este archivo están en español mientras el resto del módulo usa inglés; se repite en 318 ('falta la pubkey del miembro'), 412 ('falta el nonce'), 427 ('cambio desconocido: ' + ch?.op) y 462 ('no hay capacidades que quitar').",
-            "arreglo": "traducir esos 5 mensajes a inglés."
-          },
-          {
-            "regla": "english",
-            "archivo": "vault/capabilities.js",
-            "linea": 158,
-            "porque": "mensaje de error en español; también en la línea 181 ('signWithDevice: con privateKey (CryptoKey) se requiere publickey').",
-            "arreglo": "traducir ambos mensajes a inglés."
-          },
-          {
-            "regla": "english",
-            "archivo": "vault/content.js",
-            "linea": 57,
-            "porque": "mensaje de error en español; se repite en la línea 58 ('el miembro no tiene llave de cifrado').",
-            "arreglo": "traducir ambos mensajes a inglés."
-          }
-        ]
+        "notas": "vault/vendor/proxy-client/client.js contiene varios throw new Error en español (líneas 366, 427, 430, 437, 844), pero es una copia vendorizada literal de @dotrino/proxy-client (tercero, documentado en vault/vendor/vault/VERSION.txt), así que no se reporta como hallazgo propio de este repo. Sobre la regla `sealed`: sendByPubkey/send se usan sin sendSealed/requireSealed, pero todo el contenido sensible del usuario (perfil, mensajes, clave de contenido) se cifra E2E por cuenta propia con ECDH+AES-G",
+        "hallazgos": []
       },
-      "rojos": 7
+      "rojos": 1
     },
     {
       "repo": "dotrino-index",
@@ -2353,7 +2272,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "83994cd",
+      "commit": "aafbdac",
       "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [],
@@ -2367,15 +2286,15 @@
           "existe": true,
           "fecha": "2026-08-28",
           "dias": 2,
-          "commits": 4,
+          "commits": 6,
           "tope": false,
           "rojo": false
         },
         "portada": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-08-29",
-          "dias": 1,
+          "fecha": "2026-08-30",
+          "dias": 0,
           "commits": 1,
           "tope": false,
           "rojo": false
@@ -2394,7 +2313,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 1,
-          "commits": 3,
+          "commits": 5,
           "tope": false,
           "rojo": false
         }
@@ -2511,8 +2430,8 @@
       "subdominio": "install.dotrino.com",
       "paquete": "@dotrino/install",
       "version": "0.3.1",
-      "commit": "e45069f",
-      "fecha": "2026-08-24",
+      "commit": "d9cda73",
+      "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "Instalar",
         "url": "https://install.dotrino.com/",
@@ -2530,8 +2449,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-24",
-          "dias": 0,
-          "commits": 0,
+          "dias": 6,
+          "commits": 1,
           "tope": false,
           "rojo": false
         },
@@ -2539,8 +2458,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-24",
-          "dias": 0,
-          "commits": 2,
+          "dias": 6,
+          "commits": 3,
           "tope": false,
           "rojo": false
         },
@@ -2548,15 +2467,15 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-27",
-          "dias": 28,
+          "dias": 34,
           "commits": null,
           "tope": false,
-          "rojo": false
+          "rojo": true
         },
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-29",
+          "fecha": "2026-08-30",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -2569,16 +2488,8 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No se abrió README.md completo (solo se grepeó buscando WebSocket/crypto/sendByPubkey, sin coincidencias); no hay src/agent/server con lógica de red o cifrado propia que auditar para pillars/sealed en este repo.",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "test/smoke.mjs",
-            "linea": 130,
-            "porque": "la salida diagnóstica de los tests (mensajes de fail() en líneas 59-117 y los console.log/console.error de resumen en 127-131) está en español; es texto para diagnosticar un fallo de CI, no copy de usuario",
-            "arreglo": "traducir los mensajes de fail() y el resumen final al inglés (p. ej. \"should be hidden without a prompt on desktop\", \"failure(s)\", \"All OK\")"
-          }
-        ]
+        "notas": "Repo pequeño (paquete @dotrino/install + landing de instalación); se revisaron todos los archivos funcionales (src/*, web/install.sh, web/install.ps1, web/index.html, package.json, test/smoke.mjs). No se abrió README.md por estar explícitamente excluido de las 5 reglas. test/smoke.mjs importa playwright desde una ruta relativa a otro repo hermano (../../dotrino-store/node_modules/...), lo cual es llamativo pero no corresponde a ninguna de las 5 reglas auditadas.",
+        "hallazgos": []
       },
       "rojos": 1
     },
@@ -2936,8 +2847,8 @@
       "subdominio": "mundial.dotrino.com",
       "paquete": "dotrino-mundial",
       "version": "0.1.0",
-      "commit": "066bd3b",
-      "fecha": "2026-08-29",
+      "commit": "ff7540c",
+      "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -2954,19 +2865,19 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 0,
-          "commits": 8,
+          "dias": 45,
+          "commits": 9,
           "tope": false,
-          "rojo": false
+          "rojo": true
         },
         "portada": {
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 0,
-          "commits": 11,
+          "dias": 45,
+          "commits": 12,
           "tope": false,
-          "rojo": false
+          "rojo": true
         },
         "catalogo": {
           "aplica": false,
@@ -2999,23 +2910,8 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "El repo es un solo paquete frontend (Vue+Vite), no un monorepo: no existen web/src, agent/, server/ ni docs/ mencionados en la guía. No se usa @dotrino/proxy-client directamente en el código (solo transitiva de @dotrino/identity) ni ninguna función send/sendByPubkey/sendSealed, por lo que la regla sealed no aplica. crypto.subtle en src/lib/feed.js solo verifica la firma de un feed externo pineado (no es cifrado/firma de identidad propia), así que no se cuenta como incumplimiento de pillars.",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "src/lib/feed.js",
-            "linea": 46,
-            "porque": "es un log de diagnóstico (traza de fallo de verificación), no copy que lee el usuario, y debe ir en inglés",
-            "arreglo": "console.warn('official feed: invalid signature (discarded)')"
-          },
-          {
-            "regla": "english",
-            "archivo": "src/services/identity.js",
-            "linea": 9,
-            "porque": "es un log de diagnóstico con prefijo de módulo, va a la consola del navegador, no es interfaz del usuario",
-            "arreglo": "console.warn('[identity] vault unreachable:', e && e.message)"
-          }
-        ]
+        "notas": "feed.js verifica con crypto.subtle.verify (ECDSA) la firma de un feed público de results.dotrino.com, no identidad de usuario ni cifrado dirigido; no lo cuento como reimplementación del pilar identity porque no hay duda razonable. No se encontró código de servidor/agente, i18n externo, ni WebSocket propio; el repo es pequeño (10 archivos en src/) y se revisó por completo.",
+        "hallazgos": []
       },
       "rojos": 3
     },
@@ -3027,8 +2923,8 @@
       "subdominio": "myip.dotrino.com",
       "paquete": "myip",
       "version": "0.1.0",
-      "commit": "64de0f5",
-      "fecha": "2026-08-29",
+      "commit": "4076b36",
+      "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "Mi IP",
         "url": "https://myip.dotrino.com/",
@@ -3051,8 +2947,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 1,
           "tope": false,
           "rojo": false
         },
@@ -3060,8 +2956,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 44,
-          "commits": 11,
+          "dias": 45,
+          "commits": 12,
           "tope": false,
           "rojo": true
         },
@@ -3069,7 +2965,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-15",
-          "dias": 45,
+          "dias": 46,
           "commits": null,
           "tope": false,
           "rojo": true
@@ -3096,18 +2992,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Repo pequeño y consistente: i18n en tuteo correcto, topbar/identity/reputation usan los paquetes @dotrino/* sin reimplementar, no hay mensajería dirigida (sendByPubkey/sendSealed) que auditar para §4.1. No revisé public/ ni .github/workflows por ser config/estáticos sin código de app.",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "src/services/identity.js",
-            "linea": 15,
-            "porque": "Es un log de diagnóstico (consola de arranque/fallo), y por §8.1 debe ir en inglés",
-            "arreglo": "console.warn('[identity] vault unreachable:', e && e.message)"
-          }
-        ]
+        "notas": "El repo no usa @dotrino/proxy-client ni mensajería dirigida, así que la regla sealed no aplica aquí; el resto de reglas se cumple consistentemente.",
+        "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 3
     },
     {
       "repo": "dotrino-nav",
@@ -3117,8 +3005,8 @@
       "subdominio": null,
       "paquete": "@dotrino/nav",
       "version": "0.3.0",
-      "commit": "3fad4d6",
-      "fecha": "2026-08-22",
+      "commit": "f1480ed",
+      "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -3130,8 +3018,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-22",
-          "dias": 0,
-          "commits": 0,
+          "dias": 8,
+          "commits": 1,
           "tope": false,
           "rojo": false
         },
@@ -3169,18 +3057,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Repo muy pequeño (paquete @dotrino/nav): no hay proxy-client, WebSocket, crypto ni store propios, así que las reglas pillars y sealed no aplican aquí. Los comentarios JSDoc en español en index.js, vue.js, index.d.ts y vue.d.ts están permitidos (son comentarios de código, no identificadores ni logs). No se revisó README.md por estar excluido explícitamente de las cinco reglas.",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "test/smoke.mjs",
-            "linea": 245,
-            "porque": "los mensajes de log del test runner (resultado, error, resumen final) van en español; son diagnóstico de consola, no copy de usuario, y es justo lo que se pegaría en un issue.",
-            "arreglo": "usar 'expected', 'Page errors:', 'ALL TESTS PASSED' / 'TESTS FAILED' en los console.log de las líneas 245, 249 y 251."
-          }
-        ]
+        "notas": "Repo pequeño (paquete @dotrino/nav): src/index.js, src/vue.js, src/index.d.ts, src/vue.d.ts, package.json, README.md y test/smoke.mjs. No hay directorios web/, agent/, server/, locales/ ni i18n. No usa @dotrino/proxy-client, crypto.subtle ni almacenes propios, así que las reglas pillars/sealed no aplican a este código. El único texto de usuario es el label del chevron ('Volver'/'Back'), sin voseo; el resto de español es comentario o README, exento por instrucciones.",
+        "hallazgos": []
       },
-      "rojos": 1
+      "rojos": 0
     },
     {
       "repo": "dotrino-notifications",
@@ -3363,7 +3243,7 @@
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.7.0",
-      "commit": "8c6708e",
+      "commit": "1a9b443",
       "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "Contraseñas",
@@ -3387,7 +3267,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 1,
-          "commits": 14,
+          "commits": 15,
           "tope": false,
           "rojo": false
         },
@@ -3396,7 +3276,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 1,
-          "commits": 4,
+          "commits": 5,
           "tope": false,
           "rojo": false
         },
@@ -3414,7 +3294,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "rojo": false
         }
@@ -3568,8 +3448,8 @@
       "subdominio": "profile.dotrino.com",
       "paquete": "dotrino-profile-page",
       "version": "0.1.0",
-      "commit": "5639937",
-      "fecha": "2026-08-29",
+      "commit": "78aba9a",
+      "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "Perfil",
         "url": "https://profile.dotrino.com/",
@@ -3592,8 +3472,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 2,
           "tope": false,
           "rojo": false
         },
@@ -3601,8 +3481,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-24",
-          "dias": 5,
-          "commits": 3,
+          "dias": 6,
+          "commits": 5,
           "tope": false,
           "rojo": false
         },
@@ -3610,7 +3490,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-07-26",
-          "dias": 34,
+          "dias": 35,
           "commits": null,
           "tope": false,
           "rojo": false
@@ -3637,25 +3517,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Los campos 'nombres'/'apellidos'/'telefono'/'direccion' en src/main.js (CREATE_I18N) no se reportan: son claves definidas por el propio contrato de datos de @dotrino/identity (ver node_modules/@dotrino/identity/src/index.d.ts), no una decisión de esta app. No se encontró uso de WebSocket propio, crypto de firma/cifrado más allá de la verificación de firma ajena documentada como necesaria, sendByPubkey/send sin sellar, ni topbar/tarjeta de perfil hechas a mano; dist/ y node_modules/ se ignoraron ",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "public/sw.js",
-            "linea": 34,
-            "porque": "nombre de variable en español dentro del código del service worker; el código va en inglés",
-            "arreglo": "renombrar a isNavigation"
-          },
-          {
-            "regla": "english",
-            "archivo": "src/main.js",
-            "linea": 887,
-            "porque": "identificador de variable en español en el código (el parámetro de URL sí es 'return', en inglés)",
-            "arreglo": "renombrar la variable a returnUrl o backTo"
-          }
-        ]
+        "notas": "Repo pequeño y sin i18n/ ni web/, lib/, agent/ o server/: todo el código propio vive en src/main.js, src/qr.js e src/types.d.ts, más index.html y public/. La copy en español usa tuteo correcto en todas las cadenas de SV_I18N y CREATE_I18N, y no se detectó jerga prohibida en copy pública. verifySig() en src/main.js usa crypto.subtle directamente para verificar firmas ECDSA con solo la clave pública; se revisó la API pública de @dotrino/identity (index.d.ts) y no expone un verify equivalente sin e",
+        "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 1
     },
     {
       "repo": "dotrino-pronostico-mundialista",
@@ -5011,7 +4876,7 @@
       "subdominio": "test.dotrino.com",
       "paquete": "test",
       "version": "0.2.0",
-      "commit": "563ba56",
+      "commit": "7eb7e8f",
       "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [
@@ -5029,7 +4894,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 1,
-          "commits": 4,
+          "commits": 5,
           "tope": false,
           "rojo": false
         },
@@ -5038,7 +4903,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 1,
-          "commits": 6,
+          "commits": 7,
           "tope": false,
           "rojo": false
         },
@@ -5431,8 +5296,8 @@
       "stack": "vite",
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.54.1",
-      "commit": "6c0c797",
+      "version": "0.55.0",
+      "commit": "ea2d9e1",
       "fecha": "2026-08-30",
       "catalogo": {
         "nombre": "Dotrino Vault",
@@ -5457,7 +5322,7 @@
           "existe": true,
           "fecha": "2026-08-27",
           "dias": 3,
-          "commits": 9,
+          "commits": 22,
           "tope": false,
           "rojo": false
         },
@@ -5466,7 +5331,7 @@
           "existe": true,
           "fecha": "2026-08-26",
           "dias": 4,
-          "commits": 13,
+          "commits": 26,
           "tope": false,
           "rojo": false
         },
@@ -5645,8 +5510,8 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "0cad0d0",
-      "fecha": "2026-08-29",
+      "commit": "77d3ee6",
+      "fecha": "2026-08-30",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -5658,8 +5523,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-23",
-          "dias": 6,
-          "commits": 20,
+          "dias": 7,
+          "commits": 21,
           "tope": true,
           "rojo": false
         },
