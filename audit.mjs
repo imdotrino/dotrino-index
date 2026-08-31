@@ -202,6 +202,12 @@ deseables), la documentación, los mensajes de commit, y la **copy que lee el us
 (esa sigue la regla 1 y es bilingüe). Un identificador en inglés con un comentario en
 español al lado es exactamente lo que se espera.
 
+**Excepción del wiki (\`dotrino-wiki\`):** los **slugs de las páginas del wiki** están en
+español a propósito y **no se reportan** (\`/herramientas/contrasenas/\`,
+\`/vault/emparejar/\`), también los de la versión inglesa bajo \`/en/\`. Ahí la ruta
+identifica un documento, no código, y renombrarlas rompería los enlaces publicados. La
+excepción es solo del wiki: en las apps y los servicios las rutas van en inglés.
+
 **La frontera que hay que juzgar:** un texto que sirve para **diagnosticar** va en
 inglés; un texto que **es la interfaz** de la herramienta sigue la regla 1. Si un
 \`console.log\` es la salida que la CLI le muestra a quien la usa, es copy; si es una
