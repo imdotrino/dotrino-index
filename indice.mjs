@@ -427,6 +427,22 @@ function analizar (nombre, catalogo) {
     // lado, se da por cumplida (no se acusa a ciegas).
     wiki: REPOS_EN_WIKI ? REPOS_EN_WIKI.has(nombre) : true,
     npmrc: hay(dir, '.npmrc'),
+    // CUMPLIMIENTO §2: un paquete se publica DESDE CI, con publicación de confianza.
+    //
+    // Hasta el 2026-09-02 los 22 paquetes se publicaban a mano desde el portátil del
+    // dueño: quien los instalaba no tenía forma de comprobar de qué commit salían. Con
+    // `id-token: write` + `npm publish` en un workflow, npm cambia un credencial efímero
+    // por la identidad de la ejecución y firma la procedencia solo — sin ningún token
+    // guardado (`imdotrino` es una cuenta de usuario, así que no hay secretos de
+    // organización y con tokens habría que repetir el mismo en los 22 repos).
+    //
+    // Se mira el WORKFLOW, no el registro: que un paquete tenga procedencia en npm
+    // depende de si su última versión salió de aquí, y eso no se puede leer del disco.
+    // Lo que sí se puede afirmar es si el camino está montado.
+    oidc: (() => {
+      const w = textoDeWorkflows(dir)
+      return /npm\s+publish/.test(w) && /id-token:\s*write/.test(w)
+    })(),
     topbar: Boolean(etiqueta) || /@dotrino\/topbar/.test(texto) || Boolean(deps['@dotrino/topbar']),
     // §6.1: el botón de perfil es el atributo/propiedad `profile` del topbar.
     // `\b…\b` no confunde con `profileTheme` (no hay frontera de palabra ahí).
@@ -694,7 +710,18 @@ const esDesvioDeclarado = (repo, h) =>
  * Qué se le exige a ESTA pieza. Las exenciones no son mías: salen del doc.
  * Una app interna (§7) no se indexa → sin OG; y no va al catálogo público (§11.4).
  */
-const aplica = (p) => (APLICA[p.tipo] || []).filter(k =>
+const aplica = (p) => [
+  ...(APLICA[p.tipo] || []),
+  // PUBLICAR DESDE CI CUELGA DE PUBLICAR, no del tipo de pieza: `dotrino-content` es una
+  // `landing` que además publica a npm, y `dotrino-vault` también. La pregunta correcta
+  // es si esto sale al registro, no en qué cajón lo hemos puesto.
+  //
+  // Y se pregunta al REGISTRO (`--vivo`). Sin esa comprobación no se acusa a nadie, igual
+  // que con el wiki: un `package.json` sin `private: true` no significa que se publique
+  // —hay servicios que solo no lo pusieron— y dar eso por publicado señalaba a 54 repos,
+  // apps incluidas. Un indicador que grita en falso no lo mira nadie.
+  ...(p.publicado ? ['oidc'] : [])
+].filter((k, i, a) => a.indexOf(k) === i).filter(k =>
   !(p.interna && (k === 'og' || k === 'catalogo')) &&
   !(k === 'catalogo' && (p.repo === REPO_CATALOGO || !HAY_CATALOGO)) &&
   !EXCEPCIONES[p.repo]?.[k])
@@ -733,7 +760,8 @@ const ETIQUETA = {
   support: 'support (§6)', pwa: 'manifest PWA (§3)', sw: 'service worker (§3)',
   commitMeta: 'meta commit (§3)', seo: 'robots+sitemap (§7)', og: 'og.jpg (§10)',
   deploy: 'deploy (§11.3)', catalogo: 'en el catálogo (§11.4)',
-  wiki: 'documentación en el wiki (§9.2)'
+  wiki: 'documentación en el wiki (§9.2)',
+  oidc: 'publicar desde CI con confianza (CUMPLIMIENTO §2)'
 }
 
 // ─── red (opcional) ────────────────────────────────────────────────────────
@@ -1063,6 +1091,20 @@ const enNpm = {}
 if (VIVO) {
   const reales = await versionesNpm(Object.keys(pilares))
   for (const [k, v] of Object.entries(reales)) { enNpm[k] = v; if (v) pilares[k] = v }
+  // ¿QUÉ SE PUBLICA DE VERDAD? Lo dice el registro, no el `package.json`. `private:
+  // true` impide publicar, pero su ausencia no significa que se publique: hay servicios
+  // que simplemente no lo pusieron. Y al revés, `dotrino-content` se publica sin scope.
+  // Sin esto, la regla `oidc` acusaba a 54 repos, apps incluidas.
+  // SOLO LO QUE PUEDE SER NUESTRO. Preguntar por el nombre del `package.json` a secas
+  // da falsos positivos a montones: la app `sudoku` se llama `sudoku`, `critters` se
+  // llama `critters`, y esos nombres EXISTEN en npm siendo de otra gente. Se pregunta
+  // por lo que lleva nuestro scope o se llama igual que su repo; lo demás es una
+  // coincidencia de nombre, no un paquete nuestro.
+  const conPaquete = piezas.filter(p => p.paquete &&
+    (p.paquete.startsWith('@dotrino/') || p.paquete === p.repo))
+  const publicados = await versionesNpm([...new Set(conPaquete.map(p => p.paquete))])
+  for (const p of conPaquete) p.publicado = Boolean(publicados[p.paquete])
+
   const conDominio = piezas.filter(p => p.subdominio)
   const vivos = await Promise.all(conDominio.map(p => commitEnVivo(p.subdominio)))
   conDominio.forEach((p, i) => {
