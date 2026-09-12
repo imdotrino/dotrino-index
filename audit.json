@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-30T23:03:47-0500",
+  "generado": "2026-09-12T08:10:35-0500",
   "reglas": [
     "voseo",
     "english",
@@ -947,56 +947,32 @@
       "duracionMs": 25936
     },
     "dotrino-qrshare": {
-      "commit": "689c7e2",
-      "fecha": "2026-08-30",
+      "commit": "8aacf81",
+      "fecha": "2026-09-12",
       "por": "seyacat",
       "modelo": "sonnet",
       "hallazgos": [
         {
-          "regla": "pillars",
-          "archivo": "app.js",
-          "linea": 30,
-          "cita": "this.ws = new WebSocket(this.wsUrl); // wsUrl = 'wss://proxy.dotrino.com'",
-          "porque": "Es un cliente WebSocket casero que reimplementa a mano el protocolo del proxy de Dotrino (tokens, to/message) en vez de usar @dotrino/proxy-client.",
-          "arreglo": "Sustituir la clase WebSocket propia por @dotrino/proxy-client para conectar y enrutar mensajes por token/pubkey."
-        },
-        {
-          "regla": "sealed",
-          "archivo": "app.js",
-          "linea": 392,
-          "cita": "const msg = { to: [to], message: JSON.stringify(msgObj) }; ... this.ws.send(JSON.stringify(msg));",
-          "porque": "Manda mensajes dirigidos (SDP/ICE) en claro por el proxy sin sendSealed ni requireSealed en ninguna parte del repo.",
-          "arreglo": "Migrar a @dotrino/proxy-client y usar sendSealed() con requireSealed: true para el intercambio de señalización."
-        },
-        {
-          "regla": "pillars",
+          "regla": "plain",
           "archivo": "index.html",
-          "linea": 113,
-          "cita": "<div id=\"qrModal\" class=\"modal\"> ... <h2>Compartir Archivo</h2> <div id=\"qrContainer\"></div>",
-          "porque": "Es un modal de compartir armado a mano (HTML/CSS/JS propios) en vez de usar el componente <dotrino-share> del ecosistema.",
-          "arreglo": "Reemplazar el modal #qrModal por <dotrino-share> para mostrar el QR y la URL."
+          "linea": 10,
+          "cita": "El proxy solo descubre los peers; los archivos viajan directo entre dispositivos.",
+          "porque": "la meta description es copy pública y usa argot técnico prohibido (\"proxy\", \"peers\") en vez de explicar el beneficio",
+          "arreglo": "decir algo como \"tu archivo viaja directo a quien lo recibe, sin pasar por nuestros servidores\""
         },
         {
           "regla": "english",
           "archivo": "sw.js",
           "linea": 34,
           "cita": "const esNavegacion = e.request.mode === 'navigate' || e.request.destination === 'document';",
-          "porque": "Es un identificador de código (variable) en español; el código debe ir en inglés.",
-          "arreglo": "Renombrar a isNavigation."
-        },
-        {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 10,
-          "cita": "El proxy solo descubre los peers; los archivos viajan directo entre dispositivos.",
-          "porque": "La meta description es copy pública y usa argot técnico prohibido ('proxy', 'peers') en vez de explicar el beneficio.",
-          "arreglo": "Decir algo como 'nadie más que tú y quien recibe ve el archivo; solo se conectan directo entre sí'."
+          "porque": "es un identificador de código (variable) en español; el código debe ir en inglés",
+          "arreglo": "renombrar a isNavigation"
         }
       ],
-      "revisados": 5,
-      "notas": "No se abrieron los workflows de CI (.github/workflows/deploy-pages.yml) ni los binarios de icono; el resto de i18n no existe como carpeta separada porque toda la copy vive inline en app.js/index.html/manifest.webmanifest.",
-      "costoUSD": 0.24103040000000003,
-      "duracionMs": 82258
+      "revisados": 8,
+      "notas": "No existen carpetas de i18n/locales: toda la copy de usuario está hardcodeada en español dentro de app.js e index.html, y cumple tuteo correctamente. app.js usa @dotrino/proxy-client con sendSealed/requireSealed y logs en inglés separados de la copy en español; no se detectaron reimplementaciones de pilares ni mensajes sin sellar. El uso de sendByPubkey en test/sealed-signaling.e2e.mjs es un test que verifica el rechazo de mensajes sin sellar, no una infracción.",
+      "costoUSD": 0.5348452,
+      "duracionMs": 75238
     },
     "dotrino-remote-agent": {
       "commit": "ef8525e",

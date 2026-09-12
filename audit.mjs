@@ -19,14 +19,21 @@
  * el auditor decide volver a mirar: si discreparan, la página diría «atrasada» de
  * algo que este script considera al día.
  *
- * QUÉ REVISA. Cinco reglas que **no se pueden comprobar con un patrón** porque hay
+ * QUÉ REVISA. Seis reglas que **no se pueden comprobar con un patrón** porque hay
  * que leer y entender lo que dice el código:
  *
- *   voseo    §9    la copy de usuario en español va en tuteo, nunca en voseo
- *   english  §8.1  identificadores, nombres de archivo, rutas, claves y LOGS en inglés
- *   plain    §9.1  la copy pública se entiende sin saber de tecnología
- *   pillars  CLAUDE.md  nada de reimplementar a mano lo que ya hace un `@dotrino/*`
- *   sealed   §4.1  lo que se manda por mensaje dirigido va sellado, no en claro
+ *   voseo      §9    la copy de usuario en español va en tuteo, nunca en voseo
+ *   english    §8.1  identificadores, nombres de archivo, rutas, claves y LOGS en inglés
+ *   plain      §9.1  la copy pública se entiende sin saber de tecnología
+ *   pillars    CLAUDE.md  nada de reimplementar a mano lo que ya hace un `@dotrino/*`
+ *   sealed     §4.1  lo que se manda por mensaje dirigido va sellado, no en claro
+ *   duplicado  CLAUDE.md  la misma cosa escrita dos veces DENTRO del repo
+ *
+ * CADA ENTRADA ANOTA CONTRA QUÉ REGLAS SE AUDITÓ (`reglas` en `audit.json`). Sin eso,
+ * añadir una regla convertiría a los 67 repos ya auditados en limpios de algo que
+ * nunca se les miró, y el índice lo pintaría en verde: el repliegue mudo que
+ * `CLAUDE.md` prohíbe. A un repo al que le falte una regla le toca auditarse, igual
+ * que a uno atrasado.
  *
  * Un `grep` de «podés|tenés|vos» acierta la mitad y grita en falso dentro del código
  * y del inglés; y «este identificador está en español» o «esto es un cliente del
