@@ -41,7 +41,7 @@ que la pasada completa, salvo la fecha de medición de esos dos.
 
 ## La auditoría de convenciones (por IA)
 
-Cinco reglas del ecosistema **no se pueden comprobar con un patrón**: hay que leer
+Seis reglas del ecosistema **no se pueden comprobar con un patrón**: hay que leer
 y entender lo que dice el código. Un `grep` de «podés|tenés|vos» acierta la mitad y
 grita en falso dentro del código; y «este identificador está en español» o «esto es
 un cliente del proxio escrito a mano» no es un patrón, es una lectura. Eso lo hace
@@ -53,8 +53,15 @@ sin red, solo Read/Grep/Glob):
 | `voseo` (§9) | copy de usuario en español con voseo (*elegí, podés, acá*) |
 | `english` (§8.1) | identificadores, nombres de archivo, rutas y **logs** en español |
 | `plain` (§9.1) | jerga técnica en la copy pública |
-| `pillars` | un pilar `@dotrino/*` reimplementado a mano (cliente WebSocket casero, cripto propia, topbar o tarjeta de perfil armados a mano) |
+| `pillars` | cualquier paquete `@dotrino/*` reimplementado a mano (cliente WebSocket casero, cripto propia, un QR a mano, topbar o tarjeta de perfil armados a mano) |
 | `sealed` (§4.1) | `sendByPubkey`/`send` sin `sendSealed` + `requireSealed` |
+| `duplicado` | la misma cosa escrita dos veces **dentro del repo**: una función copiada, dos módulos que hacen lo mismo, un ayudante que rehace lo que ya exporta `utils` |
+
+`pillars` y `duplicado` no se pisan: **un hallazgo, una regla.** Si lo repetido es un
+`@dotrino/*` rehecho a mano, va en `pillars`; si no existe paquete para eso, va en
+`duplicado`. Y lo que `duplicado` **no puede ver** se dice en voz alta: el auditor lee
+un repo por vez, así que no sabe que el mismo ayudante está escrito también en otro.
+La duplicación **entre** repos sigue sin vigilar.
 
 ```bash
 node dotrino-index/audit.mjs --dry-run     # a quién le toca y por qué
@@ -80,6 +87,12 @@ El resultado vive en `audit.json` y **suma igual que `ecosistema.json`**: cada
 pasada reescribe los repos que auditó y deja los demás como estaban. `indice.mjs`
 solo lo lee — y lee de ahí también los umbrales, para no llamar «atrasada» a una
 auditoría que el auditor da por vigente.
+
+**Cada entrada anota contra qué reglas se auditó** (`reglas`), y esa es la diferencia
+entre *limpio en una regla* y *nunca se le pasó esa regla* — que sin el dato se veían
+iguales, las dos en verde. Al añadir una regla, todos los repos anteriores pasan a
+estar pendientes **de esa regla**, se dice en la tabla (`sin duplicado`) y se van
+llenando conforme a cada uno le toque; ninguno aprueba algo que nadie le miró.
 
 Las reglas van escritas **dentro de `audit.mjs`**, no leídas de
 `CONVENCIONES-APPS.md`: ese documento vive en el superrepo privado y un colaborador

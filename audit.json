@@ -1,11 +1,12 @@
 {
-  "generado": "2026-09-12T08:10:35-0500",
+  "generado": "2026-09-12T08:20:44-0500",
   "reglas": [
     "voseo",
     "english",
     "plain",
     "pillars",
-    "sealed"
+    "sealed",
+    "duplicado"
   ],
   "umbrales": {
     "commits": 10,
@@ -17,6 +18,13 @@
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 2,
       "notas": "El repo está en fase de diseño ('Estado: diseño, sin implementar'): solo existen README.md y docs/DISENO.md, ambos exentos de las reglas 1 (voseo), 2 (english) y 3 (plain) por ser README/docs. No hay src/, web/, lib/, agent/ ni server/, así que las reglas 4 (pillars) y 5 (sealed), que exigen código real usando WebSocket/crypto/proxy-client, no tienen dónde aplicarse.",
@@ -28,6 +36,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 14,
       "notas": "El repo es una app Android nativa (Kotlin/Compose), sin capa web/proxy/store propia del ecosistema Dotrino visible en el código; no se encontró uso de WebSocket, crypto de identidad ni mensajería dirigida, así que las reglas pillars y sealed no tuvieron dónde aplicar. El único voseo detectado ('mantené', LauncherScreen.kt:523) está en un comentario KDoc, exento por la regla. El naming heredado 'launcheroculto' (paquete/clase/tema) está documentado en el propio código como deuda ligada al applica",
@@ -39,6 +54,13 @@
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 18,
       "notas": "El repo es una cáscara nativa (Android Kotlin + iOS Swift) sin código JS/TS ni paquetes @dotrino/*: todo el contenido y la lógica del ecosistema viven en las páginas web cargadas dentro del WebView/WKWebView, así que las reglas pillars y sealed no tienen dónde aplicarse aquí. Copy de usuario (strings.xml, Localizable.strings, Info.plist) en tuteo correcto; código, rutas y comentarios cumplen la frontera inglés/español; no hay logs, throws ni copy pública con jerga técnica.",
@@ -50,6 +72,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 9,
       "notas": "Repo pequeño y autocontenido; se revisaron todos los archivos de src/, index.html, vite.config.js, package.json y public/robots.txt. No hay carpeta web/, lib/, agent/ ni server/ en este repo. Identidad y reputación se delegan correctamente a @dotrino/identity y @dotrino/reputation, y el topbar/install son los componentes oficiales; no hay WebSocket, crypto ni mensajería dirigida propios.",
@@ -61,6 +90,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 21,
       "notas": "dotrino-bots es un daemon headless (sin UI web, sin index.html, sin i18n/locales): revisé todo src/ (bots, core, transport, engines) más ecosystem.config.cjs. Los mensajes que los bots publican en el chat (brain.js, chat-bot.js) están en tuteo neutro y el propio system-prompt a DeepSeek prohíbe voseo explícitamente. Logs y errores (console.log/error, throw new Error) están en inglés en todos los archivos revisados; los comentarios en español son mayoría y están permitidos. transport.js usa @dotr",
@@ -72,6 +108,13 @@
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "sealed",
@@ -92,17 +135,59 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 17,
       "notas": "El repo ya pasó varias rondas de auditoría (ver git log); i18n.js, App.vue, lobbyController.js y los modales de identidad/perfil usan tuteo correcto y los pilares @dotrino/* (topbar, share, profile, proxy-client, identity, lobby, reputation) en vez de reimplementarlos. ConnectionPanel.vue y WSConnectionDemo.vue quedan como código huérfano (no se importan desde App.vue) con texto/demo del protocolo WS viejo, pero al no ser alcanzables por el usuario no los reporté como hallazgo — vale la pena que",
       "costoUSD": 0.7872849000000002,
       "duracionMs": 98314
     },
+    "dotrino-compat": {
+      "commit": "159d7ca",
+      "fecha": "2026-09-12",
+      "por": "seyacat",
+      "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicado"
+      ],
+      "hallazgos": [
+        {
+          "regla": "pillars",
+          "archivo": "src/advisory.js",
+          "linea": 81,
+          "cita": "await globalThis.crypto.subtle.importKey('jwk', privateJwk, { name: 'ECDSA', namedCurve: 'P-256' }, false, ['sign'])",
+          "porque": "signAdvisory/verifyAdvisory (líneas 79-101) implementan firma y verificación ECDSA propias con crypto.subtle en vez de usar @dotrino/identity, que es exactamente el patrón que la regla 4 prohíbe ('firma o cifrado propios ... en vez de @dotrino/identity'); @dotrino/compat no es el pilar de identidad, así que no aplica la excepción de 'el propio pilar hace lo suyo'.",
+          "arreglo": "delegar la firma y verificación de avisos en @dotrino/identity en vez de llamar a crypto.subtle directamente."
+        }
+      ],
+      "revisados": 9,
+      "notas": "Repo pequeño y ya inspeccionado por completo (src/, test/, package.json, README.md, release.yml); es una librería de funciones puras sin red, UI ni copy de usuario, por lo que voseo, plain y sealed no tienen superficie aplicable, y no se detectó duplicación interna real (con evidencia de dos sitios) ni texto no inglés en identificadores, rutas o mensajes de error.",
+      "costoUSD": 0.255779,
+      "duracionMs": 61477
+    },
     "dotrino-content": {
       "commit": "b14dd8d",
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 19,
       "notas": "Repo pequeño y bien alineado: CLI en tuteo consistente, logs/errores de red en inglés, landing (web/index.html) usa <dotrino-topbar> y copy sin jerga técnica, S3 y sendByPubkey solo aparecen en protocolo externo (S3) y en tests/docs (exentos). No se revisaron test/*.test.js, docs/DISENO.md, docs/HANDOFF.md, src/blobstore-s3.js ni lib/node_modules/@dotrino/* (vendored, terceros) por estar exentos o fuera de presupuesto.",
@@ -114,6 +199,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 17,
       "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
@@ -125,6 +217,13 @@
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 21,
       "notas": "El repo es una app consumidora (juego 'Cuarenta'), no un paquete pilar. Todo el copy en español usa tuteo correcto, logs/errores en inglés, y usa componentes oficiales (dotrino-topbar, dotrino-profile, dotrino-share) y paquetes (@dotrino/identity, @dotrino/proxy-client vía @dotrino/lobby) sin reimplementaciones caseras. No se invoca sendByPubkey/send directamente, por lo que la regla sealed no aplica en este repo. Punto de atención menor sin llegar a hallazgo: manifest.webmanifest usa 'P2P' en l",
@@ -136,6 +235,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 11,
       "notas": "Repo mínimo sin src/, sin UI ni landing (tsconfig referencia src/ y bin/ que no existen); es un webhook de deploy interno, así que las reglas plain, pillars y sealed no tienen superficie aplicable. Los echo de install.sh usan tuteo y los logs/errores de server.js están en inglés. Encontré voseo ('Copiala', 'poné', 'cargás') en los campos _comment de deploy.config.proxy1.example.json:2 y deploy.config.proxy2.example.json:2, pero no lo reporto como hallazgo porque son notas de configuración tipo d",
@@ -147,6 +253,13 @@
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 22,
       "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
@@ -154,21 +267,61 @@
       "duracionMs": 11451
     },
     "dotrino-eco": {
-      "commit": "148da0b",
-      "fecha": "2026-08-29",
+      "commit": "156d8b3",
+      "fecha": "2026-09-12",
       "por": "seyacat",
       "modelo": "sonnet",
-      "hallazgos": [],
-      "revisados": 22,
-      "notas": "No se abrieron README.md, DESIGN.md, test/*.test.mjs ni e2e/geo.mjs (excluidos: docs y tests están exentos de voseo/english/pillars por las reglas dadas). El repo ya trae comentarios que citan las convenciones (§4.1, §8.1, §9.1) y coincide con varios commits recientes de auditoría; no se encontraron incumplimientos de las cinco reglas en lo revisado.",
-      "costoUSD": 0.7727859999999999,
-      "duracionMs": 142583
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicado"
+      ],
+      "hallazgos": [
+        {
+          "regla": "pillars",
+          "archivo": "src/App.vue",
+          "linea": 234,
+          "cita": "const SHARE_ICONS = { whatsapp: '<svg...>', x: '<svg...>', facebook: '<svg...>' }",
+          "porque": "Eco construye a mano su propio modal de compartir (SHARE_ICONS, shareTargets, doShare, copyShare en líneas 233-251 y el modal en líneas 636-652) en vez de usar el Web Component <dotrino-share> del ecosistema; @dotrino/share no aparece ni en package.json ni en ningún import del repo.",
+          "arreglo": "Usar <dotrino-share> (paquete @dotrino/share) igual que ya se hace con <dotrino-topbar>, <dotrino-profile> y <dotrino-notifications>."
+        },
+        {
+          "regla": "duplicado",
+          "archivo": "src/services/geo.js",
+          "linea": 8,
+          "cita": "const TTL_24H = 24 * 60 * 60 * 1000",
+          "porque": "src/feed/constants.js:5 ya exporta `TTL_24H` con el comentario explícito de evitar 'dos copias de cuánto vive un eco que un día digan cosas distintas', y feedStore.js:22 y publicEco.js:18 sí importan de ahí; geo.js la reescribe en vez de importarla, así que un cambio de TTL puede quedar desincronizado.",
+          "arreglo": "Borrar la constante local y hacer `import { TTL_24H } from '../feed/constants.js'` en geo.js, como hacen feedStore.js y publicEco.js."
+        },
+        {
+          "regla": "english",
+          "archivo": "src/services/identity.js",
+          "linea": 150,
+          "cita": "const e = new Error('ese eco es de una versión anterior: no trae llave de cifrado')",
+          "porque": "Es un error interno de `sealing.seal` que se propaga a sendEcoEvent y feedStore.js:299 lo captura en silencio (`catch (_) {}`); nunca es copy que vea el usuario ni se loguea, así que por §8.1 debería ir en inglés. Ocurre 2 veces en el mismo bloque (línea 150 y línea 155, 'sin vault').",
+          "arreglo": "Usar mensajes en inglés, p. ej. 'this eco predates encryption keys' y 'no vault', igual que el resto de errores diagnósticos del archivo (líneas 27, 48)."
+        }
+      ],
+      "revisados": 19,
+      "notas": "Repo de una sola app (Vue), no un monorepo con múltiples apps ni wiki; no se encontraron locales/i18n aparte de la tabla T en App.vue. No revisé manifest.webmanifest ni sw.js (convención por-app, fuera de alcance) ni los tests en test/.",
+      "costoUSD": 0.6727024,
+      "duracionMs": 144877
     },
     "dotrino-ecuavoley-contador": {
       "commit": "36db2cd",
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 7,
       "notas": "El repo es un sitio estático de una sola página (index.html + sw.js + manifest.webmanifest), sin src/, i18n/ ni package.json. La copy en español no usa voseo, no hay console.log/console.error/throw ni jerga técnica en la copy pública, y los únicos paquetes @dotrino/* usados (@dotrino/topbar y @dotrino/nav, vía CDN) se usan correctamente en vez de reimplementarse a mano; no se usa proxy-client ni identidad propia, por lo que la regla 'sealed' no aplica aquí.",
@@ -180,6 +333,13 @@
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 7,
       "notas": "Repo pequeño (app Vue de un solo archivo): revisé src/i18n.ts, src/services/identity.ts, src/services/reputation.ts, src/main.ts, src/App.vue, index.html y src/style.css. No hay red, WebSocket, cripto propia ni mensajes dirigidos (no aplica sealed); usa @dotrino/topbar, @dotrino/identity y @dotrino/reputation correctamente en vez de reimplementarlos; la copy es tuteante y llana; el código y los logs están en inglés.",
@@ -191,6 +351,13 @@
       "fecha": "2026-08-28",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 5,
       "notas": "El repo es un Worker de Cloudflare (relay de email) sin UI ni landing propias: no hay i18n/locales, no hay HTML con copy pública, y no usa @dotrino/proxy-client ni WebSockets, por lo que las reglas plain y sealed no tienen superficie aplicable aquí. Se revisaron src/index.js, wrangler.toml, package.json, tsconfig.json y package-lock.json (solo para ver dependencias @dotrino/*); README.md quedó fuera por estar explícitamente excluido de voseo/plain.",
@@ -202,6 +369,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 9,
       "notas": "El repo es una librería cliente (src/) + servidor HTTP/PostGIS (server/) sin UI, landing ni i18n, así que las reglas voseo y plain no tienen superficie aplicable. server/signature.js:38-52 verifica firmas ECDSA con node:crypto en el servidor en vez de @dotrino/identity, pero como es verificación server-side de claves ajenas (no firma con identidad propia) queda en el límite de la regla pillars y no se reporta por duda razonable.",
@@ -213,6 +387,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "sealed",
@@ -249,6 +430,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 10,
       "notas": "Repo estático y pequeño (landing/PWA sin backend); no hay src/, i18n/ ni mensajería dirigida, así que las reglas english/plain/sealed tienen poca superficie donde fallar.",
@@ -260,6 +448,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -312,6 +507,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 15,
       "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
@@ -323,6 +525,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 18,
       "notas": "No se abrieron agent/templates/Dockerfile, docker-compose.yml, .dockerignore, .containerignore, .gitignore (plantillas simétricas a las de Podman ya revisadas) ni el contenido completo de PLAN.md/README.md/CHECKLIST.md (documentos de diseño, exentos de las 5 reglas). El repo real (src/, agent/, index.html, configs) no presenta voseo, código en español, jerga técnica en copy pública, reimplementaciones de pilares ni envío sin sellar: usa @dotrino/identity, @dotrino/remote-agent, @dotrino/topbar, ",
@@ -334,6 +543,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 16,
       "notas": "vault/vendor/proxy-client/client.js contiene varios throw new Error en español (líneas 366, 427, 430, 437, 844), pero es una copia vendorizada literal de @dotrino/proxy-client (tercero, documentado en vault/vendor/vault/VERSION.txt), así que no se reporta como hallazgo propio de este repo. Sobre la regla `sealed`: sendByPubkey/send se usan sin sendSealed/requireSealed, pero todo el contenido sensible del usuario (perfil, mensajes, clave de contenido) se cifra E2E por cuenta propia con ECDH+AES-G",
@@ -345,6 +561,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -389,6 +612,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 13,
       "notas": "No se usa @dotrino/proxy-client ni WebSocket propio en ningún punto del repo, así que la regla 'sealed' no aplica (no hay mensajería dirigida que auditar). No se abrieron src/scan/detect.js ni src/scan/locations.js en detalle (solo grep), ni test/, docs/DISENO.md completo ni web/vite.config.js, package.json; por lo visto en grep no muestran patrones de riesgo.",
@@ -400,6 +630,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 9,
       "notas": "Repo pequeño (paquete @dotrino/install + landing de instalación); se revisaron todos los archivos funcionales (src/*, web/install.sh, web/install.ps1, web/index.html, package.json, test/smoke.mjs). No se abrió README.md por estar explícitamente excluido de las 5 reglas. test/smoke.mjs importa playwright desde una ruta relativa a otro repo hermano (../../dotrino-store/node_modules/...), lo cual es llamativo pero no corresponde a ninguna de las 5 reglas auditadas.",
@@ -411,6 +648,13 @@
       "fecha": "2026-08-29",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "sealed",
@@ -475,94 +719,45 @@
       "duracionMs": 109771
     },
     "dotrino-messenger": {
-      "commit": "80b8109",
-      "fecha": "2026-08-30",
+      "commit": "41cd043",
+      "fecha": "2026-09-12",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicado"
+      ],
       "hallazgos": [
         {
-          "regla": "voseo",
-          "archivo": "src/components/SyncSettingsModal.vue",
-          "linea": 283,
-          "cita": "Bloqueaste las notificaciones para este sitio. Habilitalas desde los ajustes del navegador.",
-          "porque": "\"Habilitalas\" es imperativo voseante (de \"habilitá\"); el resto del texto usa tuteo correctamente.",
-          "arreglo": "Escribir \"Habilítalas desde los ajustes del navegador\"."
-        },
-        {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 16,
-          "cita": "<meta name=\"description\" content=\"Mensajería 1-a-1 con cifrado de extremo a extremo (ECDH+AES-GCM)...\"",
-          "porque": "La meta description es copy pública leída por buscadores y usuarios, y nombra el algoritmo criptográfico interno en vez del beneficio; el propio og:description de la misma página ya lo dice sin jerga (\"cifrado de extremo a extremo\").",
-          "arreglo": "Quitar \"(ECDH+AES-GCM)\" y dejar solo \"cifrado de extremo a extremo\", como en el og:description."
-        },
-        {
-          "regla": "plain",
-          "archivo": "src/components/SyncSettingsModal.vue",
-          "linea": 254,
-          "cita": "placeholder=\"otro proxio: proxy.tudominio.com\"",
-          "porque": "El selector de servidor expone el término técnico \"proxy/proxio\" al usuario en vez de explicar el beneficio (a qué servidor se conecta); se repite en \"Servidor (proxio)\" (230), \"Los proxios están federados\" (232) y \"cifrado por el proxy\" (266).",
-          "arreglo": "Hablar de \"servidor\" sin nombrar \"proxy/proxio\", p. ej. \"otro servidor: tudominio.com\"."
-        },
-        {
-          "regla": "plain",
-          "archivo": "src/i18n.js",
-          "linea": 78,
-          "cita": "info: 'Pega aquí el token que te compartió tu contacto...'",
-          "porque": "\"token\" es argot prohibido explícito en copy de UI; se repite en mineInfo (85) y en las versiones en inglés (173, 180), 4 veces en total.",
-          "arreglo": "Usar \"código\" (como ya hace fieldToken: 'Código de tu contacto') en vez de \"token\" en todos los textos visibles."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/stores/contactsStore.js",
-          "linea": 43,
-          "cita": "throw new Error('Identity vault no disponible')",
-          "porque": "El mensaje de un throw es diagnóstico, no copy de usuario, y debe ir en inglés; se repite igual en la línea 109 y en threadsStore.js:215.",
-          "arreglo": "Usar 'Identity vault unavailable'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/stores/notificationsStore.js",
-          "linea": 29,
-          "cita": "throw new Error('Vault de identidad no disponible')",
-          "porque": "Mensaje de error interno en español; debe ir en inglés como el resto de errores de la app.",
-          "arreglo": "Usar 'Identity vault unavailable'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/services/identity.js",
-          "linea": 54,
-          "cita": "console.log('[cc-id-bridge] vault hidratado desde el bridge')",
-          "porque": "Es una traza de arranque (diagnóstico), y va en español cuando debería ir en inglés.",
-          "arreglo": "Usar algo como 'vault hydrated from bridge'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/stores/connectionStore.js",
-          "linea": 206,
-          "cita": "console.warn('[cc-conn] sin proxio alternativo sano; reintento en 10s')",
-          "porque": "Log de fallo de conexión en español; debería ir en inglés como el resto de logs de connectionStore.",
-          "arreglo": "Usar algo como 'no healthy alternative proxy; retrying in 10s'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/stores/contactsStore.js",
-          "linea": 118,
-          "cita": "console.warn('[reputation] publish falló', e)",
-          "porque": "Log de error en español (se repite igual en la línea 148 con 'lookup falló').",
-          "arreglo": "Usar 'publish failed' / 'lookup failed'."
+          "regla": "duplicado",
+          "archivo": "src/services/threadsBridge.js",
+          "linea": 18,
+          "cita": "function hashThreads (threads) { try { const s = JSON.stringify(threads); let h = 0; for ... }",
+          "porque": "Es el mismo algoritmo de hash (bit-shift sobre JSON.stringify) ya escrito en src/services/identity.js:30 como `hashBlob`; solo cambia qué objeto se serializa. Un fallo en el cálculo (o mejorarlo) obliga a tocar los dos sitios.",
+          "arreglo": "Extraer un `hashString(value)` compartido (p.ej. en src/utils/) e importarlo desde identity.js y threadsBridge.js."
         }
       ],
-      "revisados": 14,
-      "notas": "No se hallaron infracciones de pillars (identity/store/topbar se usan vía @dotrino/*) ni de sealed: los mensajes dirigidos (sendByPubkey/sendMessage en threadsStore.js) llevan el payload ya cifrado por id.encrypt() de @dotrino/identity antes de mandarse, que es el caso exento explícito. No se abrió package-lock.json ni la extensión completa (background.js, offscreen.js) más allá de un grep dirigido.",
-      "costoUSD": 0.6864139999999999,
-      "duracionMs": 196885
+      "revisados": 28,
+      "notas": "El messenger cifra el contenido del DM por su cuenta con id.encrypt/id.decrypt (src/stores/threadsStore.js) antes de mandarlo por sendByPubkey/sendMessage de @dotrino/proxy-client — es el caso explícito de 'NO es infracción' de la regla sealed (repo que cifra el payload por su cuenta), así que no lo reporto como hallazgo. No revisé ContactList.vue, Conversation.vue, RequestsInbox.vue, RatingModal.vue, lib/tutorial.js, displayedMessages.js, main.js, manifest.json ni los tests por presupuesto de a",
+      "costoUSD": 0.8086054,
+      "duracionMs": 133755
     },
     "dotrino-middlebot": {
       "commit": "d6881ca",
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "sealed",
@@ -583,6 +778,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 13,
       "notas": "feed.js verifica con crypto.subtle.verify (ECDSA) la firma de un feed público de results.dotrino.com, no identidad de usuario ni cifrado dirigido; no lo cuento como reimplementación del pilar identity porque no hay duda razonable. No se encontró código de servidor/agente, i18n externo, ni WebSocket propio; el repo es pequeño (10 archivos en src/) y se revisó por completo.",
@@ -594,6 +796,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 10,
       "notas": "El repo no usa @dotrino/proxy-client ni mensajería dirigida, así que la regla sealed no aplica aquí; el resto de reglas se cumple consistentemente.",
@@ -605,6 +814,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 7,
       "notas": "Repo pequeño (paquete @dotrino/nav): src/index.js, src/vue.js, src/index.d.ts, src/vue.d.ts, package.json, README.md y test/smoke.mjs. No hay directorios web/, agent/, server/, locales/ ni i18n. No usa @dotrino/proxy-client, crypto.subtle ni almacenes propios, así que las reglas pillars/sealed no aplican a este código. El único texto de usuario es el label del chevron ('Volver'/'Back'), sin voseo; el resto de español es comentario o README, exento por instrucciones.",
@@ -616,6 +832,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "sealed",
@@ -652,6 +875,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -680,6 +910,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "plain",
@@ -732,6 +969,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -776,6 +1020,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 9,
       "notas": "Repo pequeño y sin i18n/ ni web/, lib/, agent/ o server/: todo el código propio vive en src/main.js, src/qr.js e src/types.d.ts, más index.html y public/. La copy en español usa tuteo correcto en todas las cadenas de SV_I18N y CREATE_I18N, y no se detectó jerga prohibida en copy pública. verifySig() en src/main.js usa crypto.subtle directamente para verificar firmas ECDSA con solo la clave pública; se revisó la API pública de @dotrino/identity (index.d.ts) y no expone un verify equivalente sin e",
@@ -787,6 +1038,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "pillars",
@@ -831,6 +1089,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "voseo",
@@ -883,6 +1148,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "voseo",
@@ -907,50 +1179,89 @@
       "duracionMs": 94587
     },
     "dotrino-qrgenerator": {
-      "commit": "4f09d1a",
-      "fecha": "2026-08-30",
+      "commit": "41006e4",
+      "fecha": "2026-09-12",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicado"
+      ],
       "hallazgos": [
         {
           "regla": "english",
           "archivo": "src/services/identity.js",
           "linea": 9,
           "cita": "console.warn('[identity] vault inalcanzable:', e && e.message)",
-          "porque": "es un log de diagnóstico (va a la consola, no es copy de UI) y está en español en vez de inglés",
-          "arreglo": "usar console.warn('[identity] vault unreachable:', e && e.message)"
+          "porque": "es un log de diagnóstico de arranque/fallo (va a la consola), no copy que lea el usuario, y está en español en vez de inglés",
+          "arreglo": "usar algo como console.warn('[identity] vault unreachable:', e && e.message)"
         }
       ],
-      "revisados": 9,
-      "notas": "Repo pequeño (sin agent/server/lib/web); revisé todo src/, index.html, package.json y vite.config.js. No se abrió src/style.css por no contener copy ni código relevante a las reglas.",
-      "costoUSD": 0.18426700000000001,
-      "duracionMs": 40549
+      "revisados": 12,
+      "notas": "Repo pequeño sin agent/, server/ ni lib/; se revisaron todos los archivos de src/, index.html, vite.config.js, package.json, public/robots.txt, public/sitemap.xml y .github/workflows/deploy.yml. No hay uso de WebSocket, crypto.subtle ni sendByPubkey (no aplican pillars/sealed), y no se encontró duplicación entre archivos ni voseo en la copy de usuario.",
+      "costoUSD": 0.2571436,
+      "duracionMs": 40601
     },
     "dotrino-qrreader": {
-      "commit": "b318c35",
-      "fecha": "2026-08-30",
+      "commit": "425723f",
+      "fecha": "2026-09-12",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicado"
+      ],
       "hallazgos": [
+        {
+          "regla": "pillars",
+          "archivo": "src/main.js",
+          "linea": 9,
+          "cita": "import jsQR from 'jsqr'",
+          "porque": "Lee QR a mano con jsQR (usado en startVideoLoop, línea 206, y decodeImageFile, línea 232) en vez de @dotrino/qr, que ya existe para esto en el ecosistema; no está en package.json como dependencia.",
+          "arreglo": "Reemplazar jsQR por @dotrino/qr para la decodificación de códigos QR."
+        },
+        {
+          "regla": "plain",
+          "archivo": "index.html",
+          "linea": 10,
+          "cita": "Autohospedado, sin trackers ni cuentas.",
+          "porque": "\"Autohospedado\" es jerga técnica (equivalente a 'self-hosted', término explícitamente prohibido) en copy pública (meta description); se repite igual en index.html:24, index.html:31 y vite.config.js:26.",
+          "arreglo": "Cambiar por el beneficio, p. ej. \"Todo ocurre en tu navegador, sin subir nada a un servidor\"."
+        },
         {
           "regla": "english",
           "archivo": "src/services/identity.js",
           "linea": 9,
           "cita": "console.warn('[identity] vault inalcanzable:', e && e.message)",
-          "porque": "es un mensaje de diagnóstico que va a la consola/log (catch de conexión fallida), y la regla exige que logs y mensajes de error vayan en inglés",
-          "arreglo": "usar console.warn('[identity] vault unreachable:', e && e.message)"
+          "porque": "Es una traza de diagnóstico (console.warn en un catch), no copy que lee el usuario, y va en español en vez de inglés.",
+          "arreglo": "console.warn('[identity] vault unreachable:', e && e.message)"
         }
       ],
-      "revisados": 9,
-      "notas": "No se pudo leer ../CONVENCIONES-APPS.md por vivir fuera de este repo, pero no hizo falta: toda la copy en español usa tuteo correcto (ninguna instancia de voseo). No se encontró reimplementación de pilares (identity/reputation/topbar/install vía @dotrino/*), ni WebSocket, crypto.subtle o sendByPubkey — la app no tiene mensajería dirigida, así que la regla 'sealed' no aplica. La copy pública (tagline, meta description, README) usa lenguaje llano sin jerga técnica.",
-      "costoUSD": 0.41034289999999995,
-      "duracionMs": 25936
+      "revisados": 10,
+      "notas": "No hay uso de @dotrino/proxy-client ni WebSocket propio en este repo, así que la regla `sealed` no aplica aquí; tampoco se encontró duplicación interna citable con dos sitios concretos.",
+      "costoUSD": 0.30183400000000005,
+      "duracionMs": 84675
     },
     "dotrino-qrshare": {
       "commit": "8aacf81",
       "fecha": "2026-09-12",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "plain",
@@ -979,6 +1290,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1031,6 +1349,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1075,6 +1400,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1095,6 +1427,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1131,6 +1470,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 4,
       "notas": "El repo es un paquete npm pequeño y autocontenido (@dotrino/share, un único Web Component), sin web/, lib/, agent/, server/ ni index.html; no hay imports reales de WebSocket, crypto.subtle, sendByPubkey ni otros @dotrino/*. No se evaluó la regla 'plain' porque no existe copy pública de landing/onboarding en este repo: el package.json.description y el README tienen audiencia de programadores (igual que la documentación técnica exenta), y los strings de UI (I18N en src/index.js) están en tuteo cor",
@@ -1142,6 +1488,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 3,
       "notas": "Repo minúsculo: un único Worker (src/index.js) más wrangler.toml y README.md; no hay i18n, cliente WebSocket, crypto ni topbar que auditar para pillars/sealed.",
@@ -1153,6 +1506,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1181,6 +1541,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1209,6 +1576,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 5,
       "notas": "El repo está en fase de solo diseño: no hay código (ni src/, web/, lib/, agent/, server/, ni archivos de i18n). Los únicos archivos de contenido son README.md, docs/DISENO.md y docs/FASES.md, que están explícitamente exentos de las reglas voseo/english/plain por ser documentación técnica y de diseño, y las reglas pillars/sealed no aplican porque no existe implementación que auditar.",
@@ -1220,6 +1594,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "pillars",
@@ -1256,6 +1637,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1292,6 +1680,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "plain",
@@ -1336,6 +1731,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1356,6 +1758,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1392,6 +1801,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1436,6 +1852,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1456,6 +1879,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1492,6 +1922,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1520,6 +1957,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1604,6 +2048,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [],
       "revisados": 4,
       "notas": "Repo pequeño y de un solo paquete (Web Component sin red/almacenamiento propio); revisé src/index.js, src/index.d.ts, preview.html y README.md, que cubren todo el código y copy no generados del repo.",
@@ -1615,6 +2066,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "voseo",
@@ -1659,6 +2117,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1695,6 +2160,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "english",
@@ -1723,6 +2195,13 @@
       "fecha": "2026-08-30",
       "por": "seyacat",
       "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed"
+      ],
       "hallazgos": [
         {
           "regla": "plain",

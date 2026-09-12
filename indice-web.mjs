@@ -192,7 +192,7 @@ const celdaFrescura = (f) => {
     (f.tope ? '≥' : '') + f.dias + ' d' + (f.commits ? ' / ' + f.commits + ' c' : '') + '</small></td>'
 }
 /** Etiqueta corta de cada regla del auditor; la larga va en el title del chip. */
-const REGLA = { voseo: 'voseo', english: 'en español', plain: 'jerga', pillars: 'pilar a mano', sealed: 'sin sellar' }
+const REGLA = { voseo: 'voseo', english: 'en español', plain: 'jerga', pillars: 'pilar a mano', sealed: 'sin sellar', duplicado: 'duplicado' }
 /**
  * La auditoría en una celda: el VEREDICTO (qué encontró, por regla) y su FRESCURA
  * (cuándo y cuántos commits atrás). Son dos indicadores y por eso se ven los dos: un
@@ -206,9 +206,15 @@ const celdaAuditoria = (p) => {
   const marcas = Object.entries(cuenta).map(([r, n]) =>
     '<span class="chip mal" title="' + esc((D.reglasIA || {})[r] || r) + '">' +
     (REGLA[r] || r) + (n > 1 ? ' ×' + n : '') + '</span>').join('') || '<span class="bien">✓</span>'
+  // El ✓ es de las reglas que SE MIRARON. Las que nunca se le pasaron a este repo van
+  // aparte y en ámbar: no están limpias, están sin mirar, y verlas iguales era el
+  // fallo mudo de añadir una regla y que todos aprobaran sin haberla pasado.
+  const sinPasar = (f.faltan || []).map((r) =>
+    '<span class="chip ojo" title="' + esc('nunca se le pasó: ' + ((D.reglasIA || {})[r] || r)) + '">sin ' +
+    (REGLA[r] || r) + '</span>').join('')
   const sello = '<small class="' + (f.rojo ? 'rojo' : 'na') + '">' + f.fecha +
     ' · ' + (f.commits === null ? '?' : f.commits) + ' c</small>'
-  return '<td class="auditoria">' + marcas + sello + '</td>'
+  return '<td class="auditoria">' + marcas + sinPasar + sello + '</td>'
 }
 const chips = (xs, clase) => xs.length
   ? xs.map(x => '<span class="chip ' + clase + '">' + esc(x) + '</span>').join('')
@@ -304,7 +310,20 @@ function grupos () {
   for (const [k, repos] of Object.entries(porRegla).sort((a, b) => b[1].length - a[1].length)) {
     g.push([k, repos])
   }
-  const porAuditar = D.piezas.filter(p => p.frescura.auditoria && p.frescura.auditoria.rojo)
+  // Las reglas que a un repo nunca se le pasaron son su propio grupo de trabajo: no es
+  // «hay que repasar esto», es «esto no se ha mirado nunca».
+  const porReglaSinPasar = {}
+  for (const p of D.piezas) {
+    const f = p.frescura.auditoria
+    for (const r of ((f && f.faltan) || [])) {
+      (porReglaSinPasar['Sin pasar nunca: ' + ((D.reglasIA || {})[r] || r)] ||= []).push(p.repo)
+    }
+  }
+  for (const [k, repos] of Object.entries(porReglaSinPasar).sort((a, b) => b[1].length - a[1].length)) {
+    g.push([k, repos])
+  }
+  const porAuditar = D.piezas.filter(p => p.frescura.auditoria && p.frescura.auditoria.rojo &&
+    !(p.frescura.auditoria.faltan || []).length)
     .map(p => p.repo + (p.frescura.auditoria.existe ? ' (' + p.frescura.auditoria.commits + ' c)' : ' (nunca)'))
   if (porAuditar.length) g.push(['Auditoría pendiente o atrasada', porAuditar])
   const porPilar = {}

@@ -144,6 +144,15 @@ const diasEntre = (desde, hasta) => {
 }
 
 /**
+ * Las reglas que se auditan HOY, en el orden en que se le explican al auditor. Viaja
+ * dentro de cada entrada de `audit.json` para que se sepa contra qué se miró ese repo:
+ * una auditoría de agosto no comprobó una regla de septiembre, y darla por limpia en
+ * ella sería inventarse un verde. Al añadir una regla acá, todos los repos anteriores
+ * pasan a estar pendientes de esa regla, y se van llenando conforme les toque.
+ */
+const REGLAS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'duplicado']
+
+/**
  * Por qué le toca a este repo, o `null` si su auditoría sigue valiendo. Devuelve el
  * motivo en texto para poder decirlo: «sin auditar» y «17 commits desde la
  * auditoría» son cosas distintas y quien mira la cola quiere saber cuál es.
@@ -155,6 +164,12 @@ function motivoDeAuditar (repo) {
   // Una auditoría sin commit anotado no se puede fechar contra nada: vale como no
   // hecha. (Pasa si el repo no era un repo de git cuando se auditó.)
   if (!antes.commit) return 'la auditoría no anotó su commit'
+  // Auditada, sí, ¿pero contra qué? Lo que no se miró no está limpio: está sin mirar.
+  // Una entrada anterior a que esto se anotara no puede decirlo, así que vale como no
+  // hecha — y una a la que le falte una regla nueva le toca por esa regla.
+  if (!Array.isArray(antes.reglas)) return 'la auditoría no anotó contra qué reglas se hizo'
+  const sinPasar = REGLAS.filter(r => !antes.reglas.includes(r))
+  if (sinPasar.length) return `nunca se le pasó: ${sinPasar.join(', ')}`
   const head = git(dir, 'rev-parse', '--short', 'HEAD')
   if (!head || antes.commit === head) return null
   // Auditoría de otra persona sobre un commit que este clon no tiene: no se puede
@@ -254,11 +269,19 @@ prohibido**, aunque funcione. Lo que hay que buscar:
   topbar dentro de la app
 - un **modal de compartir propio** en vez de \`<dotrino-share>\`
 
+**No son solo los cinco pilares grandes: vale CUALQUIER paquete \`@dotrino/*\` que ya
+exista.** Publicados hoy: \`identity\`, \`proxy-client\`, \`store\`, \`reputation\`, \`verifier\`,
+\`geo\`, \`compat\`, \`content\`, \`support\`, \`profile\`, \`share\`, \`qr\`, \`install\`,
+\`notifications\`, \`nav\`, \`topbar\`, \`tutorial\`, \`lobby\`, \`remote-agent\`, \`sealers\`,
+\`roadmap\`, \`webrtc\`, \`sso-client\`, \`inspector\`. Ejemplo real: generar o leer un QR a
+mano (\`jsQR\`, un generador propio) teniendo \`@dotrino/qr\` es una infracción de ESTA
+regla — no de la 6.
+
 **NO es infracción:** que el propio pilar implemente lo suyo (\`dotrino-identity\` hace
-criptografía, \`dotrino-proxy\` habla su protocolo, \`dotrino-store\` guarda: es su
-trabajo); que un servidor o un agente de Node implemente el lado servidor de un
-protocolo; los tests; ni un \`localStorage\` para preferencias de UI (tema, idioma,
-pestaña activa), que está permitido.
+criptografía, \`dotrino-proxy\` habla su protocolo, \`dotrino-store\` guarda, \`dotrino-qr\`
+dibuja códigos: es su trabajo); que un servidor o un agente de Node implemente el lado
+servidor de un protocolo; los tests; ni un \`localStorage\` para preferencias de UI
+(tema, idioma, pestaña activa), que está permitido.
 
 ### 5. \`sealed\` — lo dirigido va sellado, no en claro (§4.1)
 
@@ -272,11 +295,59 @@ con \`requireSealed: true\`.
 - **NO es infracción:** los **canales públicos** (\`publish\`/\`list\`), que son públicos
   por diseño; ni un repo que cifra el payload por su cuenta antes de mandarlo (si lo
   ves, dilo en \`notas\`, no como hallazgo).
+
+### 6. \`duplicado\` — la misma cosa escrita dos veces DENTRO de este repo
+
+La regla que ordena el ecosistema es la reutilización: *reusar es la norma*. La regla 4
+vigila que no se rehaga a mano un paquete \`@dotrino/*\`; esta vigila lo otro, que no lo
+mira nadie — **la misma cosa escrita dos veces dentro de este mismo repo**.
+
+- Infracción: un **bloque de lógica copiado casi igual en dos archivos** (una
+  normalización, un parseo, un cálculo, una validación, el formateo de una fecha, la
+  construcción de la misma URL) que podría ser una sola función.
+- Infracción: **dos implementaciones distintas de lo mismo conviviendo** — dos clientes
+  del mismo servicio, dos formas de leer la misma configuración, dos modales que hacen
+  lo mismo, dos funciones con nombres distintos y el mismo cuerpo. La señal delatora:
+  arreglar un fallo obligaría a tocar los dos sitios, y olvidarse de uno es cuestión de
+  tiempo.
+- Infracción: un módulo \`utils\`/\`helpers\`/\`lib\` de este repo que **ya tiene** la
+  función, y otro archivo que se la vuelve a escribir en vez de importarla.
+
+**Exijo evidencia de LOS DOS SITIOS.** \`archivo\` y \`linea\` son los de una copia, y
+\`porque\` **tiene que nombrar el otro archivo y su línea**. Sin las dos referencias no es
+un hallazgo: es una impresión de parecido, y no se reporta.
+
+**NO es infracción, y esta lista pesa más que la de arriba:**
+
+- **Un paquete \`@dotrino/*\` reimplementado a mano: eso es la regla 4 y va ahí.** Un
+  hallazgo, una regla — dos reglas disparando sobre lo mismo es un indicador que se
+  aprende a ignorar.
+- **Código vendorizado por un script de build**, con dueño y a propósito: p. ej. un
+  \`build.mjs\` que copia \`lib/src\` a \`extension/src/vendor/\`. Es una copia declarada, con
+  un comando que la rehace; no es duplicación.
+- **Archivos generados** desde otra fuente (un \`src/manifests.js\` que sale de
+  \`manifests/*.json\`, un bundle, un \`.d.ts\`, un \`index.html\` de informe). Manda la
+  fuente y la copia es su salida.
+- **Lo que la convención manda que cada app tenga por separado**: su \`sw.js\`, su
+  \`manifest.webmanifest\`, sus iconos, su \`index.html\`, su \`robots.txt\`, su \`sitemap.xml\`.
+  Que se parezcan a los de las otras treinta apps es el §3, no duplicación.
+- **Los tests**: repetir el montaje en cada caso es normal y deseable, y un test que
+  reescribe lo que prueba es lo que lo hace valer.
+- **Dos entradas del mismo paquete a propósito**: una versión para navegador y otra
+  para Node del mismo módulo, un \`.cjs\` junto a un \`.mjs\`.
+- **El mismo texto en dos idiomas** (es/en en un archivo de i18n): eso es el §9.
+- **Parecidos superficiales**: dos funciones cortas que comparten forma (un \`map\`, un
+  \`try/catch\`, un getter, una plantilla de HTML) pero dicen cosas distintas. Tres líneas
+  iguales no son una duplicación; una regla de negocio escrita dos veces sí.
+
+**Lo que esta regla NO ve, y se dice en voz alta:** auditas UN repo, así que no puedes
+saber que el mismo ayudante está escrito también en otro. La duplicación **entre repos**
+es otro problema y no se busca aquí — no lo intentes ni lo supongas.
 `
 
 const PROMPT = (repo) => `Eres el auditor de convenciones del ecosistema Dotrino. Auditas el repo \`${repo}\`, que es el directorio actual. Solo lees: no cambias nada.
 
-Tu trabajo es encontrar incumplimientos de CINCO reglas, y nada más. No opines de estilo, arquitectura, rendimiento ni de nada que no esté en esta lista.
+Tu trabajo es encontrar incumplimientos de SEIS reglas, y nada más. No opines de estilo, arquitectura, rendimiento ni de nada que no esté en esta lista.
 
 ${RULES}
 
@@ -284,9 +355,10 @@ ${RULES}
 
 - Mira \`src/\`, \`web/src/\`, \`lib/\`, \`agent/\`, \`server/\`, \`index.html\`, \`web/index.html\`, los archivos de i18n o \`locales/\`, y los NOMBRES de los archivos del repo.
 - Ignora \`node_modules/\`, \`dist/\`, \`build/\`, \`.git/\`, \`package-lock.json\`, \`*.min.js\`, y cualquier archivo generado o de terceros.
-- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\` para \`pillars\` y \`sealed\`).
+- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\`, \`QR\` para \`pillars\` y \`sealed\`). Para \`duplicado\`: mira primero el índice de archivos (Glob) buscando nombres que suenen a lo mismo, y luego Grep de los nombres de las funciones exportadas por \`utils\`/\`helpers\`/\`lib\` para ver quién las reescribe en vez de importarlas.
 - Un hallazgo por sitio concreto, con su archivo, su línea y la cita exacta. Si el mismo fallo se repite muchas veces en un archivo, repórtalo UNA vez y di cuántas en \`porque\`.
-- **Ante la duda, no lo reportes.** Un indicador que grita en falso se aprende a ignorar, y entonces deja de servir. Prefiero que se te escape uno a que inventes tres.
+- **Un hallazgo, UNA regla.** Si algo encaja en dos, elige la más específica y no lo repitas: un pilar \`@dotrino/*\` rehecho a mano es \`pillars\`, nunca \`duplicado\`.
+- **Ante la duda, no lo reportes.** Un indicador que grita en falso se aprende a ignorar, y entonces deja de servir. Prefiero que se te escape uno a que inventes tres. Esto vale doble en \`duplicado\`, que es la regla más fácil de llenar de ruido: si no puedes citar **los dos** sitios con su archivo y su línea, no es un hallazgo.
 
 ## Qué devuelves
 
@@ -295,11 +367,11 @@ SOLO un objeto JSON, sin markdown, sin explicación alrededor, con esta forma ex
 {
   "hallazgos": [
     {
-      "regla": "voseo|english|plain|pillars|sealed",
+      "regla": "voseo|english|plain|pillars|sealed|duplicado",
       "archivo": "src/i18n.ts",
       "linea": 42,
       "cita": "la línea o el fragmento exacto, máximo 120 caracteres",
-      "porque": "una frase de por qué incumple",
+      "porque": "una frase de por qué incumple (en \`duplicado\`, NOMBRA el otro sitio: archivo y línea)",
       "arreglo": "qué debería decir o usar, en una frase"
     }
   ],
@@ -320,7 +392,7 @@ function extractJson (text) {
   try { return JSON.parse(sinValla.slice(a, b + 1)) } catch { return null }
 }
 
-const RULE_KEYS = new Set(['voseo', 'english', 'plain', 'pillars', 'sealed'])
+const RULE_KEYS = new Set(REGLAS)
 
 /** Un hallazgo con la forma esperada, o nada. El modelo a veces se inventa un campo. */
 function normalize (f) {
@@ -386,15 +458,28 @@ if (ASKED.length) {
   if (unknown.length) console.error(`no están en el disco: ${unknown.join(', ')}`)
 }
 
+/**
+ * Lo que va a costar esta tanda, a la media de lo que costaron las anteriores. Se dice
+ * ANTES de gastarlo: una regla nueva deja pendientes a todos los repos de golpe, y
+ * enterarse de eso por la factura es tarde.
+ */
+const costeMedio = (() => {
+  const xs = Object.values(previous.repos || {}).map(r => r.costoUSD).filter(n => typeof n === 'number' && n > 0)
+  return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null
+})()
+const presupuesto = pending.length && costeMedio
+  ? ` · ≈$${(costeMedio * pending.length).toFixed(2)} a $${costeMedio.toFixed(2)} de media`
+  : ''
+
 if (DRY || !pending.length) {
   const auditados = Object.keys(previous.repos || {}).length
   console.log(`${all.length} repos · ${auditados} con auditoría · ${pending.length} por auditar` +
-    ` (umbral: ${UMBRAL_COMMITS} commits o ${UMBRAL_DIAS} días)`)
+    ` (umbral: ${UMBRAL_COMMITS} commits o ${UMBRAL_DIAS} días)${presupuesto}`)
   for (const r of pending) console.log(`  ${r} — ${motivos.get(r)}`)
   process.exit(0)
 }
 
-console.log(`auditando ${pending.length} de ${all.length} repos con ${MODEL}, ${JOBS} a la vez…`)
+console.log(`auditando ${pending.length} de ${all.length} repos con ${MODEL}, ${JOBS} a la vez…${presupuesto}`)
 for (const r of pending) console.log(`  · ${r} — ${motivos.get(r)}`)
 
 const results = {}
@@ -418,6 +503,9 @@ await Promise.all(Array.from({ length: Math.min(JOBS, queue.length) }, async () 
       fecha: today,
       por: who,
       modelo: MODEL,
+      // Contra qué reglas se auditó ESTE repo. No se deduce de la lista de arriba del
+      // archivo: una entrada vieja se quedó con las reglas de su día, y así se sabe.
+      reglas: REGLAS,
       hallazgos: out.hallazgos,
       revisados: out.revisados,
       notas: out.notas,
@@ -439,7 +527,7 @@ const kept = PRUNE
 const merged = { ...kept, ...results }
 writeFileSync(OUT, JSON.stringify({
   generado: sh('date', ['+%Y-%m-%dT%H:%M:%S%z']),
-  reglas: ['voseo', 'english', 'plain', 'pillars', 'sealed'],
+  reglas: REGLAS,
   // El criterio con el que se decidió no volver a mirar. `indice.mjs` lo lee de acá
   // para marcar en rojo con la misma vara.
   umbrales: { commits: UMBRAL_COMMITS, dias: UMBRAL_DIAS },

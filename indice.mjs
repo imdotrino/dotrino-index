@@ -391,12 +391,17 @@ function analizar (nombre, catalogo) {
   const commitsDesdeAuditoria = !aud ? null
     : git(dir, 'cat-file', '-e', aud.commit) === null ? null
       : Number(git(dir, 'rev-list', '--count', `${aud.commit}..HEAD`, '--', '.', ...FONTANERIA) ?? 0) || 0
+  // Y contra qué reglas se la miró: una auditoría de antes de que existiera una regla
+  // no dice nada de esa regla. `faltan` es lo que NUNCA se le pasó — que no es lo
+  // mismo que salir limpio, aunque en la tabla se vieran igual.
+  const reglasDeLaAuditoria = Array.isArray(aud?.reglas) ? aud.reglas : []
   fresco.auditoria = {
     existe: Boolean(aud),
     fecha: aud?.fecha || null,
     dias: diasEntre(aud?.fecha, g.fechaSustancia),
     commits: commitsDesdeAuditoria,
-    desdeElInicio: false
+    desdeElInicio: false,
+    faltan: aud ? (REGLAS_IA || []).filter(r => !reglasDeLaAuditoria.includes(r)) : []
   }
 
   // El topbar y sus atributos: la etiqueta abre y cierra en varias líneas.
@@ -640,13 +645,29 @@ const REPOS_EN_WIKI = (() => {
 const AUDITORIA = leerJson(join(AQUI, 'audit.json')) || { repos: {} }
 const UMBRAL_AUDITORIA = { commits: 10, dias: ROJO_DIAS, ...(AUDITORIA.umbrales || {}) }
 
-/** Las cinco reglas que revisa el auditor, con el nombre con que se leen. */
+/** Las seis reglas que revisa el auditor, con el nombre con que se leen. */
 const REGLA_IA = {
   voseo: 'voseo en la copy de usuario (§9)',
   english: 'código, rutas o logs en español (§8.1)',
   plain: 'jerga en la copy pública (§9.1)',
   pillars: 'pilar reimplementado a mano (regla principal)',
-  sealed: 'mensaje dirigido sin sellar (§4.1)'
+  sealed: 'mensaje dirigido sin sellar (§4.1)',
+  duplicado: 'código o funcionalidad duplicada en el repo (regla principal)'
+}
+
+/**
+ * Contra qué reglas se audita HOY. Sale de `audit.json` y no de acá, por el mismo
+ * motivo que los umbrales: si las dos listas pudieran discrepar, esta página daría por
+ * comprobada una regla que el auditor no pasa. Y cada repo anota las suyas, así que se
+ * puede distinguir lo que está **limpio en una regla** de lo que **nunca la pasó** —
+ * que es lo que se veía igual, en verde, y no lo es.
+ */
+const REGLAS_IA = AUDITORIA.reglas
+if (Object.keys(AUDITORIA.repos || {}).length && !Array.isArray(REGLAS_IA)) {
+  console.error('audit.json tiene auditorías pero no dice contra qué reglas se audita ' +
+    '(campo `reglas`). Sin ese dato no se puede saber qué se comprobó, y el informe ' +
+    'diría «limpio» de lo que nadie miró. Corre `node dotrino-index/audit.mjs --dry-run`.')
+  process.exit(1)
 }
 
 // ─── qué convenciones aplican a cada tipo (§13; las exenciones son del doc) ──
@@ -693,6 +714,16 @@ const EXCEPCIONES = {
  * Se emparejan por regla + archivo, y se listan igual que los otros desvíos.
  */
 const EXCEPCIONES_AUDITORIA = {
+  'dotrino-compat': [{
+    regla: 'pillars',
+    archivo: 'src/advisory.js',
+    motivo: 'Firma los avisos de versión rota con `crypto.subtle` y no con ' +
+      '`@dotrino/identity` a propósito, por dos motivos escritos en `CLAUDE.md`: el ' +
+      'pilar va **sin dependencias** porque lo importan las ~30 apps, los daemons y el ' +
+      'ejecutable único; y lo que firma es la llave de release de quien publica, no la ' +
+      'identidad de la persona — §14: «la compatibilidad es política del código, no de ' +
+      'la cuenta». Darle identidad mezclaría las dos cosas.'
+  }],
   'dotrino-android-launcher': [{
     regla: 'pillars',
     archivo: 'app/src/main/java/com/seyacat/launcheroculto/ui/SupportCoin.kt',
@@ -747,6 +778,9 @@ const aplicaFrescura = (p, k) =>
 const auditoriaAtrasada = (p) => {
   const f = p.frescura.auditoria
   if (!f?.existe || f.commits === null) return true
+  // Auditado contra una lista de reglas más corta que la de hoy: lo que no se miró no
+  // está limpio, está sin mirar, y cuenta como pendiente igual que una atrasada.
+  if (f.faltan?.length) return true
   if (f.commits >= UMBRAL_AUDITORIA.commits) return true
   return f.commits > 0 && f.dias >= UMBRAL_AUDITORIA.dias
 }
@@ -931,9 +965,13 @@ function informe (piezas, pilares, enNpm) {
 
   // 3c. La auditoría por IA: lo que ningún `grep` puede decir.
   L.push('## Auditoría de convenciones (IA)', '')
-  L.push('> La escribe `audit.mjs` (un `claude -p` de solo lectura por repo). Mira las cinco reglas que ' +
+  L.push('> La escribe `audit.mjs` (un `claude -p` de solo lectura por repo). Mira las seis reglas que ' +
          'no son un patrón: voseo en la copy (§9), código/rutas/logs en español (§8.1), jerga en la copy ' +
-         'pública (§9.1), pilares reimplementados a mano y mensajes dirigidos sin sellar (§4.1).', '')
+         'pública (§9.1), pilares reimplementados a mano, mensajes dirigidos sin sellar (§4.1) y código ' +
+         'o funcionalidad duplicada dentro del repo.', '')
+  L.push('> Cada repo anota **contra qué reglas** se le auditó: una regla nueva no convierte en limpio ' +
+         'a lo que nunca se miró. La duplicación **entre** repos no la ve nadie — el auditor lee un repo ' +
+         'por vez.', '')
   const auditados = piezas.filter(p => p.auditoria)
   const hallazgos = auditados.flatMap(p => (p.auditoria.hallazgos || []).map(h => ({ repo: p.repo, ...h })))
   // Los repos privados no se auditan (sus hallazgos acabarían publicados en este
@@ -949,7 +987,20 @@ function informe (piezas, pilares, enNpm) {
     L.push('Se arregla con `node dotrino-index/audit.mjs` (audita por tandas: `--limit 10`).', '')
     L.push('</details>', '')
   }
-  const atrasadas = auditados.filter(p => auditoriaAtrasada(p))
+  // Lo que NUNCA se le pasó a un repo se dice aparte de lo que se le pasó hace mucho:
+  // son dos deudas distintas y se resuelven con la misma orden, pero quien mira quiere
+  // saber si el verde de una regla está comprobado o solo no se ha mirado.
+  const porReglaSinPasar = {}
+  for (const p of auditados) {
+    for (const r of (p.frescura.auditoria.faltan || [])) (porReglaSinPasar[r] ||= []).push(p.repo)
+  }
+  for (const [r, repos] of Object.entries(porReglaSinPasar).sort((a, b) => b[1].length - a[1].length)) {
+    L.push(`<details><summary><strong>${repos.length} piezas sin pasar todavía la regla «${REGLA_IA[r] || r}»</strong> ` +
+      '— se auditaron antes de que existiera, así que ahí no están limpias: están sin mirar</summary>', '')
+    L.push(repos.map(r2 => `\`${r2}\``).join(', '), '')
+    L.push('</details>', '')
+  }
+  const atrasadas = auditados.filter(p => auditoriaAtrasada(p) && !p.frescura.auditoria.faltan?.length)
   if (atrasadas.length) {
     L.push(`Auditoría atrasada (${atrasadas.length}): ` +
       atrasadas.map(p => `\`${p.repo}\` (${p.frescura.auditoria.commits ?? '?'} c)`).join(', '), '')
@@ -989,7 +1040,10 @@ function informe (piezas, pilares, enNpm) {
     if (!aplicaFrescura(p, k)) return '·'
     const f = p.frescura[k]
     if (!f?.existe) return k === 'auditoria' ? '**sin auditar**' : '**no tiene**'
-    const txt = `${f.fecha} · ${f.desdeElInicio ? '≥' : ''}${f.dias} d${f.commits ? ` / ${f.commits} c` : ''}`
+    // Una regla que nunca se le pasó se dice en la celda: si no, un repo limpio en
+    // cinco reglas y sin mirar en la sexta se ve igual que uno limpio en las seis.
+    const sinPasar = k === 'auditoria' && f.faltan?.length ? ` · sin ${f.faltan.join(', ')}` : ''
+    const txt = `${f.fecha} · ${f.desdeElInicio ? '≥' : ''}${f.dias} d${f.commits ? ` / ${f.commits} c` : ''}${sinPasar}`
     // El rojo lo decide `desactualizado`, que para la auditoría cuenta commits y no
     // solo días: comparar `dias` acá daría por vigente una auditoría de 40 commits.
     return desactualizado(p, k) ? `**🔴 ${txt}**` : txt
@@ -1159,6 +1213,8 @@ function datosWeb () {
         dias: p.frescura[k].dias,
         commits: p.frescura[k].commits,
         tope: Boolean(p.frescura[k].desdeElInicio),
+        // Solo la auditoría lo tiene: las reglas que a este repo nunca se le pasaron.
+        faltan: p.frescura[k].faltan || null,
         rojo: desactualizado(p, k)
       }]))
       const vivo = p.vivo ? { http: p.vivo.http, sinPublicar: p.vivo.sinPublicar } : null
