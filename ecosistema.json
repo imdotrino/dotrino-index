@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-16T08:40:19-0500",
+  "generado": "2026-09-16T09:03:24-0500",
   "fecha": "2026-09-16",
   "por": "seyacat",
-  "commit": "16b42af",
+  "commit": "ed8f59f",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -930,7 +930,7 @@
       "subdominio": "chat.dotrino.com",
       "paquete": "simple-websocket-chat",
       "version": "0.0.0",
-      "commit": "63d50e7",
+      "commit": "363cc3e",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Dotrino Chat",
@@ -958,7 +958,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 0,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -968,7 +968,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 0,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -1004,11 +1004,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -1029,7 +1024,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 5
     },
     {
       "repo": "dotrino-chess",
@@ -1308,7 +1303,7 @@
       "subdominio": "critters.dotrino.com",
       "paquete": "critters",
       "version": "0.1.0",
-      "commit": "9190fa6",
+      "commit": "e649255",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Critters",
@@ -1339,7 +1334,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 7,
-          "commits": 7,
+          "commits": 8,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -1349,7 +1344,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 51,
-          "commits": 22,
+          "commits": 23,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -1400,11 +1395,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/support",
           "pide": "0.8.1",
           "publicado": "0.9.0"
@@ -1422,7 +1412,7 @@
         "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
         "hallazgos": []
       },
-      "rojos": 10
+      "rojos": 9
     },
     {
       "repo": "dotrino-cuarenta",
@@ -1607,7 +1597,7 @@
       "subdominio": "diamonds.dotrino.com",
       "paquete": "diamonds",
       "version": "0.1.0",
-      "commit": "2f7be02",
+      "commit": "0794f33",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Diamonds",
@@ -1636,7 +1626,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 51,
-          "commits": 17,
+          "commits": 18,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -1646,7 +1636,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 51,
-          "commits": 20,
+          "commits": 21,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -1697,11 +1687,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -1714,7 +1699,7 @@
         "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
         "hallazgos": []
       },
-      "rojos": 10
+      "rojos": 9
     },
     {
       "repo": "dotrino-eco",
@@ -1724,7 +1709,7 @@
       "subdominio": "eco.dotrino.com",
       "paquete": "eco",
       "version": "0.1.0",
-      "commit": "08d966c",
+      "commit": "d67f666",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Eco",
@@ -1756,7 +1741,7 @@
           "existe": true,
           "fecha": "2026-08-21",
           "dias": 15,
-          "commits": 26,
+          "commits": 27,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -1766,7 +1751,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 7,
-          "commits": 12,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -1815,11 +1800,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -1854,7 +1834,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 9
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -1941,7 +1921,7 @@
       "subdominio": "facturero.dotrino.com",
       "paquete": "facturero",
       "version": "0.1.0",
-      "commit": "b0f0fb6",
+      "commit": "4a00ea1",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Facturero",
@@ -1978,7 +1958,7 @@
           "existe": true,
           "fecha": "2026-09-16",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2598,7 +2578,7 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "34f3233",
+      "commit": "0cb95b5",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [
@@ -2620,7 +2600,7 @@
           "existe": true,
           "fecha": "2026-07-29",
           "dias": 49,
-          "commits": 29,
+          "commits": 30,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -2630,7 +2610,7 @@
           "existe": true,
           "fecha": "2026-08-25",
           "dias": 22,
-          "commits": 14,
+          "commits": 15,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2671,11 +2651,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/support",
           "pide": "0.8.1",
           "publicado": "0.9.0"
@@ -2693,7 +2668,7 @@
         "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
         "hallazgos": []
       },
-      "rojos": 7
+      "rojos": 6
     },
     {
       "repo": "dotrino-ia",
@@ -2703,7 +2678,7 @@
       "subdominio": "ia.dotrino.com",
       "paquete": "dotrino-ia",
       "version": "0.1.0",
-      "commit": "cf070d4",
+      "commit": "1e61d2e",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Dotrino IA",
@@ -2732,7 +2707,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 1,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2742,7 +2717,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 45,
-          "commits": 47,
+          "commits": 48,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -2793,11 +2768,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -2810,7 +2780,7 @@
         "notas": "No se abrieron agent/templates/Dockerfile, docker-compose.yml, .dockerignore, .containerignore, .gitignore (plantillas simétricas a las de Podman ya revisadas) ni el contenido completo de PLAN.md/README.md/CHECKLIST.md (documentos de diseño, exentos de las 5 reglas). El repo real (src/, agent/, index.html, configs) no presenta voseo, código en español, jerga técnica en copy pública, reimplementaciones de pilares ni envío sin sellar: usa @dotrino/identity, @dotrino/remote-agent, @dotrino/topbar, ",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 8
     },
     {
       "repo": "dotrino-identity",
@@ -2891,7 +2861,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "16b42af",
+      "commit": "ed8f59f",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [],
@@ -2905,7 +2875,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 4,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2935,7 +2905,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 17,
-          "commits": 8,
+          "commits": 9,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3353,11 +3323,6 @@
           "publicado": "0.22.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -3378,7 +3343,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 6
     },
     {
       "repo": "dotrino-middlebot",
@@ -3829,7 +3794,7 @@
       "subdominio": "padel.dotrino.com",
       "paquete": "padel",
       "version": "0.2.0",
-      "commit": "30a916e",
+      "commit": "a36417a",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Contador Pádel",
@@ -3859,7 +3824,7 @@
           "existe": true,
           "fecha": "2026-09-15",
           "dias": 0,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3869,7 +3834,7 @@
           "existe": true,
           "fecha": "2026-09-15",
           "dias": 0,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3898,13 +3863,7 @@
         }
       },
       "faltan": [],
-      "versiones": [
-        {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        }
-      ],
+      "versiones": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3927,7 +3886,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 3
     },
     {
       "repo": "dotrino-passmanager",
@@ -4351,11 +4310,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -4397,7 +4351,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 9
     },
     {
       "repo": "dotrino-proxy",
@@ -5247,7 +5201,7 @@
       "subdominio": "reputation.dotrino.com",
       "paquete": "dotrino-reputation-app",
       "version": "0.1.0",
-      "commit": "e773563",
+      "commit": "f5d4616",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Reputation",
@@ -5276,7 +5230,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 0,
-          "commits": 6,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5286,7 +5240,7 @@
           "existe": true,
           "fecha": "2026-07-26",
           "dias": 34,
-          "commits": 11,
+          "commits": 12,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -5327,11 +5281,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/support",
           "pide": "0.8.1",
           "publicado": "0.9.0"
@@ -5357,7 +5306,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 8
     },
     {
       "repo": "dotrino-results",
@@ -6136,7 +6085,7 @@
       "subdominio": "sudoku.dotrino.com",
       "paquete": "sudoku",
       "version": "0.1.0",
-      "commit": "e0cc95c",
+      "commit": "7930af3",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Sudoku",
@@ -6166,7 +6115,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 13,
-          "commits": 13,
+          "commits": 14,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6176,7 +6125,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 13,
-          "commits": 17,
+          "commits": 18,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6215,11 +6164,6 @@
           "dep": "@dotrino/reputation",
           "pide": "0.9.0",
           "publicado": "0.12.0"
-        },
-        {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
         },
         {
           "dep": "@dotrino/support",
@@ -6261,7 +6205,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 9
     },
     {
       "repo": "dotrino-support",
@@ -6458,7 +6402,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.1.0",
-      "commit": "335c523",
+      "commit": "f80a389",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -6486,7 +6430,7 @@
           "existe": true,
           "fecha": "2026-07-10",
           "dias": 57,
-          "commits": 50,
+          "commits": 51,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -6496,7 +6440,7 @@
           "existe": true,
           "fecha": "2026-07-10",
           "dias": 57,
-          "commits": 52,
+          "commits": 53,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -6542,11 +6486,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -6581,7 +6520,7 @@
           }
         ]
       },
-      "rojos": 12
+      "rojos": 11
     },
     {
       "repo": "dotrino-test",
@@ -6799,7 +6738,7 @@
       "subdominio": "trivia.dotrino.com",
       "paquete": "trivia",
       "version": "0.1.0",
-      "commit": "90c0401",
+      "commit": "133d999",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Trivia",
@@ -6827,7 +6766,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 39,
-          "commits": 14,
+          "commits": 15,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -6837,7 +6776,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 39,
-          "commits": 17,
+          "commits": 18,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -6876,11 +6815,6 @@
           "dep": "@dotrino/reputation",
           "pide": "0.9.0",
           "publicado": "0.12.0"
-        },
-        {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
         },
         {
           "dep": "@dotrino/support",
@@ -6922,7 +6856,7 @@
           }
         ]
       },
-      "rojos": 12
+      "rojos": 11
     },
     {
       "repo": "dotrino-trueque",
@@ -6932,7 +6866,7 @@
       "subdominio": "trueque.dotrino.com",
       "paquete": "trueque",
       "version": "0.1.0",
-      "commit": "1ca170c",
+      "commit": "29710a1",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Trueque",
@@ -6962,7 +6896,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 51,
-          "commits": 22,
+          "commits": 23,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -6972,7 +6906,7 @@
           "existe": true,
           "fecha": "2026-08-26",
           "dias": 10,
-          "commits": 12,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7018,11 +6952,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -7050,7 +6979,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 9
     },
     {
       "repo": "dotrino-tunnel",
@@ -7507,7 +7436,7 @@
       "subdominio": "wallet.dotrino.com",
       "paquete": "wallet",
       "version": "0.2.0",
-      "commit": "853b500",
+      "commit": "325c3b3",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Wallet",
@@ -7535,7 +7464,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 0,
-          "commits": 12,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7545,7 +7474,7 @@
           "existe": true,
           "fecha": "2026-07-16",
           "dias": 0,
-          "commits": 16,
+          "commits": 17,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7586,11 +7515,6 @@
           "publicado": "0.12.0"
         },
         {
-          "dep": "@dotrino/store",
-          "pide": "0.9.0",
-          "publicado": "0.10.0"
-        },
-        {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
@@ -7618,7 +7542,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 7
     },
     {
       "repo": "dotrino-webrtc",
@@ -7697,7 +7621,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "63aa682",
+      "commit": "2bbbd59",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [],
@@ -7711,7 +7635,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 24,
-          "commits": 30,
+          "commits": 31,
           "tope": true,
           "faltan": null,
           "rojo": false
@@ -7741,7 +7665,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 17,
-          "commits": 8,
+          "commits": 9,
           "tope": false,
           "faltan": [
             "duplicado"
