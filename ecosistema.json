@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-16T09:23:53-0500",
+  "generado": "2026-09-16T10:16:36-0500",
   "fecha": "2026-09-16",
   "por": "seyacat",
-  "commit": "1d9d91c",
+  "commit": "690a1f7",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -1921,7 +1921,7 @@
       "subdominio": "facturero.dotrino.com",
       "paquete": "facturero",
       "version": "0.1.0",
-      "commit": "8742fd9",
+      "commit": "0463996",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Facturero",
@@ -2861,7 +2861,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "1d9d91c",
+      "commit": "690a1f7",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [],
@@ -2875,7 +2875,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 4,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2905,7 +2905,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 17,
-          "commits": 10,
+          "commits": 11,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3236,7 +3236,7 @@
       "subdominio": "messenger.dotrino.com",
       "paquete": "dotrino-messenger",
       "version": "0.1.0",
-      "commit": "2935d9a",
+      "commit": "02d060e",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Dotrino Messenger",
@@ -3269,7 +3269,7 @@
           "existe": true,
           "fecha": "2026-09-11",
           "dias": 0,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3279,7 +3279,7 @@
           "existe": true,
           "fecha": "2026-09-11",
           "dias": 0,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7621,7 +7621,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "343b375",
+      "commit": "13c7dd0",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [],
@@ -7635,7 +7635,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 24,
-          "commits": 32,
+          "commits": 33,
           "tope": true,
           "faltan": null,
           "rojo": false
@@ -7665,7 +7665,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 17,
-          "commits": 10,
+          "commits": 11,
           "tope": false,
           "faltan": [
             "duplicado"
