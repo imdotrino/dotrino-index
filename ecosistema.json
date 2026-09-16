@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-16T08:38:11-0500",
+  "generado": "2026-09-16T08:40:19-0500",
   "fecha": "2026-09-16",
   "por": "seyacat",
-  "commit": "de559d2",
+  "commit": "16b42af",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -1941,7 +1941,7 @@
       "subdominio": "facturero.dotrino.com",
       "paquete": "facturero",
       "version": "0.1.0",
-      "commit": "4b0c204",
+      "commit": "b0f0fb6",
       "fecha": "2026-09-16",
       "catalogo": {
         "nombre": "Facturero",
@@ -1978,7 +1978,7 @@
           "existe": true,
           "fecha": "2026-09-16",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2891,7 +2891,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "de559d2",
+      "commit": "16b42af",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [],
@@ -2905,7 +2905,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 4,
-          "commits": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2935,7 +2935,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 17,
-          "commits": 7,
+          "commits": 8,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7697,7 +7697,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "6340381",
+      "commit": "63aa682",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [],
@@ -7711,7 +7711,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 24,
-          "commits": 29,
+          "commits": 30,
           "tope": true,
           "faltan": null,
           "rojo": false
@@ -7741,7 +7741,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 17,
-          "commits": 7,
+          "commits": 8,
           "tope": false,
           "faltan": [
             "duplicado"
