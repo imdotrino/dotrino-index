@@ -1,10 +1,19 @@
 # dotrino-index — estado del ecosistema
 
 Publica en **https://index.dotrino.com/** el estado de las piezas del ecosistema
-Dotrino: qué le falta a cada repo, qué pilar tiene atrasado, qué se dejó de
-contar (README, portada y ficha del catálogo) y qué encontró la **auditoría de
-convenciones por IA**. Sirve para repartir el trabajo: la vista **Por problema**
-agrupa cada fallo con la lista de repos que lo tienen.
+Dotrino: qué le falta a cada repo, **qué versión ROTA usa**, qué pilar tiene
+atrasado, qué se dejó de contar (README, portada y ficha del catálogo) y qué
+encontró la **auditoría de convenciones por IA**. Sirve para repartir el trabajo:
+la vista **Por problema** agrupa cada fallo con la lista de repos que lo tienen, y
+lo roto va primero.
+
+**Rota ≠ atrasada.** Atrasada es ir detrás de lo último publicado. Rota es usar una
+versión con un fallo conocido: la lista `broken` del registro de compatibilidad
+(`dotrino-roadmap/manifests/dotrino.json`, CONVENCIONES §14), con el arreglo que
+indica el registro. La versión que se cruza es la que **se usa**: el pin si es exacto; si es
+un rango, la del `package-lock.json` o la de `node_modules`. Un rango sin ninguno de los
+dos solo se marca si puede caer en una rota. Sin `dotrino-roadmap` al lado no se puede
+medir, y el informe lo dice en vez de dar a todos por sanos.
 
 Dos generadores, y se corren en momentos distintos:
 

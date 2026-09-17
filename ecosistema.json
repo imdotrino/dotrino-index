@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-16T23:09:25-0500",
-  "fecha": "2026-09-16",
+  "generado": "2026-09-17T09:54:49-0500",
+  "fecha": "2026-09-17",
   "por": "seyacat",
-  "commit": "605114e",
+  "commit": "2827e57",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -39,7 +39,7 @@
     "frontend": "0.0.0",
     "dotrino-ia": "0.1.0",
     "@dotrino/ia-agent": "0.5.0",
-    "@dotrino/identity": "0.92.0",
+    "@dotrino/identity": "0.93.0",
     "@dotrino/install": "0.3.1",
     "@dotrino/lobby": "0.10.0",
     "dotrino-messenger": "0.1.0",
@@ -81,7 +81,7 @@
     "@dotrino/env": "0.64.0",
     "@dotrino/inspector": "0.2.0",
     "dotrino-passmanager": "0.9.0",
-    "@dotrino/passmanager-extension": "0.38.0",
+    "@dotrino/passmanager-extension": "0.38.1",
     "@dotrino/passmanager": "0.10.1",
     "dotrino-ad-integration": "0.1.0",
     "@dotrino/compat": "0.4.0",
@@ -100,7 +100,7 @@
   "consumidores": [
     {
       "pilar": "@dotrino/identity",
-      "version": "0.92.0",
+      "version": "0.93.0",
       "enNpm": false,
       "repos": [
         "dotrino-ad-integration",
@@ -526,7 +526,7 @@
         "@dotrino/verifier"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -578,7 +578,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.87.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-ad-integration",
+          "dep": "@dotrino/identity",
+          "version": "0.87.0",
+          "pide": "0.87.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -588,7 +598,7 @@
         "notas": "El repo está en fase de diseño ('Estado: diseño, sin implementar'): solo existen README.md y docs/DISENO.md, ambos exentos de las reglas 1 (voseo), 2 (english) y 3 (plain) por ser README/docs. No hay src/, web/, lib/, agent/ ni server/, así que las reglas 4 (pillars) y 5 (sealed), que exigen código real usando WebSocket/crypto/proxy-client, no tienen dónde aplicarse.",
         "hallazgos": []
       },
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-android-launcher",
@@ -609,7 +619,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -658,6 +668,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -680,7 +691,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -729,6 +740,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -762,7 +774,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -814,7 +826,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -827,6 +839,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -854,7 +867,7 @@
         "@dotrino/reputation"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -906,7 +919,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -914,6 +927,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -950,7 +964,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1002,7 +1016,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1013,6 +1027,16 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-chat",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -1030,7 +1054,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-chess",
@@ -1061,7 +1085,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1113,7 +1137,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1126,6 +1150,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1148,7 +1173,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1200,6 +1225,7 @@
         }
       ],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1232,7 +1258,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1284,7 +1310,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.78.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -1297,6 +1323,32 @@
           "publicado": "0.64.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-content",
+          "dep": "@dotrino/identity",
+          "version": "0.78.0",
+          "pide": "0.78.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-content",
+          "dep": "@dotrino/remote-agent",
+          "version": "0.9.2",
+          "pide": "0.9.2",
+          "fix": "sube a @dotrino/remote-agent 0.10.0",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-content",
+          "dep": "@dotrino/vault",
+          "version": "0.52.0",
+          "pide": "0.52.0",
+          "fix": "sube a @dotrino/vault 0.64.0 (y @dotrino/env 0.64.0)",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1304,7 +1356,7 @@
         "notas": "Repo pequeño y bien alineado: CLI en tuteo consistente, logs/errores de red en inglés, landing (web/index.html) usa <dotrino-topbar> y copy sin jerga técnica, S3 y sendByPubkey solo aparecen en protocolo externo (S3) y en tests/docs (exentos). No se revisaron test/*.test.js, docs/DISENO.md, docs/HANDOFF.md, src/blobstore-s3.js ni lib/node_modules/@dotrino/* (vendored, terceros) por estar exentos o fuera de presupuesto.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 7
     },
     {
       "repo": "dotrino-critters",
@@ -1336,7 +1388,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1388,7 +1440,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -1416,6 +1468,32 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-critters",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-critters",
+          "dep": "@dotrino/notifications",
+          "version": "0.3.0",
+          "pide": "0.3.0",
+          "fix": "sube @dotrino/notifications a 0.4.0 y dale al cliente con que sellar (myEncPub + sealing), con @dotrino/proxy-client >=0.20.0",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-critters",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1423,7 +1501,7 @@
         "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 12
     },
     {
       "repo": "dotrino-cuarenta",
@@ -1455,7 +1533,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1507,7 +1585,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1520,6 +1598,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1542,7 +1621,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1591,6 +1670,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1628,7 +1708,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1680,7 +1760,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -1703,6 +1783,32 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-diamonds",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-diamonds",
+          "dep": "@dotrino/notifications",
+          "version": "0.3.0",
+          "pide": "0.3.0",
+          "fix": "sube @dotrino/notifications a 0.4.0 y dale al cliente con que sellar (myEncPub + sealing), con @dotrino/proxy-client >=0.20.0",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-diamonds",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1710,7 +1816,7 @@
         "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 12
     },
     {
       "repo": "dotrino-eco",
@@ -1743,7 +1849,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1793,7 +1899,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -1814,6 +1920,32 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-eco",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-eco",
+          "dep": "@dotrino/notifications",
+          "version": "0.3.0",
+          "pide": "0.3.0",
+          "fix": "sube @dotrino/notifications a 0.4.0 y dale al cliente con que sellar (myEncPub + sealing), con @dotrino/proxy-client >=0.20.0",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-eco",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -1845,7 +1977,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 12
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -1866,7 +1998,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1915,6 +2047,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -1950,7 +2083,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2000,12 +2133,22 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-facturero",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-favicon-generator",
@@ -2030,7 +2173,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2082,7 +2225,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2095,6 +2238,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2120,7 +2264,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2177,9 +2321,10 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2202,7 +2347,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2251,6 +2396,16 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-geo/server",
+          "dep": "@dotrino/identity",
+          "version": "0.84.0",
+          "pide": "0.84.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2258,7 +2413,7 @@
         "notas": "El repo es una librería cliente (src/) + servidor HTTP/PostGIS (server/) sin UI, landing ni i18n, así que las reglas voseo y plain no tienen superficie aplicable. server/signature.js:38-52 verifica firmas ECDSA con node:crypto en el servidor en vez de @dotrino/identity, pero como es verificación server-side de claves ajenas (no firma con identidad propia) queda en el límite de la regla pillars y no se reporta por duda razonable.",
         "hallazgos": []
       },
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-gridgame",
@@ -2286,7 +2441,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2338,7 +2493,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.90.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2349,6 +2504,16 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-gridgame",
+          "dep": "@dotrino/identity",
+          "version": "0.90.0",
+          "pide": "0.90.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -2380,7 +2545,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-gymbro",
@@ -2401,7 +2566,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2450,6 +2615,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2482,7 +2648,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2534,7 +2700,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2547,6 +2713,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2613,7 +2780,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2665,7 +2832,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2683,6 +2850,16 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-home",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2690,7 +2867,7 @@
         "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
         "hallazgos": []
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-ia",
@@ -2720,7 +2897,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2772,7 +2949,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -2795,6 +2972,16 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-ia",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2802,7 +2989,7 @@
         "notas": "No se abrieron agent/templates/Dockerfile, docker-compose.yml, .dockerignore, .containerignore, .gitignore (plantillas simétricas a las de Podman ya revisadas) ni el contenido completo de PLAN.md/README.md/CHECKLIST.md (documentos de diseño, exentos de las 5 reglas). El repo real (src/, agent/, index.html, configs) no presenta voseo, código en español, jerga técnica en copy pública, reimplementaciones de pilares ni envío sin sellar: usa @dotrino/identity, @dotrino/remote-agent, @dotrino/topbar, ",
         "hallazgos": []
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-identity",
@@ -2811,13 +2998,13 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/identity",
-      "version": "0.92.0",
-      "commit": "b7eb8cb",
-      "fecha": "2026-09-16",
+      "version": "0.93.0",
+      "commit": "e5ad38a",
+      "fecha": "2026-09-17",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2825,8 +3012,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-07",
-          "dias": 9,
-          "commits": 6,
+          "dias": 10,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2855,8 +3042,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 17,
-          "commits": 43,
+          "dias": 18,
+          "commits": 44,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -2866,6 +3053,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2883,12 +3071,12 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "605114e",
+      "commit": "2827e57",
       "fecha": "2026-09-16",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2897,7 +3085,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 4,
-          "commits": 9,
+          "commits": 10,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2927,7 +3115,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 17,
-          "commits": 14,
+          "commits": 15,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -2937,6 +3125,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -2994,7 +3183,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3043,6 +3232,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3071,7 +3261,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3120,6 +3310,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3142,7 +3333,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3191,6 +3382,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3282,7 +3474,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3332,7 +3524,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -3350,6 +3542,24 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-messenger",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-messenger",
+          "dep": "@dotrino/notifications",
+          "version": "0.3.0",
+          "pide": "0.3.0",
+          "fix": "sube @dotrino/notifications a 0.4.0 y dale al cliente con que sellar (myEncPub + sealing), con @dotrino/proxy-client >=0.20.0",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3365,7 +3575,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 8
     },
     {
       "repo": "dotrino-middlebot",
@@ -3386,7 +3596,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3435,6 +3645,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3470,7 +3681,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3522,7 +3733,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3535,6 +3746,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3568,7 +3780,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3620,7 +3832,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3633,6 +3845,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3655,7 +3868,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3704,6 +3917,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3728,7 +3942,7 @@
         "@dotrino/proxy-client"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3777,6 +3991,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3837,7 +4052,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3889,7 +4104,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-padel-contador",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -3914,7 +4139,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-passmanager",
@@ -3924,8 +4149,8 @@
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "249fe95",
-      "fecha": "2026-09-16",
+      "commit": "75e4cbf",
+      "fecha": "2026-09-17",
       "catalogo": {
         "nombre": "Contraseñas",
         "url": "https://pass.dotrino.com/",
@@ -3939,7 +4164,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3947,8 +4172,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 18,
-          "commits": 30,
+          "dias": 19,
+          "commits": 39,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3956,9 +4181,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-16",
+          "fecha": "2026-09-17",
           "dias": 0,
-          "commits": 0,
+          "commits": 8,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3967,7 +4192,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-08-25",
-          "dias": 22,
+          "dias": 23,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -3977,8 +4202,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 17,
-          "commits": 13,
+          "dias": 18,
+          "commits": 22,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3991,7 +4216,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.78.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4002,6 +4227,24 @@
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
           "publicado": "0.64.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-passmanager",
+          "dep": "@dotrino/identity",
+          "version": "0.78.0",
+          "pide": "0.78.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-passmanager",
+          "dep": "@dotrino/vault",
+          "version": "0.52.0",
+          "pide": "0.52.0",
+          "fix": "sube a @dotrino/vault 0.64.0 (y @dotrino/env 0.64.0)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -4047,7 +4290,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 11
     },
     {
       "repo": "dotrino-profile",
@@ -4062,7 +4305,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4111,6 +4354,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -4157,8 +4401,8 @@
       "subdominio": "profile.dotrino.com",
       "paquete": "dotrino-profile-page",
       "version": "0.1.0",
-      "commit": "f7c7faf",
-      "fecha": "2026-09-11",
+      "commit": "3f18576",
+      "fecha": "2026-09-17",
       "catalogo": {
         "nombre": "Perfil",
         "url": "https://profile.dotrino.com/",
@@ -4174,7 +4418,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4182,8 +4426,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 9,
-          "commits": 9,
+          "dias": 19,
+          "commits": 10,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4192,8 +4436,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-24",
-          "dias": 14,
-          "commits": 12,
+          "dias": 24,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4202,7 +4446,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-07-26",
-          "dias": 47,
+          "dias": 53,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -4212,8 +4456,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 8,
-          "commits": 3,
+          "dias": 18,
+          "commits": 4,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4223,11 +4467,6 @@
       },
       "faltan": [],
       "versiones": [
-        {
-          "dep": "@dotrino/identity",
-          "pide": "0.86.0",
-          "publicado": "0.92.0"
-        },
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
@@ -4242,6 +4481,16 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-profile-app",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -4278,7 +4527,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4330,7 +4579,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4341,6 +4590,16 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-pronostico-mundialista",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -4379,7 +4638,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-proxy",
@@ -4398,7 +4657,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4450,7 +4709,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.78.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4461,6 +4720,24 @@
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
           "publicado": "0.64.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-proxy",
+          "dep": "@dotrino/identity",
+          "version": "0.78.0",
+          "pide": "0.78.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-proxy",
+          "dep": "@dotrino/vault",
+          "version": "0.52.0",
+          "pide": "0.52.0",
+          "fix": "sube a @dotrino/vault 0.64.0 (y @dotrino/env 0.64.0)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -4506,7 +4783,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 11
     },
     {
       "repo": "dotrino-proxy-client",
@@ -4524,7 +4801,7 @@
         "@dotrino/webrtc"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4576,7 +4853,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.84.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-proxy-client",
+          "dep": "@dotrino/identity",
+          "version": "0.84.0",
+          "pide": "0.84.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -4601,7 +4888,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-qr",
@@ -4616,7 +4903,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4668,6 +4955,7 @@
         }
       ],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": null,
       "rojos": 2
@@ -4696,7 +4984,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4746,7 +5034,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4759,6 +5047,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -4800,7 +5089,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4850,7 +5139,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4863,6 +5152,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -4913,7 +5203,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4962,6 +5252,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5003,7 +5294,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5053,9 +5344,24 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/identity",
+          "pide": "0.92.0",
+          "publicado": "0.93.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
           "publicado": "0.22.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-remote-agent",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -5101,7 +5407,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 9
     },
     {
       "repo": "dotrino-reputation",
@@ -5118,7 +5424,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5170,7 +5476,25 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.84.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-reputation",
+          "dep": "@dotrino/identity",
+          "version": "0.84.0",
+          "pide": "0.84.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-reputation/server",
+          "dep": "@dotrino/identity",
+          "version": "0.84.0",
+          "pide": "0.84.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -5209,7 +5533,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 9
     },
     {
       "repo": "dotrino-reputation-app",
@@ -5239,7 +5563,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5291,7 +5615,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5309,6 +5633,16 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-reputation-app",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5324,7 +5658,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-results",
@@ -5339,7 +5673,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5388,6 +5722,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5427,14 +5762,14 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.3.3",
-      "commit": "9674316",
-      "fecha": "2026-09-16",
+      "commit": "20d61f4",
+      "fecha": "2026-09-17",
       "catalogo": null,
       "deps": [
         "@dotrino/compat"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5442,8 +5777,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-04",
-          "dias": 12,
-          "commits": 29,
+          "dias": 13,
+          "commits": 31,
           "tope": true,
           "faltan": null,
           "rojo": false
@@ -5486,6 +5821,7 @@
         }
       ],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": null,
       "rojos": 2
@@ -5508,7 +5844,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5558,7 +5894,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.78.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5576,9 +5912,43 @@
           "publicado": "0.64.0"
         }
       ],
+      "rotas": [
+        {
+          "unidad": "dotrino-sealers",
+          "dep": "@dotrino/identity",
+          "version": "0.78.0",
+          "pide": "0.78.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-sealers",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-sealers",
+          "dep": "@dotrino/remote-agent",
+          "version": "0.9.1",
+          "pide": "0.9.1",
+          "fix": "sube a @dotrino/remote-agent 0.10.0",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-sealers",
+          "dep": "@dotrino/vault",
+          "version": "0.52.0",
+          "pide": "0.52.0",
+          "fix": "sube a @dotrino/vault 0.64.0 (y @dotrino/env 0.64.0)",
+          "sinSaber": false
+        }
+      ],
       "vivo": null,
       "auditoria": null,
-      "rojos": 5
+      "rojos": 9
     },
     {
       "repo": "dotrino-share",
@@ -5593,7 +5963,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5642,6 +6012,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5664,7 +6035,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5713,6 +6084,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5735,7 +6107,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5784,6 +6156,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5828,7 +6201,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5880,7 +6253,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.86.1",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5896,6 +6269,40 @@
           "dep": "@dotrino/vault",
           "pide": "0.62.1",
           "publicado": "0.64.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-social-bot",
+          "dep": "@dotrino/identity",
+          "version": "0.86.1",
+          "pide": "0.86.1",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-social-bot",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-social-bot",
+          "dep": "@dotrino/remote-agent",
+          "version": "0.9.2",
+          "pide": "0.9.2",
+          "fix": "sube a @dotrino/remote-agent 0.10.0",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-social-bot",
+          "dep": "@dotrino/vault",
+          "version": "0.62.1",
+          "pide": "0.62.1",
+          "fix": "sube a @dotrino/vault 0.64.0 (y @dotrino/env 0.64.0)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -5920,7 +6327,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 11
     },
     {
       "repo": "dotrino-sso",
@@ -5930,8 +6337,8 @@
       "subdominio": "sso.dotrino.com",
       "paquete": "@dotrino/sso-client",
       "version": "0.1.0",
-      "commit": "1a6ef5a",
-      "fecha": "2026-09-07",
+      "commit": "6d5618e",
+      "fecha": "2026-09-17",
       "catalogo": {
         "nombre": "Entrar con Dotrino",
         "url": "https://sso.dotrino.com/",
@@ -5943,14 +6350,14 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-07",
+          "fecha": "2026-09-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -5961,8 +6368,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-07",
-          "dias": 0,
-          "commits": 1,
+          "dias": 10,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5971,7 +6378,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-07",
-          "dias": 0,
+          "dias": 10,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -5981,8 +6388,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 8,
-          "commits": 12,
+          "dias": 18,
+          "commits": 13,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -5995,7 +6402,25 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.86.1",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-sso",
+          "dep": "@dotrino/identity",
+          "version": "0.86.1",
+          "pide": "0.86.1",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-sso/server",
+          "dep": "@dotrino/identity",
+          "version": "0.86.1",
+          "pide": "0.86.1",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -6005,7 +6430,7 @@
         "notas": "El repo está en fase de solo diseño: no hay código (ni src/, web/, lib/, agent/, server/, ni archivos de i18n). Los únicos archivos de contenido son README.md, docs/DISENO.md y docs/FASES.md, que están explícitamente exentos de las reglas voseo/english/plain por ser documentación técnica y de diseño, y las reglas pillars/sealed no aplican porque no existe implementación que auditar.",
         "hallazgos": []
       },
-      "rojos": 2
+      "rojos": 4
     },
     {
       "repo": "dotrino-store",
@@ -6020,7 +6445,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6069,6 +6494,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -6129,7 +6555,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6181,7 +6607,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -6197,6 +6623,16 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-sudoku",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -6228,7 +6664,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-support",
@@ -6243,7 +6679,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6292,6 +6728,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -6351,7 +6788,7 @@
         "@dotrino/tunnel"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6400,6 +6837,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -6444,7 +6882,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6496,7 +6934,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6512,6 +6950,24 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-terminal",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-terminal",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -6543,7 +6999,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 13
     },
     {
       "repo": "dotrino-test",
@@ -6562,7 +7018,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6614,7 +7070,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -6627,6 +7083,7 @@
           "publicado": "0.10.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -6681,7 +7138,7 @@
         "@dotrino/support"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6736,6 +7193,7 @@
           "publicado": "0.9.0"
         }
       ],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -6780,7 +7238,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6832,7 +7290,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -6848,6 +7306,16 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-trivia",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -6879,7 +7347,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-trueque",
@@ -6910,7 +7378,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6962,7 +7430,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6978,6 +7446,24 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-trueque",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-trueque",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -7002,7 +7488,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 11
     },
     {
       "repo": "dotrino-tunnel",
@@ -7023,7 +7509,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7072,6 +7558,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -7158,7 +7645,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7207,6 +7694,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -7224,8 +7712,8 @@
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
       "version": "0.118.0",
-      "commit": "f21afa9",
-      "fecha": "2026-09-16",
+      "commit": "45c3999",
+      "fecha": "2026-09-17",
       "catalogo": {
         "nombre": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -7243,7 +7731,7 @@
         "@dotrino/remote-agent"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7251,8 +7739,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-16",
-          "dias": 0,
-          "commits": 3,
+          "dias": 1,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7261,8 +7749,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-26",
-          "dias": 21,
-          "commits": 183,
+          "dias": 22,
+          "commits": 186,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7271,7 +7759,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-27",
-          "dias": 51,
+          "dias": 52,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -7281,8 +7769,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 17,
-          "commits": 128,
+          "dias": 18,
+          "commits": 131,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7293,9 +7781,32 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/identity",
+          "pide": "0.92.0",
+          "publicado": "0.93.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
           "publicado": "0.22.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-vault",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
+        },
+        {
+          "unidad": "dotrino-vault/web",
+          "dep": "@dotrino/proxy-client",
+          "version": "0.18.2",
+          "pide": "0.18.2",
+          "fix": "sube a @dotrino/proxy-client 0.19.0 y copia sw/dotrino-push-sw.js a public/",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -7334,7 +7845,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 10
     },
     {
       "repo": "dotrino-verifier",
@@ -7351,7 +7862,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7403,7 +7914,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.87.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-verifier",
+          "dep": "@dotrino/identity",
+          "version": "0.87.0",
+          "pide": "0.87.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -7435,7 +7956,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-wallet",
@@ -7464,7 +7985,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7516,7 +8037,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.92.0"
+          "publicado": "0.93.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -7527,6 +8048,16 @@
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
           "publicado": "0.10.0"
+        }
+      ],
+      "rotas": [
+        {
+          "unidad": "dotrino-wallet",
+          "dep": "@dotrino/identity",
+          "version": "0.91.0",
+          "pide": "0.91.0",
+          "fix": "sube a @dotrino/identity 0.92.0 (checkVaultReply)",
+          "sinSaber": false
         }
       ],
       "vivo": null,
@@ -7551,7 +8082,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-webrtc",
@@ -7566,7 +8097,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7618,6 +8149,7 @@
         }
       ],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": null,
       "rojos": 2
@@ -7635,7 +8167,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-16",
+        "fecha": "2026-09-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7684,6 +8216,7 @@
       },
       "faltan": [],
       "versiones": [],
+      "rotas": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",

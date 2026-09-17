@@ -102,7 +102,8 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
   <h1>Estado del ecosistema</h1>
   <p class="sub">Una fila por pieza con todo lo que le falta. Se genera desde los repos
   con <code>node indice.mjs --web</code>; no se edita a mano. En rojo, lo que hay que
-  arreglar: convenciones incumplidas (§13), versiones de pilares atrasadas, lo que
+  arreglar: versiones de pilares ROTAS (con un fallo conocido, según el registro de
+  <code>dotrino-roadmap</code>), convenciones incumplidas (§13), versiones de pilares atrasadas, lo que
   se dejó de contar (README, portada y ficha del catálogo con más de
   ${datos.rojoDias} días de brecha) y lo que encontró la auditoría de IA.</p>
   <p class="sub">La columna <b>Auditoría</b> es la única que sale de <i>leer</i> el
@@ -141,7 +142,7 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
           <th data-orden="rojos">Repo</th>
           <th data-orden="tipo">Tipo</th>
           <th data-orden="faltan">Falta (§13)</th>
-          <th data-orden="versiones">Pilares atrasados</th>
+          <th data-orden="versiones">Pilares rotos o atrasados</th>
           <th data-orden="readme">README</th>
           <th data-orden="portada">Portada</th>
           <th data-orden="ficha">Ficha</th>
@@ -172,10 +173,14 @@ document.getElementById('sello').textContent =
 const conRojo = D.piezas.filter(p => p.rojos > 0)
 const faltasTotales = D.piezas.reduce((n, p) => n + p.faltan.length, 0)
 const derivas = D.piezas.reduce((n, p) => n + p.versiones.length, 0)
+// «rotas» no existe en filas medidas antes de que el índice cruzara el registro.
+const rotasDe = (p) => p.rotas || []
+const usosRotos = D.piezas.reduce((n, p) => n + rotasDe(p).length, 0)
 const viejas = D.piezas.filter(p => ['readme', 'portada', 'catalogo'].some(k => p.frescura[k].rojo))
 $('#cifras').innerHTML = [
   ['', D.piezas.length, 'piezas'],
   ['mal', conRojo.length, 'con algo en rojo'],
+  ['mal', usosRotos, 'usos de versiones rotas'],
   ['mal', faltasTotales, 'convenciones incumplidas'],
   ['mal', derivas, 'pilares atrasados'],
   ['mal', viejas.length, 'con README/portada/ficha de +' + D.rojoDias + ' d'],
@@ -233,7 +238,8 @@ function filas () {
     rojos: (p) => -p.rojos,
     tipo: (p) => p.tipo + p.repo,
     faltan: (p) => -p.faltan.length,
-    versiones: (p) => -p.versiones.length,
+    // Una rota pesa más que cualquier cantidad de deriva: es un fallo conocido, no ir detrás.
+    versiones: (p) => -(rotasDe(p).length * 1000 + p.versiones.length),
     readme: (p) => -(p.frescura.readme.dias ?? 9999),
     portada: (p) => -(p.frescura.portada.dias ?? 9999),
     ficha: (p) => -(p.frescura.catalogo.dias ?? 9999),
@@ -264,7 +270,9 @@ function pintar () {
       '<span class="links"><a href="' + gh + '">github</a>' + dom + '</span>' + medido + '</td>' +
       '<td>' + p.tipo + (p.interna ? '<br><span class="na">interna</span>' : '') + '</td>' +
       '<td>' + chips(p.faltan.map(f => f.etiqueta), 'mal') + pub + '</td>' +
-      '<td>' + chips(p.versiones.map(v => v.dep.replace('@dotrino/', '') + ' ' + v.pide + '→' + v.publicado), 'mal') + '</td>' +
+      '<td>' + chips(rotasDe(p).map(u => u.dep.replace('@dotrino/', '') + ' ' + (u.version || '?') + ' ROTA' +
+        (u.unidad !== p.repo ? ' (' + u.unidad.slice(p.repo.length + 1) + ')' : '')), 'mal') +
+      chips(p.versiones.map(v => v.dep.replace('@dotrino/', '') + ' ' + v.pide + '→' + v.publicado), 'mal') + '</td>' +
       celdaFrescura(p.frescura.readme) +
       celdaFrescura(p.frescura.portada) +
       celdaFrescura(p.frescura.catalogo) +
@@ -291,6 +299,12 @@ $('#buscar').addEventListener('input', (e) => { texto = e.target.value.trim().to
 /* ── vista "por problema": el reparto de trabajo ────────────────────────── */
 function grupos () {
   const g = []
+  // LO ROTO VA PRIMERO: es lo único de esta lista que ya falla, y el arreglo está escrito.
+  const porRota = {}
+  for (const p of D.piezas) for (const u of rotasDe(p)) {
+    (porRota['ROTA: ' + u.dep + ' — ' + u.fix] ||= []).push(u.unidad + ' (' + (u.version || '? ' + u.pide) + ')')
+  }
+  for (const [k, repos] of Object.entries(porRota).sort((a, b) => b[1].length - a[1].length)) g.push([k, repos])
   const porNorma = {}
   for (const p of D.piezas) for (const f of p.faltan) (porNorma[f.etiqueta] ||= []).push(p.repo)
   for (const [etiqueta, repos] of Object.entries(porNorma).sort((a, b) => b[1].length - a[1].length)) {

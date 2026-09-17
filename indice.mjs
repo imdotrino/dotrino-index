@@ -64,6 +64,90 @@ const PRIVADOS = new Set(['dotrino-project', 'dotrino-docs'])
 /** Brecha (en días) a partir de la cual algo se marca en rojo por desactualizado. */
 const ROJO_DIAS = 30
 
+/**
+ * LAS VERSIONES ROTAS, del registro de compatibilidad (`dotrino-roadmap`, CONVENCIONES
+ * §14). La deriva de más abajo dice «vas detrás de lo último»; esto dice otra cosa, más
+ * grave: «la versión que usas tiene un fallo conocido». Hasta ahora el registro las
+ * marcaba y el índice no las cruzaba, así que marcar 108 versiones rotas no hacía aparecer
+ * a nadie como afectado — salían como deriva, al lado de un `^0.3.0` que solo va viejo.
+ *
+ * Se lee del DISCO, como todo lo demás: quien no tenga `dotrino-roadmap` al lado no puede
+ * medirlo, y eso se dice (en el informe y en la consola) en vez de dar a todos por sanos.
+ */
+const REGISTRO_COMPAT = join(RAIZ, 'dotrino-roadmap', 'manifests', 'dotrino.json')
+const ROTAS = (() => {
+  const m = (() => { try { return JSON.parse(readFileSync(REGISTRO_COMPAT, 'utf8')) } catch { return null } })()
+  if (!m) return null
+  const npmDe = Object.fromEntries(Object.entries(m.products || {}).map(([k, v]) => [k, v.npm]).filter(([, n]) => n))
+  const porPaquete = {}
+  for (const b of m.broken || []) {
+    const npm = npmDe[b.product]
+    // Una rota de un producto sin paquete de npm no se puede cruzar con un package.json.
+    // Se guarda igual con el nombre del producto, para que el informe la cuente.
+    ;(porPaquete[npm || b.product] ||= []).push({ product: b.product, versions: b.versions, why: b.why, fix: b.fix })
+  }
+  return porPaquete
+})()
+
+/**
+ * ¿Está `version` en esa lista? `versions` es una lista de versiones EXACTAS (la norma) o,
+ * en entradas viejas, un texto: una versión, o `<=x` / `<x`. `null` si no se entiende —
+ * y eso se informa, porque callar sería dar por sano lo que no se pudo mirar.
+ */
+function enRotas (versions, version) {
+  if (Array.isArray(versions)) return versions.includes(version)
+  const t = String(versions || '').trim()
+  const num = (v) => String(v).split('.').map((n) => parseInt(n, 10) || 0)
+  const cmp = (a, b) => { for (let i = 0; i < 3; i++) { if (a[i] !== b[i]) return a[i] - b[i] } return 0 }
+  const m = /^(<=|<)?\s*(\d+\.\d+\.\d+)$/.exec(t)
+  if (!m) return null
+  const c = cmp(num(version), num(m[2]))
+  return m[1] === '<=' ? c <= 0 : m[1] === '<' ? c < 0 : c === 0
+}
+
+/**
+ * QUÉ VERSIÓN SE USA DE VERDAD. Un pin exacto lo dice él solo; un rango no dice nada, así
+ * que se busca en el `package-lock.json` y, si no hay, en `node_modules`. Sin ninguno de
+ * los tres no se sabe, y se devuelve `null` en vez de suponer la última.
+ */
+function versionUsada (dir, dep, pide) {
+  if (/^\d+\.\d+\.\d+(-[\w.]+)?$/.test(String(pide).trim())) return String(pide).trim()
+  const lock = (() => { try { return JSON.parse(readFileSync(join(dir, 'package-lock.json'), 'utf8')) } catch { return null } })()
+  const delLock = lock?.packages?.['node_modules/' + dep]?.version
+  if (delLock) return delLock
+  try { return JSON.parse(readFileSync(join(dir, 'node_modules', dep, 'package.json'), 'utf8')).version || null } catch { return null }
+}
+
+/**
+ * Sin versión resuelta, ¿el RANGO puede caer en una rota? Un `^0.64.0` no alcanza ninguna
+ * de 0.43–0.63, y acusarlo por no tener lockfile sería ruido. `null` = no se sabe (y se
+ * informa como tal); `false` = imposible, y no se cuenta.
+ */
+function puedeCaer (pide, versions) {
+  const m = /^([\^~>=]*)\s*(\d+\.\d+\.\d+)/.exec(String(pide).trim())
+  if (!m) return null
+  if (Array.isArray(versions)) return versions.some(v => satisface(pide, v)) ? null : false
+  // Entrada vieja en texto (`<=x`, `<x` o una versión): basta con mirar el suelo del rango.
+  const suelo = enRotas(versions, m[2])
+  return suelo === false ? false : null
+}
+
+/** Los usos de versiones rotas de una unidad (la raíz de un repo o una subcarpeta con package.json). */
+function usosRotos (dir, unidad, deps) {
+  if (!ROTAS) return []
+  const out = []
+  for (const [dep, pide] of Object.entries(deps || {})) {
+    if (!ROTAS[dep] || String(pide).startsWith('file:')) continue
+    const version = versionUsada(dir, dep, pide)
+    for (const b of ROTAS[dep]) {
+      const esta = version ? enRotas(b.versions, version) : puedeCaer(pide, b.versions)
+      if (esta === false) continue
+      out.push({ unidad, dep, pide, version, fix: b.fix, why: b.why, sinSaber: esta === null })
+    }
+  }
+  return out
+}
+
 // ─── utilidades ────────────────────────────────────────────────────────────
 
 const sh = (cmd, args, cwd) => {
@@ -496,6 +580,12 @@ function analizar (nombre, catalogo) {
     if (Object.keys(d).length) subDeps[`${nombre}/${e.name}`] = d
   }
 
+  // Versiones ROTAS que usa: la raíz y cada subcarpeta con su propio package.json.
+  const rotas = [
+    ...usosRotos(dir, nombre, Object.fromEntries(Object.entries(deps).filter(([k]) => k.startsWith('@dotrino/')))),
+    ...Object.entries(subDeps).flatMap(([unidad, d]) => usosRotos(join(RAIZ, unidad), unidad, d))
+  ]
+
   return {
     repo: nombre,
     tipo,
@@ -521,6 +611,7 @@ function analizar (nombre, catalogo) {
     },
     secretos: secretosRastreados(dir),
     instalado: instaladoVsPedido(dir, deps),
+    rotas,
     binarios: fuentesBinarias(dir),
     conv
   }
@@ -877,6 +968,32 @@ function informe (piezas, pilares, enNpm) {
     L.push('')
   }
 
+  // 1b. VERSIONES ROTAS. Va antes que la deriva: no es ir detrás, es usar algo con un
+  // fallo conocido, y el registro ya dice cómo se arregla.
+  L.push('## Usa una versión ROTA (registro de `dotrino-roadmap`)', '')
+  L.push('> CONVENCIONES §14: *"Si después se detecta un fallo en una versión, esa versión se marca incompatible."*', '')
+  if (!ROTAS) {
+    L.push('**No se pudo comprobar**: falta `dotrino-roadmap` junto a este repo (se lee `manifests/dotrino.json`). ' +
+      'Esto NO significa que nadie use una versión rota.', '')
+  } else {
+    const usos = piezas.flatMap(p => p.rotas || [])
+    if (!usos.length) L.push('Nadie usa una versión marcada como rota.', '')
+    else {
+      const ciertos = usos.filter(u => !u.sinSaber)
+      L.push(`**${ciertos.length} usos** en ${new Set(ciertos.map(u => u.unidad)).size} repos` +
+        (usos.length > ciertos.length ? ` · y ${usos.length - ciertos.length} sin poder resolver la versión (rango sin lock ni \`node_modules\`)` : '') + '.', '')
+      L.push('| Repo | Pilar | Usa | Arreglo |', '|---|---|---|---|')
+      for (const u of usos) {
+        L.push(`| \`${u.unidad}\` | ${u.dep} | ${u.version ? '**' + u.version + '**' : '? (' + u.pide + ')'} | ${u.fix} |`)
+      }
+      L.push('')
+      const motivos = [...new Map(usos.map(u => [u.dep + '|' + u.fix, u])).values()]
+      L.push(`<details><summary>Por qué está rota cada una (${motivos.length})</summary>`, '')
+      for (const u of motivos) L.push(`- **${u.dep}** — ${u.why}`)
+      L.push('', '</details>', '')
+    }
+  }
+
   // 2. Deriva de versiones de los pilares
   L.push('## Deriva de versiones `@dotrino/*`', '')
   const filas = []
@@ -1229,6 +1346,10 @@ function datosWeb () {
         }))
       } : null
       const fichaHeredada = heredarCatalogo(p.repo, faltan, frescura)
+      // Sin el registro al lado no se midió: se hereda lo de la pasada anterior, igual que la ficha.
+      const rotas = ROTAS
+        ? (p.rotas || []).map(u => ({ unidad: u.unidad, dep: u.dep, version: u.version, pide: u.pide, fix: u.fix, sinSaber: u.sinSaber }))
+        : (antes.get(p.repo)?.rotas || [])
       return {
         repo: p.repo,
         tipo: p.tipo,
@@ -1247,9 +1368,10 @@ function datosWeb () {
         frescura,
         faltan,
         versiones,
+        rotas,
         vivo,
         auditoria,
-        rojos: faltan.length + versiones.length +
+        rojos: faltan.length + versiones.length + rotas.length +
           CLAVES_FRESCURA.filter(k => frescura[k].rojo).length +
           (auditoria?.hallazgos.length || 0) +
           (vivo?.sinPublicar > 0 ? 1 : 0)
@@ -1308,7 +1430,9 @@ const faltas = piezas.reduce((n, p) => n + aplica(p).filter(k => !p.conv[k]).len
 const viejas = piezas.filter(p => ['readme', 'portada', 'catalogo'].some(k => desactualizado(p, k))).length
 const hallazgos = piezas.reduce((n, p) => n + (p.auditoria?.hallazgos?.length || 0), 0)
 const porAuditar = piezas.filter(p => !PRIVADOS.has(p.repo) && desactualizado(p, 'auditoria')).length
+const usosRotas = piezas.reduce((n, p) => n + (p.rotas?.length || 0), 0)
 console.log(`${piezas.length} piezas · ${faltas} incumplimientos · ` +
+  (ROTAS ? `${usosRotas} usos de versiones rotas · ` : 'versiones rotas SIN COMPROBAR (falta dotrino-roadmap) · ') +
   `${piezas.filter(p => p.git.sinPushear || p.git.sucio).length} repos sin sincronizar · ` +
   `${viejas} con README/portada/ficha de más de ${ROJO_DIAS} días · ` +
   `${hallazgos} hallazgos de auditoría · ${porAuditar} sin auditar o atrasadas`)
