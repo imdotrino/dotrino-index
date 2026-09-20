@@ -532,6 +532,11 @@ function analizar (nombre, catalogo) {
       const w = textoDeWorkflows(dir)
       return /npm\s+publish/.test(w) && /id-token:\s*write/.test(w)
     })(),
+    // §15: enterarse de que hay versión nueva. Lo que duele no es instalar —son tres
+    // comandos— sino no saber que hace falta: el 2026-09-19 el replicador de Cepi llevaba
+    // QUINCE DÍAS quince versiones atrás y ninguna pantalla lo decía. Se mira si la pieza
+    // usa `@dotrino/update`, que es lo único que se puede afirmar leyendo el disco.
+    updateNotice: /@dotrino\/update/.test(texto) || Boolean(deps['@dotrino/update']),
     topbar: Boolean(etiqueta) || /@dotrino\/topbar/.test(texto) || Boolean(deps['@dotrino/topbar']),
     // §6.1: el botón de perfil es el atributo/propiedad `profile` del topbar.
     // `\b…\b` no confunde con `profileTheme` (no hay frontera de palabra ahí).
@@ -573,7 +578,7 @@ function analizar (nombre, catalogo) {
     if (!e.isDirectory() || ['node_modules', 'dist', 'test', '.git'].includes(e.name)) continue
     const sub = leerJson(join(dir, e.name, 'package.json'))
     if (!sub) continue
-    if (sub.name?.startsWith('@dotrino/')) subPaquetes[sub.name] = { version: sub.version, ruta: `${nombre}/${e.name}` }
+    if (sub.name?.startsWith('@dotrino/')) subPaquetes[sub.name] = { version: sub.version, ruta: `${nombre}/${e.name}`, bin: Boolean(sub.bin) }
     const d = Object.fromEntries(
       Object.entries({ ...sub.dependencies, ...sub.devDependencies }).filter(([k]) => k.startsWith('@dotrino/'))
     )
@@ -592,6 +597,12 @@ function analizar (nombre, catalogo) {
     interna,
     paquete: pkg?.name || null,
     version: pkg?.version || null,
+    // ¿Esto se invoca como comando? Lo dice su `bin`. Hace falta para el §15: un comando
+    // avisa al invocarse, una librería que nadie ejecuta no tiene dónde hacerlo.
+    tieneCli: Boolean(pkg?.bin) || Object.values(subPaquetes).some((sp) => sp.bin),
+    // Un pilar que además trae su servidor (`geo`, `reputation`) corre en algún sitio, y
+    // lo que corre se queda atrás. El cajón dice `paquete`; el disco dice la verdad.
+    tieneServidor: hay(dir, 'server/package.json', 'server/index.js', 'server/server.js'),
     subPaquetes,
     subDeps,
     subdominio: cname ? cname.trim() : null,
@@ -833,6 +844,15 @@ const esDesvioDeclarado = (repo, h) =>
  * Una app interna (§7) no se indexa → sin OG; y no va al catálogo público (§11.4).
  */
 const aplica = (p) => [
+  // §15: AVISAR DE QUE HAY VERSIÓN NUEVA. No cuelga del tipo sino de si la pieza CORRE
+  // en la máquina de alguien: un daemon que lleva meses levantado y un comando que se
+  // invoca cien veces al día tienen el mismo agujero, y una PWA no lo tiene (su service
+  // worker la actualiza sola).
+  //
+  // El `tipo` no basta, y por eso se mira también el disco: `dotrino-geo` y
+  // `dotrino-reputation` están catalogados como `paquete` —son pilares— pero llevan su
+  // `server/` dentro y corren 24/7 en un VPS. Con el cajón solo se les escapaba a los dos.
+  ...((p.tipo === 'servicio' || p.tieneCli || p.tieneServidor) ? ['updateNotice'] : []),
   ...(APLICA[p.tipo] || []),
   // PUBLICAR DESDE CI CUELGA DE PUBLICAR, no del tipo de pieza: `dotrino-content` es una
   // `landing` que además publica a npm, y `dotrino-vault` también. La pregunta correcta
@@ -886,6 +906,7 @@ const ETIQUETA = {
   commitMeta: 'meta commit (§3)', seo: 'robots+sitemap (§7)', og: 'og.jpg (§10)',
   deploy: 'deploy (§11.3)', catalogo: 'en el catálogo (§11.4)',
   wiki: 'documentación en el wiki (§9.2)',
+  updateNotice: 'sin aviso de versión nueva (§15)',
   oidc: 'publicar desde CI con confianza (CUMPLIMIENTO §2)'
 }
 
