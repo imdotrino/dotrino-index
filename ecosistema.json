@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-21T07:35:35-0500",
+  "generado": "2026-09-21T09:06:13-0500",
   "fecha": "2026-09-21",
   "por": "seyacat",
-  "commit": "18ba717",
+  "commit": "99a3a69",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -72,13 +72,13 @@
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.123.1",
-    "@dotrino/vault": "0.69.0",
+    "@dotrino/vaultd": "0.124.0",
+    "@dotrino/vault": "0.70.0",
     "@dotrino/verifier": "0.2.0",
     "wallet": "2.49.0",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.1.0",
-    "@dotrino/env": "0.69.0",
+    "@dotrino/env": "0.70.0",
     "@dotrino/inspector": "0.2.0",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -110,7 +110,7 @@
     "@dotrino/identity": "0.99.0",
     "cuarenta": null,
     "dotrino-profile-page": null,
-    "@dotrino/content-client": "0.2.4",
+    "@dotrino/content-client": null,
     "dotrino-mundial": null,
     "dotrino-base64": null,
     "@dotrino/ia-agent": "0.5.0",
@@ -138,7 +138,7 @@
     "@dotrino/qr": "0.1.0",
     "@dotrino/telegram-bot": "0.2.1",
     "dotrino-terminal": null,
-    "@dotrino/vault": "0.69.0",
+    "@dotrino/vault": "0.70.0",
     "padel": "0.0.1",
     "dotrino-reputation-app": null,
     "simple-websocket-chat": null,
@@ -162,7 +162,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.123.1",
+    "@dotrino/vaultd": "0.124.0",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.0",
     "gridgame": null,
@@ -172,7 +172,7 @@
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.69.0"
+    "@dotrino/env": "0.70.0"
   },
   "consumidores": [
     {
@@ -449,7 +449,7 @@
     },
     {
       "pilar": "@dotrino/vault",
-      "version": "0.69.0",
+      "version": "0.70.0",
       "enNpm": true,
       "repos": [
         "dotrino-content",
@@ -531,7 +531,7 @@
     {
       "pilar": "@dotrino/content-client",
       "version": "0.2.4",
-      "enNpm": true,
+      "enNpm": false,
       "repos": [
         "dotrino-eco",
         "dotrino-social-bot"
@@ -1456,7 +1456,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
-          "publicado": "0.69.0"
+          "publicado": "0.70.0"
         }
       ],
       "rotas": [
@@ -3278,8 +3278,8 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "18ba717",
-      "fecha": "2026-09-20",
+      "commit": "99a3a69",
+      "fecha": "2026-09-21",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -3291,8 +3291,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-17",
-          "dias": 3,
-          "commits": 3,
+          "dias": 4,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3300,7 +3300,7 @@
         "portada": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-09-20",
+          "fecha": "2026-09-21",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3321,8 +3321,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 21,
-          "commits": 19,
+          "dias": 22,
+          "commits": 20,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4536,8 +4536,8 @@
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "a22347a",
-      "fecha": "2026-09-20",
+      "commit": "c2533b6",
+      "fecha": "2026-09-21",
       "catalogo": {
         "nombre": "Contraseñas",
         "url": "https://pass.dotrino.com/",
@@ -4559,8 +4559,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 22,
-          "commits": 75,
+          "dias": 23,
+          "commits": 77,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4568,9 +4568,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-17",
-          "dias": 3,
-          "commits": 44,
+          "fecha": "2026-09-21",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4579,7 +4579,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-08-25",
-          "dias": 26,
+          "dias": 27,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -4589,8 +4589,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 21,
-          "commits": 54,
+          "dias": 22,
+          "commits": 56,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4604,7 +4604,13 @@
           "etiqueta": "sin aviso de versión nueva (§15)"
         }
       ],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.69.0",
+          "publicado": "0.70.0"
+        }
+      ],
       "rotas": [],
       "vivo": {
         "http": 200,
@@ -4652,7 +4658,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-profile",
@@ -5102,7 +5108,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
-          "publicado": "0.69.0"
+          "publicado": "0.70.0"
         }
       ],
       "rotas": [
@@ -5752,7 +5758,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.64.0",
-          "publicado": "0.69.0"
+          "publicado": "0.70.0"
         }
       ],
       "rotas": [
@@ -6176,8 +6182,8 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.3.4",
-      "commit": "865795d",
-      "fecha": "2026-09-20",
+      "commit": "4265c11",
+      "fecha": "2026-09-21",
       "catalogo": null,
       "deps": [
         "@dotrino/compat"
@@ -6191,8 +6197,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-04",
-          "dias": 16,
-          "commits": 40,
+          "dias": 17,
+          "commits": 41,
           "tope": true,
           "faltan": null,
           "rojo": false
@@ -6328,7 +6334,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
-          "publicado": "0.69.0"
+          "publicado": "0.70.0"
         }
       ],
       "rotas": [
@@ -6702,7 +6708,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.62.1",
-          "publicado": "0.69.0"
+          "publicado": "0.70.0"
         }
       ],
       "rotas": [
@@ -8259,9 +8265,9 @@
       "stack": "vite",
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.123.1",
-      "commit": "5793098",
-      "fecha": "2026-09-20",
+      "version": "0.124.0",
+      "commit": "47244cc",
+      "fecha": "2026-09-21",
       "catalogo": {
         "nombre": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -8289,8 +8295,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-16",
-          "dias": 4,
-          "commits": 36,
+          "dias": 5,
+          "commits": 38,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8299,8 +8305,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-26",
-          "dias": 25,
-          "commits": 216,
+          "dias": 26,
+          "commits": 218,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8309,7 +8315,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-27",
-          "dias": 55,
+          "dias": 56,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -8319,8 +8325,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 21,
-          "commits": 152,
+          "dias": 22,
+          "commits": 153,
           "tope": false,
           "faltan": [
             "duplicado"
