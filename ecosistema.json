@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-21T10:01:26-0500",
+  "generado": "2026-09-21T10:23:52-0500",
   "fecha": "2026-09-21",
   "por": "seyacat",
-  "commit": "7034e2e",
+  "commit": "67ed674",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -72,7 +72,7 @@
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.124.0",
+    "@dotrino/vaultd": "0.124.1",
     "@dotrino/vault": "0.70.0",
     "@dotrino/verifier": "0.2.0",
     "wallet": "2.49.0",
@@ -113,7 +113,7 @@
     "@dotrino/content-client": "0.2.4",
     "dotrino-mundial": null,
     "dotrino-base64": null,
-    "@dotrino/ia-agent": "0.5.0",
+    "@dotrino/ia-agent": null,
     "@dotrino/nav": "0.3.0",
     "dotrino-qrshare": null,
     "@dotrino/sso-client": null,
@@ -162,7 +162,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.124.0",
+    "@dotrino/vaultd": "0.124.1",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.0",
     "gridgame": null,
@@ -1280,8 +1280,8 @@
       ],
       "rotas": [],
       "vivo": {
-        "http": 200,
-        "sinPublicar": 0
+        "http": null,
+        "sinPublicar": null
       },
       "auditoria": {
         "por": "seyacat",
@@ -3278,7 +3278,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "7034e2e",
+      "commit": "67ed674",
       "fecha": "2026-09-21",
       "catalogo": null,
       "deps": [],
@@ -3292,7 +3292,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 4,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3322,7 +3322,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 22,
-          "commits": 21,
+          "commits": 22,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -8266,7 +8266,7 @@
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
       "version": "0.124.1",
-      "commit": "6aaa991",
+      "commit": "afd4362",
       "fecha": "2026-09-21",
       "catalogo": {
         "nombre": "Dotrino Vault",
@@ -8296,7 +8296,7 @@
           "existe": true,
           "fecha": "2026-09-16",
           "dias": 5,
-          "commits": 39,
+          "commits": 40,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8306,7 +8306,7 @@
           "existe": true,
           "fecha": "2026-08-26",
           "dias": 26,
-          "commits": 219,
+          "commits": 220,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8326,7 +8326,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 22,
-          "commits": 154,
+          "commits": 155,
           "tope": false,
           "faltan": [
             "duplicado"
