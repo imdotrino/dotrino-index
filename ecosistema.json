@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-21T10:23:52-0500",
+  "generado": "2026-09-21T10:48:22-0500",
   "fecha": "2026-09-21",
   "por": "seyacat",
-  "commit": "67ed674",
+  "commit": "e31a743",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -72,7 +72,7 @@
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.124.1",
+    "@dotrino/vaultd": "0.124.2",
     "@dotrino/vault": "0.70.0",
     "@dotrino/verifier": "0.2.0",
     "wallet": "2.49.0",
@@ -107,13 +107,13 @@
     "dotrino-messenger": null,
     "@dotrino/opaque": "0.1.0",
     "@dotrino/passmanager": "0.16.0",
-    "@dotrino/identity": "0.99.0",
+    "@dotrino/identity": null,
     "cuarenta": null,
     "dotrino-profile-page": null,
     "@dotrino/content-client": "0.2.4",
     "dotrino-mundial": null,
     "dotrino-base64": null,
-    "@dotrino/ia-agent": null,
+    "@dotrino/ia-agent": "0.5.0",
     "@dotrino/nav": "0.3.0",
     "dotrino-qrshare": null,
     "@dotrino/sso-client": null,
@@ -162,7 +162,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.124.1",
+    "@dotrino/vaultd": "0.124.2",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.0",
     "gridgame": null,
@@ -178,7 +178,7 @@
     {
       "pilar": "@dotrino/identity",
       "version": "0.99.0",
-      "enNpm": true,
+      "enNpm": false,
       "repos": [
         "dotrino-ad-integration",
         "dotrino-base64",
@@ -1280,8 +1280,8 @@
       ],
       "rotas": [],
       "vivo": {
-        "http": null,
-        "sinPublicar": null
+        "http": 200,
+        "sinPublicar": 0
       },
       "auditoria": {
         "por": "seyacat",
@@ -3278,7 +3278,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "67ed674",
+      "commit": "e31a743",
       "fecha": "2026-09-21",
       "catalogo": null,
       "deps": [],
@@ -3292,7 +3292,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 4,
-          "commits": 6,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3322,7 +3322,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 22,
-          "commits": 22,
+          "commits": 23,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4613,8 +4613,8 @@
       ],
       "rotas": [],
       "vivo": {
-        "http": 200,
-        "sinPublicar": 0
+        "http": null,
+        "sinPublicar": null
       },
       "auditoria": {
         "por": "seyacat",
@@ -6182,7 +6182,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.3.4",
-      "commit": "3eb5b6c",
+      "commit": "97605de",
       "fecha": "2026-09-21",
       "catalogo": null,
       "deps": [
@@ -6198,7 +6198,7 @@
           "existe": true,
           "fecha": "2026-09-04",
           "dias": 17,
-          "commits": 42,
+          "commits": 43,
           "tope": true,
           "faltan": null,
           "rojo": false
@@ -8265,8 +8265,8 @@
       "stack": "vite",
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.124.1",
-      "commit": "afd4362",
+      "version": "0.124.2",
+      "commit": "e0ac783",
       "fecha": "2026-09-21",
       "catalogo": {
         "nombre": "Dotrino Vault",
@@ -8296,7 +8296,7 @@
           "existe": true,
           "fecha": "2026-09-16",
           "dias": 5,
-          "commits": 40,
+          "commits": 41,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8306,7 +8306,7 @@
           "existe": true,
           "fecha": "2026-08-26",
           "dias": 26,
-          "commits": 220,
+          "commits": 221,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8326,7 +8326,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 22,
-          "commits": 155,
+          "commits": 156,
           "tope": false,
           "faltan": [
             "duplicado"
