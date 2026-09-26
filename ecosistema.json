@@ -1,9 +1,9 @@
 {
-  "generado": "2026-09-25T08:25:19-0500",
-  "fecha": "2026-09-25",
+  "generado": "2026-09-26T16:09:55-0500",
+  "fecha": "2026-09-26",
   "por": "seyacat",
-  "commit": "e977411",
-  "vivo": false,
+  "commit": "2f3af6c",
+  "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
     "commits": 10,
@@ -18,7 +18,7 @@
     "duplicado": "código o funcionalidad duplicada en el repo (regla principal)"
   },
   "ocultas": 1,
-  "medidasAhora": 76,
+  "medidasAhora": 77,
   "heredadas": 0,
   "pilares": {
     "dotrino-base64": "1.0.0",
@@ -26,25 +26,25 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.1.0",
+    "critters": "0.0.25",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.1.0",
-    "eco": "0.1.0",
-    "favicon-generator": "1.0.0",
+    "diamonds": "0.0.9-q",
+    "eco": "1.1.0-rc-3",
+    "favicon-generator": "0.1.2",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.0",
     "gridgame": "0.0.0",
-    "here": "0.0.0",
-    "frontend": "0.0.0",
+    "here": "0.0.2",
+    "frontend": "2.0.0-alpha.4",
     "dotrino-ia": "0.1.0",
     "@dotrino/ia-agent": "0.5.0",
-    "@dotrino/identity": "0.103.0",
+    "@dotrino/identity": "0.105.0",
     "@dotrino/install": "0.3.1",
     "@dotrino/lobby": "0.10.0",
     "dotrino-messenger": "0.1.0",
     "dotrino-mundial": "0.1.0",
-    "myip": "0.1.0",
+    "myip": "1.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.4.0",
     "@dotrino/profile": "0.19.0",
@@ -61,24 +61,24 @@
     "dotrino-shortener": "0.1.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.11.0",
-    "sudoku": "0.1.0",
+    "sudoku": "0.0.3",
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.1.0",
     "@dotrino/terminal-agent": "0.2.15",
-    "test": "0.2.0",
+    "test": "3.3.0",
     "@dotrino/topbar": "0.12.0",
-    "trivia": "0.1.0",
+    "trivia": "1.0.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.131.5",
-    "@dotrino/vault": "0.73.0",
+    "@dotrino/vaultd": "0.132.0",
+    "@dotrino/vault": "0.74.0",
     "@dotrino/verifier": "0.2.0",
-    "wallet": "0.2.0",
+    "wallet": "2.49.1",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.1.0",
-    "@dotrino/env": "0.64.0",
+    "@dotrino/env": "0.74.0",
     "@dotrino/inspector": "0.2.1",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -88,13 +88,13 @@
     "@dotrino/content": "0.3.13",
     "@dotrino/qr": "0.1.0",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.3.15",
+    "@dotrino/roadmap": "0.3.19",
     "@dotrino/sealers": "0.7.2",
     "@dotrino/sso-client": "0.1.0",
     "@dotrino/telegram-bot": "0.2.1",
     "@dotrino/webrtc": "0.1.0",
     "facturero": "0.1.0",
-    "padel": "0.2.0",
+    "padel": "0.0.1",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.2.2"
   },
@@ -103,11 +103,11 @@
     "@dotrino/profile": "0.19.0",
     "@dotrino/store": "0.11.0",
     "@dotrino/install": "0.3.1",
-    "@dotrino/proxy-client": "0.23.1",
+    "@dotrino/proxy-client": "0.24.0",
     "dotrino-messenger": null,
     "@dotrino/opaque": "0.1.0",
     "@dotrino/passmanager": "0.17.0",
-    "@dotrino/identity": "0.100.0",
+    "@dotrino/identity": "0.105.0",
     "cuarenta": null,
     "dotrino-profile-page": null,
     "@dotrino/content-client": "0.2.4",
@@ -122,23 +122,23 @@
     "@dotrino/content": "0.3.13",
     "@dotrino/feedback": null,
     "favicon-generator": "0.1.2",
-    "@dotrino/inspector": "0.2.0",
-    "@dotrino/notifications": "0.4.0",
+    "@dotrino/inspector": "0.2.1",
+    "@dotrino/notifications": null,
     "@dotrino/terminal-agent": "0.2.15",
     "@dotrino/sealers": "0.7.2",
     "test": "3.3.0",
     "@dotrino/share": "0.3.0",
     "@dotrino/geo": "0.9.0",
-    "wallet": "2.49.0",
+    "wallet": "2.49.1",
     "@dotrino/compat": "0.4.0",
     "sudoku": "0.0.3",
-    "@dotrino/roadmap": "0.3.4",
+    "@dotrino/roadmap": "0.3.19",
     "@dotrino/tunnel": "0.1.5",
-    "@dotrino/topbar": "0.11.1",
+    "@dotrino/topbar": "0.12.0",
     "@dotrino/qr": "0.1.0",
     "@dotrino/telegram-bot": "0.2.1",
     "dotrino-terminal": null,
-    "@dotrino/vault": "0.71.0",
+    "@dotrino/vault": "0.74.0",
     "padel": "0.0.1",
     "dotrino-reputation-app": null,
     "simple-websocket-chat": null,
@@ -162,22 +162,22 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.125.0",
+    "@dotrino/vaultd": "0.132.0",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.0",
     "gridgame": null,
     "frontend": "2.0.0-alpha.4",
-    "@dotrino/update": "0.1.1",
+    "@dotrino/update": "0.2.2",
     "@dotrino/support": "0.9.0",
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.71.0"
+    "@dotrino/env": "0.74.0"
   },
   "consumidores": [
     {
       "pilar": "@dotrino/identity",
-      "version": "0.103.0",
+      "version": "0.105.0",
       "enNpm": true,
       "repos": [
         "dotrino-ad-integration",
@@ -449,7 +449,7 @@
     },
     {
       "pilar": "@dotrino/vault",
-      "version": "0.73.0",
+      "version": "0.74.0",
       "enNpm": true,
       "repos": [
         "dotrino-content",
@@ -488,7 +488,7 @@
     {
       "pilar": "@dotrino/notifications",
       "version": "0.4.0",
-      "enNpm": true,
+      "enNpm": false,
       "repos": [
         "dotrino-critters",
         "dotrino-diamonds",
@@ -588,7 +588,7 @@
     },
     {
       "pilar": "@dotrino/roadmap",
-      "version": "0.3.15",
+      "version": "0.3.19",
       "enNpm": true,
       "repos": [
         "dotrino-vault"
@@ -620,7 +620,7 @@
         "@dotrino/verifier"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -677,7 +677,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.87.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         }
       ],
       "rotas": [
@@ -718,7 +718,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -768,7 +768,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -785,21 +788,21 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "73e1775",
-      "fecha": "2026-09-25",
+      "commit": "bd68489",
+      "fecha": "2026-09-26",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-25",
+          "fecha": "2026-09-26",
           "dias": 0,
-          "commits": 0,
+          "commits": 16,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -828,8 +831,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-28",
-          "dias": 28,
-          "commits": 10,
+          "dias": 29,
+          "commits": 30,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -873,7 +876,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -925,7 +928,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -939,7 +942,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -966,7 +972,7 @@
         "@dotrino/reputation"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1023,7 +1029,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1073,7 +1079,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1125,7 +1131,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -1153,7 +1159,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1199,7 +1208,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1251,7 +1260,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1270,7 +1279,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": null,
+        "sinPublicar": null
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1292,7 +1304,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1377,7 +1389,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1434,7 +1446,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.78.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -1444,7 +1456,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
-          "publicado": "0.73.0"
+          "publicado": "0.74.0"
         }
       ],
       "rotas": [
@@ -1473,7 +1485,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1512,7 +1527,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1564,7 +1579,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -1618,7 +1633,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1657,7 +1675,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1709,7 +1727,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1728,7 +1746,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1750,7 +1771,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1842,7 +1863,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -1894,7 +1915,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -1943,7 +1964,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1983,7 +2007,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2033,7 +2057,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2082,7 +2106,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2132,7 +2159,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2182,7 +2209,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2217,7 +2247,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2267,7 +2297,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/topbar",
@@ -2285,7 +2315,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": null,
       "rojos": 4
     },
@@ -2312,7 +2345,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2364,7 +2397,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2378,7 +2411,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2403,7 +2439,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2460,7 +2496,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         }
       ],
       "rotas": [],
@@ -2486,7 +2522,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2585,7 +2621,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2637,7 +2673,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.90.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -2665,7 +2701,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2715,7 +2754,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2765,7 +2804,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2797,7 +2839,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2849,7 +2891,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2863,7 +2905,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2929,7 +2974,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -2981,7 +3026,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3009,7 +3054,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3046,7 +3094,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3103,7 +3151,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -3136,7 +3184,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3152,15 +3203,15 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/identity",
-      "version": "0.103.0",
-      "commit": "25b65c0",
-      "fecha": "2026-09-25",
+      "version": "0.105.0",
+      "commit": "0db1a2a",
+      "fecha": "2026-09-26",
       "catalogo": null,
       "deps": [
         "@dotrino/opaque"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3168,8 +3219,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-07",
-          "dias": 18,
-          "commits": 22,
+          "dias": 19,
+          "commits": 26,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3198,8 +3249,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 26,
-          "commits": 58,
+          "dias": 27,
+          "commits": 62,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3227,12 +3278,12 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "e977411",
-      "fecha": "2026-09-24",
+      "commit": "2f3af6c",
+      "fecha": "2026-09-25",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3240,8 +3291,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-17",
-          "dias": 7,
-          "commits": 11,
+          "dias": 8,
+          "commits": 12,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3249,7 +3300,7 @@
         "portada": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-09-24",
+          "fecha": "2026-09-25",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3270,8 +3321,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 25,
-          "commits": 27,
+          "dias": 26,
+          "commits": 28,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3282,7 +3333,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 1
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3318,7 +3372,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-inspector",
@@ -3339,7 +3393,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3394,7 +3448,10 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3422,7 +3479,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3472,7 +3529,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3494,7 +3554,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3635,7 +3695,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3685,7 +3745,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -3721,7 +3781,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3751,7 +3814,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3822,7 +3885,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3872,7 +3935,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3907,7 +3973,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -3959,7 +4025,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3973,7 +4039,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4006,7 +4075,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4058,7 +4127,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4072,7 +4141,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4080,6 +4152,71 @@
         "hallazgos": []
       },
       "rojos": 6
+    },
+    {
+      "repo": "dotrino-native",
+      "tipo": "otro",
+      "interna": false,
+      "stack": "—",
+      "subdominio": null,
+      "paquete": null,
+      "version": null,
+      "commit": "2974d4d",
+      "fecha": "2026-09-26",
+      "catalogo": null,
+      "deps": [],
+      "medido": {
+        "fecha": "2026-09-26",
+        "por": "seyacat"
+      },
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-09-26",
+          "dias": 0,
+          "commits": 3,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "auditoria": {
+          "aplica": true,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": [],
+          "rojo": true
+        }
+      },
+      "faltan": [],
+      "versiones": [],
+      "rotas": [],
+      "vivo": null,
+      "auditoria": null,
+      "rojos": 1
     },
     {
       "repo": "dotrino-nav",
@@ -4094,7 +4231,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4168,7 +4305,7 @@
         "@dotrino/proxy-client"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4268,7 +4405,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4354,7 +4491,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4406,7 +4543,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4429,7 +4566,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4476,7 +4616,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4533,7 +4673,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.99.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4543,11 +4683,14 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.69.0",
-          "publicado": "0.73.0"
+          "publicado": "0.74.0"
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4605,7 +4748,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4718,7 +4861,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4770,7 +4913,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.96.1",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4798,7 +4941,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4832,7 +4978,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -4884,7 +5030,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4912,7 +5058,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4967,7 +5116,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5024,7 +5173,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.78.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5034,7 +5183,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
-          "publicado": "0.73.0"
+          "publicado": "0.74.0"
         }
       ],
       "rotas": [
@@ -5116,7 +5265,7 @@
         "@dotrino/webrtc"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5168,7 +5317,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.84.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         }
       ],
       "rotas": [
@@ -5218,7 +5367,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5267,13 +5416,17 @@
         {
           "k": "wiki",
           "etiqueta": "documentación en el wiki (§9.2)"
+        },
+        {
+          "k": "oidc",
+          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
       ],
       "versiones": [],
       "rotas": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-qrgenerator",
@@ -5299,7 +5452,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5349,7 +5502,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5363,7 +5516,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5404,7 +5560,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5454,7 +5610,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5468,7 +5624,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5518,7 +5677,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5568,7 +5727,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5609,7 +5771,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5661,7 +5823,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.92.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5671,7 +5833,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.64.0",
-          "publicado": "0.73.0"
+          "publicado": "0.74.0"
         }
       ],
       "rotas": [
@@ -5744,7 +5906,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5801,7 +5963,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.84.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         }
       ],
       "rotas": [
@@ -5888,7 +6050,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -5940,7 +6102,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5968,7 +6130,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5998,7 +6163,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6091,15 +6256,15 @@
       "stack": "—",
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
-      "version": "0.3.15",
-      "commit": "3ecc177",
-      "fecha": "2026-09-25",
+      "version": "0.3.19",
+      "commit": "c09ab56",
+      "fecha": "2026-09-26",
       "catalogo": null,
       "deps": [
         "@dotrino/compat"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6107,8 +6272,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-04",
-          "dias": 21,
-          "commits": 55,
+          "dias": 22,
+          "commits": 59,
           "tope": true,
           "faltan": null,
           "rojo": false
@@ -6174,7 +6339,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6229,7 +6394,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.78.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6244,7 +6409,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.52.0",
-          "publicado": "0.73.0"
+          "publicado": "0.74.0"
         }
       ],
       "rotas": [
@@ -6298,7 +6463,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6370,7 +6535,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6447,7 +6612,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6546,7 +6711,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6603,7 +6768,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.86.1",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6618,7 +6783,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.62.1",
-          "publicado": "0.73.0"
+          "publicado": "0.74.0"
         }
       ],
       "rotas": [
@@ -6700,7 +6865,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6757,7 +6922,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.86.1",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         }
       ],
       "rotas": [
@@ -6778,7 +6943,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": null
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6800,7 +6968,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6910,7 +7078,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -6962,7 +7130,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -6990,7 +7158,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7034,7 +7205,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7143,7 +7314,7 @@
         "@dotrino/tunnel"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7198,7 +7369,10 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7242,7 +7416,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7299,7 +7473,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -7335,7 +7509,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7374,8 +7551,8 @@
       "subdominio": "test.dotrino.com",
       "paquete": "test",
       "version": "0.2.0",
-      "commit": "9731d70",
-      "fecha": "2026-09-25",
+      "commit": "2d166d7",
+      "fecha": "2026-09-26",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -7383,7 +7560,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7391,8 +7568,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-12",
-          "dias": 13,
-          "commits": 9,
+          "dias": 14,
+          "commits": 10,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7401,8 +7578,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 27,
-          "commits": 31,
+          "dias": 28,
+          "commits": 32,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7421,8 +7598,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 26,
-          "commits": 21,
+          "dias": 27,
+          "commits": 22,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7435,7 +7612,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -7449,7 +7626,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7503,7 +7683,7 @@
         "@dotrino/support"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7603,7 +7783,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7655,7 +7835,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -7683,7 +7863,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7743,7 +7926,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7795,7 +7978,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -7831,7 +8014,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7874,7 +8060,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -7929,7 +8115,10 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8015,7 +8204,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -8087,7 +8276,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -8151,9 +8340,9 @@
       "stack": "vite",
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.131.5",
-      "commit": "0a7150b",
-      "fecha": "2026-09-25",
+      "version": "0.132.0",
+      "commit": "dbc26de",
+      "fecha": "2026-09-26",
       "catalogo": {
         "nombre": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -8173,16 +8362,16 @@
         "@dotrino/remote-agent"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-16",
-          "dias": 9,
-          "commits": 61,
+          "fecha": "2026-09-26",
+          "dias": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8191,8 +8380,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-26",
-          "dias": 30,
-          "commits": 241,
+          "dias": 31,
+          "commits": 244,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -8201,7 +8390,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-27",
-          "dias": 60,
+          "dias": 61,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -8211,8 +8400,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 26,
-          "commits": 172,
+          "dias": 27,
+          "commits": 174,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -8221,20 +8410,12 @@
         }
       },
       "faltan": [],
-      "versiones": [
-        {
-          "dep": "@dotrino/identity",
-          "pide": "0.101.0",
-          "publicado": "0.103.0"
-        },
-        {
-          "dep": "@dotrino/roadmap",
-          "pide": "0.3.7",
-          "publicado": "0.3.15"
-        }
-      ],
+      "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8270,7 +8451,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 7
     },
     {
       "repo": "dotrino-verifier",
@@ -8287,7 +8468,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -8339,7 +8520,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.87.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         }
       ],
       "rotas": [
@@ -8410,7 +8591,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -8462,7 +8643,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.103.0"
+          "publicado": "0.105.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8485,7 +8666,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8522,7 +8706,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -8571,13 +8755,17 @@
         {
           "k": "wiki",
           "etiqueta": "documentación en el wiki (§9.2)"
+        },
+        {
+          "k": "oidc",
+          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
       ],
       "versiones": [],
       "rotas": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-wiki",
@@ -8587,12 +8775,12 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "c4b081c",
-      "fecha": "2026-09-19",
+      "commit": "0388a46",
+      "fecha": "2026-09-26",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-25",
+        "fecha": "2026-09-26",
         "por": "seyacat"
       },
       "frescura": {
@@ -8600,11 +8788,11 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-23",
-          "dias": 27,
-          "commits": 41,
+          "dias": 34,
+          "commits": 42,
           "tope": true,
           "faltan": null,
-          "rojo": false
+          "rojo": true
         },
         "portada": {
           "aplica": false,
@@ -8630,8 +8818,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 20,
-          "commits": 19,
+          "dias": 27,
+          "commits": 20,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -8664,7 +8852,7 @@
           }
         ]
       },
-      "rojos": 3
+      "rojos": 4
     }
   ]
 }
