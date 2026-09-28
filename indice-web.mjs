@@ -124,6 +124,7 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
     <button role="tab" aria-selected="true" data-vista="repos">Por repo</button>
     <button role="tab" aria-selected="false" data-vista="problemas">Por problema</button>
     <button role="tab" aria-selected="false" data-vista="pilares">Pilares</button>
+    <button role="tab" aria-selected="false" data-vista="nativas">Nativas</button>
   </nav>
 
   <div id="vista-repos">
@@ -156,6 +157,7 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
 
   <div id="vista-problemas" hidden></div>
   <div id="vista-pilares" hidden></div>
+  <div id="vista-nativas" hidden></div>
 </main>
 
 <script type="application/json" id="datos">${embebido(datos)}</script>
@@ -363,9 +365,22 @@ $('#vista-pilares').innerHTML = '<div class="envoltorio"><table><thead><tr>' +
     c.repos.map(r => '<span class="chip">' + esc(r) + '</span>').join('') + '</td></tr>').join('') +
   '</tbody></table></div>'
 
+/* ── vista "nativas" (CONVENCIONES §16) ─────────────────────────────────── */
+// La PWA va delante; cada nativa vale la versión de la PWA con la que está a la par.
+const conNativa = D.piezas.filter(p => p.plataformas)
+const celdaNativa = (x) => !x ? '<td><span class="na">·</span></td>'
+  : '<td>' + esc(x.version || '—') + ' <span class="chip' + (x.estado === 'a la par' ? '' : ' mal') + '">' + esc(x.estado) + '</span></td>'
+$('#vista-nativas').innerHTML = conNativa.length
+  ? '<p class="nota">La PWA va delante con cada característica (§16). Ir detrás no es un incumplimiento: es la deuda que hay que ver.</p>' +
+    '<div class="envoltorio"><table><thead><tr><th>App</th><th>PWA</th><th>iOS</th><th>Android</th></tr></thead><tbody>' +
+    conNativa.map(p => '<tr><td><b>' + esc(p.repo) + '</b></td><td>' + esc(p.plataformas.pwa || '—') + '</td>' +
+      celdaNativa(p.plataformas.ios) + celdaNativa(p.plataformas.android) + '</tr>').join('') +
+    '</tbody></table></div>'
+  : '<p class="nota">Ninguna app declara <code>dotrino.platforms</code> en su <code>package.json</code>.</p>'
+
 document.querySelectorAll('[data-vista]').forEach(b => b.addEventListener('click', () => {
   document.querySelectorAll('[data-vista]').forEach(o => o.setAttribute('aria-selected', String(o === b)))
-  for (const v of ['repos', 'problemas', 'pilares']) {
+  for (const v of ['repos', 'problemas', 'pilares', 'nativas']) {
     document.getElementById('vista-' + v).hidden = v !== b.dataset.vista
   }
 }))

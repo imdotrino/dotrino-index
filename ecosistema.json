@@ -1,9 +1,9 @@
 {
-  "generado": "2026-09-26T16:09:55-0500",
-  "fecha": "2026-09-26",
+  "generado": "2026-09-28T10:32:33-0500",
+  "fecha": "2026-09-28",
   "por": "seyacat",
-  "commit": "2f3af6c",
-  "vivo": true,
+  "commit": "3c01c1f",
+  "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
     "commits": 10,
@@ -26,17 +26,17 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.0.25",
+    "critters": "0.1.0",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.0.9-q",
-    "eco": "1.1.0-rc-3",
-    "favicon-generator": "0.1.2",
+    "diamonds": "0.1.0",
+    "eco": "0.1.0",
+    "favicon-generator": "1.0.0",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.0",
     "gridgame": "0.0.0",
-    "here": "0.0.2",
-    "frontend": "2.0.0-alpha.4",
+    "here": "0.0.0",
+    "frontend": "0.0.0",
     "dotrino-ia": "0.1.0",
     "@dotrino/ia-agent": "0.5.0",
     "@dotrino/identity": "0.105.0",
@@ -44,7 +44,7 @@
     "@dotrino/lobby": "0.10.0",
     "dotrino-messenger": "0.1.0",
     "dotrino-mundial": "0.1.0",
-    "myip": "1.1.0",
+    "myip": "0.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.4.0",
     "@dotrino/profile": "0.19.0",
@@ -61,24 +61,24 @@
     "dotrino-shortener": "0.1.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.11.0",
-    "sudoku": "0.0.3",
+    "sudoku": "0.1.0",
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.1.0",
     "@dotrino/terminal-agent": "0.2.15",
-    "test": "3.3.0",
+    "test": "0.2.0",
     "@dotrino/topbar": "0.12.0",
-    "trivia": "1.0.0",
+    "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
     "@dotrino/vaultd": "0.132.0",
     "@dotrino/vault": "0.74.0",
     "@dotrino/verifier": "0.2.0",
-    "wallet": "2.49.1",
+    "wallet": "0.2.0",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.1.0",
-    "@dotrino/env": "0.74.0",
+    "@dotrino/env": "0.64.0",
     "@dotrino/inspector": "0.2.1",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -94,7 +94,7 @@
     "@dotrino/telegram-bot": "0.2.1",
     "@dotrino/webrtc": "0.1.0",
     "facturero": "0.1.0",
-    "padel": "0.0.1",
+    "padel": "0.3.0",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.2.2"
   },
@@ -609,6 +609,7 @@
       "tipo": "servicio",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "dotrino-ad-integration",
       "version": "0.1.0",
@@ -620,7 +621,7 @@
         "@dotrino/verifier"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -704,6 +705,7 @@
       "tipo": "landing",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "android-launcher.dotrino.com",
       "paquete": null,
       "version": null,
@@ -718,7 +720,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -768,10 +770,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -785,15 +784,16 @@
       "tipo": "otro",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "bd68489",
-      "fecha": "2026-09-26",
+      "commit": "3372e4c",
+      "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -801,8 +801,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-26",
-          "dias": 0,
-          "commits": 16,
+          "dias": 2,
+          "commits": 17,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -831,8 +831,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-28",
-          "dias": 29,
-          "commits": 30,
+          "dias": 31,
+          "commits": 31,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -857,6 +857,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "base64.dotrino.com",
       "paquete": "dotrino-base64",
       "version": "1.0.0",
@@ -876,7 +877,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -942,10 +943,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -959,6 +957,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/bots",
       "version": "0.1.0",
@@ -972,7 +971,7 @@
         "@dotrino/reputation"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1057,6 +1056,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "chat.dotrino.com",
       "paquete": "simple-websocket-chat",
       "version": "0.0.0",
@@ -1079,7 +1079,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1159,10 +1159,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1184,6 +1181,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "chess.dotrino.com",
       "paquete": "simple-websocket-chess",
       "version": "0.0.0",
@@ -1208,7 +1206,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1279,10 +1277,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": null,
-        "sinPublicar": null
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1296,6 +1291,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/compat",
       "version": "0.4.0",
@@ -1304,7 +1300,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1371,6 +1367,7 @@
       "tipo": "landing",
       "interna": true,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "content.dotrino.com",
       "paquete": "@dotrino/content",
       "version": "0.3.13",
@@ -1389,7 +1386,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1485,10 +1482,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1502,6 +1496,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "critters.dotrino.com",
       "paquete": "critters",
       "version": "0.1.0",
@@ -1527,7 +1522,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1633,10 +1628,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1650,6 +1642,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "cuarenta.dotrino.com",
       "paquete": "cuarenta",
       "version": "0.1.0",
@@ -1675,7 +1668,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1746,10 +1739,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1763,6 +1753,7 @@
       "tipo": "servicio",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "cc-deploy-listener",
       "version": "0.1.0",
@@ -1771,7 +1762,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1840,6 +1831,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "diamonds.dotrino.com",
       "paquete": "diamonds",
       "version": "0.1.0",
@@ -1863,7 +1855,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -1964,10 +1956,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1981,6 +1970,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "eco.dotrino.com",
       "paquete": "eco",
       "version": "0.1.0",
@@ -2007,7 +1997,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2106,10 +2096,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2145,6 +2132,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "ecuavoley.dotrino.com",
       "paquete": null,
       "version": null,
@@ -2159,7 +2147,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2209,10 +2197,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2226,6 +2211,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "facturero.dotrino.com",
       "paquete": "facturero",
       "version": "0.1.0",
@@ -2247,7 +2233,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2315,10 +2301,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": null,
       "rojos": 4
     },
@@ -2327,6 +2310,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "favicon.dotrino.com",
       "paquete": "favicon-generator",
       "version": "1.0.0",
@@ -2345,7 +2329,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2411,10 +2395,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2428,6 +2409,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/feedback",
       "version": "0.1.0",
@@ -2439,7 +2421,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2514,6 +2496,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/geo",
       "version": "0.9.0",
@@ -2522,7 +2505,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2600,6 +2583,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "gridgame.dotrino.com",
       "paquete": "gridgame",
       "version": "0.0.0",
@@ -2621,7 +2605,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2701,10 +2685,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2740,6 +2721,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "gymbro.dotrino.com",
       "paquete": null,
       "version": null,
@@ -2754,7 +2736,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2804,10 +2786,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2821,6 +2800,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "here.dotrino.com",
       "paquete": "here",
       "version": "0.0.0",
@@ -2839,7 +2819,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -2905,10 +2885,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2958,6 +2935,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
@@ -2974,7 +2952,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3054,10 +3032,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3071,6 +3046,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "ia.dotrino.com",
       "paquete": "dotrino-ia",
       "version": "0.1.0",
@@ -3094,7 +3070,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3184,10 +3160,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3201,6 +3174,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/identity",
       "version": "0.105.0",
@@ -3211,7 +3185,7 @@
         "@dotrino/opaque"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3275,15 +3249,16 @@
       "tipo": "informe",
       "interna": true,
       "stack": "—",
+      "plataformas": null,
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "2f3af6c",
-      "fecha": "2026-09-25",
+      "commit": "3c01c1f",
+      "fecha": "2026-09-26",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3291,8 +3266,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-17",
-          "dias": 8,
-          "commits": 12,
+          "dias": 9,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3300,7 +3275,7 @@
         "portada": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-09-25",
+          "fecha": "2026-09-26",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3321,8 +3296,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 26,
-          "commits": 28,
+          "dias": 27,
+          "commits": 29,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3333,10 +3308,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 1
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3372,13 +3344,14 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 5
     },
     {
       "repo": "dotrino-inspector",
       "tipo": "landing",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "inspector.dotrino.com",
       "paquete": "@dotrino/inspector",
       "version": "0.2.1",
@@ -3393,7 +3366,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3448,10 +3421,7 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3465,6 +3435,7 @@
       "tipo": "landing",
       "interna": false,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "install.dotrino.com",
       "paquete": "@dotrino/install",
       "version": "0.3.1",
@@ -3479,7 +3450,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3529,10 +3500,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3546,6 +3514,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/lobby",
       "version": "0.10.0",
@@ -3554,7 +3523,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3668,6 +3637,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "messenger.dotrino.com",
       "paquete": "dotrino-messenger",
       "version": "0.1.0",
@@ -3695,7 +3665,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3781,10 +3751,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3806,6 +3773,7 @@
       "tipo": "otro",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": null,
       "version": null,
@@ -3814,7 +3782,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3871,6 +3839,7 @@
       "tipo": "landing",
       "interna": false,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "middlebot.dotrino.com",
       "paquete": null,
       "version": null,
@@ -3885,7 +3854,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -3935,10 +3904,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3960,6 +3926,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "mundial.dotrino.com",
       "paquete": "dotrino-mundial",
       "version": "0.1.0",
@@ -3973,7 +3940,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4039,10 +4006,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4056,6 +4020,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "myip.dotrino.com",
       "paquete": "myip",
       "version": "0.1.0",
@@ -4075,7 +4040,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4141,10 +4106,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4158,6 +4120,7 @@
       "tipo": "otro",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": null,
       "version": null,
@@ -4166,7 +4129,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4223,6 +4186,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/nav",
       "version": "0.3.0",
@@ -4231,7 +4195,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4295,6 +4259,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/notifications",
       "version": "0.4.0",
@@ -4305,7 +4270,7 @@
         "@dotrino/proxy-client"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4397,6 +4362,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/opaque",
       "version": "0.1.0",
@@ -4405,7 +4371,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4467,11 +4433,22 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": {
+        "pwa": "0.3.0",
+        "ios": {
+          "version": null,
+          "estado": "sin empezar"
+        },
+        "android": {
+          "version": null,
+          "estado": "sin empezar"
+        }
+      },
       "subdominio": "padel.dotrino.com",
       "paquete": "padel",
-      "version": "0.2.0",
-      "commit": "0ffeac9",
-      "fecha": "2026-09-16",
+      "version": "0.3.0",
+      "commit": "5b37754",
+      "fecha": "2026-09-28",
       "catalogo": {
         "nombre": "Contador Pádel",
         "url": "https://padel.dotrino.com/",
@@ -4491,7 +4468,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4499,8 +4476,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-15",
-          "dias": 0,
-          "commits": 3,
+          "dias": 13,
+          "commits": 5,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4508,9 +4485,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-15",
+          "fecha": "2026-09-28",
           "dias": 0,
-          "commits": 3,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4519,7 +4496,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-14",
-          "dias": 2,
+          "dias": 14,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -4529,8 +4506,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 16,
-          "commits": 21,
+          "dias": 29,
+          "commits": 23,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4566,10 +4543,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4598,11 +4572,12 @@
       "tipo": "landing",
       "interna": true,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "258fec5",
-      "fecha": "2026-09-24",
+      "commit": "af116c6",
+      "fecha": "2026-09-28",
       "catalogo": {
         "nombre": "Contraseñas",
         "url": "https://pass.dotrino.com/",
@@ -4616,7 +4591,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4624,16 +4599,16 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 26,
-          "commits": 89,
+          "dias": 30,
+          "commits": 99,
           "tope": false,
           "faltan": null,
-          "rojo": false
+          "rojo": true
         },
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-24",
+          "fecha": "2026-09-28",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -4644,7 +4619,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-08-25",
-          "dias": 30,
+          "dias": 34,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -4654,8 +4629,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 25,
-          "commits": 68,
+          "dias": 29,
+          "commits": 78,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4687,10 +4662,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4733,13 +4705,14 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-profile",
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/profile",
       "version": "0.19.0",
@@ -4748,7 +4721,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4841,6 +4814,7 @@
       "tipo": "app",
       "interna": true,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "profile.dotrino.com",
       "paquete": "dotrino-profile-page",
       "version": "0.1.0",
@@ -4861,7 +4835,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -4941,10 +4915,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4958,6 +4929,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "pronostico.dotrino.com",
       "paquete": "pronostico-mundialista",
       "version": "0.1.0",
@@ -4978,7 +4950,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5058,10 +5030,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5104,6 +5073,7 @@
       "tipo": "servicio",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "websocket-proxy",
       "version": "1.2.0",
@@ -5116,7 +5086,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5254,6 +5224,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/proxy-client",
       "version": "0.24.0",
@@ -5265,7 +5236,7 @@
         "@dotrino/webrtc"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5359,6 +5330,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/qr",
       "version": "0.1.0",
@@ -5367,7 +5339,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5416,23 +5388,20 @@
         {
           "k": "wiki",
           "etiqueta": "documentación en el wiki (§9.2)"
-        },
-        {
-          "k": "oidc",
-          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
       ],
       "versiones": [],
       "rotas": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 3
+      "rojos": 2
     },
     {
       "repo": "dotrino-qrgenerator",
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "qrgenerator.dotrino.com",
       "paquete": "dotrino-qrgenerator",
       "version": "0.1.0",
@@ -5452,7 +5421,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5516,10 +5485,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5541,6 +5507,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "qrreader.dotrino.com",
       "paquete": "dotrino-qrreader",
       "version": "0.1.0",
@@ -5560,7 +5527,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5624,10 +5591,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5663,6 +5627,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "qrshare.dotrino.com",
       "paquete": "dotrino-qrshare",
       "version": "0.2.0",
@@ -5677,7 +5642,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5727,10 +5692,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5759,6 +5721,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/remote-agent",
       "version": "0.10.0",
@@ -5771,7 +5734,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -5896,6 +5859,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/reputation",
       "version": "0.12.0",
@@ -5906,7 +5870,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6027,6 +5991,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "reputation.dotrino.com",
       "paquete": "dotrino-reputation-app",
       "version": "0.1.0",
@@ -6050,7 +6015,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6130,10 +6095,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6155,6 +6117,7 @@
       "tipo": "otro",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": null,
       "version": null,
@@ -6163,7 +6126,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6254,6 +6217,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.3.19",
@@ -6264,7 +6228,7 @@
         "@dotrino/compat"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6326,6 +6290,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/sealers",
       "version": "0.7.2",
@@ -6339,7 +6304,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6455,6 +6420,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/share",
       "version": "0.3.0",
@@ -6463,7 +6429,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6527,6 +6493,7 @@
       "tipo": "servicio",
       "interna": true,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "dotrino-shortener",
       "version": "0.1.0",
@@ -6535,7 +6502,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6604,6 +6571,7 @@
       "tipo": "servicio",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "dotrino-signer",
       "version": "0.1.0",
@@ -6612,7 +6580,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6696,6 +6664,7 @@
       "tipo": "servicio",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "dotrino-social-bot",
       "version": "0.1.0",
@@ -6711,7 +6680,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6849,6 +6818,7 @@
       "tipo": "landing",
       "interna": false,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "sso.dotrino.com",
       "paquete": "@dotrino/sso-client",
       "version": "0.1.0",
@@ -6865,7 +6835,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -6943,10 +6913,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": null
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6960,6 +6927,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/store",
       "version": "0.11.0",
@@ -6968,7 +6936,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7054,6 +7022,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "sudoku.dotrino.com",
       "paquete": "sudoku",
       "version": "0.1.0",
@@ -7078,7 +7047,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7158,10 +7127,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7197,6 +7163,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/support",
       "version": "0.9.0",
@@ -7205,7 +7172,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7298,6 +7265,7 @@
       "tipo": "landing",
       "interna": false,
       "stack": "vanilla",
+      "plataformas": null,
       "subdominio": "telegram-bot.dotrino.com",
       "paquete": "@dotrino/telegram-bot",
       "version": "0.2.1",
@@ -7314,7 +7282,7 @@
         "@dotrino/tunnel"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7369,10 +7337,7 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7394,6 +7359,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.1.0",
@@ -7416,7 +7382,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7509,10 +7475,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7548,6 +7511,7 @@
       "tipo": "app",
       "interna": true,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "test.dotrino.com",
       "paquete": "test",
       "version": "0.2.0",
@@ -7560,7 +7524,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7626,10 +7590,7 @@
         }
       ],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7672,6 +7633,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/topbar",
       "version": "0.12.0",
@@ -7683,7 +7645,7 @@
         "@dotrino/support"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7761,6 +7723,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "trivia.dotrino.com",
       "paquete": "trivia",
       "version": "0.1.0",
@@ -7783,7 +7746,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -7863,10 +7826,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7902,6 +7862,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "trueque.dotrino.com",
       "paquete": "trueque",
       "version": "0.1.0",
@@ -7926,7 +7887,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8014,10 +7975,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8046,6 +8004,7 @@
       "tipo": "landing",
       "interna": true,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "r.dotrino.com",
       "paquete": null,
       "version": null,
@@ -8060,7 +8019,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8115,10 +8074,7 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8196,6 +8152,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/tutorial",
       "version": "0.2.0",
@@ -8204,7 +8161,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8268,6 +8225,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/update",
       "version": "0.2.2",
@@ -8276,7 +8234,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8338,6 +8296,7 @@
       "tipo": "landing",
       "interna": false,
       "stack": "vite",
+      "plataformas": null,
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
       "version": "0.132.0",
@@ -8362,7 +8321,7 @@
         "@dotrino/remote-agent"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8412,10 +8371,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8458,6 +8414,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/verifier",
       "version": "0.2.0",
@@ -8468,7 +8425,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8569,6 +8526,7 @@
       "tipo": "app",
       "interna": false,
       "stack": "vite+vue",
+      "plataformas": null,
       "subdominio": "wallet.dotrino.com",
       "paquete": "wallet",
       "version": "0.2.0",
@@ -8591,7 +8549,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8666,10 +8624,7 @@
           "sinSaber": false
         }
       ],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8698,6 +8653,7 @@
       "tipo": "paquete",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/webrtc",
       "version": "0.1.0",
@@ -8706,7 +8662,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {
@@ -8755,23 +8711,20 @@
         {
           "k": "wiki",
           "etiqueta": "documentación en el wiki (§9.2)"
-        },
-        {
-          "k": "oidc",
-          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
       ],
       "versiones": [],
       "rotas": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 3
+      "rojos": 2
     },
     {
       "repo": "dotrino-wiki",
       "tipo": "otro",
       "interna": false,
       "stack": "—",
+      "plataformas": null,
       "subdominio": null,
       "paquete": null,
       "version": null,
@@ -8780,7 +8733,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-09-26",
+        "fecha": "2026-09-28",
         "por": "seyacat"
       },
       "frescura": {

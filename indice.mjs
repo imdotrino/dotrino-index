@@ -389,6 +389,56 @@ function frescuraCatalogo () {
   return out
 }
 
+// ─── plataformas nativas (§16) ─────────────────────────────────────────────
+
+/**
+ * CONVENCIONES §16: algunas apps tienen además versión iOS y Android. La PWA va delante
+ * con cada característica, y la versión nativa vale la de la PWA con la que está a la par
+ * (§16.3), así que comparar las dos dice cuánto falta. Se declara en el `package.json` de
+ * la app (`dotrino.platforms`); sin esa declaración la app no es de las calificadas y no
+ * sale aquí.
+ */
+const PLATAFORMAS = ['ios', 'android']
+
+function versionAndroid (dir) {
+  const gradle = leer(join(dir, cual(dir, 'android/app/build.gradle.kts', 'android/app/build.gradle') || 'no-existe')) || ''
+  return gradle.match(/versionName\s*=?\s*["']([^"']+)["']/)?.[1] || null
+}
+
+function versionIos (dir) {
+  const yml = leer(join(dir, 'ios/project.yml')) || ''
+  return yml.match(/(?:MARKETING_VERSION|CFBundleShortVersionString)\s*:\s*["']?([\d.]+)/)?.[1] || null
+}
+
+const cmpVersion = (a, b) => {
+  const x = a.split('.').map(Number)
+  const y = b.split('.').map(Number)
+  for (let i = 0; i < 3; i++) if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) - (y[i] || 0)
+  return 0
+}
+
+function nativas (dir, pkg) {
+  const declaradas = pkg?.dotrino?.platforms
+  if (!Array.isArray(declaradas)) return null
+  const otras = declaradas.filter(x => x !== 'pwa' && !PLATAFORMAS.includes(x))
+  if (otras.length) throw new Error(`${dir}: unknown platform in dotrino.platforms: ${otras.join(', ')}`)
+  const pwa = pkg.version || null
+  const out = { pwa }
+  for (const k of PLATAFORMAS) {
+    if (!declaradas.includes(k)) continue
+    const carpeta = hay(dir, k)
+    const version = k === 'android' ? versionAndroid(dir) : versionIos(dir)
+    // «sin empezar»: declarada y sin carpeta. «sin versión»: hay carpeta pero no se lee
+    // su versión, y eso no se da por buena. Por debajo de la PWA, atrasada (§16.1: es lo
+    // normal, pero se ve).
+    const estado = !carpeta ? 'sin empezar'
+      : !version ? 'sin versión'
+        : pwa && cmpVersion(version, pwa) < 0 ? 'atrasada' : 'a la par'
+    out[k] = { version, estado }
+  }
+  return out
+}
+
 // ─── análisis de un repo ───────────────────────────────────────────────────
 
 function analizar (nombre, catalogo) {
@@ -607,6 +657,7 @@ function analizar (nombre, catalogo) {
     subDeps,
     subdominio: cname ? cname.trim() : null,
     stack,
+    plataformas: nativas(dir, pkg),
     git: g,
     frescura: fresco,
     catalogo: catalogo[nombre] || null,
@@ -1211,7 +1262,23 @@ function informe (piezas, pilares, enNpm) {
     L.push('', '</details>', '')
   }
 
-  // 5. Quién consume cada pilar (para saber a qué le pega un bump)
+  // 5. Apps con versión nativa (§16): cuánto va detrás cada una de la PWA.
+  const conNativa = piezas.filter(p => p.plataformas)
+  L.push('## Plataformas nativas (§16)', '')
+  L.push('> La PWA va delante con cada característica; la versión nativa vale la de la PWA con la ' +
+    'que está a la par. Ir detrás no es un incumplimiento: es la deuda que hay que ver.', '')
+  if (!conNativa.length) {
+    L.push('Ninguna app declara `dotrino.platforms` en su `package.json`.', '')
+  } else {
+    const celda = x => (x ? `${x.version || '—'} · ${x.estado}` : '—')
+    L.push('| App | PWA | iOS | Android |', '|---|---|---|---|')
+    for (const p of conNativa) {
+      L.push(`| \`${p.repo}\` | ${p.plataformas.pwa || '—'} | ${celda(p.plataformas.ios)} | ${celda(p.plataformas.android)} |`)
+    }
+    L.push('')
+  }
+
+  // 6. Quién consume cada pilar (para saber a qué le pega un bump)
   L.push('## Consumidores por pilar', '')
   const consumidores = {}
   for (const p of piezas) for (const dep of Object.keys(p.dotrinoDeps)) (consumidores[dep] ||= []).push(p.repo)
@@ -1376,6 +1443,7 @@ function datosWeb () {
         tipo: p.tipo,
         interna: p.interna,
         stack: p.stack,
+        plataformas: p.plataformas || null,
         subdominio: p.subdominio,
         paquete: p.paquete,
         version: p.version,
