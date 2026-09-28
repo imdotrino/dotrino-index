@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-28T16:35:30-0500",
+  "generado": "2026-09-28T17:32:18-0500",
   "fecha": "2026-09-28",
   "por": "seyacat",
-  "commit": "868e0e4",
+  "commit": "93afcf1",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -788,7 +788,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "b559c94",
+      "commit": "d2f7390",
       "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
@@ -802,7 +802,7 @@
           "existe": true,
           "fecha": "2026-09-26",
           "dias": 2,
-          "commits": 23,
+          "commits": 24,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -832,7 +832,7 @@
           "existe": true,
           "fecha": "2026-08-28",
           "dias": 31,
-          "commits": 37,
+          "commits": 38,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3233,7 +3233,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "868e0e4",
+      "commit": "93afcf1",
       "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
@@ -3247,7 +3247,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 11,
-          "commits": 15,
+          "commits": 16,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3277,7 +3277,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 29,
-          "commits": 31,
+          "commits": 32,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4104,7 +4104,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "2d873f2",
+      "commit": "ce55474",
       "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
@@ -4427,7 +4427,7 @@
       "subdominio": "padel.dotrino.com",
       "paquete": "padel",
       "version": "0.4.0",
-      "commit": "2d0f8f7",
+      "commit": "3150862",
       "fecha": "2026-09-28",
       "catalogo": {
         "nombre": "Contador Pádel",
@@ -4467,7 +4467,7 @@
           "existe": true,
           "fecha": "2026-09-28",
           "dias": 0,
-          "commits": 4,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4487,7 +4487,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 29,
-          "commits": 36,
+          "commits": 38,
           "tope": false,
           "faltan": [
             "duplicado"
