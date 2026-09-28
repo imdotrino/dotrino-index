@@ -1,8 +1,8 @@
 {
-  "generado": "2026-09-28T10:32:33-0500",
+  "generado": "2026-09-28T14:45:16-0500",
   "fecha": "2026-09-28",
   "por": "seyacat",
-  "commit": "3c01c1f",
+  "commit": "e623247",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -788,7 +788,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "3372e4c",
+      "commit": "b559c94",
       "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
@@ -802,7 +802,7 @@
           "existe": true,
           "fecha": "2026-09-26",
           "dias": 2,
-          "commits": 17,
+          "commits": 23,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -832,7 +832,7 @@
           "existe": true,
           "fecha": "2026-08-28",
           "dias": 31,
-          "commits": 31,
+          "commits": 37,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3253,8 +3253,8 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "3c01c1f",
-      "fecha": "2026-09-26",
+      "commit": "e623247",
+      "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -3266,8 +3266,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-17",
-          "dias": 9,
-          "commits": 13,
+          "dias": 11,
+          "commits": 14,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3275,7 +3275,7 @@
         "portada": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-09-26",
+          "fecha": "2026-09-28",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3296,8 +3296,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 27,
-          "commits": 29,
+          "dias": 29,
+          "commits": 30,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4124,8 +4124,8 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "2974d4d",
-      "fecha": "2026-09-26",
+      "commit": "245e557",
+      "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -4137,8 +4137,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-26",
-          "dias": 0,
-          "commits": 3,
+          "dias": 2,
+          "commits": 10,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4440,14 +4440,14 @@
           "estado": "sin empezar"
         },
         "android": {
-          "version": null,
-          "estado": "sin empezar"
+          "version": "0.1.0",
+          "estado": "atrasada"
         }
       },
       "subdominio": "padel.dotrino.com",
       "paquete": "padel",
       "version": "0.3.0",
-      "commit": "5b37754",
+      "commit": "1b0811e",
       "fecha": "2026-09-28",
       "catalogo": {
         "nombre": "Contador Pádel",
@@ -4475,9 +4475,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-15",
-          "dias": 13,
-          "commits": 5,
+          "fecha": "2026-09-28",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4487,7 +4487,7 @@
           "existe": true,
           "fecha": "2026-09-28",
           "dias": 0,
-          "commits": 0,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4507,7 +4507,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 29,
-          "commits": 23,
+          "commits": 24,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4576,7 +4576,7 @@
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "af116c6",
+      "commit": "3225498",
       "fecha": "2026-09-28",
       "catalogo": {
         "nombre": "Contraseñas",
@@ -4600,7 +4600,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 30,
-          "commits": 99,
+          "commits": 101,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -4630,7 +4630,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 29,
-          "commits": 78,
+          "commits": 80,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6221,8 +6221,8 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.3.19",
-      "commit": "c09ab56",
-      "fecha": "2026-09-26",
+      "commit": "8bd9e2e",
+      "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [
         "@dotrino/compat"
@@ -6235,10 +6235,10 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-04",
-          "dias": 22,
-          "commits": 59,
-          "tope": true,
+          "fecha": "2026-09-28",
+          "dias": 0,
+          "commits": 0,
+          "tope": false,
           "faltan": null,
           "rojo": false
         },
@@ -8728,8 +8728,8 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "0388a46",
-      "fecha": "2026-09-26",
+      "commit": "23060fb",
+      "fecha": "2026-09-28",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -8741,8 +8741,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-23",
-          "dias": 34,
-          "commits": 42,
+          "dias": 36,
+          "commits": 43,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8771,8 +8771,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 27,
-          "commits": 20,
+          "dias": 29,
+          "commits": 21,
           "tope": false,
           "faltan": [
             "duplicado"
