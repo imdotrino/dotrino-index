@@ -586,7 +586,11 @@ function analizar (nombre, catalogo) {
     // comandos— sino no saber que hace falta: el 2026-09-19 el replicador de Cepi llevaba
     // QUINCE DÍAS quince versiones atrás y ninguna pantalla lo decía. Se mira si la pieza
     // usa `@dotrino/update`, que es lo único que se puede afirmar leyendo el disco.
-    updateNotice: /@dotrino\/update/.test(texto) || Boolean(deps['@dotrino/update']),
+    // El comando de larga duración a veces vive en una SUBCARPETA con su propio paquete
+    // (`agent/` en terminal e ia, `server/` en los que tienen backend): ahí es donde se
+    // publica y donde está el aviso. Mirar solo la raíz los daba por incumplidores.
+    updateNotice: /@dotrino\/update/.test(texto) || Boolean(deps['@dotrino/update']) ||
+      ['agent', 'server', 'lib'].some((sub) => Boolean(leerJson(join(dir, sub, 'package.json'))?.dependencies?.['@dotrino/update'])),
     topbar: Boolean(etiqueta) || /@dotrino\/topbar/.test(texto) || Boolean(deps['@dotrino/topbar']),
     // §6.1: el botón de perfil es el atributo/propiedad `profile` del topbar.
     // `\b…\b` no confunde con `profileTheme` (no hay frontera de palabra ahí).
