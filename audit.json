@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-12T08:20:44-0500",
+  "generado": "2026-09-30T11:41:21-0500",
   "reglas": [
     "voseo",
     "english",
@@ -1754,8 +1754,8 @@
       "duracionMs": 206709
     },
     "dotrino-terminal": {
-      "commit": "6df9204",
-      "fecha": "2026-08-30",
+      "commit": "a4901d7",
+      "fecha": "2026-09-30",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -1763,38 +1763,23 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [
         {
-          "regla": "english",
-          "archivo": "agent/index.js",
-          "linea": 43,
-          "cita": "throw new Error('esta máquina no está enlazada. Ejecuta primero: `npx @dotrino/terminal-agent enroll`.')",
-          "porque": "el daemon del agente usa español en throw/console.log/console.error y en mensajes de protocolo (T.ERROR) que van por el proxy; se repite en al menos 12 sitios (líneas 43, 57, 104, 125, 129, 132, 133, 148, 153, 157, 192, 209)",
-          "arreglo": "traducir al inglés los throw, los console.log/error de arranque y fallo, y los strings de T.ERROR; el español queda solo para la copy que la web renderiza vía t()"
-        },
-        {
-          "regla": "english",
-          "archivo": "src/agentClient.js",
-          "linea": 59,
-          "cita": "throw new Error('falta la dirección de la máquina destino')",
-          "porque": "5 throw new Error en español (líneas 59, 95, 103, 104, 105), texto de diagnóstico del handshake que debería ir en inglés",
-          "arreglo": "usar mensajes de error en inglés en estos throw"
-        },
-        {
-          "regla": "english",
-          "archivo": "agent/link.js",
-          "linea": 59,
-          "cita": "throw new Error('código de emparejamiento inválido (se espera JSON o base64url)')",
-          "porque": "3 throw new Error en español (líneas 59, 111, 112) para validación de QR/cert, texto de diagnóstico que no debería estar en español",
-          "arreglo": "usar mensajes de error en inglés en estos throw"
+          "regla": "pillars",
+          "archivo": "src/main.js",
+          "linea": 135,
+          "cita": "window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; installBtn.hidden = false })",
+          "porque": "El botón «Instalar» de la PWA se arma a mano con beforeinstallprompt (líneas 132-137) aunque `@dotrino/install` ya es dependencia en package.json:16 y no se importa en ningún sitio.",
+          "arreglo": "Usar `@dotrino/install` en lugar del manejo manual de beforeinstallprompt y del installBtn."
         }
       ],
-      "revisados": 10,
-      "notas": "shared/e2e.js (crypto.subtle: ECDH/HKDF/AES-GCM) cifra por su cuenta el payload antes de mandarlo por sendByPubkey; la propia guía marca eso como NO infracción de sealed, así que no lo reporto como hallazgo pero lo dejo anotado. No existe web/ en este repo ni archivos de locales/i18n dedicados (el i18n vive inline en src/main.js); no encontré nombres de archivo en español ni un WebSocket casero (el único uso de WebSocket fuera de proxy-client es un polyfill legítimo en agent/node-globals.js) ni ",
-      "costoUSD": 0.5159309000000001,
-      "duracionMs": 141203
+      "revisados": 8,
+      "notas": "Solo se abrieron main.js, agentClient.js, vault.js, index.html, manifest.webmanifest, agent/index.js, agent/local.js, agent/link.js, agent/bin/cli.js y agent/bin/terminal.js (10 archivos); consoles.js, title.js, style.css, las pruebas y desktop/src/main.rs solo por Grep o sin abrir. `sealed` no aplica: no hay sendByPubkey/send y el transporte lo lleva `@dotrino/remote-agent`. No encontré voseo en la copy de usuario. `plain`, `english` y `duplicado` no dieron ningún hallazgo con evidencia clara. ",
+      "costoUSD": 0.3419752,
+      "duracionMs": 28786
     },
     "dotrino-test": {
       "commit": "05a95cb",
