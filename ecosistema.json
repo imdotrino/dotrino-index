@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-05T21:14:29-0500",
+  "generado": "2026-10-05T21:42:19-0500",
   "fecha": "2026-10-05",
   "por": "seyacat",
-  "commit": "2a32d54",
+  "commit": "3266a89",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3285,7 +3285,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "2a32d54",
+      "commit": "3266a89",
       "fecha": "2026-10-05",
       "catalogo": null,
       "deps": [],
@@ -3299,7 +3299,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 18,
-          "commits": 21,
+          "commits": 22,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3329,7 +3329,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 36,
-          "commits": 37,
+          "commits": 38,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3683,7 +3683,7 @@
       "subdominio": "messenger.dotrino.com",
       "paquete": "dotrino-messenger",
       "version": "0.3.3",
-      "commit": "914c53f",
+      "commit": "4356f76",
       "fecha": "2026-10-05",
       "catalogo": {
         "nombre": "Dotrino Messenger",
@@ -3716,7 +3716,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 5,
-          "commits": 16,
+          "commits": 17,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3726,7 +3726,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 5,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3746,7 +3746,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 23,
-          "commits": 46,
+          "commits": 47,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -4161,7 +4161,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "ee773f3",
+      "commit": "6976a2e",
       "fecha": "2026-10-05",
       "catalogo": null,
       "deps": [],
@@ -4175,7 +4175,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7358,7 +7358,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.8.6",
-      "commit": "16cdd1d",
+      "commit": "fccd299",
       "fecha": "2026-10-05",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7387,7 +7387,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 0,
-          "commits": 20,
+          "commits": 21,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7397,7 +7397,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 0,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7417,7 +7417,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 5,
-          "commits": 32,
+          "commits": 33,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -7463,7 +7463,7 @@
       "subdominio": "test.dotrino.com",
       "paquete": "test",
       "version": "0.2.0",
-      "commit": "cac1d86",
+      "commit": "9b9b8b3",
       "fecha": "2026-10-05",
       "catalogo": null,
       "deps": [
@@ -7482,7 +7482,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 23,
-          "commits": 22,
+          "commits": 23,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7492,7 +7492,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 37,
-          "commits": 44,
+          "commits": 45,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -7512,7 +7512,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 36,
-          "commits": 33,
+          "commits": 34,
           "tope": false,
           "faltan": [
             "duplicado"
