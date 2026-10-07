@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-07T14:12:33-0500",
+  "generado": "2026-10-07T14:45:03-0500",
   "fecha": "2026-10-07",
   "por": "seyacat",
-  "commit": "60b07b6",
+  "commit": "f6dd111",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -65,7 +65,7 @@
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.8.9",
-    "@dotrino/terminal-agent": "0.21.0",
+    "@dotrino/terminal-agent": "0.22.0",
     "test": "0.2.0",
     "@dotrino/topbar": "0.14.1",
     "trivia": "0.1.0",
@@ -3386,7 +3386,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "60b07b6",
+      "commit": "f6dd111",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -3400,7 +3400,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 20,
-          "commits": 45,
+          "commits": 46,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3430,7 +3430,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 61,
+          "commits": 62,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6372,7 +6372,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.5",
-      "commit": "d986059",
+      "commit": "4f0b3a8",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
@@ -6388,7 +6388,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 69,
+          "commits": 70,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7463,7 +7463,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.8.9",
-      "commit": "83831f2",
+      "commit": "3482a10",
       "fecha": "2026-10-07",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7492,7 +7492,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 0,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7502,7 +7502,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 2,
-          "commits": 37,
+          "commits": 40,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7522,7 +7522,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 62,
+          "commits": 65,
           "tope": false,
           "faltan": [],
           "rojo": true
