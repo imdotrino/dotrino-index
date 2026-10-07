@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-07T12:33:35-0500",
+  "generado": "2026-10-07T12:45:38-0500",
   "fecha": "2026-10-07",
   "por": "seyacat",
-  "commit": "37f554c",
+  "commit": "bc54f47",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3386,7 +3386,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "37f554c",
+      "commit": "bc54f47",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -3400,7 +3400,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 20,
-          "commits": 36,
+          "commits": 37,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3430,7 +3430,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 52,
+          "commits": 53,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7463,7 +7463,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.8.9",
-      "commit": "00858aa",
+      "commit": "eb7e34f",
       "fecha": "2026-10-07",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7492,7 +7492,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 2,
-          "commits": 41,
+          "commits": 43,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7502,7 +7502,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 2,
-          "commits": 26,
+          "commits": 28,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7522,7 +7522,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 51,
+          "commits": 53,
           "tope": false,
           "faltan": [],
           "rojo": true
