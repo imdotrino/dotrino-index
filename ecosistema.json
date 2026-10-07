@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-07T18:02:54-0500",
+  "generado": "2026-10-07T18:29:39-0500",
   "fecha": "2026-10-07",
   "por": "seyacat",
-  "commit": "63045e1",
+  "commit": "75285ed",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3391,7 +3391,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "63045e1",
+      "commit": "75285ed",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -3405,7 +3405,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 20,
-          "commits": 55,
+          "commits": 56,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3435,7 +3435,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 71,
+          "commits": 72,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6382,7 +6382,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.6",
-      "commit": "1957b1e",
+      "commit": "f71308c",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
@@ -6398,7 +6398,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 79,
+          "commits": 80,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7462,18 +7462,18 @@
       "plataformas": {
         "pwa": "0.8.11",
         "ios": {
-          "version": "0.8.10",
-          "estado": "atrasada"
+          "version": "0.8.11",
+          "estado": "a la par"
         },
         "android": {
-          "version": "0.8.10",
-          "estado": "atrasada"
+          "version": "0.8.11",
+          "estado": "a la par"
         }
       },
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.8.11",
-      "commit": "ce0a23c",
+      "commit": "4ec641a",
       "fecha": "2026-10-07",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7502,7 +7502,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 0,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7512,7 +7512,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 2,
-          "commits": 50,
+          "commits": 54,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7532,7 +7532,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 74,
+          "commits": 78,
           "tope": false,
           "faltan": [],
           "rojo": true
