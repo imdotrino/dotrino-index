@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-08T00:34:04-0500",
+  "generado": "2026-10-08T08:18:56-0500",
   "fecha": "2026-10-08",
   "por": "seyacat",
-  "commit": "d872d7c",
+  "commit": "523a3da",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3442,7 +3442,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "d872d7c",
+      "commit": "523a3da",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -3456,7 +3456,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 21,
-          "commits": 72,
+          "commits": 73,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3486,7 +3486,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 88,
+          "commits": 89,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6502,7 +6502,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.6",
-      "commit": "825160e",
+      "commit": "3168a3b",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [
@@ -6518,7 +6518,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 8,
-          "commits": 91,
+          "commits": 92,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8536,9 +8536,9 @@
       "plataformas": null,
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.145.0",
-      "commit": "39503fc",
-      "fecha": "2026-10-07",
+      "version": "0.146.0",
+      "commit": "5c18f05",
+      "fecha": "2026-10-08",
       "catalogo": {
         "nombre": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -8566,8 +8566,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-07",
-          "dias": 0,
-          "commits": 4,
+          "dias": 1,
+          "commits": 5,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8576,8 +8576,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-26",
-          "dias": 42,
-          "commits": 270,
+          "dias": 43,
+          "commits": 271,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -8586,7 +8586,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-30",
-          "dias": 7,
+          "dias": 8,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -8596,8 +8596,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 38,
-          "commits": 191,
+          "dias": 39,
+          "commits": 192,
           "tope": false,
           "faltan": [
             "duplicado"
