@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-07T21:37:28-0500",
+  "generado": "2026-10-07T21:59:20-0500",
   "fecha": "2026-10-07",
   "por": "seyacat",
-  "commit": "654c766",
+  "commit": "54ae10c",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3391,7 +3391,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "654c766",
+      "commit": "54ae10c",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -3405,7 +3405,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 20,
-          "commits": 64,
+          "commits": 65,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3435,7 +3435,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 80,
+          "commits": 81,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4267,7 +4267,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "23293b0",
+      "commit": "cb3c230",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -7473,7 +7473,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.9.4",
-      "commit": "2eaf298",
+      "commit": "08bfc80",
       "fecha": "2026-10-07",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7502,7 +7502,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 25,
+          "commits": 27,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7512,7 +7512,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 2,
-          "commits": 80,
+          "commits": 82,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7532,7 +7532,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 104,
+          "commits": 106,
           "tope": false,
           "faltan": [],
           "rojo": true
