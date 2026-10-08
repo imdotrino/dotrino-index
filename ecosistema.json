@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-07T22:32:39-0500",
+  "generado": "2026-10-07T23:50:21-0500",
   "fecha": "2026-10-07",
   "por": "seyacat",
-  "commit": "0a82d06",
+  "commit": "ae44351",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -39,7 +39,7 @@
     "frontend": "0.0.0",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.7.3",
-    "@dotrino/identity": "0.108.0",
+    "@dotrino/identity": "0.109.0",
     "@dotrino/install": "0.3.2",
     "@dotrino/lobby": "0.10.0",
     "dotrino-messenger": "0.4.0",
@@ -51,7 +51,7 @@
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
     "websocket-proxy": "1.4.3",
-    "@dotrino/proxy-client": "0.30.0",
+    "@dotrino/proxy-client": "0.30.1",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
     "@dotrino/remote-agent": "0.17.0",
@@ -67,12 +67,12 @@
     "dotrino-terminal": "0.9.5",
     "@dotrino/terminal-agent": "0.28.0",
     "test": "0.2.0",
-    "@dotrino/topbar": "0.14.1",
+    "@dotrino/topbar": "0.15.0",
     "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.144.0",
+    "@dotrino/vaultd": "0.145.0",
     "@dotrino/vault": "0.80.0",
     "@dotrino/verifier": "0.2.0",
     "wallet": "0.2.0",
@@ -177,7 +177,7 @@
   "consumidores": [
     {
       "pilar": "@dotrino/identity",
-      "version": "0.108.0",
+      "version": "0.109.0",
       "enNpm": true,
       "repos": [
         "dotrino-ad-integration",
@@ -299,7 +299,7 @@
     },
     {
       "pilar": "@dotrino/topbar",
-      "version": "0.14.1",
+      "version": "0.15.0",
       "enNpm": true,
       "repos": [
         "dotrino-base64",
@@ -334,7 +334,7 @@
     },
     {
       "pilar": "@dotrino/proxy-client",
-      "version": "0.30.0",
+      "version": "0.30.1",
       "enNpm": true,
       "repos": [
         "dotrino-bots",
@@ -695,7 +695,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.87.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         }
       ],
       "rotas": [
@@ -947,7 +947,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -967,7 +967,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -1056,7 +1056,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1066,7 +1066,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         }
       ],
       "rotas": [],
@@ -1159,7 +1159,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -1169,7 +1169,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1179,7 +1179,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -1292,7 +1292,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1307,7 +1307,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/store",
@@ -1317,7 +1317,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -1484,12 +1484,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -1595,7 +1595,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -1610,7 +1610,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1625,7 +1625,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -1747,7 +1747,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -1767,7 +1767,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/store",
@@ -1777,7 +1777,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -2015,7 +2015,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -2030,7 +2030,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2040,7 +2040,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -2160,7 +2160,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -2180,7 +2180,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2190,7 +2190,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -2406,7 +2406,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -2416,7 +2416,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -2501,7 +2501,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2516,7 +2516,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -2603,7 +2603,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         }
       ],
       "rotas": [],
@@ -2783,7 +2783,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.90.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -2793,7 +2793,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2808,7 +2808,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -3008,7 +3008,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.107.2",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3018,7 +3018,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -3141,7 +3141,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -3166,7 +3166,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -3269,7 +3269,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -3279,7 +3279,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -3294,7 +3294,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.0",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -3315,9 +3315,9 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/identity",
-      "version": "0.108.0",
-      "commit": "151243f",
-      "fecha": "2026-10-05",
+      "version": "0.109.0",
+      "commit": "be7bbd4",
+      "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
         "@dotrino/opaque"
@@ -3331,8 +3331,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-05",
-          "dias": 0,
-          "commits": 0,
+          "dias": 2,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3361,8 +3361,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 36,
-          "commits": 68,
+          "dias": 38,
+          "commits": 69,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3391,7 +3391,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "0a82d06",
+      "commit": "ae44351",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -3405,7 +3405,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 20,
-          "commits": 67,
+          "commits": 68,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3435,7 +3435,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 83,
+          "commits": 84,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3861,6 +3861,11 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/identity",
+          "pide": "0.108.0",
+          "publicado": "0.109.0"
+        },
+        {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
           "publicado": "0.3.2"
@@ -3868,7 +3873,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.28.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
+        },
+        {
+          "dep": "@dotrino/topbar",
+          "pide": "0.14.1",
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -3887,7 +3897,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 6
     },
     {
       "repo": "dotrino-messenger-extension",
@@ -4114,7 +4124,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -4134,7 +4144,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -4225,7 +4235,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -4245,7 +4255,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -4267,7 +4277,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "cb3c230",
+      "commit": "6d39d55",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -4465,7 +4475,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         }
       ],
       "rotas": [],
@@ -4663,7 +4673,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -4673,12 +4683,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -4796,12 +4806,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.99.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.23.1",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/vault",
@@ -5034,9 +5044,14 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/identity",
+          "pide": "0.108.0",
+          "publicado": "0.109.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5051,7 +5066,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -5071,7 +5086,7 @@
         "notas": "Repo pequeño y sin i18n/ ni web/, lib/, agent/ o server/: todo el código propio vive en src/main.js, src/qr.js e src/types.d.ts, más index.html y public/. La copy en español usa tuteo correcto en todas las cadenas de SV_I18N y CREATE_I18N, y no se detectó jerga prohibida en copy pública. verifySig() en src/main.js usa crypto.subtle directamente para verificar firmas ECDSA con solo la clave pública; se revisó la API pública de @dotrino/identity (index.d.ts) y no expone un verify equivalente sin e",
         "hallazgos": []
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-pronostico-mundialista",
@@ -5151,7 +5166,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -5166,7 +5181,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5176,7 +5191,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -5298,12 +5313,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.26.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/update",
@@ -5370,8 +5385,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/proxy-client",
-      "version": "0.30.0",
-      "commit": "2df0514",
+      "version": "0.30.1",
+      "commit": "516722b",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
@@ -5388,7 +5403,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5418,7 +5433,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 24,
+          "commits": 25,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -5431,7 +5446,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.84.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         }
       ],
       "rotas": [
@@ -5615,7 +5630,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -5635,7 +5650,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -5732,7 +5747,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -5752,7 +5767,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -5951,7 +5966,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.30.0",
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/vault",
@@ -6003,7 +6023,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-reputation",
@@ -6078,7 +6098,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.84.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         }
       ],
       "rotas": [
@@ -6218,7 +6238,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -6243,7 +6263,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -6382,7 +6402,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.6",
-      "commit": "320cc50",
+      "commit": "1121d03",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
@@ -6398,7 +6418,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 85,
+          "commits": 86,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6520,12 +6540,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -6865,12 +6885,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -6987,7 +7007,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.86.1",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         }
       ],
       "rotas": [
@@ -7194,7 +7214,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -7214,7 +7234,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -7473,7 +7493,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.9.5",
-      "commit": "b47f9b9",
+      "commit": "9ffcb9a",
       "fecha": "2026-10-07",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7502,7 +7522,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 31,
+          "commits": 34,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7512,7 +7532,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 2,
-          "commits": 86,
+          "commits": 89,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7532,7 +7552,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 109,
+          "commits": 112,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -7543,12 +7563,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.29.0",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -7650,7 +7670,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -7665,7 +7685,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.12.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
@@ -7715,9 +7735,9 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/topbar",
-      "version": "0.14.1",
-      "commit": "73b65bf",
-      "fecha": "2026-10-05",
+      "version": "0.15.0",
+      "commit": "3d981c2",
+      "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
         "@dotrino/nav",
@@ -7732,8 +7752,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-05",
-          "dias": 0,
-          "commits": 1,
+          "dias": 2,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7762,8 +7782,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 36,
-          "commits": 10,
+          "dias": 38,
+          "commits": 11,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7871,7 +7891,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -7891,7 +7911,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -8017,7 +8037,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.91.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -8032,7 +8052,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.30.0"
+          "publicado": "0.30.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8047,7 +8067,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.9.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [
@@ -8392,7 +8412,7 @@
       "plataformas": null,
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.144.0",
+      "version": "0.145.0",
       "commit": "bdeb51b",
       "fecha": "2026-10-07",
       "catalogo": {
@@ -8466,7 +8486,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "^0.107.1",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/roadmap",
@@ -8591,7 +8611,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.87.0",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         }
       ],
       "rotas": [
@@ -8715,7 +8735,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.107.1",
-          "publicado": "0.108.0"
+          "publicado": "0.109.0"
         },
         {
           "dep": "@dotrino/install",
@@ -8730,7 +8750,7 @@
         {
           "dep": "@dotrino/topbar",
           "pide": "0.13.1",
-          "publicado": "0.14.1"
+          "publicado": "0.15.0"
         }
       ],
       "rotas": [],
