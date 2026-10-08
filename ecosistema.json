@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-08T18:29:24-0500",
+  "generado": "2026-10-08T18:54:19-0500",
   "fecha": "2026-10-08",
   "por": "seyacat",
-  "commit": "c86e601",
+  "commit": "41f6080",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -18,7 +18,7 @@
     "duplicado": "código o funcionalidad duplicada en el repo (regla principal)"
   },
   "ocultas": 1,
-  "medidasAhora": 78,
+  "medidasAhora": 79,
   "heredadas": 0,
   "pilares": {
     "dotrino-base64": "1.0.0",
@@ -96,7 +96,8 @@
     "facturero": "0.1.0",
     "padel": "0.0.1",
     "@dotrino/opaque": "0.1.0",
-    "@dotrino/update": "0.5.1"
+    "@dotrino/update": "0.5.1",
+    "offroad": "0.0.9"
   },
   "enNpm": {
     "critters": "0.0.25",
@@ -172,7 +173,8 @@
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.82.1"
+    "@dotrino/env": "0.82.1",
+    "offroad": "0.0.9"
   },
   "consumidores": [
     {
@@ -200,6 +202,7 @@
         "dotrino-messenger",
         "dotrino-mundial",
         "dotrino-myip",
+        "dotrino-offroad",
         "dotrino-padel-contador",
         "dotrino-passmanager",
         "dotrino-profile-app",
@@ -247,6 +250,7 @@
         "dotrino-messenger",
         "dotrino-mundial",
         "dotrino-myip",
+        "dotrino-offroad",
         "dotrino-padel-contador",
         "dotrino-profile-app",
         "dotrino-pronostico-mundialista",
@@ -282,6 +286,7 @@
         "dotrino-messenger",
         "dotrino-mundial",
         "dotrino-myip",
+        "dotrino-offroad",
         "dotrino-padel-contador",
         "dotrino-profile-app",
         "dotrino-pronostico-mundialista",
@@ -318,6 +323,7 @@
         "dotrino-messenger",
         "dotrino-mundial",
         "dotrino-myip",
+        "dotrino-offroad",
         "dotrino-padel-contador",
         "dotrino-profile-app",
         "dotrino-pronostico-mundialista",
@@ -378,6 +384,7 @@
         "dotrino-messenger",
         "dotrino-mundial",
         "dotrino-myip",
+        "dotrino-offroad",
         "dotrino-padel-contador",
         "dotrino-pronostico-mundialista",
         "dotrino-qrgenerator",
@@ -406,6 +413,7 @@
         "dotrino-home",
         "dotrino-ia",
         "dotrino-messenger",
+        "dotrino-offroad",
         "dotrino-padel-contador",
         "dotrino-pronostico-mundialista",
         "dotrino-reputation-app",
@@ -441,10 +449,25 @@
       "repos": [
         "dotrino-chess",
         "dotrino-cuarenta",
+        "dotrino-offroad",
         "dotrino-padel-contador",
         "dotrino-pronostico-mundialista",
         "dotrino-sudoku",
         "dotrino-wallet"
+      ]
+    },
+    {
+      "pilar": "@dotrino/support",
+      "version": "0.9.0",
+      "enNpm": true,
+      "repos": [
+        "dotrino-critters",
+        "dotrino-home",
+        "dotrino-offroad",
+        "dotrino-reputation-app",
+        "dotrino-sudoku",
+        "dotrino-topbar",
+        "dotrino-trivia"
       ]
     },
     {
@@ -484,19 +507,6 @@
         "dotrino-remote-agent",
         "dotrino-sealers",
         "dotrino-social-bot"
-      ]
-    },
-    {
-      "pilar": "@dotrino/support",
-      "version": "0.9.0",
-      "enNpm": true,
-      "repos": [
-        "dotrino-critters",
-        "dotrino-home",
-        "dotrino-reputation-app",
-        "dotrino-sudoku",
-        "dotrino-topbar",
-        "dotrino-trivia"
       ]
     },
     {
@@ -2974,7 +2984,7 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "25b2dc9",
+      "commit": "d51ed76",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [
@@ -2995,8 +3005,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-29",
-          "dias": 70,
-          "commits": 39,
+          "dias": 71,
+          "commits": 40,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3005,8 +3015,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-07",
-          "dias": 0,
-          "commits": 1,
+          "dias": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3025,8 +3035,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 39,
-          "commits": 12,
+          "dias": 40,
+          "commits": 13,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3281,7 +3291,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "c86e601",
+      "commit": "41f6080",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -3295,7 +3305,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 21,
-          "commits": 80,
+          "commits": 81,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3325,7 +3335,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 96,
+          "commits": 97,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4425,6 +4435,90 @@
         ]
       },
       "rojos": 5
+    },
+    {
+      "repo": "dotrino-offroad",
+      "tipo": "app",
+      "interna": false,
+      "stack": "vite",
+      "plataformas": null,
+      "subdominio": "offroad.dotrino.com",
+      "paquete": "offroad",
+      "version": "0.1.0",
+      "commit": "20f1fcf",
+      "fecha": "2026-10-08",
+      "catalogo": {
+        "nombre": "Offroad",
+        "url": "https://offroad.dotrino.com/",
+        "cat": "juegos",
+        "sub": "solo",
+        "wip": false
+      },
+      "deps": [
+        "@dotrino/identity",
+        "@dotrino/install",
+        "@dotrino/nav",
+        "@dotrino/reputation",
+        "@dotrino/share",
+        "@dotrino/store",
+        "@dotrino/support",
+        "@dotrino/topbar"
+      ],
+      "medido": {
+        "fecha": "2026-10-08",
+        "por": "seyacat"
+      },
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-08",
+          "dias": 0,
+          "commits": 1,
+          "tope": true,
+          "faltan": null,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-08",
+          "dias": 0,
+          "commits": 1,
+          "tope": true,
+          "faltan": null,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-08",
+          "dias": 0,
+          "commits": null,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "auditoria": {
+          "aplica": true,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": [],
+          "rojo": true
+        }
+      },
+      "faltan": [],
+      "versiones": [],
+      "rotas": [],
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
+      "auditoria": null,
+      "rojos": 1
     },
     {
       "repo": "dotrino-opaque",
@@ -8679,7 +8773,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "ff146c4",
+      "commit": "c2b3475",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -8693,7 +8787,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 46,
-          "commits": 85,
+          "commits": 86,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8723,7 +8817,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 63,
+          "commits": 64,
           "tope": false,
           "faltan": [
             "duplicado"
