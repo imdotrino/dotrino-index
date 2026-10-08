@@ -1,9 +1,9 @@
 {
-  "generado": "2026-10-07T21:59:20-0500",
+  "generado": "2026-10-07T22:17:18-0500",
   "fecha": "2026-10-07",
   "por": "seyacat",
-  "commit": "54ae10c",
-  "vivo": false,
+  "commit": "c5e3822",
+  "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
     "commits": 10,
@@ -26,17 +26,17 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.1.0",
+    "critters": "0.0.25",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.1.0",
-    "eco": "0.1.0",
-    "favicon-generator": "1.0.0",
+    "diamonds": "0.0.9-q",
+    "eco": "1.1.0-rc-3",
+    "favicon-generator": "0.1.2",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.0",
     "gridgame": "0.0.0",
-    "here": "0.0.0",
-    "frontend": "0.0.0",
+    "here": "0.0.2",
+    "frontend": "2.0.0-alpha.4",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.7.3",
     "@dotrino/identity": "0.108.0",
@@ -44,41 +44,41 @@
     "@dotrino/lobby": "0.10.0",
     "dotrino-messenger": "0.4.0",
     "dotrino-mundial": "0.1.0",
-    "myip": "0.1.0",
+    "myip": "1.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.4.0",
     "@dotrino/profile": "0.20.0",
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
     "websocket-proxy": "1.4.3",
-    "@dotrino/proxy-client": "0.29.0",
+    "@dotrino/proxy-client": "0.30.0",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
-    "@dotrino/remote-agent": "0.16.0",
+    "@dotrino/remote-agent": "0.17.0",
     "@dotrino/reputation": "0.12.0",
     "dotrino-reputation-app": "0.1.0",
     "@dotrino/share": "0.3.0",
     "dotrino-shortener": "0.1.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.12.2",
-    "sudoku": "0.1.0",
+    "sudoku": "0.0.3",
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.9.4",
     "@dotrino/terminal-agent": "0.27.0",
-    "test": "0.2.0",
+    "test": "3.3.0",
     "@dotrino/topbar": "0.14.1",
-    "trivia": "0.1.0",
+    "trivia": "1.0.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/tutorial": "0.2.0",
     "@dotrino/vaultd": "0.143.0",
     "@dotrino/vault": "0.80.0",
     "@dotrino/verifier": "0.2.0",
-    "wallet": "0.2.0",
+    "wallet": "2.50.0",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.2.0",
-    "@dotrino/env": "0.64.0",
+    "@dotrino/env": "0.80.0",
     "@dotrino/inspector": "0.2.1",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -94,7 +94,7 @@
     "@dotrino/telegram-bot": "0.2.1",
     "@dotrino/webrtc": "0.1.0",
     "facturero": "0.1.0",
-    "padel": "0.4.0",
+    "padel": "0.0.1",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.2.2"
   },
@@ -103,7 +103,7 @@
     "@dotrino/profile": "0.20.0",
     "@dotrino/store": "0.12.2",
     "@dotrino/install": "0.3.2",
-    "@dotrino/proxy-client": "0.29.0",
+    "@dotrino/proxy-client": "0.30.0",
     "dotrino-messenger": null,
     "@dotrino/opaque": "0.1.0",
     "@dotrino/passmanager": "0.17.0",
@@ -124,7 +124,7 @@
     "favicon-generator": "0.1.2",
     "@dotrino/inspector": "0.2.1",
     "@dotrino/notifications": "0.4.0",
-    "@dotrino/terminal-agent": "0.22.0",
+    "@dotrino/terminal-agent": "0.27.0",
     "@dotrino/sealers": "0.8.1",
     "test": "3.3.0",
     "@dotrino/share": "0.3.0",
@@ -132,13 +132,13 @@
     "wallet": "2.50.0",
     "@dotrino/compat": "0.4.0",
     "sudoku": "0.0.3",
-    "@dotrino/roadmap": "0.4.5",
+    "@dotrino/roadmap": "0.4.6",
     "@dotrino/tunnel": "0.1.5",
     "@dotrino/topbar": "0.14.1",
     "@dotrino/qr": "0.1.0",
     "@dotrino/telegram-bot": "0.2.1",
     "dotrino-terminal": null,
-    "@dotrino/vault": "0.79.0",
+    "@dotrino/vault": "0.80.0",
     "padel": "0.0.1",
     "dotrino-reputation-app": null,
     "simple-websocket-chat": null,
@@ -148,7 +148,7 @@
     "dotrino-qrgenerator": null,
     "@dotrino/verifier": "0.2.0",
     "diamonds": "0.0.9-q",
-    "@dotrino/remote-agent": "0.15.1",
+    "@dotrino/remote-agent": "0.17.0",
     "facturero": null,
     "@dotrino/webrtc": "0.1.0",
     "dotrino-ia": null,
@@ -162,7 +162,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.141.1",
+    "@dotrino/vaultd": "0.143.0",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.0",
     "gridgame": null,
@@ -172,7 +172,7 @@
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.79.0"
+    "@dotrino/env": "0.80.0"
   },
   "consumidores": [
     {
@@ -334,7 +334,7 @@
     },
     {
       "pilar": "@dotrino/proxy-client",
-      "version": "0.29.0",
+      "version": "0.30.0",
       "enNpm": true,
       "repos": [
         "dotrino-bots",
@@ -462,7 +462,7 @@
     },
     {
       "pilar": "@dotrino/remote-agent",
-      "version": "0.16.0",
+      "version": "0.17.0",
       "enNpm": true,
       "repos": [
         "dotrino-content",
@@ -787,7 +787,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -971,7 +974,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1066,7 +1072,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         }
       ],
       "rotas": [],
@@ -1169,7 +1175,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1192,7 +1198,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1307,7 +1316,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/store",
@@ -1321,7 +1330,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1489,12 +1501,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/remote-agent",
           "pide": "0.13.0",
-          "publicado": "0.16.0"
+          "publicado": "0.17.0"
         },
         {
           "dep": "@dotrino/vault",
@@ -1503,7 +1515,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1610,7 +1625,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1654,7 +1669,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1767,7 +1785,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/store",
@@ -1781,7 +1799,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2030,7 +2051,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2069,7 +2090,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2180,7 +2204,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2219,7 +2243,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2320,7 +2347,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2420,7 +2450,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": null,
       "rojos": 4
     },
@@ -2520,7 +2553,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2793,7 +2829,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2821,7 +2857,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2922,7 +2961,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3022,7 +3064,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3179,7 +3224,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3279,12 +3327,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/remote-agent",
           "pide": "0.13.0",
-          "publicado": "0.16.0"
+          "publicado": "0.17.0"
         },
         {
           "dep": "@dotrino/store",
@@ -3298,7 +3346,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3391,7 +3442,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "54ae10c",
+      "commit": "c5e3822",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [],
@@ -3405,7 +3456,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 20,
-          "commits": 65,
+          "commits": 66,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3435,7 +3486,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 81,
+          "commits": 82,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3446,7 +3497,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 1
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3482,7 +3536,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-inspector",
@@ -3559,7 +3613,10 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3638,7 +3695,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3868,11 +3928,14 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.28.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4025,7 +4088,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4138,7 +4204,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4249,7 +4318,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4465,7 +4537,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         }
       ],
       "rotas": [],
@@ -4673,7 +4745,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/topbar",
@@ -4691,7 +4763,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4801,7 +4876,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.23.1",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/vault",
@@ -4810,7 +4885,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5036,7 +5114,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5064,7 +5142,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5166,7 +5247,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.22.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5189,7 +5270,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5303,7 +5387,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.26.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/update",
@@ -5370,8 +5454,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/proxy-client",
-      "version": "0.29.0",
-      "commit": "48729ed",
+      "version": "0.30.0",
+      "commit": "2df0514",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
@@ -5418,7 +5502,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 23,
+          "commits": 24,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -5531,13 +5615,17 @@
         {
           "k": "wiki",
           "etiqueta": "documentación en el wiki (§9.2)"
+        },
+        {
+          "k": "oidc",
+          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
       ],
       "versiones": [],
       "rotas": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-qrgenerator",
@@ -5639,7 +5727,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5756,7 +5847,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5857,7 +5951,10 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5889,8 +5986,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/remote-agent",
-      "version": "0.16.0",
-      "commit": "512f0c8",
+      "version": "0.17.0",
+      "commit": "b6ae610",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
@@ -5908,7 +6005,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5938,7 +6035,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 20,
+          "commits": 21,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6256,7 +6353,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6382,7 +6482,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.6",
-      "commit": "10923ca",
+      "commit": "320cc50",
       "fecha": "2026-10-07",
       "catalogo": null,
       "deps": [
@@ -6398,7 +6498,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 84,
+          "commits": 85,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6525,12 +6625,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/remote-agent",
           "pide": "0.13.0",
-          "publicado": "0.16.0"
+          "publicado": "0.17.0"
         },
         {
           "dep": "@dotrino/vault",
@@ -6870,12 +6970,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.25.0",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/remote-agent",
           "pide": "0.13.0",
-          "publicado": "0.16.0"
+          "publicado": "0.17.0"
         },
         {
           "dep": "@dotrino/vault",
@@ -7008,7 +7108,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": null
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7227,7 +7330,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7437,7 +7543,10 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7473,7 +7582,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.9.4",
-      "commit": "08bfc80",
+      "commit": "3804ce5",
       "fecha": "2026-10-07",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7502,7 +7611,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 27,
+          "commits": 29,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7512,7 +7621,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 2,
-          "commits": 82,
+          "commits": 84,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7532,7 +7641,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 7,
-          "commits": 106,
+          "commits": 107,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -7546,9 +7655,14 @@
           "publicado": "0.108.0"
         },
         {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.29.0",
+          "publicado": "0.30.0"
+        },
+        {
           "dep": "@dotrino/remote-agent",
           "pide": "0.15.1",
-          "publicado": "0.16.0"
+          "publicado": "0.17.0"
         },
         {
           "dep": "@dotrino/store",
@@ -7557,7 +7671,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7572,7 +7689,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-test",
@@ -7664,7 +7781,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7899,7 +8019,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8027,7 +8150,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.18.2",
-          "publicado": "0.29.0"
+          "publicado": "0.30.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8063,7 +8186,10 @@
           "sinSaber": false
         }
       ],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8162,7 +8288,10 @@
       ],
       "versiones": [],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8387,8 +8516,8 @@
       "plataformas": null,
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.143.0",
-      "commit": "10271e7",
+      "version": "0.144.0",
+      "commit": "bdeb51b",
       "fecha": "2026-10-07",
       "catalogo": {
         "nombre": "Dotrino Vault",
@@ -8418,7 +8547,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 0,
-          "commits": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8428,7 +8557,7 @@
           "existe": true,
           "fecha": "2026-08-26",
           "dias": 42,
-          "commits": 268,
+          "commits": 269,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -8448,7 +8577,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 38,
-          "commits": 189,
+          "commits": 190,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -8464,11 +8593,6 @@
           "publicado": "0.108.0"
         },
         {
-          "dep": "@dotrino/proxy-client",
-          "pide": "0.27.1",
-          "publicado": "0.29.0"
-        },
-        {
           "dep": "@dotrino/roadmap",
           "pide": "0.3.19",
           "publicado": "0.4.6"
@@ -8481,11 +8605,14 @@
         {
           "dep": "@dotrino/remote-agent",
           "pide": "0.13.0",
-          "publicado": "0.16.0"
+          "publicado": "0.17.0"
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8521,7 +8648,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 10
     },
     {
       "repo": "dotrino-verifier",
@@ -8734,7 +8861,10 @@
         }
       ],
       "rotas": [],
-      "vivo": null,
+      "vivo": {
+        "http": 200,
+        "sinPublicar": 0
+      },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8821,13 +8951,17 @@
         {
           "k": "wiki",
           "etiqueta": "documentación en el wiki (§9.2)"
+        },
+        {
+          "k": "oidc",
+          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
       ],
       "versiones": [],
       "rotas": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-wiki",
