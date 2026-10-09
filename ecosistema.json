@@ -1,9 +1,9 @@
 {
-  "generado": "2026-10-09T11:18:00-0500",
+  "generado": "2026-10-09T11:18:39-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "f4b9d0b",
-  "vivo": true,
+  "commit": "0e92278",
+  "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
     "commits": 10,
@@ -26,17 +26,17 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.0.25",
+    "critters": "0.1.0",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.0.9-q",
-    "eco": "1.1.0-rc-3",
-    "favicon-generator": "0.1.2",
+    "diamonds": "0.1.0",
+    "eco": "0.1.0",
+    "favicon-generator": "1.0.0",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.0",
     "gridgame": "0.0.0",
-    "here": "0.0.2",
-    "frontend": "2.0.0-alpha.4",
+    "here": "0.0.0",
+    "frontend": "0.0.0",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.8.1",
     "@dotrino/identity": "0.109.0",
@@ -44,7 +44,7 @@
     "@dotrino/lobby": "0.10.0",
     "dotrino-messenger": "0.4.0",
     "dotrino-mundial": "0.1.0",
-    "myip": "1.1.0",
+    "myip": "0.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.4.0",
     "@dotrino/profile": "0.20.0",
@@ -61,21 +61,21 @@
     "dotrino-shortener": "0.1.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.12.3",
-    "sudoku": "0.0.3",
+    "sudoku": "0.1.0",
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.9.12",
     "@dotrino/terminal-agent": "0.34.0",
-    "test": "3.3.0",
+    "test": "0.2.0",
     "@dotrino/topbar": "0.15.3",
-    "trivia": "1.0.0",
+    "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.6",
     "@dotrino/tutorial": "0.2.0",
     "@dotrino/vaultd": "0.148.1",
     "@dotrino/vault": "0.82.1",
     "@dotrino/verifier": "0.2.0",
-    "wallet": "2.50.0",
+    "wallet": "0.2.0",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.2.0",
     "@dotrino/env": "0.82.1",
@@ -94,10 +94,10 @@
     "@dotrino/telegram-bot": "0.2.2",
     "@dotrino/webrtc": "0.1.0",
     "facturero": "0.1.0",
-    "padel": "0.0.1",
+    "padel": "0.4.0",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.7.0",
-    "offroad": "0.0.9"
+    "offroad": "0.16.0"
   },
   "enNpm": {
     "critters": "0.0.25",
@@ -795,10 +795,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -984,10 +981,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1182,10 +1176,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1305,10 +1296,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1487,10 +1475,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1607,10 +1592,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1728,10 +1710,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1984,10 +1963,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2103,10 +2079,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2208,10 +2181,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2312,10 +2282,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": null,
       "rojos": 4
     },
@@ -2416,10 +2383,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2695,10 +2659,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2800,10 +2761,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2904,10 +2862,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3051,10 +3006,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3174,10 +3126,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3271,7 +3220,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "f4b9d0b",
+      "commit": "0e92278",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -3285,7 +3234,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 22,
-          "commits": 110,
+          "commits": 111,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3315,7 +3264,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 126,
+          "commits": 127,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3327,10 +3276,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 1
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3366,7 +3312,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 5
     },
     {
       "repo": "dotrino-inspector",
@@ -3447,10 +3393,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3530,10 +3473,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3779,10 +3719,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3937,10 +3874,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4054,10 +3988,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4169,10 +4100,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4504,10 +4432,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": null,
       "rojos": 1
     },
@@ -4685,10 +4610,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4788,10 +4710,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5043,10 +4962,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5153,10 +5069,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5590,10 +5503,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5711,10 +5621,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5816,10 +5723,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6184,10 +6088,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6884,10 +6785,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": null
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7094,10 +6992,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7316,10 +7211,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7445,10 +7337,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7556,10 +7445,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7782,10 +7668,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7928,10 +7811,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8026,10 +7906,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8355,10 +8232,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8594,10 +8468,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
