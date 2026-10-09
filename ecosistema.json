@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-09T11:03:29-0500",
+  "generado": "2026-10-09T11:06:22-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "4e6d0fe",
+  "commit": "54bbcb3",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3276,7 +3276,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "4e6d0fe",
+      "commit": "54bbcb3",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -3290,7 +3290,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 22,
-          "commits": 106,
+          "commits": 107,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3320,7 +3320,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 122,
+          "commits": 123,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4731,8 +4731,8 @@
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "391df1d",
-      "fecha": "2026-10-08",
+      "commit": "4907702",
+      "fecha": "2026-10-09",
       "catalogo": {
         "nombre": "Contraseñas",
         "url": "https://pass.dotrino.com/",
@@ -4756,7 +4756,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 40,
-          "commits": 103,
+          "commits": 104,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -4766,7 +4766,7 @@
           "existe": true,
           "fecha": "2026-09-28",
           "dias": 10,
-          "commits": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4775,7 +4775,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-10-08",
-          "dias": 0,
+          "dias": 1,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -4795,28 +4795,7 @@
         }
       },
       "faltan": [],
-      "versiones": [
-        {
-          "dep": "@dotrino/identity",
-          "pide": "0.99.0",
-          "publicado": "0.109.0"
-        },
-        {
-          "dep": "@dotrino/proxy-client",
-          "pide": "0.23.1",
-          "publicado": "0.30.4"
-        },
-        {
-          "dep": "@dotrino/update",
-          "pide": "0.6.1",
-          "publicado": "0.7.0"
-        },
-        {
-          "dep": "@dotrino/vault",
-          "pide": "0.69.0",
-          "publicado": "0.82.1"
-        }
-      ],
+      "versiones": [],
       "rotas": [],
       "npmPendiente": [],
       "vivo": {
@@ -4865,7 +4844,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 7
     },
     {
       "repo": "dotrino-profile",
@@ -6768,8 +6747,8 @@
       "subdominio": null,
       "paquete": "dotrino-social-bot",
       "version": "0.2.0",
-      "commit": "0671d9f",
-      "fecha": "2026-10-08",
+      "commit": "238a77b",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [
         "@dotrino/content-client",
@@ -6790,7 +6769,7 @@
           "existe": true,
           "fecha": "2026-09-14",
           "dias": 24,
-          "commits": 6,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6829,33 +6808,7 @@
         }
       },
       "faltan": [],
-      "versiones": [
-        {
-          "dep": "@dotrino/identity",
-          "pide": "0.105.0",
-          "publicado": "0.109.0"
-        },
-        {
-          "dep": "@dotrino/proxy-client",
-          "pide": "0.25.0",
-          "publicado": "0.30.4"
-        },
-        {
-          "dep": "@dotrino/remote-agent",
-          "pide": "0.13.0",
-          "publicado": "0.18.0"
-        },
-        {
-          "dep": "@dotrino/update",
-          "pide": "0.6.1",
-          "publicado": "0.7.0"
-        },
-        {
-          "dep": "@dotrino/vault",
-          "pide": "0.75.0",
-          "publicado": "0.82.1"
-        }
-      ],
+      "versiones": [],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
@@ -6880,7 +6833,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 3
     },
     {
       "repo": "dotrino-sso",
