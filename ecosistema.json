@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-09T15:58:52-0500",
+  "generado": "2026-10-09T16:23:44-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "6c82ec6",
+  "commit": "974f63a",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -64,7 +64,7 @@
     "sudoku": "0.1.0",
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
-    "dotrino-terminal": "0.9.12",
+    "dotrino-terminal": "0.9.13",
     "@dotrino/terminal-agent": "0.34.1",
     "test": "0.2.0",
     "@dotrino/topbar": "0.15.3",
@@ -3220,7 +3220,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "6c82ec6",
+      "commit": "974f63a",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -3234,7 +3234,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 22,
-          "commits": 113,
+          "commits": 114,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3264,7 +3264,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 129,
+          "commits": 130,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7251,7 +7251,7 @@
       "interna": false,
       "stack": "vite",
       "plataformas": {
-        "pwa": "0.9.12",
+        "pwa": "0.9.13",
         "ios": {
           "version": "0.8.14",
           "estado": "atrasada"
@@ -7263,8 +7263,8 @@
       },
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
-      "version": "0.9.12",
-      "commit": "421c99e",
+      "version": "0.9.13",
+      "commit": "ef25909",
       "fecha": "2026-10-09",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7293,7 +7293,7 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 1,
-          "commits": 8,
+          "commits": 11,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7303,7 +7303,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 4,
-          "commits": 116,
+          "commits": 119,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7323,7 +7323,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 9,
-          "commits": 137,
+          "commits": 140,
           "tope": false,
           "faltan": [],
           "rojo": true
