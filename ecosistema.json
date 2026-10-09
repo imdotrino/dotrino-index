@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-09T11:08:52-0500",
+  "generado": "2026-10-09T11:10:12-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "d150ec4",
+  "commit": "91fbd2f",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3271,7 +3271,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "d150ec4",
+      "commit": "91fbd2f",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -3285,7 +3285,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 22,
-          "commits": 108,
+          "commits": 109,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3315,7 +3315,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 124,
+          "commits": 125,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -5431,7 +5431,7 @@
       "subdominio": null,
       "paquete": "@dotrino/qr",
       "version": "0.1.0",
-      "commit": "50e4ba5",
+      "commit": "0904582",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -5445,7 +5445,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 0,
-          "commits": 0,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5481,18 +5481,13 @@
           "rojo": true
         }
       },
-      "faltan": [
-        {
-          "k": "oidc",
-          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
-        }
-      ],
+      "faltan": [],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 1
     },
     {
       "repo": "dotrino-qrgenerator",
@@ -8635,7 +8630,7 @@
       "subdominio": null,
       "paquete": "@dotrino/webrtc",
       "version": "0.1.0",
-      "commit": "bab20e2",
+      "commit": "34428ed",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -8649,7 +8644,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8685,18 +8680,13 @@
           "rojo": true
         }
       },
-      "faltan": [
-        {
-          "k": "oidc",
-          "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
-        }
-      ],
+      "faltan": [],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 1
     },
     {
       "repo": "dotrino-wiki",
