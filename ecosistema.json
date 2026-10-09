@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-08T21:02:01-0500",
+  "generado": "2026-10-08T21:34:12-0500",
   "fecha": "2026-10-08",
   "por": "seyacat",
-  "commit": "235efbf",
+  "commit": "4830cec",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3251,7 +3251,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "235efbf",
+      "commit": "4830cec",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -3265,7 +3265,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 21,
-          "commits": 93,
+          "commits": 94,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3295,7 +3295,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 109,
+          "commits": 110,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4396,8 +4396,8 @@
       "plataformas": null,
       "subdominio": "offroad.dotrino.com",
       "paquete": "offroad",
-      "version": "0.9.0",
-      "commit": "4cb1730",
+      "version": "0.10.0",
+      "commit": "845dfb9",
       "fecha": "2026-10-08",
       "catalogo": {
         "nombre": "Offroad",
@@ -4436,7 +4436,7 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 0,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
