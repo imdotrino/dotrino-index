@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-09T01:12:00-0500",
+  "generado": "2026-10-09T01:23:14-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "6854d67",
+  "commit": "439385b",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3276,8 +3276,8 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "6854d67",
-      "fecha": "2026-10-08",
+      "commit": "439385b",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -3289,8 +3289,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-17",
-          "dias": 21,
-          "commits": 102,
+          "dias": 22,
+          "commits": 103,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3298,7 +3298,7 @@
         "portada": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-10-08",
+          "fecha": "2026-10-09",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3319,8 +3319,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 39,
-          "commits": 118,
+          "dias": 40,
+          "commits": 119,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4439,8 +4439,8 @@
       "plataformas": null,
       "subdominio": "offroad.dotrino.com",
       "paquete": "offroad",
-      "version": "0.13.0",
-      "commit": "e23cf21",
+      "version": "0.14.0",
+      "commit": "dbb9bc0",
       "fecha": "2026-10-09",
       "catalogo": {
         "nombre": "Offroad",
@@ -4477,9 +4477,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-08",
-          "dias": 1,
-          "commits": 9,
+          "fecha": "2026-10-09",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8785,8 +8785,8 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "5434e64",
-      "fecha": "2026-10-08",
+      "commit": "68e693c",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -8798,8 +8798,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-23",
-          "dias": 46,
-          "commits": 90,
+          "dias": 47,
+          "commits": 91,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8828,8 +8828,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 39,
-          "commits": 68,
+          "dias": 40,
+          "commits": 69,
           "tope": false,
           "faltan": [
             "duplicado"
