@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-08T19:57:07-0500",
+  "generado": "2026-10-08T20:10:27-0500",
   "fecha": "2026-10-08",
   "por": "seyacat",
-  "commit": "ce4a322",
+  "commit": "fbf313e",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -1173,7 +1173,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-chat",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -1192,7 +1201,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-chess",
@@ -1599,7 +1608,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-critters",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -1610,7 +1628,7 @@
         "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-cuarenta",
@@ -1980,7 +1998,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-diamonds",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -1991,7 +2018,7 @@
         "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
         "hallazgos": []
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-eco",
@@ -2103,7 +2130,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-eco",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -2136,7 +2172,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -2315,13 +2351,22 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-facturero",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
       },
       "auditoria": null,
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-favicon-generator",
@@ -2911,7 +2956,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-here",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -2958,7 +3012,7 @@
           }
         ]
       },
-      "rojos": 12
+      "rojos": 13
     },
     {
       "repo": "dotrino-home",
@@ -3276,7 +3330,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "ce4a322",
+      "commit": "fbf313e",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -3290,7 +3344,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 21,
-          "commits": 85,
+          "commits": 86,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3320,7 +3374,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 101,
+          "commits": 102,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3780,7 +3834,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-messenger",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -3799,7 +3862,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-messenger-extension",
@@ -4429,8 +4492,8 @@
       "plataformas": null,
       "subdominio": "offroad.dotrino.com",
       "paquete": "offroad",
-      "version": "0.4.0",
-      "commit": "cab9e81",
+      "version": "0.5.0",
+      "commit": "969abee",
       "fecha": "2026-10-08",
       "catalogo": {
         "nombre": "Offroad",
@@ -4469,7 +4532,7 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 0,
-          "commits": 2,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4686,7 +4749,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-padel-contador",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -4712,7 +4784,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-passmanager",
@@ -5175,7 +5247,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-pronostico-mundialista",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -5215,7 +5296,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-proxy",
@@ -6216,7 +6297,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-reputation-app",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -6235,7 +6325,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-results",
@@ -6345,8 +6435,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
-      "version": "0.4.6",
-      "commit": "66bed02",
+      "version": "0.4.7",
+      "commit": "62703a5",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [
@@ -6362,7 +6452,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 8,
-          "commits": 109,
+          "commits": 110,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7156,7 +7246,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-sudoku",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -7189,7 +7288,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-support",
@@ -7527,7 +7626,7 @@
       "subdominio": "test.dotrino.com",
       "paquete": "test",
       "version": "0.2.0",
-      "commit": "c10523a",
+      "commit": "210f778",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [
@@ -7546,7 +7645,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 26,
-          "commits": 35,
+          "commits": 36,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7556,7 +7655,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 40,
-          "commits": 57,
+          "commits": 58,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -7576,7 +7675,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 46,
+          "commits": 47,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7610,7 +7709,7 @@
       "rotas": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 0
+        "sinPublicar": 1
       },
       "auditoria": {
         "por": "seyacat",
@@ -7647,7 +7746,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-topbar",
@@ -7836,7 +7935,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-trivia",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -7869,7 +7977,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-trueque",
@@ -8651,7 +8759,16 @@
           "publicado": "0.15.3"
         }
       ],
-      "rotas": [],
+      "rotas": [
+        {
+          "unidad": "dotrino-wallet",
+          "dep": "@dotrino/store",
+          "version": "0.12.2",
+          "pide": "0.12.2",
+          "fix": "sube a @dotrino/store 0.12.3",
+          "sinSaber": false
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -8677,7 +8794,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-webrtc",
@@ -8763,7 +8880,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "dfd2dae",
+      "commit": "45bc501",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -8777,7 +8894,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 46,
-          "commits": 88,
+          "commits": 89,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8807,7 +8924,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 66,
+          "commits": 67,
           "tope": false,
           "faltan": [
             "duplicado"
