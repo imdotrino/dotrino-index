@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-09T10:50:16-0500",
+  "generado": "2026-10-09T11:03:29-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "1e867c7",
+  "commit": "4e6d0fe",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -70,7 +70,7 @@
     "@dotrino/topbar": "0.15.3",
     "trivia": "1.0.0",
     "trueque": "0.1.0",
-    "@dotrino/tunnel": "0.1.5",
+    "@dotrino/tunnel": "0.1.6",
     "@dotrino/tutorial": "0.2.0",
     "@dotrino/vaultd": "0.148.1",
     "@dotrino/vault": "0.82.1",
@@ -134,7 +134,7 @@
     "@dotrino/compat": "0.4.0",
     "sudoku": "0.0.3",
     "@dotrino/roadmap": "0.4.8",
-    "@dotrino/tunnel": "0.1.5",
+    "@dotrino/tunnel": "0.1.6",
     "@dotrino/topbar": "0.15.3",
     "@dotrino/qr": "0.1.0",
     "@dotrino/telegram-bot": "0.2.2",
@@ -616,7 +616,7 @@
     },
     {
       "pilar": "@dotrino/tunnel",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "enNpm": true,
       "repos": [
         "dotrino-telegram-claude-bot"
@@ -2966,8 +2966,8 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "beb3b27",
-      "fecha": "2026-10-08",
+      "commit": "c073e05",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -2987,8 +2987,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-29",
-          "dias": 71,
-          "commits": 41,
+          "dias": 72,
+          "commits": 42,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -2997,8 +2997,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-08",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3017,8 +3017,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 40,
-          "commits": 14,
+          "dias": 41,
+          "commits": 15,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3276,7 +3276,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "1e867c7",
+      "commit": "4e6d0fe",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -3290,7 +3290,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 22,
-          "commits": 105,
+          "commits": 106,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3320,7 +3320,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 121,
+          "commits": 122,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7375,6 +7375,11 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/tunnel",
+          "pide": "0.1.5",
+          "publicado": "0.1.6"
+        },
+        {
           "dep": "@dotrino/update",
           "pide": "0.6.1",
           "publicado": "0.7.0"
@@ -7400,7 +7405,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-terminal",
@@ -8030,8 +8035,8 @@
       "subdominio": "r.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "b40584d",
-      "fecha": "2026-10-08",
+      "commit": "1da463b",
+      "fecha": "2026-10-09",
       "catalogo": {
         "nombre": "Dotrino Tunnel",
         "url": "https://r.dotrino.com/",
@@ -8050,7 +8055,7 @@
           "existe": true,
           "fecha": "2026-07-27",
           "dias": 73,
-          "commits": 10,
+          "commits": 11,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -8060,7 +8065,7 @@
           "existe": true,
           "fecha": "2026-09-22",
           "dias": 16,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8068,7 +8073,7 @@
         "catalogo": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-10-08",
+          "fecha": "2026-10-09",
           "dias": 0,
           "commits": null,
           "tope": false,
@@ -8091,15 +8096,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "npmPendiente": [
-        {
-          "paquete": "@dotrino/tunnel",
-          "ruta": "dotrino-tunnel/lib",
-          "local": "0.1.6",
-          "npm": "0.1.5",
-          "sentido": "sin-publicar"
-        }
-      ],
+      "npmPendiente": [],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -8174,7 +8171,7 @@
           }
         ]
       },
-      "rojos": 12
+      "rojos": 11
     },
     {
       "repo": "dotrino-tutorial",
