@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-09T11:06:22-0500",
+  "generado": "2026-10-09T11:08:52-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "54bbcb3",
+  "commit": "d150ec4",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -1326,8 +1326,8 @@
       "subdominio": null,
       "paquete": "@dotrino/compat",
       "version": "0.4.0",
-      "commit": "48f603e",
-      "fecha": "2026-09-30",
+      "commit": "3c72936",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -1338,9 +1338,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-11",
+          "fecha": "2026-10-09",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -1369,19 +1369,14 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-12",
-          "dias": 0,
-          "commits": 0,
+          "dias": 27,
+          "commits": 1,
           "tope": false,
           "faltan": [],
           "rojo": false
         }
       },
-      "faltan": [
-        {
-          "k": "wiki",
-          "etiqueta": "documentación en el wiki (§9.2)"
-        }
-      ],
+      "faltan": [],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -1392,7 +1387,7 @@
         "notas": "Repo pequeño y ya inspeccionado por completo (src/, test/, package.json, README.md, release.yml); es una librería de funciones puras sin red, UI ni copy de usuario, por lo que voseo, plain y sealed no tienen superficie aplicable, y no se detectó duplicación interna real (con evidencia de dos sitios) ni texto no inglés en identificadores, rutas o mensajes de error.",
         "hallazgos": []
       },
-      "rojos": 1
+      "rojos": 0
     },
     {
       "repo": "dotrino-content",
@@ -3276,7 +3271,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "54bbcb3",
+      "commit": "d150ec4",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -3290,7 +3285,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 22,
-          "commits": 107,
+          "commits": 108,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3320,7 +3315,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 123,
+          "commits": 124,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4525,8 +4520,8 @@
       "subdominio": null,
       "paquete": "@dotrino/opaque",
       "version": "0.1.0",
-      "commit": "6455bb0",
-      "fecha": "2026-09-30",
+      "commit": "9252d1b",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -4537,9 +4532,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-17",
+          "fecha": "2026-10-09",
           "dias": 0,
-          "commits": 2,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4575,18 +4570,13 @@
           "rojo": true
         }
       },
-      "faltan": [
-        {
-          "k": "wiki",
-          "etiqueta": "documentación en el wiki (§9.2)"
-        }
-      ],
+      "faltan": [],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 1
     },
     {
       "repo": "dotrino-padel-contador",
@@ -5441,8 +5431,8 @@
       "subdominio": null,
       "paquete": "@dotrino/qr",
       "version": "0.1.0",
-      "commit": "d9f6d40",
-      "fecha": "2026-09-04",
+      "commit": "50e4ba5",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -5453,10 +5443,10 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-04",
+          "fecha": "2026-10-09",
           "dias": 0,
           "commits": 0,
-          "tope": true,
+          "tope": false,
           "faltan": null,
           "rojo": false
         },
@@ -5493,10 +5483,6 @@
       },
       "faltan": [
         {
-          "k": "wiki",
-          "etiqueta": "documentación en el wiki (§9.2)"
-        },
-        {
           "k": "oidc",
           "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
@@ -5506,7 +5492,7 @@
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 3
+      "rojos": 2
     },
     {
       "repo": "dotrino-qrgenerator",
@@ -6328,8 +6314,8 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "6354ca3",
-      "fecha": "2026-10-08",
+      "commit": "4ebcc0b",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [
         "@dotrino/update",
@@ -6343,9 +6329,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-30",
-          "dias": 8,
-          "commits": 111,
+          "fecha": "2026-10-09",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6381,12 +6367,7 @@
           "rojo": true
         }
       },
-      "faltan": [
-        {
-          "k": "wiki",
-          "etiqueta": "documentación en el wiki (§9.2)"
-        }
-      ],
+      "faltan": [],
       "versiones": [
         {
           "dep": "@dotrino/update",
@@ -6398,7 +6379,7 @@
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 3
+      "rojos": 2
     },
     {
       "repo": "dotrino-sealers",
@@ -8209,8 +8190,8 @@
       "subdominio": null,
       "paquete": "@dotrino/update",
       "version": "0.7.0",
-      "commit": "743b4ee",
-      "fecha": "2026-10-08",
+      "commit": "b6ab40c",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -8221,7 +8202,7 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-08",
+          "fecha": "2026-10-09",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -8259,18 +8240,13 @@
           "rojo": true
         }
       },
-      "faltan": [
-        {
-          "k": "wiki",
-          "etiqueta": "documentación en el wiki (§9.2)"
-        }
-      ],
+      "faltan": [],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 1
     },
     {
       "repo": "dotrino-vault",
@@ -8659,8 +8635,8 @@
       "subdominio": null,
       "paquete": "@dotrino/webrtc",
       "version": "0.1.0",
-      "commit": "5bd3fb9",
-      "fecha": "2026-09-03",
+      "commit": "bab20e2",
+      "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -8671,7 +8647,7 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-03",
+          "fecha": "2026-10-09",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -8711,10 +8687,6 @@
       },
       "faltan": [
         {
-          "k": "wiki",
-          "etiqueta": "documentación en el wiki (§9.2)"
-        },
-        {
           "k": "oidc",
           "etiqueta": "publicar desde CI con confianza (CUMPLIMIENTO §2)"
         }
@@ -8724,7 +8696,7 @@
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 3
+      "rojos": 2
     },
     {
       "repo": "dotrino-wiki",
@@ -8735,7 +8707,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "68e693c",
+      "commit": "b65d439",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -8749,7 +8721,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 47,
-          "commits": 91,
+          "commits": 92,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8779,7 +8751,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 69,
+          "commits": 70,
           "tope": false,
           "faltan": [
             "duplicado"
