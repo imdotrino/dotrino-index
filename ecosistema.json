@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-08T18:54:19-0500",
+  "generado": "2026-10-08T19:18:57-0500",
   "fecha": "2026-10-08",
   "por": "seyacat",
-  "commit": "41f6080",
+  "commit": "e7e0382",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3291,7 +3291,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "41f6080",
+      "commit": "e7e0382",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -3305,7 +3305,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 21,
-          "commits": 81,
+          "commits": 82,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3335,7 +3335,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 97,
+          "commits": 98,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4444,8 +4444,8 @@
       "plataformas": null,
       "subdominio": "offroad.dotrino.com",
       "paquete": "offroad",
-      "version": "0.1.0",
-      "commit": "20f1fcf",
+      "version": "0.2.0",
+      "commit": "14355a3",
       "fecha": "2026-10-08",
       "catalogo": {
         "nombre": "Offroad",
@@ -4474,8 +4474,8 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 0,
-          "commits": 1,
-          "tope": true,
+          "commits": 0,
+          "tope": false,
           "faltan": null,
           "rojo": false
         },
@@ -4484,8 +4484,8 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 0,
-          "commits": 1,
-          "tope": true,
+          "commits": 0,
+          "tope": false,
           "faltan": null,
           "rojo": false
         },
@@ -8773,7 +8773,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "c2b3475",
+      "commit": "cfd3a90",
       "fecha": "2026-10-08",
       "catalogo": null,
       "deps": [],
@@ -8787,7 +8787,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 46,
-          "commits": 86,
+          "commits": 87,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8817,7 +8817,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 39,
-          "commits": 64,
+          "commits": 65,
           "tope": false,
           "faltan": [
             "duplicado"
