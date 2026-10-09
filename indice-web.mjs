@@ -178,11 +178,15 @@ const derivas = D.piezas.reduce((n, p) => n + p.versiones.length, 0)
 // «rotas» no existe en filas medidas antes de que el índice cruzara el registro.
 const rotasDe = (p) => p.rotas || []
 const usosRotos = D.piezas.reduce((n, p) => n + rotasDe(p).length, 0)
+// «npmPendiente» no existe en filas medidas antes de que el índice comparara el repo con npm.
+const npmDe = (p) => p.npmPendiente || []
+const sinPublicarNpm = D.piezas.reduce((n, p) => n + npmDe(p).length, 0)
 const viejas = D.piezas.filter(p => ['readme', 'portada', 'catalogo'].some(k => p.frescura[k].rojo))
 $('#cifras').innerHTML = [
   ['', D.piezas.length, 'piezas'],
   ['mal', conRojo.length, 'con algo en rojo'],
   ['mal', usosRotos, 'usos de versiones rotas'],
+  ['mal', sinPublicarNpm, 'paquetes con versión distinta en npm'],
   ['mal', faltasTotales, 'convenciones incumplidas'],
   ['mal', derivas, 'pilares atrasados'],
   ['mal', viejas.length, 'con README/portada/ficha de +' + D.rojoDias + ' d'],
@@ -274,6 +278,8 @@ function pintar () {
       '<td>' + chips(p.faltan.map(f => f.etiqueta), 'mal') + pub + '</td>' +
       '<td>' + chips(rotasDe(p).map(u => u.dep.replace('@dotrino/', '') + ' ' + (u.version || '?') + ' ROTA' +
         (u.unidad !== p.repo ? ' (' + u.unidad.slice(p.repo.length + 1) + ')' : '')), 'mal') +
+      chips(npmDe(p).map(u => u.paquete.replace('@dotrino/', '') + ' ' + u.local + ' ≠ npm ' + u.npm +
+        (u.sentido === 'sin-publicar' ? ' (sin publicar)' : ' (repo atrás)')), 'mal') +
       chips(p.versiones.map(v => v.dep.replace('@dotrino/', '') + ' ' + v.pide + '→' + v.publicado), 'mal') + '</td>' +
       celdaFrescura(p.frescura.readme) +
       celdaFrescura(p.frescura.portada) +
@@ -307,6 +313,13 @@ function grupos () {
     (porRota['ROTA: ' + u.dep + ' — ' + u.fix] ||= []).push(u.unidad + ' (' + (u.version || '? ' + u.pide) + ')')
   }
   for (const [k, repos] of Object.entries(porRota).sort((a, b) => b[1].length - a[1].length)) g.push([k, repos])
+  // Lo arreglado en el repo y sin publicar no le ha llegado a nadie.
+  const sinPub = D.piezas.flatMap(p => npmDe(p).filter(u => u.sentido === 'sin-publicar')
+    .map(u => u.paquete + ' (repo ' + u.local + ', npm ' + u.npm + ')'))
+  if (sinPub.length) g.push(['Publicar en npm: la versión del repo no está en el registro', sinPub])
+  const atras = D.piezas.flatMap(p => npmDe(p).filter(u => u.sentido !== 'sin-publicar')
+    .map(u => u.paquete + ' (repo ' + u.local + ', npm ' + u.npm + ')'))
+  if (atras.length) g.push(['El repo va por detrás de npm', atras])
   const porNorma = {}
   for (const p of D.piezas) for (const f of p.faltan) (porNorma[f.etiqueta] ||= []).push(p.repo)
   for (const [etiqueta, repos] of Object.entries(porNorma).sort((a, b) => b[1].length - a[1].length)) {

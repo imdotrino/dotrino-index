@@ -632,7 +632,13 @@ function analizar (nombre, catalogo) {
     if (!e.isDirectory() || ['node_modules', 'dist', 'test', '.git'].includes(e.name)) continue
     const sub = leerJson(join(dir, e.name, 'package.json'))
     if (!sub) continue
-    if (sub.name?.startsWith('@dotrino/')) subPaquetes[sub.name] = { version: sub.version, ruta: `${nombre}/${e.name}`, bin: Boolean(sub.bin) }
+    // Un envoltorio sin código propio no lleva su versión: la deriva CI de otro paquete del
+    // repo al publicar (`@dotrino/env` de `lib`, para que nadie la mantenga a mano). Lo dice
+    // su package.json con `dotrino.versionFrom`, y se mide contra ESA: así, si `lib` sube y el
+    // envoltorio no se publica, sale; y no sale en falso por el número que hay en el repo.
+    const origen = sub.dotrino?.versionFrom && leerJson(join(dir, e.name, sub.dotrino.versionFrom, 'package.json'))
+    const version = sub.dotrino?.versionFrom ? (origen?.version || null) : sub.version
+    if (sub.name?.startsWith('@dotrino/')) subPaquetes[sub.name] = { version, ruta: `${nombre}/${e.name}`, bin: Boolean(sub.bin) }
     const d = Object.fromEntries(
       Object.entries({ ...sub.dependencies, ...sub.devDependencies }).filter(([k]) => k.startsWith('@dotrino/'))
     )
@@ -967,6 +973,13 @@ const ETIQUETA = {
 
 // ─── red (opcional) ────────────────────────────────────────────────────────
 
+/** ¿`a` es más nueva que `b`? Tres números; lo que no lo sea no compite. */
+function masNueva (a, b) {
+  const n = (v) => String(v).replace(/^v/, '').split(/[.-]/).slice(0, 3).map(x => parseInt(x, 10) || 0)
+  const [x, y, z] = n(a); const [p, q, r] = n(b)
+  return x !== p ? x > p : y !== q ? y > q : z > r
+}
+
 async function versionesNpm (nombres) {
   const out = {}
   await Promise.all(nombres.map(async (n) => {
@@ -1042,6 +1055,24 @@ function informe (piezas, pilares, enNpm) {
       L.push(`| \`${p.repo}\` | ${p.git.sucio || '—'} | ${p.git.sinPushear || '—'} | ${p.git.remoto ? 'sí' : '**NO TIENE**'} |`)
     }
     L.push('')
+  }
+
+  // 1a. EL REPO CONTRA NPM. Lo que está en `main` y no en el registro no le ha llegado a nadie.
+  L.push('## Versión del repo ≠ versión en npm', '')
+  L.push('> Un arreglo que está en `main` y no en npm no le ha llegado a nadie: quien instala recibe la versión vieja.', '')
+  if (!VIVO) L.push('**No se midió**: hace falta `--vivo` para preguntarle a npm. Esto NO significa que todo esté publicado.', '')
+  else {
+    const pend = piezas.flatMap(p => p.npmPendiente || [])
+    if (!pend.length) L.push('Todo lo que se publica está en npm con la versión del repo.', '')
+    else {
+      L.push('| Paquete | Dónde | En el repo | En npm | Qué pasa |', '|---|---|---|---|---|')
+      for (const u of pend.sort((a, b) => a.paquete.localeCompare(b.paquete))) {
+        L.push(`| \`${u.paquete}\` | \`${u.ruta}\` | ${u.local} | ${u.npm} | ${u.sentido === 'sin-publicar'
+          ? '**sin publicar**: falta el tag `v' + u.local + '` (o el workflow falló)'
+          : 'el repo va **por detrás** de npm: falta `git pull`, o se publicó sin commitear'} |`)
+      }
+      L.push('')
+    }
   }
 
   // 1b. VERSIONES ROTAS. Va antes que la deriva: no es ir detrás, es usar algo con un
@@ -1368,6 +1399,25 @@ if (VIVO) {
   const publicados = await versionesNpm([...new Set(conPaquete.map(p => p.paquete))])
   for (const p of conPaquete) p.publicado = Boolean(publicados[p.paquete])
 
+  // LA VERSIÓN DEL REPO CONTRA LA DE NPM (dueño, 2026-10-08). El resto del índice mide el
+  // repo, y un paquete arreglado en `main` que nadie publicó pasaba por cumplido: el
+  // 2026-10-08 `@dotrino/tunnel` 0.1.6 llevaba el aviso de versión nueva en el repo y npm
+  // seguía sirviendo la 0.1.5 sin él. Se mira cada paquete que el repo publica, también los
+  // de un nivel para adentro (`lib/`, `agent/`), y solo los que YA están en npm: lo que
+  // nunca se publicó es otra cosa (un servicio, o un primer publish pendiente).
+  const unidades = piezas.flatMap(p => [
+    ...(p.paquete && (p.paquete.startsWith('@dotrino/') || p.paquete === p.repo)
+      ? [{ p, paquete: p.paquete, local: p.version, ruta: p.repo }] : []),
+    ...Object.entries(p.subPaquetes || {}).map(([paquete, sp]) => ({ p, paquete, local: sp.version, ruta: sp.ruta }))
+  ])
+  const enRegistro = await versionesNpm([...new Set(unidades.map(u => u.paquete))])
+  for (const p of piezas) p.npmPendiente = []
+  for (const u of unidades) {
+    const npm = enRegistro[u.paquete]
+    if (!npm || !u.local || npm === u.local) continue
+    u.p.npmPendiente.push({ paquete: u.paquete, ruta: u.ruta, local: u.local, npm, sentido: masNueva(u.local, npm) ? 'sin-publicar' : 'repo-atras' })
+  }
+
   const conDominio = piezas.filter(p => p.subdominio)
   const vivos = await Promise.all(conDominio.map(p => commitEnVivo(p.subdominio)))
   conDominio.forEach((p, i) => {
@@ -1442,6 +1492,8 @@ function datosWeb () {
       const rotas = ROTAS
         ? (p.rotas || []).map(u => ({ unidad: u.unidad, dep: u.dep, version: u.version, pide: u.pide, fix: u.fix, sinSaber: u.sinSaber }))
         : (antes.get(p.repo)?.rotas || [])
+      // Sin `--vivo` no se le preguntó a npm: se hereda lo de la pasada anterior.
+      const npmPendiente = VIVO ? (p.npmPendiente || []) : (antes.get(p.repo)?.npmPendiente || [])
       return {
         repo: p.repo,
         tipo: p.tipo,
@@ -1462,9 +1514,10 @@ function datosWeb () {
         faltan,
         versiones,
         rotas,
+        npmPendiente,
         vivo,
         auditoria,
-        rojos: faltan.length + versiones.length + rotas.length +
+        rojos: faltan.length + versiones.length + rotas.length + npmPendiente.length +
           CLAVES_FRESCURA.filter(k => frescura[k].rojo).length +
           (auditoria?.hallazgos.length || 0) +
           (vivo?.sinPublicar > 0 ? 1 : 0)
@@ -1527,6 +1580,7 @@ const usosRotas = piezas.reduce((n, p) => n + (p.rotas?.length || 0), 0)
 console.log(`${piezas.length} piezas · ${faltas} incumplimientos · ` +
   (ROTAS ? `${usosRotas} usos de versiones rotas · ` : 'versiones rotas SIN COMPROBAR (falta dotrino-roadmap) · ') +
   `${piezas.filter(p => p.git.sinPushear || p.git.sucio).length} repos sin sincronizar · ` +
+  (VIVO ? `${piezas.reduce((n, p) => n + (p.npmPendiente?.length || 0), 0)} paquetes con versión distinta en npm · ` : '') +
   `${viejas} con README/portada/ficha de más de ${ROJO_DIAS} días · ` +
   `${hallazgos} hallazgos de auditoría · ${porAuditar} sin auditar o atrasadas`)
 console.log('→ ECOSISTEMA.json + INDICE.md')
