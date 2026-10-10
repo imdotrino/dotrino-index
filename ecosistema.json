@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-10T00:37:25-0500",
+  "generado": "2026-10-10T00:41:41-0500",
   "fecha": "2026-10-10",
   "por": "seyacat",
-  "commit": "60a4bcf",
+  "commit": "2089477",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -64,7 +64,7 @@
     "sudoku": "0.0.3",
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
-    "dotrino-terminal": "0.12.0",
+    "dotrino-terminal": "0.12.2",
     "@dotrino/terminal-agent": "0.37.0",
     "test": "3.3.0",
     "@dotrino/topbar": "0.15.3",
@@ -3271,7 +3271,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "60a4bcf",
+      "commit": "2089477",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [],
@@ -3285,7 +3285,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 23,
-          "commits": 131,
+          "commits": 132,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3315,7 +3315,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 41,
-          "commits": 147,
+          "commits": 148,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6320,7 +6320,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "0fa98a2",
+      "commit": "edd8235",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [
@@ -6337,7 +6337,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 1,
-          "commits": 8,
+          "commits": 10,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7357,7 +7357,7 @@
       "interna": false,
       "stack": "vite",
       "plataformas": {
-        "pwa": "0.12.0",
+        "pwa": "0.12.2",
         "ios": {
           "version": "0.10.0",
           "estado": "atrasada"
@@ -7369,8 +7369,8 @@
       },
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
-      "version": "0.12.0",
-      "commit": "f97efc5",
+      "version": "0.12.2",
+      "commit": "3053c9d",
       "fecha": "2026-10-10",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7399,7 +7399,7 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 2,
-          "commits": 18,
+          "commits": 20,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7409,7 +7409,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 5,
-          "commits": 126,
+          "commits": 128,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7429,7 +7429,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 10,
-          "commits": 147,
+          "commits": 149,
           "tope": false,
           "faltan": [],
           "rojo": true
