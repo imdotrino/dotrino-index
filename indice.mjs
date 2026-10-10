@@ -462,6 +462,15 @@ function analizar (nombre, catalogo) {
               html.match(/<meta[^>]+property=["']og:url["'][^>]+content=["']https?:\/\/([^/"']+)/i)
     if (m && m[1].endsWith('dotrino.com')) cname = m[1]
   }
+  // UN WORKER tampoco tiene CNAME: su dominio está en las rutas de `wrangler.toml`. Sin
+  // esto no se le preguntaba qué commit sirve, y un Worker desplegado hace meses pasaba
+  // por al día. Solo las rutas vivas: una comentada es un dominio que no está en uso.
+  const wrangler = leer(join(dir, 'wrangler.toml'))
+  if (!cname && wrangler) {
+    const m = wrangler.split('\n').filter(l => !l.trim().startsWith('#')).join('\n')
+      .match(/pattern\s*=\s*["']([a-z0-9.-]+\.dotrino\.com)["']/)
+    if (m) cname = m[1]
+  }
   const esPaquete = Boolean(pkg?.name?.startsWith('@dotrino/'))
 
   // Tipo. El CNAME es el mejor discriminante: solo lo tiene lo que sirve Pages.
@@ -589,7 +598,13 @@ function analizar (nombre, catalogo) {
     // El comando de larga duración a veces vive en una SUBCARPETA con su propio paquete
     // (`agent/` en terminal e ia, `server/` en los que tienen backend): ahí es donde se
     // publica y donde está el aviso. Mirar solo la raíz los daba por incumplidores.
+    //
+    // UN WORKER no se instala en ninguna máquina y no puede mirar nada: lo que puede es
+    // DECIR qué commit se desplegó (`<meta name="commit">` en su portada, como una app).
+    // Con eso este índice lo compara con `main` en cada pasada con `--vivo`, que es
+    // enterarse igual. Sin dominio propio no hay a quién preguntarle, y no cuenta.
     updateNotice: /@dotrino\/update/.test(texto) || Boolean(deps['@dotrino/update']) ||
+      Boolean(wrangler && cname && /name=["']commit["']/.test(leer(join(dir, 'src/index.js')) || '')) ||
       ['agent', 'server', 'lib'].some((sub) => Boolean(leerJson(join(dir, sub, 'package.json'))?.dependencies?.['@dotrino/update'])),
     topbar: Boolean(etiqueta) || /@dotrino\/topbar/.test(texto) || Boolean(deps['@dotrino/topbar']),
     // §6.1: el botón de perfil es el atributo/propiedad `profile` del topbar.
