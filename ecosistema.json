@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-10T01:50:42-0500",
+  "generado": "2026-10-10T12:25:34-0500",
   "fecha": "2026-10-10",
   "por": "seyacat",
-  "commit": "5a2f9e7",
+  "commit": "53501bb",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -18,7 +18,7 @@
     "duplicado": "código o funcionalidad duplicada en el repo (regla principal)"
   },
   "ocultas": 1,
-  "medidasAhora": 79,
+  "medidasAhora": 80,
   "heredadas": 0,
   "pilares": {
     "dotrino-base64": "1.0.0",
@@ -72,10 +72,10 @@
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.6",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.148.1",
+    "@dotrino/vaultd": "0.149.0",
     "@dotrino/vault": "0.82.1",
     "@dotrino/verifier": "0.2.0",
-    "wallet": "2.50.0",
+    "wallet": "2.51.1",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.2.0",
     "@dotrino/env": "0.82.1",
@@ -130,7 +130,7 @@
     "test": "3.3.0",
     "@dotrino/share": "0.3.0",
     "@dotrino/geo": "0.9.0",
-    "wallet": "2.50.0",
+    "wallet": "2.51.1",
     "@dotrino/compat": "0.4.0",
     "sudoku": "0.0.3",
     "@dotrino/roadmap": "0.4.8",
@@ -163,7 +163,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.148.1",
+    "@dotrino/vaultd": "0.149.0",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.0",
     "gridgame": null,
@@ -1316,6 +1316,73 @@
         "hallazgos": []
       },
       "rojos": 7
+    },
+    {
+      "repo": "dotrino-company",
+      "tipo": "otro",
+      "interna": false,
+      "stack": "—",
+      "plataformas": null,
+      "subdominio": null,
+      "paquete": null,
+      "version": null,
+      "commit": "ac0cdc5",
+      "fecha": "2026-10-10",
+      "catalogo": null,
+      "deps": [],
+      "medido": {
+        "fecha": "2026-10-10",
+        "por": "seyacat"
+      },
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-10",
+          "dias": 0,
+          "commits": 0,
+          "tope": true,
+          "faltan": null,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": false,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "auditoria": {
+          "aplica": true,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": [],
+          "rojo": true
+        }
+      },
+      "faltan": [],
+      "versiones": [],
+      "rotas": [],
+      "npmPendiente": [],
+      "vivo": null,
+      "auditoria": null,
+      "rojos": 1
     },
     {
       "repo": "dotrino-compat",
@@ -3271,7 +3338,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "5a2f9e7",
+      "commit": "53501bb",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [],
@@ -3285,7 +3352,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 23,
-          "commits": 135,
+          "commits": 136,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3315,7 +3382,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 41,
-          "commits": 151,
+          "commits": 152,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6320,7 +6387,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "b00ceef",
+      "commit": "5455667",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [
@@ -6337,7 +6404,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 1,
-          "commits": 13,
+          "commits": 14,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7370,7 +7437,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.12.3",
-      "commit": "7e603b6",
+      "commit": "d066d8f",
       "fecha": "2026-10-10",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7399,7 +7466,7 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 2,
-          "commits": 33,
+          "commits": 34,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7409,7 +7476,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 5,
-          "commits": 141,
+          "commits": 142,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7429,7 +7496,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 10,
-          "commits": 162,
+          "commits": 163,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -8266,9 +8333,9 @@
       "plataformas": null,
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.148.1",
-      "commit": "8e65eb9",
-      "fecha": "2026-10-08",
+      "version": "0.149.0",
+      "commit": "11a6925",
+      "fecha": "2026-10-10",
       "catalogo": {
         "nombre": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -8295,9 +8362,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-07",
-          "dias": 1,
-          "commits": 13,
+          "fecha": "2026-10-10",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8305,18 +8372,18 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-26",
-          "dias": 43,
-          "commits": 279,
+          "fecha": "2026-10-10",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
-          "rojo": true
+          "rojo": false
         },
         "catalogo": {
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-30",
-          "dias": 8,
+          "dias": 10,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -8326,8 +8393,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 39,
-          "commits": 196,
+          "dias": 41,
+          "commits": 197,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -8409,7 +8476,7 @@
           }
         ]
       },
-      "rojos": 12
+      "rojos": 11
     },
     {
       "repo": "dotrino-verifier",
@@ -8712,8 +8779,8 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "b65d439",
-      "fecha": "2026-10-09",
+      "commit": "81d618b",
+      "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -8725,8 +8792,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-23",
-          "dias": 47,
-          "commits": 92,
+          "dias": 48,
+          "commits": 93,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8755,8 +8822,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 40,
-          "commits": 70,
+          "dias": 41,
+          "commits": 71,
           "tope": false,
           "faltan": [
             "duplicado"
