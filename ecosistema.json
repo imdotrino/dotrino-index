@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-10T00:05:54-0500",
+  "generado": "2026-10-10T00:15:45-0500",
   "fecha": "2026-10-10",
   "por": "seyacat",
-  "commit": "2140aa8",
+  "commit": "cb5046d",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3271,7 +3271,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "2140aa8",
+      "commit": "cb5046d",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [],
@@ -3285,7 +3285,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 23,
-          "commits": 127,
+          "commits": 128,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3315,7 +3315,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 41,
-          "commits": 143,
+          "commits": 144,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4439,8 +4439,8 @@
       "plataformas": null,
       "subdominio": "offroad.dotrino.com",
       "paquete": "offroad",
-      "version": "0.22.0",
-      "commit": "70f94db",
+      "version": "0.23.0",
+      "commit": "e34b67e",
       "fecha": "2026-10-10",
       "catalogo": {
         "nombre": "Offroad",
@@ -4479,7 +4479,7 @@
           "existe": true,
           "fecha": "2026-10-10",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7370,7 +7370,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.11.0",
-      "commit": "218d26f",
+      "commit": "16d42c4",
       "fecha": "2026-10-10",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7399,7 +7399,7 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 2,
-          "commits": 15,
+          "commits": 16,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7409,7 +7409,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 5,
-          "commits": 123,
+          "commits": 124,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7429,7 +7429,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 10,
-          "commits": 144,
+          "commits": 145,
           "tope": false,
           "faltan": [],
           "rojo": true
