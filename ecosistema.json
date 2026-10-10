@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-10T00:15:45-0500",
+  "generado": "2026-10-10T00:17:36-0500",
   "fecha": "2026-10-10",
   "por": "seyacat",
-  "commit": "cb5046d",
+  "commit": "38c6c84",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3271,7 +3271,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "cb5046d",
+      "commit": "38c6c84",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [],
@@ -3285,7 +3285,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 23,
-          "commits": 128,
+          "commits": 129,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3315,7 +3315,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 41,
-          "commits": 144,
+          "commits": 145,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6320,7 +6320,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "3702530",
+      "commit": "09c1135",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [
@@ -6337,7 +6337,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 1,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": false
