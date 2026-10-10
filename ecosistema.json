@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-09T23:03:22-0500",
+  "generado": "2026-10-09T23:18:37-0500",
   "fecha": "2026-10-09",
   "por": "seyacat",
-  "commit": "a930e45",
+  "commit": "d65d74a",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3271,7 +3271,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "a930e45",
+      "commit": "d65d74a",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [],
@@ -3285,7 +3285,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 22,
-          "commits": 121,
+          "commits": 122,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3315,7 +3315,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 40,
-          "commits": 137,
+          "commits": 138,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4439,8 +4439,8 @@
       "plataformas": null,
       "subdominio": "offroad.dotrino.com",
       "paquete": "offroad",
-      "version": "0.17.0",
-      "commit": "b6dc31f",
+      "version": "0.18.0",
+      "commit": "80127b6",
       "fecha": "2026-10-09",
       "catalogo": {
         "nombre": "Offroad",
@@ -4479,7 +4479,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 0,
-          "commits": 6,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6320,7 +6320,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "a3335cf",
+      "commit": "b775ce7",
       "fecha": "2026-10-09",
       "catalogo": null,
       "deps": [
@@ -6337,7 +6337,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 0,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7370,7 +7370,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.10.0",
-      "commit": "632586e",
+      "commit": "a3c1be0",
       "fecha": "2026-10-09",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7399,7 +7399,7 @@
           "existe": true,
           "fecha": "2026-10-08",
           "dias": 1,
-          "commits": 12,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7409,7 +7409,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 4,
-          "commits": 120,
+          "commits": 121,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7429,7 +7429,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 9,
-          "commits": 141,
+          "commits": 142,
           "tope": false,
           "faltan": [],
           "rojo": true
