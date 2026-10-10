@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-10T16:16:19-0500",
+  "generado": "2026-10-10T16:46:20-0500",
   "fecha": "2026-10-10",
   "por": "seyacat",
-  "commit": "40d0b57",
+  "commit": "226ade2",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3344,7 +3344,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "40d0b57",
+      "commit": "226ade2",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [],
@@ -3358,7 +3358,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 23,
-          "commits": 146,
+          "commits": 147,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3388,7 +3388,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 41,
-          "commits": 162,
+          "commits": 163,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6399,7 +6399,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "b8e6098",
+      "commit": "3f89c71",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [
@@ -6416,7 +6416,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 1,
-          "commits": 22,
+          "commits": 23,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7460,7 +7460,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.12.3",
-      "commit": "209d657",
+      "commit": "6acfbe5",
       "fecha": "2026-10-10",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7489,7 +7489,7 @@
           "existe": true,
           "fecha": "2026-10-10",
           "dias": 0,
-          "commits": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7499,7 +7499,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 5,
-          "commits": 154,
+          "commits": 155,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7519,7 +7519,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 10,
-          "commits": 175,
+          "commits": 176,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -7579,7 +7579,7 @@
       "subdominio": "test.dotrino.com",
       "paquete": "test",
       "version": "0.2.0",
-      "commit": "5b5f3e6",
+      "commit": "d2a8e98",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [
@@ -7598,7 +7598,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 28,
-          "commits": 38,
+          "commits": 39,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7608,7 +7608,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 42,
-          "commits": 60,
+          "commits": 61,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -7628,7 +7628,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 41,
-          "commits": 49,
+          "commits": 50,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -8802,7 +8802,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "382ad8a",
+      "commit": "60f72aa",
       "fecha": "2026-10-10",
       "catalogo": null,
       "deps": [],
@@ -8816,7 +8816,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 48,
-          "commits": 101,
+          "commits": 102,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -8846,7 +8846,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 41,
-          "commits": 79,
+          "commits": 80,
           "tope": false,
           "faltan": [
             "duplicado"
