@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-12T09:35:26-0500",
+  "generado": "2026-10-12T09:42:15-0500",
   "fecha": "2026-10-12",
   "por": "seyacat",
-  "commit": "5a23be2",
+  "commit": "c0df049",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -72,13 +72,13 @@
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.6",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.150.1",
-    "@dotrino/vault": "0.82.1",
+    "@dotrino/vaultd": "0.151.0",
+    "@dotrino/vault": "0.82.2",
     "@dotrino/verifier": "0.2.0",
     "wallet": "2.54.1",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.2.0",
-    "@dotrino/env": "0.82.1",
+    "@dotrino/env": "0.82.2",
     "@dotrino/inspector": "0.2.2",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -140,7 +140,7 @@
     "@dotrino/qr": "0.1.1",
     "@dotrino/telegram-bot": "0.2.2",
     "dotrino-terminal": null,
-    "@dotrino/vault": "0.82.1",
+    "@dotrino/vault": "0.82.2",
     "padel": "0.0.1",
     "dotrino-reputation-app": null,
     "simple-websocket-chat": null,
@@ -164,7 +164,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.150.1",
+    "@dotrino/vaultd": "0.151.0",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.0",
     "gridgame": null,
@@ -174,7 +174,7 @@
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.82.1",
+    "@dotrino/env": "0.82.2",
     "offroad": "0.0.9",
     "ar": "0.0.1"
   },
@@ -526,7 +526,7 @@
     },
     {
       "pilar": "@dotrino/vault",
-      "version": "0.82.1",
+      "version": "0.82.2",
       "enNpm": true,
       "repos": [
         "dotrino-content",
@@ -973,10 +973,10 @@
       "npmPendiente": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 1
+        "sinPublicar": 0
       },
       "auditoria": null,
-      "rojos": 2
+      "rojos": 1
     },
     {
       "repo": "dotrino-base64",
@@ -1662,6 +1662,11 @@
           "dep": "@dotrino/update",
           "pide": "0.5.1",
           "publicado": "0.8.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.82.1",
+          "publicado": "0.82.2"
         }
       ],
       "rotas": [],
@@ -1676,7 +1681,7 @@
         "notas": "Repo pequeño y bien alineado: CLI en tuteo consistente, logs/errores de red en inglés, landing (web/index.html) usa <dotrino-topbar> y copy sin jerga técnica, S3 y sendByPubkey solo aparecen en protocolo externo (S3) y en tests/docs (exentos). No se revisaron test/*.test.js, docs/DISENO.md, docs/HANDOFF.md, src/blobstore-s3.js ni lib/node_modules/@dotrino/* (vendored, terceros) por estar exentos o fuera de presupuesto.",
         "hallazgos": []
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-critters",
@@ -3496,7 +3501,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "5a23be2",
+      "commit": "c0df049",
       "fecha": "2026-10-12",
       "catalogo": null,
       "deps": [],
@@ -3510,7 +3515,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 25,
-          "commits": 155,
+          "commits": 156,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3540,7 +3545,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 43,
-          "commits": 171,
+          "commits": 172,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -5041,6 +5046,11 @@
           "dep": "@dotrino/update",
           "pide": "0.7.0",
           "publicado": "0.8.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.82.1",
+          "publicado": "0.82.2"
         }
       ],
       "rotas": [],
@@ -5091,7 +5101,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-profile",
@@ -5547,7 +5557,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.79.0",
-          "publicado": "0.82.1"
+          "publicado": "0.82.2"
         }
       ],
       "rotas": [],
@@ -6201,7 +6211,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.75.0",
-          "publicado": "0.82.1"
+          "publicado": "0.82.2"
         }
       ],
       "rotas": [],
@@ -6598,7 +6608,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "644a5af",
+      "commit": "db889d6",
       "fecha": "2026-10-12",
       "catalogo": null,
       "deps": [
@@ -6615,7 +6625,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 3,
-          "commits": 34,
+          "commits": 35,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6751,13 +6761,18 @@
           "dep": "@dotrino/update",
           "pide": "0.5.1",
           "publicado": "0.8.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.82.1",
+          "publicado": "0.82.2"
         }
       ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-share",
@@ -7092,6 +7107,11 @@
           "dep": "@dotrino/update",
           "pide": "0.7.0",
           "publicado": "0.8.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.82.1",
+          "publicado": "0.82.2"
         }
       ],
       "rotas": [],
@@ -7118,7 +7138,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-sso",
@@ -8583,7 +8603,7 @@
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
       "version": "0.151.0",
-      "commit": "cf3e318",
+      "commit": "1c529e9",
       "fecha": "2026-10-12",
       "catalogo": {
         "nombre": "Dotrino Vault",
@@ -8613,7 +8633,7 @@
           "existe": true,
           "fecha": "2026-10-10",
           "dias": 2,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8623,7 +8643,7 @@
           "existe": true,
           "fecha": "2026-10-10",
           "dias": 2,
-          "commits": 4,
+          "commits": 5,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8685,32 +8705,10 @@
         }
       ],
       "rotas": [],
-      "npmPendiente": [
-        {
-          "paquete": "@dotrino/vaultd",
-          "ruta": "dotrino-vault",
-          "local": "0.151.0",
-          "npm": "0.150.1",
-          "sentido": "sin-publicar"
-        },
-        {
-          "paquete": "@dotrino/env",
-          "ruta": "dotrino-vault/env-pkg",
-          "local": "0.82.2",
-          "npm": "0.82.1",
-          "sentido": "sin-publicar"
-        },
-        {
-          "paquete": "@dotrino/vault",
-          "ruta": "dotrino-vault/lib",
-          "local": "0.82.2",
-          "npm": "0.82.1",
-          "sentido": "sin-publicar"
-        }
-      ],
+      "npmPendiente": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 1
+        "sinPublicar": 0
       },
       "auditoria": {
         "por": "seyacat",
@@ -8747,7 +8745,7 @@
           }
         ]
       },
-      "rojos": 15
+      "rojos": 11
     },
     {
       "repo": "dotrino-verifier",
