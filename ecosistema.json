@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-12T22:02:43-0500",
-  "fecha": "2026-10-12",
+  "generado": "2026-10-13T07:08:58-0500",
+  "fecha": "2026-10-13",
   "por": "seyacat",
-  "commit": "8663046",
+  "commit": "33aa615",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -667,7 +667,7 @@
         "@dotrino/verifier"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -758,7 +758,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -830,12 +830,12 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "5859b8c",
-      "fecha": "2026-10-12",
+      "commit": "b168dbd",
+      "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -843,8 +843,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-07",
-          "dias": 5,
-          "commits": 19,
+          "dias": 6,
+          "commits": 25,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -873,8 +873,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-28",
-          "dias": 45,
-          "commits": 80,
+          "dias": 46,
+          "commits": 86,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -922,7 +922,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1004,7 +1004,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1113,7 +1113,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1212,7 +1212,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1340,7 +1340,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1443,7 +1443,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1510,7 +1510,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1594,7 +1594,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1714,7 +1714,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1845,7 +1845,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -1953,7 +1953,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2022,7 +2022,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2117,7 +2117,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2243,7 +2243,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2382,7 +2382,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2472,7 +2472,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2569,7 +2569,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2670,7 +2670,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2755,7 +2755,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2843,7 +2843,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -2979,7 +2979,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3067,7 +3067,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3204,7 +3204,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3322,7 +3322,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3432,7 +3432,7 @@
         "@dotrino/opaque"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3501,12 +3501,12 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "8663046",
+      "commit": "33aa615",
       "fecha": "2026-10-12",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3515,7 +3515,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 25,
-          "commits": 158,
+          "commits": 159,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3545,7 +3545,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 43,
-          "commits": 174,
+          "commits": 175,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3620,7 +3620,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3709,7 +3709,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3786,7 +3786,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -3939,7 +3939,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4053,7 +4053,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4126,7 +4126,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4217,7 +4217,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4332,7 +4332,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4435,7 +4435,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4502,7 +4502,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4578,7 +4578,7 @@
         "@dotrino/proxy-client"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4695,7 +4695,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4771,7 +4771,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4864,7 +4864,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -4988,7 +4988,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5117,7 +5117,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5233,7 +5233,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5348,7 +5348,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5490,7 +5490,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5624,7 +5624,7 @@
         "@dotrino/webrtc"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5724,7 +5724,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5803,7 +5803,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -5924,7 +5924,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6053,7 +6053,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6149,7 +6149,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6277,7 +6277,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6401,7 +6401,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6517,7 +6517,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6608,15 +6608,15 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "0157d75",
-      "fecha": "2026-10-12",
+      "commit": "d206f12",
+      "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [
         "@dotrino/update",
         "@dotrino/compat"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6624,8 +6624,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-09",
-          "dias": 3,
-          "commits": 38,
+          "dias": 4,
+          "commits": 39,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6695,7 +6695,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6788,7 +6788,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6862,7 +6862,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -6941,7 +6941,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7044,7 +7044,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7162,7 +7162,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7245,7 +7245,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7357,7 +7357,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7482,7 +7482,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7594,7 +7594,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7695,8 +7695,8 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.13.0",
-      "commit": "9c5be3c",
-      "fecha": "2026-10-12",
+      "commit": "874ad05",
+      "fecha": "2026-10-13",
       "catalogo": {
         "nombre": "Dotrino Terminal",
         "url": "https://terminal.dotrino.com/",
@@ -7716,16 +7716,16 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-10",
-          "dias": 2,
-          "commits": 16,
+          "fecha": "2026-10-13",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7734,8 +7734,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-05",
-          "dias": 7,
-          "commits": 168,
+          "dias": 8,
+          "commits": 170,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7744,7 +7744,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-30",
-          "dias": 12,
+          "dias": 13,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -7754,8 +7754,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-30",
-          "dias": 12,
-          "commits": 189,
+          "dias": 13,
+          "commits": 191,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -7825,7 +7825,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -7955,7 +7955,7 @@
         "@dotrino/support"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8051,7 +8051,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8192,7 +8192,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8326,7 +8326,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8467,7 +8467,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8541,7 +8541,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8624,7 +8624,7 @@
         "@dotrino/remote-agent"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8763,7 +8763,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8879,7 +8879,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -8992,7 +8992,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -9054,12 +9054,12 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "e763e32",
-      "fecha": "2026-10-12",
+      "commit": "40e15cc",
+      "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-12",
+        "fecha": "2026-10-13",
         "por": "seyacat"
       },
       "frescura": {
@@ -9067,8 +9067,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-23",
-          "dias": 50,
-          "commits": 112,
+          "dias": 51,
+          "commits": 113,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -9097,8 +9097,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 43,
-          "commits": 90,
+          "dias": 44,
+          "commits": 91,
           "tope": false,
           "faltan": [
             "duplicado"
