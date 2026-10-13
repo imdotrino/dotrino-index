@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-13T17:12:53-0500",
+  "generado": "2026-10-13T17:28:35-0500",
   "fecha": "2026-10-13",
   "por": "seyacat",
-  "commit": "6b577d7",
+  "commit": "8258f31",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -50,7 +50,7 @@
     "@dotrino/profile": "0.20.0",
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
-    "websocket-proxy": "1.4.7",
+    "websocket-proxy": "1.4.8",
     "@dotrino/proxy-client": "0.31.1",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
@@ -3557,7 +3557,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "6b577d7",
+      "commit": "8258f31",
       "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [],
@@ -3571,7 +3571,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 26,
-          "commits": 181,
+          "commits": 182,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3601,7 +3601,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 44,
-          "commits": 197,
+          "commits": 198,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -5631,9 +5631,9 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "websocket-proxy",
-      "version": "1.4.7",
-      "commit": "6d7f3bf",
-      "fecha": "2026-10-12",
+      "version": "1.4.8",
+      "commit": "8a5f473",
+      "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -5649,9 +5649,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-29",
-          "dias": 13,
-          "commits": 17,
+          "fecha": "2026-10-13",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5680,8 +5680,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 43,
-          "commits": 23,
+          "dias": 44,
+          "commits": 24,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6763,7 +6763,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "e8ca7cf",
+      "commit": "de37d22",
       "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [
@@ -6780,7 +6780,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 4,
-          "commits": 60,
+          "commits": 61,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8867,7 +8867,7 @@
       "npmPendiente": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 1
+        "sinPublicar": 0
       },
       "auditoria": {
         "por": "seyacat",
@@ -8904,7 +8904,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 9
     },
     {
       "repo": "dotrino-verifier",
