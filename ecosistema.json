@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-13T11:15:04-0500",
+  "generado": "2026-10-13T11:27:49-0500",
   "fecha": "2026-10-13",
   "por": "seyacat",
-  "commit": "28ac6f9",
+  "commit": "0f2b302",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3547,7 +3547,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "28ac6f9",
+      "commit": "0f2b302",
       "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [],
@@ -3561,7 +3561,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 26,
-          "commits": 170,
+          "commits": 171,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3591,7 +3591,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 44,
-          "commits": 186,
+          "commits": 187,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6733,7 +6733,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.8",
-      "commit": "0fa5985",
+      "commit": "bee7b98",
       "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [
@@ -6750,7 +6750,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 4,
-          "commits": 48,
+          "commits": 49,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7821,7 +7821,7 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.13.1",
-      "commit": "724f854",
+      "commit": "b0fab47",
       "fecha": "2026-10-13",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7862,7 +7862,7 @@
           "existe": true,
           "fecha": "2026-10-05",
           "dias": 8,
-          "commits": 180,
+          "commits": 181,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7882,7 +7882,7 @@
           "existe": true,
           "fecha": "2026-09-30",
           "dias": 13,
-          "commits": 201,
+          "commits": 202,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -7920,7 +7920,7 @@
       "npmPendiente": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 1
+        "sinPublicar": 0
       },
       "auditoria": {
         "por": "seyacat",
@@ -7936,7 +7936,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 7
     },
     {
       "repo": "dotrino-test",
@@ -9189,7 +9189,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "cb50916",
+      "commit": "080c150",
       "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [],
@@ -9203,7 +9203,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 51,
-          "commits": 122,
+          "commits": 123,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -9233,7 +9233,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 44,
-          "commits": 100,
+          "commits": 101,
           "tope": false,
           "faltan": [
             "duplicado"
