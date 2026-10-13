@@ -1,9 +1,9 @@
 {
-  "generado": "2026-10-13T07:08:58-0500",
+  "generado": "2026-10-13T07:40:35-0500",
   "fecha": "2026-10-13",
   "por": "seyacat",
-  "commit": "33aa615",
-  "vivo": true,
+  "commit": "73aabf1",
+  "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
     "commits": 10,
@@ -26,25 +26,25 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.0.25",
+    "critters": "0.1.0",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.0.9-q",
-    "eco": "1.1.0-rc-3",
-    "favicon-generator": "0.1.2",
+    "diamonds": "0.1.0",
+    "eco": "0.1.0",
+    "favicon-generator": "1.0.0",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.0",
     "gridgame": "0.0.0",
-    "here": "0.0.2",
-    "frontend": "2.0.0-alpha.4",
+    "here": "0.0.0",
+    "frontend": "0.0.0",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.8.1",
     "@dotrino/identity": "0.110.2",
-    "@dotrino/install": "0.3.2",
+    "@dotrino/install": "0.3.3",
     "@dotrino/lobby": "0.10.0",
     "dotrino-messenger": "0.4.0",
     "dotrino-mundial": "0.1.0",
-    "myip": "1.1.0",
+    "myip": "0.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.5.0",
     "@dotrino/profile": "0.20.0",
@@ -61,21 +61,21 @@
     "dotrino-shortener": "0.2.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.12.3",
-    "sudoku": "0.0.3",
+    "sudoku": "0.1.0",
     "@dotrino/support": "0.9.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.13.0",
     "@dotrino/terminal-agent": "0.43.0",
-    "test": "3.3.0",
+    "test": "0.2.0",
     "@dotrino/topbar": "0.15.3",
-    "trivia": "1.0.0",
+    "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.6",
     "@dotrino/tutorial": "0.2.0",
     "@dotrino/vaultd": "0.151.0",
     "@dotrino/vault": "0.82.2",
     "@dotrino/verifier": "0.2.0",
-    "wallet": "2.55.0",
+    "wallet": "0.2.0",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.2.0",
     "@dotrino/env": "0.82.2",
@@ -94,11 +94,11 @@
     "@dotrino/telegram-bot": "0.2.2",
     "@dotrino/webrtc": "0.1.1",
     "facturero": "0.1.0",
-    "padel": "0.0.1",
+    "padel": "0.4.0",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.8.0",
-    "offroad": "0.0.9",
-    "ar": "0.0.1"
+    "offroad": "0.24.0",
+    "ar": "0.1.0"
   },
   "enNpm": {
     "critters": "0.0.25",
@@ -346,7 +346,7 @@
     },
     {
       "pilar": "@dotrino/install",
-      "version": "0.3.2",
+      "version": "0.3.3",
       "enNpm": true,
       "repos": [
         "dotrino-ar",
@@ -809,10 +809,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -830,7 +827,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "b168dbd",
+      "commit": "d120074",
       "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [],
@@ -844,7 +841,7 @@
           "existe": true,
           "fecha": "2026-10-07",
           "dias": 6,
-          "commits": 25,
+          "commits": 28,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -874,7 +871,7 @@
           "existe": true,
           "fecha": "2026-08-28",
           "dias": 46,
-          "commits": 86,
+          "commits": 89,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -968,15 +965,18 @@
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/install",
+          "pide": "0.3.2",
+          "publicado": "0.3.3"
+        }
+      ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": null,
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-base64",
@@ -1061,7 +1061,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1081,10 +1081,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1289,10 +1286,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1417,10 +1411,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1671,10 +1662,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1771,7 +1759,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/notifications",
@@ -1801,10 +1789,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -1902,7 +1887,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/profile",
@@ -1927,10 +1912,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2174,7 +2156,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2199,10 +2181,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2298,7 +2277,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2328,10 +2307,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2433,10 +2409,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2527,7 +2500,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/topbar",
@@ -2537,10 +2510,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": null,
       "rojos": 4
     },
@@ -2641,10 +2611,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -2925,10 +2892,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3030,10 +2994,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3134,10 +3095,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3191,8 +3149,8 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "6fbdca5",
-      "fecha": "2026-10-12",
+      "commit": "9ffbf36",
+      "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -3213,7 +3171,7 @@
           "existe": true,
           "fecha": "2026-07-29",
           "dias": 75,
-          "commits": 46,
+          "commits": 47,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3223,7 +3181,7 @@
           "existe": true,
           "fecha": "2026-10-11",
           "dias": 1,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3259,11 +3217,6 @@
           "publicado": "0.110.2"
         },
         {
-          "dep": "@dotrino/install",
-          "pide": "0.3.1",
-          "publicado": "0.3.2"
-        },
-        {
           "dep": "@dotrino/reputation",
           "pide": "0.9.0",
           "publicado": "0.12.0"
@@ -3281,17 +3234,14 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
         "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
         "hallazgos": []
       },
-      "rojos": 7
+      "rojos": 6
     },
     {
       "repo": "dotrino-ia",
@@ -3379,7 +3329,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -3404,10 +3354,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3501,8 +3448,8 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "33aa615",
-      "fecha": "2026-10-12",
+      "commit": "73aabf1",
+      "fecha": "2026-10-13",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -3514,8 +3461,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-17",
-          "dias": 25,
-          "commits": 159,
+          "dias": 26,
+          "commits": 160,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3523,7 +3470,7 @@
         "portada": {
           "aplica": false,
           "existe": true,
-          "fecha": "2026-10-12",
+          "fecha": "2026-10-13",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3544,8 +3491,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 43,
-          "commits": 175,
+          "dias": 44,
+          "commits": 176,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3557,10 +3504,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 1
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3596,7 +3540,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 5
     },
     {
       "repo": "dotrino-inspector",
@@ -3677,10 +3621,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -3697,9 +3638,9 @@
       "plataformas": null,
       "subdominio": "install.dotrino.com",
       "paquete": "@dotrino/install",
-      "version": "0.3.2",
-      "commit": "f02c383",
-      "fecha": "2026-10-05",
+      "version": "0.3.3",
+      "commit": "a197477",
+      "fecha": "2026-10-13",
       "catalogo": {
         "nombre": "Instalar",
         "url": "https://install.dotrino.com/",
@@ -3716,19 +3657,19 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-24",
-          "dias": 42,
-          "commits": 6,
+          "fecha": "2026-10-13",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
-          "rojo": true
+          "rojo": false
         },
         "portada": {
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-22",
-          "dias": 13,
-          "commits": 3,
+          "dias": 21,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3737,7 +3678,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-27",
-          "dias": 70,
+          "dias": 78,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -3747,8 +3688,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 36,
-          "commits": 3,
+          "dias": 44,
+          "commits": 4,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3760,17 +3701,14 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
         "notas": "Repo pequeño (paquete @dotrino/install + landing de instalación); se revisaron todos los archivos funcionales (src/*, web/install.sh, web/install.ps1, web/index.html, package.json, test/smoke.mjs). No se abrió README.md por estar explícitamente excluido de las 5 reglas. test/smoke.mjs importa playwright desde una ruta relativa a otro repo hermano (../../dotrino-store/node_modules/...), lo cual es llamativo pero no corresponde a ninguna de las 5 reglas auditadas.",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 2
     },
     {
       "repo": "dotrino-lobby",
@@ -3994,7 +3932,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/notifications",
@@ -4019,10 +3957,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4177,10 +4112,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4274,7 +4206,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4294,10 +4226,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4389,7 +4318,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4409,10 +4338,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -4746,16 +4672,18 @@
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
           "publicado": "0.110.2"
+        },
+        {
+          "dep": "@dotrino/install",
+          "pide": "0.3.2",
+          "publicado": "0.3.3"
         }
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": null,
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-opaque",
@@ -4921,7 +4849,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4936,10 +4864,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5055,10 +4980,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5310,10 +5232,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5405,7 +5324,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/notifications",
@@ -5430,10 +5349,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5858,7 +5774,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5878,10 +5794,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -5979,7 +5892,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5999,10 +5912,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6104,10 +6014,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6458,7 +6365,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/profile",
@@ -6483,10 +6390,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -6913,10 +6817,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7219,10 +7120,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": null
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7414,7 +7312,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -7434,10 +7332,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7656,10 +7551,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7769,6 +7661,11 @@
           "publicado": "0.110.2"
         },
         {
+          "dep": "@dotrino/install",
+          "pide": "0.3.2",
+          "publicado": "0.3.3"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.29.0",
           "publicado": "0.30.4"
@@ -7786,10 +7683,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -7804,7 +7698,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-test",
@@ -7897,10 +7791,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8108,7 +7999,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8128,10 +8019,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8249,7 +8137,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/profile",
@@ -8279,10 +8167,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8377,10 +8262,7 @@
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8706,10 +8588,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
@@ -8936,7 +8815,7 @@
         {
           "dep": "@dotrino/install",
           "pide": "0.3.1",
-          "publicado": "0.3.2"
+          "publicado": "0.3.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8951,10 +8830,7 @@
       ],
       "rotas": [],
       "npmPendiente": [],
-      "vivo": {
-        "http": 200,
-        "sinPublicar": 0
-      },
+      "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
