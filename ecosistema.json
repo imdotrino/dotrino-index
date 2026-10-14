@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-14T16:18:58-0500",
+  "generado": "2026-10-14T16:41:28-0500",
   "fecha": "2026-10-14",
   "por": "seyacat",
-  "commit": "12b82ba",
+  "commit": "d20c9e0",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -101,7 +101,8 @@
     "ar": "0.1.0",
     "@dotrino/prerender": "0.1.0",
     "@dotrino/names": "0.1.0",
-    "@dotrino/names-server": "0.1.0"
+    "@dotrino/names-server": "0.1.0",
+    "@dotrino/names-web": "0.1.0"
   },
   "enNpm": {
     "critters": "0.0.25",
@@ -3212,8 +3213,8 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "cd7076f",
-      "fecha": "2026-10-13",
+      "commit": "fe26e1d",
+      "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -3233,8 +3234,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-29",
-          "dias": 76,
-          "commits": 48,
+          "dias": 77,
+          "commits": 49,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3243,8 +3244,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-13",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3263,8 +3264,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-29",
-          "dias": 45,
-          "commits": 20,
+          "dias": 46,
+          "commits": 21,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3511,7 +3512,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "12b82ba",
+      "commit": "d20c9e0",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [],
@@ -3525,7 +3526,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 27,
-          "commits": 184,
+          "commits": 185,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3555,7 +3556,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 45,
-          "commits": 200,
+          "commits": 201,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4414,16 +4415,22 @@
     },
     {
       "repo": "dotrino-names",
-      "tipo": "paquete",
+      "tipo": "landing",
       "interna": false,
-      "stack": "—",
+      "stack": "vite",
       "plataformas": null,
-      "subdominio": null,
+      "subdominio": "names.dotrino.com",
       "paquete": "@dotrino/names",
       "version": "0.1.0",
-      "commit": "ae00d74",
+      "commit": "ec32a7b",
       "fecha": "2026-10-14",
-      "catalogo": null,
+      "catalogo": {
+        "nombre": "Nombres",
+        "url": "https://names.dotrino.com/",
+        "cat": "apps",
+        "sub": null,
+        "wip": false
+      },
       "deps": [
         "@dotrino/identity"
       ],
@@ -4437,26 +4444,26 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 0,
-          "commits": 1,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
         },
         "portada": {
-          "aplica": false,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
-          "commits": null,
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-14",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
         },
         "catalogo": {
-          "aplica": false,
-          "existe": false,
-          "fecha": null,
-          "dias": null,
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-14",
+          "dias": 0,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -9167,7 +9174,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "c0f3149",
+      "commit": "d9999c3",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [],
@@ -9181,7 +9188,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 52,
-          "commits": 132,
+          "commits": 133,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -9211,7 +9218,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 45,
-          "commits": 110,
+          "commits": 111,
           "tope": false,
           "faltan": [
             "duplicado"
