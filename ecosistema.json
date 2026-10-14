@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-14T16:41:28-0500",
+  "generado": "2026-10-14T18:54:40-0500",
   "fecha": "2026-10-14",
   "por": "seyacat",
-  "commit": "d20c9e0",
+  "commit": "2c16c27",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -18,7 +18,7 @@
     "duplicado": "código o funcionalidad duplicada en el repo (regla principal)"
   },
   "ocultas": 1,
-  "medidasAhora": 83,
+  "medidasAhora": 84,
   "heredadas": 0,
   "pilares": {
     "dotrino-base64": "1.0.0",
@@ -102,7 +102,8 @@
     "@dotrino/prerender": "0.1.0",
     "@dotrino/names": "0.1.0",
     "@dotrino/names-server": "0.1.0",
-    "@dotrino/names-web": "0.1.0"
+    "@dotrino/names-web": "0.1.0",
+    "@dotrino/iatosvg": "0.1.0"
   },
   "enNpm": {
     "critters": "0.0.25",
@@ -479,6 +480,7 @@
         "dotrino-bots",
         "dotrino-content",
         "dotrino-deploy-listener",
+        "dotrino-iatosvg",
         "dotrino-inspector",
         "dotrino-passmanager",
         "dotrino-proxy",
@@ -3213,7 +3215,7 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "fe26e1d",
+      "commit": "7004a35",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [
@@ -3235,7 +3237,7 @@
           "existe": true,
           "fecha": "2026-07-29",
           "dias": 77,
-          "commits": 49,
+          "commits": 50,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3245,7 +3247,7 @@
           "existe": true,
           "fecha": "2026-10-13",
           "dias": 1,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3265,7 +3267,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 46,
-          "commits": 21,
+          "commits": 22,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3428,6 +3430,81 @@
       "rojos": 7
     },
     {
+      "repo": "dotrino-iatosvg",
+      "tipo": "landing",
+      "interna": false,
+      "stack": "vite",
+      "plataformas": null,
+      "subdominio": "iatosvg.dotrino.com",
+      "paquete": "@dotrino/iatosvg",
+      "version": "0.1.0",
+      "commit": "5422b3d",
+      "fecha": "2026-10-14",
+      "catalogo": {
+        "nombre": "iatosvg",
+        "url": "https://iatosvg.dotrino.com/",
+        "cat": "apps",
+        "sub": null,
+        "wip": false
+      },
+      "deps": [
+        "@dotrino/update"
+      ],
+      "medido": {
+        "fecha": "2026-10-14",
+        "por": "seyacat"
+      },
+      "frescura": {
+        "readme": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-14",
+          "dias": 0,
+          "commits": 0,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "portada": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-14",
+          "dias": 0,
+          "commits": 2,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "catalogo": {
+          "aplica": true,
+          "existe": true,
+          "fecha": "2026-10-14",
+          "dias": 0,
+          "commits": null,
+          "tope": false,
+          "faltan": null,
+          "rojo": false
+        },
+        "auditoria": {
+          "aplica": true,
+          "existe": false,
+          "fecha": null,
+          "dias": null,
+          "commits": null,
+          "tope": false,
+          "faltan": [],
+          "rojo": true
+        }
+      },
+      "faltan": [],
+      "versiones": [],
+      "rotas": [],
+      "npmPendiente": [],
+      "vivo": null,
+      "auditoria": null,
+      "rojos": 1
+    },
+    {
       "repo": "dotrino-identity",
       "tipo": "paquete",
       "interna": false,
@@ -3512,7 +3589,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "d20c9e0",
+      "commit": "2c16c27",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [],
@@ -3526,7 +3603,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 27,
-          "commits": 185,
+          "commits": 186,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3556,7 +3633,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 45,
-          "commits": 201,
+          "commits": 202,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -9174,7 +9251,7 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "d9999c3",
+      "commit": "bbb30c0",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [],
@@ -9188,7 +9265,7 @@
           "existe": true,
           "fecha": "2026-08-23",
           "dias": 52,
-          "commits": 133,
+          "commits": 134,
           "tope": true,
           "faltan": null,
           "rojo": true
@@ -9218,7 +9295,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 45,
-          "commits": 111,
+          "commits": 112,
           "tope": false,
           "faltan": [
             "duplicado"
