@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-14T21:13:19-0500",
+  "generado": "2026-10-14T21:37:39-0500",
   "fecha": "2026-10-14",
   "por": "seyacat",
-  "commit": "049ad2e",
+  "commit": "9819f13",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -42,7 +42,7 @@
     "@dotrino/identity": "0.114.0",
     "@dotrino/install": "0.3.3",
     "@dotrino/lobby": "0.10.0",
-    "dotrino-messenger": "0.4.0",
+    "dotrino-messenger": "0.5.0",
     "dotrino-mundial": "0.1.0",
     "myip": "0.1.0",
     "@dotrino/nav": "0.3.0",
@@ -850,7 +850,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -861,7 +866,7 @@
         "notas": "El repo es una app Android nativa (Kotlin/Compose), sin capa web/proxy/store propia del ecosistema Dotrino visible en el código; no se encontró uso de WebSocket, crypto de identidad ni mensajería dirigida, así que las reglas pillars y sealed no tuvieron dónde aplicar. El único voseo detectado ('mantené', LauncherScreen.kt:523) está en un comentario KDoc, exento por la regla. El naming heredado 'launcheroculto' (paquete/clase/tema) está documentado en el propio código como deuda ligada al applica",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-app",
@@ -1010,7 +1015,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -1027,7 +1037,7 @@
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-base64",
@@ -1103,7 +1113,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -1140,7 +1155,7 @@
         "notas": "Repo pequeño y autocontenido; se revisaron todos los archivos de src/, index.html, vite.config.js, package.json y public/robots.txt. No hay carpeta web/, lib/, agent/ ni server/ en este repo. Identidad y reputación se delegan correctamente a @dotrino/identity y @dotrino/reputation, y el topbar/install son los componentes oficiales; no hay WebSocket, crypto ni mensajería dirigida propios.",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-bots",
@@ -1314,7 +1329,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -1359,7 +1379,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-chess",
@@ -1440,7 +1460,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -1477,7 +1502,7 @@
         "notas": "El repo ya pasó varias rondas de auditoría (ver git log); i18n.js, App.vue, lobbyController.js y los modales de identidad/perfil usan tuteo correcto y los pilares @dotrino/* (topbar, share, profile, proxy-client, identity, lobby, reputation) en vez de reimplementarlos. ConnectionPanel.vue y WSConnectionDemo.vue quedan como código huérfano (no se importan desde App.vue) con texto/demo del protocolo WS viejo, pero al no ser alcanzables por el usuario no los reporté como hallazgo — vale la pena que",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-company",
@@ -1691,7 +1716,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -1728,7 +1758,7 @@
         "notas": "Repo pequeño y bien alineado: CLI en tuteo consistente, logs/errores de red en inglés, landing (web/index.html) usa <dotrino-topbar> y copy sin jerga técnica, S3 y sendByPubkey solo aparecen en protocolo externo (S3) y en tests/docs (exentos). No se revisaron test/*.test.js, docs/DISENO.md, docs/HANDOFF.md, src/blobstore-s3.js ni lib/node_modules/@dotrino/* (vendored, terceros) por estar exentos o fuera de presupuesto.",
         "hallazgos": []
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-critters",
@@ -1809,7 +1839,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -1856,7 +1891,7 @@
         "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
         "hallazgos": []
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-cuarenta",
@@ -1938,7 +1973,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -1980,7 +2020,7 @@
         "notas": "El repo es una app consumidora (juego 'Cuarenta'), no un paquete pilar. Todo el copy en español usa tuteo correcto, logs/errores en inglés, y usa componentes oficiales (dotrino-topbar, dotrino-profile, dotrino-share) y paquetes (@dotrino/identity, @dotrino/proxy-client vía @dotrino/lobby) sin reimplementaciones caseras. No se invoca sendByPubkey/send directamente, por lo que la regla sealed no aplica en este repo. Punto de atención menor sin llegar a hallazgo: manifest.webmanifest usa 'P2P' en l",
         "hallazgos": []
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-demo-apple",
@@ -2208,7 +2248,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -2250,7 +2295,7 @@
         "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-eco",
@@ -2330,7 +2375,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -2399,7 +2449,7 @@
           }
         ]
       },
-      "rojos": 13
+      "rojos": 14
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -2468,7 +2518,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -2479,7 +2534,7 @@
         "notas": "El repo es un sitio estático de una sola página (index.html + sw.js + manifest.webmanifest), sin src/, i18n/ ni package.json. La copy en español no usa voseo, no hay console.log/console.error/throw ni jerga técnica en la copy pública, y los únicos paquetes @dotrino/* usados (@dotrino/topbar y @dotrino/nav, vía CDN) se usan correctamente en vez de reimplementarse a mano; no se usa proxy-client ni identidad propia, por lo que la regla 'sealed' no aplica aquí.",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-facturero",
@@ -2554,7 +2609,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -2576,7 +2636,7 @@
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-favicon-generator",
@@ -2651,7 +2711,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -2683,7 +2748,7 @@
         "notas": "Repo pequeño (app Vue de un solo archivo): revisé src/i18n.ts, src/services/identity.ts, src/services/reputation.ts, src/main.ts, src/App.vue, index.html y src/style.css. No hay red, WebSocket, cripto propia ni mensajes dirigidos (no aplica sealed); usa @dotrino/topbar, @dotrino/identity y @dotrino/reputation correctamente en vez de reimplementarlos; la copy es tuteante y llana; el código y los logs están en inglés.",
         "hallazgos": []
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-feedback",
@@ -2694,8 +2759,8 @@
       "subdominio": null,
       "paquete": "@dotrino/feedback",
       "version": "0.1.0",
-      "commit": "4a2cc95",
-      "fecha": "2026-09-24",
+      "commit": "a7e5f82",
+      "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [
         "@dotrino/reputation",
@@ -2710,8 +2775,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-16",
-          "dias": 8,
-          "commits": 1,
+          "dias": 28,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2740,8 +2805,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-28",
-          "dias": 27,
-          "commits": 2,
+          "dias": 47,
+          "commits": 3,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -2923,7 +2988,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -2987,7 +3057,7 @@
           }
         ]
       },
-      "rojos": 13
+      "rojos": 14
     },
     {
       "repo": "dotrino-gymbro",
@@ -3056,7 +3126,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -3067,7 +3142,7 @@
         "notas": "Repo estático y pequeño (landing/PWA sin backend); no hay src/, i18n/ ni mensajería dirigida, así que las reglas english/plain/sealed tienen poca superficie donde fallar.",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-here",
@@ -3142,7 +3217,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -3205,7 +3285,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-home",
@@ -3276,7 +3356,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -3308,7 +3393,7 @@
         "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
         "hallazgos": []
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-ia",
@@ -3386,7 +3471,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -3428,7 +3518,7 @@
         "notas": "No se abrieron agent/templates/Dockerfile, docker-compose.yml, .dockerignore, .containerignore, .gitignore (plantillas simétricas a las de Podman ya revisadas) ni el contenido completo de PLAN.md/README.md/CHECKLIST.md (documentos de diseño, exentos de las 5 reglas). El repo real (src/, agent/, index.html, configs) no presenta voseo, código en español, jerga técnica en copy pública, reimplementaciones de pilares ni envío sin sellar: usa @dotrino/identity, @dotrino/remote-agent, @dotrino/topbar, ",
         "hallazgos": []
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-iatosvg",
@@ -3439,7 +3529,7 @@
       "subdominio": "iatosvg.dotrino.com",
       "paquete": "@dotrino/iatosvg",
       "version": "0.1.0",
-      "commit": "5422b3d",
+      "commit": "28865af",
       "fecha": "2026-10-14",
       "catalogo": {
         "nombre": "iatosvg",
@@ -3461,7 +3551,7 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3471,7 +3561,7 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 0,
-          "commits": 2,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3590,7 +3680,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "049ad2e",
+      "commit": "9819f13",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [],
@@ -3604,7 +3694,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 27,
-          "commits": 187,
+          "commits": 188,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3634,7 +3724,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 45,
-          "commits": 203,
+          "commits": 204,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3753,7 +3843,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/update",
@@ -3770,7 +3865,7 @@
         "notas": "No se usa @dotrino/proxy-client ni WebSocket propio en ningún punto del repo, así que la regla 'sealed' no aplica (no hay mensajería dirigida que auditar). No se abrieron src/scan/detect.js ni src/scan/locations.js en detalle (solo grep), ni test/, docs/DISENO.md completo ni web/vite.config.js, package.json; por lo visto en grep no muestran patrones de riesgo.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-install",
@@ -3839,7 +3934,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -3850,7 +3950,7 @@
         "notas": "Repo pequeño (paquete @dotrino/install + landing de instalación); se revisaron todos los archivos funcionales (src/*, web/install.sh, web/install.ps1, web/index.html, package.json, test/smoke.mjs). No se abrió README.md por estar explícitamente excluido de las 5 reglas. test/smoke.mjs importa playwright desde una ruta relativa a otro repo hermano (../../dotrino-store/node_modules/...), lo cual es llamativo pero no corresponde a ninguna de las 5 reglas auditadas.",
         "hallazgos": []
       },
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-lobby",
@@ -3982,21 +4082,21 @@
       "interna": false,
       "stack": "vite+vue",
       "plataformas": {
-        "pwa": "0.4.0",
+        "pwa": "0.5.0",
         "ios": {
           "version": "0.4.0",
-          "estado": "a la par"
+          "estado": "atrasada"
         },
         "android": {
           "version": "0.4.0",
-          "estado": "a la par"
+          "estado": "atrasada"
         }
       },
       "subdominio": "messenger.dotrino.com",
       "paquete": "dotrino-messenger",
-      "version": "0.4.0",
-      "commit": "150d0e4",
-      "fecha": "2026-10-13",
+      "version": "0.5.0",
+      "commit": "46853b2",
+      "fecha": "2026-10-14",
       "catalogo": {
         "nombre": "Dotrino Messenger",
         "url": "https://messenger.dotrino.com/",
@@ -4027,9 +4127,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-05",
-          "dias": 8,
-          "commits": 6,
+          "fecha": "2026-10-14",
+          "dias": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4037,9 +4137,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-05",
-          "dias": 8,
-          "commits": 4,
+          "fecha": "2026-10-14",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4048,7 +4148,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-30",
-          "dias": 13,
+          "dias": 14,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -4058,14 +4158,19 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-12",
-          "dias": 31,
-          "commits": 53,
+          "dias": 32,
+          "commits": 55,
           "tope": false,
           "faltan": [],
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -4115,7 +4220,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-messenger-extension",
@@ -4251,7 +4356,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -4270,7 +4380,7 @@
           }
         ]
       },
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-mundial",
@@ -4339,7 +4449,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -4376,7 +4491,7 @@
         "notas": "feed.js verifica con crypto.subtle.verify (ECDSA) la firma de un feed público de results.dotrino.com, no identidad de usuario ni cifrado dirigido; no lo cuento como reimplementación del pilar identity porque no hay duda razonable. No se encontró código de servidor/agente, i18n externo, ni WebSocket propio; el repo es pequeño (10 archivos en src/) y se revisó por completo.",
         "hallazgos": []
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-myip",
@@ -4452,7 +4567,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -4489,7 +4609,7 @@
         "notas": "El repo no usa @dotrino/proxy-client ni mensajería dirigida, así que la regla sealed no aplica aquí; el resto de reglas se cumple consistentemente.",
         "hallazgos": []
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-names",
@@ -4558,13 +4678,18 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-native",
@@ -4886,7 +5011,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -4903,7 +5033,7 @@
       "npmPendiente": [],
       "vivo": null,
       "auditoria": null,
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-opaque",
@@ -5060,7 +5190,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -5107,7 +5242,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-passmanager",
@@ -5191,7 +5326,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -5259,7 +5399,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-prerender",
@@ -5505,7 +5645,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -5542,7 +5687,7 @@
         "notas": "Repo pequeño y sin i18n/ ni web/, lib/, agent/ o server/: todo el código propio vive en src/main.js, src/qr.js e src/types.d.ts, más index.html y public/. La copy en español usa tuteo correcto en todas las cadenas de SV_I18N y CREATE_I18N, y no se detectó jerga prohibida en copy pública. verifySig() en src/main.js usa crypto.subtle directamente para verificar firmas ECDSA con solo la clave pública; se revisó la API pública de @dotrino/identity (index.d.ts) y no expone un verify equivalente sin e",
         "hallazgos": []
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-pronostico-mundialista",
@@ -5617,7 +5762,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -5693,7 +5843,7 @@
           }
         ]
       },
-      "rojos": 13
+      "rojos": 14
     },
     {
       "repo": "dotrino-proxy",
@@ -6073,7 +6223,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -6118,7 +6273,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-qrreader",
@@ -6192,7 +6347,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -6251,7 +6411,7 @@
           }
         ]
       },
-      "rojos": 12
+      "rojos": 13
     },
     {
       "repo": "dotrino-qrshare",
@@ -6320,7 +6480,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -6346,7 +6511,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-remote-agent",
@@ -6666,7 +6831,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -6716,7 +6886,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-results",
@@ -7426,7 +7596,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -7443,7 +7618,7 @@
         "notas": "El repo está en fase de solo diseño: no hay código (ni src/, web/, lib/, agent/, server/, ni archivos de i18n). Los únicos archivos de contenido son README.md, docs/DISENO.md y docs/FASES.md, que están explícitamente exentos de las reglas voseo/english/plain por ser documentación técnica y de diseño, y las reglas pillars/sealed no aplican porque no existe implementación que auditar.",
         "hallazgos": []
       },
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-store",
@@ -7619,7 +7794,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -7678,7 +7858,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-support",
@@ -7853,7 +8033,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/tunnel",
@@ -7883,7 +8068,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-terminal",
@@ -7971,7 +8156,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -8016,7 +8206,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-test",
@@ -8084,7 +8274,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -8145,7 +8340,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-theme",
@@ -8156,7 +8351,7 @@
       "subdominio": null,
       "paquete": "@dotrino/theme",
       "version": "0.1.0",
-      "commit": "4031c77",
+      "commit": "e1480cc",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [],
@@ -8171,7 +8366,7 @@
           "fecha": "2026-10-14",
           "dias": 0,
           "commits": 0,
-          "tope": true,
+          "tope": false,
           "faltan": null,
           "rojo": false
         },
@@ -8375,7 +8570,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -8434,7 +8634,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-trueque",
@@ -8514,7 +8714,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -8576,7 +8781,7 @@
           }
         ]
       },
-      "rojos": 13
+      "rojos": 14
     },
     {
       "repo": "dotrino-tunnel",
@@ -8645,7 +8850,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [],
       "rotas": [],
       "npmPendiente": [],
@@ -8720,7 +8930,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-tutorial",
@@ -8940,7 +9150,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -9006,7 +9221,7 @@
           }
         ]
       },
-      "rojos": 10
+      "rojos": 11
     },
     {
       "repo": "dotrino-verifier",
@@ -9188,7 +9403,12 @@
           "rojo": true
         }
       },
-      "faltan": [],
+      "faltan": [
+        {
+          "k": "theme",
+          "etiqueta": "tema @dotrino/theme (§5)"
+        }
+      ],
       "versiones": [
         {
           "dep": "@dotrino/identity",
@@ -9235,7 +9455,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 10
     },
     {
       "repo": "dotrino-webrtc",

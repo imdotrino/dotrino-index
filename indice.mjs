@@ -607,6 +607,10 @@ function analizar (nombre, catalogo) {
       Boolean(wrangler && cname && /name=["']commit["']/.test(leer(join(dir, 'src/index.js')) || '')) ||
       ['agent', 'server', 'lib'].some((sub) => Boolean(leerJson(join(dir, sub, 'package.json'))?.dependencies?.['@dotrino/update'])),
     topbar: Boolean(etiqueta) || /@dotrino\/topbar/.test(texto) || Boolean(deps['@dotrino/topbar']),
+    // §5: el tema es UNO, `@dotrino/theme`. Hasta el 2026-10-14 cada app traía su paleta
+    // (13 copiaban Cool & Cozy a mano, 33 no lo tenían) y nadie lo veía como deuda porque
+    // no estaba escrito. Se mira si la hoja entra por npm o por jsDelivr.
+    theme: /@dotrino\/theme/.test(texto) || Boolean(deps['@dotrino/theme']),
     // §6.1: el botón de perfil es el atributo/propiedad `profile` del topbar.
     // `\b…\b` no confunde con `profileTheme` (no hay frontera de palabra ahí).
     profile: /\bprofile\b/.test(etiqueta),
@@ -852,8 +856,8 @@ if (Object.keys(AUDITORIA.repos || {}).length && !Array.isArray(REGLAS_IA)) {
 
 const APLICA = {
   // landing de servicio (§1.2): sin PWA ni perfil, pero con SEO/support/topbar
-  landing: ['topbar', 'support', 'seo', 'og', 'catalogo', 'wiki'],
-  app: ['npmrc', 'topbar', 'profile', 'support', 'pwa', 'sw', 'commitMeta', 'seo', 'og', 'deploy', 'catalogo', 'wiki'],
+  landing: ['topbar', 'theme', 'support', 'seo', 'og', 'catalogo', 'wiki'],
+  app: ['npmrc', 'topbar', 'theme', 'profile', 'support', 'pwa', 'sw', 'commitMeta', 'seo', 'og', 'deploy', 'catalogo', 'wiki'],
   // informe generado (index.dotrino.com): una página estática interna (§7), sin
   // usuario ni instalación. Lo que sí se le exige: decir de qué commit sale, no
   // dejarse indexar y desplegarse sola.
@@ -977,7 +981,7 @@ const desactualizado = (p, k) =>
     : (!p.frescura[k]?.existe || p.frescura[k].dias >= ROJO_DIAS))
 
 const ETIQUETA = {
-  npmrc: '.npmrc (§1.1)', topbar: '<dotrino-topbar> (§5)', profile: 'perfil (§6.1)',
+  npmrc: '.npmrc (§1.1)', topbar: '<dotrino-topbar> (§5)', theme: 'tema @dotrino/theme (§5)', profile: 'perfil (§6.1)',
   support: 'support (§6)', pwa: 'manifest PWA (§3)', sw: 'service worker (§3)',
   commitMeta: 'meta commit (§3)', seo: 'robots+sitemap (§7)', og: 'og.jpg (§10)',
   deploy: 'deploy (§11.3)', catalogo: 'en el catálogo (§11.4)',
