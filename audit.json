@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-15T07:19:34-0500",
+  "generado": "2026-10-15T07:42:19-0500",
   "reglas": [
     "voseo",
     "english",
@@ -284,8 +284,8 @@
       "duracionMs": 11451
     },
     "dotrino-eco": {
-      "commit": "156d8b3",
-      "fecha": "2026-09-12",
+      "commit": "c4ecb3a",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -298,34 +298,26 @@
       ],
       "hallazgos": [
         {
-          "regla": "pillars",
-          "archivo": "src/App.vue",
-          "linea": 234,
-          "cita": "const SHARE_ICONS = { whatsapp: '<svg...>', x: '<svg...>', facebook: '<svg...>' }",
-          "porque": "Eco construye a mano su propio modal de compartir (SHARE_ICONS, shareTargets, doShare, copyShare en líneas 233-251 y el modal en líneas 636-652) en vez de usar el Web Component <dotrino-share> del ecosistema; @dotrino/share no aparece ni en package.json ni en ningún import del repo.",
-          "arreglo": "Usar <dotrino-share> (paquete @dotrino/share) igual que ya se hace con <dotrino-topbar>, <dotrino-profile> y <dotrino-notifications>."
+          "regla": "duplicado",
+          "archivo": "src/feed/ranking.js",
+          "linea": 5,
+          "cita": "const TTL_MS = 24 * 60 * 60 * 1000",
+          "porque": "Es la misma constante que `TTL_24H` en src/feed/constants.js:5, que ya importan geo.js, publicEco.js y feedStore.js; geo.js ya se corrigió así en el commit c4ecb3a.",
+          "arreglo": "Importar `TTL_24H` de './constants.js' y borrar `TTL_MS`."
         },
         {
           "regla": "duplicado",
-          "archivo": "src/services/geo.js",
-          "linea": 8,
-          "cita": "const TTL_24H = 24 * 60 * 60 * 1000",
-          "porque": "src/feed/constants.js:5 ya exporta `TTL_24H` con el comentario explícito de evitar 'dos copias de cuánto vive un eco que un día digan cosas distintas', y feedStore.js:22 y publicEco.js:18 sí importan de ahí; geo.js la reescribe en vez de importarla, así que un cambio de TTL puede quedar desincronizado.",
-          "arreglo": "Borrar la constante local y hacer `import { TTL_24H } from '../feed/constants.js'` en geo.js, como hacen feedStore.js y publicEco.js."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/services/identity.js",
-          "linea": 150,
-          "cita": "const e = new Error('ese eco es de una versión anterior: no trae llave de cifrado')",
-          "porque": "Es un error interno de `sealing.seal` que se propaga a sendEcoEvent y feedStore.js:299 lo captura en silencio (`catch (_) {}`); nunca es copy que vea el usuario ni se loguea, así que por §8.1 debería ir en inglés. Ocurre 2 veces en el mismo bloque (línea 150 y línea 155, 'sin vault').",
-          "arreglo": "Usar mensajes en inglés, p. ej. 'this eco predates encryption keys' y 'no vault', igual que el resto de errores diagnósticos del archivo (líneas 27, 48)."
+          "archivo": "src/App.vue",
+          "linea": 397,
+          "cita": "function isExpired (eco) { return (eco.expiresAt || (eco.createdAt + 86400000)) <= now.value }",
+          "porque": "La regla de vencimiento está escrita otra vez, con 86400000 en lugar de la constante: `isAlive` en src/feed/ranking.js:43 (`eco.expiresAt || ((eco.createdAt || 0) + TTL_MS)`) hace lo mismo. `ttlText` en App.vue:412 y src/feed/feedStore.js:668 repiten el fallback `createdAt + TTL`.",
+          "arreglo": "Usar `!isAlive(eco, now.value)` de ranking.js, o exportar una función `expiresAtOf(eco)` única que usen todos."
         }
       ],
-      "revisados": 19,
-      "notas": "Repo de una sola app (Vue), no un monorepo con múltiples apps ni wiki; no se encontraron locales/i18n aparte de la tabla T en App.vue. No revisé manifest.webmanifest ni sw.js (convención por-app, fuera de alcance) ni los tests en test/.",
-      "costoUSD": 0.6727024,
-      "duracionMs": 144877
+      "revisados": 9,
+      "notas": "Solo abrí 9 archivos de src/ y no revisé feedStore.js, content.js ni store.js a fondo. No encontré voseo en copy de usuario: las tres coincidencias (acá, vos) están en comentarios. Tampoco encontré argot en la copy pública, ni pilares reimplementados, ni mensajes dirigidos en claro: proxy.js usa `requireSealed: true` y `sendSealed`. El error de src/services/publicEco.js:36 ('la imagen pesa … KB') está en español y App.vue:136 lo muestra al usuario, así que lo traté como copy sin traducir y no co",
+      "costoUSD": 0.22146380000000004,
+      "duracionMs": 28859
     },
     "dotrino-ecuavoley-contador": {
       "commit": "36db2cd",
@@ -437,8 +429,8 @@
       "duracionMs": 43316
     },
     "dotrino-here": {
-      "commit": "af1afea",
-      "fecha": "2026-08-30",
+      "commit": "bd7a1b9",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -446,54 +438,39 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [
         {
-          "regla": "english",
-          "archivo": "public/sw.js",
-          "linea": 37,
-          "cita": "const esNavegacion = e.request.mode === 'navigate' || e.request.destination === 'document';",
-          "porque": "código real del service worker con nombre de variable en español; el resto del archivo usa inglés",
-          "arreglo": "renombrar a isNavigation"
+          "regla": "pillars",
+          "archivo": "src/views/ConfigView.vue",
+          "linea": 9,
+          "cita": "import QRCode from 'qrcode'",
+          "porque": "El QR de la config se dibuja con la librería de terceros `qrcode` (también usada en la línea 96), pero existe `@dotrino/qr`.",
+          "arreglo": "Pintar el QR con `@dotrino/qr` y quitar la dependencia `qrcode`."
         },
         {
           "regla": "english",
           "archivo": "src/lib/identity.js",
-          "linea": 105,
-          "cita": "return { ok: false, status: 0, body: { error: 'sin vault' } }",
-          "porque": "mensaje de error de código (body.error) en español, mientras el resto de errores de la misma función van en inglés",
-          "arreglo": "usar 'no vault' o 'vault not connected'"
+          "linea": 152,
+          "cita": "let bridge = { ok: false, status: 0, body: { error: 'sin circleId' } }",
+          "porque": "Es un mensaje de error de diagnóstico (cuerpo de resultado de revocación, no copy de UI) y está en español. El resto de mensajes de error del repo van en inglés.",
+          "arreglo": "Escribirlo en inglés, p. ej. { error: 'missing circleId' }."
         },
         {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 16,
-          "cita": "sobre el pilar geo de Dotrino: arma círculos privados, emite permisos firmados por dispositivo...",
-          "porque": "meta description pública que usa jerga interna del ecosistema ('pilar geo') en vez de explicar el beneficio; se repite en la línea 46 (JSON-LD)",
-          "arreglo": "quitar la referencia a 'pilar' y describir el beneficio directamente, p.ej. 'comparte tu ubicación de forma privada con tu familia'"
-        },
-        {
-          "regla": "plain",
-          "archivo": "src/lib/i18n.js",
-          "linea": 56,
-          "cita": "passwordLabel: 'Contraseña (cert)',",
-          "porque": "label visible al usuario en la pantalla de config (ConfigView.vue:40) con abreviatura técnica cripto ('cert') sin traducir a un concepto entendible",
-          "arreglo": "usar solo 'Contraseña' o explicar sin jerga, p.ej. 'Contraseña (clave de acceso del dispositivo)'"
-        },
-        {
-          "regla": "pillars",
+          "regla": "duplicado",
           "archivo": "src/lib/circles.js",
-          "linea": 170,
-          "cita": "const LS_KEY = 'here:circles' ... localStorage.setItem(LS_KEY, JSON.stringify(_map))",
-          "porque": "almacén propio en localStorage para el contenido del usuario (círculos, miembros, dispositivos, claves) en vez de @dotrino/store; el propio código lo marca como TODO pendiente pero es el comportamiento real y activo hoy",
-          "arreglo": "migrar la persistencia de círculos a @dotrino/store como ya indica el TODO del propio archivo"
+          "linea": 56,
+          "cita": "return btoa(bin).replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '')",
+          "porque": "Es la misma conversión de bytes a base64url (bucle String.fromCharCode, btoa y tres replace) que hace `base64url` en src/lib/owntracks.js:26.",
+          "arreglo": "Extraer un único `bytesToBase64url(bytes)` e importarlo en circles.js y en owntracks.js."
         }
       ],
-      "revisados": 18,
-      "notas": "No se reportó la regla sealed: sendByPubkey solo aparece mencionado en un comentario TODO (circles.js:134-137), no hay código ejecutable que use send/sendByPubkey hoy, así que no hay una infracción real que evaluar todavía.",
-      "costoUSD": 0.6199210999999999,
-      "duracionMs": 60296
+      "revisados": 12,
+      "notas": "No pude ejecutar Bash, así que revisé los archivos con Read y Grep. Abrí todos los de src/ salvo style.css, types.d.ts y el test e2e. De index.html solo miré las líneas de meta y título. No encontré voseo. `sendByPubkey` solo aparece en un comentario TODO de circles.js:137, así que no reporto `sealed`; cuando se cablee ese envío tendrá que usar `sendSealed`. En i18n.js:73 hay jerga leve (\"cert\", \"circleId\", \"Encryption key\"), pero está en la guía manual de OwnTracks y no la reporté como `plain`.",
+      "costoUSD": 0.24378879999999997,
+      "duracionMs": 26140
     },
     "dotrino-home": {
       "commit": "bc014cf",
@@ -637,7 +614,7 @@
       "duracionMs": 73394
     },
     "dotrino-lobby": {
-      "commit": "9d85aba",
+      "commit": "310af1c",
       "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
@@ -652,81 +629,57 @@
       "hallazgos": [
         {
           "regla": "english",
-          "archivo": "src/engine.js",
-          "linea": 20,
-          "cita": "throw new Error('[lobby] engine: spec.reducer es obligatorio')",
-          "porque": "El mensaje de error está en español; hay otro igual en la línea 84, un console.warn ('view() lanzó para el asiento').",
-          "arreglo": "Escribir los mensajes de error y de log en inglés, p. ej. 'engine: spec.reducer is required'."
-        },
-        {
-          "regla": "english",
           "archivo": "src/util.js",
           "linea": 97,
           "cita": "throw new Error('[lobby] seats: el array de asientos no puede estar vacío')",
-          "porque": "El mensaje de error está en español.",
-          "arreglo": "Cambiarlo a inglés: 'seats: the seats array cannot be empty'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/lobby.js",
-          "linea": 320,
-          "cita": "throw new Error('[lobby] createLobby: falta gameId')",
-          "porque": "El mensaje de error está en español.",
-          "arreglo": "Cambiarlo a inglés: 'createLobby: gameId is missing'."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/room.js",
-          "linea": 109,
-          "cita": "console.warn('[lobby] requireVerify pedido pero no hay identidad: se desactiva la verificación')",
-          "porque": "Es un log de diagnóstico en español. Hay 2 más en este archivo: línea 892 ('STATE falló para') y línea 894 ('refresh local falló').",
-          "arreglo": "Pasar los tres logs a inglés."
+          "porque": "Mensaje de error para quien programa, escrito en español.",
+          "arreglo": "Escribirlo en inglés: '[lobby] seats: the seats array cannot be empty'."
         },
         {
           "regla": "english",
           "archivo": "src/reputation.js",
           "linea": 82,
           "cita": "throw new Error('dotrino-lobby: signData debe devolver { signature, publickey, chain } (vault ≥ 0.84)')",
-          "porque": "El mensaje de error está en español; el de la línea 85 ('la firma vino sin cadena...') también.",
-          "arreglo": "Escribir ambos mensajes de error en inglés."
+          "porque": "Error en español; la línea 85 repite el fallo con otro mensaje.",
+          "arreglo": "Pasar ambos mensajes a inglés."
         },
         {
           "regla": "english",
-          "archivo": "src/transport.js",
-          "linea": 57,
-          "cita": "function errorCon (message, code) {",
-          "porque": "El nombre de la función está en español. Lo mismo pasa con firmarMitad (src/reputation.js:79), mitadA/mitadB (src/room.js:620) y esDescubrimiento/listas (src/lobby.js:36, 149).",
-          "arreglo": "Renombrar a nombres en inglés (errorWithCode, signHalf, halfA, isDiscoveryChannel, lists)."
+          "archivo": "src/lobby.js",
+          "linea": 319,
+          "cita": "throw new Error('[lobby] createLobby: falta gameId')",
+          "porque": "Mensaje de error en español.",
+          "arreglo": "'[lobby] createLobby: gameId is required'."
         },
         {
           "regla": "english",
-          "archivo": "test/boveda.mjs",
-          "linea": 1,
-          "cita": "test/boveda.mjs",
-          "porque": "El nombre del archivo está en español; test/proxio.mjs también lo está ('proxio' es español, 'proxy' es inglés).",
-          "arreglo": "Renombrar a test/vault.mjs y test/proxy.mjs."
+          "archivo": "src/engine.js",
+          "linea": 20,
+          "cita": "throw new Error('[lobby] engine: spec.reducer es obligatorio')",
+          "porque": "Error en español; la línea 84 tiene además un console.warn en español ('view() lanzó para el asiento').",
+          "arreglo": "Pasar el error y el log a inglés."
         },
         {
-          "regla": "duplicado",
+          "regla": "english",
           "archivo": "src/room.js",
-          "linea": 136,
-          "cita": "_myDiscoveryChannel () { const t = this.transport; return discoveryChannel(this.gameId, (t && (t.node || (t.client && t.client.node))) || null) }",
-          "porque": "El mismo método, con el mismo cuerpo, está escrito en src/lobby.js:59 (_myDiscoveryChannel). Arreglar uno obliga a tocar el otro.",
-          "arreglo": "Dejar una sola función (p. ej. un método en Transport o un helper en protocol.js) y que Lobby y Room la usen."
+          "linea": 109,
+          "cita": "console.warn('[lobby] requireVerify pedido pero no hay identidad: se desactiva la verificación')",
+          "porque": "Log de diagnóstico en español; las líneas 891 ('STATE falló para') y 893 ('refresh local falló') repiten el fallo.",
+          "arreglo": "Pasar los tres logs a inglés."
         },
         {
           "regla": "duplicado",
-          "archivo": "src/broadcast.js",
-          "linea": 39,
-          "cita": "function errorCon (message, code) {",
-          "porque": "El mismo constructor de errores con `code` está escrito en src/transport.js:57 (errorCon), con el mismo cuerpo.",
-          "arreglo": "Moverlo a src/util.js, exportarlo e importarlo desde transport.js y broadcast.js."
+          "archivo": "src/lobby.js",
+          "linea": 110,
+          "cita": "throw Object.assign(new Error('[lobby] openBroadcast: incomplete ref'), { code: 'bad-ref' })",
+          "porque": "Rehace a mano errorWithCode, que ya existe en src/util.js:121 y que usan transport.js:104 y broadcast.js:68. Lo mismo ocurre en lobby.js:123 y lobby.js:328.",
+          "arreglo": "Importar errorWithCode de './util.js' y usarlo en las tres líneas."
         }
       ],
-      "revisados": 9,
-      "notas": "Los 8 archivos de src/ (salvo index.js e index.d.ts) están leídos enteros; los tests no se abrieron (solo se miraron sus nombres). Bash no estaba disponible, así que no pude listar los archivos con git ls-files. No hay UI ni i18n, así que voseo y plain no aplican: el voseo de los comentarios (lobby.js:75, 180) está permitido. El envío va todo sellado (sendSealedTo/sendSealed con requireSealed:true) y no hay cripto ni cliente WebSocket propios.",
-      "costoUSD": 0.3366504,
-      "duracionMs": 25258
+      "revisados": 3,
+      "notas": "El repo es una librería sin UI, así que voseo y plain no aplican. Solo abrí 3 archivos con Grep: busqué en todo src/ y no hallé WebSocket casero ni crypto propios. Lo dirigido va con sendSealed* y requireSealed:true. Los 'sendByPubkey' del README y de los comentarios son documentación. Las infracciones english se localizaron solo con Grep sobre throw/console, así que puede haber más mensajes en español sin ese patrón.",
+      "costoUSD": 0.12302980000000001,
+      "duracionMs": 21006
     },
     "dotrino-messenger": {
       "commit": "41cd043",
@@ -757,8 +710,8 @@
       "duracionMs": 133755
     },
     "dotrino-middlebot": {
-      "commit": "d6881ca",
-      "fecha": "2026-08-30",
+      "commit": "04336e5",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -766,22 +719,14 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
-      "hallazgos": [
-        {
-          "regla": "sealed",
-          "archivo": "README.md",
-          "linea": 90,
-          "cita": "Sale por `@dotrino/proxy-client` (`sendByPubkey` a la pubkey del auditor), cifrado de punta a punta.",
-          "porque": "El sobre lleva el prompt del usuario (contenido sensible) y se especifica sendByPubkey, que no cifra; sendSealed/requireSealed no aparecen en ningún archivo del repo, así que la afirmación 'cifrado de punta a punta' no corresponde al método descrito.",
-          "arreglo": "Especificar sendSealed() para el envío del sobre y requireSealed: true al arrancar el cliente del middlebot y del auditor."
-        }
-      ],
-      "revisados": 5,
-      "notas": "El repo está en etapa de especificación: solo hay landing (web/index.html), README, assets estáticos y el workflow de deploy; no existe todavía src/, CLI ni código del auditor, así que las reglas english y pillars no tienen superficie de código real donde aplicarse (nada que grepear en variables, rutas o clientes WebSocket/crypto propios).",
-      "costoUSD": 0.3713358,
-      "duracionMs": 94998
+      "hallazgos": [],
+      "revisados": 1,
+      "notas": "El repo solo tiene la landing (web/index.html), sin código fuente. Ahí no hay voseo ni argot de la lista prohibida. «on premise» aparece en la copy pública, pero no está en la lista, así que no lo reporto. No abrí README.md ni deploy.yml.",
+      "costoUSD": 0.1093119,
+      "duracionMs": 4832
     },
     "dotrino-mundial": {
       "commit": "ff7540c",
@@ -1008,8 +953,8 @@
       "duracionMs": 373987
     },
     "dotrino-profile": {
-      "commit": "0a70257",
-      "fecha": "2026-08-30",
+      "commit": "4c70a87",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -1017,46 +962,47 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [
         {
           "regla": "english",
           "archivo": "src/index.js",
-          "linea": 1294,
+          "linea": 1398,
           "cita": "throw new Error('dotrino-profile: se requiere `reputation` (createVaultReputation)')",
-          "porque": "Los mensajes de throw new Error son diagnóstico interno (van a quien integra la librería, a un issue) y están en español; se repite en 4 sitios (líneas 808, 1294, 1369, 1377)",
-          "arreglo": "Traducir los mensajes de error a inglés, p. ej. 'dotrino-profile: `reputation` is required (createVaultReputation)'"
+          "porque": "Un mensaje de error lanzado con `throw new Error` está en español, y quien programa lo pega en un issue.",
+          "arreglo": "Escribir el mensaje en inglés: 'dotrino-profile: `reputation` is required (createVaultReputation)'."
         },
         {
           "regla": "english",
           "archivo": "src/index.js",
-          "linea": 465,
-          "cita": "{ k: 'nombres', max: 60 }, { k: 'apellidos', max: 60 }, ... { k: 'telefono', ... }, { k: 'direccion', ... }",
-          "porque": "Son claves de campo del modelo de datos del perfil (usadas como propiedades de objeto y como nombre de I18N derivado, p. ej. fNombres/fTelefono), y están en español en vez de inglés",
-          "arreglo": "Usar claves en inglés (firstName, lastName, phone, address) y mapearlas a las etiquetas traducidas en I18N"
-        },
-        {
-          "regla": "plain",
-          "archivo": "src/index.js",
-          "linea": 78,
-          "cita": "wot: 'Lo que dicen otros (Web of Trust)'",
-          "porque": "El texto de UI que ve el usuario final incluye literalmente el término técnico 'Web of Trust', que está en la lista de argot prohibido en copy pública",
-          "arreglo": "Quitar el paréntesis técnico y dejar solo el beneficio, p. ej. 'Lo que dicen otros' o 'Reseñas de tu red de confianza'"
+          "linea": 1479,
+          "cita": "throw new Error('dotrino-profile: identity.setMyNickname no disponible')",
+          "porque": "Un mensaje de error lanzado con `throw new Error` está en español.",
+          "arreglo": "Escribirlo en inglés: 'identity.setMyNickname is not available'."
         },
         {
           "regla": "english",
           "archivo": "src/index.js",
-          "linea": 486,
-          "cita": "this._etiquetas = {} // pubkey → huella legible, para las listas",
-          "porque": "Nombre de campo/función internos en español (_etiquetas, _refreshEtiquetas, y las variables locales faltan/pares dentro de esa función) en vez de inglés",
-          "arreglo": "Renombrar a algo como _keyLabels / _refreshKeyLabels con variables locales en inglés (missing, pairs)"
+          "linea": 1487,
+          "cita": "throw new Error('dotrino-profile: identity.updateMe no disponible')",
+          "porque": "Un mensaje de error lanzado con `throw new Error` está en español.",
+          "arreglo": "Escribirlo en inglés: 'identity.updateMe is not available'."
+        },
+        {
+          "regla": "english",
+          "archivo": "src/index.js",
+          "linea": 890,
+          "cita": "img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('imagen inválida')) }",
+          "porque": "El `Error` que rechaza la promesa lleva el mensaje en español, y es un mensaje de diagnóstico, no copy de la interfaz.",
+          "arreglo": "Cambiarlo por reject(new Error('invalid image'))."
         }
       ],
-      "revisados": 4,
-      "notas": "No hay web/, agent/ ni server/ en este repo: es solo el paquete @dotrino/profile (src/index.js + index.d.ts, más README/package.json). No se encontró WebSocket, crypto.subtle, sendByPubkey/sendSealed ni reimplementación de pilares, así que las reglas pillars y sealed no aplican aquí.",
-      "costoUSD": 0.6369219,
-      "duracionMs": 139227
+      "revisados": 1,
+      "notas": "Solo abrí src/index.js, que es todo el código. No abrí src/index.d.ts ni test/block.html (un test). El voseo de la línea 16 está en un comentario y no cuenta. No encontré infracciones de voseo, pillars, sealed ni duplicado, y en la copy tampoco hay argot de la lista de la regla plain.",
+      "costoUSD": 0.25731040000000005,
+      "duracionMs": 16925
     },
     "dotrino-profile-app": {
       "commit": "78aba9a",
@@ -1077,7 +1023,7 @@
       "duracionMs": 120480
     },
     "dotrino-pronostico-mundialista": {
-      "commit": "04481b5",
+      "commit": "0a708ae",
       "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
@@ -1091,78 +1037,62 @@
       ],
       "hallazgos": [
         {
-          "regla": "voseo",
-          "archivo": "src/lib/notifications.ts",
-          "linea": 50,
-          "cita": "es: 'Avisame cuando alguien abre un pronóstico que compartí.',",
-          "porque": "Copy de usuario en voseo: «Avisame» y «compartí». También la línea 48: «Aperturas de lo que compartí».",
-          "arreglo": "«Avísame cuando alguien abra un pronóstico que compartí/compartiste» → «Avísame cuando alguien abra un pronóstico que compartiste.» y «Aperturas de lo que compartiste»."
-        },
-        {
-          "regla": "pillars",
-          "archivo": "src/App.vue",
-          "linea": 44,
-          "cita": "import QRCode from 'qrcode'",
-          "porque": "Genera el QR con la librería de terceros `qrcode` (usos en App.vue:572 y :595) existiendo `@dotrino/qr`.",
-          "arreglo": "Generar el QR con `@dotrino/qr` y quitar la dependencia `qrcode`."
-        },
-        {
-          "regla": "duplicado",
-          "archivo": "src/lib/officialResults.ts",
-          "linea": 54,
-          "cita": "function canonicalStringify (v: unknown): string {",
-          "porque": "Copia idéntica de `canonicalStringify` en src/lib/signer.ts:27, y `b64ToBytes` (officialResults.ts:60) repite signer.ts:40 y share.ts:37 (exportada).",
-          "arreglo": "Exportar `canonicalStringify` y `b64ToBytes` desde un único módulo e importarlos en signer.ts y officialResults.ts."
-        },
-        {
-          "regla": "duplicado",
-          "archivo": "src/lib/matchday.ts",
-          "linea": 238,
-          "cita": "function b64urlToBytes (s: string): Uint8Array {",
-          "porque": "Reescribe `b64urlToBytes`/`bytesToB64url` (matchday.ts:238 y :244), que ya existen en src/lib/share.ts:43 y :46 (exportadas) y en src/lib/codec.ts:117 y :123.",
-          "arreglo": "Importar las funciones exportadas de share.ts en vez de reescribirlas."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/lib/connection.ts",
-          "linea": 90,
-          "cita": "console.warn('no se pudo anunciar la llave de cifrado (' + (e.code || 'sin code') + '): nadie podrá sellarnos nada', e.error)",
-          "porque": "Log de diagnóstico en español. En el mismo archivo, líneas 76, 89 y 102 siguen igual (4 en total).",
-          "arreglo": "Escribir los console.warn en inglés, p. ej. 'could not announce encryption key (code): nobody will be able to seal for us'."
-        },
-        {
           "regla": "english",
           "archivo": "src/lib/share.ts",
-          "linea": 148,
+          "linea": 136,
           "cita": "if (!id) throw new Error('No se pudo conectar a la identidad (id.dotrino.com).')",
-          "porque": "Mensaje de error lanzado en español (repetido en la línea 277). Los console.warn de las líneas 221 y 320 también están en español.",
-          "arreglo": "Usar mensajes en inglés: 'Could not connect to identity (id.dotrino.com).'; si el usuario lo lee, mostrarlo como copy i18n aparte."
+          "porque": "Error lanzado en español; es un mensaje de diagnóstico, no copy de UI. Se repite en la línea 265, y en 209 y 308 hay dos console.warn en español ('Verificación de firma falló:', 'verifyBlob falló:').",
+          "arreglo": "Pasar los throw y los console.warn a inglés (p. ej. 'Could not connect to identity (id.dotrino.com).')."
         },
         {
           "regla": "english",
           "archivo": "src/lib/codec.ts",
-          "linea": 195,
+          "linea": 183,
           "cita": "throw new Error(`Versión de código no soportada: ${version}`)",
-          "porque": "Error lanzado en español.",
-          "arreglo": "throw new Error(`Unsupported code version: ${version}`)"
+          "porque": "Mensaje de error en español dentro de un throw.",
+          "arreglo": "Escribirlo en inglés: `Unsupported code version: ${version}`."
+        },
+        {
+          "regla": "english",
+          "archivo": "src/lib/connection.ts",
+          "linea": 76,
+          "cita": "console.warn('identify (vault) falló:', e)",
+          "porque": "Logs de diagnóstico en español. Hay 4 más: líneas 89, 90 y 102 de este archivo, y la 21 de identity.ts.",
+          "arreglo": "Pasar los console.warn a inglés."
+        },
+        {
+          "regla": "english",
+          "archivo": "src/lib/cloud.ts",
+          "linea": 40,
+          "cita": "console.warn('Store del ecosistema inalcanzable:', e)",
+          "porque": "Logs de diagnóstico en español. Hay 3 más en las líneas 69, 86 y 92 de este archivo.",
+          "arreglo": "Pasar los console.warn a inglés."
         },
         {
           "regla": "english",
           "archivo": "src/lib/roomSync.ts",
           "linea": 155,
           "cita": "console.warn('no se pudo sellar para un miembro de la sala (' + code + '): no se manda en claro')",
-          "porque": "Log en español; el mismo fallo está en roomSync.ts:98, receipts.ts:63, inbox.ts:93, cloud.ts:40, 69, 86 y 92, identity.ts:21, officialResults.ts:90 y RoomsPage.vue:262.",
-          "arreglo": "Pasar todos estos logs a inglés, p. ej. 'could not seal for a room member (code): not sent in the clear'."
+          "porque": "Log en español. Hay otros iguales en roomSync.ts:98, inbox.ts:93, receipts.ts:63, officialResults.ts:79 y RoomsPage.vue:262.",
+          "arreglo": "Pasar estos console.warn a inglés."
+        },
+        {
+          "regla": "duplicado",
+          "archivo": "src/lib/share.ts",
+          "linea": 303,
+          "cita": "const key = await crypto.subtle.importKey('jwk', jwk, { name: 'ECDSA', namedCurve: 'P-256' }, false, ['verify'])",
+          "porque": "El mismo bloque importKey + verify ECDSA P-256 con SHA-256 sobre canonicalBytes aparece en share.ts:204 (verifyAndBuild) y en share.ts:303 (verifyBlob). Un fallo en uno obliga a tocar el otro.",
+          "arreglo": "Extraer una función verifyEcdsa(jwk, sig, bytes) y usarla en los dos sitios."
         }
       ],
-      "revisados": 7,
-      "notas": "Presupuesto holgado pero no abrí i18n.ts ni los .vue completos: la búsqueda de voseo y de argot se hizo con Grep y solo salieron notifications.ts y comentarios. Las verificaciones ECDSA con `crypto.subtle.verify` en signer.ts, officialResults.ts y share.ts las traté como verificación contra claves pineadas, no como firma propia, y no las reporté en `pillars`; conviene revisarlas. Sí se usan `sendSealed` y `requireSealed: true` (connection.ts:43), así que `sealed` cumple. En `duplicado` solo cité",
-      "costoUSD": 0.2111095,
-      "duracionMs": 38038
+      "revisados": 6,
+      "notas": "No pude ejecutar Bash, así que revisé con Glob, Grep y Read: abrí 6 archivos (signer.ts, officialResults.ts y share.ts, y solo una parte de los dos últimos) y el resto lo vi solo por Grep. No miré con detalle las plantillas .vue ni la copy en español de i18n.ts; un Grep de voseo en src/ solo encontró comentarios, que no cuentan. La verificación ECDSA de feed y sello (signer.ts:74, officialResults.ts:63) usa claves pineadas de servicios externos y no la reporté como pillars. 'relay' en la copy en",
+      "costoUSD": 0.1623042,
+      "duracionMs": 30092
     },
     "dotrino-proxy": {
-      "commit": "efe2abd",
-      "fecha": "2026-08-30",
+      "commit": "406bf64",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -1170,58 +1100,59 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [
         {
-          "regla": "voseo",
-          "archivo": "server.js",
-          "linea": 2665,
-          "cita": "response = { type: 'pair-redeem', ok: false, error: 'código ambiguo: pedí uno nuevo' };",
-          "porque": "el código de emparejamiento es texto que un humano lee y usa (según el propio docstring de pairingCodes.js), y 'pedí' es un imperativo voseante en vez de tuteo",
-          "arreglo": "usar 'código ambiguo: pide uno nuevo'"
-        },
-        {
           "regla": "english",
           "archivo": "server.js",
-          "linea": 1760,
-          "cita": "error: 'Formato de mensaje inválido. Debe contener \"to\" o \"to_publickey\" y \"message\"...'",
-          "porque": "son mensajes de protocolo WebSocket (campo 'error' de las respuestas type:'error') devueltos a quien integra el proxy, y deben ir en inglés; se repite en las líneas 1777, 1800 y 1814 del mismo archivo",
-          "arreglo": "traducir los mensajes de error de protocolo al inglés, p. ej. 'Invalid message format: must contain \"to\" or \"to_publickey\" and \"message\"'"
-        },
-        {
-          "regla": "english",
-          "archivo": "nodeIdentity.js",
-          "linea": 64,
-          "cita": "throw new Error('pubkey no es una JWK EC P-256');",
-          "porque": "es un throw de validación interna (diagnóstico para quien programa), y va en español en vez de inglés; se repite en la línea 68 ('coordenadas de longitud inesperada')",
-          "arreglo": "usar 'pubkey is not an EC P-256 JWK' (y el equivalente en inglés para la línea 68)"
+          "linea": 2134,
+          "cita": "error: 'No puedes enviarte mensajes a ti mismo'",
+          "porque": "Error de protocolo que el proxio devuelve a un cliente, en español y sin `code`. Hay 12 casos en el archivo: 2120, 2134, 2480, 2494, 2599, 2642, 2697, 2772, 2799, 2886, 2920 y 2942. El de 3012 (`fireAt debe ser un timestamp futuro (ms)`) es de la misma familia. Lo que escapa a la suite `test/errores-en-ingles.test.mjs` es el patrón `ESPAÑOL` de la línea 13 (por ejemplo `debe`, `puedes`, `requerido",
+          "arreglo": "Pasar esos mensajes a inglés con un `code` (p. ej. 'You cannot send messages to yourself'), como ya hacen las líneas 448, 1977 y 3069."
         },
         {
           "regla": "english",
           "archivo": "tokenManager.js",
           "linea": 79,
           "cita": "throw new Error('No se pudo generar una instancia única');",
-          "porque": "es un error de diagnóstico interno y debe ir en inglés según §8.1",
-          "arreglo": "usar 'Could not generate a unique instance'"
+          "porque": "El mensaje de un `throw new Error` está en español.",
+          "arreglo": "Escribirlo en inglés: 'Could not generate a unique instance'."
         },
         {
           "regla": "english",
-          "archivo": "turnCredentials.js",
-          "linea": 132,
-          "cita": "if (!iceServers) throw new Error('Cloudflare TURN API: respuesta sin iceServers');",
-          "porque": "es un error de integración con una API externa (diagnóstico), mezclado en español cuando el resto del mensaje (línea 128) ya está en inglés",
-          "arreglo": "usar 'Cloudflare TURN API: response missing iceServers'"
+          "archivo": "nodeIdentity.js",
+          "linea": 64,
+          "cita": "throw new Error('pubkey no es una JWK EC P-256');",
+          "porque": "Mensaje de error en español. La línea 68 tiene otro igual: 'coordenadas de longitud inesperada'.",
+          "arreglo": "Pasar ambos a inglés: 'pubkey is not an EC P-256 JWK' y 'unexpected coordinate length'."
+        },
+        {
+          "regla": "english",
+          "archivo": "peers.js",
+          "linea": 159,
+          "cita": "reason: `el peer ${peer.url} cambió de pubkey; se mantiene la pineada`",
+          "porque": "Razón de conflicto de federación en español. Es un valor de protocolo que se registra y se devuelve, no copy para el usuario. Se repite en las líneas 170, 173 y 176, y en server.js:1697 y 1699.",
+          "arreglo": "Redactar los `reason` en inglés."
+        },
+        {
+          "regla": "english",
+          "archivo": "enroll-vault.js",
+          "linea": 51,
+          "cita": "console.error('Enrolamiento falló:', e.message); process.exit(1);",
+          "porque": "Es un mensaje de fallo (`console.error` en un `catch`), o sea diagnóstico, no la interfaz del comando. Va en español y no está en inglés.",
+          "arreglo": "Cambiarlo a 'Enrollment failed:'. El resto de lo que imprime el script es copy de la CLI y puede quedarse en español."
         }
       ],
-      "revisados": 7,
-      "notas": "Este repo es el propio proxy (pilar de transporte), no una app cliente: no hay src/, web/, i18n, HTML ni UI propia, así que las reglas 'plain' (copy pública) y 'pillars'/'sealed' (reimplementación de un pilar por una app cliente, o mensajes dirigidos sin sellar) no tienen superficie aplicable aquí — el propio proxy hablando su protocolo y derivando ids con crypto no es una infracción. README/DEPLOY/SELF-HOSTING/.env.example usan voseo pero están explícitamente exentos por ser documentación, no c",
-      "costoUSD": 0.7471136,
-      "duracionMs": 130080
+      "revisados": 6,
+      "notas": "Bash estaba deshabilitado y el Glob se truncó, así que revisé sobre todo con Grep y solo abrí enroll-vault.js y el test errores-en-ingles.test.mjs. Este repo es el servidor proxio, sin UI ni i18n, así que no busqué `plain` y no hay hallazgos de `voseo` en copy de usuario: los `acá`/`podés` que salen son comentarios. `pillars` y `sealed` no aplican: el único `new WebSocket` es el enlace de federación entre nodos en mesh.js:148. Sobre `duplicado`: `b64url` es la misma línea en fcm.js:15 y apns.js:",
+      "costoUSD": 0.2084144,
+      "duracionMs": 40961
     },
     "dotrino-proxy-client": {
-      "commit": "50a764e",
-      "fecha": "2026-08-30",
+      "commit": "3b4d9ba",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -1229,30 +1160,75 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [
         {
-          "regla": "voseo",
-          "archivo": "sw/closer-click-push-sw.js",
-          "linea": 19,
-          "cita": "const DEFAULT_BODY = 'Tenés mensajes nuevos'",
-          "porque": "es el cuerpo de la notificación push que ve la persona usuaria, y usa voseo ('Tenés') en vez de tuteo",
-          "arreglo": "cambiar a 'Tienes mensajes nuevos'"
+          "regla": "english",
+          "archivo": "src/client.js",
+          "linea": 1000,
+          "cita": "throw new Error('WebRTC está deshabilitado en este cliente')",
+          "porque": "Un mensaje de error lanzado con `throw` va en inglés (§8.1). Este está en español, mientras el `WebRTC disabled` de la línea 384 ya está en inglés.",
+          "arreglo": "Escribirlo en inglés, por ejemplo 'WebRTC is disabled on this client'."
         },
         {
           "regla": "english",
           "archivo": "src/client.js",
-          "linea": 467,
-          "cita": "throw new Error('WebRTC está deshabilitado en este cliente')",
-          "porque": "son mensajes de error (van a un throw/catch, no a la UI) y están en español; se repite en 5 sitios del archivo (líneas 467, 528, 531, 538, 945)",
-          "arreglo": "traducir los mensajes de Error al inglés, p.ej. 'WebRTC is disabled on this client'"
+          "linea": 1087,
+          "cita": "throw new Error('Service Worker no soportado en este entorno')",
+          "porque": "Un mensaje de error lanzado con `throw` está en español. Las líneas 1087, 1090 y 1097 lo repiten (3 mensajes).",
+          "arreglo": "Traducirlos al inglés: 'Service Worker not supported here', 'Push API not supported in this browser' y 'the proxy has no Web Push enabled'."
+        },
+        {
+          "regla": "english",
+          "archivo": "src/client.js",
+          "linea": 1618,
+          "cita": "if (!sig) throw new Error('sign() debe devolver una firma base64 (string o {signature})')",
+          "porque": "Un mensaje de error lanzado con `throw` está en español, cuando el resto de los errores de firma del archivo están en inglés.",
+          "arreglo": "Escribirlo en inglés: 'sign() must return a base64 signature (string or {signature})'."
+        },
+        {
+          "regla": "duplicado",
+          "archivo": "src/encpub.js",
+          "linea": 62,
+          "cita": "function errorCon (mensaje, code) {",
+          "porque": "El mismo constructor de error con `code` está copiado en src/client.js:26 y en src/sealing.js:21, y los tres cuerpos son idénticos. Arreglarlo en uno obliga a tocar los otros dos.",
+          "arreglo": "Dejar una sola función, por ejemplo en un módulo interno `src/errors.js`, e importarla desde los tres archivos."
         }
       ],
-      "revisados": 10,
-      "notas": "El repo es la librería @dotrino/proxy-client (sin UI ni landing), así que las reglas plain y pillars no tienen superficie aplicable: no hay copy pública de marketing ni topbar/perfil/almacén propios que reimplementen otro pilar. sendByPubkey/send solo se ven usados de forma cruda internamente para señalización WebRTC (_rtc), no para contenido de usuario, así que no se marcó como incumplimiento de sealed; el uso de ECDSA propio en signature.js está documentado en el README como identidad local di",
-      "costoUSD": 0.4243774,
-      "duracionMs": 94587
+      "revisados": 4,
+      "notas": "El repo es el propio pilar proxy-client, así que `pillars` y `sealed` no aplican, y no tiene copy de usuario, así que `voseo` y `plain` no aplican. El único voseo (`acá`, client.js:1335) está en un comentario y no se reporta. No pude ejecutar Bash. Las líneas vienen de Grep y solo leí sealing.js, así que `revisados` cuenta 4 archivos (src/client.js, src/encpub.js, src/sealing.js y la búsqueda en src/). Hay nombres en español que no reporto por dudosos: el identificador `errorCon` y los parámetro",
+      "costoUSD": 0.1315885,
+      "duracionMs": 21387
+    },
+    "dotrino-qr": {
+      "commit": "ff4c38f",
+      "fecha": "2026-10-15",
+      "por": "seyacat",
+      "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicado"
+      ],
+      "hallazgos": [
+        {
+          "regla": "english",
+          "archivo": "src/show.js",
+          "linea": 75,
+          "cita": "console.error('[dotrino-qr] no se pudo generar el QR:', e?.message || e)",
+          "porque": "Es un log de diagnóstico (fallo del llamador), no copy de interfaz, y está en español; en src/scan.js:215 el equivalente ya va en inglés.",
+          "arreglo": "Escribirlo en inglés: console.error('[dotrino-qr] could not generate the QR:', e?.message || e)."
+        }
+      ],
+      "revisados": 5,
+      "notas": "No pude ejecutar Bash (git ls-files), así que listé los archivos con Glob. Leí src/svg.js, show.js, scan.js, index.js y vi los nombres de test/ y los .d.ts sin abrirlos. Este repo es el propio pilar @dotrino/qr, así que usar jsqr y qrcode-generator es su trabajo y no cuenta como infracción de pillars.",
+      "costoUSD": 0.11542079999999999,
+      "duracionMs": 9197
     },
     "dotrino-qrgenerator": {
       "commit": "41006e4",
@@ -1283,8 +1259,27 @@
       "duracionMs": 40601
     },
     "dotrino-qrreader": {
-      "commit": "425723f",
-      "fecha": "2026-09-12",
+      "commit": "c699bc7",
+      "fecha": "2026-10-15",
+      "por": "seyacat",
+      "modelo": "sonnet",
+      "reglas": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicado"
+      ],
+      "hallazgos": [],
+      "revisados": 6,
+      "notas": "Revisé `src/main.js`, `src/services/identity.js`, `src/services/reputation.js`, `src/lang-migrate.js` e `index.html`; los nombres de archivo del repo están en inglés. No leí `src/style.css`, `src/types.d.ts` ni `vite.config`. No tenía Bash y el Glob quedó enterrado bajo `node_modules`, así que pude haberme dejado algún archivo de la raíz sin ver.",
+      "costoUSD": 0.1278936,
+      "duracionMs": 11428
+    },
+    "dotrino-qrshare": {
+      "commit": "f51419e",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -1298,68 +1293,25 @@
       "hallazgos": [
         {
           "regla": "pillars",
-          "archivo": "src/main.js",
-          "linea": 9,
-          "cita": "import jsQR from 'jsqr'",
-          "porque": "Lee QR a mano con jsQR (usado en startVideoLoop, línea 206, y decodeImageFile, línea 232) en vez de @dotrino/qr, que ya existe para esto en el ecosistema; no está en package.json como dependencia.",
-          "arreglo": "Reemplazar jsQR por @dotrino/qr para la decodificación de códigos QR."
+          "archivo": "index.html",
+          "linea": 65,
+          "cita": "<script src=\"https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js\"></script>",
+          "porque": "El QR se genera con la librería de terceros qr-code-styling (usada en app.js:439, `new QRCodeStyling`) aunque existe `@dotrino/qr`.",
+          "arreglo": "Dibujar el QR de emparejamiento con `@dotrino/qr` y quitar qr-code-styling."
         },
         {
           "regla": "plain",
-          "archivo": "index.html",
-          "linea": 10,
-          "cita": "Autohospedado, sin trackers ni cuentas.",
-          "porque": "\"Autohospedado\" es jerga técnica (equivalente a 'self-hosted', término explícitamente prohibido) en copy pública (meta description); se repite igual en index.html:24, index.html:31 y vite.config.js:26.",
-          "arreglo": "Cambiar por el beneficio, p. ej. \"Todo ocurre en tu navegador, sin subir nada a un servidor\"."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/services/identity.js",
-          "linea": 9,
-          "cita": "console.warn('[identity] vault inalcanzable:', e && e.message)",
-          "porque": "Es una traza de diagnóstico (console.warn en un catch), no copy que lee el usuario, y va en español en vez de inglés.",
-          "arreglo": "console.warn('[identity] vault unreachable:', e && e.message)"
+          "archivo": "app.js",
+          "linea": 428,
+          "cita": "this.reportFailure('Todavía no hay conexión con el proxio', error);",
+          "porque": "Este mensaje de UI que lee el usuario nombra el 'proxio', un término de infraestructura que quien usa la app no conoce.",
+          "arreglo": "Decir algo como 'Todavía no hay conexión; inténtalo de nuevo en unos segundos'."
         }
       ],
-      "revisados": 10,
-      "notas": "No hay uso de @dotrino/proxy-client ni WebSocket propio en este repo, así que la regla `sealed` no aplica aquí; tampoco se encontró duplicación interna citable con dos sitios concretos.",
-      "costoUSD": 0.30183400000000005,
-      "duracionMs": 84675
-    },
-    "dotrino-qrshare": {
-      "commit": "8aacf81",
-      "fecha": "2026-09-12",
-      "por": "seyacat",
-      "modelo": "sonnet",
-      "reglas": [
-        "voseo",
-        "english",
-        "plain",
-        "pillars",
-        "sealed"
-      ],
-      "hallazgos": [
-        {
-          "regla": "plain",
-          "archivo": "index.html",
-          "linea": 10,
-          "cita": "El proxy solo descubre los peers; los archivos viajan directo entre dispositivos.",
-          "porque": "la meta description es copy pública y usa argot técnico prohibido (\"proxy\", \"peers\") en vez de explicar el beneficio",
-          "arreglo": "decir algo como \"tu archivo viaja directo a quien lo recibe, sin pasar por nuestros servidores\""
-        },
-        {
-          "regla": "english",
-          "archivo": "sw.js",
-          "linea": 34,
-          "cita": "const esNavegacion = e.request.mode === 'navigate' || e.request.destination === 'document';",
-          "porque": "es un identificador de código (variable) en español; el código debe ir en inglés",
-          "arreglo": "renombrar a isNavigation"
-        }
-      ],
-      "revisados": 8,
-      "notas": "No existen carpetas de i18n/locales: toda la copy de usuario está hardcodeada en español dentro de app.js e index.html, y cumple tuteo correctamente. app.js usa @dotrino/proxy-client con sendSealed/requireSealed y logs en inglés separados de la copy en español; no se detectaron reimplementaciones de pilares ni mensajes sin sellar. El uso de sendByPubkey en test/sealed-signaling.e2e.mjs es un test que verifica el rechazo de mensajes sin sellar, no una infracción.",
-      "costoUSD": 0.5348452,
-      "duracionMs": 75238
+      "revisados": 2,
+      "notas": "Solo revisé app.js e index.html. No abrí test/sealed-signaling.e2e.mjs (son tests), sw.js ni styles.css. El sellado es correcto: usa sendSealed y requireSealed:true. La app no usa @dotrino/store, y jsqr solo aparece en node_modules. Vi `og:description` y la UI con 'P2P por WebRTC' y no lo reporté: no está en la lista de argot prohibido y es dudoso.",
+      "costoUSD": 0.1414876,
+      "duracionMs": 10219
     },
     "dotrino-remote-agent": {
       "commit": "ef8525e",
@@ -1752,8 +1704,8 @@
       "duracionMs": 128354
     },
     "dotrino-support": {
-      "commit": "21828dd",
-      "fecha": "2026-08-30",
+      "commit": "ce1c8ae",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -1761,46 +1713,14 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
-      "hallazgos": [
-        {
-          "regla": "plain",
-          "archivo": "src/index.js",
-          "linea": 44,
-          "cita": "Las apps del ecosistema Dotrino son gratuitas y autohosteadas.",
-          "porque": "\"autohosteadas\" (self-hosted) es jerga técnica prohibida en copy que lee el usuario del modal, no un beneficio traducido.",
-          "arreglo": "Reemplazar por el beneficio, p. ej. \"no dependen de servidores de terceros\", en vez de \"autohosteadas\"."
-        },
-        {
-          "regla": "english",
-          "archivo": "moneda.svg",
-          "linea": 10,
-          "cita": "sodipodi:docname=\"moneda.svg\"",
-          "porque": "el nombre de archivo está en español; es la fuente activa que src/coin.js:4 referencia en el comando de build (inkscape moneda.svg ...).",
-          "arreglo": "Renombrar a coin.svg (o consolidar con el ya existente src/coin.svg) y actualizar el comando de regeneración."
-        },
-        {
-          "regla": "english",
-          "archivo": "src/monedalogo.svg",
-          "linea": 1,
-          "cita": "nombre de archivo \"monedalogo.svg\"",
-          "porque": "es un asset del paquete con nombre en español (no referenciado por ningún código, pero igual se publica en npm).",
-          "arreglo": "Renombrarlo en inglés (p. ej. coin-logo.svg) o eliminarlo si es un remanente sin uso."
-        },
-        {
-          "regla": "english",
-          "archivo": "test/smoke.mjs",
-          "linea": 293,
-          "cita": "console.log(ok ? '\\nTODOS LOS TESTS PASARON' : '\\nFALLARON TESTS')",
-          "porque": "la salida de consola del test (diagnóstico) está en español; hay 5 apariciones similares en el archivo (líneas 287, 291, 293).",
-          "arreglo": "Traducir los console.log de diagnóstico a inglés, p. ej. \"ALL TESTS PASSED\" / \"TESTS FAILED\"."
-        }
-      ],
-      "revisados": 9,
-      "notas": "No se auditó node_modules/@dotrino/store (paquete de terceros). preview-coin.html y monedabg.png están en .gitignore (no forman parte del repo publicado) y no se reportaron pese a inconsistencias visibles.",
-      "costoUSD": 0.49997099999999994,
-      "duracionMs": 137436
+      "hallazgos": [],
+      "revisados": 4,
+      "notas": "El repo es pequeño (src/index.js, src/policy.js, src/coin.js y preview-coin.html), y los abrí todos. El voseo que aparece (\"configurá\", \"abrí\") está solo en comentarios, así que no cuenta. preview-coin.html es una página de desarrollo, no copy de producción. También está desactualizada: importa `COIN_DATA_URI` de src/coin.js, que ya solo exporta `COIN_URL`. Eso no es de ninguna de las seis reglas.",
+      "costoUSD": 0.170336,
+      "duracionMs": 8795
     },
     "dotrino-telegram-claude-bot": {
       "commit": "65e30ec",
@@ -2005,8 +1925,8 @@
       "duracionMs": 39839
     },
     "dotrino-tunnel": {
-      "commit": "cad1c9f",
-      "fecha": "2026-08-30",
+      "commit": "ccc9ee5",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -2014,86 +1934,55 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [
         {
           "regla": "english",
           "archivo": "lib/index.js",
-          "linea": 86,
-          "cita": "const enUso = new Set()",
-          "porque": "identificadores de código en español (también soltarCandado en línea 136 y reintento en línea 137); el código debe nombrarse en inglés",
-          "arreglo": "renombrar a inUse, releaseLock y retryTimer"
+          "linea": 91,
+          "cita": "`ya hay un túnel con esta llave (…${String(key).slice(-6)}) en este mismo proceso. ` +",
+          "porque": "Los `throw new Error` de takeLock están en español (la 2ª, en la línea 104, también), igual que el código de error `TUNNEL_KEY_EN_USO` (líneas 95 y 109) y los identificadores `enUso`, `soltarCandado` y `reintento`.",
+          "arreglo": "Escribe los mensajes de error en inglés, usa un código como `TUNNEL_KEY_IN_USE` y nombres de variables en inglés."
         },
         {
           "regla": "english",
           "archivo": "lib/index.js",
-          "linea": 92,
-          "cita": "ya hay un túnel con esta llave (…${...}) en este mismo proceso. Dos agentes con la misma llave se echan...",
-          "porque": "mensaje de un throw new Error (traza de fallo, no copy de interfaz) escrito en español",
-          "arreglo": "escribir el mensaje del Error en inglés, p.ej. 'a tunnel with this key is already running in this process...'"
-        },
-        {
-          "regla": "english",
-          "archivo": "lib/index.js",
-          "linea": 105,
-          "cita": "ya hay un túnel con esta llave (…${...}) en esta máquina, en el proceso ${prev}.",
-          "porque": "mismo caso que la línea 92: throw new Error en español en vez de inglés",
-          "arreglo": "traducir el mensaje del Error a inglés"
-        },
-        {
-          "regla": "english",
-          "archivo": "lib/index.js",
-          "linea": 147,
-          "cita": "log('listo →', m.url)",
-          "porque": "log de diagnóstico de la librería en español (también líneas 162 y 166: 'otra copia tomó...' y 'reconectando…'); como la CLI llama a createTunnel con quiet:true, este log solo lo ve quien integra la librería en su propio código, no el usuario final de la CLI",
-          "arreglo": "escribir los logs internos en inglés: 'ready →', 'replaced by another instance...', 'reconnecting…'"
+          "linea": 162,
+          "cita": "log(`otra copia tomó este túnel con la misma llave (…${key.slice(-6)}). Esta se detiene: revisa si lo arrancaste dos veces.`)",
+          "porque": "Los logs de la lib (`log('listo →')` en la línea 147, `log('reconectando…')` en la 166 y este) son trazas de diagnóstico en español. La CLI los silencia con `quiet: true`.",
+          "arreglo": "Pasa los mensajes de `log` a inglés."
         },
         {
           "regla": "english",
           "archivo": "server/index.js",
-          "linea": 142,
-          "cita": "socket.write('HTTP/1.1 400 Bad Request\\r\\n\\r\\nllave inválida (16-48 alfanuméricos)')",
-          "porque": "mensaje de rechazo de protocolo agente-relay en español, mientras el resto de errores del relay ('tunnel not connected', 'payload too large', etc.) están en inglés",
-          "arreglo": "usar 'invalid key (16-48 alphanumeric chars)' para mantener consistencia con los demás errores del relay"
-        },
-        {
-          "regla": "english",
-          "archivo": "server/index.js",
-          "linea": 159,
+          "linea": 160,
           "cita": "console.log(`[agent] conectado key=${key} (${tunnels.size} túneles)`)",
-          "porque": "log de diagnóstico del daemon en español (también línea 169: '[agent] desconectado')",
-          "arreglo": "usar '[agent] connected key=... (n tunnels)' / '[agent] disconnected key=...'"
+          "porque": "Los logs del relay están en español: línea 170 «desconectado», líneas 186-187 «límite payload… timeout». El cuerpo del 400 de la línea 143 también: «llave inválida (16-48 alfanuméricos)».",
+          "arreglo": "Escribe los logs del relay y el cuerpo del 400 en inglés (`connected`, `disconnected`, `invalid key (16-48 alphanumeric)`)."
         },
         {
-          "regla": "english",
-          "archivo": "server/index.js",
-          "linea": 185,
-          "cita": "console.log(`dotrino-tunnel relay en http://${HOST}:${PORT} (público: https://${PUBLIC_HOST})`)",
-          "porque": "traza de arranque del daemon en español (también línea 186: 'límite payload...')",
-          "arreglo": "escribir la traza de arranque en inglés, p.ej. 'dotrino-tunnel relay listening on...'"
+          "regla": "duplicado",
+          "archivo": "web/src/App.vue",
+          "linea": 59,
+          "cita": "function corsHeaders () { ... 'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',",
+          "porque": "La misma regla de CORS (cabeceras permitidas y respuesta 204 al preflight) está escrita también en lib/index.js:175-177 y 181-183, así que cambiarla obliga a tocar los dos sitios.",
+          "arreglo": "Deja una sola definición de las cabeceras CORS y de la respuesta al preflight, y que las dos copias la importen."
         },
         {
-          "regla": "plain",
-          "archivo": "web/index.html",
-          "linea": 9,
-          "cita": "<title>Dotrino Tunnel — túnel reverso autohospedado</title>",
-          "porque": "'autohospedado' (self-hosted) es jerga técnica prohibida en copy pública; se repite en las líneas 10, 22, 23 y 39 (meta description, og:description y JSON-LD)",
-          "arreglo": "explicar el beneficio sin el término, p.ej. 'túnel reverso que corre en tu propia máquina, sin depender de terceros'"
-        },
-        {
-          "regla": "pillars",
-          "archivo": "lib/crypto.js",
-          "linea": 34,
-          "cita": "export async function generateKeypair () {",
-          "porque": "genera, firma y verifica pares de llaves ECDSA P-256 a mano (WebCrypto) en vez de usar @dotrino/identity; el propio comentario de cabecera admite que replica 'la curva de la identidad Dotrino' (aunque hoy no se importa desde ningún otro archivo del repo)",
-          "arreglo": "eliminar el archivo si es código muerto, o delegar la identidad/firma del túnel en @dotrino/identity si se necesita"
+          "regla": "duplicado",
+          "archivo": "web/src/App.vue",
+          "linea": 41,
+          "cita": "const B62 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789' function genKey (n = 32) {",
+          "porque": "Es el mismo alfabeto y el mismo generador de llaves que `generateKey` y `B62` en lib/index.js:26-33. `wsUrl` (App.vue:73-78) también repite `wsUrl` de lib/index.js:35-41.",
+          "arreglo": "Saca la generación de la llave y la construcción de la URL del WebSocket a un módulo compartido que usen la web y la lib."
         }
       ],
-      "revisados": 9,
-      "notas": "El repo no tiene src/, agent/ ni locales/ en la raíz; solo lib/, server/ y web/. No se reportan hallazgos de voseo (la i18n de web/src/App.vue y la ayuda de lib/bin/cli.js ya están en tuteo correcto) ni de sealed: el repo no usa @dotrino/proxy-client en absoluto — implementa su propio WebSocket contra r.dotrino.com, que es el propio servicio de este pilar (dotrino-tunnel), no una re-implementación de proxy.dotrino.com, así que tampoco lo cuento como incumplimiento de pillars. No inspeccioné el c",
-      "costoUSD": 0.7250273999999999,
-      "duracionMs": 153379
+      "revisados": 8,
+      "notas": "Solo pude hacer búsquedas por nombre, sin Bash: hay `server/index.js`, `lib/index.js`, `lib/bin/cli.js`, `web/src/App.vue`, `web/src/main.js` y `web/index.html`, y no abrí `lib/test`. La copy de la web usa términos de desarrollo (request, webhook, CORS, Content-Type) porque es una herramienta para quien programa, y no la marqué como `plain`. La CLI y la web están en tuteo. No usa `proxy-client`, por lo que `sealed` no aplica. App.vue usa `new WebSocket` contra su propio relay `/_agent`, no contr",
+      "costoUSD": 0.2349798,
+      "duracionMs": 37779
     },
     "dotrino-tutorial": {
       "commit": "01d1c40",
@@ -2114,8 +2003,8 @@
       "duracionMs": 31536
     },
     "dotrino-vault": {
-      "commit": "3decfdf",
-      "fecha": "2026-08-30",
+      "commit": "f50d62a",
+      "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -2123,46 +2012,63 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [
         {
+          "regla": "pillars",
+          "archivo": "web/src/Console.vue",
+          "linea": 29,
+          "cita": "import jsQR from 'jsqr'",
+          "porque": "Lee QR a mano con jsQR (usos en las líneas 1113 y 1151) teniendo el paquete @dotrino/qr.",
+          "arreglo": "Usar @dotrino/qr para leer el código en vez de jsQR."
+        },
+        {
+          "regla": "pillars",
+          "archivo": "web/src/qr.js",
+          "linea": 7,
+          "cita": "import qrcode from 'qrcode-generator'",
+          "porque": "La app genera QR con un generador propio (qrSvg dibuja los módulos como <rect>) en vez de @dotrino/qr.",
+          "arreglo": "Sustituir qrSvg por @dotrino/qr y borrar este archivo."
+        },
+        {
           "regla": "voseo",
-          "archivo": "bin/dotrino-vaultd.js",
-          "linea": 69,
-          "cita": "console.log(`\\nEmparejá un dispositivo (válido ${expiresInMs / 60000} min):\\n`)",
-          "porque": "'Emparejá' y 'pegá' (línea 72) son imperativos voseantes en texto que la CLI imprime directamente a quien la usa al pasar --pair; aparece 2 veces en el mismo bloque.",
-          "arreglo": "Usar tuteo: 'Empareja un dispositivo...' y 'O pega este código:'."
+          "archivo": "web/src/Vault.vue",
+          "linea": 78,
+          "cita": "none: 'Ninguno todavía. Conéctalo como cualquier otro aparato, arriba, y dale el permiso de contraseñas.',",
+          "porque": "Texto de UI con «dale», forma voseante, en medio de una frase en tuteo.",
+          "arreglo": "Decir «y dale el permiso» como «y concédele el permiso de contraseñas»."
         },
         {
-          "regla": "english",
-          "archivo": "src/secretsStore.js",
-          "linea": 431,
-          "cita": "throw new Error(`putWrap: no existe la generación ${gen} de ${owner}`)",
-          "porque": "Es una aserción interna de integridad del store (no llega como copy al usuario, se traga o cae en logs del daemon) y mezcla un prefijo en inglés ('putWrap:') con el mensaje en español; se repite en la línea 438.",
-          "arreglo": "Escribir el mensaje en inglés, p. ej. `putWrap: generation ${gen} of ${owner} does not exist`."
+          "regla": "voseo",
+          "archivo": "web/src/Console.vue",
+          "linea": 157,
+          "cita": "native_step: 'Para aprobar desde la pantalla Pedidos de este teléfono, dale permiso en tu bóveda:',",
+          "porque": "Texto de UI con «dale», forma voseante.",
+          "arreglo": "Decir «concédele permiso en tu bóveda:»."
         },
         {
-          "regla": "english",
-          "archivo": "lib/src/atrest.js",
-          "linea": 173,
-          "cita": "throw new Error('at-rest: la comprobación falló, no se toca el original')",
-          "porque": "Es un error interno de verificación de la migración a cifrado en reposo (se propaga a un log/crash del daemon, no es copy de la CLI), y mezcla el prefijo inglés 'at-rest:' con el resto en español.",
-          "arreglo": "Escribir en inglés, p. ej. `at-rest: verification failed, original left untouched`."
+          "regla": "voseo",
+          "archivo": "lib/bin/dotrino-env.js",
+          "linea": 358,
+          "cita": "...hazlo en la bóveda (dotrino-vault secret set) o dale a alguien el permiso de aprobar.",
+          "porque": "Mensaje que la CLI imprime a quien la usa, con «dale».",
+          "arreglo": "Decir «o concede a alguien el permiso de aprobar»."
         },
         {
-          "regla": "plain",
-          "archivo": "web/src/App.vue",
-          "linea": 152,
-          "cita": "'seguridad': 'Encryption, store and scope',",
-          "porque": "Es el texto visible de un enlace en la landing pública (se renderiza en App.vue:469/479 vía wikiTitles), y usa 'scope', que está en la lista de argot prohibido en copy pública.",
-          "arreglo": "Cambiar a un beneficio en lenguaje llano, p. ej. 'Encryption, storage and permissions' (la versión es ya lo hace: 'Cifrado, store y alcance' evita 'scope', aunque 'store' sin traducir también convendría cambiarlo a 'guardado')."
+          "regla": "voseo",
+          "archivo": "packaging/release-env.mjs",
+          "linea": 52,
+          "cita": "console.log('\\n(simulacro — usá --publish para aplicar y publicar)')",
+          "porque": "Salida de la CLI para quien la usa, con «usá», imperativo voseante.",
+          "arreglo": "Decir «usa --publish para aplicar y publicar»."
         }
       ],
-      "revisados": 11,
-      "notas": "src/sealer.js, lib/src/sealed.js y web/src/Vault.vue (sealing local) cifran el payload por su cuenta con ECDH+AES-GCM antes de sendByPubkey (patrón documentado en docs/secretos-sellados.md); es el caso 'NO es infracción' de la regla sealed, no un hallazgo. No se abrieron src/ctl.js completo, web/src/Console.vue completo, ni test/ ni docs/ más allá de greps puntuales.",
-      "costoUSD": 1.1563828,
-      "duracionMs": 217230
+      "revisados": 4,
+      "notas": "Solo abrí 3 archivos con Read y el resto lo cubrí con Grep. No miré a fondo ni la regla `duplicado` ni la `plain`: web/src/qr.js y src/qr.js generan QR distintos (SVG y terminal), así que no los reporté como duplicado. El uso de crypto.subtle en src/ (sealer, commKey, passwordLogins) me pareció del propio núcleo de la bóveda y no lo reporté. Console.vue no envía mensajes dirigidos y Vault.vue arranca con requireSealed: true. src/vault.js y src/client.js usan sendByPubkey con sellos propios (seal",
+      "costoUSD": 0.17564819999999998,
+      "duracionMs": 27327
     },
     "dotrino-verifier": {
       "commit": "d9c1bfa",
