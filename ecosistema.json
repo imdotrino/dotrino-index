@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-14T21:52:21-0500",
+  "generado": "2026-10-14T22:00:03-0500",
   "fecha": "2026-10-14",
   "por": "seyacat",
-  "commit": "c37712c",
+  "commit": "42ca8e8",
   "vivo": false,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -39,10 +39,10 @@
     "frontend": "0.0.0",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.8.1",
-    "@dotrino/identity": "0.114.0",
+    "@dotrino/identity": "0.114.1",
     "@dotrino/install": "0.3.3",
     "@dotrino/lobby": "0.10.0",
-    "dotrino-messenger": "0.5.0",
+    "dotrino-messenger": "0.5.1",
     "dotrino-mundial": "0.1.0",
     "myip": "0.1.0",
     "@dotrino/nav": "0.3.0",
@@ -88,7 +88,7 @@
     "@dotrino/content": "0.5.1",
     "@dotrino/qr": "0.1.1",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.4.12",
+    "@dotrino/roadmap": "0.4.13",
     "@dotrino/sealers": "0.9.1",
     "@dotrino/sso-client": "0.1.0",
     "@dotrino/telegram-bot": "0.2.2",
@@ -188,7 +188,7 @@
   "consumidores": [
     {
       "pilar": "@dotrino/identity",
-      "version": "0.114.0",
+      "version": "0.114.1",
       "enNpm": true,
       "repos": [
         "dotrino-ad-integration",
@@ -691,7 +691,7 @@
     },
     {
       "pilar": "@dotrino/roadmap",
-      "version": "0.4.12",
+      "version": "0.4.13",
       "enNpm": true,
       "repos": [
         "dotrino-vault"
@@ -769,7 +769,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/update",
@@ -1035,7 +1035,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.110.2",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -1138,7 +1138,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -1244,7 +1244,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -1354,7 +1354,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -1485,7 +1485,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -1741,7 +1741,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -1864,7 +1864,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -1998,7 +1998,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -2273,7 +2273,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -2400,7 +2400,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -2634,7 +2634,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -2736,7 +2736,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2774,7 +2774,7 @@
       "subdominio": null,
       "paquete": "@dotrino/feedback",
       "version": "0.1.0",
-      "commit": "a7e5f82",
+      "commit": "9e18bc9",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [
@@ -2791,7 +2791,7 @@
           "existe": true,
           "fecha": "2026-09-16",
           "dias": 28,
-          "commits": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2821,7 +2821,7 @@
           "existe": true,
           "fecha": "2026-08-28",
           "dias": 47,
-          "commits": 3,
+          "commits": 4,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -2839,7 +2839,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         }
       ],
       "rotas": [],
@@ -3013,7 +3013,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -3242,7 +3242,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.107.2",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3311,7 +3311,7 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "7004a35",
+      "commit": "280955f",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [
@@ -3335,7 +3335,7 @@
           "existe": true,
           "fecha": "2026-07-29",
           "dias": 77,
-          "commits": 50,
+          "commits": 51,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3343,9 +3343,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-13",
-          "dias": 1,
-          "commits": 2,
+          "fecha": "2026-10-14",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3365,7 +3365,7 @@
           "existe": true,
           "fecha": "2026-08-29",
           "dias": 46,
-          "commits": 22,
+          "commits": 23,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3383,7 +3383,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3503,7 +3503,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -3625,8 +3625,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/identity",
-      "version": "0.114.0",
-      "commit": "c4cad66",
+      "version": "0.114.1",
+      "commit": "ad6de82",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [
@@ -3642,7 +3642,7 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3672,7 +3672,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 45,
-          "commits": 76,
+          "commits": 77,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3702,7 +3702,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "c37712c",
+      "commit": "42ca8e8",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [],
@@ -3716,7 +3716,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 27,
-          "commits": 189,
+          "commits": 190,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3746,7 +3746,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 45,
-          "commits": 205,
+          "commits": 206,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -4104,7 +4104,7 @@
       "interna": false,
       "stack": "vite+vue",
       "plataformas": {
-        "pwa": "0.5.0",
+        "pwa": "0.5.1",
         "ios": {
           "version": "0.4.0",
           "estado": "atrasada"
@@ -4116,8 +4116,8 @@
       },
       "subdominio": "messenger.dotrino.com",
       "paquete": "dotrino-messenger",
-      "version": "0.5.0",
-      "commit": "46853b2",
+      "version": "0.5.1",
+      "commit": "1606e09",
       "fecha": "2026-10-14",
       "catalogo": {
         "nombre": "Dotrino Messenger",
@@ -4151,7 +4151,7 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 0,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4181,7 +4181,7 @@
           "existe": true,
           "fecha": "2026-09-12",
           "dias": 32,
-          "commits": 55,
+          "commits": 56,
           "tope": false,
           "faltan": [],
           "rojo": true
@@ -4197,7 +4197,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.108.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -4481,7 +4481,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -4599,7 +4599,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -4642,7 +4642,7 @@
       "subdominio": "names.dotrino.com",
       "paquete": "@dotrino/names",
       "version": "0.1.0",
-      "commit": "4a7fba4",
+      "commit": "0ba551d",
       "fecha": "2026-10-14",
       "catalogo": {
         "nombre": "Nombres",
@@ -4664,7 +4664,7 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 0,
-          "commits": 8,
+          "commits": 10,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4674,7 +4674,7 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 0,
-          "commits": 0,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5043,7 +5043,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -5227,7 +5227,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -5363,7 +5363,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5682,7 +5682,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.108.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5799,7 +5799,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -5943,7 +5943,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6077,7 +6077,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/webrtc",
@@ -6260,7 +6260,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -6384,7 +6384,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -6610,7 +6610,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.112.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6738,7 +6738,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         }
       ],
       "rotas": [],
@@ -6868,7 +6868,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -7019,8 +7019,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
-      "version": "0.4.12",
-      "commit": "2ee8d6a",
+      "version": "0.4.13",
+      "commit": "01064d5",
       "fecha": "2026-10-14",
       "catalogo": null,
       "deps": [
@@ -7037,7 +7037,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 5,
-          "commits": 66,
+          "commits": 68,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7157,7 +7157,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -7505,7 +7505,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -7633,7 +7633,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         }
       ],
       "rotas": [],
@@ -7831,7 +7831,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -8193,7 +8193,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.105.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -8316,7 +8316,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.62.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8613,7 +8613,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -8757,7 +8757,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
@@ -9193,12 +9193,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "^0.111.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/roadmap",
           "pide": "0.3.19",
-          "publicado": "0.4.12"
+          "publicado": "0.4.13"
         },
         {
           "dep": "@dotrino/store",
@@ -9324,7 +9324,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         }
       ],
       "rotas": [],
@@ -9446,7 +9446,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.107.1",
-          "publicado": "0.114.0"
+          "publicado": "0.114.1"
         },
         {
           "dep": "@dotrino/install",
