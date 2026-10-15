@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-15T15:43:14-0500",
+  "generado": "2026-10-15T18:45:50-0500",
   "fecha": "2026-10-15",
   "por": "seyacat",
-  "commit": "fa3edf6",
+  "commit": "ad3d69d",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -74,7 +74,7 @@
     "@dotrino/tutorial": "0.2.0",
     "@dotrino/vaultd": "0.154.0",
     "@dotrino/vault": "0.84.0",
-    "@dotrino/verifier": "0.2.0",
+    "@dotrino/verifier": "0.3.0",
     "wallet": "2.60.0",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.2.0",
@@ -154,7 +154,7 @@
     "websocket-proxy": null,
     "@dotrino/reputation": "0.12.0",
     "dotrino-qrgenerator": null,
-    "@dotrino/verifier": "0.2.0",
+    "@dotrino/verifier": "0.3.0",
     "diamonds": "0.0.9-q",
     "@dotrino/remote-agent": "0.19.0",
     "facturero": null,
@@ -697,7 +697,7 @@
     },
     {
       "pilar": "@dotrino/verifier",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "enNpm": true,
       "repos": [
         "dotrino-ad-integration"
@@ -746,8 +746,8 @@
       "subdominio": null,
       "paquete": "dotrino-ad-integration",
       "version": "0.1.0",
-      "commit": "1053635",
-      "fecha": "2026-10-08",
+      "commit": "09663ad",
+      "fecha": "2026-10-15",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -764,7 +764,7 @@
           "existe": true,
           "fecha": "2026-09-07",
           "dias": 31,
-          "commits": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3318,7 +3318,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "fa3edf6",
+      "commit": "ad3d69d",
       "fecha": "2026-10-15",
       "catalogo": null,
       "deps": [],
@@ -3332,7 +3332,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 28,
-          "commits": 194,
+          "commits": 195,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3342,7 +3342,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3362,7 +3362,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 46,
-          "commits": 210,
+          "commits": 211,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3376,7 +3376,7 @@
       "npmPendiente": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 2
+        "sinPublicar": 1
       },
       "auditoria": {
         "por": "seyacat",
@@ -4150,7 +4150,7 @@
       "subdominio": "names.dotrino.com",
       "paquete": "@dotrino/names",
       "version": "0.1.0",
-      "commit": "c2c7f3b",
+      "commit": "365d0af",
       "fecha": "2026-10-15",
       "catalogo": {
         "nombre": "Nombres",
@@ -4172,7 +4172,7 @@
           "existe": true,
           "fecha": "2026-10-14",
           "dias": 1,
-          "commits": 12,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4182,7 +4182,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4783,7 +4783,7 @@
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "c460fbf",
+      "commit": "bea5c58",
       "fecha": "2026-10-15",
       "catalogo": {
         "nombre": "Contraseñas",
@@ -4808,7 +4808,7 @@
           "existe": true,
           "fecha": "2026-10-13",
           "dias": 2,
-          "commits": 5,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4818,7 +4818,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 0,
-          "commits": 1,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4838,7 +4838,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 46,
-          "commits": 88,
+          "commits": 90,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6370,7 +6370,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.13",
-      "commit": "89dab96",
+      "commit": "ade9116",
       "fecha": "2026-10-15",
       "catalogo": null,
       "deps": [
@@ -6387,7 +6387,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 6,
-          "commits": 77,
+          "commits": 80,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8471,15 +8471,7 @@
         }
       ],
       "rotas": [],
-      "npmPendiente": [
-        {
-          "paquete": "@dotrino/verifier",
-          "ruta": "dotrino-verifier",
-          "local": "0.3.0",
-          "npm": "0.2.0",
-          "sentido": "sin-publicar"
-        }
-      ],
+      "npmPendiente": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -8509,7 +8501,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 5
     },
     {
       "repo": "dotrino-wallet",
