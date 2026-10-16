@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-15T07:42:19-0500",
+  "generado": "2026-10-15T22:49:47-0500",
   "reglas": [
     "voseo",
     "english",
@@ -2003,7 +2003,7 @@
       "duracionMs": 31536
     },
     "dotrino-vault": {
-      "commit": "f50d62a",
+      "commit": "1124cce",
       "fecha": "2026-10-15",
       "por": "seyacat",
       "modelo": "sonnet",
@@ -2019,56 +2019,48 @@
         {
           "regla": "pillars",
           "archivo": "web/src/Console.vue",
-          "linea": 29,
+          "linea": 30,
           "cita": "import jsQR from 'jsqr'",
-          "porque": "Lee QR a mano con jsQR (usos en las líneas 1113 y 1151) teniendo el paquete @dotrino/qr.",
-          "arreglo": "Usar @dotrino/qr para leer el código en vez de jsQR."
+          "porque": "Lee códigos QR a mano con jsQR (usos en las líneas 1119 y 1157) teniendo el paquete @dotrino/qr, que no está en web/package.json.",
+          "arreglo": "Leer los QR con @dotrino/qr en lugar de jsQR."
         },
         {
           "regla": "pillars",
           "archivo": "web/src/qr.js",
           "linea": 7,
           "cita": "import qrcode from 'qrcode-generator'",
-          "porque": "La app genera QR con un generador propio (qrSvg dibuja los módulos como <rect>) en vez de @dotrino/qr.",
-          "arreglo": "Sustituir qrSvg por @dotrino/qr y borrar este archivo."
+          "porque": "Es un generador de QR propio en SVG, y @dotrino/qr ya dibuja códigos QR.",
+          "arreglo": "Sustituir qrSvg por @dotrino/qr y borrar este módulo."
         },
         {
-          "regla": "voseo",
-          "archivo": "web/src/Vault.vue",
-          "linea": 78,
-          "cita": "none: 'Ninguno todavía. Conéctalo como cualquier otro aparato, arriba, y dale el permiso de contraseñas.',",
-          "porque": "Texto de UI con «dale», forma voseante, en medio de una frase en tuteo.",
-          "arreglo": "Decir «y dale el permiso» como «y concédele el permiso de contraseñas»."
+          "regla": "english",
+          "archivo": "bin/sea-entry.js",
+          "linea": 32,
+          "cita": ".catch((e) => { console.error('error fatal del daemon:', e.message); process.exit(1) })",
+          "porque": "Son trazas de fallo del daemon en español, y en el mismo archivo hay otras cuatro (líneas 17, 19, 23 y 28).",
+          "arreglo": "Escribir estos mensajes de log en inglés, por ejemplo 'fatal daemon error:'."
         },
         {
-          "regla": "voseo",
-          "archivo": "web/src/Console.vue",
-          "linea": 157,
-          "cita": "native_step: 'Para aprobar desde la pantalla Pedidos de este teléfono, dale permiso en tu bóveda:',",
-          "porque": "Texto de UI con «dale», forma voseante.",
-          "arreglo": "Decir «concédele permiso en tu bóveda:»."
+          "regla": "english",
+          "archivo": "bin/dotrino-vault-tui.js",
+          "linea": 26,
+          "cita": "console.error('error en la TUI:', e?.stack || e?.message || e)",
+          "porque": "Es una traza de fallo con stack, que sirve para diagnosticar y no es copy de interfaz.",
+          "arreglo": "Escribirlo en inglés: 'TUI error:'."
         },
         {
-          "regla": "voseo",
-          "archivo": "lib/bin/dotrino-env.js",
-          "linea": 358,
-          "cita": "...hazlo en la bóveda (dotrino-vault secret set) o dale a alguien el permiso de aprobar.",
-          "porque": "Mensaje que la CLI imprime a quien la usa, con «dale».",
-          "arreglo": "Decir «o concede a alguien el permiso de aprobar»."
-        },
-        {
-          "regla": "voseo",
-          "archivo": "packaging/release-env.mjs",
-          "linea": 52,
-          "cita": "console.log('\\n(simulacro — usá --publish para aplicar y publicar)')",
-          "porque": "Salida de la CLI para quien la usa, con «usá», imperativo voseante.",
-          "arreglo": "Decir «usa --publish para aplicar y publicar»."
+          "regla": "english",
+          "archivo": "lib/src/atrest.js",
+          "linea": 179,
+          "cita": "throw new Error('at-rest: la comprobación falló, no se toca el original')",
+          "porque": "Es un mensaje de error lanzado en español, y la línea 135 repite el fallo con 'at-rest: formato desconocido'. El resto de la librería lanza errores en inglés.",
+          "arreglo": "Escribirlo en inglés: 'at-rest: verification failed, the original is untouched' y 'at-rest: unknown format'."
         }
       ],
-      "revisados": 4,
-      "notas": "Solo abrí 3 archivos con Read y el resto lo cubrí con Grep. No miré a fondo ni la regla `duplicado` ni la `plain`: web/src/qr.js y src/qr.js generan QR distintos (SVG y terminal), así que no los reporté como duplicado. El uso de crypto.subtle en src/ (sealer, commKey, passwordLogins) me pareció del propio núcleo de la bóveda y no lo reporté. Console.vue no envía mensajes dirigidos y Vault.vue arranca con requireSealed: true. src/vault.js y src/client.js usan sendByPubkey con sellos propios (seal",
-      "costoUSD": 0.17564819999999998,
-      "duracionMs": 27327
+      "revisados": 7,
+      "notas": "Hice la auditoría casi toda con Grep, sin abrir los archivos enteros, así que `revisados` solo cuenta los 7 que abrí. Dejé fuera de los hallazgos dos cosas, por ser ambiguas: el cifrado propio de lib/src/sealed.js y src/profiles.js, y el IndexedDB de web/src/Vault.vue:148. Sellado: web/src/Vault.vue:502 usa requireSealed y lib/src/core/vault.js:2276 explica por qué el cliente del daemon no lo usa. Voseo: no encontré en la copy de usuario; solo aparece en comentarios, tests y docs. No hallé dupli",
+      "costoUSD": 0.2458245,
+      "duracionMs": 34748
     },
     "dotrino-verifier": {
       "commit": "d9c1bfa",
