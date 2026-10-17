@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-17T09:04:02-0500",
+  "generado": "2026-10-17T09:05:39-0500",
   "fecha": "2026-10-17",
   "por": "seyacat",
-  "commit": "59fcc60",
+  "commit": "6be45c3",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -76,7 +76,7 @@
     "@dotrino/vault": "0.90.3",
     "@dotrino/verifier": "0.3.0",
     "wallet": "2.60.0",
-    "@dotrino/content-client": "0.3.1",
+    "@dotrino/content-client": "0.3.2",
     "dotrino-social-bot": "0.3.0",
     "@dotrino/env": "0.90.3",
     "@dotrino/inspector": "0.2.2",
@@ -85,7 +85,7 @@
     "@dotrino/passmanager": "0.18.4",
     "dotrino-ad-integration": "0.1.0",
     "@dotrino/compat": "0.4.0",
-    "@dotrino/content": "0.6.2",
+    "@dotrino/content": "0.6.3",
     "@dotrino/qr": "0.3.0",
     "dotrino-qrshare": "0.2.0",
     "@dotrino/roadmap": "0.4.30",
@@ -118,7 +118,7 @@
     "@dotrino/identity": "0.120.0",
     "cuarenta": null,
     "dotrino-profile-page": null,
-    "@dotrino/content-client": "0.3.1",
+    "@dotrino/content-client": "0.3.2",
     "dotrino-mundial": null,
     "dotrino-base64": null,
     "@dotrino/ia-agent": "0.9.0",
@@ -127,7 +127,7 @@
     "@dotrino/sso-client": null,
     "@dotrino/bots": null,
     "@dotrino/passmanager-extension": null,
-    "@dotrino/content": "0.6.2",
+    "@dotrino/content": "0.6.3",
     "@dotrino/feedback": null,
     "favicon-generator": "0.1.2",
     "@dotrino/inspector": "0.2.2",
@@ -663,7 +663,7 @@
     },
     {
       "pilar": "@dotrino/content-client",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "enNpm": true,
       "repos": [
         "dotrino-ar",
@@ -1067,6 +1067,11 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/content-client",
+          "pide": "0.3.1",
+          "publicado": "0.3.2"
+        },
+        {
           "dep": "@dotrino/store",
           "pide": "0.12.3",
           "publicado": "0.12.4"
@@ -1084,7 +1089,7 @@
         "notas": "Abrí i18n.js, index.html, ui/works.js, ui/viewer.js y works/blobs.js, y usé Grep sobre src/ y public/ para voseo, WebSocket, subtle, sendByPubkey, topbar y los throw/console. No hay mensajes dirigidos, así que `sealed` no aplica. Las funciones `refresh` de works.js y viewer.js se parecen pero son demasiado cortas para reportarlas como duplicado.",
         "hallazgos": []
       },
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-base64",
@@ -1748,22 +1753,7 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "npmPendiente": [
-        {
-          "paquete": "@dotrino/content",
-          "ruta": "dotrino-content",
-          "local": "0.6.3",
-          "npm": "0.6.2",
-          "sentido": "sin-publicar"
-        },
-        {
-          "paquete": "@dotrino/content-client",
-          "ruta": "dotrino-content/lib",
-          "local": "0.3.2",
-          "npm": "0.3.1",
-          "sentido": "sin-publicar"
-        }
-      ],
+      "npmPendiente": [],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -1796,7 +1786,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 3
     },
     {
       "repo": "dotrino-critters",
@@ -2385,6 +2375,11 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/content-client",
+          "pide": "0.3.1",
+          "publicado": "0.3.2"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
           "publicado": "0.36.2"
@@ -2407,7 +2402,7 @@
         "notas": "No hay hallazgos. Solo pude usar Glob y Grep, porque Bash está deshabilitado y no abrí ningún archivo completo, así que `revisados` es 0. Los Grep sobre `src/` y `index.html` no encontraron voseo en la copy de usuario: solo aparece en comentarios (`src/App.vue:254`, `src/services/identity.js:85`, `src/services/notifications.js:4`), que están permitidos. Los `throw` y `console.warn` están en inglés. `src/services/proxy.js` arranca con `requireSealed: true` y usa `sendSealed`. La barra superior es",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -3528,7 +3523,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "59fcc60",
+      "commit": "6be45c3",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
@@ -3542,7 +3537,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 30,
-          "commits": 210,
+          "commits": 211,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3572,7 +3567,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 48,
-          "commits": 226,
+          "commits": 227,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -7275,7 +7270,7 @@
         {
           "dep": "@dotrino/content-client",
           "pide": "0.2.4",
-          "publicado": "0.3.1"
+          "publicado": "0.3.2"
         },
         {
           "dep": "@dotrino/identity",
