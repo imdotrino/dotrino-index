@@ -17,7 +17,7 @@ medir, y el informe lo dice en vez de dar a todos por sanos.
 
 Dos generadores, y se corren en momentos distintos:
 
-| | `indice.mjs` | `audit.mjs` |
+| | `index.mjs` | `audit.mjs` |
 |---|---|---|
 | Qué mira | git, archivos, versiones y fechas | **el contenido del código**, leyéndolo |
 | Cuánto cuesta | segundos, gratis | minutos y dinero (un `claude -p` por repo) |
@@ -25,7 +25,7 @@ Dos generadores, y se corren en momentos distintos:
 
 ## Cómo generar tu parte (con dos repos alcanza)
 
-El generador vive **acá dentro** (`indice.mjs` + `indice-web.mjs`) y mira **la
+El generador vive **acá dentro** (`index.mjs` + `index-web.mjs`) y mira **la
 carpeta que contiene a este repo**: sus hermanos son los repos del ecosistema.
 Clónalo al lado de los repos que tengas:
 
@@ -38,7 +38,7 @@ Clónalo al lado de los repos que tengas:
 
 ```bash
 git -C dotrino-index pull          # 1. parte de lo ya publicado (importante)
-node dotrino-index/indice.mjs --web   # 2. mide lo que tengas y suma
+node dotrino-index/index.mjs --web   # 2. mide lo que tengas y suma
 git -C dotrino-index add -A && git -C dotrino-index commit -m "medido: <lo tuyo>"
 git -C dotrino-index push          # 3. publica (a main va por PR)
 ```
@@ -93,7 +93,7 @@ De ahí salen **dos indicadores distintos** en la tabla, y se leen por separado:
   40 commits describe otro código, igual que un README de hace 40.
 
 El resultado vive en `audit.json` y **suma igual que `ecosistema.json`**: cada
-pasada reescribe los repos que auditó y deja los demás como estaban. `indice.mjs`
+pasada reescribe los repos que auditó y deja los demás como estaban. `index.mjs`
 solo lo lee — y lee de ahí también los umbrales, para no llamar «atrasada» a una
 auditoría que el auditor da por vigente.
 
@@ -111,7 +111,7 @@ no lo tiene. El precio es que si la norma cambia, ese texto se actualiza a mano.
 
 `index.html`, `ecosistema.json` y `audit.json` son **generados**. Cualquier cambio hecho a
 mano en `index.html` se pierde en la siguiente pasada: lo que hay que tocar es
-`indice-web.mjs` (la plantilla) o `indice.mjs` (los datos). El script escribe
+`index-web.mjs` (la plantilla) o `index.mjs` (los datos). El script escribe
 además `INDICE.md` y `ECOSISTEMA.json` en la carpeta de arriba: son tu copia
 local para leer, no se publican.
 
@@ -133,8 +133,8 @@ está en el catálogo ni cuándo se tocó su ficha, y sin los repos de los pilar
 se sabe qué versión está publicada de cada uno.
 
 ```bash
-node dotrino-index/indice.mjs --web            # suma: actualiza lo que ve, conserva el resto
-node dotrino-index/indice.mjs --web --podar    # "esta pasada las vio todas": borra lo que falte
+node dotrino-index/index.mjs --web            # suma: actualiza lo que ve, conserva el resto
+node dotrino-index/index.mjs --web --podar    # "esta pasada las vio todas": borra lo que falte
 ```
 
 `--podar` es para cuando un repo se renombra o desaparece, y solo tiene sentido

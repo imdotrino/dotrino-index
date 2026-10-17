@@ -2,10 +2,10 @@
 /**
  * Índice de ESTADO del ecosistema Dotrino.
  *
- *   node dotrino-index/indice.mjs          # rápido, sin red (git + archivos)
- *   node dotrino-index/indice.mjs --vivo   # + versiones de npm y qué commit sirve cada dominio
- *   node dotrino-index/indice.mjs --web    # + la página de index.dotrino.com
- *   node dotrino-index/indice.mjs --web --podar   # …y olvida lo que ya no está
+ *   node dotrino-index/index.mjs          # rápido, sin red (git + archivos)
+ *   node dotrino-index/index.mjs --vivo   # + versiones de npm y qué commit sirve cada dominio
+ *   node dotrino-index/index.mjs --web    # + la página de index.dotrino.com
+ *   node dotrino-index/index.mjs --web --podar   # …y olvida lo que ya no está
  *
  * DÓNDE VIVE. Este script está DENTRO del repo que publica (`dotrino-index`), y
  * mira **la carpeta que lo contiene**: sus hermanos son los repos del ecosistema.
@@ -32,12 +32,12 @@ import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { join, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { paginaWeb } from './indice-web.mjs'
+import { webPage } from './index-web.mjs'
 
 /** La carpeta de este repo, y la raíz del ecosistema = la que lo contiene. */
-const AQUI = dirname(fileURLToPath(import.meta.url))
-const RAIZ = dirname(AQUI)
-const VIVO = process.argv.includes('--vivo')
+const HERE = dirname(fileURLToPath(import.meta.url))
+const ROOT = dirname(HERE)
+const LIVE = process.argv.includes('--vivo')
 const WEB = process.argv.includes('--web')
 /**
  * La página se escribe SUMANDO, no reemplazando: quien la genera casi nunca tiene
@@ -46,23 +46,23 @@ const WEB = process.argv.includes('--web')
  * la última vez. `--podar` es la excepción explícita: dice "esta pasada las vio
  * todas", y lo que no aparezca se borra (repo renombrado o que ya no existe).
  */
-const PODAR = process.argv.includes('--podar')
+const PRUNE = process.argv.includes('--podar')
 
 /**
  * El repo que publica la vista web (`index.dotrino.com`): ESTE. Se deriva del
  * nombre real de la carpeta, no se escribe a dedo, para que también funcione en
  * una copia clonada con otro nombre.
  */
-const REPO_WEB = basename(AQUI)
+const REPO_WEB = basename(HERE)
 /**
  * Lo que NO sale en la página pública. `dotrino-project` (este repo) y
  * `dotrino-docs` son privados y, por norma (§11.6), no llevan colaboradores: nadie
  * de fuera puede arreglarlos, y publicar su estado sería enseñar lo que no se ve.
  */
-const PRIVADOS = new Set(['dotrino-project', 'dotrino-docs'])
+const PRIVATE_REPOS = new Set(['dotrino-project', 'dotrino-docs'])
 
 /** Brecha (en días) a partir de la cual algo se marca en rojo por desactualizado. */
-const ROJO_DIAS = 30
+const RED_DAYS = 30
 
 /**
  * LAS VERSIONES ROTAS, del registro de compatibilidad (`dotrino-roadmap`, CONVENCIONES
@@ -74,19 +74,19 @@ const ROJO_DIAS = 30
  * Se lee del DISCO, como todo lo demás: quien no tenga `dotrino-roadmap` al lado no puede
  * medirlo, y eso se dice (en el informe y en la consola) en vez de dar a todos por sanos.
  */
-const REGISTRO_COMPAT = join(RAIZ, 'dotrino-roadmap', 'manifests', 'dotrino.json')
-const ROTAS = (() => {
-  const m = (() => { try { return JSON.parse(readFileSync(REGISTRO_COMPAT, 'utf8')) } catch { return null } })()
+const COMPAT_REGISTRY = join(ROOT, 'dotrino-roadmap', 'manifests', 'dotrino.json')
+const BROKEN = (() => {
+  const m = (() => { try { return JSON.parse(readFileSync(COMPAT_REGISTRY, 'utf8')) } catch { return null } })()
   if (!m) return null
-  const npmDe = Object.fromEntries(Object.entries(m.products || {}).map(([k, v]) => [k, v.npm]).filter(([, n]) => n))
-  const porPaquete = {}
+  const npmOf = Object.fromEntries(Object.entries(m.products || {}).map(([k, v]) => [k, v.npm]).filter(([, n]) => n))
+  const byPackage = {}
   for (const b of m.broken || []) {
-    const npm = npmDe[b.product]
+    const npm = npmOf[b.product]
     // Una rota de un producto sin paquete de npm no se puede cruzar con un package.json.
     // Se guarda igual con el nombre del producto, para que el informe la cuente.
-    ;(porPaquete[npm || b.product] ||= []).push({ product: b.product, versions: b.versions, why: b.why, fix: b.fix })
+    ;(byPackage[npm || b.product] ||= []).push({ product: b.product, versions: b.versions, why: b.why, fix: b.fix })
   }
-  return porPaquete
+  return byPackage
 })()
 
 /**
@@ -94,7 +94,7 @@ const ROTAS = (() => {
  * en entradas viejas, un texto: una versión, o `<=x` / `<x`. `null` si no se entiende —
  * y eso se informa, porque callar sería dar por sano lo que no se pudo mirar.
  */
-function enRotas (versions, version) {
+function inBroken (versions, version) {
   if (Array.isArray(versions)) return versions.includes(version)
   const t = String(versions || '').trim()
   const num = (v) => String(v).split('.').map((n) => parseInt(n, 10) || 0)
@@ -110,11 +110,11 @@ function enRotas (versions, version) {
  * que se busca en el `package-lock.json` y, si no hay, en `node_modules`. Sin ninguno de
  * los tres no se sabe, y se devuelve `null` en vez de suponer la última.
  */
-function versionUsada (dir, dep, pide) {
-  if (/^\d+\.\d+\.\d+(-[\w.]+)?$/.test(String(pide).trim())) return String(pide).trim()
+function usedVersion (dir, dep, requested) {
+  if (/^\d+\.\d+\.\d+(-[\w.]+)?$/.test(String(requested).trim())) return String(requested).trim()
   const lock = (() => { try { return JSON.parse(readFileSync(join(dir, 'package-lock.json'), 'utf8')) } catch { return null } })()
-  const delLock = lock?.packages?.['node_modules/' + dep]?.version
-  if (delLock) return delLock
+  const fromLock = lock?.packages?.['node_modules/' + dep]?.version
+  if (fromLock) return fromLock
   try { return JSON.parse(readFileSync(join(dir, 'node_modules', dep, 'package.json'), 'utf8')).version || null } catch { return null }
 }
 
@@ -123,26 +123,26 @@ function versionUsada (dir, dep, pide) {
  * de 0.43–0.63, y acusarlo por no tener lockfile sería ruido. `null` = no se sabe (y se
  * informa como tal); `false` = imposible, y no se cuenta.
  */
-function puedeCaer (pide, versions) {
-  const m = /^([\^~>=]*)\s*(\d+\.\d+\.\d+)/.exec(String(pide).trim())
+function mayResolveTo (requested, versions) {
+  const m = /^([\^~>=]*)\s*(\d+\.\d+\.\d+)/.exec(String(requested).trim())
   if (!m) return null
-  if (Array.isArray(versions)) return versions.some(v => satisface(pide, v)) ? null : false
+  if (Array.isArray(versions)) return versions.some(v => satisfies(requested, v)) ? null : false
   // Entrada vieja en texto (`<=x`, `<x` o una versión): basta con mirar el suelo del rango.
-  const suelo = enRotas(versions, m[2])
-  return suelo === false ? false : null
+  const floor = inBroken(versions, m[2])
+  return floor === false ? false : null
 }
 
 /** Los usos de versiones rotas de una unidad (la raíz de un repo o una subcarpeta con package.json). */
-function usosRotos (dir, unidad, deps) {
-  if (!ROTAS) return []
+function brokenUsesOf (dir, unit, deps) {
+  if (!BROKEN) return []
   const out = []
-  for (const [dep, pide] of Object.entries(deps || {})) {
-    if (!ROTAS[dep] || String(pide).startsWith('file:')) continue
-    const version = versionUsada(dir, dep, pide)
-    for (const b of ROTAS[dep]) {
-      const esta = version ? enRotas(b.versions, version) : puedeCaer(pide, b.versions)
-      if (esta === false) continue
-      out.push({ unidad, dep, pide, version, fix: b.fix, why: b.why, sinSaber: esta === null })
+  for (const [dep, requested] of Object.entries(deps || {})) {
+    if (!BROKEN[dep] || String(requested).startsWith('file:')) continue
+    const version = usedVersion(dir, dep, requested)
+    for (const b of BROKEN[dep]) {
+      const isBroken = version ? inBroken(b.versions, version) : mayResolveTo(requested, b.versions)
+      if (isBroken === false) continue
+      out.push({ unidad: unit, dep, pide: requested, version, fix: b.fix, why: b.why, sinSaber: isBroken === null })
     }
   }
   return out
@@ -156,11 +156,11 @@ const sh = (cmd, args, cwd) => {
   } catch { return null }
 }
 const git = (dir, ...args) => sh('git', ['-C', dir, ...args])
-const leerJson = (p) => { try { return JSON.parse(readFileSync(p, 'utf8')) } catch { return null } }
-const leer = (p) => { try { return readFileSync(p, 'utf8') } catch { return null } }
+const readJson = (p) => { try { return JSON.parse(readFileSync(p, 'utf8')) } catch { return null } }
+const read = (p) => { try { return readFileSync(p, 'utf8') } catch { return null } }
 /** Primer camino que exista, de una lista de candidatos relativos al repo. */
-const cual = (dir, ...rutas) => rutas.find(r => existsSync(join(dir, r))) || null
-const hay = (dir, ...rutas) => Boolean(cual(dir, ...rutas))
+const which = (dir, ...paths) => paths.find(r => existsSync(join(dir, r))) || null
+const has = (dir, ...paths) => Boolean(which(dir, ...paths))
 
 /** Concatena el HTML y el `src/` de un repo (para buscar componentes y metas). */
 /**
@@ -168,31 +168,31 @@ const hay = (dir, ...rutas) => Boolean(cual(dir, ...rutas))
  * estampan el `<meta name="commit">` (§3) con un `sed` en el propio workflow: el
  * repo no lo tiene, pero el dominio sí lo sirve.
  */
-function textoDeWorkflows (dir) {
+function workflowsText (dir) {
   const d = join(dir, '.github', 'workflows')
-  let entradas; try { entradas = readdirSync(d) } catch { return '' }
-  return entradas.filter(f => /\.ya?ml$/.test(f)).map(f => leer(join(d, f)) || '').join('\n')
+  let entries; try { entries = readdirSync(d) } catch { return '' }
+  return entries.filter(f => /\.ya?ml$/.test(f)).map(f => read(join(d, f)) || '').join('\n')
 }
 
-function textoDelFrente (dir) {
-  const trozos = []
+function frontText (dir) {
+  const chunks = []
   for (const f of ['index.html', 'web/index.html', 'landing/index.html', 'vite.config.js', 'vite.config.ts']) {
-    const t = leer(join(dir, f)); if (t) trozos.push(t)
+    const t = read(join(dir, f)); if (t) chunks.push(t)
   }
-  const recorrer = (d, prof) => {
-    if (prof > 4) return
-    let entradas; try { entradas = readdirSync(d, { withFileTypes: true }) } catch { return }
-    for (const e of entradas) {
+  const walkDir = (d, depth) => {
+    if (depth > 4) return
+    let entries; try { entries = readdirSync(d, { withFileTypes: true }) } catch { return }
+    for (const e of entries) {
       if (e.name === 'node_modules' || e.name === 'dist' || e.name.startsWith('.')) continue
       const p = join(d, e.name)
-      if (e.isDirectory()) recorrer(p, prof + 1)
-      else if (/\.(vue|js|ts|jsx|tsx|html)$/.test(e.name)) { const t = leer(p); if (t) trozos.push(t) }
+      if (e.isDirectory()) walkDir(p, depth + 1)
+      else if (/\.(vue|js|ts|jsx|tsx|html)$/.test(e.name)) { const t = read(p); if (t) chunks.push(t) }
     }
   }
-  recorrer(join(dir, 'src'), 0)
-  recorrer(join(dir, 'web'), 0)
-  recorrer(join(dir, 'landing'), 0)
-  return trozos.join('\n')
+  walkDir(join(dir, 'src'), 0)
+  walkDir(join(dir, 'web'), 0)
+  walkDir(join(dir, 'landing'), 0)
+  return chunks.join('\n')
 }
 
 /**
@@ -206,7 +206,7 @@ function textoDelFrente (dir) {
  * la major mientras la major sea 0), así que un pilar que sube de minor sí sale
  * en rojo, que es lo que se quiere.
  */
-function satisface (spec, version) {
+function satisfies (spec, version) {
   const num = (v) => String(v).split('.').map((n) => parseInt(n, 10) || 0)
   const cmp = (a, b) => { for (let i = 0; i < 3; i++) { if (a[i] !== b[i]) return a[i] - b[i] } return 0 }
   const v = num(version)
@@ -216,10 +216,10 @@ function satisface (spec, version) {
   const b = num(base)
   if (op === '') return cmp(v, b) === 0
   if (op === '>=') return cmp(v, b) >= 0
-  const tope = op === '~' || b[0] === 0
+  const ceiling = op === '~' || b[0] === 0
     ? (op === '~' ? [b[0], b[1] + 1, 0] : (b[0] === 0 ? [0, b[1] + 1, 0] : [b[0] + 1, 0, 0]))
     : [b[0] + 1, 0, 0]
-  return cmp(v, b) >= 0 && cmp(v, tope) < 0
+  return cmp(v, b) >= 0 && cmp(v, ceiling) < 0
 }
 
 // ─── frescura: ¿se cuenta lo que se hace? ──────────────────────────────────
@@ -230,9 +230,9 @@ function satisface (spec, version) {
  * Un README que lleva 30 commits sin moverse mientras el código sí se movió está
  * contando otra app.
  */
-const diasEntre = (desde, hasta) => {
-  if (!desde || !hasta) return null
-  const d = Math.round((new Date(`${hasta}T00:00:00Z`) - new Date(`${desde}T00:00:00Z`)) / 86400000)
+const daysBetween = (since, until) => {
+  if (!since || !until) return null
+  const d = Math.round((new Date(`${until}T00:00:00Z`) - new Date(`${since}T00:00:00Z`)) / 86400000)
   return d > 0 ? d : 0
 }
 
@@ -243,7 +243,7 @@ const diasEntre = (desde, hasta) => {
  * portada de toda app Vite (su cáscara casi no cambia); mirar todo `src/` la daba
  * por fresca siempre (cualquier cambio de lógica contaba).
  */
-const PORTADA = [
+const FRONT_PAGE = [
   'index.html', 'web/index.html',
   'src/App.vue', 'src/App.tsx', 'src/App.jsx', 'src/App.ts', 'src/App.js',
   'web/src/App.vue', 'web/src/App.ts', 'web/src/App.js',
@@ -254,13 +254,13 @@ const PORTADA = [
 ]
 
 /**
- * Archivos de FONTANERIA: cambiarlos no es nada que un README deba contar. Se
+ * Archivos de PLUMBING: cambiarlos no es nada que un README deba contar. Se
  * excluyen al fechar "la ultima vez que el repo se movio", porque si no una tanda
  * mecanica que pasa por 50 repos el mismo dia (fijar una version, anadir un
  * tsconfig, regenerar un lock) marca los 50 README como desactualizados a la vez,
  * y el indicador pasa de medir algo a medir el ultimo `sed` que corri.
  */
-const FONTANERIA = [
+const PLUMBING = [
   ':(exclude)package.json', ':(exclude)*/package.json',
   ':(exclude)package-lock.json', ':(exclude)*/package-lock.json',
   ':(exclude)tsconfig*.json', ':(exclude)*/tsconfig*.json',
@@ -274,26 +274,26 @@ const FONTANERIA = [
  * tiene commits de fontaneria (raro), se cae a la fecha de HEAD en vez de quedarse
  * sin fecha.
  */
-const fechaConSustancia = (dir) =>
-  git(dir, 'log', '-1', '--format=%cs', '--', '.', ...FONTANERIA) ||
+const substantiveDate = (dir) =>
+  git(dir, 'log', '-1', '--format=%cs', '--', '.', ...PLUMBING) ||
   git(dir, 'log', '-1', '--format=%cs')
 
 /**
- * Última vez que se tocó alguna de `rutas`, y cuánto se movió el repo desde entonces.
+ * Última vez que se tocó alguna de `paths`, y cuánto se movió el repo desde entonces.
  * `desdeElInicio` = sigue como en el commit inicial. Importa decirlo: la historia
  * anterior a la migración desde CloserClick NO está en estos repos, así que ahí la
  * brecha real es "al menos" la medida, no exactamente esa.
  */
-function frescura (dir, rutas, headFecha, raiz) {
-  const linea = git(dir, 'log', '-1', '--format=%H|%cs', '--', ...rutas)
-  if (!linea) return { existe: false, fecha: null, dias: null, commits: null }
-  const [sha, fecha] = linea.split('|')
+function freshness (dir, paths, headDate, root) {
+  const line = git(dir, 'log', '-1', '--format=%H|%cs', '--', ...paths)
+  if (!line) return { existe: false, fecha: null, dias: null, commits: null }
+  const [sha, date] = line.split('|')
   return {
     existe: true,
-    fecha,
-    dias: diasEntre(fecha, headFecha),
+    fecha: date,
+    dias: daysBetween(date, headDate),
     commits: Number(git(dir, 'rev-list', '--count', `${sha}..HEAD`) ?? 0) || 0,
-    desdeElInicio: Boolean(raiz) && raiz.split('\n').includes(sha)
+    desdeElInicio: Boolean(root) && root.split('\n').includes(sha)
   }
 }
 
@@ -301,41 +301,41 @@ function frescura (dir, rutas, headFecha, raiz) {
 
 // El repo que ALOJA el catálogo no puede exigirse estar en él (no se lista a sí
 // mismo). Se deriva de la ruta, no se pone a dedo.
-const RUTA_CATALOGO = 'dotrino-home/src/data/apps.ts'
-const REPO_CATALOGO = RUTA_CATALOGO.split('/')[0]
+const CATALOG_PATH = 'dotrino-home/src/data/apps.ts'
+const CATALOG_REPO = CATALOG_PATH.split('/')[0]
 /**
  * ¿Está el catálogo a mano? Quien tiene dos repos en el disco no tiene el home, y
  * sin él no se puede afirmar que una app "no está en el catálogo" ni cuándo se tocó
  * su ficha. Sin catálogo esa dimensión no se mide (y en la web se hereda lo último
  * que se supo) en vez de acusar en falso.
  */
-const HAY_CATALOGO = existsSync(join(RAIZ, RUTA_CATALOGO))
+const HAS_CATALOG = existsSync(join(ROOT, CATALOG_PATH))
 
 /**
  * Cada entrada del array `apps` es un objeto que abre con `{` solo en su línea; el
  * `desc: {` interno no parte el bloque porque lleva texto delante. Se comparte con
  * la medición de frescura de la ficha (abajo), que compara los bloques entre sí.
  */
-const entradasCatalogo = (t) => t.split(/\n\s*\{\s*\n/).slice(1)
+const catalogEntries = (t) => t.split(/\n\s*\{\s*\n/).slice(1)
 
-function leerCatalogo () {
-  const t = leer(join(RAIZ, RUTA_CATALOGO))
+function readCatalog () {
+  const t = read(join(ROOT, CATALOG_PATH))
   if (!t) return {}
-  const porRepo = {}
+  const byRepo = {}
   // Cada entrada es un objeto del array `apps`; alcanza con leer sus campos planos.
-  for (const bloque of entradasCatalogo(t)) {
-    const campo = (k) => (bloque.match(new RegExp(`\\b${k}:\\s*'([^']*)'`)) || [])[1]
-    const repo = campo('repo')
+  for (const block of catalogEntries(t)) {
+    const field = (k) => (block.match(new RegExp(`\\b${k}:\\s*'([^']*)'`)) || [])[1]
+    const repo = field('repo')
     if (!repo) continue
-    porRepo[repo.replace(/^imdotrino\//, '')] = {
-      nombre: campo('name'),
-      url: campo('url'),
-      cat: campo('cat'),
-      sub: campo('sub') || null,
-      wip: /\bwip:\s*true/.test(bloque)
+    byRepo[repo.replace(/^imdotrino\//, '')] = {
+      nombre: field('name'),
+      url: field('url'),
+      cat: field('cat'),
+      sub: field('sub') || null,
+      wip: /\bwip:\s*true/.test(block)
     }
   }
-  return porRepo
+  return byRepo
 }
 
 /**
@@ -344,16 +344,16 @@ function leerCatalogo () {
  * siguiente, así que un comentario escrito ENCIMA de la entrada de al lado caía
  * dentro y hacía "cambiar" una ficha que nadie tocó.
  */
-function bloquesCatalogo (t) {
-  const porRepo = {}
-  for (const bloque of entradasCatalogo(t)) {
-    const repo = (bloque.match(/\brepo:\s*'([^']*)'/) || [])[1]
+function catalogBlocks (t) {
+  const byRepo = {}
+  for (const block of catalogEntries(t)) {
+    const repo = (block.match(/\brepo:\s*'([^']*)'/) || [])[1]
     if (!repo) continue
-    porRepo[repo.replace(/^imdotrino\//, '')] = bloque
+    byRepo[repo.replace(/^imdotrino\//, '')] = block
       .split('\n').filter(l => !l.trim().startsWith('//')).join(' ')
       .replace(/\s+/g, ' ').trim()
   }
-  return porRepo
+  return byRepo
 }
 
 /**
@@ -362,29 +362,29 @@ function bloquesCatalogo (t) {
  * dice nada de una app concreta: hay que recorrer las versiones del archivo y ver
  * en cuál dejó de ser igual el bloque de cada repo. Son ~30 commits: barato.
  */
-function frescuraCatalogo () {
-  const dir = join(RAIZ, REPO_CATALOGO)
-  const rel = RUTA_CATALOGO.slice(REPO_CATALOGO.length + 1)
+function catalogFreshness () {
+  const dir = join(ROOT, CATALOG_REPO)
+  const rel = CATALOG_PATH.slice(CATALOG_REPO.length + 1)
   const log = git(dir, 'log', '--format=%H|%cs', '--', rel)
   if (!log) return {}
-  const versiones = []
-  for (const linea of log.split('\n').filter(Boolean)) {
-    const [sha, fecha] = linea.split('|')
+  const versionDrifts = []
+  for (const line of log.split('\n').filter(Boolean)) {
+    const [sha, date] = line.split('|')
     // Si el archivo tenía otro nombre en ese commit, `show` falla: ahí se corta y
     // lo más viejo que se puede afirmar es el commit anterior.
     const t = sh('git', ['-C', dir, 'show', `${sha}:${rel}`])
     if (!t) break
-    versiones.push({ fecha, bloques: bloquesCatalogo(t) })
+    versionDrifts.push({ fecha: date, bloques: catalogBlocks(t) })
   }
-  const actual = versiones[0]
-  if (!actual) return {}
+  const current = versionDrifts[0]
+  if (!current) return {}
   const out = {}
-  for (const [repo, bloque] of Object.entries(actual.bloques)) {
+  for (const [repo, block] of Object.entries(current.bloques)) {
     let i = 0
-    while (i + 1 < versiones.length && versiones[i + 1].bloques[repo] === bloque) i++
+    while (i + 1 < versionDrifts.length && versionDrifts[i + 1].bloques[repo] === block) i++
     // Si llegamos a la versión más vieja legible, la ficha es igual desde que el
-    // archivo existe: la brecha real es "al menos" esa (ver `frescura`).
-    out[repo] = { fecha: versiones[i].fecha, desdeElInicio: i === versiones.length - 1 }
+    // archivo existe: la brecha real es "al menos" esa (ver `freshness`).
+    out[repo] = { fecha: versionDrifts[i].fecha, desdeElInicio: i === versionDrifts.length - 1 }
   }
   return out
 }
@@ -398,15 +398,15 @@ function frescuraCatalogo () {
  * la app (`dotrino.platforms`); sin esa declaración la app no es de las calificadas y no
  * sale aquí.
  */
-const PLATAFORMAS = ['ios', 'android']
+const PLATFORMS = ['ios', 'android']
 
 function versionAndroid (dir) {
-  const gradle = leer(join(dir, cual(dir, 'android/app/build.gradle.kts', 'android/app/build.gradle') || 'no-existe')) || ''
+  const gradle = read(join(dir, which(dir, 'android/app/build.gradle.kts', 'android/app/build.gradle') || 'no-existe')) || ''
   return gradle.match(/versionName\s*=?\s*["']([^"']+)["']/)?.[1] || null
 }
 
 function versionIos (dir) {
-  const yml = leer(join(dir, 'ios/project.yml')) || ''
+  const yml = read(join(dir, 'ios/project.yml')) || ''
   return yml.match(/(?:MARKETING_VERSION|CFBundleShortVersionString)\s*:\s*["']?([\d.]+)/)?.[1] || null
 }
 
@@ -417,47 +417,47 @@ const cmpVersion = (a, b) => {
   return 0
 }
 
-function nativas (dir, pkg) {
-  const declaradas = pkg?.dotrino?.platforms
-  if (!Array.isArray(declaradas)) return null
-  const otras = declaradas.filter(x => x !== 'pwa' && !PLATAFORMAS.includes(x))
-  if (otras.length) throw new Error(`${dir}: unknown platform in dotrino.platforms: ${otras.join(', ')}`)
+function natives (dir, pkg) {
+  const declared = pkg?.dotrino?.platforms
+  if (!Array.isArray(declared)) return null
+  const others = declared.filter(x => x !== 'pwa' && !PLATFORMS.includes(x))
+  if (others.length) throw new Error(`${dir}: unknown platform in dotrino.platforms: ${others.join(', ')}`)
   const pwa = pkg.version || null
   const out = { pwa }
-  for (const k of PLATAFORMAS) {
-    if (!declaradas.includes(k)) continue
-    const carpeta = hay(dir, k)
+  for (const k of PLATFORMS) {
+    if (!declared.includes(k)) continue
+    const folder = has(dir, k)
     const version = k === 'android' ? versionAndroid(dir) : versionIos(dir)
     // «sin empezar»: declarada y sin carpeta. «sin versión»: hay carpeta pero no se lee
     // su versión, y eso no se da por buena. Por debajo de la PWA, atrasada (§16.1: es lo
     // normal, pero se ve).
-    const estado = !carpeta ? 'sin empezar'
+    const state = !folder ? 'sin empezar'
       : !version ? 'sin versión'
         : pwa && cmpVersion(version, pwa) < 0 ? 'atrasada' : 'a la par'
-    out[k] = { version, estado }
+    out[k] = { version, estado: state }
   }
   return out
 }
 
 // ─── análisis de un repo ───────────────────────────────────────────────────
 
-function analizar (nombre, catalogo) {
-  const dir = join(RAIZ, nombre)
-  const pkg = leerJson(join(dir, 'package.json'))
-  const texto = textoDelFrente(dir)
+function analyze (name, catalog) {
+  const dir = join(ROOT, name)
+  const pkg = readJson(join(dir, 'package.json'))
+  const text = frontText(dir)
   // Las landings de servicio (§1.2) que se construyen con Vite bajo `web/` dejan
   // sus assets en `web/public/` — mirarlas solo en `web/` daba por incumplidoras a
   // tunnel, vault y android-launcher, que sí tienen og.jpg, robots y sitemap.
   // `landing/`: cuando `web/` ya es la UI local de la herramienta (el Inspector
   // sirve la suya desde la máquina del usuario), la página pública vive aparte.
   const CNAMES = ['public/CNAME', 'CNAME', 'web/public/CNAME', 'web/CNAME', 'landing/CNAME']
-  let cname = leer(join(dir, cual(dir, ...CNAMES) || 'no-existe'))
+  let cname = read(join(dir, which(dir, ...CNAMES) || 'no-existe'))
   // Varias piezas NO tienen archivo CNAME: el dominio está fijado en los ajustes
   // de Pages (o lo sirve un VPS, como la web del túnel). Sin respaldo, el
   // inventario las mostraba sin subdominio teniéndolo. El `canonical`/`og:url`
   // del propio HTML lo dice, y no cuesta red.
   if (!cname) {
-    const html = leer(join(dir, cual(dir, 'landing/index.html', 'index.html', 'web/index.html') || 'no-existe')) || ''
+    const html = read(join(dir, which(dir, 'landing/index.html', 'index.html', 'web/index.html') || 'no-existe')) || ''
     const m = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']https?:\/\/([^/"']+)/i) ||
               html.match(/<meta[^>]+property=["']og:url["'][^>]+content=["']https?:\/\/([^/"']+)/i)
     if (m && m[1].endsWith('dotrino.com')) cname = m[1]
@@ -465,64 +465,64 @@ function analizar (nombre, catalogo) {
   // UN WORKER tampoco tiene CNAME: su dominio está en las rutas de `wrangler.toml`. Sin
   // esto no se le preguntaba qué commit sirve, y un Worker desplegado hace meses pasaba
   // por al día. Solo las rutas vivas: una comentada es un dominio que no está en uso.
-  const wrangler = leer(join(dir, 'wrangler.toml'))
+  const wrangler = read(join(dir, 'wrangler.toml'))
   if (!cname && wrangler) {
     const m = wrangler.split('\n').filter(l => !l.trim().startsWith('#')).join('\n')
       .match(/pattern\s*=\s*["']([a-z0-9.-]+\.dotrino\.com)["']/)
     if (m) cname = m[1]
   }
-  const esPaquete = Boolean(pkg?.name?.startsWith('@dotrino/'))
+  const isPackage = Boolean(pkg?.name?.startsWith('@dotrino/'))
 
   // Tipo. El CNAME es el mejor discriminante: solo lo tiene lo que sirve Pages.
-  let tipo
+  let kind
   // El informe que este mismo script genera sirve una página, pero no es una app:
   // no tiene usuario, ni identidad, ni nada que instalar. Exigirle PWA, perfil o
   // moneda de support sería contarse a uno mismo nueve incumplimientos inventados.
-  if (nombre === REPO_WEB) tipo = 'informe'
-  else if (!pkg && !hay(dir, 'index.html', 'web/index.html')) tipo = 'otro'
-  else if (hay(dir, 'web/index.html') && !hay(dir, 'index.html')) tipo = 'landing'
-  else if (cname && hay(dir, 'index.html')) tipo = 'app'
-  else if (esPaquete) tipo = 'paquete'
-  else tipo = 'servicio'
+  if (name === REPO_WEB) kind = 'informe'
+  else if (!pkg && !has(dir, 'index.html', 'web/index.html')) kind = 'otro'
+  else if (has(dir, 'web/index.html') && !has(dir, 'index.html')) kind = 'landing'
+  else if (cname && has(dir, 'index.html')) kind = 'app'
+  else if (isPackage) kind = 'paquete'
+  else kind = 'servicio'
 
   // Stack
   const deps = { ...pkg?.dependencies, ...pkg?.devDependencies }
-  const stack = hay(dir, 'vite.config.js', 'vite.config.ts', 'web/vite.config.js', 'web/vite.config.ts')
+  const stack = has(dir, 'vite.config.js', 'vite.config.ts', 'web/vite.config.js', 'web/vite.config.ts')
     ? (deps.vue ? 'vite+vue' : 'vite')
-    : (tipo === 'app' || tipo === 'landing' ? 'vanilla' : '—')
+    : (kind === 'app' || kind === 'landing' ? 'vanilla' : '—')
 
   // Git
-  const remoto = git(dir, 'remote', 'get-url', 'origin')
-  const rama = git(dir, 'rev-parse', '--abbrev-ref', 'HEAD')
-  const sinPushear = Number(git(dir, 'rev-list', '--count', `origin/${rama}..HEAD`) ?? 0) || 0
+  const remote = git(dir, 'remote', 'get-url', 'origin')
+  const branch = git(dir, 'rev-parse', '--abbrev-ref', 'HEAD')
+  const unpushed = Number(git(dir, 'rev-list', '--count', `origin/${branch}..HEAD`) ?? 0) || 0
   // Cuando el sitio vive en un subdirectorio (`web/`), comparar el commit que
   // sirve el dominio contra el HEAD del repo da un desfase FALSO: un commit que
   // toca solo el daemon no redespliega la web. Hay que comparar contra el último
   // commit que tocó lo que se publica. (Pasó con vault, tunnel y android-launcher:
   // los tres servían su web al día y aparecían "desfasados".)
-  const raizSitio = (hay(dir, 'web/index.html') && !hay(dir, 'index.html')) ? 'web' : null
+  const siteRoot = (has(dir, 'web/index.html') && !has(dir, 'index.html')) ? 'web' : null
   const g = {
     commit: git(dir, 'rev-parse', '--short', 'HEAD'),
-    commitSitio: raizSitio
-      ? git(dir, 'log', '-1', '--format=%h', '--', raizSitio)
+    commitSitio: siteRoot
+      ? git(dir, 'log', '-1', '--format=%h', '--', siteRoot)
       : git(dir, 'rev-parse', '--short', 'HEAD'),
-    raizSitio,
+    raizSitio: siteRoot,
     fecha: git(dir, 'log', '-1', '--format=%cs'),
-    // Fecha del último commit que cuenta ALGO. Ver FONTANERIA: una tanda mecanica
+    // Fecha del último commit que cuenta ALGO. Ver PLUMBING: una tanda mecanica
     // que pasa por 50 repos no vuelve viejos 50 README de un dia para otro.
-    fechaSustancia: fechaConSustancia(dir),
-    rama,
-    remoto,
+    fechaSustancia: substantiveDate(dir),
+    rama: branch,
+    remoto: remote,
     sucio: (git(dir, 'status', '--porcelain') || '').split('\n').filter(Boolean).length,
-    sinPushear
+    sinPushear: unpushed
   }
 
   // ¿Se cuenta lo que se hace? (la ficha del catálogo se rellena en el `main`:
   // vive en OTRO repo y se mide de una vez para todas las apps).
-  const raiz = git(dir, 'rev-list', '--max-parents=0', 'HEAD')
-  const fresco = {
-    readme: frescura(dir, ['README.md', 'readme.md'], g.fechaSustancia, raiz),
-    portada: frescura(dir, PORTADA, g.fechaSustancia, raiz),
+  const root = git(dir, 'rev-list', '--max-parents=0', 'HEAD')
+  const fresh = {
+    readme: freshness(dir, ['README.md', 'readme.md'], g.fechaSustancia, root),
+    portada: freshness(dir, FRONT_PAGE, g.fechaSustancia, root),
     catalogo: null
   }
 
@@ -530,21 +530,21 @@ function analizar (nombre, catalogo) {
   // guardan aparte. `commits` en `null` = la auditoría la hizo otra persona sobre un
   // commit que este clon no tiene, así que la brecha no se puede medir (y se dice,
   // en vez de darla por 0).
-  const aud = AUDITORIA.repos?.[nombre] || null
-  const commitsDesdeAuditoria = !aud ? null
+  const aud = AUDIT.repos?.[name] || null
+  const commitsSinceAudit = !aud ? null
     : git(dir, 'cat-file', '-e', aud.commit) === null ? null
-      : Number(git(dir, 'rev-list', '--count', `${aud.commit}..HEAD`, '--', '.', ...FONTANERIA) ?? 0) || 0
+      : Number(git(dir, 'rev-list', '--count', `${aud.commit}..HEAD`, '--', '.', ...PLUMBING) ?? 0) || 0
   // Y contra qué reglas se la miró: una auditoría de antes de que existiera una regla
   // no dice nada de esa regla. `faltan` es lo que NUNCA se le pasó — que no es lo
   // mismo que salir limpio, aunque en la tabla se vieran igual.
-  const reglasDeLaAuditoria = Array.isArray(aud?.reglas) ? aud.reglas : []
-  fresco.auditoria = {
+  const auditRules = Array.isArray(aud?.reglas) ? aud.reglas : []
+  fresh.auditoria = {
     existe: Boolean(aud),
     fecha: aud?.fecha || null,
-    dias: diasEntre(aud?.fecha, g.fechaSustancia),
-    commits: commitsDesdeAuditoria,
+    dias: daysBetween(aud?.fecha, g.fechaSustancia),
+    commits: commitsSinceAudit,
     desdeElInicio: false,
-    faltan: aud ? (REGLAS_IA || []).filter(r => !reglasDeLaAuditoria.includes(r)) : []
+    faltan: aud ? (AI_RULES || []).filter(r => !auditRules.includes(r)) : []
   }
 
   // El topbar y sus atributos: la etiqueta abre y cierra en varias líneas.
@@ -555,26 +555,26 @@ function analizar (nombre, catalogo) {
   // Y hay DOS formas de cablearlo: la etiqueta HTML/plantilla, y por JS con un
   // helper (`h('dotrino-topbar', { profile: true, ... })`, como sudoku y trivia).
   // Mirar solo la primera daba por incumplidoras a apps que sí lo tienen.
-  const etiqueta = [
-    ...[...texto.matchAll(/<dotrino-topbar[\s\S]{0,1500}?>/g)].map(m => m[0]),
-    ...[...texto.matchAll(/['"]dotrino-topbar['"]\s*,\s*\{[\s\S]{0,1200}?\}/g)].map(m => m[0])
+  const label = [
+    ...[...text.matchAll(/<dotrino-topbar[\s\S]{0,1500}?>/g)].map(m => m[0]),
+    ...[...text.matchAll(/['"]dotrino-topbar['"]\s*,\s*\{[\s\S]{0,1200}?\}/g)].map(m => m[0])
   ].join('\n')
   // App interna (§7): no se indexa, así que no le corresponden sitemap ni OG.
   const ROBOTS = ['landing/robots.txt', 'public/robots.txt', 'robots.txt', 'web/public/robots.txt', 'web/robots.txt']
   const SITEMAP = ['landing/sitemap.xml', 'public/sitemap.xml', 'sitemap.xml', 'web/public/sitemap.xml', 'web/sitemap.xml']
-  const robots = leer(join(dir, cual(dir, ...ROBOTS) || 'no-existe')) || ''
+  const robots = read(join(dir, which(dir, ...ROBOTS) || 'no-existe')) || ''
   // Una pieza puede tener las dos cosas: una UI que corre en la máquina del
   // usuario y NO se indexa, y una landing pública que sí. Si hay landing, manda
   // ella: si no, el `noindex` de la UI local eximía al repo de tener ficha en el
   // catálogo y OG, escondiendo la deuda en vez de contarla.
-  const landingPublica = hay(dir, 'landing/robots.txt') &&
-    !/Disallow:\s*\/\s*$/m.test(leer(join(dir, 'landing/robots.txt')) || '')
-  const interna = !landingPublica && (/noindex/.test(texto) || /Disallow:\s*\/\s*$/m.test(robots))
+  const publicLanding = has(dir, 'landing/robots.txt') &&
+    !/Disallow:\s*\/\s*$/m.test(read(join(dir, 'landing/robots.txt')) || '')
+  const internal = !publicLanding && (/noindex/.test(text) || /Disallow:\s*\/\s*$/m.test(robots))
   const conv = {
     // §9.2: la documentación de uso vive en el wiki; sin el clon de dotrino-wiki al
     // lado, se da por cumplida (no se acusa a ciegas).
-    wiki: REPOS_EN_WIKI ? REPOS_EN_WIKI.has(nombre) : true,
-    npmrc: hay(dir, '.npmrc'),
+    wiki: REPOS_IN_WIKI ? REPOS_IN_WIKI.has(name) : true,
+    npmrc: has(dir, '.npmrc'),
     // CUMPLIMIENTO §2: un paquete se publica DESDE CI, con publicación de confianza.
     //
     // Hasta el 2026-09-02 los 22 paquetes se publicaban a mano desde el portátil del
@@ -588,7 +588,7 @@ function analizar (nombre, catalogo) {
     // depende de si su última versión salió de aquí, y eso no se puede leer del disco.
     // Lo que sí se puede afirmar es si el camino está montado.
     oidc: (() => {
-      const w = textoDeWorkflows(dir)
+      const w = workflowsText(dir)
       return /npm\s+publish/.test(w) && /id-token:\s*write/.test(w)
     })(),
     // §15: enterarse de que hay versión nueva. Lo que duele no es instalar —son tres
@@ -603,43 +603,43 @@ function analizar (nombre, catalogo) {
     // DECIR qué commit se desplegó (`<meta name="commit">` en su portada, como una app).
     // Con eso este índice lo compara con `main` en cada pasada con `--vivo`, que es
     // enterarse igual. Sin dominio propio no hay a quién preguntarle, y no cuenta.
-    updateNotice: /@dotrino\/update/.test(texto) || Boolean(deps['@dotrino/update']) ||
-      Boolean(wrangler && cname && /name=["']commit["']/.test(leer(join(dir, 'src/index.js')) || '')) ||
-      ['agent', 'server', 'lib'].some((sub) => Boolean(leerJson(join(dir, sub, 'package.json'))?.dependencies?.['@dotrino/update'])),
-    topbar: Boolean(etiqueta) || /@dotrino\/topbar/.test(texto) || Boolean(deps['@dotrino/topbar']),
+    updateNotice: /@dotrino\/update/.test(text) || Boolean(deps['@dotrino/update']) ||
+      Boolean(wrangler && cname && /name=["']commit["']/.test(read(join(dir, 'src/index.js')) || '')) ||
+      ['agent', 'server', 'lib'].some((sub) => Boolean(readJson(join(dir, sub, 'package.json'))?.dependencies?.['@dotrino/update'])),
+    topbar: Boolean(label) || /@dotrino\/topbar/.test(text) || Boolean(deps['@dotrino/topbar']),
     // §5: el tema es UNO, `@dotrino/theme`. Hasta el 2026-10-14 cada app traía su paleta
     // (13 copiaban Cool & Cozy a mano, 33 no lo tenían) y nadie lo veía como deuda porque
     // no estaba escrito. Se mira si la hoja entra por npm o por jsDelivr.
-    theme: /@dotrino\/theme/.test(texto) || Boolean(deps['@dotrino/theme']),
+    theme: /@dotrino\/theme/.test(text) || Boolean(deps['@dotrino/theme']),
     // §6.1: el botón de perfil es el atributo/propiedad `profile` del topbar.
     // `\b…\b` no confunde con `profileTheme` (no hay frontera de palabra ahí).
-    profile: /\bprofile\b/.test(etiqueta),
+    profile: /\bprofile\b/.test(label),
     // §6: la moneda va DENTRO del topbar (support-*) o suelta como componente
-    support: /\bsupport-repo\b/.test(etiqueta) || /<dotrino-support/.test(texto) || Boolean(deps['@dotrino/support']),
+    support: /\bsupport-repo\b/.test(label) || /<dotrino-support/.test(text) || Boolean(deps['@dotrino/support']),
     // §3: con VitePWA el sw y el manifest los genera el build, no son archivos
-    pwa: hay(dir, 'public/manifest.webmanifest', 'manifest.webmanifest', 'web/public/manifest.webmanifest') || Boolean(deps['vite-plugin-pwa']),
-    sw: hay(dir, 'public/sw.js', 'sw.js', 'web/public/sw.js') || Boolean(deps['vite-plugin-pwa']),
+    pwa: has(dir, 'public/manifest.webmanifest', 'manifest.webmanifest', 'web/public/manifest.webmanifest') || Boolean(deps['vite-plugin-pwa']),
+    sw: has(dir, 'public/sw.js', 'sw.js', 'web/public/sw.js') || Boolean(deps['vite-plugin-pwa']),
     // §3: el meta puede venir del HTML, de un plugin del build (Vite) o del propio
     // workflow, que lo estampa con `sed` al desplegar. Ese último caso no se veía
-    // —`textoDelFrente` no entra en `.github/`— y daba por incumplidoras a cuatro
+    // —`frontText` no entra en `.github/`— y daba por incumplidoras a cuatro
     // apps vanilla que SÍ lo sirven (comprobado en sus dominios).
-    commitMeta: /<meta\s+name=["']commit["']/.test(texto) || /rev-parse|commitMeta/.test(texto) ||
-      /name=\\?["']commit\\?["']/.test(textoDeWorkflows(dir)),
+    commitMeta: /<meta\s+name=["']commit["']/.test(text) || /rev-parse|commitMeta/.test(text) ||
+      /name=\\?["']commit\\?["']/.test(workflowsText(dir)),
     // §7: una app INTERNA cumple con `noindex` + robots `Disallow: /` y NO debe
     // llevar sitemap ni OG. Exigírselos era acusarla de incumplir por cumplir.
-    seo: interna ? hay(dir, ...ROBOTS) : hay(dir, ...ROBOTS) && hay(dir, ...SITEMAP),
-    og: hay(dir, 'public/og.jpg', 'og.jpg', 'web/public/og.jpg', 'web/og.jpg', 'landing/og.jpg'),
+    seo: internal ? has(dir, ...ROBOTS) : has(dir, ...ROBOTS) && has(dir, ...SITEMAP),
+    og: has(dir, 'public/og.jpg', 'og.jpg', 'web/public/og.jpg', 'web/og.jpg', 'landing/og.jpg'),
     // Cualquier workflow sirve: qrshare lo llama `deploy-pages.yml`. Exigir el
     // nombre exacto `deploy.yml` lo reportaba sin deploy teniéndolo.
-    deploy: hay(dir, '.nojekyll') ||
+    deploy: has(dir, '.nojekyll') ||
             (() => { try { return readdirSync(join(dir, '.github/workflows')).some(f => /\.ya?ml$/.test(f)) } catch { return false } })(),
-    catalogo: Boolean(catalogo[nombre])
+    catalogo: Boolean(catalog[name])
   }
 
   // Un repo puede publicar MÁS de un paquete: `dotrino-vault/` es `@dotrino/vaultd`
   // en la raíz y `@dotrino/vault` en `lib/`. Si no se mira un nivel para adentro,
   // el índice reporta un pilar publicado como "sin publicar" y esconde su deriva.
-  const subPaquetes = {}
+  const subPackages = {}
   // Y sus DEPENDENCIAS, que hasta ahora no las miraba nadie: solo se leían las
   // del package.json de la raíz. Ahí se escondía deriva de verdad — el agente
   // publicado `@dotrino/terminal-agent` (dotrino-terminal/agent) pedía
@@ -649,61 +649,61 @@ function analizar (nombre, catalogo) {
   const subDeps = {}
   for (const e of (() => { try { return readdirSync(dir, { withFileTypes: true }) } catch { return [] } })()) {
     if (!e.isDirectory() || ['node_modules', 'dist', 'test', '.git'].includes(e.name)) continue
-    const sub = leerJson(join(dir, e.name, 'package.json'))
+    const sub = readJson(join(dir, e.name, 'package.json'))
     if (!sub) continue
     // Un envoltorio sin código propio no lleva su versión: la deriva CI de otro paquete del
     // repo al publicar (`@dotrino/env` de `lib`, para que nadie la mantenga a mano). Lo dice
     // su package.json con `dotrino.versionFrom`, y se mide contra ESA: así, si `lib` sube y el
     // envoltorio no se publica, sale; y no sale en falso por el número que hay en el repo.
-    const origen = sub.dotrino?.versionFrom && leerJson(join(dir, e.name, sub.dotrino.versionFrom, 'package.json'))
-    const version = sub.dotrino?.versionFrom ? (origen?.version || null) : sub.version
-    if (sub.name?.startsWith('@dotrino/')) subPaquetes[sub.name] = { version, ruta: `${nombre}/${e.name}`, bin: Boolean(sub.bin) }
+    const origin = sub.dotrino?.versionFrom && readJson(join(dir, e.name, sub.dotrino.versionFrom, 'package.json'))
+    const version = sub.dotrino?.versionFrom ? (origin?.version || null) : sub.version
+    if (sub.name?.startsWith('@dotrino/')) subPackages[sub.name] = { version, ruta: `${name}/${e.name}`, bin: Boolean(sub.bin) }
     const d = Object.fromEntries(
       Object.entries({ ...sub.dependencies, ...sub.devDependencies }).filter(([k]) => k.startsWith('@dotrino/'))
     )
-    if (Object.keys(d).length) subDeps[`${nombre}/${e.name}`] = d
+    if (Object.keys(d).length) subDeps[`${name}/${e.name}`] = d
   }
 
   // Versiones ROTAS que usa: la raíz y cada subcarpeta con su propio package.json.
-  const rotas = [
-    ...usosRotos(dir, nombre, Object.fromEntries(Object.entries(deps).filter(([k]) => k.startsWith('@dotrino/')))),
-    ...Object.entries(subDeps).flatMap(([unidad, d]) => usosRotos(join(RAIZ, unidad), unidad, d))
+  const broken = [
+    ...brokenUsesOf(dir, name, Object.fromEntries(Object.entries(deps).filter(([k]) => k.startsWith('@dotrino/')))),
+    ...Object.entries(subDeps).flatMap(([unit, d]) => brokenUsesOf(join(ROOT, unit), unit, d))
   ]
 
   return {
-    repo: nombre,
-    tipo,
-    interna,
+    repo: name,
+    tipo: kind,
+    interna: internal,
     paquete: pkg?.name || null,
     version: pkg?.version || null,
     // ¿Esto se invoca como comando? Lo dice su `bin`. Hace falta para el §15: un comando
     // avisa al invocarse, una librería que nadie ejecuta no tiene dónde hacerlo.
-    tieneCli: Boolean(pkg?.bin) || Object.values(subPaquetes).some((sp) => sp.bin),
+    tieneCli: Boolean(pkg?.bin) || Object.values(subPackages).some((sp) => sp.bin),
     // Un pilar que además trae su servidor (`geo`, `reputation`) corre en algún sitio, y
     // lo que corre se queda atrás. El cajón dice `paquete`; el disco dice la verdad.
-    tieneServidor: hay(dir, 'server/package.json', 'server/index.js', 'server/server.js'),
-    subPaquetes,
+    tieneServidor: has(dir, 'server/package.json', 'server/index.js', 'server/server.js'),
+    subPaquetes: subPackages,
     subDeps,
     subdominio: cname ? cname.trim() : null,
     stack,
-    plataformas: nativas(dir, pkg),
+    plataformas: natives(dir, pkg),
     git: g,
-    frescura: fresco,
-    catalogo: catalogo[nombre] || null,
+    frescura: fresh,
+    catalogo: catalog[name] || null,
     dotrinoDeps: Object.fromEntries(Object.entries(deps).filter(([k]) => k.startsWith('@dotrino/'))),
     // Los desvíos ya decididos se apartan del veredicto (siguen a la vista, en
     // «Desvíos declarados»): si contaran, el auditor los volvería a encontrar en
     // cada pasada y el repo nunca bajaría de ahí.
     auditoria: aud && {
       ...aud,
-      commits: commitsDesdeAuditoria,
-      hallazgos: (aud.hallazgos || []).filter(h => !esDesvioDeclarado(nombre, h)),
-      desvios: (aud.hallazgos || []).filter(h => esDesvioDeclarado(nombre, h))
+      commits: commitsSinceAudit,
+      hallazgos: (aud.hallazgos || []).filter(h => !isDeclaredDeviation(name, h)),
+      desvios: (aud.hallazgos || []).filter(h => isDeclaredDeviation(name, h))
     },
-    secretos: secretosRastreados(dir),
-    instalado: instaladoVsPedido(dir, deps),
-    rotas,
-    binarios: fuentesBinarias(dir),
+    secretos: trackedSecrets(dir),
+    instalado: installedVsRequested(dir, deps),
+    rotas: broken,
+    binarios: binarySources(dir),
     conv
   }
 }
@@ -716,14 +716,14 @@ function analizar (nombre, catalogo) {
  * no la comprobaba nadie: se confiaba en acordarse. Mira lo que git TIENE, no lo que
  * hay en el disco — un `.env` sin rastrear es normal y no se reporta.
  */
-const PATRON_SECRETO = /(^|\/)(\.env(\..*)?|\.npmrc|keystore\.properties|.*\.(jks|keystore|pem|p12|pfx|key)|id_rsa|id_ed25519)$/i
+const SECRET_PATTERN = /(^|\/)(\.env(\..*)?|\.npmrc|keystore\.properties|.*\.(jks|keystore|pem|p12|pfx|key)|id_rsa|id_ed25519)$/i
 /** Lo que hace secreto a un archivo de configuración: que lleve una credencial dentro. */
-const CREDENCIAL = /(_authToken|_auth\s*=|_password|BEGIN [A-Z ]*PRIVATE KEY)/i
-function secretosRastreados (dir) {
-  const salida = git(dir, 'ls-files')
-  if (!salida) return []
-  return salida.split('\n').filter(f => {
-    if (!f || !PATRON_SECRETO.test(f)) return false
+const CREDENTIAL = /(_authToken|_auth\s*=|_password|BEGIN [A-Z ]*PRIVATE KEY)/i
+function trackedSecrets (dir) {
+  const output = git(dir, 'ls-files')
+  if (!output) return []
+  return output.split('\n').filter(f => {
+    if (!f || !SECRET_PATTERN.test(f)) return false
     // `.env.example` / `.env.sample` son plantillas SIN valores: se publican a
     // propósito para que alguien sepa qué variables hacen falta.
     if (/\.(example|sample|template|dist)$/i.test(f)) return false
@@ -731,8 +731,8 @@ function secretosRastreados (dir) {
     // OBLIGATORIO commitearlo y no lleva nada dentro: marcarlo por llamarse
     // `.npmrc` daba 39 falsas alarmas de golpe — y un indicador que grita en falso
     // 39 veces se aprende a ignorar, que es peor que no tenerlo.
-    const t = leer(join(dir, f))
-    if (t !== null) return CREDENCIAL.test(t)
+    const t = read(join(dir, f))
+    if (t !== null) return CREDENTIAL.test(t)
     // Binario (un `.jks`, un `.p12`): no se puede mirar dentro, y ahí el nombre
     // basta — un almacén de llaves no tiene otra cosa que llaves.
     return true
@@ -747,16 +747,16 @@ function secretosRastreados (dir) {
  * como riesgo en el plan del vault y nos pasó igual (el topbar y la consola del vault
  * se compilaban contra un identity cuatro versiones viejo).
  */
-function instaladoVsPedido (dir, deps) {
-  const fuera = []
-  for (const [dep, pide] of Object.entries(deps || {})) {
-    if (!dep.startsWith('@dotrino/') || String(pide).startsWith('file:')) continue
-    const pkg = leerJson(join(dir, 'node_modules', dep, 'package.json'))
+function installedVsRequested (dir, deps) {
+  const outside = []
+  for (const [dep, requested] of Object.entries(deps || {})) {
+    if (!dep.startsWith('@dotrino/') || String(requested).startsWith('file:')) continue
+    const pkg = readJson(join(dir, 'node_modules', dep, 'package.json'))
     if (!pkg) continue // sin instalar no es deriva: es un repo sin `npm install`
-    const limpio = String(pide).replace(/^[\^~]/, '')
-    if (pkg.version !== limpio) fuera.push({ dep, pide: limpio, instalado: pkg.version })
+    const clean = String(requested).replace(/^[\^~]/, '')
+    if (pkg.version !== clean) outside.push({ dep, pide: clean, instalado: pkg.version })
   }
-  return fuera
+  return outside
 }
 
 /**
@@ -768,19 +768,19 @@ function instaladoVsPedido (dir, deps) {
  * vez de la búsqueda. Un fallo que se manifiesta como «aquí no hay nada» es de los
  * caros: se cierra la línea de investigación equivocada.
  */
-const EXT_FUENTE = /\.(js|mjs|cjs|ts|tsx|jsx|vue|json|md|css|html|yml|yaml|sh)$/i
-function fuentesBinarias (dir) {
-  const salida = git(dir, 'ls-files')
-  if (!salida) return []
-  const malos = []
-  for (const f of salida.split('\n')) {
-    if (!f || !EXT_FUENTE.test(f)) continue
+const SOURCE_EXT = /\.(js|mjs|cjs|ts|tsx|jsx|vue|json|md|css|html|yml|yaml|sh)$/i
+function binarySources (dir) {
+  const output = git(dir, 'ls-files')
+  if (!output) return []
+  const bad = []
+  for (const f of output.split('\n')) {
+    if (!f || !SOURCE_EXT.test(f)) continue
     try {
       const b = readFileSync(join(dir, f))
-      if (b.includes(0)) malos.push(f)
+      if (b.includes(0)) bad.push(f)
     } catch { /* borrado del disco pero aún rastreado: no es cosa de este indicador */ }
   }
-  return malos
+  return bad
 }
 
 /**
@@ -789,8 +789,8 @@ function fuentesBinarias (dir) {
  * clon hermano `dotrino-wiki/content`; sin ese clon, el indicador no se evalúa (null)
  * en vez de acusar a todos de deuda.
  */
-const REPOS_EN_WIKI = (() => {
-  const dir = join(RAIZ, 'dotrino-wiki', 'content')
+const REPOS_IN_WIKI = (() => {
+  const dir = join(ROOT, 'dotrino-wiki', 'content')
   if (!existsSync(dir)) return null
   const set = new Set(['dotrino-wiki'])
   const walk = (d) => {
@@ -798,7 +798,7 @@ const REPOS_EN_WIKI = (() => {
       const f = join(d, e.name)
       if (e.isDirectory()) walk(f)
       else if (e.name.endsWith('.md')) {
-        const t = leer(f) || ''
+        const t = read(f) || ''
         for (const m of t.matchAll(/imdotrino\/([a-z0-9-]+)/g)) set.add(m[1])
         for (const m of t.matchAll(/\bdotrino-[a-z0-9-]+/g)) set.add(m[0])
       }
@@ -824,11 +824,11 @@ const REPOS_EN_WIKI = (() => {
  * Los umbrales se leen del propio archivo (no se copian acá) para que el informe no
  * pueda llamar «atrasada» a una auditoría que el auditor da por vigente.
  */
-const AUDITORIA = leerJson(join(AQUI, 'audit.json')) || { repos: {} }
-const UMBRAL_AUDITORIA = { commits: 10, dias: ROJO_DIAS, ...(AUDITORIA.umbrales || {}) }
+const AUDIT = readJson(join(HERE, 'audit.json')) || { repos: {} }
+const AUDIT_THRESHOLD = { commits: 10, dias: RED_DAYS, ...(AUDIT.umbrales || {}) }
 
 /** Las seis reglas que revisa el auditor, con el nombre con que se leen. */
-const REGLA_IA = {
+const AI_RULE = {
   voseo: 'voseo en la copy de usuario (§9)',
   english: 'código, rutas o logs en español (§8.1)',
   plain: 'jerga en la copy pública (§9.1)',
@@ -844,8 +844,8 @@ const REGLA_IA = {
  * puede distinguir lo que está **limpio en una regla** de lo que **nunca la pasó** —
  * que es lo que se veía igual, en verde, y no lo es.
  */
-const REGLAS_IA = AUDITORIA.reglas
-if (Object.keys(AUDITORIA.repos || {}).length && !Array.isArray(REGLAS_IA)) {
+const AI_RULES = AUDIT.reglas
+if (Object.keys(AUDIT.repos || {}).length && !Array.isArray(AI_RULES)) {
   console.error('audit.json tiene auditorías pero no dice contra qué reglas se audita ' +
     '(campo `reglas`). Sin ese dato no se puede saber qué se comprobó, y el informe ' +
     'diría «limpio» de lo que nadie miró. Corre `node dotrino-index/audit.mjs --dry-run`.')
@@ -854,7 +854,7 @@ if (Object.keys(AUDITORIA.repos || {}).length && !Array.isArray(REGLAS_IA)) {
 
 // ─── qué convenciones aplican a cada tipo (§13; las exenciones son del doc) ──
 
-const APLICA = {
+const APPLIES = {
   // landing de servicio (§1.2): sin PWA ni perfil, pero con SEO/support/topbar
   landing: ['topbar', 'theme', 'support', 'seo', 'og', 'catalogo', 'wiki'],
   app: ['npmrc', 'topbar', 'theme', 'profile', 'support', 'pwa', 'sw', 'commitMeta', 'seo', 'og', 'deploy', 'catalogo', 'wiki'],
@@ -872,7 +872,7 @@ const APLICA = {
  * los lista aparte con su motivo — nunca se esconden en silencio, porque entonces
  * el índice diría "todo en orden" sobre algo que nadie revisó.
  */
-const EXCEPCIONES = {
+const EXCEPTIONS = {
   'dotrino-mundial': {
     catalogo: 'Quitada del catálogo el 2026-07-29 a propósito: app atada al Mundial ' +
       '2026. Repo, subdominio y logo se conservan para reusarla en otro campeonato ' +
@@ -895,7 +895,7 @@ const EXCEPCIONES = {
  * fuera de él, así que sin esto vuelve a encontrarlos en cada pasada, para siempre.
  * Se emparejan por regla + archivo, y se listan igual que los otros desvíos.
  */
-const EXCEPCIONES_AUDITORIA = {
+const AUDIT_EXCEPTIONS = {
   'dotrino-compat': [{
     regla: 'pillars',
     archivo: 'src/advisory.js',
@@ -916,14 +916,14 @@ const EXCEPCIONES_AUDITORIA = {
 }
 
 /** ¿Este hallazgo es un desvío ya decidido? */
-const esDesvioDeclarado = (repo, h) =>
-  (EXCEPCIONES_AUDITORIA[repo] || []).some(e => e.regla === h.regla && e.archivo === h.archivo)
+const isDeclaredDeviation = (repo, h) =>
+  (AUDIT_EXCEPTIONS[repo] || []).some(e => e.regla === h.regla && e.archivo === h.archivo)
 
 /**
  * Qué se le exige a ESTA pieza. Las exenciones no son mías: salen del doc.
  * Una app interna (§7) no se indexa → sin OG; y no va al catálogo público (§11.4).
  */
-const aplica = (p) => [
+const applies = (p) => [
   // §15: AVISAR DE QUE HAY VERSIÓN NUEVA. No cuelga del tipo sino de si la pieza CORRE
   // en la máquina de alguien: un daemon que lleva meses levantado y un comando que se
   // invoca cien veces al día tienen el mismo agujero, y una PWA no lo tiene (su service
@@ -933,7 +933,7 @@ const aplica = (p) => [
   // `dotrino-reputation` están catalogados como `paquete` —son pilares— pero llevan su
   // `server/` dentro y corren 24/7 en un VPS. Con el cajón solo se les escapaba a los dos.
   ...((p.tipo === 'servicio' || p.tieneCli || p.tieneServidor) ? ['updateNotice'] : []),
-  ...(APLICA[p.tipo] || []),
+  ...(APPLIES[p.tipo] || []),
   // PUBLICAR DESDE CI CUELGA DE PUBLICAR, no del tipo de pieza: `dotrino-content` es una
   // `landing` que además publica a npm, y `dotrino-vault` también. La pregunta correcta
   // es si esto sale al registro, no en qué cajón lo hemos puesto.
@@ -945,20 +945,20 @@ const aplica = (p) => [
   ...(p.publicado ? ['oidc'] : [])
 ].filter((k, i, a) => a.indexOf(k) === i).filter(k =>
   !(p.interna && (k === 'og' || k === 'catalogo')) &&
-  !(k === 'catalogo' && (p.repo === REPO_CATALOGO || !HAY_CATALOGO)) &&
-  !EXCEPCIONES[p.repo]?.[k])
+  !(k === 'catalogo' && (p.repo === CATALOG_REPO || !HAS_CATALOG)) &&
+  !EXCEPTIONS[p.repo]?.[k])
 
 /**
  * A quién se le exige cada frescura. El README lo pide §2 a todo repo; la portada
  * solo la tiene lo que se sirve (app o landing); la ficha, lo que va al catálogo
- * (§11.4) — y eso ya lo decide `aplica`, con sus exenciones e internas.
+ * (§11.4) — y eso ya lo decide `applies`, con sus exenciones e internas.
  */
-const CLAVES_FRESCURA = ['readme', 'portada', 'catalogo', 'auditoria']
-const aplicaFrescura = (p, k) =>
+const FRESHNESS_KEYS = ['readme', 'portada', 'catalogo', 'auditoria']
+const freshnessApplies = (p, k) =>
   k === 'readme' ? true
     : k === 'auditoria' ? true
       : k === 'portada' ? (p.tipo === 'app' || p.tipo === 'landing')
-        : aplica(p).includes('catalogo')
+        : applies(p).includes('catalogo')
 /**
  * Una auditoría deja de valer con el MISMO criterio con que `audit.mjs` decide
  * volver a mirar: sin auditoría, auditada en un commit que no está en este clon, o
@@ -966,21 +966,21 @@ const aplicaFrescura = (p, k) =>
  * No se mide en días a secas como el README: un repo puede estar quieto un mes y su
  * auditoría seguir siendo exacta.
  */
-const auditoriaAtrasada = (p) => {
+const auditBehind = (p) => {
   const f = p.frescura.auditoria
   if (!f?.existe || f.commits === null) return true
   // Auditado contra una lista de reglas más corta que la de hoy: lo que no se miró no
   // está limpio, está sin mirar, y cuenta como pendiente igual que una atrasada.
   if (f.faltan?.length) return true
-  if (f.commits >= UMBRAL_AUDITORIA.commits) return true
-  return f.commits > 0 && f.dias >= UMBRAL_AUDITORIA.dias
+  if (f.commits >= AUDIT_THRESHOLD.commits) return true
+  return f.commits > 0 && f.dias >= AUDIT_THRESHOLD.dias
 }
-const desactualizado = (p, k) =>
-  aplicaFrescura(p, k) && (k === 'auditoria'
-    ? auditoriaAtrasada(p)
-    : (!p.frescura[k]?.existe || p.frescura[k].dias >= ROJO_DIAS))
+const outdated = (p, k) =>
+  freshnessApplies(p, k) && (k === 'auditoria'
+    ? auditBehind(p)
+    : (!p.frescura[k]?.existe || p.frescura[k].dias >= RED_DAYS))
 
-const ETIQUETA = {
+const LABEL = {
   npmrc: '.npmrc (§1.1)', topbar: '<dotrino-topbar> (§5)', theme: 'tema @dotrino/theme (§5)', profile: 'perfil (§6.1)',
   support: 'support (§6)', pwa: 'manifest PWA (§3)', sw: 'service worker (§3)',
   commitMeta: 'meta commit (§3)', seo: 'robots+sitemap (§7)', og: 'og.jpg (§10)',
@@ -993,15 +993,15 @@ const ETIQUETA = {
 // ─── red (opcional) ────────────────────────────────────────────────────────
 
 /** ¿`a` es más nueva que `b`? Tres números; lo que no lo sea no compite. */
-function masNueva (a, b) {
+function newest (a, b) {
   const n = (v) => String(v).replace(/^v/, '').split(/[.-]/).slice(0, 3).map(x => parseInt(x, 10) || 0)
   const [x, y, z] = n(a); const [p, q, r] = n(b)
   return x !== p ? x > p : y !== q ? y > q : z > r
 }
 
-async function versionesNpm (nombres) {
+async function npmVersions (names) {
   const out = {}
-  await Promise.all(nombres.map(async (n) => {
+  await Promise.all(names.map(async (n) => {
     try {
       const r = await fetch(`https://registry.npmjs.org/${n.replace('/', '%2f')}/latest`)
       out[n] = r.ok ? (await r.json()).version : null
@@ -1018,16 +1018,16 @@ async function versionesNpm (nombres) {
  * servido hay entre lo que sirve el dominio y HEAD. Cero = al día.
  * (Comparar mal daba 3 falsos desfases en un sentido y 3 en el otro.)
  */
-function commitsSinPublicar (dir, vivo, raizSitio) {
-  if (!vivo) return null
+function unpublishedCommits (dir, live, siteRoot) {
+  if (!live) return null
   // OJO: `cat-file -e` no imprime NADA cuando el commit existe (devuelve ''), así
   // que hay que comparar contra null y no por verdadero/falso.
-  if (git(dir, 'cat-file', '-e', vivo) === null) return null   // commit ajeno al repo
-  const salida = git(dir, 'log', '--oneline', `${vivo}..HEAD`, '--', raizSitio || '.')
-  return salida === null ? null : salida.split('\n').filter(Boolean).length
+  if (git(dir, 'cat-file', '-e', live) === null) return null   // commit ajeno al repo
+  const output = git(dir, 'log', '--oneline', `${live}..HEAD`, '--', siteRoot || '.')
+  return output === null ? null : output.split('\n').filter(Boolean).length
 }
 
-async function commitEnVivo (sub) {
+async function liveCommit (sub) {
   try {
     const ctrl = AbortSignal.timeout(12000)
     const r = await fetch(`https://${sub}/`, { signal: ctrl, redirect: 'follow' })
@@ -1039,38 +1039,38 @@ async function commitEnVivo (sub) {
 
 // ─── informe ───────────────────────────────────────────────────────────────
 
-function informe (piezas, pilares, enNpm) {
+function report (pieces, pillars, onNpm) {
   const L = []
-  const cuenta = (t) => piezas.filter(p => p.tipo === t).length
-  const hoy = sh('date', ['+%Y-%m-%d'])
+  const count = (t) => pieces.filter(p => p.tipo === t).length
+  const today = sh('date', ['+%Y-%m-%d'])
 
   L.push('# Índice del ecosistema Dotrino', '')
-  L.push(`> Generado por \`indice.mjs\` el ${hoy}${VIVO ? ' (con `--vivo`: npm + dominios)' : ' (sin red)'}.`)
+  L.push(`> Generado por \`index.mjs\` el ${today}${LIVE ? ' (con `--vivo`: npm + dominios)' : ' (sin red)'}.`)
   L.push('> **No se edita a mano** — se regenera. Los datos crudos, en `ECOSISTEMA.json`.', '')
-  L.push(`**${piezas.length} piezas**: ${cuenta('app')} apps · ${cuenta('paquete')} paquetes · ` +
-         `${cuenta('servicio')} servicios · ${cuenta('landing')} landings · ` +
-         `${cuenta('informe')} informes · ${cuenta('otro')} otros`, '')
+  L.push(`**${pieces.length} piezas**: ${count('app')} apps · ${count('paquete')} paquetes · ` +
+         `${count('servicio')} servicios · ${count('landing')} landings · ` +
+         `${count('informe')} informes · ${count('otro')} otros`, '')
 
   // 0. SECRETOS COMMITEADOS. Va primero porque no hay nada más urgente: lo demás se
   // arregla cuando toque, esto se arregla hoy y además hay que rotar la credencial.
-  const conSecretos = piezas.filter(p => p.secretos?.length)
-  if (conSecretos.length) {
+  const withSecrets = pieces.filter(p => p.secretos?.length)
+  if (withSecrets.length) {
     L.push('## ⚠️ Secretos rastreados por git', '')
     L.push('> `CLAUDE.md`: *"Nunca commitear secretos (`.env`, `.jks`, `keystore.properties`, tokens de npm)"*.', '')
     L.push('> Sacarlo del árbol NO basta: sigue en el historial. Hay que **rotar la credencial** y luego limpiarlo.', '')
     L.push('| Repo | Archivo |', '|---|---|')
-    for (const p of conSecretos) for (const f of p.secretos) L.push(`| \`${p.repo}\` | \`${f}\` |`)
+    for (const p of withSecrets) for (const f of p.secretos) L.push(`| \`${p.repo}\` | \`${f}\` |`)
     L.push('')
   }
 
   // 1. Lo que está fuera de sincronía con su remoto — lo más urgente
-  const desincronizado = piezas.filter(p => p.git.sinPushear > 0 || p.git.sucio > 0 || !p.git.remoto)
+  const unsynced = pieces.filter(p => p.git.sinPushear > 0 || p.git.sucio > 0 || !p.git.remoto)
   L.push('## Sin sincronizar con el remoto', '')
   L.push('> `CLAUDE.md`: *"Una tarea no está terminada si el código quedó solo en el árbol de trabajo."*', '')
-  if (!desincronizado.length) L.push('Nada pendiente: todo commiteado y pusheado.', '')
+  if (!unsynced.length) L.push('Nada pendiente: todo commiteado y pusheado.', '')
   else {
     L.push('| Repo | Sin commitear | Sin pushear | Remoto |', '|---|---:|---:|---|')
-    for (const p of desincronizado.sort((a, b) => b.git.sinPushear - a.git.sinPushear)) {
+    for (const p of unsynced.sort((a, b) => b.git.sinPushear - a.git.sinPushear)) {
       L.push(`| \`${p.repo}\` | ${p.git.sucio || '—'} | ${p.git.sinPushear || '—'} | ${p.git.remoto ? 'sí' : '**NO TIENE**'} |`)
     }
     L.push('')
@@ -1079,9 +1079,9 @@ function informe (piezas, pilares, enNpm) {
   // 1a. EL REPO CONTRA NPM. Lo que está en `main` y no en el registro no le ha llegado a nadie.
   L.push('## Versión del repo ≠ versión en npm', '')
   L.push('> Un arreglo que está en `main` y no en npm no le ha llegado a nadie: quien instala recibe la versión vieja.', '')
-  if (!VIVO) L.push('**No se midió**: hace falta `--vivo` para preguntarle a npm. Esto NO significa que todo esté publicado.', '')
+  if (!LIVE) L.push('**No se midió**: hace falta `--vivo` para preguntarle a npm. Esto NO significa que todo esté publicado.', '')
   else {
-    const pend = piezas.flatMap(p => p.npmPendiente || [])
+    const pend = pieces.flatMap(p => p.npmPendiente || [])
     if (!pend.length) L.push('Todo lo que se publica está en npm con la versión del repo.', '')
     else {
       L.push('| Paquete | Dónde | En el repo | En npm | Qué pasa |', '|---|---|---|---|---|')
@@ -1098,74 +1098,74 @@ function informe (piezas, pilares, enNpm) {
   // fallo conocido, y el registro ya dice cómo se arregla.
   L.push('## Usa una versión ROTA (registro de `dotrino-roadmap`)', '')
   L.push('> CONVENCIONES §14: *"Si después se detecta un fallo en una versión, esa versión se marca incompatible."*', '')
-  if (!ROTAS) {
+  if (!BROKEN) {
     L.push('**No se pudo comprobar**: falta `dotrino-roadmap` junto a este repo (se lee `manifests/dotrino.json`). ' +
       'Esto NO significa que nadie use una versión rota.', '')
   } else {
-    const usos = piezas.flatMap(p => p.rotas || [])
-    if (!usos.length) L.push('Nadie usa una versión marcada como rota.', '')
+    const uses = pieces.flatMap(p => p.rotas || [])
+    if (!uses.length) L.push('Nadie usa una versión marcada como rota.', '')
     else {
-      const ciertos = usos.filter(u => !u.sinSaber)
-      L.push(`**${ciertos.length} usos** en ${new Set(ciertos.map(u => u.unidad)).size} repos` +
-        (usos.length > ciertos.length ? ` · y ${usos.length - ciertos.length} sin poder resolver la versión (rango sin lock ni \`node_modules\`)` : '') + '.', '')
+      const known = uses.filter(u => !u.sinSaber)
+      L.push(`**${known.length} usos** en ${new Set(known.map(u => u.unidad)).size} repos` +
+        (uses.length > known.length ? ` · y ${uses.length - known.length} sin poder resolver la versión (rango sin lock ni \`node_modules\`)` : '') + '.', '')
       L.push('| Repo | Pilar | Usa | Arreglo |', '|---|---|---|---|')
-      for (const u of usos) {
+      for (const u of uses) {
         L.push(`| \`${u.unidad}\` | ${u.dep} | ${u.version ? '**' + u.version + '**' : '? (' + u.pide + ')'} | ${u.fix} |`)
       }
       L.push('')
-      const motivos = [...new Map(usos.map(u => [u.dep + '|' + u.fix, u])).values()]
-      L.push(`<details><summary>Por qué está rota cada una (${motivos.length})</summary>`, '')
-      for (const u of motivos) L.push(`- **${u.dep}** — ${u.why}`)
+      const reasons = [...new Map(uses.map(u => [u.dep + '|' + u.fix, u])).values()]
+      L.push(`<details><summary>Por qué está rota cada una (${reasons.length})</summary>`, '')
+      for (const u of reasons) L.push(`- **${u.dep}** — ${u.why}`)
       L.push('', '</details>', '')
     }
   }
 
   // 2. Deriva de versiones de los pilares
   L.push('## Deriva de versiones `@dotrino/*`', '')
-  const filas = []
-  const locales = []
-  for (const p of piezas) {
-    const porUnidad = [[p.repo, p.dotrinoDeps], ...Object.entries(p.subDeps || {})]
-    for (const [unidad, deps] of porUnidad) {
-    for (const [dep, pide] of Object.entries(deps)) {
+  const rows = []
+  const localOnes = []
+  for (const p of pieces) {
+    const byUnit = [[p.repo, p.dotrinoDeps], ...Object.entries(p.subDeps || {})]
+    for (const [unit, deps] of byUnit) {
+    for (const [dep, requested] of Object.entries(deps)) {
       // `file:../dotrino-x` es una dep local a propósito (los bots corren contra
       // los hermanos del disco): no es deriva, no se cuenta como desajuste.
-      if (String(pide).startsWith('file:')) { locales.push([unidad, dep, pide]); continue }
-      const publicado = pilares[dep]
-      if (!publicado) filas.push([unidad, dep, pide, '— (sin publicar)'])
-      else if (!satisface(pide, publicado)) filas.push([unidad, dep, pide, publicado])
+      if (String(requested).startsWith('file:')) { localOnes.push([unit, dep, requested]); continue }
+      const published = pillars[dep]
+      if (!published) rows.push([unit, dep, requested, '— (sin publicar)'])
+      else if (!satisfies(requested, published)) rows.push([unit, dep, requested, published])
     }
     }
   }
-  if (!filas.length) L.push('Todo al día.', '')
+  if (!rows.length) L.push('Todo al día.', '')
   else {
-    L.push(`**${filas.length} desajustes** en ${new Set(filas.map(f => f[0])).size} repos.`, '')
+    L.push(`**${rows.length} desajustes** en ${new Set(rows.map(f => f[0])).size} repos.`, '')
     L.push('| Repo | Pilar | Pide | Publicado |', '|---|---|---|---|')
-    for (const f of filas) L.push(`| \`${f[0]}\` | ${f[1]} | ${f[2]} | ${f[3]} |`)
+    for (const f of rows) L.push(`| \`${f[0]}\` | ${f[1]} | ${f[2]} | ${f[3]} |`)
     L.push('')
   }
-  if (locales.length) {
-    L.push(`<details><summary>${locales.length} deps locales \`file:\` (a propósito, no son deriva)</summary>`, '')
-    for (const f of locales) L.push(`- \`${f[0]}\` → ${f[1]} \`${f[2]}\``)
+  if (localOnes.length) {
+    L.push(`<details><summary>${localOnes.length} deps locales \`file:\` (a propósito, no son deriva)</summary>`, '')
+    for (const f of localOnes) L.push(`- \`${f[0]}\` → ${f[1]} \`${f[2]}\``)
     L.push('', '</details>', '')
   }
 
   // 2b. Lo que PIDE contra lo que tiene INSTALADO. Distinto de lo de arriba: aquí no
   // se está viejo respecto a npm, se está mintiendo respecto a uno mismo.
-  const instal = piezas.flatMap(p => (p.instalado || []).map(d => ({ repo: p.repo, ...d })))
+  const installed = pieces.flatMap(p => (p.instalado || []).map(d => ({ repo: p.repo, ...d })))
   L.push('## Instalado ≠ lo que pide el `package.json`', '')
   L.push('> Lo de arriba compara con npm; esto compara con `node_modules`, que es **lo que de verdad corre**.', '')
   L.push('> Mientras no coincidan, se depura contra código que no es el que se ejecuta.', '')
-  if (!instal.length) L.push('Todo coincide.', '')
+  if (!installed.length) L.push('Todo coincide.', '')
   else {
-    L.push(`**${instal.length}** en ${new Set(instal.map(d => d.repo)).size} repos. Se arregla con \`npm install\` en cada uno.`, '')
+    L.push(`**${installed.length}** en ${new Set(installed.map(d => d.repo)).size} repos. Se arregla con \`npm install\` en cada uno.`, '')
     L.push('| Repo | Paquete | Pide | Instalado |', '|---|---|---|---|')
-    for (const d of instal) L.push(`| \`${d.repo}\` | ${d.dep} | ${d.pide} | **${d.instalado}** |`)
+    for (const d of installed) L.push(`| \`${d.repo}\` | ${d.dep} | ${d.pide} | **${d.instalado}** |`)
     L.push('')
   }
 
   // 2c. Fuentes que las herramientas ven como binarias.
-  const bin = piezas.flatMap(p => (p.binarios || []).map(f => ({ repo: p.repo, f })))
+  const bin = pieces.flatMap(p => (p.binarios || []).map(f => ({ repo: p.repo, f })))
   if (bin.length) {
     L.push('## Fuentes que `grep` no puede leer', '')
     L.push('> Llevan un byte NUL literal dentro de una cadena. El código corre igual, pero `file` las da', '')
@@ -1177,30 +1177,30 @@ function informe (piezas, pilares, enNpm) {
 
   // 3. Convenciones incumplidas, agrupadas por norma
   L.push('## Convenciones incumplidas (§13)', '')
-  const porNorma = {}
-  for (const p of piezas) {
-    for (const k of aplica(p)) if (!p.conv[k]) (porNorma[k] ||= []).push(p.repo)
+  const byConvention = {}
+  for (const p of pieces) {
+    for (const k of applies(p)) if (!p.conv[k]) (byConvention[k] ||= []).push(p.repo)
   }
-  const normas = Object.entries(porNorma).sort((a, b) => b[1].length - a[1].length)
-  if (!normas.length) L.push('Nada que reportar.', '')
-  else for (const [k, repos] of normas) {
-    L.push(`- **${ETIQUETA[k]}** — falta en ${repos.length}: ${repos.map(r => `\`${r}\``).join(', ')}`)
+  const conventions = Object.entries(byConvention).sort((a, b) => b[1].length - a[1].length)
+  if (!conventions.length) L.push('Nada que reportar.', '')
+  else for (const [k, repos] of conventions) {
+    L.push(`- **${LABEL[k]}** — falta en ${repos.length}: ${repos.map(r => `\`${r}\``).join(', ')}`)
   }
   L.push('')
 
   // 3b. Los desvíos que SÍ están decididos — visibles, no escondidos
-  const conExcepcion = Object.entries(EXCEPCIONES)
-  const desviosAuditoria = Object.entries(EXCEPCIONES_AUDITORIA)
-  if (conExcepcion.length || desviosAuditoria.length) {
+  const withException = Object.entries(EXCEPTIONS)
+  const auditDeviations = Object.entries(AUDIT_EXCEPTIONS)
+  if (withException.length || auditDeviations.length) {
     L.push('### Desvíos declarados (decisiones, no incumplimientos)', '')
-    for (const [repo, reglas] of conExcepcion) {
-      for (const [k, motivo] of Object.entries(reglas)) {
-        L.push(`- \`${repo}\` — **${ETIQUETA[k]}**: ${motivo}`)
+    for (const [repo, rules] of withException) {
+      for (const [k, reason] of Object.entries(rules)) {
+        L.push(`- \`${repo}\` — **${LABEL[k]}**: ${reason}`)
       }
     }
-    for (const [repo, casos] of desviosAuditoria) {
-      for (const c of casos) {
-        L.push(`- \`${repo}\` — **${REGLA_IA[c.regla] || c.regla}** en \`${c.archivo}\`: ${c.motivo}`)
+    for (const [repo, cases] of auditDeviations) {
+      for (const c of cases) {
+        L.push(`- \`${repo}\` — **${AI_RULE[c.regla] || c.regla}** en \`${c.archivo}\`: ${c.motivo}`)
       }
     }
     L.push('')
@@ -1215,48 +1215,48 @@ function informe (piezas, pilares, enNpm) {
   L.push('> Cada repo anota **contra qué reglas** se le auditó: una regla nueva no convierte en limpio ' +
          'a lo que nunca se miró. La duplicación **entre** repos no la ve nadie — el auditor lee un repo ' +
          'por vez.', '')
-  const auditados = piezas.filter(p => p.auditoria)
-  const hallazgos = auditados.flatMap(p => (p.auditoria.hallazgos || []).map(h => ({ repo: p.repo, ...h })))
+  const audited = pieces.filter(p => p.auditoria)
+  const findingCount = audited.flatMap(p => (p.auditoria.hallazgos || []).map(h => ({ repo: p.repo, ...h })))
   // Los repos privados no se auditan (sus hallazgos acabarían publicados en este
   // repo, que es público), así que tampoco cuentan como deuda de auditoría.
-  const auditables = piezas.filter(p => !PRIVADOS.has(p.repo))
-  const sinAuditar = auditables.filter(p => !p.auditoria)
-  L.push(`**${auditados.length} de ${auditables.length} piezas auditadas** · ` +
-    `${hallazgos.length} hallazgo(s) en ${new Set(hallazgos.map(h => h.repo)).size} repos · ` +
-    `se vuelve a auditar a los ${UMBRAL_AUDITORIA.commits} commits o ${UMBRAL_AUDITORIA.dias} días.`, '')
-  if (sinAuditar.length) {
-    L.push(`<details><summary>${sinAuditar.length} piezas sin auditar todavía</summary>`, '')
-    L.push(sinAuditar.map(p => `\`${p.repo}\``).join(', '), '')
+  const auditable = pieces.filter(p => !PRIVATE_REPOS.has(p.repo))
+  const unaudited = auditable.filter(p => !p.auditoria)
+  L.push(`**${audited.length} de ${auditable.length} piezas auditadas** · ` +
+    `${findingCount.length} hallazgo(s) en ${new Set(findingCount.map(h => h.repo)).size} repos · ` +
+    `se vuelve a auditar a los ${AUDIT_THRESHOLD.commits} commits o ${AUDIT_THRESHOLD.dias} días.`, '')
+  if (unaudited.length) {
+    L.push(`<details><summary>${unaudited.length} piezas sin auditar todavía</summary>`, '')
+    L.push(unaudited.map(p => `\`${p.repo}\``).join(', '), '')
     L.push('Se arregla con `node dotrino-index/audit.mjs` (audita por tandas: `--limit 10`).', '')
     L.push('</details>', '')
   }
   // Lo que NUNCA se le pasó a un repo se dice aparte de lo que se le pasó hace mucho:
   // son dos deudas distintas y se resuelven con la misma orden, pero quien mira quiere
   // saber si el verde de una regla está comprobado o solo no se ha mirado.
-  const porReglaSinPasar = {}
-  for (const p of auditados) {
-    for (const r of (p.frescura.auditoria.faltan || [])) (porReglaSinPasar[r] ||= []).push(p.repo)
+  const byRuleUnchecked = {}
+  for (const p of audited) {
+    for (const r of (p.frescura.auditoria.faltan || [])) (byRuleUnchecked[r] ||= []).push(p.repo)
   }
-  for (const [r, repos] of Object.entries(porReglaSinPasar).sort((a, b) => b[1].length - a[1].length)) {
-    L.push(`<details><summary><strong>${repos.length} piezas sin pasar todavía la regla «${REGLA_IA[r] || r}»</strong> ` +
+  for (const [r, repos] of Object.entries(byRuleUnchecked).sort((a, b) => b[1].length - a[1].length)) {
+    L.push(`<details><summary><strong>${repos.length} piezas sin pasar todavía la regla «${AI_RULE[r] || r}»</strong> ` +
       '— se auditaron antes de que existiera, así que ahí no están limpias: están sin mirar</summary>', '')
     L.push(repos.map(r2 => `\`${r2}\``).join(', '), '')
     L.push('</details>', '')
   }
-  const atrasadas = auditados.filter(p => auditoriaAtrasada(p) && !p.frescura.auditoria.faltan?.length)
-  if (atrasadas.length) {
-    L.push(`Auditoría atrasada (${atrasadas.length}): ` +
-      atrasadas.map(p => `\`${p.repo}\` (${p.frescura.auditoria.commits ?? '?'} c)`).join(', '), '')
+  const behind = audited.filter(p => auditBehind(p) && !p.frescura.auditoria.faltan?.length)
+  if (behind.length) {
+    L.push(`Auditoría atrasada (${behind.length}): ` +
+      behind.map(p => `\`${p.repo}\` (${p.frescura.auditoria.commits ?? '?'} c)`).join(', '), '')
   }
-  if (!hallazgos.length) L.push(auditados.length ? 'Sin hallazgos en lo auditado.' : '_Nada auditado aún._', '')
+  if (!findingCount.length) L.push(audited.length ? 'Sin hallazgos en lo auditado.' : '_Nada auditado aún._', '')
   else {
-    const porRegla = {}
-    for (const h of hallazgos) (porRegla[h.regla] ||= []).push(h)
-    for (const [regla, hs] of Object.entries(porRegla).sort((a, b) => b[1].length - a[1].length)) {
-      L.push(`### ${REGLA_IA[regla] || regla} — ${hs.length}`, '')
+    const byRule = {}
+    for (const h of findingCount) (byRule[h.regla] ||= []).push(h)
+    for (const [rule, hs] of Object.entries(byRule).sort((a, b) => b[1].length - a[1].length)) {
+      L.push(`### ${AI_RULE[rule] || rule} — ${hs.length}`, '')
       for (const h of hs) {
-        const donde = h.archivo ? `\`${h.archivo}${h.linea ? `:${h.linea}` : ''}\`` : '—'
-        L.push(`- \`${h.repo}\` ${donde} — ${h.porque}` +
+        const where = h.archivo ? `\`${h.archivo}${h.linea ? `:${h.linea}` : ''}\`` : '—'
+        L.push(`- \`${h.repo}\` ${where} — ${h.porque}` +
           (h.cita ? `\n  > \`${h.cita.replace(/`/g, "'")}\`` : '') +
           (h.arreglo ? `\n  → ${h.arreglo}` : ''))
       }
@@ -1265,7 +1265,7 @@ function informe (piezas, pilares, enNpm) {
   }
 
   // 4. Frescura: ¿lo que se CUENTA sigue el ritmo de lo que se HACE?
-  L.push(`## Frescura: README · portada · ficha · auditoría (rojo a los ${ROJO_DIAS} días)`, '')
+  L.push(`## Frescura: README · portada · ficha · auditoría (rojo a los ${RED_DAYS} días)`, '')
   L.push('> Brecha entre el **último commit del repo** y la última vez que se tocó cada cosa. ' +
          'No mira el contenido —no juzga si está bien escrito—, solo si se actualizó. Un repo ' +
          'quieto no envejece: si el código tampoco se movió, la brecha es 0.', '')
@@ -1276,114 +1276,114 @@ function informe (piezas, pilares, enNpm) {
   L.push('> `≥` = sigue como en el commit inicial del repo. La historia anterior a la ' +
          'migración desde CloserClick no está, así que ahí la brecha real es **al menos** esa.', '')
   L.push(`> *Auditoría* = la de IA, y NO se mide en días a secas: un repo quieto un mes conserva su ` +
-         `veredicto. Se pone en rojo a los ${UMBRAL_AUDITORIA.commits} commits con sustancia desde el ` +
-         `commit auditado, o a los ${UMBRAL_AUDITORIA.dias} días si además se movió.`, '')
+         `veredicto. Se pone en rojo a los ${AUDIT_THRESHOLD.commits} commits con sustancia desde el ` +
+         `commit auditado, o a los ${AUDIT_THRESHOLD.dias} días si además se movió.`, '')
 
-  const celda = (p, k) => {
-    if (!aplicaFrescura(p, k)) return '·'
+  const cell = (p, k) => {
+    if (!freshnessApplies(p, k)) return '·'
     const f = p.frescura[k]
     if (!f?.existe) return k === 'auditoria' ? '**sin auditar**' : '**no tiene**'
     // Una regla que nunca se le pasó se dice en la celda: si no, un repo limpio en
     // cinco reglas y sin mirar en la sexta se ve igual que uno limpio en las seis.
-    const sinPasar = k === 'auditoria' && f.faltan?.length ? ` · sin ${f.faltan.join(', ')}` : ''
-    const txt = `${f.fecha} · ${f.desdeElInicio ? '≥' : ''}${f.dias} d${f.commits ? ` / ${f.commits} c` : ''}${sinPasar}`
-    // El rojo lo decide `desactualizado`, que para la auditoría cuenta commits y no
+    const unchecked = k === 'auditoria' && f.faltan?.length ? ` · sin ${f.faltan.join(', ')}` : ''
+    const txt = `${f.fecha} · ${f.desdeElInicio ? '≥' : ''}${f.dias} d${f.commits ? ` / ${f.commits} c` : ''}${unchecked}`
+    // El rojo lo decide `outdated`, que para la auditoría cuenta commits y no
     // solo días: comparar `dias` acá daría por vigente una auditoría de 40 commits.
-    return desactualizado(p, k) ? `**🔴 ${txt}**` : txt
+    return outdated(p, k) ? `**🔴 ${txt}**` : txt
   }
-  const fila = (p) => `| \`${p.repo}\` | ${celda(p, 'readme')} | ${celda(p, 'portada')} | ` +
-    `${celda(p, 'catalogo')} | ${celda(p, 'auditoria')} |`
-  const peor = (p) => Math.max(...CLAVES_FRESCURA.map(k =>
-    !aplicaFrescura(p, k) ? -1 : (!p.frescura[k]?.existe ? Infinity : p.frescura[k].dias)))
-  const porPeor = (a, b) => peor(b) - peor(a) || a.repo.localeCompare(b.repo)
-  const CABECERA = ['| Repo | README | Portada | Ficha en el catálogo | Auditoría |', '|---|---|---|---|---|']
-  const viejas = piezas.filter(p => CLAVES_FRESCURA.some(k => desactualizado(p, k)))
-  if (!viejas.length) L.push(`Nada por encima de ${ROJO_DIAS} días.`, '')
+  const row = (p) => `| \`${p.repo}\` | ${cell(p, 'readme')} | ${cell(p, 'portada')} | ` +
+    `${cell(p, 'catalogo')} | ${cell(p, 'auditoria')} |`
+  const worst = (p) => Math.max(...FRESHNESS_KEYS.map(k =>
+    !freshnessApplies(p, k) ? -1 : (!p.frescura[k]?.existe ? Infinity : p.frescura[k].dias)))
+  const byWorst = (a, b) => worst(b) - worst(a) || a.repo.localeCompare(b.repo)
+  const HEADER = ['| Repo | README | Portada | Ficha en el catálogo | Auditoría |', '|---|---|---|---|---|']
+  const stale = pieces.filter(p => FRESHNESS_KEYS.some(k => outdated(p, k)))
+  if (!stale.length) L.push(`Nada por encima de ${RED_DAYS} días.`, '')
   else {
-    L.push(`**${viejas.length} de ${piezas.length} piezas** tienen algo desactualizado.`, '')
-    L.push(...CABECERA)
-    for (const p of [...viejas].sort(porPeor)) L.push(fila(p))
+    L.push(`**${stale.length} de ${pieces.length} piezas** tienen algo desactualizado.`, '')
+    L.push(...HEADER)
+    for (const p of [...stale].sort(byWorst)) L.push(row(p))
     L.push('')
   }
   // El resto NO se esconde: hay piezas por debajo del umbral de días que acumulan
   // MUCHOS commits encima (terminal, identity). Que no estén en rojo no es que estén
   // al día — es que su brecha se mide en commits, no en días.
-  const resto = piezas.filter(p => !viejas.includes(p) && peor(p) > 0).sort(porPeor)
-  if (resto.length) {
-    L.push(`<details><summary>${resto.length} piezas por debajo de ${ROJO_DIAS} días (pero con algo atrasado)</summary>`, '')
-    L.push(...CABECERA)
-    for (const p of resto) L.push(fila(p))
+  const rest = pieces.filter(p => !stale.includes(p) && worst(p) > 0).sort(byWorst)
+  if (rest.length) {
+    L.push(`<details><summary>${rest.length} piezas por debajo de ${RED_DAYS} días (pero con algo atrasado)</summary>`, '')
+    L.push(...HEADER)
+    for (const p of rest) L.push(row(p))
     L.push('', '</details>', '')
   }
 
   // 5. Apps con versión nativa (§16): cuánto va detrás cada una de la PWA.
-  const conNativa = piezas.filter(p => p.plataformas)
+  const withNative = pieces.filter(p => p.plataformas)
   L.push('## Plataformas nativas (§16)', '')
   L.push('> La PWA va delante con cada característica; la versión nativa vale la de la PWA con la ' +
     'que está a la par. Ir detrás no es un incumplimiento: es la deuda que hay que ver.', '')
-  if (!conNativa.length) {
+  if (!withNative.length) {
     L.push('Ninguna app declara `dotrino.platforms` en su `package.json`.', '')
   } else {
-    const celda = x => (x ? `${x.version || '—'} · ${x.estado}` : '—')
+    const cell = x => (x ? `${x.version || '—'} · ${x.estado}` : '—')
     L.push('| App | PWA | iOS | Android |', '|---|---|---|---|')
-    for (const p of conNativa) {
-      L.push(`| \`${p.repo}\` | ${p.plataformas.pwa || '—'} | ${celda(p.plataformas.ios)} | ${celda(p.plataformas.android)} |`)
+    for (const p of withNative) {
+      L.push(`| \`${p.repo}\` | ${p.plataformas.pwa || '—'} | ${cell(p.plataformas.ios)} | ${cell(p.plataformas.android)} |`)
     }
     L.push('')
   }
 
   // 6. Quién consume cada pilar (para saber a qué le pega un bump)
   L.push('## Consumidores por pilar', '')
-  const consumidores = {}
-  for (const p of piezas) for (const dep of Object.keys(p.dotrinoDeps)) (consumidores[dep] ||= []).push(p.repo)
-  L.push(VIVO ? '> "Publicado" = versión real del registro de npm.'
+  const consumers = {}
+  for (const p of pieces) for (const dep of Object.keys(p.dotrinoDeps)) (consumers[dep] ||= []).push(p.repo)
+  L.push(LIVE ? '> "Publicado" = versión real del registro de npm.'
     : '> Sin `--vivo`, "Publicado" es la versión del `package.json` local, no la de npm.', '')
   L.push('| Pilar | Publicado | Consumidores |', '|---|---|---:|')
-  for (const [dep, repos] of Object.entries(consumidores).sort((a, b) => b[1].length - a[1].length)) {
-    const npm = VIVO ? (enNpm[dep] ? '' : ' **(no está en npm)**') : ''
-    L.push(`| ${dep} | ${pilares[dep] || '—'}${npm} | ${repos.length} |`)
+  for (const [dep, repos] of Object.entries(consumers).sort((a, b) => b[1].length - a[1].length)) {
+    const npm = LIVE ? (onNpm[dep] ? '' : ' **(no está en npm)**') : ''
+    L.push(`| ${dep} | ${pillars[dep] || '—'}${npm} | ${repos.length} |`)
   }
   L.push('')
 
   // 6. El inventario completo
   L.push('## Inventario', '')
   L.push('| Repo | Tipo | Subdominio | Ver | Stack | Commit | Fecha |', '|---|---|---|---|---|---|---|')
-  for (const p of piezas.sort((a, b) => a.tipo.localeCompare(b.tipo) || a.repo.localeCompare(b.repo))) {
-    const vivo = !p.vivo ? ''
+  for (const p of pieces.sort((a, b) => a.tipo.localeCompare(b.tipo) || a.repo.localeCompare(b.repo))) {
+    const live = !p.vivo ? ''
       : p.vivo.sinPublicar === 0 ? ' ✓'
       : p.vivo.commit ? ` ⚠ ${p.vivo.sinPublicar ?? '?'} commit(s) sin publicar`
       : p.vivo.http === 200 ? ' · sin meta commit'
       : ` ⚠ http ${p.vivo.http ?? p.vivo.error ?? '—'}`
-    L.push(`| \`${p.repo}\` | ${p.tipo} | ${p.subdominio || '—'}${vivo} | ${p.version || '—'} | ${p.stack} | \`${p.git.commit || '—'}\` | ${p.git.fecha || '—'} |`)
+    L.push(`| \`${p.repo}\` | ${p.tipo} | ${p.subdominio || '—'}${live} | ${p.version || '—'} | ${p.stack} | \`${p.git.commit || '—'}\` | ${p.git.fecha || '—'} |`)
   }
   L.push('')
-  if (VIVO) L.push('> En *Subdominio*: ✓ = el dominio sirve el mismo commit que el local; ⚠ = no.', '')
+  if (LIVE) L.push('> En *Subdominio*: ✓ = el dominio sirve el mismo commit que el local; ⚠ = no.', '')
   return L.join('\n')
 }
 
 // ─── main ──────────────────────────────────────────────────────────────────
 
-const catalogo = leerCatalogo()
-const nombres = readdirSync(RAIZ).filter(d =>
+const catalog = readCatalog()
+const names = readdirSync(ROOT).filter(d =>
   (d.startsWith('dotrino-') || d === 'android-launcher') &&
-  (existsSync(join(RAIZ, d, '.git')) || existsSync(join(RAIZ, d, 'package.json'))) &&
+  (existsSync(join(ROOT, d, '.git')) || existsSync(join(ROOT, d, 'package.json'))) &&
   // Y que sea SU repo, no el de más arriba. Una carpeta con un `.git` vacío —sobra
   // del renombrado desde CloserClick— hacía que git resolviera hacia la raíz: la
   // pieza aparecía en el informe con los cambios sin commitear DEL SUPERREPO
   // colgados de ella. Un dato inventado es peor que ninguno.
-  (!existsSync(join(RAIZ, d, '.git')) || git(join(RAIZ, d), 'rev-parse', '--show-toplevel') === join(RAIZ, d)))
+  (!existsSync(join(ROOT, d, '.git')) || git(join(ROOT, d), 'rev-parse', '--show-toplevel') === join(ROOT, d)))
 
-const piezas = nombres.map(n => analizar(n, catalogo))
+const pieces = names.map(n => analyze(n, catalog))
 
 // La ficha del catálogo se mide de una sola pasada por el historial de `apps.ts`
 // (un archivo compartido por todas las apps) y se reparte a cada pieza.
-const fichas = frescuraCatalogo()
-for (const p of piezas) {
-  const f = fichas[p.repo] || null
+const cards = catalogFreshness()
+for (const p of pieces) {
+  const f = cards[p.repo] || null
   p.frescura.catalogo = {
     existe: Boolean(f),
     fecha: f?.fecha || null,
-    dias: diasEntre(f?.fecha, p.git.fecha),
+    dias: daysBetween(f?.fecha, p.git.fecha),
     commits: null,
     desdeElInicio: Boolean(f?.desdeElInicio)
   }
@@ -1391,19 +1391,19 @@ for (const p of piezas) {
 
 // Versión "publicada" de cada pilar: sin red, la del package.json del propio
 // paquete (lo que hacía check-versions.mjs); con --vivo, la real de npm.
-const pilares = {}
-for (const p of piezas) {
-  if (p.paquete) pilares[p.paquete] = p.version
-  for (const [n, s] of Object.entries(p.subPaquetes)) pilares[n] = s.version
+const pillars = {}
+for (const p of pieces) {
+  if (p.paquete) pillars[p.paquete] = p.version
+  for (const [n, s] of Object.entries(p.subPaquetes)) pillars[n] = s.version
 }
-// `enNpm` se llena solo con --vivo. Importa la distinción: sin red, "publicado"
+// `onNpm` se llena solo con --vivo. Importa la distinción: sin red, "publicado"
 // es en realidad "la versión del package.json local". `check-versions.mjs` daba
 // por NO publicado a @dotrino/topbar (25 consumidores) solo porque su lista de
 // pilares estaba escrita a mano y no lo incluía. Acá los pilares se descubren.
-const enNpm = {}
-if (VIVO) {
-  const reales = await versionesNpm(Object.keys(pilares))
-  for (const [k, v] of Object.entries(reales)) { enNpm[k] = v; if (v) pilares[k] = v }
+const onNpm = {}
+if (LIVE) {
+  const real = await npmVersions(Object.keys(pillars))
+  for (const [k, v] of Object.entries(real)) { onNpm[k] = v; if (v) pillars[k] = v }
   // ¿QUÉ SE PUBLICA DE VERDAD? Lo dice el registro, no el `package.json`. `private:
   // true` impide publicar, pero su ausencia no significa que se publique: hay servicios
   // que simplemente no lo pusieron. Y al revés, `dotrino-content` se publica sin scope.
@@ -1413,10 +1413,10 @@ if (VIVO) {
   // llama `critters`, y esos nombres EXISTEN en npm siendo de otra gente. Se pregunta
   // por lo que lleva nuestro scope o se llama igual que su repo; lo demás es una
   // coincidencia de nombre, no un paquete nuestro.
-  const conPaquete = piezas.filter(p => p.paquete &&
+  const withPackage = pieces.filter(p => p.paquete &&
     (p.paquete.startsWith('@dotrino/') || p.paquete === p.repo))
-  const publicados = await versionesNpm([...new Set(conPaquete.map(p => p.paquete))])
-  for (const p of conPaquete) p.publicado = Boolean(publicados[p.paquete])
+  const publishedOnes = await npmVersions([...new Set(withPackage.map(p => p.paquete))])
+  for (const p of withPackage) p.publicado = Boolean(publishedOnes[p.paquete])
 
   // LA VERSIÓN DEL REPO CONTRA LA DE NPM (dueño, 2026-10-08). El resto del índice mide el
   // repo, y un paquete arreglado en `main` que nadie publicó pasaba por cumplido: el
@@ -1424,24 +1424,24 @@ if (VIVO) {
   // seguía sirviendo la 0.1.5 sin él. Se mira cada paquete que el repo publica, también los
   // de un nivel para adentro (`lib/`, `agent/`), y solo los que YA están en npm: lo que
   // nunca se publicó es otra cosa (un servicio, o un primer publish pendiente).
-  const unidades = piezas.flatMap(p => [
+  const units = pieces.flatMap(p => [
     ...(p.paquete && (p.paquete.startsWith('@dotrino/') || p.paquete === p.repo)
       ? [{ p, paquete: p.paquete, local: p.version, ruta: p.repo }] : []),
-    ...Object.entries(p.subPaquetes || {}).map(([paquete, sp]) => ({ p, paquete, local: sp.version, ruta: sp.ruta }))
+    ...Object.entries(p.subPaquetes || {}).map(([pkgName, sp]) => ({ p, paquete: pkgName, local: sp.version, ruta: sp.ruta }))
   ])
-  const enRegistro = await versionesNpm([...new Set(unidades.map(u => u.paquete))])
-  for (const p of piezas) p.npmPendiente = []
-  for (const u of unidades) {
-    const npm = enRegistro[u.paquete]
+  const inRegistry = await npmVersions([...new Set(units.map(u => u.paquete))])
+  for (const p of pieces) p.npmPendiente = []
+  for (const u of units) {
+    const npm = inRegistry[u.paquete]
     if (!npm || !u.local || npm === u.local) continue
-    u.p.npmPendiente.push({ paquete: u.paquete, ruta: u.ruta, local: u.local, npm, sentido: masNueva(u.local, npm) ? 'sin-publicar' : 'repo-atras' })
+    u.p.npmPendiente.push({ paquete: u.paquete, ruta: u.ruta, local: u.local, npm, sentido: newest(u.local, npm) ? 'sin-publicar' : 'repo-atras' })
   }
 
-  const conDominio = piezas.filter(p => p.subdominio)
-  const vivos = await Promise.all(conDominio.map(p => commitEnVivo(p.subdominio)))
-  conDominio.forEach((p, i) => {
-    p.vivo = vivos[i]
-    p.vivo.sinPublicar = commitsSinPublicar(join(RAIZ, p.repo), vivos[i].commit, p.git.raizSitio)
+  const withDomain = pieces.filter(p => p.subdominio)
+  const liveOnes = await Promise.all(withDomain.map(p => liveCommit(p.subdominio)))
+  withDomain.forEach((p, i) => {
+    p.vivo = liveOnes[i]
+    p.vivo.sinPublicar = unpublishedCommits(join(ROOT, p.repo), liveOnes[i].commit, p.git.raizSitio)
   })
 }
 
@@ -1450,42 +1450,42 @@ if (VIVO) {
  * de mi disco y no del ecosistema —lo que tengo sin commitear o sin pushear, y la
  * URL del remoto—: a un colaborador no le dice nada y no lo puede arreglar.
  */
-function datosWeb () {
-  const fecha = sh('date', ['+%Y-%m-%d'])
-  const quien = sh('git', ['config', 'user.name']) || 'alguien'
-  const publicas = piezas.filter(p => !PRIVADOS.has(p.repo))
-  const previo = leerJson(join(AQUI, 'ecosistema.json')) || {}
+function webData () {
+  const date = sh('date', ['+%Y-%m-%d'])
+  const author = sh('git', ['config', 'user.name']) || 'alguien'
+  const publicOnes = pieces.filter(p => !PRIVATE_REPOS.has(p.repo))
+  const prior = readJson(join(HERE, 'ecosistema.json')) || {}
 
   // Las versiones de los pilares también se heredan: quien solo tiene dos apps en
   // el disco no tiene los pilares, y sin esto su pasada daría por "sin publicar"
   // todo lo que consumen. Lo local pisa a lo heredado SOLO si el repo está aquí.
-  const pilaresWeb = { ...(previo.pilares || {}), ...pilares }
-  const npmWeb = { ...(previo.enNpm || {}), ...enNpm }
-  const desajustes = (p) => Object.entries(p.dotrinoDeps)
-    .filter(([, pide]) => !String(pide).startsWith('file:'))
-    .map(([dep, pide]) => ({ dep, pide, publicado: pilaresWeb[dep] || 'sin publicar' }))
+  const webPillars = { ...(prior.pilares || {}), ...pillars }
+  const npmWeb = { ...(prior.enNpm || {}), ...onNpm }
+  const mismatches = (p) => Object.entries(p.dotrinoDeps)
+    .filter(([, requested]) => !String(requested).startsWith('file:'))
+    .map(([dep, requested]) => ({ dep, pide: requested, publicado: webPillars[dep] || 'sin publicar' }))
     .filter(v => v.publicado === 'sin publicar' || String(v.pide).replace(/^[\^~]/, '') !== v.publicado)
 
-  const antes = new Map((previo.piezas || []).map(p => [p.repo, p]))
+  const before = new Map((prior.piezas || []).map(p => [p.repo, p]))
   /**
    * Lo que esta pasada no pudo medir se hereda, en vez de publicarse como ✓ o como
    * fallo. Hoy solo pasa con el catálogo (hace falta `dotrino-home` en el disco).
    */
-  const heredarCatalogo = (repo, faltan, frescura) => {
-    if (HAY_CATALOGO) return undefined
-    const ant = antes.get(repo)
-    if (!ant) return undefined
-    const suyo = (ant.faltan || []).find(f => f.k === 'catalogo')
-    if (suyo) faltan.push(suyo)
-    if (ant.frescura?.catalogo) frescura.catalogo = ant.frescura.catalogo
-    return ant.catalogo   // nombre, categoría y url de su ficha
+  const inheritCatalog = (repo, missing, freshness) => {
+    if (HAS_CATALOG) return undefined
+    const prev = before.get(repo)
+    if (!prev) return undefined
+    const own = (prev.faltan || []).find(f => f.k === 'catalogo')
+    if (own) missing.push(own)
+    if (prev.frescura?.catalogo) freshness.catalogo = prev.frescura.catalogo
+    return prev.catalogo   // nombre, categoría y url de su ficha
   }
 
-  const medidas = publicas.map(p => {
-      const faltan = aplica(p).filter(k => !p.conv[k]).map(k => ({ k, etiqueta: ETIQUETA[k] }))
-      const versiones = desajustes(p)
-      const frescura = Object.fromEntries(CLAVES_FRESCURA.map(k => [k, {
-        aplica: aplicaFrescura(p, k),
+  const measured = publicOnes.map(p => {
+      const missing = applies(p).filter(k => !p.conv[k]).map(k => ({ k, etiqueta: LABEL[k] }))
+      const versionDrifts = mismatches(p)
+      const freshness = Object.fromEntries(FRESHNESS_KEYS.map(k => [k, {
+        aplica: freshnessApplies(p, k),
         existe: Boolean(p.frescura[k].existe),
         fecha: p.frescura[k].fecha,
         dias: p.frescura[k].dias,
@@ -1493,12 +1493,12 @@ function datosWeb () {
         tope: Boolean(p.frescura[k].desdeElInicio),
         // Solo la auditoría lo tiene: las reglas que a este repo nunca se le pasaron.
         faltan: p.frescura[k].faltan || null,
-        rojo: desactualizado(p, k)
+        rojo: outdated(p, k)
       }]))
-      const vivo = p.vivo ? { http: p.vivo.http, sinPublicar: p.vivo.sinPublicar } : null
+      const live = p.vivo ? { http: p.vivo.http, sinPublicar: p.vivo.sinPublicar } : null
       // El veredicto de la auditoría. Su FRESCURA ya viaja en `frescura.auditoria`,
       // como la del README: son dos indicadores y se leen por separado.
-      const auditoria = p.auditoria ? {
+      const audit = p.auditoria ? {
         por: p.auditoria.por || null,
         modelo: p.auditoria.modelo || null,
         notas: p.auditoria.notas || '',
@@ -1506,13 +1506,13 @@ function datosWeb () {
           regla: h.regla, archivo: h.archivo, linea: h.linea, porque: h.porque, arreglo: h.arreglo
         }))
       } : null
-      const fichaHeredada = heredarCatalogo(p.repo, faltan, frescura)
+      const inheritedCard = inheritCatalog(p.repo, missing, freshness)
       // Sin el registro al lado no se midió: se hereda lo de la pasada anterior, igual que la ficha.
-      const rotas = ROTAS
+      const broken = BROKEN
         ? (p.rotas || []).map(u => ({ unidad: u.unidad, dep: u.dep, version: u.version, pide: u.pide, fix: u.fix, sinSaber: u.sinSaber }))
-        : (antes.get(p.repo)?.rotas || [])
+        : (before.get(p.repo)?.rotas || [])
       // Sin `--vivo` no se le preguntó a npm: se hereda lo de la pasada anterior.
-      const npmPendiente = VIVO ? (p.npmPendiente || []) : (antes.get(p.repo)?.npmPendiente || [])
+      const npmPending = LIVE ? (p.npmPendiente || []) : (before.get(p.repo)?.npmPendiente || [])
       return {
         repo: p.repo,
         tipo: p.tipo,
@@ -1524,82 +1524,82 @@ function datosWeb () {
         version: p.version,
         commit: p.git.commit,
         fecha: p.git.fecha,
-        catalogo: fichaHeredada !== undefined ? fichaHeredada : p.catalogo,
+        catalogo: inheritedCard !== undefined ? inheritedCard : p.catalogo,
         // Los pilares que consume, para poder rehacer "quién consume qué" sobre el
         // conjunto fusionado (los desajustes solo guardan lo que está mal).
         deps: Object.keys(p.dotrinoDeps),
-        medido: { fecha, por: quien },
-        frescura,
-        faltan,
-        versiones,
-        rotas,
-        npmPendiente,
-        vivo,
-        auditoria,
-        rojos: faltan.length + versiones.length + rotas.length + npmPendiente.length +
-          CLAVES_FRESCURA.filter(k => frescura[k].rojo).length +
-          (auditoria?.hallazgos.length || 0) +
-          (vivo?.sinPublicar > 0 ? 1 : 0)
+        medido: { fecha: date, por: author },
+        frescura: freshness,
+        faltan: missing,
+        versiones: versionDrifts,
+        rotas: broken,
+        npmPendiente: npmPending,
+        vivo: live,
+        auditoria: audit,
+        rojos: missing.length + versionDrifts.length + broken.length + npmPending.length +
+          FRESHNESS_KEYS.filter(k => freshness[k].rojo).length +
+          (audit?.hallazgos.length || 0) +
+          (live?.sinPublicar > 0 ? 1 : 0)
       }
   })
 
   // Lo que esta pasada NO vio se conserva tal cual, con la medición que traía.
-  const vistas = new Set(medidas.map(p => p.repo))
-  const heredadas = PODAR ? [] : (previo.piezas || []).filter(p => !vistas.has(p.repo))
-  const piezasWeb = [...medidas, ...heredadas].sort((a, b) => a.repo.localeCompare(b.repo))
+  const seen = new Set(measured.map(p => p.repo))
+  const inherited = PRUNE ? [] : (prior.piezas || []).filter(p => !seen.has(p.repo))
+  const webPieces = [...measured, ...inherited].sort((a, b) => a.repo.localeCompare(b.repo))
 
-  const consumo = {}
-  for (const p of piezasWeb) for (const dep of (p.deps || [])) (consumo[dep] ||= []).push(p.repo)
+  const usage = {}
+  for (const p of webPieces) for (const dep of (p.deps || [])) (usage[dep] ||= []).push(p.repo)
 
   return {
     generado: sh('date', ['+%Y-%m-%dT%H:%M:%S%z']),
-    fecha,
-    por: quien,
+    fecha: date,
+    por: author,
     // El commit del generador (este repo), no el de la raíz: quien colabora tiene
     // este repo clonado, pero su carpeta contenedora no tiene por qué ser un repo.
-    commit: git(AQUI, 'rev-parse', '--short', 'HEAD'),
-    vivo: VIVO,
-    rojoDias: ROJO_DIAS,
+    commit: git(HERE, 'rev-parse', '--short', 'HEAD'),
+    vivo: LIVE,
+    rojoDias: RED_DAYS,
     // Con qué vara se marca la auditoría en rojo. Sale de `audit.json`, no de acá:
     // la página no puede llamar «atrasado» a lo que el auditor da por vigente.
-    umbralAuditoria: UMBRAL_AUDITORIA,
-    reglasIA: REGLA_IA,
-    ocultas: piezas.length - publicas.length,
-    medidasAhora: medidas.length,
-    heredadas: heredadas.length,
-    pilares: pilaresWeb,
+    umbralAuditoria: AUDIT_THRESHOLD,
+    reglasIA: AI_RULE,
+    ocultas: pieces.length - publicOnes.length,
+    medidasAhora: measured.length,
+    heredadas: inherited.length,
+    pilares: webPillars,
     enNpm: npmWeb,
-    consumidores: Object.entries(consumo).sort((a, b) => b[1].length - a[1].length)
-      .map(([pilar, repos]) => ({ pilar, version: pilaresWeb[pilar] || null, enNpm: Boolean(npmWeb[pilar]), repos })),
-    piezas: piezasWeb
+    consumidores: Object.entries(usage).sort((a, b) => b[1].length - a[1].length)
+      .map(([pillar, repos]) => ({ pilar: pillar, version: webPillars[pillar] || null, enNpm: Boolean(npmWeb[pillar]), repos })),
+    piezas: webPieces
   }
 }
 
-writeFileSync(join(RAIZ, 'ECOSISTEMA.json'),
-  JSON.stringify({ generado: sh('date', ['+%Y-%m-%dT%H:%M:%S%z']), conRed: VIVO, pilares, enNpm, piezas }, null, 2) + '\n')
-writeFileSync(join(RAIZ, 'INDICE.md'), informe(piezas, pilares, enNpm) + '\n')
+writeFileSync(join(ROOT, 'ECOSISTEMA.json'),
+  JSON.stringify({ generado: sh('date', ['+%Y-%m-%dT%H:%M:%S%z']), conRed: LIVE, pilares: pillars, enNpm: onNpm, piezas: pieces }, null, 2) + '\n')
+writeFileSync(join(ROOT, 'INDICE.md'), report(pieces, pillars, onNpm) + '\n')
 
 if (WEB) {
-  const datos = datosWeb()
-  writeFileSync(join(AQUI, 'index.html'), paginaWeb(datos))
-  writeFileSync(join(AQUI, 'ecosistema.json'), JSON.stringify(datos, null, 2) + '\n')
-  console.log(`→ ${REPO_WEB}/index.html · ${datos.piezas.length} piezas: ` +
-    `${datos.medidasAhora} medidas ahora, ${datos.heredadas} heredadas` +
-    `${PODAR ? ' (--podar: se borró lo que no estaba)' : ''}` +
-    `${datos.ocultas ? ` · ${datos.ocultas} privada(s) fuera` : ''}`)
+  const data = webData()
+  writeFileSync(join(HERE, 'index.html'), webPage(data))
+  writeFileSync(join(HERE, 'ecosistema.json'), JSON.stringify(data, null, 2) + '\n')
+  console.log(`→ ${REPO_WEB}/index.html · ${data.piezas.length} piezas: ` +
+    `${data.medidasAhora} medidas ahora, ${data.heredadas} heredadas` +
+    `${PRUNE ? ' (--podar: se borró lo que no estaba)' : ''}` +
+    `${data.ocultas ? ` · ${data.ocultas} privada(s) fuera` : ''}`)
 }
 
-const faltas = piezas.reduce((n, p) => n + aplica(p).filter(k => !p.conv[k]).length, 0)
+const violations = pieces.reduce((n, p) => n + applies(p).filter(k => !p.conv[k]).length, 0)
 // La auditoría se cuenta aparte de la frescura de lo que se cuenta: son dos cosas y
 // se arreglan con dos comandos distintos (una, escribiendo; la otra, `audit.mjs`).
-const viejas = piezas.filter(p => ['readme', 'portada', 'catalogo'].some(k => desactualizado(p, k))).length
-const hallazgos = piezas.reduce((n, p) => n + (p.auditoria?.hallazgos?.length || 0), 0)
-const porAuditar = piezas.filter(p => !PRIVADOS.has(p.repo) && desactualizado(p, 'auditoria')).length
-const usosRotas = piezas.reduce((n, p) => n + (p.rotas?.length || 0), 0)
-console.log(`${piezas.length} piezas · ${faltas} incumplimientos · ` +
-  (ROTAS ? `${usosRotas} usos de versiones rotas · ` : 'versiones rotas SIN COMPROBAR (falta dotrino-roadmap) · ') +
-  `${piezas.filter(p => p.git.sinPushear || p.git.sucio).length} repos sin sincronizar · ` +
-  (VIVO ? `${piezas.reduce((n, p) => n + (p.npmPendiente?.length || 0), 0)} paquetes con versión distinta en npm · ` : '') +
-  `${viejas} con README/portada/ficha de más de ${ROJO_DIAS} días · ` +
-  `${hallazgos} hallazgos de auditoría · ${porAuditar} sin auditar o atrasadas`)
+const stale = pieces.filter(p => ['readme', 'portada', 'catalogo'].some(k => outdated(p, k))).length
+const findingCount = pieces.reduce((n, p) => n + (p.auditoria?.hallazgos?.length || 0), 0)
+const toAudit = pieces.filter(p => !PRIVATE_REPOS.has(p.repo) && outdated(p, 'auditoria')).length
+const brokenUseCount = pieces.reduce((n, p) => n + (p.rotas?.length || 0), 0)
+console.log(`${pieces.length} piezas · ${violations} incumplimientos · ` +
+  (BROKEN ? `${brokenUseCount} usos de versiones rotas · ` : 'versiones rotas SIN COMPROBAR (falta dotrino-roadmap) · ') +
+  `${pieces.filter(p => p.git.sinPushear || p.git.sucio).length} repos sin sincronizar · ` +
+  (LIVE ? `${pieces.reduce((n, p) => n + (p.npmPendiente?.length || 0), 0)} paquetes con versión distinta en npm · ` : '') +
+  `${stale} con README/portada/ficha de más de ${RED_DAYS} días · ` +
+  `${findingCount} hallazgos de auditoría · ${toAudit} sin auditar o atrasadas`)
 console.log('→ ECOSISTEMA.json + INDICE.md')

@@ -15,7 +15,7 @@
  * atrás. Un commit suelto no lo dispara —arreglar una coma no cambia el veredicto—
  * y la fontanería no cuenta: una tanda mecánica que pasa por 50 repos el mismo día
  * no puede mandar 50 auditorías a la cola. Los dos umbrales se escriben DENTRO de
- * `audit.json`, para que `indice.mjs` marque en rojo con el mismo criterio con que
+ * `audit.json`, para que `index.mjs` marque en rojo con el mismo criterio con que
  * el auditor decide volver a mirar: si discreparan, la página diría «atrasada» de
  * algo que este script considera al día.
  *
@@ -48,12 +48,12 @@
  *
  * QUÉ ESCRIBE. `audit.json`, al lado de `ecosistema.json` y con la misma regla: SUMA.
  * Cada pasada reescribe los repos que auditó y deja los demás como estaban, con la
- * fecha, el commit y el modelo con que se los auditó. `indice.mjs` lo lee y saca DOS
+ * fecha, el commit y el modelo con que se los auditó. `index.mjs` lo lee y saca DOS
  * indicadores: los hallazgos, y la brecha entre la última auditoría y el último
  * commit — una auditoría de hace 40 commits no dice nada del código de hoy, igual que
  * un README que no se toca desde hace 40.
  *
- * POR QUÉ NO VA DENTRO DE `indice.mjs`: ese script es barato y sin red, se corre a
+ * POR QUÉ NO VA DENTRO DE `index.mjs`: ese script es barato y sin red, se corre a
  * cada rato. Esto cuesta dinero y minutos, y se corre cuando toca.
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs'
@@ -97,18 +97,18 @@ const readJson = (p) => { try { return JSON.parse(readFileSync(p, 'utf8')) } cat
 /**
  * Lo que NO se audita. `audit.json` se publica en este repo, que es público: los
  * hallazgos de un repo privado —con sus citas de su código— saldrían a la calle
- * dentro del informe. Misma lista que `PRIVADOS` en `indice.mjs`.
+ * dentro del informe. Misma lista que `PRIVATE_REPOS` en `index.mjs`.
  */
-const PRIVADOS = new Set(['dotrino-project', 'dotrino-docs'])
+const PRIVATE_REPOS = new Set(['dotrino-project', 'dotrino-docs'])
 
 /**
  * Los repos del ecosistema: los hermanos de esta carpeta. Mismo criterio que
- * `indice.mjs`, incluida la trampa del `.git` heredado — una carpeta sin repo propio
+ * `index.mjs`, incluida la trampa del `.git` heredado — una carpeta sin repo propio
  * resuelve hacia la raíz y auditaríamos el commit del superrepo, no el suyo.
  */
 const repos = () => readdirSync(ROOT).filter(d =>
   (d.startsWith('dotrino-') || d === 'android-launcher') &&
-  !PRIVADOS.has(d) &&
+  !PRIVATE_REPOS.has(d) &&
   (existsSync(join(ROOT, d, '.git')) || existsSync(join(ROOT, d, 'package.json'))) &&
   (!existsSync(join(ROOT, d, '.git')) || git(join(ROOT, d), 'rev-parse', '--show-toplevel') === join(ROOT, d)))
 
@@ -116,19 +116,19 @@ const repos = () => readdirSync(ROOT).filter(d =>
 
 /**
  * Los dos umbrales de re-auditoría. Se escriben también en `audit.json`: es el dato
- * con el que `indice.mjs` decide si pinta la auditoría en rojo, y así el informe no
+ * con el que `index.mjs` decide si pinta la auditoría en rojo, y así el informe no
  * puede llamar «atrasado» a algo que este script no va a volver a mirar.
  */
-const UMBRAL_COMMITS = 10
-const UMBRAL_DIAS = 30
+const THRESHOLD_COMMITS = 10
+const THRESHOLD_DAYS = 30
 
 /**
  * Cambios que no son materia de auditoría: fijar una versión, regenerar un lock,
  * tocar el workflow. Si contaran, una tanda mecánica por 50 repos mandaría 50
  * auditorías a la cola el mismo día — y el criterio pasaría de medir el código a
- * medir el último `sed` que corrí. Misma lista que la de `indice.mjs`.
+ * medir el último `sed` que corrí. Misma lista que la de `index.mjs`.
  */
-const FONTANERIA = [
+const PLUMBING = [
   ':(exclude)package.json', ':(exclude)*/package.json',
   ':(exclude)package-lock.json', ':(exclude)*/package-lock.json',
   ':(exclude)tsconfig*.json', ':(exclude)*/tsconfig*.json',
@@ -137,9 +137,9 @@ const FONTANERIA = [
   ':(exclude).github/**'
 ]
 
-const diasEntre = (desde, hasta) => {
-  if (!desde || !hasta) return null
-  const d = Math.round((new Date(`${hasta}T00:00:00Z`) - new Date(`${desde}T00:00:00Z`)) / 86400000)
+const daysBetween = (since, until) => {
+  if (!since || !until) return null
+  const d = Math.round((new Date(`${until}T00:00:00Z`) - new Date(`${since}T00:00:00Z`)) / 86400000)
   return d > 0 ? d : 0
 }
 
@@ -150,36 +150,36 @@ const diasEntre = (desde, hasta) => {
  * ella sería inventarse un verde. Al añadir una regla acá, todos los repos anteriores
  * pasan a estar pendientes de esa regla, y se van llenando conforme les toque.
  */
-const REGLAS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'duplicado']
+const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'duplicado']
 
 /**
  * Por qué le toca a este repo, o `null` si su auditoría sigue valiendo. Devuelve el
  * motivo en texto para poder decirlo: «sin auditar» y «17 commits desde la
  * auditoría» son cosas distintas y quien mira la cola quiere saber cuál es.
  */
-function motivoDeAuditar (repo) {
+function reasonToAudit (repo) {
   const dir = join(ROOT, repo)
-  const antes = previous.repos?.[repo]
-  if (!antes) return 'sin auditar'
+  const before = previous.repos?.[repo]
+  if (!before) return 'sin auditar'
   // Una auditoría sin commit anotado no se puede fechar contra nada: vale como no
   // hecha. (Pasa si el repo no era un repo de git cuando se auditó.)
-  if (!antes.commit) return 'la auditoría no anotó su commit'
+  if (!before.commit) return 'la auditoría no anotó su commit'
   // Auditada, sí, ¿pero contra qué? Lo que no se miró no está limpio: está sin mirar.
   // Una entrada anterior a que esto se anotara no puede decirlo, así que vale como no
   // hecha — y una a la que le falte una regla nueva le toca por esa regla.
-  if (!Array.isArray(antes.reglas)) return 'la auditoría no anotó contra qué reglas se hizo'
-  const sinPasar = REGLAS.filter(r => !antes.reglas.includes(r))
-  if (sinPasar.length) return `nunca se le pasó: ${sinPasar.join(', ')}`
+  if (!Array.isArray(before.reglas)) return 'la auditoría no anotó contra qué reglas se hizo'
+  const unchecked = RULE_IDS.filter(r => !before.reglas.includes(r))
+  if (unchecked.length) return `nunca se le pasó: ${unchecked.join(', ')}`
   const head = git(dir, 'rev-parse', '--short', 'HEAD')
-  if (!head || antes.commit === head) return null
+  if (!head || before.commit === head) return null
   // Auditoría de otra persona sobre un commit que este clon no tiene: no se puede
   // medir la brecha, así que se vuelve a auditar en vez de darla por buena.
-  if (git(dir, 'cat-file', '-e', antes.commit) === null) return 'el commit auditado no está en este clon'
-  const commits = Number(git(dir, 'rev-list', '--count', `${antes.commit}..HEAD`, '--', '.', ...FONTANERIA) ?? 0) || 0
-  if (commits >= UMBRAL_COMMITS) return `${commits} commits desde la auditoría`
+  if (git(dir, 'cat-file', '-e', before.commit) === null) return 'el commit auditado no está en este clon'
+  const commits = Number(git(dir, 'rev-list', '--count', `${before.commit}..HEAD`, '--', '.', ...PLUMBING) ?? 0) || 0
+  if (commits >= THRESHOLD_COMMITS) return `${commits} commits desde la auditoría`
   if (!commits) return null
-  const dias = diasEntre(antes.fecha, git(dir, 'log', '-1', '--format=%cs') || null)
-  if (dias >= UMBRAL_DIAS) return `${commits} commit(s) y ${dias} días de brecha`
+  const days = daysBetween(before.fecha, git(dir, 'log', '-1', '--format=%cs') || null)
+  if (days >= THRESHOLD_DAYS) return `${commits} commit(s) y ${days} días de brecha`
   return null
 }
 
@@ -385,14 +385,14 @@ Si el repo cumple, devuelve \`"hallazgos": []\`. \`revisados\` es cuántos archi
 
 /** El JSON que devuelve el modelo, aunque venga envuelto en una valla de markdown. */
 function extractJson (text) {
-  const sinValla = String(text || '').replace(/^\s*```(?:json)?/i, '').replace(/```\s*$/, '')
-  const a = sinValla.indexOf('{')
-  const b = sinValla.lastIndexOf('}')
+  const unfenced = String(text || '').replace(/^\s*```(?:json)?/i, '').replace(/```\s*$/, '')
+  const a = unfenced.indexOf('{')
+  const b = unfenced.lastIndexOf('}')
   if (a < 0 || b <= a) return null
-  try { return JSON.parse(sinValla.slice(a, b + 1)) } catch { return null }
+  try { return JSON.parse(unfenced.slice(a, b + 1)) } catch { return null }
 }
 
-const RULE_KEYS = new Set(REGLAS)
+const RULE_KEYS = new Set(RULE_IDS)
 
 /** Un hallazgo con la forma esperada, o nada. El modelo a veces se inventa un campo. */
 function normalize (f) {
@@ -447,11 +447,11 @@ const who = sh('git', ['config', 'user.name']) || 'alguien'
 const all = repos()
 // Pedir un repo por su nombre (o `--all`) es la orden explícita: se audita le toque
 // o no. Sin eso manda el umbral.
-const motivos = new Map(all.map(r => [r,
+const reasons = new Map(all.map(r => [r,
   ASKED.length ? (ASKED.includes(r) ? 'pedido a mano' : null)
     : ALL ? 'pedido a mano (--all)'
-      : motivoDeAuditar(r)]))
-const pending = all.filter(r => motivos.get(r)).slice(0, LIMIT)
+      : reasonToAudit(r)]))
+const pending = all.filter(r => reasons.get(r)).slice(0, LIMIT)
 
 if (ASKED.length) {
   const unknown = ASKED.filter(r => !all.includes(r))
@@ -463,24 +463,24 @@ if (ASKED.length) {
  * ANTES de gastarlo: una regla nueva deja pendientes a todos los repos de golpe, y
  * enterarse de eso por la factura es tarde.
  */
-const costeMedio = (() => {
+const averageCost = (() => {
   const xs = Object.values(previous.repos || {}).map(r => r.costoUSD).filter(n => typeof n === 'number' && n > 0)
   return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null
 })()
-const presupuesto = pending.length && costeMedio
-  ? ` · ≈$${(costeMedio * pending.length).toFixed(2)} a $${costeMedio.toFixed(2)} de media`
+const budget = pending.length && averageCost
+  ? ` · ≈$${(averageCost * pending.length).toFixed(2)} a $${averageCost.toFixed(2)} de media`
   : ''
 
 if (DRY || !pending.length) {
-  const auditados = Object.keys(previous.repos || {}).length
-  console.log(`${all.length} repos · ${auditados} con auditoría · ${pending.length} por auditar` +
-    ` (umbral: ${UMBRAL_COMMITS} commits o ${UMBRAL_DIAS} días)${presupuesto}`)
-  for (const r of pending) console.log(`  ${r} — ${motivos.get(r)}`)
+  const audited = Object.keys(previous.repos || {}).length
+  console.log(`${all.length} repos · ${audited} con auditoría · ${pending.length} por auditar` +
+    ` (umbral: ${THRESHOLD_COMMITS} commits o ${THRESHOLD_DAYS} días)${budget}`)
+  for (const r of pending) console.log(`  ${r} — ${reasons.get(r)}`)
   process.exit(0)
 }
 
-console.log(`auditando ${pending.length} de ${all.length} repos con ${MODEL}, ${JOBS} a la vez…${presupuesto}`)
-for (const r of pending) console.log(`  · ${r} — ${motivos.get(r)}`)
+console.log(`auditando ${pending.length} de ${all.length} repos con ${MODEL}, ${JOBS} a la vez…${budget}`)
+for (const r of pending) console.log(`  · ${r} — ${reasons.get(r)}`)
 
 const results = {}
 let done = 0
@@ -505,7 +505,7 @@ await Promise.all(Array.from({ length: Math.min(JOBS, queue.length) }, async () 
       modelo: MODEL,
       // Contra qué reglas se auditó ESTE repo. No se deduce de la lista de arriba del
       // archivo: una entrada vieja se quedó con las reglas de su día, y así se sabe.
-      reglas: REGLAS,
+      reglas: RULE_IDS,
       hallazgos: out.hallazgos,
       revisados: out.revisados,
       notas: out.notas,
@@ -527,10 +527,10 @@ const kept = PRUNE
 const merged = { ...kept, ...results }
 writeFileSync(OUT, JSON.stringify({
   generado: sh('date', ['+%Y-%m-%dT%H:%M:%S%z']),
-  reglas: REGLAS,
-  // El criterio con el que se decidió no volver a mirar. `indice.mjs` lo lee de acá
+  reglas: RULE_IDS,
+  // El criterio con el que se decidió no volver a mirar. `index.mjs` lo lee de acá
   // para marcar en rojo con la misma vara.
-  umbrales: { commits: UMBRAL_COMMITS, dias: UMBRAL_DIAS },
+  umbrales: { commits: THRESHOLD_COMMITS, dias: THRESHOLD_DAYS },
   repos: Object.fromEntries(Object.entries(merged).sort(([a], [b]) => a.localeCompare(b)))
 }, null, 2) + '\n')
 
