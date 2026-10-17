@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-17T09:05:39-0500",
+  "generado": "2026-10-17T18:29:46-0500",
   "fecha": "2026-10-17",
   "por": "seyacat",
-  "commit": "6be45c3",
+  "commit": "4571aae",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -46,12 +46,12 @@
     "dotrino-mundial": "0.1.0",
     "myip": "1.1.0",
     "@dotrino/nav": "0.3.0",
-    "@dotrino/notifications": "0.6.0",
+    "@dotrino/notifications": "0.7.0",
     "@dotrino/profile": "0.20.1",
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
-    "websocket-proxy": "1.6.5",
-    "@dotrino/proxy-client": "0.36.2",
+    "websocket-proxy": "1.7.0",
+    "@dotrino/proxy-client": "0.38.0",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
     "@dotrino/remote-agent": "0.22.0",
@@ -64,7 +64,7 @@
     "sudoku": "0.0.3",
     "@dotrino/support": "0.9.3",
     "dotrino-telegram-claude-bot": "0.1.6",
-    "dotrino-terminal": "0.13.3",
+    "dotrino-terminal": "0.13.4",
     "@dotrino/terminal-agent": "0.48.0",
     "test": "3.3.0",
     "@dotrino/topbar": "0.16.1",
@@ -72,13 +72,13 @@
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.1.7",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.162.3",
-    "@dotrino/vault": "0.90.3",
+    "@dotrino/vaultd": "0.163.2",
+    "@dotrino/vault": "0.91.0",
     "@dotrino/verifier": "0.3.0",
     "wallet": "2.60.0",
     "@dotrino/content-client": "0.3.2",
     "dotrino-social-bot": "0.3.0",
-    "@dotrino/env": "0.90.3",
+    "@dotrino/env": "0.91.0",
     "@dotrino/inspector": "0.2.2",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -111,7 +111,7 @@
     "@dotrino/profile": "0.20.1",
     "@dotrino/store": "0.12.4",
     "@dotrino/install": "0.3.3",
-    "@dotrino/proxy-client": "0.36.2",
+    "@dotrino/proxy-client": "0.38.0",
     "dotrino-messenger": null,
     "@dotrino/opaque": "0.1.0",
     "@dotrino/passmanager": "0.18.4",
@@ -131,7 +131,7 @@
     "@dotrino/feedback": null,
     "favicon-generator": "0.1.2",
     "@dotrino/inspector": "0.2.2",
-    "@dotrino/notifications": "0.6.0",
+    "@dotrino/notifications": "0.7.0",
     "@dotrino/terminal-agent": "0.48.0",
     "@dotrino/sealers": "0.10.0",
     "test": "3.3.0",
@@ -146,7 +146,7 @@
     "@dotrino/qr": "0.3.0",
     "@dotrino/telegram-bot": "0.2.2",
     "dotrino-terminal": null,
-    "@dotrino/vault": "0.90.3",
+    "@dotrino/vault": "0.91.0",
     "padel": "0.0.1",
     "dotrino-reputation-app": null,
     "simple-websocket-chat": null,
@@ -170,7 +170,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.162.3",
+    "@dotrino/vaultd": "0.163.2",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.2",
     "gridgame": null,
@@ -180,7 +180,7 @@
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.90.3",
+    "@dotrino/env": "0.91.0",
     "offroad": "0.0.9",
     "ar": "0.0.1",
     "@dotrino/prerender": "0.1.0",
@@ -429,7 +429,7 @@
     },
     {
       "pilar": "@dotrino/proxy-client",
-      "version": "0.36.2",
+      "version": "0.38.0",
       "enNpm": true,
       "repos": [
         "dotrino-bots",
@@ -586,7 +586,7 @@
     },
     {
       "pilar": "@dotrino/notifications",
-      "version": "0.6.0",
+      "version": "0.7.0",
       "enNpm": true,
       "repos": [
         "dotrino-critters",
@@ -627,7 +627,7 @@
     },
     {
       "pilar": "@dotrino/vault",
-      "version": "0.90.3",
+      "version": "0.91.0",
       "enNpm": true,
       "repos": [
         "dotrino-content",
@@ -965,14 +965,12 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-28",
-          "dias": 49,
-          "commits": 98,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "faltan": [
-            "duplicado"
-          ],
-          "rojo": true
+          "faltan": [],
+          "rojo": false
         }
       },
       "faltan": [],
@@ -983,10 +981,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "El repo es una cáscara nativa (Android Kotlin + iOS Swift) sin código JS/TS ni paquetes @dotrino/*: todo el contenido y la lógica del ecosistema viven en las páginas web cargadas dentro del WebView/WKWebView, así que las reglas pillars y sealed no tienen dónde aplicarse aquí. Copy de usuario (strings.xml, Localizable.strings, Info.plist) en tuteo correcto; código, rutas y comentarios cumplen la frontera inglés/español; no hay logs, throws ni copy pública con jerga técnica.",
+        "notas": "Solo abrí 4 archivos (los strings de Android y iOS de la app, y el de la app de identidad). El resto lo revisé con Grep, no abriendo cada archivo. No hay voseo en el código ni en los strings (todo va en tuteo), y los errores y logs de Kotlin/Swift están en inglés. `sendSealed` y `requireSealed` aparecen en el SDK nativo. `ProxyConnection` es la implementación nativa del propio pilar, así que no la reporté en `pillars`. El `Localizable.strings` de iOS está generado desde el `strings.xml` de Andro",
         "hallazgos": []
       },
-      "rojos": 1
+      "rojos": 0
     },
     {
       "repo": "dotrino-ar",
@@ -1275,7 +1273,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/update",
@@ -1379,7 +1377,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -1513,7 +1511,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -1751,7 +1749,18 @@
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.2",
+          "publicado": "0.38.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.90.3",
+          "publicado": "0.91.0"
+        }
+      ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": {
@@ -1786,7 +1795,7 @@
           }
         ]
       },
-      "rojos": 3
+      "rojos": 5
     },
     {
       "repo": "dotrino-critters",
@@ -1876,9 +1885,14 @@
           "publicado": "0.120.0"
         },
         {
+          "dep": "@dotrino/notifications",
+          "pide": "0.6.0",
+          "publicado": "0.7.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -1898,7 +1912,7 @@
         "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
         "hallazgos": []
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-cuarenta",
@@ -1991,7 +2005,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -2268,9 +2282,14 @@
           "publicado": "0.120.0"
         },
         {
+          "dep": "@dotrino/notifications",
+          "pide": "0.6.0",
+          "publicado": "0.7.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -2290,7 +2309,7 @@
         "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
         "hallazgos": []
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-eco",
@@ -2380,9 +2399,14 @@
           "publicado": "0.3.2"
         },
         {
+          "dep": "@dotrino/notifications",
+          "pide": "0.6.0",
+          "publicado": "0.7.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -2402,7 +2426,7 @@
         "notas": "No hay hallazgos. Solo pude usar Glob y Grep, porque Bash está deshabilitado y no abrí ningún archivo completo, así que `revisados` es 0. Los Grep sobre `src/` y `index.html` no encontraron voseo en la copy de usuario: solo aparece en comentarios (`src/App.vue:254`, `src/services/identity.js:85`, `src/services/notifications.js:4`), que están permitidos. Los `throw` y `console.warn` están en inglés. `src/services/proxy.js` arranca con `requireSealed: true` y usa `sendSealed`. La barra superior es",
         "hallazgos": []
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -2937,7 +2961,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -3156,8 +3180,8 @@
       "subdominio": "dotrino.com",
       "paquete": "frontend",
       "version": "0.0.0",
-      "commit": "f7c0cf6",
-      "fecha": "2026-10-16",
+      "commit": "a93bdd1",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -3179,19 +3203,19 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-07-29",
-          "dias": 78,
-          "commits": 58,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
-          "rojo": true
+          "rojo": false
         },
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 2,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3209,14 +3233,12 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-29",
-          "dias": 47,
-          "commits": 28,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "faltan": [
-            "duplicado"
-          ],
-          "rojo": true
+          "faltan": [],
+          "rojo": false
         }
       },
       "faltan": [],
@@ -3227,9 +3249,14 @@
           "publicado": "0.120.0"
         },
         {
+          "dep": "@dotrino/notifications",
+          "pide": "0.6.0",
+          "publicado": "0.7.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -3246,10 +3273,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
+        "notas": "Sin hallazgos. El único uso del transporte es `replyNotice.ts`, que usa `@dotrino/proxy-client` para registrar el aviso del navegador y no manda contenido del usuario por mensaje dirigido. Las solicitudes y el contacto van por `fetch` firmado a `feedback.dotrino.com`, no por `sendByPubkey`. No abrí `App.vue`, `SiteNav.vue`, `SiteFooter.vue`, `InfoModal.vue`, `ReplyNotice.vue`, `AppsCatalog.vue` ni los scripts. Esos los revisé solo con Grep, que no encontró voseo ni argot. Tampoco encontró `new W",
         "hallazgos": []
       },
-      "rojos": 5
+      "rojos": 4
     },
     {
       "repo": "dotrino-ia",
@@ -3333,7 +3360,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -3523,7 +3550,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "6be45c3",
+      "commit": "4571aae",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
@@ -3537,7 +3564,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 30,
-          "commits": 211,
+          "commits": 212,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3567,7 +3594,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 48,
-          "commits": 227,
+          "commits": 228,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3802,8 +3829,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/lobby",
-      "version": "0.10.2",
-      "commit": "f5b64e2",
+      "version": "0.10.3",
+      "commit": "a158d9d",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
@@ -3817,7 +3844,7 @@
           "existe": true,
           "fecha": "2026-09-15",
           "dias": 32,
-          "commits": 4,
+          "commits": 5,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3856,7 +3883,15 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "npmPendiente": [],
+      "npmPendiente": [
+        {
+          "paquete": "@dotrino/lobby",
+          "ruta": "dotrino-lobby",
+          "local": "0.10.3",
+          "npm": "0.10.2",
+          "sentido": "sin-publicar"
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -3914,7 +3949,7 @@
           }
         ]
       },
-      "rojos": 8
+      "rojos": 9
     },
     {
       "repo": "dotrino-messenger",
@@ -4014,9 +4049,14 @@
           "publicado": "0.120.0"
         },
         {
+          "dep": "@dotrino/notifications",
+          "pide": "0.6.0",
+          "publicado": "0.7.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/qr",
@@ -4056,7 +4096,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-messenger-extension",
@@ -4506,8 +4546,8 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "647f45a",
-      "fecha": "2026-10-16",
+      "commit": "32bdd39",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -4519,8 +4559,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-16",
-          "dias": 0,
-          "commits": 4,
+          "dias": 1,
+          "commits": 5,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4549,8 +4589,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-16",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 1,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -4651,9 +4691,9 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/notifications",
-      "version": "0.6.0",
-      "commit": "78a95a5",
-      "fecha": "2026-10-16",
+      "version": "0.7.0",
+      "commit": "cf05b24",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/proxy-client"
@@ -4666,9 +4706,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-10",
-          "dias": 4,
-          "commits": 2,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -4697,8 +4737,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 0,
-          "commits": 0,
+          "dias": 2,
+          "commits": 1,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -4709,7 +4749,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         }
       ],
       "rotas": [],
@@ -5053,7 +5093,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -5173,7 +5213,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/update",
@@ -5183,7 +5223,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.87.0",
-          "publicado": "0.90.3"
+          "publicado": "0.91.0"
         }
       ],
       "rotas": [],
@@ -5480,7 +5520,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -5583,9 +5623,14 @@
           "publicado": "0.120.0"
         },
         {
+          "dep": "@dotrino/notifications",
+          "pide": "0.6.0",
+          "publicado": "0.7.0"
+        },
+        {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/qr",
@@ -5653,7 +5698,7 @@
           }
         ]
       },
-      "rojos": 11
+      "rojos": 12
     },
     {
       "repo": "dotrino-proxy",
@@ -5663,8 +5708,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "websocket-proxy",
-      "version": "1.6.5",
-      "commit": "dd86012",
+      "version": "1.7.0",
+      "commit": "3e2e653",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
@@ -5682,8 +5727,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 7,
+          "dias": 2,
+          "commits": 8,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5712,15 +5757,26 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 7,
+          "dias": 2,
+          "commits": 8,
           "tope": false,
           "faltan": [],
           "rojo": false
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.2",
+          "publicado": "0.38.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "pide": "0.90.3",
+          "publicado": "0.91.0"
+        }
+      ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
@@ -5766,7 +5822,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 7
     },
     {
       "repo": "dotrino-proxy-client",
@@ -5776,8 +5832,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/proxy-client",
-      "version": "0.36.2",
-      "commit": "b2aa6a2",
+      "version": "0.38.1",
+      "commit": "f425788",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
@@ -5792,9 +5848,9 @@
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
-          "dias": 2,
-          "commits": 3,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5824,7 +5880,7 @@
           "existe": true,
           "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 0,
+          "commits": 2,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -5844,7 +5900,15 @@
         }
       ],
       "rotas": [],
-      "npmPendiente": [],
+      "npmPendiente": [
+        {
+          "paquete": "@dotrino/proxy-client",
+          "ruta": "dotrino-proxy-client",
+          "local": "0.38.1",
+          "npm": "0.38.0",
+          "sentido": "sin-publicar"
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5888,7 +5952,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-qr",
@@ -5898,9 +5962,9 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/qr",
-      "version": "0.3.0",
-      "commit": "05710c8",
-      "fecha": "2026-10-16",
+      "version": "0.3.1",
+      "commit": "794408d",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
       "medido": {
@@ -5913,7 +5977,7 @@
           "existe": true,
           "fecha": "2026-10-16",
           "dias": 0,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5952,7 +6016,15 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "npmPendiente": [],
+      "npmPendiente": [
+        {
+          "paquete": "@dotrino/qr",
+          "ruta": "dotrino-qr",
+          "local": "0.3.1",
+          "npm": "0.3.0",
+          "sentido": "sin-publicar"
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -5968,7 +6040,7 @@
           }
         ]
       },
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-qrgenerator",
@@ -6340,9 +6412,14 @@
       "faltan": [],
       "versiones": [
         {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.2",
+          "publicado": "0.38.0"
+        },
+        {
           "dep": "@dotrino/vault",
           "pide": "0.90.2",
-          "publicado": "0.90.3"
+          "publicado": "0.91.0"
         }
       ],
       "rotas": [],
@@ -6376,7 +6453,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-reputation",
@@ -6707,7 +6784,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.30",
-      "commit": "51f9464",
+      "commit": "18fa704",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
@@ -6724,7 +6801,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 8,
-          "commits": 121,
+          "commits": 126,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6754,10 +6831,10 @@
           "existe": true,
           "fecha": "2026-10-16",
           "dias": 1,
-          "commits": 6,
+          "commits": 11,
           "tope": false,
           "faltan": [],
-          "rojo": false
+          "rojo": true
         }
       },
       "faltan": [],
@@ -6799,7 +6876,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-sealers",
@@ -6876,7 +6953,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -6891,7 +6968,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.87.0",
-          "publicado": "0.90.3"
+          "publicado": "0.91.0"
         }
       ],
       "rotas": [],
@@ -7280,7 +7357,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -7295,7 +7372,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.87.0",
-          "publicado": "0.90.3"
+          "publicado": "0.91.0"
         }
       ],
       "rotas": [],
@@ -7806,20 +7883,20 @@
       "interna": false,
       "stack": "vite",
       "plataformas": {
-        "pwa": "0.13.3",
+        "pwa": "0.13.4",
         "ios": {
-          "version": "0.13.2",
-          "estado": "atrasada"
+          "version": "0.13.4",
+          "estado": "a la par"
         },
         "android": {
-          "version": "0.13.2",
-          "estado": "atrasada"
+          "version": "0.13.4",
+          "estado": "a la par"
         }
       },
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
-      "version": "0.13.3",
-      "commit": "d549980",
+      "version": "0.13.4",
+      "commit": "e360532",
       "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Dotrino Terminal",
@@ -7851,7 +7928,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 2,
-          "commits": 14,
+          "commits": 15,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7861,7 +7938,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 2,
-          "commits": 25,
+          "commits": 26,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7881,7 +7958,7 @@
           "existe": true,
           "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -7892,7 +7969,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -8410,7 +8487,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "pide": "0.36.1",
-          "publicado": "0.36.2"
+          "publicado": "0.38.0"
         },
         {
           "dep": "@dotrino/store",
@@ -8639,8 +8716,8 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/update",
-      "version": "0.9.0",
-      "commit": "c346ecc",
+      "version": "0.9.1",
+      "commit": "82b8d62",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
@@ -8654,7 +8731,7 @@
           "existe": true,
           "fecha": "2026-10-13",
           "dias": 4,
-          "commits": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8693,7 +8770,15 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "npmPendiente": [],
+      "npmPendiente": [
+        {
+          "paquete": "@dotrino/update",
+          "ruta": "dotrino-update",
+          "local": "0.9.1",
+          "npm": "0.9.0",
+          "sentido": "sin-publicar"
+        }
+      ],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
@@ -8709,7 +8794,7 @@
           }
         ]
       },
-      "rojos": 1
+      "rojos": 2
     },
     {
       "repo": "dotrino-vault",
@@ -8719,8 +8804,8 @@
       "plataformas": null,
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.162.3",
-      "commit": "e014bb1",
+      "version": "0.163.2",
+      "commit": "628b937",
       "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Dotrino Vault",
@@ -8750,7 +8835,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 2,
-          "commits": 23,
+          "commits": 30,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8760,7 +8845,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 2,
-          "commits": 26,
+          "commits": 33,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8768,8 +8853,8 @@
         "catalogo": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-09-30",
-          "dias": 17,
+          "fecha": "2026-10-17",
+          "dias": 0,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -8780,7 +8865,7 @@
           "existe": true,
           "fecha": "2026-10-16",
           "dias": 1,
-          "commits": 2,
+          "commits": 8,
           "tope": false,
           "faltan": [],
           "rojo": false

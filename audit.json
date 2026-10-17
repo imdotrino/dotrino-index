@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-17T09:01:55-0500",
+  "generado": "2026-10-17T18:29:23-0500",
   "reglas": [
     "voseo",
     "english",
@@ -50,8 +50,8 @@
       "duracionMs": 92869
     },
     "dotrino-app": {
-      "commit": "650a2f4",
-      "fecha": "2026-08-28",
+      "commit": "1ed9b7d",
+      "fecha": "2026-10-17",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -59,13 +59,14 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [],
-      "revisados": 18,
-      "notas": "El repo es una cáscara nativa (Android Kotlin + iOS Swift) sin código JS/TS ni paquetes @dotrino/*: todo el contenido y la lógica del ecosistema viven en las páginas web cargadas dentro del WebView/WKWebView, así que las reglas pillars y sealed no tienen dónde aplicarse aquí. Copy de usuario (strings.xml, Localizable.strings, Info.plist) en tuteo correcto; código, rutas y comentarios cumplen la frontera inglés/español; no hay logs, throws ni copy pública con jerga técnica.",
-      "costoUSD": 0.596832,
-      "duracionMs": 7792
+      "revisados": 4,
+      "notas": "Solo abrí 4 archivos (los strings de Android y iOS de la app, y el de la app de identidad). El resto lo revisé con Grep, no abriendo cada archivo. No hay voseo en el código ni en los strings (todo va en tuteo), y los errores y logs de Kotlin/Swift están en inglés. `sendSealed` y `requireSealed` aparecen en el SDK nativo. `ProxyConnection` es la implementación nativa del propio pilar, así que no la reporté en `pillars`. El `Localizable.strings` de iOS está generado desde el `strings.xml` de Andro",
+      "costoUSD": 0.2738252,
+      "duracionMs": 43357
     },
     "dotrino-ar": {
       "commit": "3bd4309",
@@ -560,8 +561,8 @@
       "duracionMs": 24799
     },
     "dotrino-home": {
-      "commit": "bc014cf",
-      "fecha": "2026-08-29",
+      "commit": "a93bdd1",
+      "fecha": "2026-10-17",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -569,13 +570,14 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
       "hallazgos": [],
-      "revisados": 15,
-      "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
-      "costoUSD": 0.48472940000000003,
-      "duracionMs": 68762
+      "revisados": 5,
+      "notas": "Sin hallazgos. El único uso del transporte es `replyNotice.ts`, que usa `@dotrino/proxy-client` para registrar el aviso del navegador y no manda contenido del usuario por mensaje dirigido. Las solicitudes y el contacto van por `fetch` firmado a `feedback.dotrino.com`, no por `sendByPubkey`. No abrí `App.vue`, `SiteNav.vue`, `SiteFooter.vue`, `InfoModal.vue`, `ReplyNotice.vue`, `AppsCatalog.vue` ni los scripts. Esos los revisé solo con Grep, que no encontró voseo ni argot. Tampoco encontró `new W",
+      "costoUSD": 0.193566,
+      "duracionMs": 37381
     },
     "dotrino-ia": {
       "commit": "828e22d",
