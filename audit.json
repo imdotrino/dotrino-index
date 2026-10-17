@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-17T08:28:56-0500",
+  "generado": "2026-10-17T09:01:55-0500",
   "reglas": [
     "voseo",
     "english",
@@ -68,8 +68,8 @@
       "duracionMs": 7792
     },
     "dotrino-ar": {
-      "commit": "e945b8a",
-      "fecha": "2026-10-16",
+      "commit": "3bd4309",
+      "fecha": "2026-10-17",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -80,20 +80,11 @@
         "sealed",
         "duplicado"
       ],
-      "hallazgos": [
-        {
-          "regla": "pillars",
-          "archivo": "src/works/blobs.js",
-          "linea": 13,
-          "cita": "const req = indexedDB.open(DB_NAME, 1)",
-          "porque": "Guarda en un IndexedDB propio ('dotrino-ar-blobs') la foto, los datos de reconocimiento y el vídeo o imagen del usuario, en paralelo a @dotrino/store, que ya se usa en src/works/repo.js:15.",
-          "arreglo": "Guardar esos bytes con @dotrino/store o @dotrino/content, o dejar documentado y aprobado el límite de tamaño que lo impide."
-        }
-      ],
-      "revisados": 8,
-      "notas": "Es una instancia de la regla pillars y el propio comentario del archivo reconoce que es un paso provisional. Estoy menos seguro de ésta que de las demás, porque @dotrino/content quizá no admita aún estos tamaños. No miré src/ar/*, src/ui/dialog.js, src/dom.js ni src/services/*. No hay voseo, y los logs y errores que vi están en inglés. No encontré argot en la copy (index.html e i18n). No hay envío dirigido por mensaje, así que la regla sealed no aplica. En la regla duplicado, el bloque de refres",
-      "costoUSD": 0.16508099999999998,
-      "duracionMs": 19565
+      "hallazgos": [],
+      "revisados": 4,
+      "notas": "Abrí i18n.js, index.html, ui/works.js, ui/viewer.js y works/blobs.js, y usé Grep sobre src/ y public/ para voseo, WebSocket, subtle, sendByPubkey, topbar y los throw/console. No hay mensajes dirigidos, así que `sealed` no aplica. Las funciones `refresh` de works.js y viewer.js se parecen pero son demasiado cortas para reportarlas como duplicado.",
+      "costoUSD": 0.1452548,
+      "duracionMs": 24066
     },
     "dotrino-base64": {
       "commit": "57ba22f",
@@ -241,8 +232,8 @@
       "duracionMs": 61477
     },
     "dotrino-content": {
-      "commit": "b14dd8d",
-      "fecha": "2026-08-29",
+      "commit": "ebd8e5d",
+      "fecha": "2026-10-17",
       "por": "seyacat",
       "modelo": "sonnet",
       "reglas": [
@@ -250,13 +241,39 @@
         "english",
         "plain",
         "pillars",
-        "sealed"
+        "sealed",
+        "duplicado"
       ],
-      "hallazgos": [],
-      "revisados": 19,
-      "notas": "Repo pequeño y bien alineado: CLI en tuteo consistente, logs/errores de red en inglés, landing (web/index.html) usa <dotrino-topbar> y copy sin jerga técnica, S3 y sendByPubkey solo aparecen en protocolo externo (S3) y en tests/docs (exentos). No se revisaron test/*.test.js, docs/DISENO.md, docs/HANDOFF.md, src/blobstore-s3.js ni lib/node_modules/@dotrino/* (vendored, terceros) por estar exentos o fuera de presupuesto.",
-      "costoUSD": 0.7849347,
-      "duracionMs": 141957
+      "hallazgos": [
+        {
+          "regla": "duplicado",
+          "archivo": "src/public.js",
+          "linea": 384,
+          "cita": "function parseRangeHeader (header, size) {",
+          "porque": "Es el mismo parseo de `Range: bytes=` que `parseRange` en src/server.js:19, copiado casi línea a línea; un arreglo obliga a tocar los dos.",
+          "arreglo": "Importar `parseRange` de ./server.js (o moverla a un módulo común) y borrar `parseRangeHeader`."
+        },
+        {
+          "regla": "english",
+          "archivo": "src/public.js",
+          "linea": 294,
+          "cita": "return text(res, 400, 'cid inválido\\n')",
+          "porque": "Los cuerpos de error HTTP del servidor público están en español (8 más, en las líneas 271, 281, 297, 316, 319, 341 y 362). Son mensajes de error de protocolo, no la interfaz de la app.",
+          "arreglo": "Pasarlos a inglés: 'invalid cid', 'not available', 'method not allowed', 'too many requests', etc."
+        },
+        {
+          "regla": "english",
+          "archivo": "lib/index.js",
+          "linea": 223,
+          "cita": "throw err('bad-input', 'referencia inválida')",
+          "porque": "El mensaje de un `throw` está en español; los demás errores de lib/ están en inglés.",
+          "arreglo": "Usar 'invalid reference'."
+        }
+      ],
+      "revisados": 12,
+      "notas": "Aprobado sin hallazgo: web/index.html (tuteo, sin argot) y lib/crypto.js (AES-GCM por blob con la llave en el fragmento, es el producto y no una firma de identidad). `client.send` en src/fetch.js y lib/public.js solo mueve blobs marcados públicos (sin `sendSealed` ni `requireSealed`), así que no lo reporto como `sealed`. Por presupuesto no abrí a fondo src/agent.js, src/ops.js ni src/vaultEnv.js. Hay dos `CID_RE` casi iguales, en src/blobstore.js:18 y lib/ref.js:23, que dejé sin reportar por dud",
+      "costoUSD": 0.2129057,
+      "duracionMs": 36816
     },
     "dotrino-critters": {
       "commit": "3c7afff",
@@ -367,7 +384,7 @@
       "duracionMs": 11451
     },
     "dotrino-eco": {
-      "commit": "1fe4c94",
+      "commit": "fdff49b",
       "fecha": "2026-10-17",
       "por": "seyacat",
       "modelo": "sonnet",
@@ -380,10 +397,10 @@
         "duplicado"
       ],
       "hallazgos": [],
-      "revisados": 6,
-      "notas": "Auditado con Glob y Grep, sin Bash. Abrí index.html, App.vue (i18n y parte del topbar), style.css, feedStore.js, ranking.js y proxy.js. El resto salió de Grep: el voseo solo aparece en comentarios, los logs y errores están en inglés, el topbar, el perfil y las notificaciones usan los componentes @dotrino/*, y proxy.js usa sendSealed con requireSealed:true. No leí a fondo los demás archivos de src/services ni feedStore.js completo, así que no descarto duplicados en ellos. En style.css hay un @med",
-      "costoUSD": 0.1518381,
-      "duracionMs": 22590
+      "revisados": null,
+      "notas": "No hay hallazgos. Solo pude usar Glob y Grep, porque Bash está deshabilitado y no abrí ningún archivo completo, así que `revisados` es 0. Los Grep sobre `src/` y `index.html` no encontraron voseo en la copy de usuario: solo aparece en comentarios (`src/App.vue:254`, `src/services/identity.js:85`, `src/services/notifications.js:4`), que están permitidos. Los `throw` y `console.warn` están en inglés. `src/services/proxy.js` arranca con `requireSealed: true` y usa `sendSealed`. La barra superior es",
+      "costoUSD": 0.1247787,
+      "duracionMs": 23414
     },
     "dotrino-ecuavoley-contador": {
       "commit": "36db2cd",
