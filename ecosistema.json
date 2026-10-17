@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-16T23:39:34-0500",
-  "fecha": "2026-10-16",
+  "generado": "2026-10-17T08:31:25-0500",
+  "fecha": "2026-10-17",
   "por": "seyacat",
-  "commit": "724d10e",
+  "commit": "72127ec",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -39,7 +39,7 @@
     "frontend": "2.0.0-alpha.4",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.9.0",
-    "@dotrino/identity": "0.119.0",
+    "@dotrino/identity": "0.120.0",
     "@dotrino/install": "0.3.3",
     "@dotrino/lobby": "0.10.2",
     "dotrino-messenger": "0.8.1",
@@ -50,17 +50,17 @@
     "@dotrino/profile": "0.20.1",
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
-    "websocket-proxy": "1.6.4",
-    "@dotrino/proxy-client": "0.36.1",
+    "websocket-proxy": "1.6.5",
+    "@dotrino/proxy-client": "0.36.2",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
-    "@dotrino/remote-agent": "0.20.1",
+    "@dotrino/remote-agent": "0.21.0",
     "@dotrino/reputation": "0.12.0",
     "dotrino-reputation-app": "0.1.0",
     "@dotrino/share": "0.3.0",
     "dotrino-shortener": "0.2.0",
     "dotrino-signer": "0.1.0",
-    "@dotrino/store": "0.12.3",
+    "@dotrino/store": "0.12.4",
     "sudoku": "0.0.3",
     "@dotrino/support": "0.9.3",
     "dotrino-telegram-claude-bot": "0.1.6",
@@ -70,15 +70,15 @@
     "@dotrino/topbar": "0.16.1",
     "trivia": "1.0.0",
     "trueque": "0.1.0",
-    "@dotrino/tunnel": "0.1.6",
+    "@dotrino/tunnel": "0.1.7",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.162.1",
-    "@dotrino/vault": "0.90.1",
+    "@dotrino/vaultd": "0.162.3",
+    "@dotrino/vault": "0.90.3",
     "@dotrino/verifier": "0.3.0",
     "wallet": "2.60.0",
     "@dotrino/content-client": "0.2.4",
     "dotrino-social-bot": "0.3.0",
-    "@dotrino/env": "0.90.1",
+    "@dotrino/env": "0.90.3",
     "@dotrino/inspector": "0.2.2",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -109,13 +109,13 @@
   "enNpm": {
     "critters": "0.0.25",
     "@dotrino/profile": "0.20.1",
-    "@dotrino/store": "0.12.3",
+    "@dotrino/store": "0.12.4",
     "@dotrino/install": "0.3.3",
-    "@dotrino/proxy-client": "0.36.1",
+    "@dotrino/proxy-client": "0.36.2",
     "dotrino-messenger": null,
     "@dotrino/opaque": "0.1.0",
     "@dotrino/passmanager": "0.18.4",
-    "@dotrino/identity": "0.119.0",
+    "@dotrino/identity": "0.120.0",
     "cuarenta": null,
     "dotrino-profile-page": null,
     "@dotrino/content-client": "0.2.4",
@@ -141,12 +141,12 @@
     "@dotrino/compat": "0.4.0",
     "sudoku": "0.0.3",
     "@dotrino/roadmap": "0.4.30",
-    "@dotrino/tunnel": "0.1.6",
+    "@dotrino/tunnel": "0.1.7",
     "@dotrino/topbar": "0.16.1",
     "@dotrino/qr": "0.3.0",
     "@dotrino/telegram-bot": "0.2.2",
     "dotrino-terminal": null,
-    "@dotrino/vault": "0.90.1",
+    "@dotrino/vault": "0.90.3",
     "padel": "0.0.1",
     "dotrino-reputation-app": null,
     "simple-websocket-chat": null,
@@ -156,7 +156,7 @@
     "dotrino-qrgenerator": null,
     "@dotrino/verifier": "0.3.0",
     "diamonds": "0.0.9-q",
-    "@dotrino/remote-agent": "0.20.1",
+    "@dotrino/remote-agent": "0.21.0",
     "facturero": null,
     "@dotrino/webrtc": "0.1.1",
     "dotrino-ia": null,
@@ -170,7 +170,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.162.1",
+    "@dotrino/vaultd": "0.162.3",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.2",
     "gridgame": null,
@@ -180,7 +180,7 @@
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.90.1",
+    "@dotrino/env": "0.90.3",
     "offroad": "0.0.9",
     "ar": "0.0.1",
     "@dotrino/prerender": "0.1.0",
@@ -193,7 +193,7 @@
   "consumidores": [
     {
       "pilar": "@dotrino/identity",
-      "version": "0.119.0",
+      "version": "0.120.0",
       "enNpm": true,
       "repos": [
         "dotrino-ad-integration",
@@ -233,6 +233,7 @@
         "dotrino-sealers",
         "dotrino-social-bot",
         "dotrino-sso",
+        "dotrino-store",
         "dotrino-sudoku",
         "dotrino-terminal",
         "dotrino-test",
@@ -284,7 +285,7 @@
     },
     {
       "pilar": "@dotrino/store",
-      "version": "0.12.3",
+      "version": "0.12.4",
       "enNpm": true,
       "repos": [
         "dotrino-ar",
@@ -428,7 +429,7 @@
     },
     {
       "pilar": "@dotrino/proxy-client",
-      "version": "0.36.1",
+      "version": "0.36.2",
       "enNpm": true,
       "repos": [
         "dotrino-bots",
@@ -611,7 +612,7 @@
     },
     {
       "pilar": "@dotrino/remote-agent",
-      "version": "0.20.1",
+      "version": "0.21.0",
       "enNpm": true,
       "repos": [
         "dotrino-content",
@@ -624,7 +625,7 @@
     },
     {
       "pilar": "@dotrino/vault",
-      "version": "0.90.1",
+      "version": "0.90.3",
       "enNpm": true,
       "repos": [
         "dotrino-content",
@@ -714,7 +715,7 @@
     },
     {
       "pilar": "@dotrino/tunnel",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "enNpm": true,
       "repos": [
         "dotrino-telegram-claude-bot"
@@ -756,7 +757,7 @@
         "@dotrino/verifier"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -808,7 +809,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         },
         {
           "dep": "@dotrino/update",
@@ -847,7 +848,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -924,7 +925,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1013,7 +1014,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1063,7 +1064,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -1086,7 +1092,7 @@
           }
         ]
       },
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-base64",
@@ -1116,7 +1122,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1168,7 +1174,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -1183,7 +1194,7 @@
         "notas": "Repo pequeño y autocontenido; se revisaron todos los archivos de src/, index.html, vite.config.js, package.json y public/robots.txt. No hay carpeta web/, lib/, agent/ ni server/ en este repo. Identidad y reputación se delegan correctamente a @dotrino/identity y @dotrino/reputation, y el topbar/install son los componentes oficiales; no hay WebSocket, crypto ni mensajería dirigida propios.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-bots",
@@ -1205,7 +1216,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1257,12 +1268,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         },
         {
           "dep": "@dotrino/lobby",
           "pide": "0.10.0",
           "publicado": "0.10.2"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
         },
         {
           "dep": "@dotrino/update",
@@ -1279,7 +1295,7 @@
         "notas": "dotrino-bots es un daemon headless (sin UI web, sin index.html, sin i18n/locales): revisé todo src/ (bots, core, transport, engines) más ecosystem.config.cjs. Los mensajes que los bots publican en el chat (brain.js, chat-bot.js) están en tuteo neutro y el propio system-prompt a DeepSeek prohíbe voseo explícitamente. Logs y errores (console.log/error, throw new Error) están en inglés en todos los archivos revisados; los comentarios en español son mayoría y están permitidos. transport.js usa @dotr",
         "hallazgos": []
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-chat",
@@ -1311,7 +1327,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1361,7 +1377,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -1398,7 +1424,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 8
     },
     {
       "repo": "dotrino-chess",
@@ -1433,7 +1459,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1485,7 +1511,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -1500,7 +1536,7 @@
         "notas": "El repo ya pasó varias rondas de auditoría (ver git log); i18n.js, App.vue, lobbyController.js y los modales de identidad/perfil usan tuteo correcto y los pilares @dotrino/* (topbar, share, profile, proxy-client, identity, lobby, reputation) en vez de reimplementarlos. ConnectionPanel.vue y WSConnectionDemo.vue quedan como código huérfano (no se importan desde App.vue) con texto/demo del protocolo WS viejo, pero al no ser alcanzables por el usuario no los reporté como hallazgo — vale la pena que",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 6
     },
     {
       "repo": "dotrino-company",
@@ -1516,7 +1552,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1588,7 +1624,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1672,7 +1708,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1724,7 +1760,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "0.20.1",
+          "publicado": "0.21.0"
         },
         {
           "dep": "@dotrino/update",
@@ -1734,7 +1780,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.87.0",
-          "publicado": "0.90.1"
+          "publicado": "0.90.3"
         }
       ],
       "rotas": [],
@@ -1749,7 +1795,7 @@
         "notas": "Repo pequeño y bien alineado: CLI en tuteo consistente, logs/errores de red en inglés, landing (web/index.html) usa <dotrino-topbar> y copy sin jerga técnica, S3 y sendByPubkey solo aparecen en protocolo externo (S3) y en tests/docs (exentos). No se revisaron test/*.test.js, docs/DISENO.md, docs/HANDOFF.md, src/blobstore-s3.js ni lib/node_modules/@dotrino/* (vendored, terceros) por estar exentos o fuera de presupuesto.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 6
     },
     {
       "repo": "dotrino-critters",
@@ -1784,7 +1830,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1836,7 +1882,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -1851,7 +1907,7 @@
         "notas": "El repo ya pasó una auditoría previa (commit 3c7afff) y no se encontraron incumplimientos nuevos: la copy de usuario en i18n.js usa tuteo consistente, los logs/errores están en inglés, los pilares (@dotrino/identity, proxy-client, store, reputation, nav, topbar, notifications, tutorial) se usan tal cual sin reimplementación propia, y no se detectó sendByPubkey/send con contenido de usuario sin sellar (referrals.js delega en createShareReceipts del pilar notifications).",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 6
     },
     {
       "repo": "dotrino-cuarenta",
@@ -1887,7 +1943,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1939,7 +1995,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -1954,7 +2020,7 @@
         "notas": "El repo es una app consumidora (juego 'Cuarenta'), no un paquete pilar. Todo el copy en español usa tuteo correcto, logs/errores en inglés, y usa componentes oficiales (dotrino-topbar, dotrino-profile, dotrino-share) y paquetes (@dotrino/identity, @dotrino/proxy-client vía @dotrino/lobby) sin reimplementaciones caseras. No se invoca sendByPubkey/send directamente, por lo que la regla sealed no aplica en este repo. Punto de atención menor sin llegar a hallazgo: manifest.webmanifest usa 'P2P' en l",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 6
     },
     {
       "repo": "dotrino-demo-apple",
@@ -1965,12 +2031,12 @@
       "subdominio": null,
       "paquete": null,
       "version": null,
-      "commit": "8b56c48",
-      "fecha": "2026-10-11",
+      "commit": "0467b8a",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -1978,8 +2044,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-10",
-          "dias": 1,
-          "commits": 2,
+          "dias": 7,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2007,7 +2073,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -2023,32 +2089,25 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "El repo solo tiene enlazar.mjs, entrypoint.sh, Dockerfile y README.md (el README no se audita). No hay copy de usuario ni UI, así que voseo, plain, pillars y sealed no aplican. Los textos en español de entrypoint.sh son comentarios, y los mensajes de log ya están en inglés. Las rutas y nombres de la bóveda (`+aprueba`, `Dispositivo:`) son del paquete externo y no se reportan.",
+        "notas": "Repo de solo 4 archivos (enlazar.mjs, entrypoint.sh, Dockerfile, README.md leído solo por nombre, no abierto). Los logs y errores están en inglés. Sin UI ni i18n: voseo, plain, pillars y sealed no aplican. En duplicado solo vi parecidos menores (el `sed` que quita códigos ANSI se repite 3 veces en entrypoint.sh:198, 213 y 214), no un hallazgo.",
         "hallazgos": [
           {
             "regla": "english",
             "archivo": "enlazar.mjs",
             "linea": 1,
-            "porque": "El nombre del archivo y el identificador `codigo` están en español, y se repiten en Dockerfile:31 y entrypoint.sh:126 (`/opt/demo/enlazar.mjs`).",
-            "arreglo": "Renombrar a `link.mjs` (o `enroll.mjs`), `codigo` a `codeFile`, y actualizar Dockerfile y entrypoint.sh."
+            "porque": "El nombre del archivo está en español y la regla 8.1 pide nombres de archivo en inglés; la variable `codigo` en la línea 11 tampoco lo está.",
+            "arreglo": "Renombrarlo a `link.mjs` o `enroll.mjs`, actualizar Dockerfile y entrypoint.sh y pasar `codigo` a `code`."
           },
           {
             "regla": "english",
             "archivo": "entrypoint.sh",
-            "linea": 308,
-            "porque": "Las órdenes de la CLI, las funciones (`preparar`, `servir`, `esperar_boveda`, `limpiar_temporales`, `pedidos_de_muestra`, `bucle_de_pedidos`, `puerto_http`, `clave_del_revisor`, `reintentar`, `permisos_data`) y las variables (`COPIA`, `USUARIO`, `MAQUINA`, `SERVICIO`) están en español, y `die` imprime esas mismas órdenes en el log (línea 312). Cuenta como una sola infracción.",
-            "arreglo": "Usar nombres en inglés (`prepare`, `serve`, `export`, `COPY_DIR`, `REVIEWER_USER`...) y actualizar Dockerfile CMD y README."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "entrypoint.sh",
-            "linea": 179,
-            "porque": "Repite a mano el mismo entorno que ya construye `as_vault` en entrypoint.sh:25-26. Si cambia una variable de la bóveda hay que tocar los dos sitios.",
-            "arreglo": "Definir el entorno de la bóveda una sola vez (una variable o array) y usarlo en `as_vault` y en `clave_del_revisor`."
+            "linea": 105,
+            "porque": "Las funciones (preparar, servir, exportar, esperar_boveda, pedidos_de_muestra, bucle_de_pedidos, clave_del_revisor, limpiar_temporales, permisos_data, importar_de_variable, reintentar, puerto_http), las variables (COPIA, USUARIO, MAQUINA, SERVICIO) y los subcomandos de la CLI (`preparar|servir|exportar`, línea 310) están en español.",
+            "arreglo": "Renombrarlos al inglés (prepare, serve, export, wait_for_vault, sample_requests, backup…) y actualizar Dockerfile CMD y README."
           }
         ]
       },
-      "rojos": 3
+      "rojos": 2
     },
     {
       "repo": "dotrino-deploy-listener",
@@ -2066,7 +2125,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2163,7 +2222,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2215,7 +2274,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -2230,7 +2299,7 @@
         "notas": "El único punto gris fue levels.js:compartirNivel (navigator.share/clipboard a mano en vez de un componente de compartir), pero no existe @dotrino/share en package.json ni en node_modules, así que no hay pilar real que se esté evitando; ante la duda no se reporta como incumplimiento de la regla pillars.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 6
     },
     {
       "repo": "dotrino-eco",
@@ -2241,8 +2310,8 @@
       "subdominio": "eco.dotrino.com",
       "paquete": "eco",
       "version": "0.1.0",
-      "commit": "c82e9b6",
-      "fecha": "2026-10-16",
+      "commit": "1fe4c94",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Eco",
         "url": "https://eco.dotrino.com/",
@@ -2266,7 +2335,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2274,8 +2343,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-21",
-          "dias": 55,
-          "commits": 38,
+          "dias": 57,
+          "commits": 39,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -2283,9 +2352,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 2,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2294,7 +2363,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-06-18",
-          "dias": 120,
+          "dias": 121,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -2303,9 +2372,9 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 2,
+          "commits": 0,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -2316,7 +2385,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -2328,23 +2407,8 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Solo abrí 9 archivos de src/ y no revisé feedStore.js, content.js ni store.js a fondo. No encontré voseo en copy de usuario: las tres coincidencias (acá, vos) están en comentarios. Tampoco encontré argot en la copy pública, ni pilares reimplementados, ni mensajes dirigidos en claro: proxy.js usa `requireSealed: true` y `sendSealed`. El error de src/services/publicEco.js:36 ('la imagen pesa … KB') está en español y App.vue:136 lo muestra al usuario, así que lo traté como copy sin traducir y no co",
-        "hallazgos": [
-          {
-            "regla": "duplicado",
-            "archivo": "src/feed/ranking.js",
-            "linea": 5,
-            "porque": "Es la misma constante que `TTL_24H` en src/feed/constants.js:5, que ya importan geo.js, publicEco.js y feedStore.js; geo.js ya se corrigió así en el commit c4ecb3a.",
-            "arreglo": "Importar `TTL_24H` de './constants.js' y borrar `TTL_MS`."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "src/App.vue",
-            "linea": 397,
-            "porque": "La regla de vencimiento está escrita otra vez, con 86400000 en lugar de la constante: `isAlive` en src/feed/ranking.js:43 (`eco.expiresAt || ((eco.createdAt || 0) + TTL_MS)`) hace lo mismo. `ttlText` en App.vue:412 y src/feed/feedStore.js:668 repiten el fallback `createdAt + TTL`.",
-            "arreglo": "Usar `!isAlive(eco, now.value)` de ranking.js, o exportar una función `expiresAtOf(eco)` única que usen todos."
-          }
-        ]
+        "notas": "Auditado con Glob y Grep, sin Bash. Abrí index.html, App.vue (i18n y parte del topbar), style.css, feedStore.js, ranking.js y proxy.js. El resto salió de Grep: el voseo solo aparece en comentarios, los logs y errores están en inglés, el topbar, el perfil y las notificaciones usan los componentes @dotrino/*, y proxy.js usa sendSealed con requireSealed:true. No leí a fondo los demás archivos de src/services ni feedStore.js completo, así que no descarto duplicados en ellos. En style.css hay un @med",
+        "hallazgos": []
       },
       "rojos": 5
     },
@@ -2368,7 +2432,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2440,8 +2504,8 @@
       "subdominio": "facturero.dotrino.com",
       "paquete": "facturero",
       "version": "0.1.0",
-      "commit": "d55f15c",
-      "fecha": "2026-10-15",
+      "commit": "9c1c3b2",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Facturero",
         "url": "https://facturero.dotrino.com/",
@@ -2460,7 +2524,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2468,8 +2532,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-28",
-          "dias": 17,
-          "commits": 9,
+          "dias": 19,
+          "commits": 11,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2477,9 +2541,9 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -2488,18 +2552,18 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-16",
-          "dias": 29,
+          "dias": 31,
           "commits": null,
           "tope": false,
           "faltan": null,
-          "rojo": false
+          "rojo": true
         },
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -2510,44 +2574,35 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 0
+        "sinPublicar": 1
       },
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Sin hallazgos de voseo, english, plain, pillars ni sealed: no se usa proxy-client; crypto.subtle es para firma XAdES/RSA del SRI y no sustituye a @dotrino/identity. No abrí index.html ni los componentes Vue por completo; la revisión de voseo/plain se hizo con grep sobre src/ (i18n.js sin coincidencias de voseo).",
+        "notas": "Solo pude usar Grep, Glob y Read (sin Bash). Revisé i18n y src con búsquedas dirigidas y abrí un solo archivo, services/feedback.js. La firma RSA/XAdES de src/sri/ es la del SRI de Ecuador y no la cubre @dotrino/identity, así que no la reporto. No encontré uso de proxy-client ni de sendByPubkey, así que no apliqué la regla sealed.",
         "hallazgos": [
           {
             "regla": "duplicado",
-            "archivo": "src/sri/xades.js",
-            "linea": 157,
-            "porque": "Cuerpo idéntico (troceo de 0x8000 + btoa) a bytesToBase64 de src/lib/bytes.js:3, que ya existe y se importa en src/lib/signature.js:23; p12.js:13 importa la copia de xades.",
-            "arreglo": "Borrar la copia de xades.js e importar bytesToBase64 desde lib/bytes.js (en xades.js y en p12.js)."
-          },
-          {
-            "regla": "duplicado",
             "archivo": "src/components/SettingsView.vue",
-            "linea": 23,
-            "porque": "El mismo formato del número de comprobante está escrito también en src/components/InvoiceForm.vue:249 (inline en la plantilla); si cambia el formato hay que tocar los dos.",
-            "arreglo": "Extraer una función única de formato (por ejemplo en lib/issuers.js) e importarla en ambos componentes."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "src/sri/p12.js",
-            "linea": 201,
-            "porque": "Misma lógica que base64ToBytes de src/lib/bytes.js:9-13 (bucle charCodeAt sobre Uint8Array); bytesToBinary en p12.js:195 repite también el troceo de bytesToBase64 en src/lib/bytes.js:4-5.",
-            "arreglo": "Exportar un ayudante binary↔bytes desde lib/bytes.js y reutilizarlo en p12.js."
+            "linea": 19,
+            "porque": "La misma función fmtDate, idéntica, está escrita también en src/components/IssuerForm.vue línea 99; arreglar el formato de fecha obligaría a tocar los dos sitios.",
+            "arreglo": "Extraer una única función de formato de fecha larga (p. ej. en src/lib/format.js) e importarla en ambos componentes."
           }
         ]
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-favicon-generator",
@@ -2576,7 +2631,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2628,7 +2683,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -2643,7 +2703,7 @@
         "notas": "Repo pequeño (app Vue de un solo archivo): revisé src/i18n.ts, src/services/identity.ts, src/services/reputation.ts, src/main.ts, src/App.vue, index.html y src/style.css. No hay red, WebSocket, cripto propia ni mensajes dirigidos (no aplica sealed); usa @dotrino/topbar, @dotrino/identity y @dotrino/reputation correctamente en vez de reimplementarlos; la copy es tuteante y llana; el código y los logs están en inglés.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-feedback",
@@ -2662,7 +2722,7 @@
         "@dotrino/reputation"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2708,7 +2768,13 @@
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.119.0",
+          "publicado": "0.120.0"
+        }
+      ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
@@ -2718,7 +2784,7 @@
         "notas": "El repo es un Worker de Cloudflare que reenvía solicitudes por email. Solo tiene dos archivos de código: src/index.js y src/attachment.js. No usa mensajería dirigida, WebSocket, cifrado propio ni UI, así que `sealed` y `pillars` no aplican. La verificación de firma ya usa `verifyDeviceSig` de `@dotrino/identity`. `b64url` en index.js:237 y `readMetaHeader` en attachment.js:27 son operaciones inversas, no una duplicación. No abrí los tests ni README.md.",
         "hallazgos": []
       },
-      "rojos": 0
+      "rojos": 1
     },
     {
       "repo": "dotrino-geo",
@@ -2734,7 +2800,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2824,7 +2890,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2874,7 +2940,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -2889,7 +2965,7 @@
         "notas": "No pude ejecutar Bash, así que revisé con Glob, Grep y Read: abrí i18n.js, PeerLink.js, identity.js, App.vue, TilePicker.vue y parser.js, y rastreé el resto con Grep. No hay index.html en la raíz y no leí public/tile_links.html, standard.js ni combat.js. PeerLink ya usa requireSealed y sendSealedTo, así que la regla sealed no se dispara. Los mensajes de error y los logs están en inglés. La copy está en tuteo y en lenguaje llano.",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 5
     },
     {
       "repo": "dotrino-gymbro",
@@ -2911,7 +2987,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -2983,8 +3059,8 @@
       "subdominio": "here.dotrino.com",
       "paquete": "here",
       "version": "0.0.0",
-      "commit": "6edb1a4",
-      "fecha": "2026-10-15",
+      "commit": "51f5cd4",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "here",
         "url": "https://here.dotrino.com/",
@@ -3002,7 +3078,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3010,8 +3086,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 91,
-          "commits": 23,
+          "dias": 93,
+          "commits": 24,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3020,8 +3096,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 0,
-          "commits": 1,
+          "dias": 2,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3030,7 +3106,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-06-18",
-          "dias": 119,
+          "dias": 121,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -3039,7 +3115,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3052,12 +3128,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         },
         {
           "dep": "@dotrino/qr",
           "pide": "0.2.1",
           "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -3069,32 +3150,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No hay index.html en la raíz del repo. README.md y package.json no se abrieron (la regla 4 se juzgó solo con el código de src/). El QR ya usa <dotrino-qr>, aunque el comentario de src/lib/owntracks.js:92 aún menciona `qrcode`. El cifrado de la clave del círculo pasa por identity.encrypt. No hay envío por proxy: `sendByPubkey` solo aparece en un TODO de src/lib/circles.js:138, así que `sealed` no aplica todavía; cuando se cablee conviene usar `sendSealed`.",
-        "hallazgos": [
-          {
-            "regla": "english",
-            "archivo": "src/lib/identity.js",
-            "linea": 152,
-            "porque": "El mensaje de error del resultado de revocación, que se usa para diagnosticar, está en español; los otros dos errores del archivo (líneas 116 y 136) ya están en inglés.",
-            "arreglo": "Cambiarlo a `error: 'missing circleId'`."
-          },
-          {
-            "regla": "plain",
-            "archivo": "src/lib/i18n.js",
-            "linea": 73,
-            "porque": "La copy de la interfaz usa jerga ('cert', 'circleId' en la línea 56 y 72, 'Encryption key' en la línea 74) que quien no sabe de tecnología no entiende.",
-            "arreglo": "Explicar el beneficio: 'el permiso de este dispositivo (ya va en el QR)' y 'el identificador del círculo'."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "src/lib/circles.js",
-            "linea": 53,
-            "porque": "El mismo bloque de bytes → base64url sin relleno está en `base64url()` de src/lib/owntracks.js:20-26, y arreglar uno obligaría a tocar el otro.",
-            "arreglo": "Exportar una sola función de bytes a base64url (por ejemplo desde owntracks.js) e importarla en `generateCircleKey`."
-          }
-        ]
+        "notas": "No abrí main.js, style.css, types.d.ts ni los tests e2e. No encontré voseo en i18n.js ni en las vistas. No hay sendByPubkey ni send en uso: solo aparece en un TODO de circles.js:135, así que `sealed` no aplica por ahora, pero habrá que usar sendSealed cuando se cablee el reparto de la clave. Por falta de evidencia clara no reporté dos casos límite: la copy de configuración manual de OwnTracks (i18n.js:56, 73, 74) usa 'circleId', 'cert' y 'Encryption key', que son los campos de la app OwnTracks; ",
+        "hallazgos": []
       },
-      "rojos": 7
+      "rojos": 5
     },
     {
       "repo": "dotrino-home",
@@ -3121,7 +3180,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3173,7 +3232,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -3188,7 +3257,7 @@
         "notas": "Repo pequeño (home/landing Vue); dist/ y node_modules/ se ignoraron por ser generados/terceros. HelloWorld.vue es boilerplate de Vite sin importar en la app; no se reporta porque no incumple ninguna de las 5 reglas (no es copy de usuario real, ni reimplementa un pilar).",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 5
     },
     {
       "repo": "dotrino-ia",
@@ -3199,8 +3268,8 @@
       "subdominio": "ia.dotrino.com",
       "paquete": "dotrino-ia",
       "version": "0.2.0",
-      "commit": "6882caf",
-      "fecha": "2026-10-16",
+      "commit": "7c3adae",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Dotrino IA",
         "url": "https://ia.dotrino.com/",
@@ -3220,7 +3289,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3228,8 +3297,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-07",
-          "dias": 8,
-          "commits": 6,
+          "dias": 10,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3238,8 +3307,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 0,
-          "commits": 2,
+          "dias": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3248,7 +3317,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-10-07",
-          "dias": 9,
+          "dias": 10,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -3258,8 +3327,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 46,
-          "commits": 9,
+          "dias": 48,
+          "commits": 10,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3272,7 +3341,22 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "0.20.1",
+          "publicado": "0.21.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -3287,7 +3371,7 @@
         "notas": "No se abrieron agent/templates/Dockerfile, docker-compose.yml, .dockerignore, .containerignore, .gitignore (plantillas simétricas a las de Podman ya revisadas) ni el contenido completo de PLAN.md/README.md/CHECKLIST.md (documentos de diseño, exentos de las 5 reglas). El repo real (src/, agent/, index.html, configs) no presenta voseo, código en español, jerga técnica en copy pública, reimplementaciones de pilares ni envío sin sellar: usa @dotrino/identity, @dotrino/remote-agent, @dotrino/topbar, ",
         "hallazgos": []
       },
-      "rojos": 2
+      "rojos": 5
     },
     {
       "repo": "dotrino-iatosvg",
@@ -3311,7 +3395,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3380,24 +3464,24 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/identity",
-      "version": "0.119.0",
-      "commit": "57136b9",
-      "fecha": "2026-10-16",
+      "version": "0.120.0",
+      "commit": "27a0332",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/opaque"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
         "readme": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-14",
-          "dias": 2,
-          "commits": 8,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3426,8 +3510,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-08-30",
-          "dias": 47,
-          "commits": 84,
+          "dias": 48,
+          "commits": 85,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3457,12 +3541,12 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "724d10e",
+      "commit": "72127ec",
       "fecha": "2026-10-16",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3471,7 +3555,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 29,
-          "commits": 207,
+          "commits": 208,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3501,7 +3585,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 47,
-          "commits": 223,
+          "commits": 224,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -3576,7 +3660,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3665,7 +3749,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3737,12 +3821,12 @@
       "subdominio": null,
       "paquete": "@dotrino/lobby",
       "version": "0.10.2",
-      "commit": "f20b5a7",
-      "fecha": "2026-10-15",
+      "commit": "f5b64e2",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3750,8 +3834,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-15",
-          "dias": 30,
-          "commits": 3,
+          "dias": 32,
+          "commits": 4,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3779,9 +3863,9 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -3795,53 +3879,60 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "El repo es una librería sin UI, así que voseo y plain no aplican. Solo abrí 3 archivos con Grep: busqué en todo src/ y no hallé WebSocket casero ni crypto propios. Lo dirigido va con sendSealed* y requireSealed:true. Los 'sendByPubkey' del README y de los comentarios son documentación. Las infracciones english se localizaron solo con Grep sobre throw/console, así que puede haber más mensajes en español sin ese patrón.",
+        "notas": "Es una librería sin UI, así que voseo y plain no aplican: el voseo que aparece (lobby.js:74 y 179) está en comentarios. No abrí engine.js ni index.js entero (solo grep), ni los tests. En 'sealed' el repo cumple: usa sendSealed, sendSealedTo y requireSealed:true. En 'duplicado' no encontré dos sitios citables: los _myDiscoveryChannel de lobby.js:59 y room.js:136 delegan en la misma ownDiscoveryChannel.",
         "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/room.js",
+            "linea": 109,
+            "porque": "Es un log de diagnóstico a la consola y está en español.",
+            "arreglo": "Escribirlo en inglés, p. ej. '[lobby] requireVerify requested but there is no identity: verification disabled'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/room.js",
+            "linea": 891,
+            "porque": "Son dos logs de fallo en español (2 sitios en el archivo).",
+            "arreglo": "Pasarlos a inglés: 'STATE failed for', 'local refresh failed'."
+          },
           {
             "regla": "english",
             "archivo": "src/util.js",
             "linea": 97,
-            "porque": "Mensaje de error para quien programa, escrito en español.",
+            "porque": "El mensaje de un throw new Error está en español.",
             "arreglo": "Escribirlo en inglés: '[lobby] seats: the seats array cannot be empty'."
-          },
-          {
-            "regla": "english",
-            "archivo": "src/reputation.js",
-            "linea": 82,
-            "porque": "Error en español; la línea 85 repite el fallo con otro mensaje.",
-            "arreglo": "Pasar ambos mensajes a inglés."
           },
           {
             "regla": "english",
             "archivo": "src/lobby.js",
             "linea": 319,
-            "porque": "Mensaje de error en español.",
-            "arreglo": "'[lobby] createLobby: gameId is required'."
+            "porque": "El mensaje de un throw new Error está en español.",
+            "arreglo": "Escribirlo en inglés: '[lobby] createLobby: gameId is required'."
           },
           {
             "regla": "english",
             "archivo": "src/engine.js",
             "linea": 20,
-            "porque": "Error en español; la línea 84 tiene además un console.warn en español ('view() lanzó para el asiento').",
-            "arreglo": "Pasar el error y el log a inglés."
+            "porque": "El mensaje de un throw new Error está en español. En la línea 84 hay otro log en español: 'view() lanzó para el asiento'.",
+            "arreglo": "Escribir ambos en inglés: 'spec.reducer is required' y 'view() threw for seat'."
           },
           {
             "regla": "english",
-            "archivo": "src/room.js",
-            "linea": 109,
-            "porque": "Log de diagnóstico en español; las líneas 891 ('STATE falló para') y 893 ('refresh local falló') repiten el fallo.",
-            "arreglo": "Pasar los tres logs a inglés."
+            "archivo": "src/reputation.js",
+            "linea": 82,
+            "porque": "Los mensajes de error están en español; la línea 85 tiene otro igual ('la firma vino sin cadena...').",
+            "arreglo": "Escribir ambos mensajes de error en inglés."
           },
           {
-            "regla": "duplicado",
-            "archivo": "src/lobby.js",
-            "linea": 110,
-            "porque": "Rehace a mano errorWithCode, que ya existe en src/util.js:121 y que usan transport.js:104 y broadcast.js:68. Lo mismo ocurre en lobby.js:123 y lobby.js:328.",
-            "arreglo": "Importar errorWithCode de './util.js' y usarlo en las tres líneas."
+            "regla": "english",
+            "archivo": "src/reputation.js",
+            "linea": 79,
+            "porque": "El nombre de una función está en español. Otros identificadores en español: esDescubrimiento y listas en lobby.js:36 y 148, mitadA y media en room.js:619 y 623, intento en room.js:796.",
+            "arreglo": "Renombrar a signHalf; los demás a isDiscovery, lists, halfA, half y attempt."
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-messenger",
@@ -3888,7 +3979,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -3925,7 +4016,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -3938,12 +4029,22 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
         },
         {
           "dep": "@dotrino/qr",
           "pide": "0.2.1",
           "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -3955,18 +4056,25 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Solo abrí 6 archivos; el resto lo revisé con Grep. Cubrí src/ y la i18n del front web, sin voseo en copy, logs en inglés y sealed correcto (requireSealed y sendSealed en connectionStore.js:88). No leí a fondo android/app ni ios/Messenger, ni native/ (SDK vendorizado). Tampoco miré los 'vault' del texto en inglés. No encontré duplicación con dos sitios citables.",
+        "notas": "Abrí src/i18n.js, index.html y la lista de archivos de src/. Todo lo demás lo revisé con Grep sin abrir los archivos. Voseo: solo salió un caso, el comentario de código en src/App.vue:152, que no cuenta. Sealed: cumple (requireSealed en connectionStore.js:88 y sendSealed en uso). Pillars: cumple, porque usa los paquetes @dotrino/* y no hay WebSocket, crypto.subtle ni QR a mano. Duplicado: sin hallazgos con evidencia de los dos sitios. No miré el interior de native/ ni android/ (SDK y apps nativa",
         "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/services/compat.js",
+            "linea": 37,
+            "porque": "La función exportada se llama en español (`revisar`), y los nombres de funciones van en inglés.",
+            "arreglo": "Renombrarla a `check` o `checkCompat`, y actualizar los sitios que la importan."
+          },
           {
             "regla": "english",
             "archivo": "tests/persistencia.spec.js",
             "linea": 1,
-            "porque": "Los nombres de archivo están en español, y la regla 4.1 exige nombres de archivo en inglés. Son 4 de los 5 archivos de tests/. Sin número de línea: el hallazgo es el nombre del archivo.",
-            "arreglo": "Renombrar a persistence.spec.js, literal-text.spec.js, account.spec.js y friends.spec.js."
+            "porque": "Los nombres de archivo van en inglés, y estos dos están en español. Son 2 archivos y se reporta uno solo.",
+            "arreglo": "Renombrarlos a `persistence.spec.js` y `literal-text.spec.js`."
           }
         ]
       },
-      "rojos": 3
+      "rojos": 6
     },
     {
       "repo": "dotrino-messenger-extension",
@@ -3982,7 +4090,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4060,7 +4168,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4142,7 +4250,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4194,7 +4302,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -4209,7 +4322,7 @@
         "notas": "feed.js verifica con crypto.subtle.verify (ECDSA) la firma de un feed público de results.dotrino.com, no identidad de usuario ni cifrado dirigido; no lo cuento como reimplementación del pilar identity porque no hay duda razonable. No se encontró código de servidor/agente, i18n externo, ni WebSocket propio; el repo es pequeño (10 archivos en src/) y se revisó por completo.",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-myip",
@@ -4239,7 +4352,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4291,7 +4404,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -4306,7 +4424,7 @@
         "notas": "El repo no usa @dotrino/proxy-client ni mensajería dirigida, así que la regla sealed no aplica aquí; el resto de reglas se cumple consistentemente.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-names",
@@ -4330,7 +4448,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4380,7 +4498,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.114.1",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         }
       ],
       "rotas": [],
@@ -4411,7 +4529,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4483,7 +4601,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4559,7 +4677,7 @@
         "@dotrino/proxy-client"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4605,7 +4723,13 @@
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        }
+      ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
@@ -4665,7 +4789,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-offroad",
@@ -4698,7 +4822,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4748,7 +4872,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -4771,7 +4900,7 @@
           }
         ]
       },
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-opaque",
@@ -4787,7 +4916,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4887,7 +5016,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -4937,7 +5066,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -4960,7 +5099,7 @@
           }
         ]
       },
-      "rojos": 3
+      "rojos": 5
     },
     {
       "repo": "dotrino-passmanager",
@@ -4981,8 +5120,8 @@
       "subdominio": "pass.dotrino.com",
       "paquete": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "ef7a184",
-      "fecha": "2026-10-16",
+      "commit": "90fbd16",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Contraseñas",
         "url": "https://pass.dotrino.com/",
@@ -4997,7 +5136,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5005,8 +5144,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-13",
-          "dias": 3,
-          "commits": 44,
+          "dias": 4,
+          "commits": 45,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5015,8 +5154,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-16",
-          "dias": 0,
-          "commits": 1,
+          "dias": 1,
+          "commits": 2,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5025,7 +5164,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
+          "dias": 2,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -5034,7 +5173,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -5047,7 +5186,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
         },
         {
           "dep": "@dotrino/update",
@@ -5057,7 +5201,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.87.0",
-          "publicado": "0.90.1"
+          "publicado": "0.90.3"
         }
       ],
       "rotas": [],
@@ -5069,67 +5213,32 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Tuve Bash deshabilitado y solo trabajé con Glob, Grep y Read, así que no abrí todos los archivos. No reporté `Dale ese permiso` (extension/src/i18n.js:145): es imperativo válido en tuteo (da+le). No reporté lib/src/crypto.js (AES-GCM/PBKDF2 de la bóveda) ni lib/src/webauthn.js (ECDSA de passkeys): pueden ser regla 4, pero depende de si @dotrino/sealers o identity cubre esa capa. La CLI de bin/passmanager.js es copy y va en tuteo, sin infracciones. No miré las 150 rutas de archivos que el listado",
+        "notas": "No se abrió el código vendorizado en extension/src/vendor/, que es copia generada por build.mjs, ni los tests. La búsqueda de voseo en la copy de usuario (_locales, extension/src, web, bin) no dio resultados fuera de comentarios. No se vio argot en la copy pública. No se reporta sealed: background.js usa requireSealed:true, y logins.js:210 documenta por qué el login con contraseña va sin sellar. Los errores de lib/src/import.js y de extension/src/logins.js (líneas 139, 160, 324) están en español",
         "hallazgos": [
           {
             "regla": "english",
             "archivo": "extension/src/identity-core.js",
             "linea": 78,
-            "porque": "Es un log de fallo (diagnóstico) escrito en español; el mismo patrón está en la línea 38 de este archivo.",
-            "arreglo": "Escribir los dos mensajes en inglés: '[identity] could not save session \"%s\": %s'."
+            "porque": "Es un log de diagnóstico en español, no copy de usuario. El de la línea 38 es igual: 'no se pudo guardar «%s»'.",
+            "arreglo": "Escribir el log en inglés: '[identity] could not save session \"%s\": %s'."
           },
           {
             "regla": "english",
             "archivo": "lib/src/totp.js",
             "linea": 16,
-            "porque": "Los mensajes de error van en inglés; hay 4 más en este archivo en español: líneas 41, 43, 46 y 77.",
-            "arreglo": "Pasar los mensajes de error a inglés ('base32: invalid character', 'otpauth: unsupported type', etc.)."
+            "porque": "Mensaje de error en español en un throw. Hay 5 más en el archivo: líneas 41, 43, 46 y 77 con otpauth/otp, y otra copia en la 16.",
+            "arreglo": "Pasar los mensajes a inglés, por ejemplo 'base32: invalid character'."
           },
           {
             "regla": "english",
-            "archivo": "extension/src/logins.js",
-            "linea": 147,
-            "porque": "Error lanzado en español; el texto al usuario sale de `errorText` por código, así que el mensaje es solo diagnóstico. Se repite en las líneas 168 y 332. Parecido en lib/src/import.js:114 y 153 y en lib/src/generate.js:68.",
-            "arreglo": "Mensajes de error en inglés ('password must be at least 12 characters'); la copy ya se traduce por `code`."
-          },
-          {
-            "regla": "english",
-            "archivo": "extension/build.mjs",
-            "linea": 90,
-            "porque": "Los errores del build son diagnóstico y están en español; hay más en las líneas 199, 207 y 312.",
-            "arreglo": "Escribir los errores y logs del build en inglés."
-          },
-          {
-            "regla": "english",
-            "archivo": "extension/store/tienda.mjs",
-            "linea": 1,
-            "porque": "Nombre de archivo en español; igual ocurre con extension/test/_boveda.mjs y con lib/test/generar.test.js, campos.test.js, recuperacion.test.js, sellado.test.js, remoto.test.js y resumenes.test.js.",
-            "arreglo": "Renombrar a nombres en inglés (store.mjs, _vault.mjs, generate.test.js, fields.test.js, etc.)."
-          },
-          {
-            "regla": "plain",
-            "archivo": "extension/src/i18n.js",
-            "linea": 99,
-            "porque": "Copy de UI con el argot «scope»; también en el placeholder de la línea 97 ('otro scope') y en las líneas 386 y 388 en inglés.",
-            "arreglo": "Decir «nombre de la carpeta/cajón» (o similar) en lugar de «scope»."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "extension/src/popup.js",
-            "linea": 30,
-            "porque": "Es el mismo puente mensaje→service worker, con el mismo mapeo de errores, que extension/src/manager.js:48 y extension/src/profile.js:20.",
-            "arreglo": "Extraer `ask` a un módulo compartido de la extensión (p. ej. src/ask.js) e importarlo en los tres."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "extension/src/popup.js",
-            "linea": 41,
-            "porque": "El mismo `toast` con el mismo temporizador de 2600 ms está en extension/src/manager.js:59.",
-            "arreglo": "Sacar `toast` a un módulo compartido e importarlo."
+            "archivo": "lib/src/generate.js",
+            "linea": 68,
+            "porque": "Mensaje de error de librería en español.",
+            "arreglo": "Cambiarlo a 'generatePassphrase: a word list is required'."
           }
         ]
       },
-      "rojos": 11
+      "rojos": 7
     },
     {
       "repo": "dotrino-prerender",
@@ -5145,7 +5254,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5217,7 +5326,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5332,7 +5441,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5384,7 +5493,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -5399,7 +5518,7 @@
         "notas": "Repo pequeño y sin i18n/ ni web/, lib/, agent/ o server/: todo el código propio vive en src/main.js, src/qr.js e src/types.d.ts, más index.html y public/. La copy en español usa tuteo correcto en todas las cadenas de SV_I18N y CREATE_I18N, y no se detectó jerga prohibida en copy pública. verifySig() en src/main.js usa crypto.subtle directamente para verificar firmas ECDSA con solo la clave pública; se revisó la API pública de @dotrino/identity (index.d.ts) y no expone un verify equivalente sin e",
         "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 5
     },
     {
       "repo": "dotrino-pronostico-mundialista",
@@ -5410,8 +5529,8 @@
       "subdominio": "pronostico.dotrino.com",
       "paquete": "pronostico-mundialista",
       "version": "0.1.0",
-      "commit": "ce27ac2",
-      "fecha": "2026-10-16",
+      "commit": "7c72a11",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -5429,7 +5548,7 @@
         "@dotrino/tutorial"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5437,8 +5556,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-16",
-          "dias": 92,
-          "commits": 33,
+          "dias": 93,
+          "commits": 35,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -5447,8 +5566,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 3,
+          "dias": 2,
+          "commits": 5,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5466,9 +5585,9 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 2,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 1,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -5479,12 +5598,22 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
         },
         {
           "dep": "@dotrino/qr",
           "pide": "0.2.1",
           "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -5496,53 +5625,53 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No pude ejecutar Bash, así que revisé con Glob, Grep y Read: abrí 6 archivos (signer.ts, officialResults.ts y share.ts, y solo una parte de los dos últimos) y el resto lo vi solo por Grep. No miré con detalle las plantillas .vue ni la copy en español de i18n.ts; un Grep de voseo en src/ solo encontró comentarios, que no cuentan. La verificación ECDSA de feed y sello (signer.ts:74, officialResults.ts:63) usa claves pineadas de servicios externos y no la reporté como pillars. 'relay' en la copy en",
+        "notas": "No pude ejecutar Bash, así que usé solo Glob/Grep/Read. No vi voseo en la copy de usuario (solo en comentarios), el repo usa sendSealed y requireSealed, y usa los componentes @dotrino/* (topbar, profile, share, qr). Es dudoso si la verificación ECDSA a mano es de la regla 4 (@dotrino/identity); la dejé como duplicado porque no tengo evidencia de que identity exporte una función de verificación para claves ajenas.",
         "hallazgos": [
+          {
+            "regla": "english",
+            "archivo": "src/lib/roomSync.ts",
+            "linea": 98,
+            "porque": "Log de diagnóstico en español; el mismo patrón se repite en roomSync.ts:155, cloud.ts:40/69/86/92, identity.ts:21, connection.ts:76/89/90/102, inbox.ts:93, receipts.ts:63 y RoomsPage.vue:262 (reporto un solo sitio).",
+            "arreglo": "Escribir los console.warn en inglés, p. ej. 'could not publish/list the room channel:'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/lib/officialResults.ts",
+            "linea": 79,
+            "porque": "Traza de fallo en español, no es copy de interfaz.",
+            "arreglo": "Usar inglés: 'official feed: invalid signature (discarded)'."
+          },
           {
             "regla": "english",
             "archivo": "src/lib/share.ts",
             "linea": 136,
-            "porque": "Error lanzado en español; es un mensaje de diagnóstico, no copy de UI. Se repite en la línea 265, y en 209 y 308 hay dos console.warn en español ('Verificación de firma falló:', 'verifyBlob falló:').",
-            "arreglo": "Pasar los throw y los console.warn a inglés (p. ej. 'Could not connect to identity (id.dotrino.com).')."
+            "porque": "Mensaje de un throw new Error en español; se repite en share.ts:272.",
+            "arreglo": "Lanzar el error en inglés ('could not connect to identity (id.dotrino.com)') y, si se muestra al usuario, traducirlo con t()."
           },
           {
             "regla": "english",
             "archivo": "src/lib/codec.ts",
             "linea": 183,
-            "porque": "Mensaje de error en español dentro de un throw.",
-            "arreglo": "Escribirlo en inglés: `Unsupported code version: ${version}`."
-          },
-          {
-            "regla": "english",
-            "archivo": "src/lib/connection.ts",
-            "linea": 76,
-            "porque": "Logs de diagnóstico en español. Hay 4 más: líneas 89, 90 y 102 de este archivo, y la 21 de identity.ts.",
-            "arreglo": "Pasar los console.warn a inglés."
-          },
-          {
-            "regla": "english",
-            "archivo": "src/lib/cloud.ts",
-            "linea": 40,
-            "porque": "Logs de diagnóstico en español. Hay 3 más en las líneas 69, 86 y 92 de este archivo.",
-            "arreglo": "Pasar los console.warn a inglés."
-          },
-          {
-            "regla": "english",
-            "archivo": "src/lib/roomSync.ts",
-            "linea": 155,
-            "porque": "Log en español. Hay otros iguales en roomSync.ts:98, inbox.ts:93, receipts.ts:63, officialResults.ts:79 y RoomsPage.vue:262.",
-            "arreglo": "Pasar estos console.warn a inglés."
+            "porque": "Mensaje de error de un throw en español.",
+            "arreglo": "Usar inglés: `unsupported code version: ${version}`."
           },
           {
             "regla": "duplicado",
-            "archivo": "src/lib/share.ts",
-            "linea": 303,
-            "porque": "El mismo bloque importKey + verify ECDSA P-256 con SHA-256 sobre canonicalBytes aparece en share.ts:204 (verifyAndBuild) y en share.ts:303 (verifyBlob). Un fallo en uno obliga a tocar el otro.",
-            "arreglo": "Extraer una función verifyEcdsa(jwk, sig, bytes) y usarla en los dos sitios."
+            "archivo": "src/lib/signer.ts",
+            "linea": 74,
+            "porque": "La misma importación de clave JWK y verificación ECDSA P-256/SHA-256 que verifyCanonical en src/lib/share.ts:195-205 (la que el commit a0c2875 dejó como única), con otra copia en officialResults.ts:63.",
+            "arreglo": "Exportar verifyCanonical (o un verifyEcdsa(jwk, sig, bytes)) desde un módulo común y reutilizarlo en verifySeal."
+          },
+          {
+            "regla": "duplicado",
+            "archivo": "src/lib/officialResults.ts",
+            "linea": 63,
+            "porque": "Repite el importKey + verify ECDSA P-256/SHA-256 de src/lib/share.ts:197-201 (verifyCanonical) y de src/lib/signer.ts:74-76; arreglar un fallo obligaría a tocar tres sitios.",
+            "arreglo": "Llamar a la función compartida de verificación en vez de reescribir importKey/verify en verifyFeed."
           }
         ]
       },
-      "rojos": 9
+      "rojos": 11
     },
     {
       "repo": "dotrino-proxy",
@@ -5552,9 +5681,9 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "websocket-proxy",
-      "version": "1.6.4",
-      "commit": "01a7e8d",
-      "fecha": "2026-10-16",
+      "version": "1.6.5",
+      "commit": "dd86012",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -5563,7 +5692,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5572,7 +5701,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 1,
-          "commits": 6,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5665,16 +5794,16 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/proxy-client",
-      "version": "0.36.1",
-      "commit": "c81d9a8",
-      "fecha": "2026-10-15",
+      "version": "0.36.2",
+      "commit": "b2aa6a2",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
         "@dotrino/webrtc"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5682,8 +5811,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 0,
-          "commits": 1,
+          "dias": 2,
+          "commits": 3,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -5711,9 +5840,9 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 8,
+          "commits": 0,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -5724,7 +5853,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         },
         {
           "dep": "@dotrino/webrtc",
@@ -5738,39 +5867,46 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "El repo es el propio pilar proxy-client, así que `pillars` y `sealed` no aplican, y no tiene copy de usuario, así que `voseo` y `plain` no aplican. El único voseo (`acá`, client.js:1335) está en un comentario y no se reporta. No pude ejecutar Bash. Las líneas vienen de Grep y solo leí sealing.js, así que `revisados` cuenta 4 archivos (src/client.js, src/encpub.js, src/sealing.js y la búsqueda en src/). Hay nombres en español que no reporto por dudosos: el identificador `errorCon` y los parámetro",
+        "notas": "Solo abrí dos archivos y revisé el resto con Grep. Este repo es el propio pilar proxy-client, así que su WebSocket, su criptografía y su uso de sendByPubkey no cuentan como infracción de pillars ni de sealed. El voseo solo aparece en el README y en comentarios (src/client.js:1553, 1598), que no se reportan. Los nombres de archivo de test (p. ej. test/directo-primero.test.mjs, test/reconexion.test.mjs) están en español; no los reporté como hallazgo. No encontré duplicación demostrable con dos sit",
         "hallazgos": [
           {
             "regla": "english",
             "archivo": "src/client.js",
-            "linea": 1000,
-            "porque": "Un mensaje de error lanzado con `throw` va en inglés (§8.1). Este está en español, mientras el `WebRTC disabled` de la línea 384 ya está en inglés.",
-            "arreglo": "Escribirlo en inglés, por ejemplo 'WebRTC is disabled on this client'."
+            "linea": 1232,
+            "porque": "Mensaje de error en español en un throw; los errores son logs y van en inglés.",
+            "arreglo": "Escribirlo en inglés, p. ej. 'WebRTC is disabled on this client'."
           },
           {
             "regla": "english",
             "archivo": "src/client.js",
-            "linea": 1087,
-            "porque": "Un mensaje de error lanzado con `throw` está en español. Las líneas 1087, 1090 y 1097 lo repiten (3 mensajes).",
-            "arreglo": "Traducirlos al inglés: 'Service Worker not supported here', 'Push API not supported in this browser' y 'the proxy has no Web Push enabled'."
+            "linea": 1319,
+            "porque": "Mensaje de error en español en un throw. En 1322, 1329 y 1900 hay tres más del mismo tipo.",
+            "arreglo": "Pasar los cuatro mensajes a inglés, p. ej. 'Service Worker not supported in this environment'."
           },
           {
             "regla": "english",
             "archivo": "src/client.js",
-            "linea": 1618,
-            "porque": "Un mensaje de error lanzado con `throw` está en español, cuando el resto de los errores de firma del archivo están en inglés.",
-            "arreglo": "Escribirlo en inglés: 'sign() must return a base64 signature (string or {signature})'."
+            "linea": 1322,
+            "porque": "Mensaje de error en español en un throw.",
+            "arreglo": "Escribirlo en inglés, p. ej. 'Push API not supported in this browser'."
           },
           {
-            "regla": "duplicado",
-            "archivo": "src/encpub.js",
-            "linea": 62,
-            "porque": "El mismo constructor de error con `code` está copiado en src/client.js:26 y en src/sealing.js:21, y los tres cuerpos son idénticos. Arreglarlo en uno obliga a tocar los otros dos.",
-            "arreglo": "Dejar una sola función, por ejemplo en un módulo interno `src/errors.js`, e importarla desde los tres archivos."
+            "regla": "english",
+            "archivo": "src/client.js",
+            "linea": 1329,
+            "porque": "Mensaje de error en español en un throw.",
+            "arreglo": "Escribirlo en inglés, p. ej. 'The proxy has Web Push disabled'."
+          },
+          {
+            "regla": "english",
+            "archivo": "src/client.js",
+            "linea": 1900,
+            "porque": "Mensaje de error en español en un throw.",
+            "arreglo": "Escribirlo en inglés, p. ej. 'sign() must return a base64 signature (string or {signature})'."
           }
         ]
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-qr",
@@ -5786,7 +5922,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5881,7 +6017,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -5931,7 +6067,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -5954,7 +6095,7 @@
           }
         ]
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-qrreader",
@@ -5985,7 +6126,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6035,12 +6176,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         },
         {
           "dep": "@dotrino/qr",
           "pide": "0.2.1",
           "publicado": "0.3.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -6055,7 +6201,7 @@
         "notas": "Revisé `src/main.js`, `src/services/identity.js`, `src/services/reputation.js`, `src/lang-migrate.js` e `index.html`; los nombres de archivo del repo están en inglés. No leí `src/style.css`, `src/types.d.ts` ni `vite.config`. No tenía Bash y el Glob quedó enterrado bajo `node_modules`, así que pude haberme dejado algún archivo de la raíz sin ver.",
         "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 5
     },
     {
       "repo": "dotrino-qrshare",
@@ -6066,8 +6212,8 @@
       "subdominio": "qrshare.dotrino.com",
       "paquete": "dotrino-qrshare",
       "version": "0.2.0",
-      "commit": "08ebb7f",
-      "fecha": "2026-10-16",
+      "commit": "62c1293",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "QRShare",
         "url": "https://qrshare.dotrino.com/",
@@ -6077,7 +6223,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6085,8 +6231,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-12",
-          "dias": 34,
-          "commits": 5,
+          "dias": 35,
+          "commits": 6,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -6095,8 +6241,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-16",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6105,7 +6251,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-06-18",
-          "dias": 120,
+          "dias": 121,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -6114,7 +6260,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -6133,14 +6279,14 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Solo hay app.js, index.html y package.json como código de la app; no pude leer styles.css ni sw.js (no existe styles.css en el repo). Los meta description/og usan «P2P por WebRTC», que no está en la lista de argot, así que no lo reporto. Las llaves se sellan con sendSealed y requireSealed, y el QR es @dotrino/qr (cumple).",
+        "notas": "Solo leí app.js, index.html y package.json (el repo es una sola app plana). No abrí styles.css, sw.js ni el test e2e. La señalización va sellada (sendSealed + requireSealed: true) y el QR usa @dotrino/qr. No vi voseo ni duplicación entre archivos. Los logs y errores están en inglés.",
         "hallazgos": [
           {
-            "regla": "duplicado",
-            "archivo": "app.js",
-            "linea": 661,
-            "porque": "La misma configuración de RTCPeerConnection (lista de STUN) y el mismo handler onicecandidate que sendSignal({type:'ice'}) están escritos también en app.js:488 y app.js:499; cambiar un servidor STUN obliga a tocar los dos sitios.",
-            "arreglo": "Extraer una función (p. ej. createPeerConnection()) que cree el RTCPeerConnection con los STUN y el onicecandidate, y usarla en createOffer y createAnswer."
+            "regla": "plain",
+            "archivo": "index.html",
+            "linea": 16,
+            "porque": "La descripción pública cuenta la implementación (P2P, WebRTC) en vez del beneficio. Se repite en la línea 23 (twitter:description), en la 41 (JSON-LD) y en app.js:284 (subtitle: «Comparte archivos P2P con WebRTC»).",
+            "arreglo": "Reutilizar la frase de la meta description: «Envía un archivo de un dispositivo a otro escaneando un código QR. Viaja directo entre los dos, sin subirse a ningún servidor.»"
           }
         ]
       },
@@ -6154,9 +6300,9 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/remote-agent",
-      "version": "0.20.1",
-      "commit": "0677145",
-      "fecha": "2026-10-16",
+      "version": "0.21.0",
+      "commit": "6711488",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/identity",
@@ -6164,7 +6310,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6172,8 +6318,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-07",
-          "dias": 7,
-          "commits": 9,
+          "dias": 10,
+          "commits": 10,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6201,27 +6347,20 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-30",
-          "dias": 45,
-          "commits": 26,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "faltan": [
-            "duplicado"
-          ],
-          "rojo": true
+          "faltan": [],
+          "rojo": false
         }
       },
       "faltan": [],
       "versiones": [
         {
-          "dep": "@dotrino/identity",
-          "pide": "0.117.2",
-          "publicado": "0.119.0"
-        },
-        {
           "dep": "@dotrino/vault",
-          "pide": "0.86.1",
-          "publicado": "0.90.1"
+          "pide": "0.90.2",
+          "publicado": "0.90.3"
         }
       ],
       "rotas": [],
@@ -6230,46 +6369,32 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No hay copy de usuario en este repo (es middleware sin UI/CLI propia, lo consumen dotrino-terminal y dotrino-ia), así que voseo y plain no aplican aquí. Sobre sealed: el repo NO usa sendSealed()/requireSealed de @dotrino/proxy-client, pero cifra el payload DATA por su cuenta (e2e.js: seal/open con AES-GCM) antes de sendByPubkey, que es la excepción explícita de la regla — se anota, no se reporta como hallazgo.",
+        "notas": "No abrí los archivos completos: audité con Grep sobre index.js, protocol.js, e2e.js, node-globals.js y src/*.js (Bash no estaba disponible). Sealed no se reporta: client.js:222 y agent.js:52 cifran cada payload con `seal(this.key, …)` sobre una clave de sesión antes de usar `sendByPubkey`/`send`, y los mensajes del handshake van firmados y con claves efímeras. La regla 5 dice que esto se anota en `notas`, no como hallazgo. No encontré voseo, argot en copy pública, pilares reimplementados ni dupl",
         "hallazgos": [
           {
             "regla": "english",
             "archivo": "src/client.js",
-            "linea": 73,
-            "porque": "un throw new Error es diagnóstico de la librería (no copy de usuario) y debe ir en inglés; se repite en las líneas 73, 119, 120 y 121 de este archivo.",
-            "arreglo": "traducir los mensajes de error al inglés, p. ej. 'missing target agent address'."
+            "linea": 95,
+            "porque": "Un `throw new Error` va en inglés; en este archivo hay 4 errores más en español en las líneas 208-210 ('el agente no está certificado por tu vault: ', 'el ack vino de otro agente', 'ack no corresponde a este handshake').",
+            "arreglo": "Escribir los mensajes de error en inglés, como ya hace el 'no session with the agent' de la línea 219."
           },
           {
             "regla": "english",
             "archivo": "src/agent.js",
-            "linea": 89,
-            "porque": "el error que lanza startRemoteAgent() es diagnóstico para quien integra la librería, no copy de usuario, y debe ir en inglés.",
-            "arreglo": "usar algo como 'this machine is not linked yet — run enroll() first'."
+            "linea": 133,
+            "porque": "Es un mensaje de error lanzado por la librería, no la interfaz de la CLI, y está en español; el resto de errores de este archivo están en inglés.",
+            "arreglo": "Cambiarlo a inglés, por ejemplo 'this machine is not linked: run enroll first'."
           },
           {
             "regla": "english",
             "archivo": "src/agent.js",
-            "linea": 214,
-            "porque": "el campo error de los mensajes de protocolo ra.error viaja al otro extremo del wire y debe ir en inglés; se repite en las líneas 214, 218, 221, 222, 245 y 248.",
-            "arreglo": "traducir los strings de error del protocolo al inglés, p. ej. 'incomplete handshake'."
-          },
-          {
-            "regla": "english",
-            "archivo": "src/agent.js",
-            "linea": 239,
-            "porque": "son trazas de arranque/operación del agente (van a consola/daemon), no copy de una CLI interactiva, y deben ir en inglés; se repite en las líneas 268 y 285.",
-            "arreglo": "usar mensajes de log en inglés, p. ej. 'session authorized', 'agent revoked by vault', 'agent ready'."
-          },
-          {
-            "regla": "pillars",
-            "archivo": "e2e.js",
-            "linea": 37,
-            "porque": "reimplementa a mano ECDH+HKDF+AES-GCM para el canal de sesión en vez de usar las primitivas de sellado que ya expone @dotrino/identity/content (wrapForMember/openWrap), las mismas que @dotrino/proxy-client/sealing.js envuelve para cifrar mensajes dirigidos.",
-            "arreglo": "levantar el secreto de sesión con las primitivas de @dotrino/identity/content en vez de crypto.subtle propio."
+            "linea": 422,
+            "porque": "Es una traza de funcionamiento del daemon, con prefijo `[remote-agent]`, escrita en español; los logs vecinos (líneas 235, 289) están en inglés. Lo mismo pasa en las líneas 482 ('tu bóveda REVOCÓ esta máquina → borro el enlace y salgo.') y 505 ('agente activo · máquina …').",
+            "arreglo": "Escribir los tres logs en inglés, como 'session … authorized' y 'agent running'."
           }
         ]
       },
-      "rojos": 8
+      "rojos": 4
     },
     {
       "repo": "dotrino-reputation",
@@ -6287,7 +6412,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6339,7 +6464,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         }
       ],
       "rotas": [],
@@ -6413,7 +6538,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6465,7 +6590,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -6488,7 +6618,7 @@
           }
         ]
       },
-      "rojos": 5
+      "rojos": 6
     },
     {
       "repo": "dotrino-results",
@@ -6504,7 +6634,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6595,15 +6725,15 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.30",
-      "commit": "5922691",
-      "fecha": "2026-10-16",
+      "commit": "0652b82",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
         "@dotrino/update",
         "@dotrino/compat"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6611,8 +6741,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-09",
-          "dias": 7,
-          "commits": 116,
+          "dias": 8,
+          "commits": 117,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6641,8 +6771,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-16",
-          "dias": 0,
-          "commits": 1,
+          "dias": 1,
+          "commits": 2,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -6709,7 +6839,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6759,7 +6889,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "0.20.1",
+          "publicado": "0.21.0"
         },
         {
           "dep": "@dotrino/update",
@@ -6769,7 +6909,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.87.0",
-          "publicado": "0.90.1"
+          "publicado": "0.90.3"
         }
       ],
       "rotas": [],
@@ -6824,7 +6964,7 @@
           }
         ]
       },
-      "rojos": 9
+      "rojos": 11
     },
     {
       "repo": "dotrino-share",
@@ -6840,7 +6980,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6914,7 +7054,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -6993,7 +7133,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7096,7 +7236,7 @@
         "@dotrino/vault"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7148,7 +7288,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "0.20.1",
+          "publicado": "0.21.0"
         },
         {
           "dep": "@dotrino/update",
@@ -7158,7 +7308,7 @@
         {
           "dep": "@dotrino/vault",
           "pide": "0.87.0",
-          "publicado": "0.90.1"
+          "publicado": "0.90.3"
         }
       ],
       "rotas": [],
@@ -7185,7 +7335,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 8
     },
     {
       "repo": "dotrino-sso",
@@ -7209,7 +7359,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7261,7 +7411,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         }
       ],
       "rotas": [],
@@ -7286,13 +7436,15 @@
       "plataformas": null,
       "subdominio": null,
       "paquete": "@dotrino/store",
-      "version": "0.12.3",
-      "commit": "3afb248",
-      "fecha": "2026-10-08",
+      "version": "0.12.4",
+      "commit": "5f44327",
+      "fecha": "2026-10-17",
       "catalogo": null,
-      "deps": [],
+      "deps": [
+        "@dotrino/identity"
+      ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7300,11 +7452,11 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-16",
-          "dias": 22,
-          "commits": 6,
+          "dias": 31,
+          "commits": 7,
           "tope": false,
           "faltan": null,
-          "rojo": false
+          "rojo": true
         },
         "portada": {
           "aplica": false,
@@ -7329,50 +7481,32 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-08-30",
-          "dias": 39,
-          "commits": 8,
+          "fecha": "2026-10-17",
+          "dias": 0,
+          "commits": 0,
           "tope": false,
-          "faltan": [
-            "duplicado"
-          ],
-          "rojo": true
+          "faltan": [],
+          "rojo": false
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/identity",
+          "pide": "0.119.0",
+          "publicado": "0.120.0"
+        }
+      ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": null,
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No se auditó README.md ni docs/politicas-de-datos.md por estar explícitamente exentos de las 5 reglas; no hay UI de cara al usuario en este repo (es el iframe/backend del store), por lo que no hay copy en español que revisar para voseo/plain.",
-        "hallazgos": [
-          {
-            "regla": "pillars",
-            "archivo": "store/sync.js",
-            "linea": 64,
-            "porque": "El store deriva claves con PBKDF2 y cifra con AES-256-GCM a mano vía crypto.subtle (líneas 64-114) para el respaldo en Drive, en vez de delegar el cifrado en @dotrino/identity, que es el pilar dueño de la criptografía.",
-            "arreglo": "Usar @dotrino/identity para derivar la clave y cifrar/descifrar el blob de respaldo, en vez de implementar PBKDF2+AES-GCM propio con crypto.subtle."
-          },
-          {
-            "regla": "english",
-            "archivo": "store/store.js",
-            "linea": 127,
-            "porque": "Es una traza de diagnóstico (consola) y debe ir en inglés, no en español.",
-            "arreglo": "console.warn('[cc-store] IndexedDB unavailable, falling back to localStorage:', e)"
-          },
-          {
-            "regla": "english",
-            "archivo": "store/store.js",
-            "linea": 177,
-            "porque": "Traza de diagnóstico en español; aparece 2 veces (líneas 177 y 186), y los logs deben ir en inglés.",
-            "arreglo": "console.warn('[store] quota — nothing left to evict')"
-          }
-        ]
+        "notas": "Solo abrí src/index.js y src/vault-sync.js. El resto del repo son tests, fixtures, docs y src/index.d.ts, que quedan fuera de las reglas. Sin hallazgos: los mensajes de error y los logs están en inglés y no hay voseo ni argot en copy pública. No hay WebSocket ni crypto propios, y el repo no usa sendByPubkey ni send. Dudé en `duplicado` con `codeError`: la misma función de 4 líneas está en src/index.js:16 y en src/vault-sync.js:35. La dejé fuera por trivial, pero es la única candidata.",
+        "hallazgos": []
       },
-      "rojos": 4
+      "rojos": 2
     },
     {
       "repo": "dotrino-sudoku",
@@ -7406,7 +7540,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7458,7 +7592,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -7495,7 +7634,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-support",
@@ -7511,7 +7650,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7592,7 +7731,7 @@
         "@dotrino/update"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7644,7 +7783,7 @@
         {
           "dep": "@dotrino/tunnel",
           "pide": "0.1.5",
-          "publicado": "0.1.6"
+          "publicado": "0.1.7"
         },
         {
           "dep": "@dotrino/update",
@@ -7693,8 +7832,8 @@
       "subdominio": "terminal.dotrino.com",
       "paquete": "dotrino-terminal",
       "version": "0.13.3",
-      "commit": "8371104",
-      "fecha": "2026-10-16",
+      "commit": "5cdfe85",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Dotrino Terminal",
         "url": "https://terminal.dotrino.com/",
@@ -7716,7 +7855,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7724,8 +7863,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 12,
+          "dias": 2,
+          "commits": 13,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7734,8 +7873,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 23,
+          "dias": 2,
+          "commits": 24,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -7744,7 +7883,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-30",
-          "dias": 16,
+          "dias": 17,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -7753,7 +7892,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -7766,7 +7905,22 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "pide": "0.20.1",
+          "publicado": "0.21.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -7778,25 +7932,10 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Bash no estaba disponible y los Glob se llenaron de node_modules, así que audité sobre todo con Grep. Abrí solo agent/far.js y src/main.js (parcialmente) y no leí el contenido de test/acta-manda.test.mjs, así que el hallazgo de `english` se basa solo en el nombre. Los textos de usuario de main.js, los mensajes de la CLI (bilingües con t()) y los logs de agent/*.js no tienen voseo ni jerga técnica, los logs están en inglés y no hay sendByPubkey ni WebSocket casero. Los archivos de agent/ y src/ n",
-        "hallazgos": [
-          {
-            "regla": "duplicado",
-            "archivo": "src/main.js",
-            "linea": 1199,
-            "porque": "Es la misma normalización del id corto `AB12-CD34` que `shortId` en agent/far.js:38-40, escrita otra vez en vez de compartirla; un cambio de formato obligaría a tocar los dos sitios.",
-            "arreglo": "Extraer `shortId` a un módulo común importable desde el navegador y desde el agente, e importarlo en main.js."
-          },
-          {
-            "regla": "english",
-            "archivo": "test/acta-manda.test.mjs",
-            "linea": 1,
-            "porque": "El nombre del archivo está en español (`acta-manda`), y los nombres de archivo deben ir en inglés.",
-            "arreglo": "Renombrarlo a un nombre en inglés, p. ej. `roster-rules.test.mjs`."
-          }
-        ]
+        "notas": "Solo abrí 4 archivos y lo demás lo cubrí con Grep, sin leer el resto línea a línea. En voseo no hay coincidencias en src/, agent/, index.html, ios/Terminal, android/app/src/main ni desktop/src/main.rs. Los logs y errores de agent/ están en inglés, y la salida de la CLI es copy bilingüe. Los envíos van por @dotrino/remote-agent (rc.send), no por sendByPubkey, así que no hay hallazgo de sealed. No vi relojes, firmas ni WebSockets caseros, y el único cliente usa @dotrino/proxy-client. En duplicado ",
+        "hallazgos": []
       },
-      "rojos": 3
+      "rojos": 4
     },
     {
       "repo": "dotrino-test",
@@ -7818,7 +7957,7 @@
         "@dotrino/topbar"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -7870,7 +8009,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.114.1",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -7914,7 +8058,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-theme",
@@ -7930,7 +8074,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8006,7 +8150,7 @@
         "@dotrino/theme"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8104,7 +8248,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8156,7 +8300,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -8193,7 +8342,7 @@
           }
         ]
       },
-      "rojos": 7
+      "rojos": 8
     },
     {
       "repo": "dotrino-trueque",
@@ -8227,7 +8376,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8279,7 +8428,17 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.117.2",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "pide": "0.36.1",
+          "publicado": "0.36.2"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -8309,7 +8468,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 8
     },
     {
       "repo": "dotrino-tunnel",
@@ -8320,8 +8479,8 @@
       "subdominio": "r.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "0fe544d",
-      "fecha": "2026-10-15",
+      "commit": "f89b77b",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Dotrino Tunnel",
         "url": "https://r.dotrino.com/",
@@ -8331,7 +8490,7 @@
       },
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8339,8 +8498,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-07-27",
-          "dias": 80,
-          "commits": 15,
+          "dias": 82,
+          "commits": 16,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -8348,7 +8507,7 @@
         "portada": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -8359,7 +8518,7 @@
           "aplica": false,
           "existe": true,
           "fecha": "2026-10-14",
-          "dias": 1,
+          "dias": 3,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -8368,9 +8527,9 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-15",
+          "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -8387,46 +8546,39 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "Solo pude hacer búsquedas por nombre, sin Bash: hay `server/index.js`, `lib/index.js`, `lib/bin/cli.js`, `web/src/App.vue`, `web/src/main.js` y `web/index.html`, y no abrí `lib/test`. La copy de la web usa términos de desarrollo (request, webhook, CORS, Content-Type) porque es una herramienta para quien programa, y no la marqué como `plain`. La CLI y la web están en tuteo. No usa `proxy-client`, por lo que `sealed` no aplica. App.vue usa `new WebSocket` contra su propio relay `/_agent`, no contr",
+        "notas": "Solo abrí 6 archivos fuente. Sin Bash no pude ver lib/package.json, la CLI ni los tests, así que no sé si la CLI imprime copy propia en español. La web usa su propio WebSocket contra el relay del túnel, no contra proxy.dotrino.com, así que no lo conté como `pillars`. Tampoco reporté `plain` ni `duplicado`: la web es una herramienta para quien programa, y la lógica común ya está unificada en lib/shared.js.",
         "hallazgos": [
           {
             "regla": "english",
             "archivo": "lib/index.js",
-            "linea": 91,
-            "porque": "Los `throw new Error` de takeLock están en español (la 2ª, en la línea 104, también), igual que el código de error `TUNNEL_KEY_EN_USO` (líneas 95 y 109) y los identificadores `enUso`, `soltarCandado` y `reintento`.",
-            "arreglo": "Escribe los mensajes de error en inglés, usa un código como `TUNNEL_KEY_IN_USE` y nombres de variables en inglés."
+            "linea": 80,
+            "porque": "Los `throw new Error` de takeLock (líneas 80 y 93) están en español, igual que el código de error `TUNNEL_KEY_EN_USO` (84, 98, 102, 107). Es texto de diagnóstico, no copy de interfaz.",
+            "arreglo": "Escribir los mensajes en inglés (`a tunnel with this key is already running…`) y renombrar el código a `TUNNEL_KEY_IN_USE`."
           },
           {
             "regla": "english",
             "archivo": "lib/index.js",
-            "linea": 162,
-            "porque": "Los logs de la lib (`log('listo →')` en la línea 147, `log('reconectando…')` en la 166 y este) son trazas de diagnóstico en español. La CLI los silencia con `quiet: true`.",
-            "arreglo": "Pasa los mensajes de `log` a inglés."
+            "linea": 136,
+            "porque": "Los logs de conexión del agente van en español: 'listo →' (136), 'reconectando…' (155) y 'otra copia tomó este túnel…' (151). Son trazas de diagnóstico.",
+            "arreglo": "Pasar esos logs a inglés ('ready →', 'reconnecting…', 'another instance took over this tunnel…')."
           },
           {
             "regla": "english",
             "archivo": "server/index.js",
             "linea": 160,
-            "porque": "Los logs del relay están en español: línea 170 «desconectado», líneas 186-187 «límite payload… timeout». El cuerpo del 400 de la línea 143 también: «llave inválida (16-48 alfanuméricos)».",
-            "arreglo": "Escribe los logs del relay y el cuerpo del 400 en inglés (`connected`, `disconnected`, `invalid key (16-48 alphanumeric)`)."
+            "porque": "Los logs del relay están en español: líneas 160, 170 ('desconectado'), 186 y 187 ('límite payload'). La respuesta 400 de la línea 143 ('llave inválida (16-48 alfanuméricos)') también.",
+            "arreglo": "Escribir en inglés los logs del relay y el cuerpo del 400 ('connected', 'disconnected', 'invalid key (16-48 alphanumeric)')."
           },
           {
-            "regla": "duplicado",
-            "archivo": "web/src/App.vue",
-            "linea": 59,
-            "porque": "La misma regla de CORS (cabeceras permitidas y respuesta 204 al preflight) está escrita también en lib/index.js:175-177 y 181-183, así que cambiarla obliga a tocar los dos sitios.",
-            "arreglo": "Deja una sola definición de las cabeceras CORS y de la respuesta al preflight, y que las dos copias la importen."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "web/src/App.vue",
-            "linea": 41,
-            "porque": "Es el mismo alfabeto y el mismo generador de llaves que `generateKey` y `B62` en lib/index.js:26-33. `wsUrl` (App.vue:73-78) también repite `wsUrl` de lib/index.js:35-41.",
-            "arreglo": "Saca la generación de la llave y la construcción de la URL del WebSocket a un módulo compartido que usen la web y la lib."
+            "regla": "english",
+            "archivo": "lib/index.js",
+            "linea": 75,
+            "porque": "Hay identificadores en español: `enUso` (75), `soltarCandado` (125) y `reintento` (126).",
+            "arreglo": "Renombrar a `inUse`, `releaseLock` y `retryTimer`."
           }
         ]
       },
-      "rojos": 6
+      "rojos": 5
     },
     {
       "repo": "dotrino-tutorial",
@@ -8442,7 +8594,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8511,12 +8663,12 @@
       "subdominio": null,
       "paquete": "@dotrino/update",
       "version": "0.9.0",
-      "commit": "8088b10",
-      "fecha": "2026-10-13",
+      "commit": "c346ecc",
+      "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8524,8 +8676,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-13",
-          "dias": 0,
-          "commits": 0,
+          "dias": 4,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8553,7 +8705,7 @@
         "auditoria": {
           "aplica": true,
           "existe": true,
-          "fecha": "2026-10-16",
+          "fecha": "2026-10-17",
           "dias": 0,
           "commits": 0,
           "tope": false,
@@ -8569,39 +8721,18 @@
       "auditoria": {
         "por": "seyacat",
         "modelo": "sonnet",
-        "notas": "No abrí test/*.mjs ni package.json (los tests quedan fuera de las reglas). No hay README, i18n ni UI en el repo. Las reglas pillars, sealed, voseo y plain no tienen nada que reportar: el texto en español que ve el usuario va en tuteo, y el repo no usa WebSocket, criptografía propia ni sendByPubkey.",
+        "notas": "Abrí 4 archivos (notice.js, npm.js, index.js, más greps sobre src/ y bin/); no leí fetch.js, checkout.js, deps.js, http.js ni los textos en español de npm.js (468-560) de punta a punta, y los tests no se auditaron. El repo no tiene UI ni usa WebSocket, cripto propia ni sendByPubkey, así que `pillars` y `sealed` no aplican. No reporté como `duplicado` los helpers de una línea `fail`/`thrown` (src/deps.js:15, src/integrity.js:18, src/npm.js:293), que repiten `Object.assign(new Error(message), { co",
         "hallazgos": [
           {
             "regla": "english",
             "archivo": "src/notice.js",
             "linea": 33,
-            "porque": "Los identificadores `leer`, `escribir` (línea 34), `visto` (56) y `linea` (78) están en español; el código va en inglés.",
-            "arreglo": "Renombrarlos a `read`, `write`, `seen` y `line`."
-          },
-          {
-            "regla": "english",
-            "archivo": "src/index.js",
-            "linea": 150,
-            "porque": "La función interna `mirar` tiene nombre en español; el código va en inglés.",
-            "arreglo": "Renombrarla a `look` o `check`."
-          },
-          {
-            "regla": "english",
-            "archivo": "src/npm.js",
-            "linea": 706,
-            "porque": "Las funciones `avisar` (706) y `mirar` (718) tienen nombres en español; el código va en inglés.",
-            "arreglo": "Renombrarlas a `notify` y `look`."
-          },
-          {
-            "regla": "duplicado",
-            "archivo": "src/npm.js",
-            "linea": 137,
-            "porque": "Es la misma lógica (AbortController, timeout, `!r.ok` y `.json()`, mapeo de AbortError a 'timed out') que `get` en src/index.js:53, con otro estilo de retorno (lanza en vez de devolver `{ok:false}`). Un arreglo en el manejo de timeout obliga a tocar los dos.",
-            "arreglo": "Exportar un único helper de GET JSON con timeout desde src/index.js e importarlo en npm.js."
+            "porque": "Los identificadores `leer` (línea 33) y `escribir` (línea 34) están en español; los nombres de funciones deben ir en inglés.",
+            "arreglo": "Renombrarlos a `read` y `write` (o `readCache`/`writeCache`) y actualizar sus usos en el mismo archivo."
           }
         ]
       },
-      "rojos": 4
+      "rojos": 1
     },
     {
       "repo": "dotrino-vault",
@@ -8611,9 +8742,9 @@
       "plataformas": null,
       "subdominio": "vault.dotrino.com",
       "paquete": "@dotrino/vaultd",
-      "version": "0.162.1",
-      "commit": "03e8855",
-      "fecha": "2026-10-16",
+      "version": "0.162.3",
+      "commit": "e014bb1",
+      "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -8633,7 +8764,7 @@
         "@dotrino/remote-agent"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8641,8 +8772,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 19,
+          "dias": 2,
+          "commits": 23,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8651,8 +8782,8 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-15",
-          "dias": 1,
-          "commits": 22,
+          "dias": 2,
+          "commits": 26,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -8661,7 +8792,7 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-09-30",
-          "dias": 16,
+          "dias": 17,
           "commits": null,
           "tope": false,
           "faltan": null,
@@ -8671,15 +8802,21 @@
           "aplica": true,
           "existe": true,
           "fecha": "2026-10-16",
-          "dias": 0,
-          "commits": 0,
+          "dias": 1,
+          "commits": 2,
           "tope": false,
           "faltan": [],
           "rojo": false
         }
       },
       "faltan": [],
-      "versiones": [],
+      "versiones": [
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
+        }
+      ],
       "rotas": [],
       "npmPendiente": [],
       "vivo": {
@@ -8707,7 +8844,7 @@
           }
         ]
       },
-      "rojos": 2
+      "rojos": 3
     },
     {
       "repo": "dotrino-verifier",
@@ -8725,7 +8862,7 @@
         "@dotrino/identity"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8777,7 +8914,7 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.109.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
         }
       ],
       "rotas": [],
@@ -8843,7 +8980,7 @@
         "@dotrino/prerender"
       ],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -8895,7 +9032,12 @@
         {
           "dep": "@dotrino/identity",
           "pide": "0.116.0",
-          "publicado": "0.119.0"
+          "publicado": "0.120.0"
+        },
+        {
+          "dep": "@dotrino/store",
+          "pide": "0.12.3",
+          "publicado": "0.12.4"
         }
       ],
       "rotas": [],
@@ -8925,7 +9067,7 @@
           }
         ]
       },
-      "rojos": 6
+      "rojos": 7
     },
     {
       "repo": "dotrino-webrtc",
@@ -8941,7 +9083,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
@@ -9021,7 +9163,7 @@
       "catalogo": null,
       "deps": [],
       "medido": {
-        "fecha": "2026-10-16",
+        "fecha": "2026-10-17",
         "por": "seyacat"
       },
       "frescura": {
