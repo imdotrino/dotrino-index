@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-17T09:02:13-0500",
+  "generado": "2026-10-17T09:04:02-0500",
   "fecha": "2026-10-17",
   "por": "seyacat",
-  "commit": "5275e8e",
+  "commit": "59fcc60",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -1682,8 +1682,8 @@
       "plataformas": null,
       "subdominio": "content.dotrino.com",
       "paquete": "@dotrino/content",
-      "version": "0.6.2",
-      "commit": "ebd8e5d",
+      "version": "0.6.3",
+      "commit": "3ec1a11",
       "fecha": "2026-10-17",
       "catalogo": {
         "nombre": "Content",
@@ -1709,7 +1709,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 2,
-          "commits": 4,
+          "commits": 5,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -1719,7 +1719,7 @@
           "existe": true,
           "fecha": "2026-10-15",
           "dias": 2,
-          "commits": 6,
+          "commits": 7,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -1739,7 +1739,7 @@
           "existe": true,
           "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -1748,7 +1748,22 @@
       "faltan": [],
       "versiones": [],
       "rotas": [],
-      "npmPendiente": [],
+      "npmPendiente": [
+        {
+          "paquete": "@dotrino/content",
+          "ruta": "dotrino-content",
+          "local": "0.6.3",
+          "npm": "0.6.2",
+          "sentido": "sin-publicar"
+        },
+        {
+          "paquete": "@dotrino/content-client",
+          "ruta": "dotrino-content/lib",
+          "local": "0.3.2",
+          "npm": "0.3.1",
+          "sentido": "sin-publicar"
+        }
+      ],
       "vivo": {
         "http": 200,
         "sinPublicar": 0
@@ -1781,7 +1796,7 @@
           }
         ]
       },
-      "rojos": 3
+      "rojos": 5
     },
     {
       "repo": "dotrino-critters",
@@ -3513,7 +3528,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "5275e8e",
+      "commit": "59fcc60",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
@@ -3527,7 +3542,7 @@
           "existe": true,
           "fecha": "2026-09-17",
           "dias": 30,
-          "commits": 209,
+          "commits": 210,
           "tope": false,
           "faltan": null,
           "rojo": true
@@ -3557,7 +3572,7 @@
           "existe": true,
           "fecha": "2026-08-30",
           "dias": 48,
-          "commits": 225,
+          "commits": 226,
           "tope": false,
           "faltan": [
             "duplicado"
@@ -6697,7 +6712,7 @@
       "subdominio": null,
       "paquete": "@dotrino/roadmap",
       "version": "0.4.30",
-      "commit": "3b9616e",
+      "commit": "51f9464",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [
@@ -6714,7 +6729,7 @@
           "existe": true,
           "fecha": "2026-10-09",
           "dias": 8,
-          "commits": 120,
+          "commits": 121,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -6744,7 +6759,7 @@
           "existe": true,
           "fecha": "2026-10-16",
           "dias": 1,
-          "commits": 5,
+          "commits": 6,
           "tope": false,
           "faltan": [],
           "rojo": false
