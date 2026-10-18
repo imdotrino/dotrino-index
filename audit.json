@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T19:28:08-0500",
+  "generatedAt": "2026-10-18T15:59:32-0500",
   "rules": [
     "voseo",
     "english",
@@ -13,6 +13,25 @@
     "days": 30
   },
   "repos": {
+    "dotrino-accounts": {
+      "commit": "6df64a9",
+      "date": "2026-10-18",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 7,
+      "notes": "El repo es un servicio de Node sin UI ni i18n, así que `voseo` y `plain` no tienen nada que mirar. No abrí `test/accounts.test.mjs` ni `docs/DISENO.md`: los tests y `docs/` no cuentan para estas reglas. `src/paypal.js` dice en su cabecera que su transporte es una copia del de `dotrino-names/server/paypal.js`. Es duplicación entre repos, que esta auditoría no mira.",
+      "costUsd": 0.1478315,
+      "durationMs": 11031
+    },
     "dotrino-ad-integration": {
       "commit": "09663ad",
       "date": "2026-10-17",
@@ -246,8 +265,8 @@
       "durationMs": 3641
     },
     "dotrino-compat": {
-      "commit": "159d7ca",
-      "date": "2026-09-12",
+      "commit": "79a1f6d",
+      "date": "2026-10-18",
       "by": "seyacat",
       "model": "sonnet",
       "rules": [
@@ -258,20 +277,11 @@
         "sealed",
         "duplicate"
       ],
-      "findings": [
-        {
-          "rule": "pillars",
-          "file": "src/advisory.js",
-          "line": 81,
-          "quote": "await globalThis.crypto.subtle.importKey('jwk', privateJwk, { name: 'ECDSA', namedCurve: 'P-256' }, false, ['sign'])",
-          "why": "signAdvisory/verifyAdvisory (líneas 79-101) implementan firma y verificación ECDSA propias con crypto.subtle en vez de usar @dotrino/identity, que es exactamente el patrón que la regla 4 prohíbe ('firma o cifrado propios ... en vez de @dotrino/identity'); @dotrino/compat no es el pilar de identidad, así que no aplica la excepción de 'el propio pilar hace lo suyo'.",
-          "fix": "delegar la firma y verificación de avisos en @dotrino/identity en vez de llamar a crypto.subtle directamente."
-        }
-      ],
-      "reviewed": 9,
-      "notes": "Repo pequeño y ya inspeccionado por completo (src/, test/, package.json, README.md, release.yml); es una librería de funciones puras sin red, UI ni copy de usuario, por lo que voseo, plain y sealed no tienen superficie aplicable, y no se detectó duplicación interna real (con evidencia de dos sitios) ni texto no inglés en identificadores, rutas o mensajes de error.",
-      "costUsd": 0.255779,
-      "durationMs": 61477
+      "findings": [],
+      "reviewed": 3,
+      "notes": "Abrí `src/index.js`, `src/ranges.js` y `src/advisory.js`. No abrí los tests, el README ni `.github`, y solo tuve el listado parcial de archivos (los primeros 100 de 115, mezclados con `.git`). No tuve Bash. En `src/advisory.js` hay firma ECDSA propia con `crypto.subtle` y una copia de `canonicalStringify` de `@dotrino/proxy-client`. No lo reporto: el paquete declara no tener dependencias a propósito, y la copia está documentada y la cubre un test.",
+      "costUsd": 0.1126598,
+      "durationMs": 7765
     },
     "dotrino-content": {
       "commit": "4ebba8a",
