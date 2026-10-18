@@ -71,7 +71,7 @@ td.repo{white-space:nowrap}
 td.repo b{font-weight:600}
 td.fecha{white-space:nowrap;font-variant-numeric:tabular-nums}
 td.fecha small{display:block;font-size:.8em}
-td.auditoria small{display:block;font-size:.78em;font-variant-numeric:tabular-nums}
+td.audit small{display:block;font-size:.78em;font-variant-numeric:tabular-nums}
 .cuenta{display:inline-block;min-width:1.4em;text-align:center;border-radius:999px;
   padding:.05rem .35rem;font-size:.75rem;background:var(--rojo-bg);color:var(--rojo);
   font-weight:600;margin-left:.35rem;vertical-align:1px}
@@ -105,14 +105,14 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
   arreglar: versiones de pilares ROTAS (con un fallo conocido, según el registro de
   <code>dotrino-roadmap</code>), convenciones incumplidas (§13), versiones de pilares atrasadas, lo que
   se dejó de contar (README, portada y ficha del catálogo con más de
-  ${data.rojoDias} días de brecha) y lo que encontró la auditoría de IA.</p>
+  ${data.redDays} días de brecha) y lo que encontró la auditoría de IA.</p>
   <p class="sub">La columna <b>Auditoría</b> es la única que sale de <i>leer</i> el
   código y no de mirar fechas: la escribe <code>node audit.mjs</code> (un Claude de
   solo lectura por repo) y revisa las cinco reglas que no son un patrón — voseo en la
   copy, código o logs en español, jerga en la copy pública, pilares reimplementados a
   mano y mensajes dirigidos sin sellar. Se vuelve a auditar un repo a los
-  ${data.umbralAuditoria ? data.umbralAuditoria.commits : 10} commits o
-  ${data.umbralAuditoria ? data.umbralAuditoria.dias : 30} días, no en cada pasada.</p>
+  ${data.auditThreshold ? data.auditThreshold.commits : 10} commits o
+  ${data.auditThreshold ? data.auditThreshold.days : 30} días, no en cada pasada.</p>
   <p class="sub">Cada quien mide <b>los repos que tiene en su disco</b> y esa pasada
   <b>suma</b>: actualiza sus filas y deja intactas las demás, con la fecha y el nombre
   de quien las midió la última vez. Por eso una fila puede ser de hoy y la de al lado
@@ -130,24 +130,24 @@ td.repo .medido{display:block;font-size:.72rem;color:var(--suave);opacity:.75}
   <div id="vista-repos">
     <div class="filtros">
       <input type="search" id="buscar" placeholder="Filtrar por nombre…" aria-label="Filtrar por nombre">
-      <button class="on" data-filtro="rojos">Solo con rojos</button>
-      <button data-filtro="todo">Todo</button>
+      <button class="on" data-filtro="reds">Solo con rojos</button>
+      <button data-filtro="all">Todo</button>
       <button data-filtro="app">Apps</button>
-      <button data-filtro="paquete">Paquetes</button>
-      <button data-filtro="servicio">Servicios</button>
+      <button data-filtro="package">Paquetes</button>
+      <button data-filtro="service">Servicios</button>
       <button data-filtro="landing">Landings</button>
     </div>
     <div class="envoltorio">
       <table id="tabla">
         <thead><tr>
-          <th data-orden="rojos">Repo</th>
-          <th data-orden="tipo">Tipo</th>
-          <th data-orden="faltan">Falta (§13)</th>
-          <th data-orden="versiones">Pilares rotos o atrasados</th>
+          <th data-orden="reds">Repo</th>
+          <th data-orden="kind">Tipo</th>
+          <th data-orden="missing">Falta (§13)</th>
+          <th data-orden="drifts">Pilares rotos o atrasados</th>
           <th data-orden="readme">README</th>
-          <th data-orden="portada">Portada</th>
-          <th data-orden="ficha">Ficha</th>
-          <th data-orden="auditoria">Auditoría</th>
+          <th data-orden="frontPage">Portada</th>
+          <th data-orden="catalog">Ficha</th>
+          <th data-orden="audit">Auditoría</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -167,90 +167,93 @@ const $ = (s) => document.querySelector(s)
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
 
 document.getElementById('sello').textContent =
-  'generado el ' + D.fecha + (D.por ? ' por ' + D.por : '') +
-  (D.vivo ? ' · con red' : ' · sin red') +
-  (D.heredadas ? ' · ' + D.medidasAhora + ' piezas medidas, ' + D.heredadas + ' heredadas' : '')
+  'generado el ' + D.date + (D.by ? ' por ' + D.by : '') +
+  (D.live ? ' · con red' : ' · sin red') +
+  (D.inherited ? ' · ' + D.measuredNow + ' piezas medidas, ' + D.inherited + ' heredadas' : '')
 
 /* ── cifras de arriba ───────────────────────────────────────────────────── */
-const withRed = D.piezas.filter(p => p.rojos > 0)
-const totalMissing = D.piezas.reduce((n, p) => n + p.faltan.length, 0)
-const drifts = D.piezas.reduce((n, p) => n + p.versiones.length, 0)
+const withRed = D.pieces.filter(p => p.reds > 0)
+const totalMissing = D.pieces.reduce((n, p) => n + p.missing.length, 0)
+const drifts = D.pieces.reduce((n, p) => n + p.drifts.length, 0)
 // «rotas» no existe en filas medidas antes de que el índice cruzara el registro.
-const brokenOf = (p) => p.rotas || []
-const brokenUseCount = D.piezas.reduce((n, p) => n + brokenOf(p).length, 0)
+const brokenOf = (p) => p.broken || []
+const brokenUseCount = D.pieces.reduce((n, p) => n + brokenOf(p).length, 0)
 // «npmPendiente» no existe en filas medidas antes de que el índice comparara el repo con npm.
-const npmOf = (p) => p.npmPendiente || []
-const unpublishedNpm = D.piezas.reduce((n, p) => n + npmOf(p).length, 0)
-const stale = D.piezas.filter(p => ['readme', 'portada', 'catalogo'].some(k => p.frescura[k].rojo))
+const npmOf = (p) => p.npmPending || []
+const unpublishedNpm = D.pieces.reduce((n, p) => n + npmOf(p).length, 0)
+const stale = D.pieces.filter(p => ['readme', 'frontPage', 'catalog'].some(k => p.freshness[k].red))
 $('#cifras').innerHTML = [
-  ['', D.piezas.length, 'piezas'],
+  ['', D.pieces.length, 'piezas'],
   ['mal', withRed.length, 'con algo en rojo'],
   ['mal', brokenUseCount, 'usos de versiones rotas'],
   ['mal', unpublishedNpm, 'paquetes con versión distinta en npm'],
   ['mal', totalMissing, 'convenciones incumplidas'],
   ['mal', drifts, 'pilares atrasados'],
-  ['mal', stale.length, 'con README/portada/ficha de +' + D.rojoDias + ' d'],
-  ['mal', D.piezas.reduce((n, p) => n + (p.auditoria ? p.auditoria.hallazgos.length : 0), 0),
+  ['mal', stale.length, 'con README/portada/ficha de +' + D.redDays + ' d'],
+  ['mal', D.pieces.reduce((n, p) => n + (p.audit ? p.audit.findings.length : 0), 0),
     'hallazgos de auditoría'],
-  ['', D.piezas.filter(p => p.auditoria).length + '/' + D.piezas.length, 'piezas auditadas']
+  ['', D.pieces.filter(p => p.audit).length + '/' + D.pieces.length, 'piezas auditadas']
 ].map(([c, n, t]) => '<div class="cifra ' + c + '"><b>' + n + '</b><span>' + t + '</span></div>').join('')
 
 /* ── vista "por repo" ───────────────────────────────────────────────────── */
 const freshnessCell = (f) => {
-  if (!f.aplica) return '<td class="fecha"><span class="na">·</span></td>'
-  if (!f.existe) return '<td class="fecha"><span class="rojo">no tiene</span></td>'
-  return '<td class="fecha">' + f.fecha + '<small class="' + (f.rojo ? 'rojo' : 'na') + '">' +
-    (f.tope ? '≥' : '') + f.dias + ' d' + (f.commits ? ' / ' + f.commits + ' c' : '') + '</small></td>'
+  if (!f.applies) return '<td class="fecha"><span class="na">·</span></td>'
+  if (!f.exists) return '<td class="fecha"><span class="rojo">no tiene</span></td>'
+  return '<td class="fecha">' + f.date + '<small class="' + (f.red ? 'rojo' : 'na') + '">' +
+    (f.sinceStart ? '≥' : '') + f.days + ' d' + (f.commits ? ' / ' + f.commits + ' c' : '') + '</small></td>'
 }
+/** Los códigos del dato van en inglés (§8.1); lo que se pinta, en español. */
+const KIND = { app: 'app', package: 'paquete', service: 'servicio', landing: 'landing', report: 'informe', other: 'otro' }
+const STATE = { 'not-started': 'sin empezar', 'no-version': 'sin versión', behind: 'atrasada', 'on-par': 'a la par' }
 /** Etiqueta corta de cada regla del auditor; la larga va en el title del chip. */
-const RULE = { voseo: 'voseo', english: 'en español', plain: 'jerga', pillars: 'pilar a mano', sealed: 'sin sellar', duplicado: 'duplicado' }
+const RULE = { voseo: 'voseo', english: 'en español', plain: 'jerga', pillars: 'pilar a mano', sealed: 'sin sellar', duplicate: 'duplicado' }
 /**
  * La auditoría en una celda: el VEREDICTO (qué encontró, por regla) y su FRESCURA
  * (cuándo y cuántos commits atrás). Son dos indicadores y por eso se ven los dos: un
  * ✓ de hace 40 commits no dice lo mismo que un ✓ de hoy.
  */
 const auditCell = (p) => {
-  const f = (p.frescura && p.frescura.auditoria) || { existe: false }
-  if (!f.existe) return '<td><span class="rojo">sin auditar</span></td>'
+  const f = (p.freshness && p.freshness.audit) || { exists: false }
+  if (!f.exists) return '<td><span class="rojo">sin auditar</span></td>'
   const count = {}
-  for (const h of (p.auditoria ? p.auditoria.hallazgos : [])) count[h.regla] = (count[h.regla] || 0) + 1
+  for (const h of (p.audit ? p.audit.findings : [])) count[h.rule] = (count[h.rule] || 0) + 1
   const marks = Object.entries(count).map(([r, n]) =>
-    '<span class="chip mal" title="' + esc((D.reglasIA || {})[r] || r) + '">' +
+    '<span class="chip mal" title="' + esc((D.aiRules || {})[r] || r) + '">' +
     (RULE[r] || r) + (n > 1 ? ' ×' + n : '') + '</span>').join('') || '<span class="bien">✓</span>'
   // El ✓ es de las reglas que SE MIRARON. Las que nunca se le pasaron a este repo van
   // aparte y en ámbar: no están limpias, están sin mirar, y verlas iguales era el
   // fallo mudo de añadir una regla y que todos aprobaran sin haberla pasado.
-  const unchecked = (f.faltan || []).map((r) =>
-    '<span class="chip ojo" title="' + esc('nunca se le pasó: ' + ((D.reglasIA || {})[r] || r)) + '">sin ' +
+  const unchecked = (f.unchecked || []).map((r) =>
+    '<span class="chip ojo" title="' + esc('nunca se le pasó: ' + ((D.aiRules || {})[r] || r)) + '">sin ' +
     (RULE[r] || r) + '</span>').join('')
-  const stamp = '<small class="' + (f.rojo ? 'rojo' : 'na') + '">' + f.fecha +
+  const stamp = '<small class="' + (f.red ? 'rojo' : 'na') + '">' + f.date +
     ' · ' + (f.commits === null ? '?' : f.commits) + ' c</small>'
-  return '<td class="auditoria">' + marks + unchecked + stamp + '</td>'
+  return '<td class="audit">' + marks + unchecked + stamp + '</td>'
 }
 const chips = (xs, cls) => xs.length
   ? xs.map(x => '<span class="chip ' + cls + '">' + esc(x) + '</span>').join('')
   : '<span class="bien">✓</span>'
 
-let filter = 'rojos'
-let order = 'rojos'
+let filter = 'reds'
+let order = 'reds'
 let text = ''
 
 function rows () {
-  let xs = D.piezas
-  if (filter === 'rojos') xs = xs.filter(p => p.rojos > 0)
-  else if (filter !== 'todo') xs = xs.filter(p => p.tipo === filter)
+  let xs = D.pieces
+  if (filter === 'reds') xs = xs.filter(p => p.reds > 0)
+  else if (filter !== 'all') xs = xs.filter(p => p.kind === filter)
   if (text) xs = xs.filter(p => p.repo.includes(text))
   const key = {
-    rojos: (p) => -p.rojos,
-    tipo: (p) => p.tipo + p.repo,
-    faltan: (p) => -p.faltan.length,
+    reds: (p) => -p.reds,
+    kind: (p) => p.kind + p.repo,
+    missing: (p) => -p.missing.length,
     // Una rota pesa más que cualquier cantidad de deriva: es un fallo conocido, no ir detrás.
-    versiones: (p) => -(brokenOf(p).length * 1000 + p.versiones.length),
-    readme: (p) => -(p.frescura.readme.dias ?? 9999),
-    portada: (p) => -(p.frescura.portada.dias ?? 9999),
-    ficha: (p) => -(p.frescura.catalogo.dias ?? 9999),
-    auditoria: (p) => -((p.auditoria ? p.auditoria.hallazgos.length : 0) * 1000 +
-      (p.frescura.auditoria && p.frescura.auditoria.existe ? (p.frescura.auditoria.commits || 0) : 9999))
+    drifts: (p) => -(brokenOf(p).length * 1000 + p.drifts.length),
+    readme: (p) => -(p.freshness.readme.days ?? 9999),
+    frontPage: (p) => -(p.freshness.frontPage.days ?? 9999),
+    catalog: (p) => -(p.freshness.catalog.days ?? 9999),
+    audit: (p) => -((p.audit ? p.audit.findings.length : 0) * 1000 +
+      (p.freshness.audit && p.freshness.audit.exists ? (p.freshness.audit.commits || 0) : 9999))
   }[order]
   return [...xs].sort((a, b) => {
     const ka = key(a); const kb = key(b)
@@ -262,33 +265,33 @@ function render () {
   const xs = rows()
   $('#tabla tbody').innerHTML = xs.map(p => {
     const gh = 'https://github.com/imdotrino/' + p.repo
-    const dom = p.subdominio ? ' · <a href="https://' + p.subdominio + '/">' + p.subdominio + '</a>' : ''
-    const pub = p.vivo && p.vivo.sinPublicar > 0
-      ? '<span class="chip ojo">' + p.vivo.sinPublicar + ' comm. sin publicar</span>' : ''
+    const dom = p.subdomain ? ' · <a href="https://' + p.subdomain + '/">' + p.subdomain + '</a>' : ''
+    const pub = p.live && p.live.unpublished > 0
+      ? '<span class="chip ojo">' + p.live.unpublished + ' comm. sin publicar</span>' : ''
     // Una fila que nadie volvió a medir hoy lo dice: sus datos son de otra pasada.
-    const measuredNow = p.medido && p.medido.fecha !== D.fecha
-      ? '<span class="medido">medido el ' + esc(p.medido.fecha) +
-        (p.medido.por ? ' por ' + esc(p.medido.por) : '') + '</span>'
-      : (p.medido ? '' : '<span class="medido">sin fecha de medición</span>')
+    const measuredNow = p.measured && p.measured.date !== D.date
+      ? '<span class="medido">medido el ' + esc(p.measured.date) +
+        (p.measured.by ? ' por ' + esc(p.measured.by) : '') + '</span>'
+      : (p.measured ? '' : '<span class="medido">sin fecha de medición</span>')
     return '<tr>' +
       '<td class="repo"><b>' + esc(p.repo) + '</b>' +
-      (p.rojos ? '<span class="cuenta">' + p.rojos + '</span>' : '') +
+      (p.reds ? '<span class="cuenta">' + p.reds + '</span>' : '') +
       '<span class="links"><a href="' + gh + '">github</a>' + dom + '</span>' + measuredNow + '</td>' +
-      '<td>' + p.tipo + (p.interna ? '<br><span class="na">interna</span>' : '') + '</td>' +
-      '<td>' + chips(p.faltan.map(f => f.etiqueta), 'mal') + pub + '</td>' +
+      '<td>' + (KIND[p.kind] || p.kind) + (p.internal ? '<br><span class="na">interna</span>' : '') + '</td>' +
+      '<td>' + chips(p.missing.map(f => f.label), 'mal') + pub + '</td>' +
       '<td>' + chips(brokenOf(p).map(u => u.dep.replace('@dotrino/', '') + ' ' + (u.version || '?') + ' ROTA' +
-        (u.unidad !== p.repo ? ' (' + u.unidad.slice(p.repo.length + 1) + ')' : '')), 'mal') +
-      chips(npmOf(p).map(u => u.paquete.replace('@dotrino/', '') + ' ' + u.local + ' ≠ npm ' + u.npm +
-        (u.sentido === 'sin-publicar' ? ' (sin publicar)' : ' (repo atrás)')), 'mal') +
-      chips(p.versiones.map(v => v.dep.replace('@dotrino/', '') + ' ' + v.pide + '→' + v.publicado), 'mal') + '</td>' +
-      freshnessCell(p.frescura.readme) +
-      freshnessCell(p.frescura.portada) +
-      freshnessCell(p.frescura.catalogo) +
+        (u.unit !== p.repo ? ' (' + u.unit.slice(p.repo.length + 1) + ')' : '')), 'mal') +
+      chips(npmOf(p).map(u => u.package.replace('@dotrino/', '') + ' ' + u.local + ' ≠ npm ' + u.npm +
+        (u.direction === 'unpublished' ? ' (sin publicar)' : ' (repo atrás)')), 'mal') +
+      chips(p.drifts.map(v => v.dep.replace('@dotrino/', '') + ' ' + v.requested + '→' + v.published), 'mal') + '</td>' +
+      freshnessCell(p.freshness.readme) +
+      freshnessCell(p.freshness.frontPage) +
+      freshnessCell(p.freshness.catalog) +
       auditCell(p) +
       '</tr>'
   }).join('')
-  $('#pie-tabla').innerHTML = xs.length + ' de ' + D.piezas.length + ' piezas' +
-    (D.ocultas ? ' · ' + D.ocultas + ' privada(s) no se publican' : '') +
+  $('#pie-tabla').innerHTML = xs.length + ' de ' + D.pieces.length + ' piezas' +
+    (D.hidden ? ' · ' + D.hidden + ' privada(s) no se publican' : '') +
     ' · el número rojo es cuántas cosas hay que arreglar' +
     ' · <code>≥</code> = sigue como en el commit inicial del repo' +
     ' · <a href="ecosistema.json">datos crudos</a>'
@@ -309,32 +312,32 @@ function groups () {
   const g = []
   // LO ROTO VA PRIMERO: es lo único de esta lista que ya falla, y el arreglo está escrito.
   const byBroken = {}
-  for (const p of D.piezas) for (const u of brokenOf(p)) {
-    (byBroken['ROTA: ' + u.dep + ' — ' + u.fix] ||= []).push(u.unidad + ' (' + (u.version || '? ' + u.pide) + ')')
+  for (const p of D.pieces) for (const u of brokenOf(p)) {
+    (byBroken['ROTA: ' + u.dep + ' — ' + u.fix] ||= []).push(u.unit + ' (' + (u.version || '? ' + u.requested) + ')')
   }
   for (const [k, repos] of Object.entries(byBroken).sort((a, b) => b[1].length - a[1].length)) g.push([k, repos])
   // Lo arreglado en el repo y sin publicar no le ha llegado a nadie.
-  const unpub = D.piezas.flatMap(p => npmOf(p).filter(u => u.sentido === 'sin-publicar')
-    .map(u => u.paquete + ' (repo ' + u.local + ', npm ' + u.npm + ')'))
+  const unpub = D.pieces.flatMap(p => npmOf(p).filter(u => u.direction === 'unpublished')
+    .map(u => u.package + ' (repo ' + u.local + ', npm ' + u.npm + ')'))
   if (unpub.length) g.push(['Publicar en npm: la versión del repo no está en el registro', unpub])
-  const behind = D.piezas.flatMap(p => npmOf(p).filter(u => u.sentido !== 'sin-publicar')
-    .map(u => u.paquete + ' (repo ' + u.local + ', npm ' + u.npm + ')'))
+  const behind = D.pieces.flatMap(p => npmOf(p).filter(u => u.direction !== 'unpublished')
+    .map(u => u.package + ' (repo ' + u.local + ', npm ' + u.npm + ')'))
   if (behind.length) g.push(['El repo va por detrás de npm', behind])
   const byConvention = {}
-  for (const p of D.piezas) for (const f of p.faltan) (byConvention[f.etiqueta] ||= []).push(p.repo)
+  for (const p of D.pieces) for (const f of p.missing) (byConvention[f.label] ||= []).push(p.repo)
   for (const [label, repos] of Object.entries(byConvention).sort((a, b) => b[1].length - a[1].length)) {
     g.push([label, repos])
   }
   for (const [k, name] of [['readme', 'README sin tocar (o inexistente)'],
-    ['portada', 'Portada sin tocar'], ['catalogo', 'Ficha del catálogo sin tocar']]) {
-    const repos = D.piezas.filter(p => p.frescura[k].rojo)
-      .map(p => p.repo + (p.frescura[k].existe ? ' (' + p.frescura[k].dias + ' d)' : ' (no tiene)'))
+    ['frontPage', 'Portada sin tocar'], ['catalog', 'Ficha del catálogo sin tocar']]) {
+    const repos = D.pieces.filter(p => p.freshness[k].red)
+      .map(p => p.repo + (p.freshness[k].exists ? ' (' + p.freshness[k].days + ' d)' : ' (no tiene)'))
     if (repos.length) g.push([name, repos])
   }
   const byRule = {}
-  for (const p of D.piezas) for (const h of (p.auditoria ? p.auditoria.hallazgos : [])) {
-    (byRule[(D.reglasIA || {})[h.regla] || h.regla] ||= [])
-      .push(p.repo + (h.archivo ? ' (' + h.archivo + (h.linea ? ':' + h.linea : '') + ')' : ''))
+  for (const p of D.pieces) for (const h of (p.audit ? p.audit.findings : [])) {
+    (byRule[(D.aiRules || {})[h.rule] || h.rule] ||= [])
+      .push(p.repo + (h.file ? ' (' + h.file + (h.line ? ':' + h.line : '') + ')' : ''))
   }
   for (const [k, repos] of Object.entries(byRule).sort((a, b) => b[1].length - a[1].length)) {
     g.push([k, repos])
@@ -342,22 +345,22 @@ function groups () {
   // Las reglas que a un repo nunca se le pasaron son su propio grupo de trabajo: no es
   // «hay que repasar esto», es «esto no se ha mirado nunca».
   const byRuleUnchecked = {}
-  for (const p of D.piezas) {
-    const f = p.frescura.auditoria
-    for (const r of ((f && f.faltan) || [])) {
-      (byRuleUnchecked['Sin pasar nunca: ' + ((D.reglasIA || {})[r] || r)] ||= []).push(p.repo)
+  for (const p of D.pieces) {
+    const f = p.freshness.audit
+    for (const r of ((f && f.unchecked) || [])) {
+      (byRuleUnchecked['Sin pasar nunca: ' + ((D.aiRules || {})[r] || r)] ||= []).push(p.repo)
     }
   }
   for (const [k, repos] of Object.entries(byRuleUnchecked).sort((a, b) => b[1].length - a[1].length)) {
     g.push([k, repos])
   }
-  const toAudit = D.piezas.filter(p => p.frescura.auditoria && p.frescura.auditoria.rojo &&
-    !(p.frescura.auditoria.faltan || []).length)
-    .map(p => p.repo + (p.frescura.auditoria.existe ? ' (' + p.frescura.auditoria.commits + ' c)' : ' (nunca)'))
+  const toAudit = D.pieces.filter(p => p.freshness.audit && p.freshness.audit.red &&
+    !(p.freshness.audit.unchecked || []).length)
+    .map(p => p.repo + (p.freshness.audit.exists ? ' (' + p.freshness.audit.commits + ' c)' : ' (nunca)'))
   if (toAudit.length) g.push(['Auditoría pendiente o atrasada', toAudit])
   const byPillar = {}
-  for (const p of D.piezas) for (const v of p.versiones) {
-    (byPillar[v.dep + ' → ' + v.publicado] ||= []).push(p.repo + ' (' + v.pide + ')')
+  for (const p of D.pieces) for (const v of p.drifts) {
+    (byPillar[v.dep + ' → ' + v.published] ||= []).push(p.repo + ' (' + v.requested + ')')
   }
   for (const [k, repos] of Object.entries(byPillar).sort((a, b) => b[1].length - a[1].length)) {
     g.push(['Subir ' + k, repos])
@@ -372,22 +375,22 @@ $('#vista-problemas').innerHTML = groups().map(([t, repos]) =>
 /* ── vista "pilares" ────────────────────────────────────────────────────── */
 $('#vista-pilares').innerHTML = '<div class="envoltorio"><table><thead><tr>' +
   '<th>Pilar</th><th>Publicado</th><th>Consumidores</th><th>Quién</th></tr></thead><tbody>' +
-  D.consumidores.map(c => '<tr><td><b>' + esc(c.pilar) + '</b></td><td>' + (c.version || '—') +
-    (D.vivo && !c.enNpm ? ' <span class="chip mal">no está en npm</span>' : '') +
+  D.consumers.map(c => '<tr><td><b>' + esc(c.pillar) + '</b></td><td>' + (c.version || '—') +
+    (D.live && !c.onNpm ? ' <span class="chip mal">no está en npm</span>' : '') +
     '</td><td>' + c.repos.length + '</td><td>' +
     c.repos.map(r => '<span class="chip">' + esc(r) + '</span>').join('') + '</td></tr>').join('') +
   '</tbody></table></div>'
 
 /* ── vista "nativas" (CONVENCIONES §16) ─────────────────────────────────── */
 // La PWA va delante; cada nativa vale la versión de la PWA con la que está a la par.
-const withNative = D.piezas.filter(p => p.plataformas)
+const withNative = D.pieces.filter(p => p.platforms)
 const nativeCell = (x) => !x ? '<td><span class="na">·</span></td>'
-  : '<td>' + esc(x.version || '—') + ' <span class="chip' + (x.estado === 'a la par' ? '' : ' mal') + '">' + esc(x.estado) + '</span></td>'
+  : '<td>' + esc(x.version || '—') + ' <span class="chip' + (x.state === 'on-par' ? '' : ' mal') + '">' + esc(STATE[x.state] || x.state) + '</span></td>'
 $('#vista-nativas').innerHTML = withNative.length
   ? '<p class="nota">La PWA va delante con cada característica (§16). Ir detrás no es un incumplimiento: es la deuda que hay que ver.</p>' +
     '<div class="envoltorio"><table><thead><tr><th>App</th><th>PWA</th><th>iOS</th><th>Android</th></tr></thead><tbody>' +
-    withNative.map(p => '<tr><td><b>' + esc(p.repo) + '</b></td><td>' + esc(p.plataformas.pwa || '—') + '</td>' +
-      nativeCell(p.plataformas.ios) + nativeCell(p.plataformas.android) + '</tr>').join('') +
+    withNative.map(p => '<tr><td><b>' + esc(p.repo) + '</b></td><td>' + esc(p.platforms.pwa || '—') + '</td>' +
+      nativeCell(p.platforms.ios) + nativeCell(p.platforms.android) + '</tr>').join('') +
     '</tbody></table></div>'
   : '<p class="nota">Ninguna app declara <code>dotrino.platforms</code> en su <code>package.json</code>.</p>'
 

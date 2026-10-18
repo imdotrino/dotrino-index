@@ -27,9 +27,9 @@
  *   plain      §9.1  la copy pública se entiende sin saber de tecnología
  *   pillars    CLAUDE.md  nada de reimplementar a mano lo que ya hace un `@dotrino/*`
  *   sealed     §4.1  lo que se manda por mensaje dirigido va sellado, no en claro
- *   duplicado  CLAUDE.md  la misma cosa escrita dos veces DENTRO del repo
+ *   duplicate  CLAUDE.md  la misma cosa escrita dos veces DENTRO del repo
  *
- * CADA ENTRADA ANOTA CONTRA QUÉ REGLAS SE AUDITÓ (`reglas` en `audit.json`). Sin eso,
+ * CADA ENTRADA ANOTA CONTRA QUÉ REGLAS SE AUDITÓ (`rules` en `audit.json`). Sin eso,
  * añadir una regla convertiría a los 67 repos ya auditados en limpios de algo que
  * nunca se les miró, y el índice lo pintaría en verde: el repliegue mudo que
  * `CLAUDE.md` prohíbe. A un repo al que le falte una regla le toca auditarse, igual
@@ -150,7 +150,7 @@ const daysBetween = (since, until) => {
  * ella sería inventarse un verde. Al añadir una regla acá, todos los repos anteriores
  * pasan a estar pendientes de esa regla, y se van llenando conforme les toque.
  */
-const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'duplicado']
+const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'duplicate']
 
 /**
  * Por qué le toca a este repo, o `null` si su auditoría sigue valiendo. Devuelve el
@@ -167,8 +167,8 @@ function reasonToAudit (repo) {
   // Auditada, sí, ¿pero contra qué? Lo que no se miró no está limpio: está sin mirar.
   // Una entrada anterior a que esto se anotara no puede decirlo, así que vale como no
   // hecha — y una a la que le falte una regla nueva le toca por esa regla.
-  if (!Array.isArray(before.reglas)) return 'la auditoría no anotó contra qué reglas se hizo'
-  const unchecked = RULE_IDS.filter(r => !before.reglas.includes(r))
+  if (!Array.isArray(before.rules)) return 'la auditoría no anotó contra qué reglas se hizo'
+  const unchecked = RULE_IDS.filter(r => !before.rules.includes(r))
   if (unchecked.length) return `nunca se le pasó: ${unchecked.join(', ')}`
   const head = git(dir, 'rev-parse', '--short', 'HEAD')
   if (!head || before.commit === head) return null
@@ -178,7 +178,7 @@ function reasonToAudit (repo) {
   const commits = Number(git(dir, 'rev-list', '--count', `${before.commit}..HEAD`, '--', '.', ...PLUMBING) ?? 0) || 0
   if (commits >= THRESHOLD_COMMITS) return `${commits} commits desde la auditoría`
   if (!commits) return null
-  const days = daysBetween(before.fecha, git(dir, 'log', '-1', '--format=%cs') || null)
+  const days = daysBetween(before.date, git(dir, 'log', '-1', '--format=%cs') || null)
   if (days >= THRESHOLD_DAYS) return `${commits} commit(s) y ${days} días de brecha`
   return null
 }
@@ -294,9 +294,9 @@ con \`requireSealed: true\`.
   \`sendSealed\` ni \`requireSealed\` por ninguna parte.
 - **NO es infracción:** los **canales públicos** (\`publish\`/\`list\`), que son públicos
   por diseño; ni un repo que cifra el payload por su cuenta antes de mandarlo (si lo
-  ves, dilo en \`notas\`, no como hallazgo).
+  ves, dilo en \`notes\`, no como hallazgo).
 
-### 6. \`duplicado\` — la misma cosa escrita dos veces DENTRO de este repo
+### 6. \`duplicate\` — la misma cosa escrita dos veces DENTRO de este repo
 
 La regla que ordena el ecosistema es la reutilización: *reusar es la norma*. La regla 4
 vigila que no se rehaga a mano un paquete \`@dotrino/*\`; esta vigila lo otro, que no lo
@@ -313,8 +313,8 @@ mira nadie — **la misma cosa escrita dos veces dentro de este mismo repo**.
 - Infracción: un módulo \`utils\`/\`helpers\`/\`lib\` de este repo que **ya tiene** la
   función, y otro archivo que se la vuelve a escribir en vez de importarla.
 
-**Exijo evidencia de LOS DOS SITIOS.** \`archivo\` y \`linea\` son los de una copia, y
-\`porque\` **tiene que nombrar el otro archivo y su línea**. Sin las dos referencias no es
+**Exijo evidencia de LOS DOS SITIOS.** \`file\` y \`line\` son los de una copia, y
+\`why\` **tiene que nombrar el otro archivo y su línea**. Sin las dos referencias no es
 un hallazgo: es una impresión de parecido, y no se reporta.
 
 **NO es infracción, y esta lista pesa más que la de arriba:**
@@ -355,31 +355,31 @@ ${RULES}
 
 - Mira \`src/\`, \`web/src/\`, \`lib/\`, \`agent/\`, \`server/\`, \`index.html\`, \`web/index.html\`, los archivos de i18n o \`locales/\`, y los NOMBRES de los archivos del repo.
 - Ignora \`node_modules/\`, \`dist/\`, \`build/\`, \`.git/\`, \`package-lock.json\`, \`*.min.js\`, y cualquier archivo generado o de terceros.
-- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\`, \`QR\` para \`pillars\` y \`sealed\`). Para \`duplicado\`: mira primero el índice de archivos (Glob) buscando nombres que suenen a lo mismo, y luego Grep de los nombres de las funciones exportadas por \`utils\`/\`helpers\`/\`lib\` para ver quién las reescribe en vez de importarlas.
-- Un hallazgo por sitio concreto, con su archivo, su línea y la cita exacta. Si el mismo fallo se repite muchas veces en un archivo, repórtalo UNA vez y di cuántas en \`porque\`.
-- **Un hallazgo, UNA regla.** Si algo encaja en dos, elige la más específica y no lo repitas: un pilar \`@dotrino/*\` rehecho a mano es \`pillars\`, nunca \`duplicado\`.
-- **Ante la duda, no lo reportes.** Un indicador que grita en falso se aprende a ignorar, y entonces deja de servir. Prefiero que se te escape uno a que inventes tres. Esto vale doble en \`duplicado\`, que es la regla más fácil de llenar de ruido: si no puedes citar **los dos** sitios con su archivo y su línea, no es un hallazgo.
+- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\`, \`QR\` para \`pillars\` y \`sealed\`). Para \`duplicate\`: mira primero el índice de archivos (Glob) buscando nombres que suenen a lo mismo, y luego Grep de los nombres de las funciones exportadas por \`utils\`/\`helpers\`/\`lib\` para ver quién las reescribe en vez de importarlas.
+- Un hallazgo por sitio concreto, con su archivo, su línea y la cita exacta. Si el mismo fallo se repite muchas veces en un archivo, repórtalo UNA vez y di cuántas en \`why\`.
+- **Un hallazgo, UNA regla.** Si algo encaja en dos, elige la más específica y no lo repitas: un pilar \`@dotrino/*\` rehecho a mano es \`pillars\`, nunca \`duplicate\`.
+- **Ante la duda, no lo reportes.** Un indicador que grita en falso se aprende a ignorar, y entonces deja de servir. Prefiero que se te escape uno a que inventes tres. Esto vale doble en \`duplicate\`, que es la regla más fácil de llenar de ruido: si no puedes citar **los dos** sitios con su archivo y su línea, no es un hallazgo.
 
 ## Qué devuelves
 
 SOLO un objeto JSON, sin markdown, sin explicación alrededor, con esta forma exacta:
 
 {
-  "hallazgos": [
+  "findings": [
     {
-      "regla": "voseo|english|plain|pillars|sealed|duplicado",
-      "archivo": "src/i18n.ts",
-      "linea": 42,
-      "cita": "la línea o el fragmento exacto, máximo 120 caracteres",
-      "porque": "una frase de por qué incumple (en \`duplicado\`, NOMBRA el otro sitio: archivo y línea)",
-      "arreglo": "qué debería decir o usar, en una frase"
+      "rule": "voseo|english|plain|pillars|sealed|duplicate",
+      "file": "src/i18n.ts",
+      "line": 42,
+      "quote": "la línea o el fragmento exacto, máximo 120 caracteres",
+      "why": "una frase de por qué incumple (en \`duplicate\`, NOMBRA el otro sitio: archivo y línea)",
+      "fix": "qué debería decir o usar, en una frase"
     }
   ],
-  "revisados": 12,
-  "notas": "una frase sobre lo que no pudiste mirar o lo que conviene saber; cadena vacía si no hay nada"
+  "reviewed": 12,
+  "notes": "una frase sobre lo que no pudiste mirar o lo que conviene saber; cadena vacía si no hay nada"
 }
 
-Si el repo cumple, devuelve \`"hallazgos": []\`. \`revisados\` es cuántos archivos abriste.`
+Si el repo cumple, devuelve \`"findings": []\`. \`reviewed\` es cuántos archivos abriste.`
 
 // ─── ejecutar el auditor ───────────────────────────────────────────────────
 
@@ -396,14 +396,14 @@ const RULE_KEYS = new Set(RULE_IDS)
 
 /** Un hallazgo con la forma esperada, o nada. El modelo a veces se inventa un campo. */
 function normalize (f) {
-  if (!f || !RULE_KEYS.has(f.regla)) return null
+  if (!f || !RULE_KEYS.has(f.rule)) return null
   return {
-    regla: f.regla,
-    archivo: String(f.archivo || '').slice(0, 200) || null,
-    linea: Number.isFinite(Number(f.linea)) ? Number(f.linea) : null,
-    cita: String(f.cita || '').replace(/\s+/g, ' ').slice(0, 160),
-    porque: String(f.porque || '').slice(0, 400),
-    arreglo: String(f.arreglo || '').slice(0, 300)
+    rule: f.rule,
+    file: String(f.file || '').slice(0, 200) || null,
+    line: Number.isFinite(Number(f.line)) ? Number(f.line) : null,
+    quote: String(f.quote || '').replace(/\s+/g, ' ').slice(0, 160),
+    why: String(f.why || '').slice(0, 400),
+    fix: String(f.fix || '').slice(0, 300)
   }
 }
 
@@ -426,13 +426,13 @@ function runClaude (dir, prompt) {
         if (!envelope) return resolve({ error: 'la CLI no devolvió JSON' })
         if (envelope.is_error) return resolve({ error: String(envelope.result || 'error de la CLI').slice(0, 300) })
         const parsed = extractJson(envelope.result)
-        if (!parsed) return resolve({ error: 'el auditor no devolvió JSON', crudo: String(envelope.result || '').slice(0, 300) })
+        if (!parsed) return resolve({ error: 'el auditor no devolvió JSON', raw: String(envelope.result || '').slice(0, 300) })
         resolve({
-          hallazgos: (parsed.hallazgos || []).map(normalize).filter(Boolean),
-          revisados: Number(parsed.revisados) || null,
-          notas: String(parsed.notas || '').slice(0, 500),
-          costoUSD: envelope.total_cost_usd ?? null,
-          duracionMs: envelope.duration_ms ?? null
+          findings: (parsed.findings || []).map(normalize).filter(Boolean),
+          reviewed: Number(parsed.reviewed) || null,
+          notes: String(parsed.notes || '').slice(0, 500),
+          costUsd: envelope.total_cost_usd ?? null,
+          durationMs: envelope.duration_ms ?? null
         })
       })
   })
@@ -464,7 +464,7 @@ if (ASKED.length) {
  * enterarse de eso por la factura es tarde.
  */
 const averageCost = (() => {
-  const xs = Object.values(previous.repos || {}).map(r => r.costoUSD).filter(n => typeof n === 'number' && n > 0)
+  const xs = Object.values(previous.repos || {}).map(r => r.costUsd).filter(n => typeof n === 'number' && n > 0)
   return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null
 })()
 const budget = pending.length && averageCost
@@ -500,20 +500,20 @@ await Promise.all(Array.from({ length: Math.min(JOBS, queue.length) }, async () 
     }
     results[repo] = {
       commit,
-      fecha: today,
-      por: who,
-      modelo: MODEL,
+      date: today,
+      by: who,
+      model: MODEL,
       // Contra qué reglas se auditó ESTE repo. No se deduce de la lista de arriba del
       // archivo: una entrada vieja se quedó con las reglas de su día, y así se sabe.
-      reglas: RULE_IDS,
-      hallazgos: out.hallazgos,
-      revisados: out.revisados,
-      notas: out.notas,
-      costoUSD: out.costoUSD,
-      duracionMs: out.duracionMs
+      rules: RULE_IDS,
+      findings: out.findings,
+      reviewed: out.reviewed,
+      notes: out.notes,
+      costUsd: out.costUsd,
+      durationMs: out.durationMs
     }
-    const n = out.hallazgos.length
-    console.log(`  ${n ? '⚠' : '✓'} ${repo} — ${n} hallazgo(s), ${out.revisados ?? '?'} archivos` +
+    const n = out.findings.length
+    console.log(`  ${n ? '⚠' : '✓'} ${repo} — ${n} hallazgo(s), ${out.reviewed ?? '?'} archivos` +
       ` [${done}/${pending.length}]`)
   }
 }))
@@ -526,16 +526,16 @@ const kept = PRUNE
 
 const merged = { ...kept, ...results }
 writeFileSync(OUT, JSON.stringify({
-  generado: sh('date', ['+%Y-%m-%dT%H:%M:%S%z']),
-  reglas: RULE_IDS,
+  generatedAt: sh('date', ['+%Y-%m-%dT%H:%M:%S%z']),
+  rules: RULE_IDS,
   // El criterio con el que se decidió no volver a mirar. `index.mjs` lo lee de acá
   // para marcar en rojo con la misma vara.
-  umbrales: { commits: THRESHOLD_COMMITS, dias: THRESHOLD_DAYS },
+  thresholds: { commits: THRESHOLD_COMMITS, days: THRESHOLD_DAYS },
   repos: Object.fromEntries(Object.entries(merged).sort(([a], [b]) => a.localeCompare(b)))
 }, null, 2) + '\n')
 
-const findings = Object.values(results).reduce((n, r) => n + r.hallazgos.length, 0)
-const cost = Object.values(results).reduce((n, r) => n + (r.costoUSD || 0), 0)
+const findings = Object.values(results).reduce((n, r) => n + r.findings.length, 0)
+const cost = Object.values(results).reduce((n, r) => n + (r.costUsd || 0), 0)
 console.log(`→ audit.json · ${Object.keys(results).length} repos auditados · ` +
   `${findings} hallazgos · ${Object.keys(merged).length} de ${all.length} repos con auditoría` +
   (cost ? ` · $${cost.toFixed(2)}` : ''))
