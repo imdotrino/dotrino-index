@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T15:59:32-0500",
+  "generatedAt": "2026-10-18T18:55:42-0500",
   "rules": [
     "voseo",
     "english",
@@ -536,6 +536,25 @@
       "notes": "El repo es una sola página (index.html); sw.js y manifest.webmanifest no los abrí porque la regla 6 los exime. No hay voseo ni jerga técnica en la copy pública, ni WebSocket, cifrado propio ni mensajes dirigidos. No hay duplicación evidenciable dentro del repo.",
       "costUsd": 0.1112976,
       "durationMs": 9992
+    },
+    "dotrino-expenses": {
+      "commit": "5a81f6e",
+      "date": "2026-10-18",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 4,
+      "notes": "No encontré incumplimientos de las seis reglas. Abrí solo `src/i18n.js` e `index.html` y revisé el resto con Grep. Un Grep de voseo sobre `src/` no encontró nada. Todo el texto en español de los componentes `.vue` está en comentarios. Los `throw` y `console.error` están en inglés. No hay `WebSocket`, `crypto.subtle`, `sendByPubkey` ni `send`; la app usa `<dotrino-topbar>` y el almacén de `@dotrino/store`. La regla `sealed` no aplica porque no hay mensajes dirigidos. En `duplicate` solo vi `padSt",
+      "costUsd": 0.1335951,
+      "durationMs": 13763
     },
     "dotrino-facturero": {
       "commit": "9c1c3b2",
