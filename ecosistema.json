@@ -1,8 +1,8 @@
 {
-  "generado": "2026-10-17T19:28:31-0500",
+  "generado": "2026-10-17T19:28:59-0500",
   "fecha": "2026-10-17",
   "por": "seyacat",
-  "commit": "3c261cc",
+  "commit": "08f1223",
   "vivo": true,
   "rojoDias": 30,
   "umbralAuditoria": {
@@ -3886,7 +3886,7 @@
       "subdominio": "index.dotrino.com",
       "paquete": null,
       "version": null,
-      "commit": "3c261cc",
+      "commit": "08f1223",
       "fecha": "2026-10-17",
       "catalogo": null,
       "deps": [],
@@ -3900,7 +3900,7 @@
           "existe": true,
           "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3910,7 +3910,7 @@
           "existe": true,
           "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 1,
+          "commits": 0,
           "tope": false,
           "faltan": null,
           "rojo": false
@@ -3930,7 +3930,7 @@
           "existe": true,
           "fecha": "2026-10-17",
           "dias": 0,
-          "commits": 0,
+          "commits": 1,
           "tope": false,
           "faltan": [],
           "rojo": false
@@ -3942,7 +3942,7 @@
       "npmPendiente": [],
       "vivo": {
         "http": 200,
-        "sinPublicar": 2
+        "sinPublicar": 3
       },
       "auditoria": {
         "por": "seyacat",
