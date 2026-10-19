@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-19T14:52:01-0500",
+  "generatedAt": "2026-10-19T15:03:06-0500",
   "date": "2026-10-19",
   "by": "seyacat",
-  "commit": "8e64031",
+  "commit": "40329a8",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -88,7 +88,7 @@
     "@dotrino/content": "0.6.9",
     "@dotrino/qr": "0.3.1",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.4.45",
+    "@dotrino/roadmap": "0.4.46",
     "@dotrino/sealers": "0.10.4",
     "@dotrino/sso-client": "0.1.0",
     "@dotrino/telegram-bot": "0.2.3",
@@ -773,7 +773,7 @@
     },
     {
       "pillar": "@dotrino/roadmap",
-      "version": "0.4.45",
+      "version": "0.4.46",
       "onNpm": true,
       "repos": [
         "dotrino-vault"
@@ -3959,7 +3959,7 @@
       "subdomain": "index.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "8e64031",
+      "commit": "40329a8",
       "date": "2026-10-19",
       "catalog": null,
       "deps": [],
@@ -3973,7 +3973,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 1,
-          "commits": 11,
+          "commits": 12,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4003,7 +4003,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 1,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6909,8 +6909,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/roadmap",
-      "version": "0.4.45",
-      "commit": "41ee3e9",
+      "version": "0.4.46",
+      "commit": "01cf11a",
       "date": "2026-10-19",
       "catalog": null,
       "deps": [
@@ -6927,7 +6927,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 10,
-          "commits": 150,
+          "commits": 151,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6957,7 +6957,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 2,
-          "commits": 18,
+          "commits": 19,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -8800,7 +8800,7 @@
         {
           "dep": "@dotrino/roadmap",
           "requested": "0.4.30",
-          "published": "0.4.45"
+          "published": "0.4.46"
         },
         {
           "dep": "@dotrino/store",
@@ -9105,7 +9105,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "42512f4",
+      "commit": "ddefe37",
       "date": "2026-10-19",
       "catalog": null,
       "deps": [],
@@ -9119,7 +9119,7 @@
           "exists": true,
           "date": "2026-08-23",
           "days": 57,
-          "commits": 151,
+          "commits": 152,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -9149,7 +9149,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 2,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": [],
           "red": false
