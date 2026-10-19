@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-18T21:07:08-0500",
+  "generatedAt": "2026-10-18T21:40:13-0500",
   "date": "2026-10-18",
   "by": "seyacat",
-  "commit": "a8387ad",
+  "commit": "610a14f",
   "live": true,
   "redDays": 30,
   "auditThreshold": {
@@ -39,7 +39,7 @@
     "frontend": "2.0.0-alpha.4",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.9.1",
-    "@dotrino/identity": "0.121.8",
+    "@dotrino/identity": "0.122.0",
     "@dotrino/install": "0.3.3",
     "@dotrino/lobby": "0.10.4",
     "dotrino-messenger": "0.8.1",
@@ -62,9 +62,9 @@
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.12.4",
     "sudoku": "0.0.3",
-    "@dotrino/support": "0.9.3",
+    "@dotrino/support": "0.10.0",
     "dotrino-telegram-claude-bot": "0.1.6",
-    "dotrino-terminal": "0.13.4",
+    "dotrino-terminal": "0.13.5",
     "@dotrino/terminal-agent": "0.49.1",
     "test": "3.3.0",
     "@dotrino/topbar": "0.16.3",
@@ -88,7 +88,7 @@
     "@dotrino/content": "0.6.9",
     "@dotrino/qr": "0.3.1",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.4.40",
+    "@dotrino/roadmap": "0.4.43",
     "@dotrino/sealers": "0.10.4",
     "@dotrino/sso-client": "0.1.0",
     "@dotrino/telegram-bot": "0.2.3",
@@ -108,7 +108,7 @@
     "@dotrino/accounts-server": "0.1.0",
     "expenses": "3.1.0",
     "@dotrino/ai": "0.1.1",
-    "@dotrino/pay": "0.1.0"
+    "@dotrino/pay": "0.1.1"
   },
   "onNpm": {
     "critters": "0.0.25",
@@ -119,7 +119,7 @@
     "dotrino-messenger": null,
     "@dotrino/opaque": "0.1.0",
     "@dotrino/passmanager": "0.18.5",
-    "@dotrino/identity": "0.121.8",
+    "@dotrino/identity": "0.122.0",
     "cuarenta": null,
     "dotrino-profile-page": null,
     "@dotrino/content-client": "0.3.3",
@@ -144,7 +144,7 @@
     "wallet": "2.60.0",
     "@dotrino/compat": "0.4.1",
     "sudoku": "0.0.3",
-    "@dotrino/roadmap": "0.4.40",
+    "@dotrino/roadmap": "0.4.43",
     "@dotrino/tunnel": "0.1.8",
     "@dotrino/topbar": "0.16.3",
     "@dotrino/qr": "0.3.1",
@@ -180,7 +180,7 @@
     "gridgame": null,
     "frontend": "2.0.0-alpha.4",
     "@dotrino/update": "0.9.2",
-    "@dotrino/support": "0.9.3",
+    "@dotrino/support": "0.10.0",
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
@@ -195,13 +195,13 @@
     "@dotrino/names-server": null,
     "expenses": "3.1.0",
     "@dotrino/accounts-server": null,
-    "@dotrino/pay": "0.1.0",
+    "@dotrino/pay": "0.1.1",
     "@dotrino/ai": "0.1.1"
   },
   "consumers": [
     {
       "pillar": "@dotrino/identity",
-      "version": "0.121.8",
+      "version": "0.122.0",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -648,7 +648,7 @@
     },
     {
       "pillar": "@dotrino/support",
-      "version": "0.9.3",
+      "version": "0.10.0",
       "onNpm": true,
       "repos": [
         "dotrino-critters",
@@ -725,7 +725,7 @@
     },
     {
       "pillar": "@dotrino/pay",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "onNpm": true,
       "repos": [
         "dotrino-accounts"
@@ -773,7 +773,7 @@
     },
     {
       "pillar": "@dotrino/roadmap",
-      "version": "0.4.40",
+      "version": "0.4.43",
       "onNpm": true,
       "repos": [
         "dotrino-vault"
@@ -790,7 +790,7 @@
       "subdomain": null,
       "package": "@dotrino/accounts-server",
       "version": "0.1.0",
-      "commit": "bf1fdca",
+      "commit": "23d1171",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [
@@ -810,8 +810,8 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 6,
-          "sinceStart": true,
+          "commits": 1,
+          "sinceStart": false,
           "unchecked": null,
           "red": false
         },
@@ -840,7 +840,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 2,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -856,7 +856,12 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.121.8"
+          "published": "0.122.0"
+        },
+        {
+          "dep": "@dotrino/pay",
+          "requested": "0.1.0",
+          "published": "0.1.1"
         }
       ],
       "broken": [],
@@ -868,7 +873,7 @@
         "notes": "El repo es un servicio de Node sin UI ni i18n, así que `voseo` y `plain` no tienen nada que mirar. No abrí `test/accounts.test.mjs` ni `docs/DISENO.md`: los tests y `docs/` no cuentan para estas reglas. `src/paypal.js` dice en su cabecera que su transporte es una copia del de `dotrino-names/server/paypal.js`. Es duplicación entre repos, que esta auditoría no mira.",
         "findings": []
       },
-      "reds": 2
+      "reds": 3
     },
     {
       "repo": "dotrino-ad-integration",
@@ -879,7 +884,7 @@
       "subdomain": null,
       "package": "dotrino-ad-integration",
       "version": "0.1.0",
-      "commit": "ab482ee",
+      "commit": "1229b03",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [
@@ -897,7 +902,7 @@
           "exists": true,
           "date": "2026-09-07",
           "days": 41,
-          "commits": 6,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -937,13 +942,8 @@
       "drifts": [
         {
           "dep": "@dotrino/identity",
-          "requested": "0.121.7",
-          "published": "0.121.8"
-        },
-        {
-          "dep": "@dotrino/verifier",
-          "requested": "0.3.0",
-          "published": "0.3.1"
+          "requested": "0.121.8",
+          "published": "0.122.0"
         }
       ],
       "broken": [],
@@ -955,7 +955,7 @@
         "notes": "Abrí solo server/server.js. Es el único archivo de código del repo fuera de test/, y no tiene UI, i18n ni landing, así que 'voseo' y 'plain' no aplican. De test/ solo hice un Grep de mensajes en español (sin resultados) y no abrí ningún archivo. No abrí README ni docs/DISENO.md, que quedan fuera de las reglas. Los mensajes de error y los logs están en inglés. No hay proxy-client ni sendByPubkey, así que 'sealed' no aplica. Los helpers b64url/unb64url y keyFingerprint aparecen una sola vez en el ",
         "findings": []
       },
-      "reds": 3
+      "reds": 2
     },
     {
       "repo": "dotrino-ai",
@@ -1268,7 +1268,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.120.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -1383,7 +1383,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1485,7 +1485,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1599,7 +1599,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -1724,7 +1724,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1996,7 +1996,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.120.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -2116,7 +2116,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2139,6 +2139,11 @@
           "published": "0.12.4"
         },
         {
+          "dep": "@dotrino/support",
+          "requested": "0.9.3",
+          "published": "0.10.0"
+        },
+        {
           "dep": "@dotrino/topbar",
           "requested": "0.16.1",
           "published": "0.16.3"
@@ -2156,7 +2161,7 @@
         "notes": "No tenía Bash, así que auditaba con Glob y Grep y abrí pocos archivos: render3d.js, hash.js, rng.js (por grep) e i18n.js. La copy en es está en tuteo. Los logs y errores están en inglés. connection.js usa proxy-client con requireSealed:true y no hay send ni sendByPubkey. No hay hash32 ni mulberry32 repetidos. No leí los .vue ni los .js de lógica salvo por grep. Las claves de i18n y los campos están en español (campana, coleccion, elegiSlot, borrarWarn), lo que roza la regla english, pero lo dejé",
         "findings": []
       },
-      "reds": 8
+      "reds": 9
     },
     {
       "repo": "dotrino-cuarenta",
@@ -2242,7 +2247,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -2303,7 +2308,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "6025373",
+      "commit": "ef07f55",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [],
@@ -2317,7 +2322,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 0,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2347,7 +2352,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 0,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -2527,7 +2532,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2664,7 +2669,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.120.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2877,7 +2882,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.5",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2986,7 +2991,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3095,7 +3100,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3194,7 +3199,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.119.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3365,7 +3370,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -3566,7 +3571,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/qr",
@@ -3678,7 +3683,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -3701,6 +3706,11 @@
           "published": "0.12.4"
         },
         {
+          "dep": "@dotrino/support",
+          "requested": "0.9.3",
+          "published": "0.10.0"
+        },
+        {
           "dep": "@dotrino/topbar",
           "requested": "0.16.1",
           "published": "0.16.3"
@@ -3718,7 +3728,7 @@
         "notes": "Sin hallazgos. El único uso del transporte es `replyNotice.ts`, que usa `@dotrino/proxy-client` para registrar el aviso del navegador y no manda contenido del usuario por mensaje dirigido. Las solicitudes y el contacto van por `fetch` firmado a `feedback.dotrino.com`, no por `sendByPubkey`. No abrí `App.vue`, `SiteNav.vue`, `SiteFooter.vue`, `InfoModal.vue`, `ReplyNotice.vue`, `AppsCatalog.vue` ni los scripts. Esos los revisé solo con Grep, que no encontró voseo ni argot. Tampoco encontró `new W",
         "findings": []
       },
-      "reds": 6
+      "reds": 7
     },
     {
       "repo": "dotrino-ia",
@@ -3800,7 +3810,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.120.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -3939,8 +3949,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/identity",
-      "version": "0.121.8",
-      "commit": "79798c5",
+      "version": "0.122.0",
+      "commit": "4284532",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [
@@ -3956,7 +3966,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 1,
-          "commits": 14,
+          "commits": 15,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3986,7 +3996,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -4014,7 +4024,7 @@
       "subdomain": "index.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "a8387ad",
+      "commit": "610a14f",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [],
@@ -4028,7 +4038,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 7,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4058,7 +4068,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -4422,7 +4432,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -4698,7 +4708,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4808,7 +4818,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4849,7 +4859,7 @@
       "subdomain": "names.dotrino.com",
       "package": "@dotrino/names",
       "version": "0.1.0",
-      "commit": "00e9600",
+      "commit": "63fa17b",
       "date": "2026-10-18",
       "catalog": {
         "name": "Nombres",
@@ -4871,7 +4881,7 @@
           "exists": true,
           "date": "2026-10-14",
           "days": 4,
-          "commits": 16,
+          "commits": 17,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4881,7 +4891,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 3,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4901,7 +4911,7 @@
           "exists": true,
           "date": "2026-10-16",
           "days": 2,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -4912,7 +4922,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.114.1",
-          "published": "0.121.8"
+          "published": "0.122.0"
         }
       ],
       "broken": [],
@@ -5234,7 +5244,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5250,6 +5260,11 @@
           "dep": "@dotrino/store",
           "requested": "0.12.3",
           "published": "0.12.4"
+        },
+        {
+          "dep": "@dotrino/support",
+          "requested": "0.9.3",
+          "published": "0.10.0"
         },
         {
           "dep": "@dotrino/topbar",
@@ -5269,7 +5284,7 @@
         "notes": "Abrí src/i18n.js e index.html, y recorrí el resto de src/ con Grep (voseo, WebSocket, subtle, sendByPubkey, topbar, console, throw, fmtTime y similares) sin abrir esos archivos enteros. La copy está en tuteo y la UI usa los paquetes del ecosistema (<dotrino-topbar>, <dotrino-share>). Los logs y errores están en inglés. No hay mensajes dirigidos, así que `sealed` no aplica. No vi duplicación interna: fmtTime vive solo en race.js y main.js la importa. No leí sim.js, render.js, track.js ni audio.js",
         "findings": []
       },
-      "reds": 5
+      "reds": 6
     },
     {
       "repo": "dotrino-opaque",
@@ -5435,7 +5450,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -5567,7 +5582,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5607,8 +5622,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/pay",
-      "version": "0.1.0",
-      "commit": "3a4daa6",
+      "version": "0.1.1",
+      "commit": "6c7f18c",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [],
@@ -5622,7 +5637,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": true,
           "unchecked": null,
           "red": false
@@ -5894,7 +5909,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -6014,7 +6029,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/notifications",
@@ -6140,7 +6155,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.120.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6236,7 +6251,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/webrtc",
@@ -6406,7 +6421,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/qr",
@@ -6522,7 +6537,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/qr",
@@ -6708,7 +6723,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6798,7 +6813,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.109.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         }
       ],
       "broken": [],
@@ -6893,7 +6908,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -6909,6 +6924,11 @@
           "dep": "@dotrino/store",
           "requested": "0.12.3",
           "published": "0.12.4"
+        },
+        {
+          "dep": "@dotrino/support",
+          "requested": "0.9.3",
+          "published": "0.10.0"
         },
         {
           "dep": "@dotrino/topbar",
@@ -6928,7 +6948,7 @@
         "notes": "No encontré incumplimientos de las seis reglas. Revisé src/ (i18n, servicios, componentes, subjectIcons) e index.html. No leí style.css, types.d.ts, deploy.yml ni public/, y no pude listar el repo con Bash. Los ejes afinidad/confianza/conoce parecen ser claves del protocolo de @dotrino/reputation, así que no los reporté como nombres en español. El repo no envía mensajes dirigidos, así que la regla 5 no aplica.",
         "findings": []
       },
-      "reds": 7
+      "reds": 8
     },
     {
       "repo": "dotrino-results",
@@ -7010,8 +7030,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/roadmap",
-      "version": "0.4.42",
-      "commit": "e994bb2",
+      "version": "0.4.43",
+      "commit": "4ea8926",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [
@@ -7028,7 +7048,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 9,
-          "commits": 141,
+          "commits": 142,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7058,10 +7078,10 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 1,
-          "commits": 9,
+          "commits": 10,
           "sinceStart": false,
           "unchecked": [],
-          "red": false
+          "red": true
         }
       },
       "missing": [],
@@ -7078,15 +7098,7 @@
         }
       ],
       "broken": [],
-      "npmPending": [
-        {
-          "package": "@dotrino/roadmap",
-          "path": "dotrino-roadmap",
-          "local": "0.4.42",
-          "npm": "0.4.40",
-          "direction": "unpublished"
-        }
-      ],
+      "npmPending": [],
       "live": null,
       "audit": {
         "by": "seyacat",
@@ -7166,7 +7178,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -7496,7 +7508,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -7602,7 +7614,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.121.8"
+          "published": "0.122.0"
         }
       ],
       "broken": [],
@@ -7685,7 +7697,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.119.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         }
       ],
       "broken": [],
@@ -7781,7 +7793,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -7797,6 +7809,11 @@
           "dep": "@dotrino/store",
           "requested": "0.12.3",
           "published": "0.12.4"
+        },
+        {
+          "dep": "@dotrino/support",
+          "requested": "0.9.3",
+          "published": "0.10.0"
         },
         {
           "dep": "@dotrino/topbar",
@@ -7816,7 +7833,7 @@
         "notes": "Reviewed src/main.js, i18n.js, store.js, services/identity.js, services/reputation.js, index.html, manifest.webmanifest, plus greps over src/. The repo uses the @dotrino/* packages, its logs are in English, it has no voseo, and it has no sendByPubkey or send calls. It has no obvious in-repo duplication: dayKeyFrom and todayKey are already unified. I did not open game.js, board.js, levels.js, sudoku.js, dom.js or style.css; grep found nothing relevant in them. The meta description says 'PWA insta",
         "findings": []
       },
-      "reds": 7
+      "reds": 8
     },
     {
       "repo": "dotrino-support",
@@ -7826,9 +7843,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/support",
-      "version": "0.9.3",
-      "commit": "ce1c8ae",
-      "date": "2026-10-15",
+      "version": "0.10.0",
+      "commit": "fce9743",
+      "date": "2026-10-18",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -7839,7 +7856,7 @@
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-15",
+          "date": "2026-10-18",
           "days": 0,
           "commits": 0,
           "sinceStart": false,
@@ -7870,8 +7887,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 0,
-          "commits": 0,
+          "days": 3,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -7991,20 +8008,20 @@
       "internal": false,
       "stack": "vite",
       "platforms": {
-        "pwa": "0.13.4",
+        "pwa": "0.13.5",
         "ios": {
           "version": "0.13.4",
-          "state": "on-par"
+          "state": "behind"
         },
         "android": {
           "version": "0.13.4",
-          "state": "on-par"
+          "state": "behind"
         }
       },
       "subdomain": "terminal.dotrino.com",
       "package": "dotrino-terminal",
-      "version": "0.13.4",
-      "commit": "c202c05",
+      "version": "0.13.5",
+      "commit": "b4894d6",
       "date": "2026-10-18",
       "catalog": {
         "name": "Dotrino Terminal",
@@ -8036,7 +8053,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 3,
-          "commits": 20,
+          "commits": 22,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8046,7 +8063,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 3,
-          "commits": 31,
+          "commits": 33,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8066,7 +8083,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 1,
-          "commits": 5,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -8076,38 +8093,8 @@
       "drifts": [
         {
           "dep": "@dotrino/identity",
-          "requested": "0.121.7",
-          "published": "0.121.8"
-        },
-        {
-          "dep": "@dotrino/notifications",
-          "requested": "0.7.0",
-          "published": "0.7.2"
-        },
-        {
-          "dep": "@dotrino/proxy-client",
-          "requested": "0.36.1",
-          "published": "0.38.4"
-        },
-        {
-          "dep": "@dotrino/remote-agent",
-          "requested": "0.22.0",
-          "published": "0.22.5"
-        },
-        {
-          "dep": "@dotrino/reputation",
-          "requested": "0.12.0",
-          "published": "0.12.4"
-        },
-        {
-          "dep": "@dotrino/store",
-          "requested": "0.12.3",
-          "published": "0.12.4"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.16.3"
+          "requested": "0.121.8",
+          "published": "0.122.0"
         }
       ],
       "broken": [],
@@ -8122,7 +8109,7 @@
         "notes": "Solo abrí 4 archivos y lo demás lo cubrí con Grep, sin leer el resto línea a línea. En voseo no hay coincidencias en src/, agent/, index.html, ios/Terminal, android/app/src/main ni desktop/src/main.rs. Los logs y errores de agent/ están en inglés, y la salida de la CLI es copy bilingüe. Los envíos van por @dotrino/remote-agent (rc.send), no por sendByPubkey, así que no hay hallazgo de sealed. No vi relojes, firmas ni WebSockets caseros, y el único cliente usa @dotrino/proxy-client. En duplicado ",
         "findings": []
       },
-      "reds": 7
+      "reds": 1
     },
     {
       "repo": "dotrino-test",
@@ -8133,7 +8120,7 @@
       "subdomain": "test.dotrino.com",
       "package": "test",
       "version": "0.2.0",
-      "commit": "6981071",
+      "commit": "18ce7a8",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [
@@ -8153,7 +8140,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 3,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8163,7 +8150,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 3,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8183,7 +8170,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -8194,7 +8181,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.114.1",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8362,7 +8349,13 @@
         }
       },
       "missing": [],
-      "drifts": [],
+      "drifts": [
+        {
+          "dep": "@dotrino/support",
+          "requested": "0.9.3",
+          "published": "0.10.0"
+        }
+      ],
       "broken": [],
       "npmPending": [],
       "live": null,
@@ -8372,7 +8365,7 @@
         "notes": "Solo hay un archivo de código real (src/index.js). Los comentarios y el JSDoc usan voseo, pero eso está permitido. No abrí test/*.html ni README.md. No vi duplicación citable en los dos sitios. fmtBytes (línea 264) y rBytes (línea 275) formatean bytes con salidas distintas a propósito, así que no lo reporto.",
         "findings": []
       },
-      "reds": 0
+      "reds": 1
     },
     {
       "repo": "dotrino-trivia",
@@ -8454,7 +8447,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8465,6 +8458,11 @@
           "dep": "@dotrino/store",
           "requested": "0.12.3",
           "published": "0.12.4"
+        },
+        {
+          "dep": "@dotrino/support",
+          "requested": "0.9.3",
+          "published": "0.10.0"
         },
         {
           "dep": "@dotrino/topbar",
@@ -8484,7 +8482,7 @@
         "notes": "Abrí i18n.js, share.js, store.js, main.js, prompt.js e index.html, y usé Grep sobre src/ y public/. No leí editor.js, play.js, state.js, sw.js ni los servicios completos, solo los fragmentos que devolvió Grep. No hay voseo en la copy. Hay un 'acá' en un comentario de editor.js:18, que está permitido. Los logs y errores que vi están en inglés. No vi WebSocket propio ni crypto propia, y tampoco mensajes dirigidos, así que `sealed` no aplica. Almacenamiento, topbar, instalación y soporte usan los p",
         "findings": []
       },
-      "reds": 6
+      "reds": 7
     },
     {
       "repo": "dotrino-trueque",
@@ -8573,7 +8571,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -8849,7 +8847,7 @@
       "subdomain": "vault.dotrino.com",
       "package": "@dotrino/vaultd",
       "version": "0.165.1",
-      "commit": "3ef424f",
+      "commit": "eeb6fd3",
       "date": "2026-10-18",
       "catalog": {
         "name": "Dotrino Vault",
@@ -8879,7 +8877,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 3,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8887,9 +8885,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-15",
-          "days": 3,
-          "commits": 51,
+          "date": "2026-10-18",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8909,7 +8907,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 0,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -8925,7 +8923,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.4",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/passmanager",
@@ -8940,7 +8938,7 @@
         {
           "dep": "@dotrino/roadmap",
           "requested": "0.4.30",
-          "published": "0.4.40"
+          "published": "0.4.43"
         },
         {
           "dep": "@dotrino/store",
@@ -8962,7 +8960,7 @@
       "npmPending": [],
       "live": {
         "http": 200,
-        "unpublished": 1
+        "unpublished": 0
       },
       "audit": {
         "by": "seyacat",
@@ -8970,7 +8968,7 @@
         "notes": "Auditoría hecha solo con Grep y Glob, sin abrir ningún archivo completo, así que reviewed es 0. Cubrí lib/src, src, bin y web/src. Lo que encontré: (1) El voseo aparece solo en comentarios y en el Dockerfile, que no se reportan. (2) Los mensajes en español de bin/*.js y src/ctl.js son la salida que la CLI le muestra a quien la usa, o sea copy, y están en tuteo. Los errores y logs de diagnóstico están en inglés. (3) requireSealed aparece en web/src/Vault.vue:507. lib/src/core/vault.js:2325 explic",
         "findings": []
       },
-      "reds": 9
+      "reds": 8
     },
     {
       "repo": "dotrino-verifier",
@@ -9038,7 +9036,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.109.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         }
       ],
       "broken": [],
@@ -9133,7 +9131,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.121.8"
+          "published": "0.122.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -9251,7 +9249,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "ee83b91",
+      "commit": "29208fe",
       "date": "2026-10-18",
       "catalog": null,
       "deps": [],
@@ -9265,7 +9263,7 @@
           "exists": true,
           "date": "2026-08-23",
           "days": 56,
-          "commits": 149,
+          "commits": 150,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -9295,7 +9293,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 1,
-          "commits": 3,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": [],
           "red": false
