@@ -56,11 +56,11 @@
  * POR QUÉ NO VA DENTRO DE `index.mjs`: ese script es barato y sin red, se corre a
  * cada rato. Esto cuesta dinero y minutos, y se corre cuando toca.
  */
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs'
-import { execFile, execFileSync } from 'node:child_process'
+import { writeFileSync, existsSync, readdirSync } from 'node:fs'
+import { execFile } from 'node:child_process'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { daysBetween, PLUMBING } from './lib/common.mjs'
+import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson } from './lib/common.mjs'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = dirname(HERE)
@@ -85,22 +85,8 @@ const ASKED = argv.filter((a, i) =>
   !a.startsWith('--') && argv[i - 1] !== '--model' && argv[i - 1] !== '--limit' &&
   argv[i - 1] !== '--jobs')
 
-// ─── utilidades ────────────────────────────────────────────────────────────
-
-const sh = (cmd, args, cwd) => {
-  try {
-    return execFileSync(cmd, args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim()
-  } catch { return null }
-}
-const git = (dir, ...args) => sh('git', ['-C', dir, ...args])
-const readJson = (p) => { try { return JSON.parse(readFileSync(p, 'utf8')) } catch { return null } }
-
-/**
- * Lo que NO se audita. `audit.json` se publica en este repo, que es público: los
- * hallazgos de un repo privado —con sus citas de su código— saldrían a la calle
- * dentro del informe. Misma lista que `PRIVATE_REPOS` en `index.mjs`.
- */
-const PRIVATE_REPOS = new Set(['dotrino-project', 'dotrino-docs'])
+// Lo que NO se audita: `PRIVATE_REPOS` (lib/common.mjs). `audit.json` se publica en este
+// repo, que es público, y los hallazgos de un repo privado citarían su código.
 
 /**
  * Los repos del ecosistema: los hermanos de esta carpeta. Mismo criterio que

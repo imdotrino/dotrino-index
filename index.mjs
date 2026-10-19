@@ -29,11 +29,10 @@
  * Esto lo deriva de los repos, así que no se puede quedar viejo: se regenera.
  */
 import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs'
-import { execFileSync } from 'node:child_process'
 import { join, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { webPage } from './index-web.mjs'
-import { daysBetween, PLUMBING } from './lib/common.mjs'
+import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson } from './lib/common.mjs'
 
 /** La carpeta de este repo, y la raíz del ecosistema = la que lo contiene. */
 const HERE = dirname(fileURLToPath(import.meta.url))
@@ -55,12 +54,7 @@ const PRUNE = process.argv.includes('--podar')
  * una copia clonada con otro nombre.
  */
 const REPO_WEB = basename(HERE)
-/**
- * Lo que NO sale en la página pública. `dotrino-project` (este repo) y
- * `dotrino-docs` son privados y, por norma (§11.6), no llevan colaboradores: nadie
- * de fuera puede arreglarlos, y publicar su estado sería enseñar lo que no se ve.
- */
-const PRIVATE_REPOS = new Set(['dotrino-project', 'dotrino-docs'])
+// Lo que NO sale en la página pública: `PRIVATE_REPOS` (lib/common.mjs).
 
 /** Brecha (en días) a partir de la cual algo se marca en rojo por desactualizado. */
 const RED_DAYS = 30
@@ -151,13 +145,6 @@ function brokenUsesOf (dir, unit, deps) {
 
 // ─── utilidades ────────────────────────────────────────────────────────────
 
-const sh = (cmd, args, cwd) => {
-  try {
-    return execFileSync(cmd, args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim()
-  } catch { return null }
-}
-const git = (dir, ...args) => sh('git', ['-C', dir, ...args])
-const readJson = (p) => { try { return JSON.parse(readFileSync(p, 'utf8')) } catch { return null } }
 const read = (p) => { try { return readFileSync(p, 'utf8') } catch { return null } }
 /** Primer camino que exista, de una lista de candidatos relativos al repo. */
 const which = (dir, ...paths) => paths.find(r => existsSync(join(dir, r))) || null
