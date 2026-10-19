@@ -865,6 +865,13 @@ const AUDIT_EXCEPTIONS = {
     reason: 'La moneda de support es Compose nativo porque esto es una app Android, ' +
       'no una página: un Web Component no corre ahí. La landing del mismo repo ' +
       '(`web/`) sí usa <dotrino-topbar> con el <dotrino-support> de siempre.'
+  }, {
+    rule: 'english',
+    file: 'app/build.gradle.kts',
+    reason: 'El paquete `com.seyacat.launcheroculto` (y su `applicationId`) es el ' +
+      'identificador de la app ya instalada: cambiarlo la convierte en otra app, y quien ' +
+      'la tiene pierde sus ajustes y no recibe la actualización. Los identificadores del ' +
+      'código sí están en inglés (`HiddenLauncherTheme`, tag `HiddenLauncher`).'
   }],
   'dotrino-profile': [{
     rule: 'english',
