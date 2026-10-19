@@ -33,6 +33,7 @@ import { execFileSync } from 'node:child_process'
 import { join, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { webPage } from './index-web.mjs'
+import { daysBetween, PLUMBING } from './lib/common.mjs'
 
 /** La carpeta de este repo, y la raíz del ecosistema = la que lo contiene. */
 const HERE = dirname(fileURLToPath(import.meta.url))
@@ -223,18 +224,11 @@ function satisfies (spec, version) {
 }
 
 // ─── frescura: ¿se cuenta lo que se hace? ──────────────────────────────────
-
-/**
- * No mira el CONTENIDO (no juzga si un README está bien escrito): mide la BRECHA
- * entre el último commit del repo y la última vez que se tocó lo que lo describe.
- * Un README que lleva 30 commits sin moverse mientras el código sí se movió está
- * contando otra app.
- */
-const daysBetween = (since, until) => {
-  if (!since || !until) return null
-  const d = Math.round((new Date(`${until}T00:00:00Z`) - new Date(`${since}T00:00:00Z`)) / 86400000)
-  return d > 0 ? d : 0
-}
+//
+// No mira el CONTENIDO (no juzga si un README está bien escrito): mide la BRECHA
+// entre el último commit del repo y la última vez que se tocó lo que lo describe.
+// Un README que lleva 30 commits sin moverse mientras el código sí se movió está
+// contando otra app. (`daysBetween` y `PLUMBING` viven en `lib/common.mjs`.)
 
 /**
  * La "portada" es lo que ve quien llega, y no vive en un solo archivo: el HTML de
@@ -251,22 +245,6 @@ const FRONT_PAGE = [
   'src/data/content.ts', 'src/data/content.js',
   'src/views/Home*', 'src/pages/Home*',
   'src/components/Home*', 'src/components/Hero*', 'src/components/About*', 'src/components/Landing*'
-]
-
-/**
- * Archivos de PLUMBING: cambiarlos no es nada que un README deba contar. Se
- * excluyen al fechar "la ultima vez que el repo se movio", porque si no una tanda
- * mecanica que pasa por 50 repos el mismo dia (fijar una version, anadir un
- * tsconfig, regenerar un lock) marca los 50 README como desactualizados a la vez,
- * y el indicador pasa de medir algo a medir el ultimo `sed` que corri.
- */
-const PLUMBING = [
-  ':(exclude)package.json', ':(exclude)*/package.json',
-  ':(exclude)package-lock.json', ':(exclude)*/package-lock.json',
-  ':(exclude)tsconfig*.json', ':(exclude)*/tsconfig*.json',
-  ':(exclude)*.d.ts',
-  ':(exclude).npmrc', ':(exclude).gitignore', ':(exclude).nojekyll',
-  ':(exclude).github/**'
 ]
 
 /**
@@ -912,6 +890,17 @@ const AUDIT_EXCEPTIONS = {
     reason: 'La moneda de support es Compose nativo porque esto es una app Android, ' +
       'no una página: un Web Component no corre ahí. La landing del mismo repo ' +
       '(`web/`) sí usa <dotrino-topbar> con el <dotrino-support> de siempre.'
+  }],
+  'dotrino-profile': [{
+    rule: 'english',
+    file: 'src/index.js',
+    reason: 'Las claves `confianza`/`afinidad` (los indicadores que se califican) y las ' +
+      'de los campos del perfil `nombres`/`apellidos`/`telefono`/`direccion` se quedan ' +
+      'en español a propósito: no son identificadores locales sino DATOS guardados y ' +
+      'firmados. Los indicadores viajan en las atestaciones de `@dotrino/reputation` y ' +
+      'los campos se guardan en el perfil de cada usuario, y los leen otras apps y el ' +
+      'código nativo. Renombrarlos invalidaría las firmas ya emitidas y dejaría ' +
+      'huérfanos los perfiles guardados (§8.1: la compatibilidad del cable manda).'
   }]
 }
 

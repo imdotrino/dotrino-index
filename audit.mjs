@@ -60,6 +60,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs'
 import { execFile, execFileSync } from 'node:child_process'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { daysBetween, PLUMBING } from './lib/common.mjs'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = dirname(HERE)
@@ -121,27 +122,8 @@ const repos = () => readdirSync(ROOT).filter(d =>
  */
 const THRESHOLD_COMMITS = 10
 const THRESHOLD_DAYS = 30
-
-/**
- * Cambios que no son materia de auditoría: fijar una versión, regenerar un lock,
- * tocar el workflow. Si contaran, una tanda mecánica por 50 repos mandaría 50
- * auditorías a la cola el mismo día — y el criterio pasaría de medir el código a
- * medir el último `sed` que corrí. Misma lista que la de `index.mjs`.
- */
-const PLUMBING = [
-  ':(exclude)package.json', ':(exclude)*/package.json',
-  ':(exclude)package-lock.json', ':(exclude)*/package-lock.json',
-  ':(exclude)tsconfig*.json', ':(exclude)*/tsconfig*.json',
-  ':(exclude)*.d.ts',
-  ':(exclude).npmrc', ':(exclude).gitignore', ':(exclude).nojekyll',
-  ':(exclude).github/**'
-]
-
-const daysBetween = (since, until) => {
-  if (!since || !until) return null
-  const d = Math.round((new Date(`${until}T00:00:00Z`) - new Date(`${since}T00:00:00Z`)) / 86400000)
-  return d > 0 ? d : 0
-}
+// Lo que no cuenta como cambio (`PLUMBING`) es la misma lista que usa `index.mjs`: vive en
+// `lib/common.mjs`, y por eso el umbral de re-auditoría y el informe no pueden discrepar.
 
 /**
  * Las reglas que se auditan HOY, en el orden en que se le explican al auditor. Viaja
@@ -423,10 +405,10 @@ function runClaude (dir, prompt) {
       (err, stdout) => {
         if (err && !stdout) return resolve({ error: err.message })
         const envelope = (() => { try { return JSON.parse(stdout) } catch { return null } })()
-        if (!envelope) return resolve({ error: 'la CLI no devolvió JSON' })
-        if (envelope.is_error) return resolve({ error: String(envelope.result || 'error de la CLI').slice(0, 300) })
+        if (!envelope) return resolve({ error: 'the CLI did not return JSON' })
+        if (envelope.is_error) return resolve({ error: String(envelope.result || 'CLI error').slice(0, 300) })
         const parsed = extractJson(envelope.result)
-        if (!parsed) return resolve({ error: 'el auditor no devolvió JSON', raw: String(envelope.result || '').slice(0, 300) })
+        if (!parsed) return resolve({ error: 'the auditor did not return JSON', raw: String(envelope.result || '').slice(0, 300) })
         resolve({
           findings: (parsed.findings || []).map(normalize).filter(Boolean),
           reviewed: Number(parsed.reviewed) || null,
@@ -455,7 +437,7 @@ const pending = all.filter(r => reasons.get(r)).slice(0, LIMIT)
 
 if (ASKED.length) {
   const unknown = ASKED.filter(r => !all.includes(r))
-  if (unknown.length) console.error(`no están en el disco: ${unknown.join(', ')}`)
+  if (unknown.length) console.error(`not found on disk: ${unknown.join(', ')}`)
 }
 
 /**
