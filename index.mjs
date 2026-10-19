@@ -32,7 +32,7 @@ import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs'
 import { join, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { webPage } from './index-web.mjs'
-import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson } from './lib/common.mjs'
+import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson, compareVersions, versionParts } from './lib/common.mjs'
 
 /** La carpeta de este repo, y la raíz del ecosistema = la que lo contiene. */
 const HERE = dirname(fileURLToPath(import.meta.url))
@@ -71,7 +71,7 @@ const RED_DAYS = 30
  */
 const COMPAT_REGISTRY = join(ROOT, 'dotrino-roadmap', 'manifests', 'dotrino.json')
 const BROKEN = (() => {
-  const m = (() => { try { return JSON.parse(readFileSync(COMPAT_REGISTRY, 'utf8')) } catch { return null } })()
+  const m = readJson(COMPAT_REGISTRY)
   if (!m) return null
   const npmOf = Object.fromEntries(Object.entries(m.products || {}).map(([k, v]) => [k, v.npm]).filter(([, n]) => n))
   const byPackage = {}
@@ -92,11 +92,9 @@ const BROKEN = (() => {
 function inBroken (versions, version) {
   if (Array.isArray(versions)) return versions.includes(version)
   const t = String(versions || '').trim()
-  const num = (v) => String(v).split('.').map((n) => parseInt(n, 10) || 0)
-  const cmp = (a, b) => { for (let i = 0; i < 3; i++) { if (a[i] !== b[i]) return a[i] - b[i] } return 0 }
   const m = /^(<=|<)?\s*(\d+\.\d+\.\d+)$/.exec(t)
   if (!m) return null
-  const c = cmp(num(version), num(m[2]))
+  const c = compareVersions(version, m[2])
   return m[1] === '<=' ? c <= 0 : m[1] === '<' ? c < 0 : c === 0
 }
 
@@ -107,10 +105,10 @@ function inBroken (versions, version) {
  */
 function usedVersion (dir, dep, requested) {
   if (/^\d+\.\d+\.\d+(-[\w.]+)?$/.test(String(requested).trim())) return String(requested).trim()
-  const lock = (() => { try { return JSON.parse(readFileSync(join(dir, 'package-lock.json'), 'utf8')) } catch { return null } })()
+  const lock = readJson(join(dir, 'package-lock.json'))
   const fromLock = lock?.packages?.['node_modules/' + dep]?.version
   if (fromLock) return fromLock
-  try { return JSON.parse(readFileSync(join(dir, 'node_modules', dep, 'package.json'), 'utf8')).version || null } catch { return null }
+  return readJson(join(dir, 'node_modules', dep, 'package.json'))?.version || null
 }
 
 /**
@@ -195,19 +193,16 @@ function frontText (dir) {
  * en rojo, que es lo que se quiere.
  */
 function satisfies (spec, version) {
-  const num = (v) => String(v).split('.').map((n) => parseInt(n, 10) || 0)
-  const cmp = (a, b) => { for (let i = 0; i < 3; i++) { if (a[i] !== b[i]) return a[i] - b[i] } return 0 }
-  const v = num(version)
   const m = /^([\^~>=]*)\s*(\d+\.\d+\.\d+)/.exec(String(spec).trim())
   if (!m) return true                       // rango raro: no acusar en falso
   const [, op, base] = m
-  const b = num(base)
-  if (op === '') return cmp(v, b) === 0
-  if (op === '>=') return cmp(v, b) >= 0
+  if (op === '') return compareVersions(version, base) === 0
+  if (op === '>=') return compareVersions(version, base) >= 0
+  const b = versionParts(base)
   const ceiling = op === '~' || b[0] === 0
     ? (op === '~' ? [b[0], b[1] + 1, 0] : (b[0] === 0 ? [0, b[1] + 1, 0] : [b[0] + 1, 0, 0]))
     : [b[0] + 1, 0, 0]
-  return cmp(v, b) >= 0 && cmp(v, ceiling) < 0
+  return compareVersions(version, base) >= 0 && compareVersions(version, ceiling.join('.')) < 0
 }
 
 // ─── frescura: ¿se cuenta lo que se hace? ──────────────────────────────────
@@ -375,13 +370,6 @@ function versionIos (dir) {
   return yml.match(/(?:MARKETING_VERSION|CFBundleShortVersionString)\s*:\s*["']?([\d.]+)/)?.[1] || null
 }
 
-const cmpVersion = (a, b) => {
-  const x = a.split('.').map(Number)
-  const y = b.split('.').map(Number)
-  for (let i = 0; i < 3; i++) if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) - (y[i] || 0)
-  return 0
-}
-
 function natives (dir, pkg) {
   const declared = pkg?.dotrino?.platforms
   if (!Array.isArray(declared)) return null
@@ -398,7 +386,7 @@ function natives (dir, pkg) {
     // normal, pero se ve).
     const state = !folder ? 'not-started'
       : !version ? 'no-version'
-        : pwa && cmpVersion(version, pwa) < 0 ? 'behind' : 'on-par'
+        : pwa && compareVersions(version, pwa) < 0 ? 'behind' : 'on-par'
     out[k] = { version, state }
   }
   return out
