@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T18:55:42-0500",
+  "generatedAt": "2026-10-18T20:05:08-0500",
   "rules": [
     "voseo",
     "english",
@@ -67,6 +67,25 @@
       "notes": "El repo solo tiene un archivo de código fuente (server/server.js). Fuera de él solo hay tests, README, docs y node_modules, que no se auditan. Bash no estaba disponible, así que listé los archivos solo con Glob. No hay copy de usuario ni cliente de proxy en el repo, así que `voseo`, `plain` y `sealed` no aplican. Las funciones `b64url` y `unb64url` son utilidades de base64 y no reimplementan ningún pilar.",
       "costUsd": 0.113016,
       "durationMs": 13914
+    },
+    "dotrino-ai": {
+      "commit": "386761e",
+      "date": "2026-10-18",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 2,
+      "notes": "Library with no UI or user-facing copy. I opened src/index.js and src/errors.js and checked the file names. I did not open the tests, README, package.json or the workflow. The error messages are in English and the Spanish comments are allowed. The call to a user-chosen AI provider with the user's own key is not a `@dotrino/*` pillar, and there is no `sendByPubkey` or `send`, so the sealed rule does not apply. I found no duplicated logic. The three provider families repeat the Bearer auth header ",
+      "costUsd": 0.0920291,
+      "durationMs": 5554
     },
     "dotrino-android-launcher": {
       "commit": "eef45d4",
