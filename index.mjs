@@ -431,7 +431,11 @@ function analyze (name, catalog) {
   // El informe que este mismo script genera sirve una página, pero no es una app:
   // no tiene usuario, ni identidad, ni nada que instalar. Exigirle PWA, perfil o
   // moneda de support sería contarse a uno mismo nueve incumplimientos inventados.
+  // Lo que no se puede adivinar del disco lo declara la pieza en su package.json
+  // (`"dotrino": { "kind": "other" }`): p. ej. dotrino-explainer, las fuentes de un video,
+  // que tiene package.json pero ni se instala ni se sirve, y sin esto caía en `service`.
   if (name === REPO_WEB) kind = 'report'
+  else if (pkg?.dotrino?.kind in KIND_LABEL) kind = pkg.dotrino.kind
   else if (!pkg && !has(dir, 'index.html', 'web/index.html')) kind = 'other'
   else if (has(dir, 'web/index.html') && !has(dir, 'index.html')) kind = 'landing'
   else if (cname && has(dir, 'index.html')) kind = 'app'
