@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T07:49:26-0500",
+  "generatedAt": "2026-10-22T09:06:30-0500",
   "rules": [
     "voseo",
     "english",
@@ -422,8 +422,8 @@
       "durationMs": 6107
     },
     "dotrino-expenses": {
-      "commit": "1a84474",
-      "date": "2026-10-18",
+      "commit": "71c49a1",
+      "date": "2026-10-22",
       "by": "seyacat",
       "model": "sonnet",
       "rules": [
@@ -434,20 +434,30 @@
         "sealed",
         "duplicate"
       ],
-      "findings": [
-        {
-          "rule": "duplicate",
-          "file": "src/components/SummaryView.vue",
-          "line": 34,
-          "quote": "function readMonth () { try { const v = sessionStorage.getItem('expenses.month') ... return localMonth() }",
-          "why": "readMonth (leer el mes guardado en sessionStorage, validarlo y caer en localMonth) está escrito igual en src/components/MonthView.vue:58, y también se repite el guardado en go() (SummaryView.vue:54 y MonthView.vue:78) con la clave 'expenses.month' escrita dos veces (MonthView.vue:16 la define como MONTH_KEY y SummaryView la pone a mano).",
-          "fix": "Mover readMonth y el guardado del mes a una función compartida (p. ej. en src/lib/dates.js o un módulo del mes seleccionado) e importarla en ambas vistas."
-        }
-      ],
+      "findings": [],
       "reviewed": 9,
-      "notes": "No encontré voseo, argot en la copy, ni uso de sendByPubkey/send/WebSocket/crypto propios. No audité package.json ni los .vue que no aparecían en los grep. i18n.js:118 menciona OLLAMA_ORIGINS en la UI, pero es una pista para configurar el proveedor propio y no lo reporté.",
-      "costUsd": 0.19887099999999996,
-      "durationMs": 24415
+      "notes": "Abrí 4 archivos (mailbox.js, index.html, parse.js, mail.js, dates.js) y el resto lo revisé con Grep. Voseo, logs, errores y nombres de archivo están limpios. El buzón usa @dotrino/remote-agent y @dotrino/proxy-client, sin WebSocket ni cifrado propios. Los parecidos entre parse.js, mail.js y dates.js (relleno de fechas, regex de importes) son superficiales y no los reporté. El hash SHA-256 de mail.js:165 es una huella para no repetir avisos, no firma ni cifrado. No abrí los .vue ni i18n.js comple",
+      "costUsd": 0.2088066,
+      "durationMs": 37888
+    },
+    "dotrino-expenses-agent": {
+      "commit": "3013d18",
+      "date": "2026-10-22",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 8,
+      "notes": "Revisé src/*.js, bin/cli.js, index.js y update.js; no hay web/, i18n ni landing. Los logs y errores están en inglés, y la copy de la CLI está en español con tuteo. El agente usa @dotrino/remote-agent y @dotrino/vault, así que no hay WebSocket, criptografía ni envío por clave pública hechos a mano. El único parecido entre archivos es el fallback 'wss://proxy.dotrino.com' (index.js:19 y update.js:35). Es demasiado corto para reportarlo como duplicado.",
+      "costUsd": 0.1563657,
+      "durationMs": 38588
     },
     "dotrino-facturero": {
       "commit": "6375701",
