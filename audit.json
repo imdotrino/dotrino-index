@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T20:43:49-0500",
+  "generatedAt": "2026-10-22T07:49:26-0500",
   "rules": [
     "voseo",
     "english",
@@ -363,6 +363,25 @@
       "notes": "Abrí 6 archivos y usé Grep en el resto de src/. No miré los CSS. En connection.js el cliente arranca con requireSealed: true y referrals.js manda por @dotrino/notifications. Ni connection.js ni referrals.js llaman a sendByPubkey ni a send, así que no hay mensaje dirigido en claro.",
       "costUsd": 0.1690128,
       "durationMs": 22208
+    },
+    "dotrino-dictation": {
+      "commit": "bb66c8b",
+      "date": "2026-10-22",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 7,
+      "notes": "Revisé los 7 archivos de src/ (element, i18n, audio, local, worker, errors, index). No abrí test/ ni los archivos raíz. El repo no usa proxy-client, así que `sealed` no aplica, y tampoco reimplementa ningún paquete `@dotrino/*`.",
+      "costUsd": 0.1253256,
+      "durationMs": 19358
     },
     "dotrino-eco": {
       "commit": "fdff49b",
