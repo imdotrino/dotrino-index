@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T09:06:30-0500",
+  "generatedAt": "2026-10-22T14:46:04-0500",
   "rules": [
     "voseo",
     "english",
@@ -422,7 +422,7 @@
       "durationMs": 6107
     },
     "dotrino-expenses": {
-      "commit": "71c49a1",
+      "commit": "2d3540a",
       "date": "2026-10-22",
       "by": "seyacat",
       "model": "sonnet",
@@ -436,9 +436,9 @@
       ],
       "findings": [],
       "reviewed": 9,
-      "notes": "Abrí 4 archivos (mailbox.js, index.html, parse.js, mail.js, dates.js) y el resto lo revisé con Grep. Voseo, logs, errores y nombres de archivo están limpios. El buzón usa @dotrino/remote-agent y @dotrino/proxy-client, sin WebSocket ni cifrado propios. Los parecidos entre parse.js, mail.js y dates.js (relleno de fechas, regex de importes) son superficiales y no los reporté. El hash SHA-256 de mail.js:165 es una huella para no repetir avisos, no firma ni cifrado. No abrí los .vue ni i18n.js comple",
-      "costUsd": 0.2088066,
-      "durationMs": 37888
+      "notes": "Abrí 9 archivos y revisé el resto con Grep (i18n.js, index.html y src/ completo). El voseo, el argot en la copy pública y los logs en español dan limpio. Sin hallazgos de pillars: topbar, proxy-client y remote-agent vienen de @dotrino/*. Sin hallazgo de sealed: mailbox.js manda por una sesión cifrada de @dotrino/remote-agent, no por sendByPubkey. mail.js:165 usa crypto.subtle.digest solo para hashear un id de correo, y no lo reporté. Como duplicado dudoso, MonthView.vue:60 arma la fecha del día ",
+      "costUsd": 0.16053889999999998,
+      "durationMs": 36832
     },
     "dotrino-expenses-agent": {
       "commit": "3013d18",
@@ -1085,8 +1085,8 @@
       "durationMs": 34580
     },
     "dotrino-proxy": {
-      "commit": "b92b06e",
-      "date": "2026-10-17",
+      "commit": "e87c41a",
+      "date": "2026-10-22",
       "by": "seyacat",
       "model": "sonnet",
       "rules": [
@@ -1098,14 +1098,14 @@
         "duplicate"
       ],
       "findings": [],
-      "reviewed": 2,
-      "notes": "Solo abrí 2 archivos y el resto lo revisé con Grep sobre los .js de la raíz (el repo no tiene src/ ni web/). No encontré voseo en la copy de usuario: el de los comentarios no cuenta, y la salida de enroll-vault.js ya va en tuteo. No encontré logs ni errores en español: los console.* y los throw van en inglés. El repo es el servidor proxy, así que su WebSocket, su protocolo y sus firmas son su propio trabajo y no entran en pillars ni sealed. No vi duplicación citable con dos referencias: el b64ur",
-      "costUsd": 0.1529312,
-      "durationMs": 24149
+      "reviewed": 3,
+      "notes": "Abrí 3 archivos (enroll-vault.js y los 2 que contienen WebSocket); el resto lo revisé con Grep sobre los .js de la raíz, sin ignorar los tests, porque Bash no estaba disponible. El repo es un servidor Node: no tiene UI, i18n ni landing, así que `plain` y `pillars` no aplican. El voseo aparece solo en comentarios (server.js, mesh.js, nodeIdentity.js, pairingCodes.js), que está permitido. Los logs y errores buscados están en inglés; lo que enroll-vault.js imprime en español es la interfaz de la CL",
+      "costUsd": 0.1571065,
+      "durationMs": 35496
     },
     "dotrino-proxy-client": {
-      "commit": "f15797c",
-      "date": "2026-10-18",
+      "commit": "09d7e9a",
+      "date": "2026-10-22",
       "by": "seyacat",
       "model": "sonnet",
       "rules": [
@@ -1117,10 +1117,10 @@
         "duplicate"
       ],
       "findings": [],
-      "reviewed": null,
-      "notes": "Este repo es el propio pilar @dotrino/proxy-client, una librería sin UI ni copy de usuario, así que las reglas 1, 3, 4 y 5 no aplican. No abrí archivos completos, solo hice búsquedas con Grep y Glob. Los mensajes de error de src/ están en inglés. El español que aparece en src/ está solo en comentarios (client.js:1580, 1625), y los comentarios están permitidos. Para duplicate, los helpers base64 de src/signature.js:265 y src/client.js:1933 hacen cosas distintas (bytes a base64 frente a clave VAPI",
-      "costUsd": 0.11952790000000002,
-      "durationMs": 15337
+      "reviewed": 3,
+      "notes": "Este repo es el propio pilar `@dotrino/proxy-client`, así que su WebSocket, su firma y su cifrado son su trabajo. Solo encontré voseo en dos comentarios del código (`src/client.js:1589` y `src/client.js:1634`), que está permitido. Los errores y logs que vi con Grep están en inglés. No busqué `sendByPubkey` ni `send` con contenido del usuario, y no hay UI ni copy pública. En `duplicate`, la decodificación base64 de `src/client.js:1942` y la de `src/signature.js:271` se parecen, pero la primera es",
+      "costUsd": 0.13513689999999998,
+      "durationMs": 18441
     },
     "dotrino-qr": {
       "commit": "794408d",
