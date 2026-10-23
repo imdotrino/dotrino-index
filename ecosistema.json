@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-23T10:09:00-0500",
+  "generatedAt": "2026-10-23T11:19:49-0500",
   "date": "2026-10-23",
   "by": "seyacat",
-  "commit": "9356511",
+  "commit": "fcd9879",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -51,7 +51,7 @@
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
     "websocket-proxy": "1.9.0",
-    "@dotrino/proxy-client": "0.41.0",
+    "@dotrino/proxy-client": "0.42.1",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
     "@dotrino/remote-agent": "0.23.1",
@@ -88,7 +88,7 @@
     "@dotrino/content": "0.6.9",
     "@dotrino/qr": "0.3.1",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.4.56",
+    "@dotrino/roadmap": "0.4.57",
     "@dotrino/sealers": "0.10.4",
     "@dotrino/sso-client": "0.1.0",
     "@dotrino/telegram-bot": "0.2.3",
@@ -447,7 +447,7 @@
     },
     {
       "pillar": "@dotrino/proxy-client",
-      "version": "0.41.0",
+      "version": "0.42.1",
       "onNpm": true,
       "repos": [
         "dotrino-bots",
@@ -789,7 +789,7 @@
     },
     {
       "pillar": "@dotrino/roadmap",
-      "version": "0.4.56",
+      "version": "0.4.57",
       "onNpm": true,
       "repos": [
         "dotrino-vault"
@@ -1127,7 +1127,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "0cdfd3a",
+      "commit": "2b737ff",
       "date": "2026-10-23",
       "catalog": null,
       "deps": [],
@@ -1141,7 +1141,7 @@
           "exists": true,
           "date": "2026-10-07",
           "days": 16,
-          "commits": 56,
+          "commits": 58,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -1171,7 +1171,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 6,
-          "commits": 19,
+          "commits": 21,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -1564,7 +1564,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1678,7 +1678,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1805,7 +1805,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2064,7 +2064,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.2",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -2186,7 +2186,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2319,7 +2319,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2596,7 +2596,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2807,7 +2807,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -3007,7 +3007,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.40.0",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3637,7 +3637,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3941,7 +3941,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4060,7 +4060,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -4263,8 +4263,8 @@
       "subdomain": "index.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "9356511",
-      "date": "2026-10-22",
+      "commit": "fcd9879",
+      "date": "2026-10-23",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -4276,8 +4276,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-18",
-          "days": 4,
-          "commits": 20,
+          "days": 5,
+          "commits": 21,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4285,7 +4285,7 @@
         "frontPage": {
           "applies": false,
           "exists": true,
-          "date": "2026-10-22",
+          "date": "2026-10-23",
           "days": 0,
           "commits": 0,
           "sinceStart": false,
@@ -4306,8 +4306,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-18",
-          "days": 4,
-          "commits": 14,
+          "days": 5,
+          "commits": 15,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -4581,8 +4581,8 @@
       "subdomain": "messenger.dotrino.com",
       "package": "dotrino-messenger",
       "version": "0.8.1",
-      "commit": "6a6f1fb",
-      "date": "2026-10-22",
+      "commit": "a65586f",
+      "date": "2026-10-23",
       "catalog": {
         "name": "Dotrino Messenger",
         "url": "https://messenger.dotrino.com/",
@@ -4615,8 +4615,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 7,
-          "commits": 11,
+          "days": 8,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4624,9 +4624,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-17",
-          "days": 5,
-          "commits": 6,
+          "date": "2026-10-23",
+          "days": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4635,7 +4635,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-30",
-          "days": 22,
+          "days": 23,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -4645,8 +4645,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 5,
-          "commits": 6,
+          "days": 6,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -4677,7 +4677,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/qr",
@@ -5163,7 +5163,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "423ea66",
+      "commit": "b9b1da9",
       "date": "2026-10-23",
       "catalog": null,
       "deps": [],
@@ -5207,7 +5207,7 @@
           "exists": true,
           "date": "2026-10-16",
           "days": 7,
-          "commits": 19,
+          "commits": 22,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -5364,7 +5364,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         }
       ],
       "broken": [],
@@ -5672,7 +5672,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5796,7 +5796,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/update",
@@ -6120,7 +6120,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -6242,7 +6242,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/qr",
@@ -6355,7 +6355,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.2",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/update",
@@ -6387,8 +6387,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/proxy-client",
-      "version": "0.41.0",
-      "commit": "2cdcb23",
+      "version": "0.42.1",
+      "commit": "680b969",
       "date": "2026-10-23",
       "catalog": null,
       "deps": [
@@ -6405,7 +6405,7 @@
           "exists": true,
           "date": "2026-10-23",
           "days": 0,
-          "commits": 2,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6435,7 +6435,7 @@
           "exists": true,
           "date": "2026-10-22",
           "days": 1,
-          "commits": 4,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6914,7 +6914,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.2",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/vault",
@@ -7213,8 +7213,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/roadmap",
-      "version": "0.4.56",
-      "commit": "d5e211c",
+      "version": "0.4.57",
+      "commit": "659cb28",
       "date": "2026-10-23",
       "catalog": null,
       "deps": [
@@ -7231,7 +7231,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 14,
-          "commits": 166,
+          "commits": 167,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7261,7 +7261,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 6,
-          "commits": 34,
+          "commits": 35,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -7366,7 +7366,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.38.4",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -7703,7 +7703,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -8280,7 +8280,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.38.4",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -8763,7 +8763,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.41.0"
+          "published": "0.42.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -9023,7 +9023,7 @@
       "subdomain": "vault.dotrino.com",
       "package": "@dotrino/vaultd",
       "version": "0.172.0",
-      "commit": "ff25985",
+      "commit": "5b2a9fc",
       "date": "2026-10-23",
       "catalog": {
         "name": "Dotrino Vault",
@@ -9053,7 +9053,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 5,
-          "commits": 35,
+          "commits": 36,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9063,7 +9063,7 @@
           "exists": true,
           "date": "2026-10-19",
           "days": 4,
-          "commits": 18,
+          "commits": 19,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9083,7 +9083,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 5,
-          "commits": 28,
+          "commits": 29,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9107,9 +9107,14 @@
           "published": "0.18.5"
         },
         {
+          "dep": "@dotrino/proxy-client",
+          "requested": "0.41.0",
+          "published": "0.42.1"
+        },
+        {
           "dep": "@dotrino/roadmap",
           "requested": "0.4.30",
-          "published": "0.4.56"
+          "published": "0.4.57"
         },
         {
           "dep": "@dotrino/store",
@@ -9136,7 +9141,7 @@
         "notes": "Auditoría hecha solo con Grep y Glob, sin abrir ningún archivo completo, así que reviewed es 0. Cubrí lib/src, src, bin y web/src. Lo que encontré: (1) El voseo aparece solo en comentarios y en el Dockerfile, que no se reportan. (2) Los mensajes en español de bin/*.js y src/ctl.js son la salida que la CLI le muestra a quien la usa, o sea copy, y están en tuteo. Los errores y logs de diagnóstico están en inglés. (3) requireSealed aparece en web/src/Vault.vue:507. lib/src/core/vault.js:2325 explic",
         "findings": []
       },
-      "reds": 8
+      "reds": 9
     },
     {
       "repo": "dotrino-verifier",
