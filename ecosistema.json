@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-26T11:43:15-0500",
+  "generatedAt": "2026-10-26T18:32:26-0500",
   "date": "2026-10-26",
   "by": "seyacat",
-  "commit": "6f1c8d2",
-  "live": false,
+  "commit": "05b5d7b",
+  "live": true,
   "redDays": 30,
   "auditThreshold": {
     "commits": 10,
@@ -26,25 +26,25 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.1.0",
+    "critters": "0.0.25",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.1.0",
-    "eco": "0.1.0",
-    "favicon-generator": "1.0.0",
+    "diamonds": "0.0.9-q",
+    "eco": "1.1.0-rc-3",
+    "favicon-generator": "0.1.2",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.5",
     "gridgame": "0.0.0",
-    "here": "0.0.0",
-    "frontend": "0.0.0",
+    "here": "0.0.2",
+    "frontend": "2.0.0-alpha.4",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.9.2",
-    "@dotrino/identity": "0.127.1",
+    "@dotrino/identity": "0.128.1",
     "@dotrino/install": "0.3.3",
     "@dotrino/lobby": "0.10.4",
     "dotrino-messenger": "0.8.3",
     "dotrino-mundial": "0.1.0",
-    "myip": "0.1.0",
+    "myip": "1.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.7.2",
     "@dotrino/profile": "0.21.1",
@@ -61,24 +61,24 @@
     "dotrino-shortener": "0.2.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.12.4",
-    "sudoku": "0.1.0",
+    "sudoku": "0.0.3",
     "@dotrino/support": "0.10.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.13.10",
     "@dotrino/terminal-agent": "0.49.3",
-    "test": "0.2.0",
+    "test": "3.3.0",
     "@dotrino/topbar": "0.16.3",
-    "trivia": "0.1.0",
+    "trivia": "1.0.0",
     "trueque": "0.1.0",
-    "@dotrino/tunnel": "0.1.8",
+    "@dotrino/tunnel": "0.3.0",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.176.1",
-    "@dotrino/vault": "0.104.0",
+    "@dotrino/vaultd": "0.177.0",
+    "@dotrino/vault": "0.105.0",
     "@dotrino/verifier": "0.3.1",
-    "wallet": "0.2.0",
+    "wallet": "2.60.0",
     "@dotrino/content-client": "0.3.3",
     "dotrino-social-bot": "0.3.1",
-    "@dotrino/env": "0.104.0",
+    "@dotrino/env": "0.105.0",
     "@dotrino/inspector": "0.2.2",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -88,17 +88,17 @@
     "@dotrino/content": "0.6.10",
     "@dotrino/qr": "0.3.1",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.4.68",
+    "@dotrino/roadmap": "0.4.72",
     "@dotrino/sealers": "0.10.5",
     "@dotrino/sso-client": "0.1.0",
-    "@dotrino/telegram-bot": "0.2.3",
+    "@dotrino/telegram-bot": "0.3.0",
     "@dotrino/webrtc": "0.1.1",
     "facturero": "0.1.0",
-    "padel": "0.4.0",
+    "padel": "0.0.1",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.9.2",
-    "offroad": "0.24.0",
-    "ar": "0.1.0",
+    "offroad": "0.0.9",
+    "ar": "0.0.1",
     "@dotrino/prerender": "0.1.0",
     "@dotrino/names": "0.1.0",
     "@dotrino/names-server": "0.1.0",
@@ -106,7 +106,7 @@
     "@dotrino/iatosvg": "0.1.0",
     "@dotrino/theme": "0.1.0",
     "@dotrino/accounts-server": "0.6.1",
-    "expenses": "0.1.0",
+    "expenses": "3.1.0",
     "@dotrino/ai": "0.1.1",
     "@dotrino/pay": "0.2.0",
     "@dotrino/dictation": "0.1.1",
@@ -122,8 +122,8 @@
     "@dotrino/proxy-client": "0.45.1",
     "dotrino-messenger": null,
     "@dotrino/opaque": "0.1.0",
-    "@dotrino/passmanager": "0.18.5",
-    "@dotrino/identity": "0.127.0",
+    "@dotrino/passmanager": "0.18.6",
+    "@dotrino/identity": "0.128.1",
     "cuarenta": null,
     "dotrino-profile-page": null,
     "@dotrino/content-client": "0.3.3",
@@ -148,13 +148,13 @@
     "wallet": "2.60.0",
     "@dotrino/compat": "0.4.1",
     "sudoku": "0.0.3",
-    "@dotrino/roadmap": "0.4.66",
-    "@dotrino/tunnel": "0.1.8",
+    "@dotrino/roadmap": "0.4.72",
+    "@dotrino/tunnel": "0.3.0",
     "@dotrino/topbar": "0.16.3",
     "@dotrino/qr": "0.3.1",
-    "@dotrino/telegram-bot": "0.2.3",
+    "@dotrino/telegram-bot": "0.3.0",
     "dotrino-terminal": null,
-    "@dotrino/vault": "0.103.1",
+    "@dotrino/vault": "0.105.0",
     "padel": "0.0.1",
     "dotrino-reputation-app": null,
     "simple-websocket-chat": null,
@@ -178,7 +178,7 @@
     "@dotrino/tutorial": "0.2.0",
     "dotrino-qrreader": null,
     "dotrino-passmanager": null,
-    "@dotrino/vaultd": "0.175.1",
+    "@dotrino/vaultd": "0.177.0",
     "eco": "1.1.0-rc-3",
     "@dotrino/lobby": "0.10.4",
     "gridgame": null,
@@ -188,7 +188,7 @@
     "dotrino-signer": null,
     "pronostico-mundialista": null,
     "dotrino-shortener": null,
-    "@dotrino/env": "0.103.1",
+    "@dotrino/env": "0.105.0",
     "offroad": "0.0.9",
     "ar": "0.0.1",
     "@dotrino/prerender": "0.1.0",
@@ -209,7 +209,7 @@
   "consumers": [
     {
       "pillar": "@dotrino/identity",
-      "version": "0.127.1",
+      "version": "0.128.1",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -620,7 +620,7 @@
     },
     {
       "pillar": "@dotrino/vault",
-      "version": "0.104.0",
+      "version": "0.105.0",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -780,7 +780,7 @@
     },
     {
       "pillar": "@dotrino/tunnel",
-      "version": "0.1.8",
+      "version": "0.3.0",
       "onNpm": true,
       "repos": [
         "dotrino-telegram-claude-bot"
@@ -796,7 +796,7 @@
     },
     {
       "pillar": "@dotrino/roadmap",
-      "version": "0.4.68",
+      "version": "0.4.72",
       "onNpm": true,
       "repos": [
         "dotrino-vault"
@@ -874,7 +874,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -884,7 +884,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.93.1",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [
@@ -975,7 +975,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.8",
-          "published": "0.127.1"
+          "published": "0.128.1"
         }
       ],
       "broken": [],
@@ -1130,7 +1130,10 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1297,7 +1300,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/remote-agent",
@@ -1322,7 +1325,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1476,7 +1482,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1496,7 +1502,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1575,7 +1584,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1689,7 +1698,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -1719,7 +1728,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1811,7 +1823,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1851,7 +1863,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2080,7 +2095,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -2100,12 +2115,15 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.90.3",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2197,7 +2215,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2232,7 +2250,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2325,7 +2346,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/lobby",
@@ -2365,7 +2386,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2607,7 +2631,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2637,7 +2661,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2813,7 +2840,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/notifications",
@@ -2853,7 +2880,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2931,7 +2961,10 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3023,7 +3056,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -3043,7 +3076,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3125,7 +3161,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.96.0",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [
@@ -3294,7 +3330,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3314,7 +3350,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3400,7 +3439,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3420,7 +3459,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3496,7 +3538,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.119.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3667,7 +3709,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -3697,7 +3739,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3775,7 +3820,10 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3862,7 +3910,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/qr",
@@ -3887,7 +3935,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3971,7 +4022,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/notifications",
@@ -4006,7 +4057,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4095,7 +4149,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -4125,7 +4179,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4211,7 +4268,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4228,8 +4288,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/identity",
-      "version": "0.127.1",
-      "commit": "8fb6ddd",
+      "version": "0.128.1",
+      "commit": "b2c10fb",
       "date": "2026-10-26",
       "catalog": null,
       "deps": [
@@ -4245,7 +4305,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 9,
-          "commits": 29,
+          "commits": 31,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4275,7 +4335,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 8,
-          "commits": 17,
+          "commits": 19,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -4303,8 +4363,8 @@
       "subdomain": "index.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "6f1c8d2",
-      "date": "2026-10-25",
+      "commit": "05b5d7b",
+      "date": "2026-10-26",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -4316,8 +4376,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-18",
-          "days": 7,
-          "commits": 27,
+          "days": 8,
+          "commits": 28,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4325,7 +4385,7 @@
         "frontPage": {
           "applies": false,
           "exists": true,
-          "date": "2026-10-25",
+          "date": "2026-10-26",
           "days": 0,
           "commits": 0,
           "sinceStart": false,
@@ -4346,8 +4406,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-18",
-          "days": 7,
-          "commits": 21,
+          "days": 8,
+          "commits": 22,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -4357,14 +4417,17 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 1
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "No abrí ningún archivo completo: trabajé con Glob y Grep sobre index.mjs, audit.mjs, index-web.mjs y lib/common.mjs. El voseo que encontré está solo en comentarios del código. Los errores y logs de diagnóstico van en inglés, y los console.log en español son la salida de la CLI. No hay WebSocket, cripto, ni sendByPubkey propios. El argot de index.html (línea 149) está en una página generada por index.mjs --web, y por eso no lo reporto. No encontré duplicación con evidencia de los dos sitios.",
         "findings": []
       },
-      "reds": 1
+      "reds": 2
     },
     {
       "repo": "dotrino-inspector",
@@ -4443,7 +4506,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4521,14 +4587,17 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 1
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "Abrí src/index.js, src/vue.js, web/index.html, web/install.sh y web/install.ps1, más el listado de archivos. No abrí test/smoke.mjs, package.json ni nada de node_modules. Hay voseo en los comentarios de src/vue.js (\"Usá\", \"querés\", \"necesitás\"), pero es un comentario y no se reporta. Los mensajes de install.sh e install.ps1 están en inglés, y la landing (web/index.html) explica el beneficio sin argot fuera de su bloque de instalación. install.sh e install.ps1 son una versión por sistema operativ",
         "findings": []
       },
-      "reds": 1
+      "reds": 2
     },
     {
       "repo": "dotrino-lobby",
@@ -4702,7 +4771,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/notifications",
@@ -4727,7 +4796,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4877,7 +4949,10 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4957,7 +5032,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4977,7 +5052,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5064,7 +5142,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5084,7 +5162,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5165,12 +5246,15 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.114.1",
-          "published": "0.127.1"
+          "published": "0.128.1"
         }
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5484,7 +5568,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -5514,7 +5598,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5687,7 +5774,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/lobby",
@@ -5722,7 +5809,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5750,7 +5840,7 @@
       "subdomain": "pass.dotrino.com",
       "package": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "6283649",
+      "commit": "9a05195",
       "date": "2026-10-26",
       "catalog": {
         "name": "Contraseñas",
@@ -5775,7 +5865,7 @@
           "exists": true,
           "date": "2026-10-13",
           "days": 13,
-          "commits": 59,
+          "commits": 60,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5785,7 +5875,7 @@
           "exists": true,
           "date": "2026-10-26",
           "days": 0,
-          "commits": 1,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5805,7 +5895,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 9,
-          "commits": 12,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -5816,7 +5906,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -5831,12 +5921,15 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.87.0",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6144,7 +6237,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -6174,7 +6267,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6261,7 +6357,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/notifications",
@@ -6306,7 +6402,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6384,7 +6483,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.120.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6399,7 +6498,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.90.3",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [],
@@ -6480,7 +6579,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/webrtc",
@@ -6650,7 +6749,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/qr",
@@ -6675,7 +6774,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6763,7 +6865,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/qr",
@@ -6788,7 +6890,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6866,7 +6971,10 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6943,7 +7051,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -6953,7 +7061,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.90.2",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [],
@@ -7033,7 +7141,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.109.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         }
       ],
       "broken": [],
@@ -7128,7 +7236,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -7158,7 +7266,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7247,8 +7358,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/roadmap",
-      "version": "0.4.68",
-      "commit": "0b2fc62",
+      "version": "0.4.73",
+      "commit": "994e2f3",
       "date": "2026-10-26",
       "catalog": null,
       "deps": [
@@ -7265,7 +7376,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 17,
-          "commits": 179,
+          "commits": 184,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7295,7 +7406,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 9,
-          "commits": 47,
+          "commits": 52,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -7315,7 +7426,15 @@
         }
       ],
       "broken": [],
-      "npmPending": [],
+      "npmPending": [
+        {
+          "package": "@dotrino/roadmap",
+          "path": "dotrino-roadmap",
+          "local": "0.4.73",
+          "npm": "0.4.72",
+          "direction": "unpublished"
+        }
+      ],
       "live": null,
       "audit": {
         "by": "seyacat",
@@ -7323,7 +7442,7 @@
         "notes": "Repo pequeño (librería de registro y CLI de CI, sin UI ni red). No abrí src/manifests.js (generado), manifests/dotrino.json, tests, README ni examples. En bin/dotrino-roadmap.js la expresión Object.keys({...pkg.dependencies,...}) aparece en las líneas 33 y 53, pero es demasiado corta para reportarla como duplicado.",
         "findings": []
       },
-      "reds": 3
+      "reds": 4
     },
     {
       "repo": "dotrino-sealers",
@@ -7395,7 +7514,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -7410,7 +7529,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.93.1",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [
@@ -7570,7 +7689,10 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7741,7 +7863,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -7761,7 +7883,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.87.0",
-          "published": "0.104.0"
+          "published": "0.105.0"
         }
       ],
       "broken": [],
@@ -7847,12 +7969,15 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.127.1"
+          "published": "0.128.1"
         }
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": null
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7927,7 +8052,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.119.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         }
       ],
       "broken": [],
@@ -8023,7 +8148,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8053,7 +8178,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8142,9 +8270,9 @@
       "platforms": null,
       "subdomain": "telegram-bot.dotrino.com",
       "package": "@dotrino/telegram-bot",
-      "version": "0.2.3",
-      "commit": "bc2fd6b",
-      "date": "2026-10-17",
+      "version": "0.3.0",
+      "commit": "d4a99c2",
+      "date": "2026-10-26",
       "catalog": {
         "name": "Telegram Bot",
         "url": "https://telegram-bot.dotrino.com/",
@@ -8164,19 +8292,19 @@
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-09-10",
-          "days": 37,
-          "commits": 5,
+          "date": "2026-10-26",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
-          "red": true
+          "red": false
         },
         "frontPage": {
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 2,
-          "commits": 1,
+          "days": 11,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8185,7 +8313,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-09",
-          "days": 100,
+          "days": 109,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -8195,8 +8323,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 0,
-          "commits": 0,
+          "days": 9,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -8205,11 +8333,6 @@
       "missing": [],
       "drifts": [
         {
-          "dep": "@dotrino/tunnel",
-          "requested": "0.1.5",
-          "published": "0.1.8"
-        },
-        {
           "dep": "@dotrino/update",
           "requested": "0.6.1",
           "published": "0.9.2"
@@ -8217,14 +8340,17 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "Repo pequeño: toda la lógica está en bot.js y la landing en web/index.html. No hay i18n aparte, ni proxy-client ni mensajes dirigidos por pubkey, así que `sealed` y `pillars` no aplican. La landing es de una herramienta de línea de comandos (menciona token, webhook, @dotrino/tunnel), y no lo reporté como `plain` por la excepción de las herramientas de línea de comandos. Los logs y errores de bot.js ya están en inglés.",
         "findings": []
       },
-      "reds": 4
+      "reds": 2
     },
     {
       "repo": "dotrino-terminal",
@@ -8318,7 +8444,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -8342,7 +8468,10 @@
         }
       ],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8421,7 +8550,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.114.1",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8441,7 +8570,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8684,7 +8816,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -8709,7 +8841,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8805,7 +8940,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/profile",
@@ -8835,7 +8970,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8853,8 +8991,8 @@
       "subdomain": "r.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "7cb4d8b",
-      "date": "2026-10-22",
+      "commit": "9efa23d",
+      "date": "2026-10-26",
       "catalog": {
         "name": "Dotrino Tunnel",
         "url": "https://r.dotrino.com/",
@@ -8871,19 +9009,19 @@
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-07-27",
-          "days": 87,
-          "commits": 18,
+          "date": "2026-10-26",
+          "days": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
-          "red": true
+          "red": false
         },
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-17",
-          "days": 5,
-          "commits": 2,
+          "date": "2026-10-26",
+          "days": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8892,7 +9030,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-10-14",
-          "days": 8,
+          "days": 12,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -8902,8 +9040,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 5,
-          "commits": 1,
+          "days": 9,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -8913,14 +9051,17 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "Revisé lib/index.js, lib/shared.js, lib/bin/cli.js, server/index.js, web/src/App.vue, web/src/main.js y web/index.html, más la lista de archivos del repo. El voseo de lib/index.js:14 («pasás») está en un comentario, así que no cuenta. La palabra «autohospedado» de la ayuda de la CLI (lib/bin/cli.js:21) queda sin reportar: la CLI va dirigida a quien programa. No encontré ningún `sendByPubkey` ni `send` dirigido, así que la regla `sealed` no aplica. El preflight de CORS está en lib/index.js:168 y ",
         "findings": []
       },
-      "reds": 1
+      "reds": 0
     },
     {
       "repo": "dotrino-tutorial",
@@ -9141,8 +9282,8 @@
       "platforms": null,
       "subdomain": "vault.dotrino.com",
       "package": "@dotrino/vaultd",
-      "version": "0.176.1",
-      "commit": "85aa105",
+      "version": "0.177.0",
+      "commit": "0bbc3c8",
       "date": "2026-10-26",
       "catalog": {
         "name": "Dotrino Vault",
@@ -9172,7 +9313,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 8,
-          "commits": 60,
+          "commits": 66,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9182,7 +9323,7 @@
           "exists": true,
           "date": "2026-10-19",
           "days": 7,
-          "commits": 43,
+          "commits": 49,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9202,7 +9343,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 8,
-          "commits": 46,
+          "commits": 52,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9217,8 +9358,8 @@
         },
         {
           "dep": "@dotrino/identity",
-          "requested": "0.127.0",
-          "published": "0.127.1"
+          "requested": "0.128.0",
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/proxy-client",
@@ -9228,7 +9369,7 @@
         {
           "dep": "@dotrino/roadmap",
           "requested": "0.4.63",
-          "published": "0.4.68"
+          "published": "0.4.72"
         },
         {
           "dep": "@dotrino/store",
@@ -9247,37 +9388,18 @@
         }
       ],
       "broken": [],
-      "npmPending": [
-        {
-          "package": "@dotrino/vaultd",
-          "path": "dotrino-vault",
-          "local": "0.176.0",
-          "npm": "0.175.1",
-          "direction": "unpublished"
-        },
-        {
-          "package": "@dotrino/env",
-          "path": "dotrino-vault/env-pkg",
-          "local": "0.104.0",
-          "npm": "0.103.1",
-          "direction": "unpublished"
-        },
-        {
-          "package": "@dotrino/vault",
-          "path": "dotrino-vault/lib",
-          "local": "0.104.0",
-          "npm": "0.103.1",
-          "direction": "unpublished"
-        }
-      ],
-      "live": null,
+      "npmPending": [],
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "Auditoría hecha solo con Grep y Glob, sin abrir ningún archivo completo, así que reviewed es 0. Cubrí lib/src, src, bin y web/src. Lo que encontré: (1) El voseo aparece solo en comentarios y en el Dockerfile, que no se reportan. (2) Los mensajes en español de bin/*.js y src/ctl.js son la salida que la CLI le muestra a quien la usa, o sea copy, y están en tuteo. Los errores y logs de diagnóstico están en inglés. (3) requireSealed aparece en web/src/Vault.vue:507. lib/src/core/vault.js:2325 explic",
         "findings": []
       },
-      "reds": 11
+      "reds": 8
     },
     {
       "repo": "dotrino-verifier",
@@ -9345,7 +9467,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.109.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         }
       ],
       "broken": [],
@@ -9440,7 +9562,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.127.1"
+          "published": "0.128.1"
         },
         {
           "dep": "@dotrino/reputation",
@@ -9465,7 +9587,10 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": null,
+      "live": {
+        "http": 200,
+        "unpublished": 0
+      },
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9555,7 +9680,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "bcaf422",
+      "commit": "6704dce",
       "date": "2026-10-26",
       "catalog": null,
       "deps": [],
@@ -9569,7 +9694,7 @@
           "exists": true,
           "date": "2026-08-23",
           "days": 64,
-          "commits": 158,
+          "commits": 159,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -9599,7 +9724,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 9,
-          "commits": 12,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": [],
           "red": true
