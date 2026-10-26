@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-26T18:32:26-0500",
+  "generatedAt": "2026-10-26T18:50:40-0500",
   "date": "2026-10-26",
   "by": "seyacat",
-  "commit": "05b5d7b",
-  "live": true,
+  "commit": "bf7d1a2",
+  "live": false,
   "redDays": 30,
   "auditThreshold": {
     "commits": 10,
@@ -26,17 +26,17 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.0.25",
+    "critters": "0.1.0",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.0.9-q",
-    "eco": "1.1.0-rc-3",
-    "favicon-generator": "0.1.2",
+    "diamonds": "0.1.0",
+    "eco": "0.1.0",
+    "favicon-generator": "1.0.0",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.5",
     "gridgame": "0.0.0",
-    "here": "0.0.2",
-    "frontend": "2.0.0-alpha.4",
+    "here": "0.0.0",
+    "frontend": "0.0.0",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.9.2",
     "@dotrino/identity": "0.128.1",
@@ -44,7 +44,7 @@
     "@dotrino/lobby": "0.10.4",
     "dotrino-messenger": "0.8.3",
     "dotrino-mundial": "0.1.0",
-    "myip": "1.1.0",
+    "myip": "0.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.7.2",
     "@dotrino/profile": "0.21.1",
@@ -61,21 +61,21 @@
     "dotrino-shortener": "0.2.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.12.4",
-    "sudoku": "0.0.3",
+    "sudoku": "0.1.0",
     "@dotrino/support": "0.10.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.13.10",
     "@dotrino/terminal-agent": "0.49.3",
-    "test": "3.3.0",
+    "test": "0.2.0",
     "@dotrino/topbar": "0.16.3",
-    "trivia": "1.0.0",
+    "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.3.0",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.177.0",
+    "@dotrino/vaultd": "0.178.0",
     "@dotrino/vault": "0.105.0",
     "@dotrino/verifier": "0.3.1",
-    "wallet": "2.60.0",
+    "wallet": "0.2.0",
     "@dotrino/content-client": "0.3.3",
     "dotrino-social-bot": "0.3.1",
     "@dotrino/env": "0.105.0",
@@ -88,17 +88,17 @@
     "@dotrino/content": "0.6.10",
     "@dotrino/qr": "0.3.1",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.4.72",
+    "@dotrino/roadmap": "0.4.74",
     "@dotrino/sealers": "0.10.5",
     "@dotrino/sso-client": "0.1.0",
     "@dotrino/telegram-bot": "0.3.0",
     "@dotrino/webrtc": "0.1.1",
     "facturero": "0.1.0",
-    "padel": "0.0.1",
+    "padel": "0.4.0",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.9.2",
-    "offroad": "0.0.9",
-    "ar": "0.0.1",
+    "offroad": "0.24.0",
+    "ar": "0.1.0",
     "@dotrino/prerender": "0.1.0",
     "@dotrino/names": "0.1.0",
     "@dotrino/names-server": "0.1.0",
@@ -106,7 +106,7 @@
     "@dotrino/iatosvg": "0.1.0",
     "@dotrino/theme": "0.1.0",
     "@dotrino/accounts-server": "0.6.1",
-    "expenses": "3.1.0",
+    "expenses": "0.1.0",
     "@dotrino/ai": "0.1.1",
     "@dotrino/pay": "0.2.0",
     "@dotrino/dictation": "0.1.1",
@@ -796,7 +796,7 @@
     },
     {
       "pillar": "@dotrino/roadmap",
-      "version": "0.4.72",
+      "version": "0.4.74",
       "onNpm": true,
       "repos": [
         "dotrino-vault"
@@ -1130,10 +1130,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1325,10 +1322,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1502,10 +1496,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1728,10 +1719,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1863,10 +1851,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2120,10 +2105,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2250,10 +2232,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2386,10 +2365,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2661,10 +2637,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2880,10 +2853,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2961,10 +2931,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3076,10 +3043,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3350,10 +3314,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3459,10 +3420,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3739,10 +3697,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3820,10 +3775,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3935,10 +3887,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4057,10 +4006,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4179,10 +4125,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4268,10 +4211,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4363,7 +4303,7 @@
       "subdomain": "index.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "05b5d7b",
+      "commit": "bf7d1a2",
       "date": "2026-10-26",
       "catalog": null,
       "deps": [],
@@ -4377,7 +4317,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 8,
-          "commits": 28,
+          "commits": 29,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4407,7 +4347,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 8,
-          "commits": 22,
+          "commits": 23,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -4417,17 +4357,14 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 1
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "No abrí ningún archivo completo: trabajé con Glob y Grep sobre index.mjs, audit.mjs, index-web.mjs y lib/common.mjs. El voseo que encontré está solo en comentarios del código. Los errores y logs de diagnóstico van en inglés, y los console.log en español son la salida de la CLI. No hay WebSocket, cripto, ni sendByPubkey propios. El argot de index.html (línea 149) está en una página generada por index.mjs --web, y por eso no lo reporto. No encontré duplicación con evidencia de los dos sitios.",
         "findings": []
       },
-      "reds": 2
+      "reds": 1
     },
     {
       "repo": "dotrino-inspector",
@@ -4506,10 +4443,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4587,17 +4521,14 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 1
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "Abrí src/index.js, src/vue.js, web/index.html, web/install.sh y web/install.ps1, más el listado de archivos. No abrí test/smoke.mjs, package.json ni nada de node_modules. Hay voseo en los comentarios de src/vue.js (\"Usá\", \"querés\", \"necesitás\"), pero es un comentario y no se reporta. Los mensajes de install.sh e install.ps1 están en inglés, y la landing (web/index.html) explica el beneficio sin argot fuera de su bloque de instalación. install.sh e install.ps1 son una versión por sistema operativ",
         "findings": []
       },
-      "reds": 2
+      "reds": 1
     },
     {
       "repo": "dotrino-lobby",
@@ -4796,10 +4727,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4949,10 +4877,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5052,10 +4977,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5162,10 +5084,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5251,10 +5170,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5598,10 +5514,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5809,10 +5722,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5926,10 +5836,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6267,10 +6174,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6402,10 +6306,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6774,10 +6675,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6890,10 +6788,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6971,10 +6866,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7266,10 +7158,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7358,8 +7247,8 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/roadmap",
-      "version": "0.4.73",
-      "commit": "994e2f3",
+      "version": "0.4.74",
+      "commit": "2552ebd",
       "date": "2026-10-26",
       "catalog": null,
       "deps": [
@@ -7376,7 +7265,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 17,
-          "commits": 184,
+          "commits": 185,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7406,7 +7295,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 9,
-          "commits": 52,
+          "commits": 53,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -7689,10 +7578,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7974,10 +7860,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": null
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8178,10 +8061,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8340,10 +8220,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8468,10 +8345,7 @@
         }
       ],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8570,10 +8444,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8841,10 +8712,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8970,10 +8838,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9051,10 +8916,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9282,8 +9144,8 @@
       "platforms": null,
       "subdomain": "vault.dotrino.com",
       "package": "@dotrino/vaultd",
-      "version": "0.177.0",
-      "commit": "0bbc3c8",
+      "version": "0.178.0",
+      "commit": "d6bcefa",
       "date": "2026-10-26",
       "catalog": {
         "name": "Dotrino Vault",
@@ -9313,7 +9175,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 8,
-          "commits": 66,
+          "commits": 67,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9323,7 +9185,7 @@
           "exists": true,
           "date": "2026-10-19",
           "days": 7,
-          "commits": 49,
+          "commits": 50,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9343,7 +9205,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 8,
-          "commits": 52,
+          "commits": 53,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9369,7 +9231,7 @@
         {
           "dep": "@dotrino/roadmap",
           "requested": "0.4.63",
-          "published": "0.4.72"
+          "published": "0.4.74"
         },
         {
           "dep": "@dotrino/store",
@@ -9389,10 +9251,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9587,10 +9446,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9680,7 +9536,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "6704dce",
+      "commit": "ac058dc",
       "date": "2026-10-26",
       "catalog": null,
       "deps": [],
@@ -9694,7 +9550,7 @@
           "exists": true,
           "date": "2026-08-23",
           "days": 64,
-          "commits": 159,
+          "commits": 160,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -9724,7 +9580,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 9,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": [],
           "red": true
