@@ -19,7 +19,7 @@
  * el auditor decide volver a mirar: si discreparan, la página diría «atrasada» de
  * algo que este script considera al día.
  *
- * QUÉ REVISA. Siete reglas que **no se pueden comprobar con un patrón** porque hay
+ * QUÉ REVISA. Ocho reglas que **no se pueden comprobar con un patrón** porque hay
  * que leer y entender lo que dice el código:
  *
  *   voseo      §9    la copy de usuario en español va en tuteo, nunca en voseo
@@ -29,6 +29,8 @@
  *   sealed     §4.1  lo que se manda por mensaje dirigido va sellado, no en claro
  *   encrypted  §4.1  NADA viaja en claro por la red: ni en peticiones firmadas sin sellar, ni
  *                    al lado de un sobre, ni por HTTP/WS sin TLS (dueño, 2026-10-26)
+ *   typed      —     tipado fuerte: JSDoc en lo que se exporta y comprobación estricta
+ *                    (`checkJs` + `strict`, `tsc --noEmit`) (dueño, 2026-10-26)
  *   duplicate  CLAUDE.md  la misma cosa escrita dos veces DENTRO del repo
  *
  * CADA ENTRADA ANOTA CONTRA QUÉ REGLAS SE AUDITÓ (`rules` en `audit.json`). Sin eso,
@@ -120,7 +122,7 @@ const THRESHOLD_DAYS = 30
  * ella sería inventarse un verde. Al añadir una regla acá, todos los repos anteriores
  * pasan a estar pendientes de esa regla, y se van llenando conforme les toque.
  */
-const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'encrypted', 'duplicate']
+const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'encrypted', 'typed', 'duplicate']
 
 /**
  * Por qué le toca a este repo, o `null` si su auditoría sigue valiendo. Devuelve el
@@ -294,7 +296,29 @@ firmada se puede leer entera por el camino.
 Exijo **el campo concreto** que viaja en claro y **dónde se manda** (\`file\`/\`line\` del
 envío, y en \`why\` qué campo y por qué dice algo del usuario).
 
-### 7. \`duplicate\` — la misma cosa escrita dos veces DENTRO de este repo
+### 7. \`typed\` — tipado fuerte: JSDoc y comprobación estricta (dueño, 2026-10-26)
+
+El ecosistema es JavaScript, y el tipado se hace con **JSDoc comprobado por TypeScript**
+(\`checkJs\`), sin pasar a \`.ts\`. Que el archivo diga qué recibe y qué devuelve, y que
+algo lo compruebe, es lo que caza un campo mal escrito antes de que llegue a producción.
+
+- Infracción: el repo tiene JavaScript propio y **nada lo comprueba**: ni un
+  \`tsconfig.json\`/\`jsconfig.json\` con \`checkJs: true\`, ni \`// @ts-check\` en los archivos.
+- Infracción: la comprobación está **floja**: \`strict: false\`, \`noImplicitAny: false\` o
+  \`strictNullChecks: false\`. Un solo hallazgo por repo, en el archivo de configuración.
+- Infracción: **no hay forma de correrla**: falta un script (\`typecheck\`, \`check\`…) que
+  llame a \`tsc --noEmit\` (o equivalente), o existe y ningún workflow de CI lo ejecuta.
+- Infracción: una **función, clase o método exportado** sin JSDoc que diga los tipos de lo
+  que recibe y devuelve (\`@param {…}\`, \`@returns {…}\`). Repórtalo por archivo (el
+  primero que veas y cuántos más hay en \`why\`), no uno por función.
+- Infracción: **escapes sin motivo**: \`// @ts-ignore\`, \`// @ts-nocheck\`, o \`{any}\`/\`{*}\`
+  en un tipo, sin un comentario al lado que diga por qué.
+- **NO es infracción:** código en TypeScript (ya está tipado); lo vendorizado o generado
+  (manda su fuente); los tests y los archivos de configuración (\`vite.config.js\`…); una
+  landing estática sin build con un \`<script>\` pequeño en línea; y \`{any}\` con su porqué
+  escrito (p. ej. lo que llega de un \`JSON.parse\` y se valida a mano justo después).
+
+### 8. \`duplicate\` — la misma cosa escrita dos veces DENTRO de este repo
 
 La regla que ordena el ecosistema es la reutilización: *reusar es la norma*. La regla 4
 vigila que no se rehaga a mano un paquete \`@dotrino/*\`; esta vigila lo otro, que no lo
@@ -353,7 +377,7 @@ ${RULES}
 
 - Mira \`src/\`, \`web/src/\`, \`lib/\`, \`agent/\`, \`server/\`, \`index.html\`, \`web/index.html\`, los archivos de i18n o \`locales/\`, y los NOMBRES de los archivos del repo.
 - Ignora \`node_modules/\`, \`dist/\`, \`build/\`, \`.git/\`, \`package-lock.json\`, \`*.min.js\`, y cualquier archivo generado o de terceros.
-- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\`, \`QR\` para \`pillars\` y \`sealed\`; \`sendByPubkey\`, \`fetch(\`, \`http://\`, \`ws://\`, \`signWithDevice\`, \`data: {\` para \`encrypted\`). Para \`duplicate\`: mira primero el índice de archivos (Glob) buscando nombres que suenen a lo mismo, y luego Grep de los nombres de las funciones exportadas por \`utils\`/\`helpers\`/\`lib\` para ver quién las reescribe en vez de importarlas.
+- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\`, \`QR\` para \`pillars\` y \`sealed\`; \`sendByPubkey\`, \`fetch(\`, \`http://\`, \`ws://\`, \`signWithDevice\`, \`data: {\` para \`encrypted\`; \`tsconfig.json\`/\`jsconfig.json\`, \`package.json\` (\`scripts\`), \`.github/workflows/\`, \`@ts-ignore\`, \`@ts-nocheck\` y \`^export\` para \`typed\`). Para \`duplicate\`: mira primero el índice de archivos (Glob) buscando nombres que suenen a lo mismo, y luego Grep de los nombres de las funciones exportadas por \`utils\`/\`helpers\`/\`lib\` para ver quién las reescribe en vez de importarlas.
 - Un hallazgo por sitio concreto, con su archivo, su línea y la cita exacta. Si el mismo fallo se repite muchas veces en un archivo, repórtalo UNA vez y di cuántas en \`why\`.
 - **Un hallazgo, UNA regla.** Si algo encaja en dos, elige la más específica y no lo repitas: un pilar \`@dotrino/*\` rehecho a mano es \`pillars\`, nunca \`duplicate\`.
 - **Ante la duda, no lo reportes.** Un indicador que grita en falso se aprende a ignorar, y entonces deja de servir. Prefiero que se te escape uno a que inventes tres. Esto vale doble en \`duplicate\`, que es la regla más fácil de llenar de ruido: si no puedes citar **los dos** sitios con su archivo y su línea, no es un hallazgo.
@@ -365,7 +389,7 @@ SOLO un objeto JSON, sin markdown, sin explicación alrededor, con esta forma ex
 {
   "findings": [
     {
-      "rule": "voseo|english|plain|pillars|sealed|encrypted|duplicate",
+      "rule": "voseo|english|plain|pillars|sealed|encrypted|typed|duplicate",
       "file": "src/i18n.ts",
       "line": 42,
       "quote": "la línea o el fragmento exacto, máximo 120 caracteres",

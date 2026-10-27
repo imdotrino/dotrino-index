@@ -784,7 +784,7 @@ const REPOS_IN_WIKI = (() => {
 const AUDIT = readJson(join(HERE, 'audit.json')) || { repos: {} }
 const AUDIT_THRESHOLD = { commits: 10, days: RED_DAYS, ...(AUDIT.thresholds || {}) }
 
-/** Las siete reglas que revisa el auditor, con el nombre con que se leen. */
+/** Las ocho reglas que revisa el auditor, con el nombre con que se leen. */
 const AI_RULE = {
   voseo: 'voseo en la copy de usuario (§9)',
   english: 'código, rutas o logs en español (§8.1)',
@@ -792,6 +792,7 @@ const AI_RULE = {
   pillars: 'pilar reimplementado a mano (regla principal)',
   sealed: 'mensaje dirigido sin sellar (§4.1)',
   encrypted: 'algo viaja en claro por la red (§4.1)',
+  typed: 'tipado flojo o sin comprobar (JSDoc + checkJs strict)',
   duplicate: 'código o funcionalidad duplicada en el repo (regla principal)'
 }
 
@@ -1191,7 +1192,7 @@ function report (pieces, pillars, onNpm) {
 
   // 3c. La auditoría por IA: lo que ningún `grep` puede decir.
   L.push('## Auditoría de convenciones (IA)', '')
-  L.push('> La escribe `audit.mjs` (un `claude -p` de solo lectura por repo). Mira las siete reglas que ' +
+  L.push('> La escribe `audit.mjs` (un `claude -p` de solo lectura por repo). Mira las ocho reglas que ' +
          'no son un patrón: voseo en la copy (§9), código/rutas/logs en español (§8.1), jerga en la copy ' +
          'pública (§9.1), pilares reimplementados a mano, mensajes dirigidos sin sellar (§4.1) y código ' +
          'o funcionalidad duplicada dentro del repo.', '')
