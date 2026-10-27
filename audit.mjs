@@ -19,7 +19,7 @@
  * el auditor decide volver a mirar: si discreparan, la página diría «atrasada» de
  * algo que este script considera al día.
  *
- * QUÉ REVISA. Seis reglas que **no se pueden comprobar con un patrón** porque hay
+ * QUÉ REVISA. Siete reglas que **no se pueden comprobar con un patrón** porque hay
  * que leer y entender lo que dice el código:
  *
  *   voseo      §9    la copy de usuario en español va en tuteo, nunca en voseo
@@ -27,6 +27,8 @@
  *   plain      §9.1  la copy pública se entiende sin saber de tecnología
  *   pillars    CLAUDE.md  nada de reimplementar a mano lo que ya hace un `@dotrino/*`
  *   sealed     §4.1  lo que se manda por mensaje dirigido va sellado, no en claro
+ *   encrypted  §4.1  NADA viaja en claro por la red: ni en peticiones firmadas sin sellar, ni
+ *                    al lado de un sobre, ni por HTTP/WS sin TLS (dueño, 2026-10-26)
  *   duplicate  CLAUDE.md  la misma cosa escrita dos veces DENTRO del repo
  *
  * CADA ENTRADA ANOTA CONTRA QUÉ REGLAS SE AUDITÓ (`rules` en `audit.json`). Sin eso,
@@ -118,7 +120,7 @@ const THRESHOLD_DAYS = 30
  * ella sería inventarse un verde. Al añadir una regla acá, todos los repos anteriores
  * pasan a estar pendientes de esa regla, y se van llenando conforme les toque.
  */
-const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'duplicate']
+const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'encrypted', 'duplicate']
 
 /**
  * Por qué le toca a este repo, o `null` si su auditoría sigue valiendo. Devuelve el
@@ -264,7 +266,35 @@ con \`requireSealed: true\`.
   por diseño; ni un repo que cifra el payload por su cuenta antes de mandarlo (si lo
   ves, dilo en \`notes\`, no como hallazgo).
 
-### 6. \`duplicate\` — la misma cosa escrita dos veces DENTRO de este repo
+### 6. \`encrypted\` — NADA viaja en claro por la red (dueño, 2026-10-26: «NADA NUNCA EN CLARO»)
+
+La regla 5 mira una cosa concreta (\`sendByPubkey\` sin \`sendSealed\` en una app). Esta mira
+**cualquier** comunicación por red del repo —mensajes del proxio, RPC entre aparatos y la
+bóveda, \`fetch\` a un servidor, WebSocket, lo que se publica en un canal— y pregunta si
+algo del usuario o de su configuración viaja legible. Firmar no es cifrar: una petición
+firmada se puede leer entera por el camino.
+
+- Infracción: un mensaje **firmado pero no sellado** que lleva datos del usuario o de su
+  configuración en claro: valores, contraseñas, contenido, **y también los nombres** (de
+  variables, de cajones, de archivos, de contactos) cuando dicen algo de quien los usa.
+  Pasó en la bóveda el 2026-10-26: ver una variable mandaba su nombre y su cajón sin cifrar.
+- Infracción: **datos en claro al lado de un sobre**: el valor va sellado, pero el mismo
+  mensaje lleva en sus campos de fuera lo que el sobre protegía (el nombre, el destino, un
+  resumen).
+- Infracción: **transporte sin TLS** para algo que no es local: \`http://\` o \`ws://\` hacia
+  un dominio o una IP pública en código que corre en producción.
+- Infracción: **secretos en la URL** (query string o ruta) de una petición a un servidor:
+  se quedan en logs y cachés aunque vaya por HTTPS.
+- **NO es infracción:** llaves **públicas**, firmas, nonces, números de pedido, versiones y
+  lo que el enrutado necesita (a qué llave va); los **canales públicos** por diseño
+  (\`publish\`/\`list\`) con contenido que es público; \`localhost\`/\`127.0.0.1\` y los tests;
+  lo que va dentro del \`#fragment\` (no llega al servidor); y un mensaje que la regla 5 ya
+  cubre (\`sendByPubkey\` sin sellar en una app): un hallazgo, una regla.
+
+Exijo **el campo concreto** que viaja en claro y **dónde se manda** (\`file\`/\`line\` del
+envío, y en \`why\` qué campo y por qué dice algo del usuario).
+
+### 7. \`duplicate\` — la misma cosa escrita dos veces DENTRO de este repo
 
 La regla que ordena el ecosistema es la reutilización: *reusar es la norma*. La regla 4
 vigila que no se rehaga a mano un paquete \`@dotrino/*\`; esta vigila lo otro, que no lo
@@ -323,7 +353,7 @@ ${RULES}
 
 - Mira \`src/\`, \`web/src/\`, \`lib/\`, \`agent/\`, \`server/\`, \`index.html\`, \`web/index.html\`, los archivos de i18n o \`locales/\`, y los NOMBRES de los archivos del repo.
 - Ignora \`node_modules/\`, \`dist/\`, \`build/\`, \`.git/\`, \`package-lock.json\`, \`*.min.js\`, y cualquier archivo generado o de terceros.
-- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\`, \`QR\` para \`pillars\` y \`sealed\`). Para \`duplicate\`: mira primero el índice de archivos (Glob) buscando nombres que suenen a lo mismo, y luego Grep de los nombres de las funciones exportadas por \`utils\`/\`helpers\`/\`lib\` para ver quién las reescribe en vez de importarlas.
+- Presupuesto: no abras más de 30 archivos. Si el repo es grande, usa Grep para ir directo a lo probable (los archivos de i18n para \`voseo\` y \`plain\`; \`throw\`, \`console.\` y los nombres de archivo para \`english\`; \`WebSocket\`, \`subtle\`, \`sendByPubkey\`, \`topbar\`, \`QR\` para \`pillars\` y \`sealed\`; \`sendByPubkey\`, \`fetch(\`, \`http://\`, \`ws://\`, \`signWithDevice\`, \`data: {\` para \`encrypted\`). Para \`duplicate\`: mira primero el índice de archivos (Glob) buscando nombres que suenen a lo mismo, y luego Grep de los nombres de las funciones exportadas por \`utils\`/\`helpers\`/\`lib\` para ver quién las reescribe en vez de importarlas.
 - Un hallazgo por sitio concreto, con su archivo, su línea y la cita exacta. Si el mismo fallo se repite muchas veces en un archivo, repórtalo UNA vez y di cuántas en \`why\`.
 - **Un hallazgo, UNA regla.** Si algo encaja en dos, elige la más específica y no lo repitas: un pilar \`@dotrino/*\` rehecho a mano es \`pillars\`, nunca \`duplicate\`.
 - **Ante la duda, no lo reportes.** Un indicador que grita en falso se aprende a ignorar, y entonces deja de servir. Prefiero que se te escape uno a que inventes tres. Esto vale doble en \`duplicate\`, que es la regla más fácil de llenar de ruido: si no puedes citar **los dos** sitios con su archivo y su línea, no es un hallazgo.
@@ -335,7 +365,7 @@ SOLO un objeto JSON, sin markdown, sin explicación alrededor, con esta forma ex
 {
   "findings": [
     {
-      "rule": "voseo|english|plain|pillars|sealed|duplicate",
+      "rule": "voseo|english|plain|pillars|sealed|encrypted|duplicate",
       "file": "src/i18n.ts",
       "line": 42,
       "quote": "la línea o el fragmento exacto, máximo 120 caracteres",

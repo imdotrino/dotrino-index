@@ -50,7 +50,7 @@ que la pasada completa, salvo la fecha de medición de esos dos.
 
 ## La auditoría de convenciones (por IA)
 
-Seis reglas del ecosistema **no se pueden comprobar con un patrón**: hay que leer
+Siete reglas del ecosistema **no se pueden comprobar con un patrón**: hay que leer
 y entender lo que dice el código. Un `grep` de «podés|tenés|vos» acierta la mitad y
 grita en falso dentro del código; y «este identificador está en español» o «esto es
 un cliente del proxio escrito a mano» no es un patrón, es una lectura. Eso lo hace
@@ -64,6 +64,7 @@ sin red, solo Read/Grep/Glob):
 | `plain` (§9.1) | jerga técnica en la copy pública |
 | `pillars` | cualquier paquete `@dotrino/*` reimplementado a mano (cliente WebSocket casero, cripto propia, un QR a mano, topbar o tarjeta de perfil armados a mano) |
 | `sealed` (§4.1) | `sendByPubkey`/`send` sin `sendSealed` + `requireSealed` |
+| `encrypted` (§4.1) | **nada viaja en claro por la red**: datos o nombres del usuario en una petición firmada sin sellar o al lado de un sobre, `http://`/`ws://` hacia fuera, secretos en la URL |
 | `duplicate` | la misma cosa escrita dos veces **dentro del repo**: una función copiada, dos módulos que hacen lo mismo, un ayudante que rehace lo que ya exporta `utils` |
 
 `pillars` y `duplicate` no se pisan: **un hallazgo, una regla.** Si lo repetido es un
