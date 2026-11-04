@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-01T09:28:12-0500",
-  "date": "2026-11-01",
+  "generatedAt": "2026-11-04T12:05:12-0500",
+  "date": "2026-11-04",
   "by": "seyacat",
-  "commit": "9378bc3",
-  "live": true,
+  "commit": "24c5a29",
+  "live": false,
   "redDays": 30,
   "auditThreshold": {
     "commits": 10,
@@ -28,17 +28,17 @@
     "simple-websocket-chat": "0.0.0",
     "simple-websocket-chess": "0.0.0",
     "dotrino-content": "0.3.8",
-    "critters": "0.0.25",
+    "critters": "0.1.0",
     "cuarenta": "0.1.0",
     "cc-deploy-listener": "0.1.0",
-    "diamonds": "0.0.9-q",
-    "eco": "1.1.0-rc-3",
-    "favicon-generator": "0.1.2",
+    "diamonds": "0.1.0",
+    "eco": "0.1.0",
+    "favicon-generator": "1.0.0",
     "@dotrino/feedback": "0.1.0",
     "@dotrino/geo": "0.9.5",
     "gridgame": "0.0.0",
-    "here": "0.0.2",
-    "frontend": "2.0.0-alpha.4",
+    "here": "0.0.0",
+    "frontend": "0.0.0",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.9.2",
     "@dotrino/identity": "0.135.0",
@@ -46,41 +46,41 @@
     "@dotrino/lobby": "0.10.4",
     "dotrino-messenger": "0.8.5",
     "dotrino-mundial": "0.1.0",
-    "myip": "1.1.0",
+    "myip": "0.1.0",
     "@dotrino/nav": "0.3.0",
     "@dotrino/notifications": "0.7.2",
     "@dotrino/profile": "0.21.1",
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
-    "websocket-proxy": "1.9.2",
+    "websocket-proxy": "1.9.3",
     "@dotrino/proxy-client": "0.45.3",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
-    "@dotrino/remote-agent": "0.26.0",
+    "@dotrino/remote-agent": "0.27.0",
     "@dotrino/reputation": "0.12.4",
     "dotrino-reputation-app": "0.1.0",
     "@dotrino/share": "0.3.1",
     "dotrino-shortener": "0.2.0",
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.13.0",
-    "sudoku": "0.0.3",
+    "sudoku": "0.1.0",
     "@dotrino/support": "0.10.0",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.14.0",
-    "@dotrino/terminal-agent": "0.50.0",
-    "test": "3.3.0",
+    "@dotrino/terminal-agent": "0.51.0",
+    "test": "0.2.0",
     "@dotrino/topbar": "0.17.0",
-    "trivia": "1.0.0",
+    "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.3.0",
     "@dotrino/tutorial": "0.2.0",
-    "@dotrino/vaultd": "0.188.0",
-    "@dotrino/vault": "0.114.0",
+    "@dotrino/vaultd": "0.188.1",
+    "@dotrino/vault": "0.115.0",
     "@dotrino/verifier": "0.3.1",
-    "wallet": "2.60.0",
+    "wallet": "0.2.0",
     "@dotrino/content-client": "0.4.0",
     "dotrino-social-bot": "0.3.1",
-    "@dotrino/env": "0.114.0",
+    "@dotrino/env": "0.115.0",
     "@dotrino/inspector": "0.2.2",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
@@ -96,11 +96,11 @@
     "@dotrino/telegram-bot": "0.3.0",
     "@dotrino/webrtc": "0.1.1",
     "facturero": "0.1.0",
-    "padel": "0.0.1",
+    "padel": "0.4.0",
     "@dotrino/opaque": "0.1.0",
     "@dotrino/update": "0.9.2",
-    "offroad": "0.0.9",
-    "ar": "0.0.1",
+    "offroad": "0.24.0",
+    "ar": "0.1.0",
     "@dotrino/prerender": "0.1.0",
     "@dotrino/names": "0.1.0",
     "@dotrino/names-server": "0.1.0",
@@ -108,7 +108,7 @@
     "@dotrino/iatosvg": "0.1.0",
     "@dotrino/theme": "0.1.0",
     "@dotrino/accounts-server": "0.7.2",
-    "expenses": "3.1.0",
+    "expenses": "0.1.0",
     "@dotrino/ai": "0.1.1",
     "@dotrino/pay": "0.2.0",
     "@dotrino/dictation": "0.1.1",
@@ -573,7 +573,7 @@
     },
     {
       "pillar": "@dotrino/remote-agent",
-      "version": "0.26.0",
+      "version": "0.27.0",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -624,7 +624,7 @@
     },
     {
       "pillar": "@dotrino/vault",
-      "version": "0.114.0",
+      "version": "0.115.0",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -829,7 +829,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -882,9 +882,14 @@
           "published": "0.135.0"
         },
         {
+          "dep": "@dotrino/remote-agent",
+          "requested": "0.26.0",
+          "published": "0.27.0"
+        },
+        {
           "dep": "@dotrino/vault",
           "requested": "0.109.0",
-          "published": "0.114.0"
+          "published": "0.115.0"
         }
       ],
       "broken": [],
@@ -896,7 +901,7 @@
         "notes": "El repo es un servicio de Node sin UI ni i18n, así que `voseo` y `plain` no tienen nada que mirar. No abrí `test/accounts.test.mjs` ni `docs/DISENO.md`: los tests y `docs/` no cuentan para estas reglas. `src/paypal.js` dice en su cabecera que su transporte es una copia del de `dotrino-names/server/paypal.js`. Es duplicación entre repos, que esta auditoría no mira.",
         "findings": []
       },
-      "reds": 3
+      "reds": 4
     },
     {
       "repo": "dotrino-ad-integration",
@@ -916,7 +921,7 @@
         "@dotrino/verifier"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -994,7 +999,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1072,7 +1077,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1121,10 +1126,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1147,7 +1149,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1236,7 +1238,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1296,7 +1298,7 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1316,10 +1318,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1342,7 +1341,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1423,7 +1422,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1493,10 +1492,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1525,7 +1521,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1639,7 +1635,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1719,10 +1715,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1764,7 +1757,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1854,10 +1847,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -1880,7 +1870,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -1952,7 +1942,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2036,7 +2026,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2082,20 +2072,28 @@
         }
       },
       "missing": [],
-      "drifts": [],
+      "drifts": [
+        {
+          "dep": "@dotrino/remote-agent",
+          "requested": "0.26.0",
+          "published": "0.27.0"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "requested": "0.114.0",
+          "published": "0.115.0"
+        }
+      ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "Abrí web/index.html, lib/crypto.js, lib/cid.js y bin/cli.js, y revisé el resto de src/ y lib/ solo con Grep, sin abrirlo. Los mensajes en español de bin/cli.js (info y enroll) los traté como copy de la CLI, no como logs, así que no los reporté. La duplicación de isValidCid ya está resuelta: la definición única está en lib/ref.js:26. Lo único que dudé fue lib/crypto.js, con AES-GCM propio por blob (llave en el #fragment). No lo reporté como pillars porque no es la identidad del usuario. No miré s",
         "findings": []
       },
-      "reds": 0
+      "reds": 2
     },
     {
       "repo": "dotrino-critters",
@@ -2130,7 +2128,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2215,10 +2213,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2261,7 +2256,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2351,10 +2346,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2377,7 +2369,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2451,7 +2443,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2546,7 +2538,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2626,10 +2618,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2652,7 +2641,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2745,7 +2734,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2825,7 +2814,7 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2845,10 +2834,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2877,7 +2863,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -2926,10 +2912,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -2971,7 +2954,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3031,7 +3014,7 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3051,10 +3034,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3081,7 +3061,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3131,12 +3111,12 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.96.0",
-          "published": "0.114.0"
+          "published": "0.115.0"
         }
       ],
       "broken": [
@@ -3173,7 +3153,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3255,7 +3235,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3325,10 +3305,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3364,7 +3341,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3434,10 +3411,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3463,7 +3437,7 @@
         "@dotrino/reputation"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3546,7 +3520,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3613,8 +3587,8 @@
       "subdomain": "gridgame.dotrino.com",
       "package": "gridgame",
       "version": "0.0.0",
-      "commit": "c34c0c3",
-      "date": "2026-10-22",
+      "commit": "8bb189f",
+      "date": "2026-11-04",
       "catalog": {
         "name": "GridGame",
         "url": "https://gridgame.dotrino.com/",
@@ -3634,26 +3608,26 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-09-12",
-          "days": 40,
-          "commits": 8,
+          "date": "2026-11-04",
+          "days": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
-          "red": true
+          "red": false
         },
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-15",
-          "days": 7,
-          "commits": 3,
+          "date": "2026-11-04",
+          "days": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3662,7 +3636,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 126,
+          "days": 139,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -3672,59 +3646,25 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 7,
-          "commits": 2,
+          "days": 20,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": [],
           "red": false
         }
       },
       "missing": [],
-      "drifts": [
-        {
-          "dep": "@dotrino/identity",
-          "requested": "0.117.2",
-          "published": "0.135.0"
-        },
-        {
-          "dep": "@dotrino/profile",
-          "requested": "0.20.1",
-          "published": "0.21.1"
-        },
-        {
-          "dep": "@dotrino/proxy-client",
-          "requested": "0.36.1",
-          "published": "0.45.3"
-        },
-        {
-          "dep": "@dotrino/reputation",
-          "requested": "0.12.0",
-          "published": "0.12.4"
-        },
-        {
-          "dep": "@dotrino/store",
-          "requested": "0.12.3",
-          "published": "0.13.0"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.0"
-        }
-      ],
+      "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "No pude ejecutar Bash, así que revisé con Glob, Grep y Read: abrí i18n.js, PeerLink.js, identity.js, App.vue, TilePicker.vue y parser.js, y rastreé el resto con Grep. No hay index.html en la raíz y no leí public/tile_links.html, standard.js ni combat.js. PeerLink ya usa requireSealed y sendSealedTo, así que la regla sealed no se dispara. Los mensajes de error y los logs están en inglés. La copy está en tuteo y en lenguaje llano.",
         "findings": []
       },
-      "reds": 8
+      "reds": 1
     },
     {
       "repo": "dotrino-gymbro",
@@ -3746,7 +3686,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3795,10 +3735,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3835,7 +3772,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -3910,10 +3847,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -3947,7 +3881,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4032,10 +3966,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4074,7 +4005,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4134,7 +4065,7 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4154,10 +4085,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4188,7 +4116,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4243,10 +4171,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4271,7 +4196,7 @@
         "@dotrino/opaque"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4338,12 +4263,12 @@
       "subdomain": "index.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "9378bc3",
+      "commit": "24c5a29",
       "date": "2026-11-01",
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4352,7 +4277,7 @@
           "exists": true,
           "date": "2026-10-26",
           "days": 6,
-          "commits": 6,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4382,7 +4307,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 14,
-          "commits": 32,
+          "commits": 33,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -4392,17 +4317,14 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 1
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "No abrí ningún archivo completo: trabajé con Glob y Grep sobre index.mjs, audit.mjs, index-web.mjs y lib/common.mjs. El voseo que encontré está solo en comentarios del código. Los errores y logs de diagnóstico van en inglés, y los console.log en español son la salida de la CLI. No hay WebSocket, cripto, ni sendByPubkey propios. El argot de index.html (línea 149) está en una página generada por index.mjs --web, y por eso no lo reporto. No encontré duplicación con evidencia de los dos sitios.",
         "findings": []
       },
-      "reds": 2
+      "reds": 1
     },
     {
       "repo": "dotrino-inspector",
@@ -4426,7 +4348,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4481,10 +4403,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4513,7 +4432,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4562,17 +4481,14 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 1
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
         "notes": "Abrí src/index.js, src/vue.js, web/index.html, web/install.sh y web/install.ps1, más el listado de archivos. No abrí test/smoke.mjs, package.json ni nada de node_modules. Hay voseo en los comentarios de src/vue.js (\"Usá\", \"querés\", \"necesitás\"), pero es un comentario y no se reporta. Los mensajes de install.sh e install.ps1 están en inglés, y la landing (web/index.html) explica el beneficio sin argot fuera de su bloque de instalación. install.sh e install.ps1 son una versión por sistema operativ",
         "findings": []
       },
-      "reds": 2
+      "reds": 1
     },
     {
       "repo": "dotrino-lobby",
@@ -4588,7 +4504,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4691,7 +4607,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4776,10 +4692,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4802,7 +4715,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4880,7 +4793,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -4929,10 +4842,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -4962,7 +4872,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5032,10 +4942,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5072,7 +4979,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5142,10 +5049,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5176,7 +5080,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5231,10 +5135,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5257,7 +5158,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5329,7 +5230,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5403,7 +5304,7 @@
         "@dotrino/proxy-client"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5498,7 +5399,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5578,10 +5479,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5604,7 +5502,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5704,7 +5602,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5789,10 +5687,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5836,7 +5731,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5901,15 +5796,12 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.87.0",
-          "published": "0.114.0"
+          "published": "0.115.0"
         }
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -5932,7 +5824,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -5999,7 +5891,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6074,7 +5966,7 @@
         "@dotrino/proxy-client"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6167,7 +6059,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6247,10 +6139,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6287,7 +6176,7 @@
         "@dotrino/tutorial"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6382,10 +6271,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6402,9 +6288,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "websocket-proxy",
-      "version": "1.9.2",
-      "commit": "aceeac9",
-      "date": "2026-10-25",
+      "version": "1.9.3",
+      "commit": "d45af4e",
+      "date": "2026-11-04",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -6413,7 +6299,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6421,8 +6307,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 10,
-          "commits": 15,
+          "days": 20,
+          "commits": 16,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6451,8 +6337,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-22",
-          "days": 3,
-          "commits": 3,
+          "days": 13,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6478,7 +6364,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.90.3",
-          "published": "0.114.0"
+          "published": "0.115.0"
         }
       ],
       "broken": [],
@@ -6509,7 +6395,7 @@
         "@dotrino/webrtc"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6592,7 +6478,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6679,7 +6565,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6754,10 +6640,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6795,7 +6678,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6870,10 +6753,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6902,7 +6782,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -6951,10 +6831,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -6987,7 +6864,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7097,9 +6974,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/remote-agent",
-      "version": "0.26.0",
-      "commit": "5e65640",
-      "date": "2026-10-27",
+      "version": "0.27.0",
+      "commit": "d02eaeb",
+      "date": "2026-11-04",
       "catalog": null,
       "deps": [
         "@dotrino/compat",
@@ -7108,7 +6985,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7116,8 +6993,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-27",
-          "days": 0,
-          "commits": 0,
+          "days": 8,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7146,8 +7023,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-18",
-          "days": 9,
-          "commits": 7,
+          "days": 17,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -7168,7 +7045,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.90.2",
-          "published": "0.114.0"
+          "published": "0.115.0"
         }
       ],
       "broken": [],
@@ -7198,7 +7075,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7293,7 +7170,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7373,10 +7250,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7399,7 +7273,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7466,15 +7340,15 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.87",
-      "commit": "05c40d9",
-      "date": "2026-11-01",
+      "commit": "3e4b7ec",
+      "date": "2026-11-04",
       "catalog": null,
       "deps": [
         "@dotrino/update",
         "@dotrino/compat"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7482,8 +7356,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-09",
-          "days": 23,
-          "commits": 209,
+          "days": 26,
+          "commits": 213,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7512,8 +7386,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 15,
-          "commits": 77,
+          "days": 18,
+          "commits": 81,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -7563,7 +7437,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7623,12 +7497,12 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.93.1",
-          "published": "0.114.0"
+          "published": "0.115.0"
         }
       ],
       "broken": [
@@ -7667,7 +7541,7 @@
         "@dotrino/qr"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7739,7 +7613,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7788,10 +7662,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -7816,7 +7687,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7902,7 +7773,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -7972,7 +7843,7 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/update",
@@ -7982,7 +7853,7 @@
         {
           "dep": "@dotrino/vault",
           "requested": "0.87.0",
-          "published": "0.114.0"
+          "published": "0.115.0"
         }
       ],
       "broken": [],
@@ -8018,7 +7889,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8073,10 +7944,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": null
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8101,7 +7969,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8197,7 +8065,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8277,10 +8145,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8303,7 +8168,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8384,7 +8249,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8439,10 +8304,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8470,8 +8332,8 @@
       "subdomain": "terminal.dotrino.com",
       "package": "dotrino-terminal",
       "version": "0.14.0",
-      "commit": "bf04a79",
-      "date": "2026-11-01",
+      "commit": "d6fb063",
+      "date": "2026-11-04",
       "catalog": {
         "name": "Dotrino Terminal",
         "url": "https://terminal.dotrino.com/",
@@ -8493,16 +8355,16 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-28",
-          "days": 4,
-          "commits": 5,
+          "date": "2026-11-04",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8511,8 +8373,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 17,
-          "commits": 65,
+          "days": 20,
+          "commits": 69,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8521,7 +8383,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-01",
-          "days": 0,
+          "days": 3,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -8531,8 +8393,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 15,
-          "commits": 37,
+          "days": 18,
+          "commits": 41,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -8553,7 +8415,7 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.1",
-          "published": "0.26.0"
+          "published": "0.27.0"
         },
         {
           "dep": "@dotrino/store",
@@ -8568,10 +8430,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8600,7 +8459,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8670,10 +8529,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8696,7 +8552,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8772,7 +8628,7 @@
         "@dotrino/theme"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8866,7 +8722,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -8941,10 +8797,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -8985,7 +8838,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9070,10 +8923,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9102,7 +8952,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9151,10 +9001,7 @@
       "drifts": [],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9177,7 +9024,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9249,7 +9096,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9316,7 +9163,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9382,7 +9229,7 @@
       "platforms": null,
       "subdomain": "vault.dotrino.com",
       "package": "@dotrino/vaultd",
-      "version": "0.188.0",
+      "version": "0.188.1",
       "commit": "0252c74",
       "date": "2026-10-28",
       "catalog": {
@@ -9404,7 +9251,7 @@
         "@dotrino/remote-agent"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9464,15 +9311,12 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.26.0"
+          "published": "0.27.0"
         }
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9497,7 +9341,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9592,7 +9436,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9667,10 +9511,7 @@
       ],
       "broken": [],
       "npmPending": [],
-      "live": {
-        "http": 200,
-        "unpublished": 0
-      },
+      "live": null,
       "audit": {
         "by": "seyacat",
         "model": "sonnet",
@@ -9693,7 +9534,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
@@ -9765,7 +9606,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-01",
+        "date": "2026-11-04",
         "by": "seyacat"
       },
       "freshness": {
