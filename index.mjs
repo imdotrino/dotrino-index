@@ -32,12 +32,13 @@ import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs'
 import { join, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { webPage } from './index-web.mjs'
-import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson, compareVersions, versionParts } from './lib/common.mjs'
+import { KIND_LABEL, STATE_LABEL } from './lib/labels.mjs'
+import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson, compareVersions, versionParts, ecosystemRepos } from './lib/common.mjs'
 
 /** La carpeta de este repo, y la raíz del ecosistema = la que lo contiene. */
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = dirname(HERE)
-const LIVE = process.argv.includes('--vivo')
+const LIVE = process.argv.includes('--vivo') || process.argv.includes('--live')   // --live: alias en inglés
 const WEB = process.argv.includes('--web')
 /**
  * La página se escribe SUMANDO, no reemplazando: quien la genera casi nunca tiene
@@ -46,7 +47,7 @@ const WEB = process.argv.includes('--web')
  * la última vez. `--podar` es la excepción explícita: dice "esta pasada las vio
  * todas", y lo que no aparezca se borra (repo renombrado o que ya no existe).
  */
-const PRUNE = process.argv.includes('--podar')
+const PRUNE = process.argv.includes('--podar') || process.argv.includes('--prune')   // --prune: alias en inglés
 
 /**
  * El repo que publica la vista web (`index.dotrino.com`): ESTE. Se deriva del
@@ -813,6 +814,8 @@ if (Object.keys(AUDIT.repos || {}).length && !Array.isArray(AI_RULES)) {
 
 // ─── qué convenciones aplican a cada tipo (§13; las exenciones son del doc) ──
 
+// Las claves son los `kind` del dato (en inglés, §8.1). Con las claves en español, servicios
+// e informe no recibían ninguna convención: `APPLIES[p.kind]` daba `undefined`.
 const APPLIES = {
   // landing de servicio (§1.2): sin PWA ni perfil, pero con SEO/support/topbar
   landing: ['topbar', 'theme', 'support', 'seo', 'og', 'catalog', 'wiki'],
@@ -820,11 +823,11 @@ const APPLIES = {
   // informe generado (index.dotrino.com): una página estática interna (§7), sin
   // usuario ni instalación. Lo que sí se le exige: decir de qué commit sale, no
   // dejarse indexar y desplegarse sola.
-  informe: ['commitMeta', 'seo', 'deploy'],
+  report: ['commitMeta', 'seo', 'deploy'],
   // §9.2: paquetes y servicios también deben su documentación de uso al wiki
   package: ['wiki'],   // §1.1 exime del .npmrc a los publicables (llevan el token)
-  servicio: ['wiki'],
-  otro: []
+  service: ['wiki'],
+  other: []
 }
 /**
  * Desvíos DECLARADOS: no son incumplimientos, son decisiones tomadas. El informe
@@ -967,21 +970,8 @@ const LABEL = {
   oidc: 'publicar desde CI con confianza (CUMPLIMIENTO §2)'
 }
 
-/**
- * Los códigos van en inglés (§8.1); lo que lee quien mira el informe, en español. Estos
- * dos mapas son la frontera: el dato es `kind: 'package'`, la celda dice «paquete».
- */
-const KIND_LABEL = { app: 'app', package: 'paquete', service: 'servicio', landing: 'landing', report: 'informe', other: 'otro' }
-const STATE_LABEL = { 'not-started': 'sin empezar', 'no-version': 'sin versión', behind: 'atrasada', 'on-par': 'a la par' }
 
 // ─── red (opcional) ────────────────────────────────────────────────────────
-
-/** ¿`a` es más nueva que `b`? Tres números; lo que no lo sea no compite. */
-function newest (a, b) {
-  const n = (v) => String(v).replace(/^v/, '').split(/[.-]/).slice(0, 3).map(x => parseInt(x, 10) || 0)
-  const [x, y, z] = n(a); const [p, q, r] = n(b)
-  return x !== p ? x > p : y !== q ? y > q : z > r
-}
 
 async function npmVersions (names) {
   const out = {}
@@ -1348,14 +1338,7 @@ function report (pieces, pillars, onNpm) {
 // ─── main ──────────────────────────────────────────────────────────────────
 
 const catalog = readCatalog()
-const names = readdirSync(ROOT).filter(d =>
-  (d.startsWith('dotrino-') || d === 'android-launcher') &&
-  (existsSync(join(ROOT, d, '.git')) || existsSync(join(ROOT, d, 'package.json'))) &&
-  // Y que sea SU repo, no el de más arriba. Una carpeta con un `.git` vacío —sobra
-  // del renombrado desde CloserClick— hacía que git resolviera hacia la raíz: la
-  // pieza aparecía en el informe con los cambios sin commitear DEL SUPERREPO
-  // colgados de ella. Un dato inventado es peor que ninguno.
-  (!existsSync(join(ROOT, d, '.git')) || git(join(ROOT, d), 'rev-parse', '--show-toplevel') === join(ROOT, d)))
+const names = ecosystemRepos(ROOT)
 
 const pieces = names.map(n => analyze(n, catalog))
 
@@ -1418,7 +1401,7 @@ if (LIVE) {
   for (const u of units) {
     const npm = inRegistry[u.package]
     if (!npm || !u.local || npm === u.local) continue
-    u.p.npmPending.push({ package: u.package, path: u.path, local: u.local, npm, direction: newest(u.local, npm) ? 'unpublished' : 'repo-behind' })
+    u.p.npmPending.push({ package: u.package, path: u.path, local: u.local, npm, direction: compareVersions(u.local, npm) > 0 ? 'unpublished' : 'repo-behind' })
   }
 
   const withDomain = pieces.filter(p => p.subdomain)
@@ -1447,8 +1430,9 @@ function webData () {
   const npmWeb = { ...(prior.onNpm || {}), ...onNpm }
   const mismatches = (p) => Object.entries(p.dotrinoDeps)
     .filter(([, requested]) => !String(requested).startsWith('file:'))
-    .map(([dep, requested]) => ({ dep, requested, published: webPillars[dep] || 'sin publicar' }))
-    .filter(v => v.published === 'sin publicar' || String(v.requested).replace(/^[\^~]/, '') !== v.published)
+    // `published: null` = el pilar no está publicado; la página lo pinta como «sin publicar».
+    .map(([dep, requested]) => ({ dep, requested, published: webPillars[dep] || null }))
+    .filter(v => !v.published || String(v.requested).replace(/^[\^~]/, '') !== v.published)
 
   const before = new Map((prior.pieces || []).map(p => [p.repo, p]))
   /**

@@ -8,6 +8,8 @@
  * `robots` en `Disallow: /` — es estado del ecosistema, no algo que indexar.
  */
 
+import { KIND_LABEL, STATE_LABEL } from './lib/labels.mjs'
+
 /** El JSON va dentro de un `<script>`: hay que cortarle los dientes al `</script>`. */
 const embedded = (o) => JSON.stringify(o).replace(/</g, '\\u003c')
 
@@ -202,9 +204,9 @@ const freshnessCell = (f) => {
   return '<td class="fecha">' + f.date + '<small class="' + (f.red ? 'rojo' : 'na') + '">' +
     (f.sinceStart ? '≥' : '') + f.days + ' d' + (f.commits ? ' / ' + f.commits + ' c' : '') + '</small></td>'
 }
-/** Los códigos del dato van en inglés (§8.1); lo que se pinta, en español. */
-const KIND = { app: 'app', package: 'paquete', service: 'servicio', landing: 'landing', report: 'informe', other: 'otro' }
-const STATE = { 'not-started': 'sin empezar', 'no-version': 'sin versión', behind: 'atrasada', 'on-par': 'a la par' }
+/** Los códigos del dato van en inglés (§8.1); lo que se pinta, en español (lib/labels.mjs). */
+const KIND = ${embedded(KIND_LABEL)}
+const STATE = ${embedded(STATE_LABEL)}
 /** Etiqueta corta de cada regla del auditor; la larga va en el title del chip. */
 const RULE = { voseo: 'voseo', english: 'en español', plain: 'jerga', pillars: 'pilar a mano', sealed: 'sin sellar', duplicate: 'duplicado' }
 /**
@@ -283,7 +285,7 @@ function render () {
         (u.unit !== p.repo ? ' (' + u.unit.slice(p.repo.length + 1) + ')' : '')), 'mal') +
       chips(npmOf(p).map(u => u.package.replace('@dotrino/', '') + ' ' + u.local + ' ≠ npm ' + u.npm +
         (u.direction === 'unpublished' ? ' (sin publicar)' : ' (repo atrás)')), 'mal') +
-      chips(p.drifts.map(v => v.dep.replace('@dotrino/', '') + ' ' + v.requested + '→' + v.published), 'mal') + '</td>' +
+      chips(p.drifts.map(v => v.dep.replace('@dotrino/', '') + ' ' + v.requested + '→' + (v.published || 'sin publicar')), 'mal') + '</td>' +
       freshnessCell(p.freshness.readme) +
       freshnessCell(p.freshness.frontPage) +
       freshnessCell(p.freshness.catalog) +
@@ -360,7 +362,7 @@ function groups () {
   if (toAudit.length) g.push(['Auditoría pendiente o atrasada', toAudit])
   const byPillar = {}
   for (const p of D.pieces) for (const v of p.drifts) {
-    (byPillar[v.dep + ' → ' + v.published] ||= []).push(p.repo + ' (' + v.requested + ')')
+    (byPillar[v.dep + ' → ' + (v.published || 'sin publicar')] ||= []).push(p.repo + ' (' + v.requested + ')')
   }
   for (const [k, repos] of Object.entries(byPillar).sort((a, b) => b[1].length - a[1].length)) {
     g.push(['Subir ' + k, repos])

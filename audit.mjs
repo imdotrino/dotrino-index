@@ -60,11 +60,11 @@
  * POR QUÉ NO VA DENTRO DE `index.mjs`: ese script es barato y sin red, se corre a
  * cada rato. Esto cuesta dinero y minutos, y se corre cuando toca.
  */
-import { writeFileSync, existsSync, readdirSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { execFile } from 'node:child_process'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson } from './lib/common.mjs'
+import { daysBetween, PLUMBING, PRIVATE_REPOS, sh, git, readJson, ecosystemRepos } from './lib/common.mjs'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = dirname(HERE)
@@ -92,16 +92,8 @@ const ASKED = argv.filter((a, i) =>
 // Lo que NO se audita: `PRIVATE_REPOS` (lib/common.mjs). `audit.json` se publica en este
 // repo, que es público, y los hallazgos de un repo privado citarían su código.
 
-/**
- * Los repos del ecosistema: los hermanos de esta carpeta. Mismo criterio que
- * `index.mjs`, incluida la trampa del `.git` heredado — una carpeta sin repo propio
- * resuelve hacia la raíz y auditaríamos el commit del superrepo, no el suyo.
- */
-const repos = () => readdirSync(ROOT).filter(d =>
-  (d.startsWith('dotrino-') || d === 'android-launcher') &&
-  !PRIVATE_REPOS.has(d) &&
-  (existsSync(join(ROOT, d, '.git')) || existsSync(join(ROOT, d, 'package.json'))) &&
-  (!existsSync(join(ROOT, d, '.git')) || git(join(ROOT, d), 'rev-parse', '--show-toplevel') === join(ROOT, d)))
+/** Los repos del ecosistema que se auditan (`ecosystemRepos`, lib/common.mjs), sin los privados. */
+const repos = () => ecosystemRepos(ROOT).filter(d => !PRIVATE_REPOS.has(d))
 
 // ─── a quién le toca ───────────────────────────────────────────────────────
 
