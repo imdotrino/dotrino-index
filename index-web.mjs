@@ -11,8 +11,14 @@
 import { KIND_LABEL, STATE_LABEL } from './lib/labels.mjs'
 
 /** El JSON va dentro de un `<script>`: hay que cortarle los dientes al `</script>`. */
+/** @param {unknown} o @returns {string} */
 const embedded = (o) => JSON.stringify(o).replace(/</g, '\\u003c')
 
+/**
+ * La página entera, con los datos embebidos.
+ * @param {import('./lib/types.js').WebData} data
+ * @returns {string}
+ */
 export function webPage (data) {
   return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">

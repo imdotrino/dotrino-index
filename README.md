@@ -48,6 +48,10 @@ No hace falta tener el ecosistema entero: lo que no esté se conserva como
 estaba. Comprobado — medir solo dos repos da **exactamente los mismos datos**
 que la pasada completa, salvo la fecha de medición de esos dos.
 
+Generar no instala nada: el generador no tiene dependencias. Para tocar su código,
+`npm ci && npm run type-check` (JSDoc con `checkJs` y `strict`; los tipos de los datos
+están en `lib/types.d.ts`). El CI lo corre en cada push.
+
 ## La auditoría de convenciones (por IA)
 
 Ocho reglas del ecosistema **no se pueden comprobar con un patrón**: hay que leer

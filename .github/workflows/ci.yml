@@ -1,0 +1,23 @@
+# Comprueba los tipos del generador (index.mjs, audit.mjs, index-web.mjs, lib/) en cada
+# push y PR. La página se publica aparte (Pages por rama): esto no despliega nada.
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run type-check

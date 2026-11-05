@@ -1,0 +1,13 @@
+{
+  "name": "dotrino-index",
+  "private": true,
+  "type": "module",
+  "description": "Índice de estado del ecosistema Dotrino (index.dotrino.com).",
+  "scripts": {
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "typescript": "5.9.3"
+  }
+}

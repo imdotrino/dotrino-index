@@ -73,7 +73,9 @@ const OUT = join(HERE, 'audit.json')
 // ─── argumentos ────────────────────────────────────────────────────────────
 
 const argv = process.argv.slice(2)
+/** @param {string} name @returns {boolean} */
 const flag = (name) => argv.includes(name)
+/** @param {string} name @param {string} fallback @returns {string} */
 const option = (name, fallback) => {
   const i = argv.indexOf(name)
   return i >= 0 && argv[i + 1] ? argv[i + 1] : fallback
@@ -120,6 +122,8 @@ const RULE_IDS = ['voseo', 'english', 'plain', 'pillars', 'sealed', 'encrypted',
  * Por qué le toca a este repo, o `null` si su auditoría sigue valiendo. Devuelve el
  * motivo en texto para poder decirlo: «sin auditar» y «17 commits desde la
  * auditoría» son cosas distintas y quien mira la cola quiere saber cuál es.
+ * @param {string} repo
+ * @returns {string|null}
  */
 function reasonToAudit (repo) {
   const dir = join(ROOT, repo)
@@ -132,7 +136,8 @@ function reasonToAudit (repo) {
   // Una entrada anterior a que esto se anotara no puede decirlo, así que vale como no
   // hecha — y una a la que le falte una regla nueva le toca por esa regla.
   if (!Array.isArray(before.rules)) return 'la auditoría no anotó contra qué reglas se hizo'
-  const unchecked = RULE_IDS.filter(r => !before.rules.includes(r))
+  const rules = before.rules
+  const unchecked = RULE_IDS.filter(r => !rules.includes(r))
   if (unchecked.length) return `nunca se le pasó: ${unchecked.join(', ')}`
   const head = git(dir, 'rev-parse', '--short', 'HEAD')
   if (!head || before.commit === head) return null
@@ -143,7 +148,7 @@ function reasonToAudit (repo) {
   if (commits >= THRESHOLD_COMMITS) return `${commits} commits desde la auditoría`
   if (!commits) return null
   const days = daysBetween(before.date, git(dir, 'log', '-1', '--format=%cs') || null)
-  if (days >= THRESHOLD_DAYS) return `${commits} commit(s) y ${days} días de brecha`
+  if (days !== null && days >= THRESHOLD_DAYS) return `${commits} commit(s) y ${days} días de brecha`
   return null
 }
 
@@ -359,6 +364,7 @@ saber que el mismo ayudante está escrito también en otro. La duplicación **en
 es otro problema y no se busca aquí — no lo intentes ni lo supongas.
 `
 
+/** @param {string} repo @returns {string} */
 const PROMPT = (repo) => `Eres el auditor de convenciones del ecosistema Dotrino. Auditas el repo \`${repo}\`, que es el directorio actual. Solo lees: no cambias nada.
 
 Tu trabajo es encontrar incumplimientos de SEIS reglas, y nada más. No opines de estilo, arquitectura, rendimiento ni de nada que no esté en esta lista.
@@ -397,7 +403,11 @@ Si el repo cumple, devuelve \`"findings": []\`. \`reviewed\` es cuántos archivo
 
 // ─── ejecutar el auditor ───────────────────────────────────────────────────
 
-/** El JSON que devuelve el modelo, aunque venga envuelto en una valla de markdown. */
+/**
+ * El JSON que devuelve el modelo, aunque venga envuelto en una valla de markdown.
+ * @param {unknown} text
+ * @returns {{ findings?: unknown[], reviewed?: unknown, notes?: unknown } | null}
+ */
 function extractJson (text) {
   const unfenced = String(text || '').replace(/^\s*```(?:json)?/i, '').replace(/```\s*$/, '')
   const a = unfenced.indexOf('{')
@@ -408,7 +418,11 @@ function extractJson (text) {
 
 const RULE_KEYS = new Set(RULE_IDS)
 
-/** Un hallazgo con la forma esperada, o nada. El modelo a veces se inventa un campo. */
+/**
+ * Un hallazgo con la forma esperada, o nada. El modelo a veces se inventa un campo.
+ * @param {any} f  lo que escribió el modelo: sin forma garantizada, por eso se normaliza
+ * @returns {import('./lib/types.js').AuditFinding | null}
+ */
 function normalize (f) {
   if (!f || !RULE_KEYS.has(f.rule)) return null
   return {
@@ -421,6 +435,18 @@ function normalize (f) {
   }
 }
 
+/**
+ * @typedef {{ error: string, raw?: string }
+ *   | { findings: import('./lib/types.js').AuditFinding[], reviewed: number|null,
+ *       notes: string, costUsd: number|null, durationMs: number|null }} AuditRun
+ */
+
+/**
+ * Corre el auditor (`claude -p`, solo lectura) sobre un repo.
+ * @param {string} dir
+ * @param {string} prompt
+ * @returns {Promise<AuditRun>}
+ */
 function runClaude (dir, prompt) {
   return new Promise((resolve) => {
     const args = [
@@ -442,7 +468,7 @@ function runClaude (dir, prompt) {
         const parsed = extractJson(envelope.result)
         if (!parsed) return resolve({ error: 'the auditor did not return JSON', raw: String(envelope.result || '').slice(0, 300) })
         resolve({
-          findings: (parsed.findings || []).map(normalize).filter(Boolean),
+          findings: (parsed.findings || []).map(normalize).filter(/** @returns {f is import('./lib/types.js').AuditFinding} */ (f) => Boolean(f)),
           reviewed: Number(parsed.reviewed) || null,
           notes: String(parsed.notes || '').slice(0, 500),
           costUsd: envelope.total_cost_usd ?? null,
@@ -454,7 +480,8 @@ function runClaude (dir, prompt) {
 
 // ─── main ──────────────────────────────────────────────────────────────────
 
-const previous = readJson(OUT) || { repos: {} }
+/** @type {import('./lib/types.js').AuditFile} */
+const previous = /** @type {import('./lib/types.js').AuditFile|null} */ (readJson(OUT)) || { repos: {} }
 const today = sh('date', ['+%Y-%m-%d'])
 const who = sh('git', ['config', 'user.name']) || 'alguien'
 
@@ -478,7 +505,7 @@ if (ASKED.length) {
  * enterarse de eso por la factura es tarde.
  */
 const averageCost = (() => {
-  const xs = Object.values(previous.repos || {}).map(r => r.costUsd).filter(n => typeof n === 'number' && n > 0)
+  const xs = Object.values(previous.repos || {}).map(r => r.costUsd).filter(/** @returns {n is number} */ (n) => typeof n === 'number' && n > 0)
   return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null
 })()
 const budget = pending.length && averageCost
@@ -496,17 +523,19 @@ if (DRY || !pending.length) {
 console.log(`auditando ${pending.length} de ${all.length} repos con ${MODEL}, ${JOBS} a la vez…${budget}`)
 for (const r of pending) console.log(`  · ${r} — ${reasons.get(r)}`)
 
+/** @type {Record<string, import('./lib/types.js').AuditEntry & { findings: import('./lib/types.js').AuditFinding[] }>} */
 const results = {}
 let done = 0
 const queue = [...pending]
 await Promise.all(Array.from({ length: Math.min(JOBS, queue.length) }, async () => {
   while (queue.length) {
     const repo = queue.shift()
+    if (repo === undefined) break   // otro trabajador se llevó el último
     const dir = join(ROOT, repo)
     const commit = git(dir, 'rev-parse', '--short', 'HEAD')
     const out = await runClaude(dir, PROMPT(repo))
     done++
-    if (out.error) {
+    if ('error' in out) {
       // Un fallo NO se escribe como "auditado sin hallazgos": eso sería mentir en
       // verde. Se conserva lo que había (o nada) y se dice en voz alta.
       console.error(`  ✗ ${repo} — ${out.error}`)
