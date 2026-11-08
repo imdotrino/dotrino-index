@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-08T10:30:08-0500",
+  "generatedAt": "2026-11-08T11:03:35-0500",
   "date": "2026-11-08",
   "by": "seyacat",
-  "commit": "af53a35",
+  "commit": "0935666",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -120,7 +120,7 @@
     "dotrino-gymbro": "1.0.0",
     "dotrino-index": null,
     "dotrino-messenger-extension": "0.0.0",
-    "notes": "0.1.0"
+    "notes": "0.2.0"
   },
   "onNpm": {
     "critters": "0.0.25",
@@ -5238,8 +5238,8 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "af53a35",
-      "date": "2026-11-05",
+      "commit": "0935666",
+      "date": "2026-11-08",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -5251,8 +5251,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-05",
-          "days": 0,
-          "commits": 0,
+          "days": 3,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5260,9 +5260,9 @@
         "frontPage": {
           "applies": false,
           "exists": true,
-          "date": "2026-11-04",
-          "days": 1,
-          "commits": 1,
+          "date": "2026-11-08",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5281,8 +5281,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 1,
-          "commits": 3,
+          "days": 4,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6636,12 +6636,12 @@
       "internal": false,
       "stack": "vite+vue",
       "platforms": {
-        "pwa": "0.1.0"
+        "pwa": "0.2.0"
       },
       "subdomain": "notes.dotrino.com",
       "package": "notes",
-      "version": "0.1.0",
-      "commit": "1f30102",
+      "version": "0.2.0",
+      "commit": "5504581",
       "date": "2026-11-08",
       "catalog": {
         "name": "Notes",
@@ -6672,7 +6672,7 @@
           "date": "2026-11-08",
           "days": 0,
           "commits": 0,
-          "sinceStart": true,
+          "sinceStart": false,
           "unchecked": null,
           "red": false
         },
@@ -6682,7 +6682,7 @@
           "date": "2026-11-08",
           "days": 0,
           "commits": 0,
-          "sinceStart": true,
+          "sinceStart": false,
           "unchecked": null,
           "red": false
         },
@@ -6701,7 +6701,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -12375,7 +12375,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "8d72085",
+      "commit": "1653061",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [],
@@ -12389,7 +12389,7 @@
           "exists": true,
           "date": "2026-08-23",
           "days": 77,
-          "commits": 167,
+          "commits": 168,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -12419,7 +12419,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": [],
           "red": false
