@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-08T11:03:35-0500",
+  "generatedAt": "2026-11-08T12:00:27-0500",
   "date": "2026-11-08",
   "by": "seyacat",
-  "commit": "0935666",
+  "commit": "99ed1d1",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -64,12 +64,12 @@
     "dotrino-signer": "0.1.0",
     "@dotrino/store": "0.14.3",
     "sudoku": "0.1.0",
-    "@dotrino/support": "0.10.1",
+    "@dotrino/support": "0.10.2",
     "dotrino-telegram-claude-bot": "0.1.6",
     "dotrino-terminal": "0.15.1",
     "@dotrino/terminal-agent": "0.54.1",
     "test": "0.2.0",
-    "@dotrino/topbar": "0.17.2",
+    "@dotrino/topbar": "0.17.3",
     "trivia": "0.1.0",
     "trueque": "0.1.0",
     "@dotrino/tunnel": "0.5.3",
@@ -120,7 +120,7 @@
     "dotrino-gymbro": "1.0.0",
     "dotrino-index": null,
     "dotrino-messenger-extension": "0.0.0",
-    "notes": "0.2.0"
+    "notes": "0.2.1"
   },
   "onNpm": {
     "critters": "0.0.25",
@@ -400,7 +400,7 @@
     },
     {
       "pillar": "@dotrino/topbar",
-      "version": "0.17.2",
+      "version": "0.17.3",
       "onNpm": true,
       "repos": [
         "dotrino-ar",
@@ -689,7 +689,7 @@
     },
     {
       "pillar": "@dotrino/support",
-      "version": "0.10.1",
+      "version": "0.10.2",
       "onNpm": true,
       "repos": [
         "dotrino-critters",
@@ -1327,8 +1327,8 @@
       "subdomain": "ar.dotrino.com",
       "package": "ar",
       "version": "0.1.0",
-      "commit": "8ea1d42",
-      "date": "2026-11-04",
+      "commit": "765ff0b",
+      "date": "2026-11-08",
       "catalog": {
         "name": "AR",
         "url": "https://ar.dotrino.com/",
@@ -1358,7 +1358,7 @@
           "exists": true,
           "date": "2026-10-12",
           "days": 23,
-          "commits": 7,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -1368,7 +1368,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -1377,7 +1377,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-12",
-          "days": 23,
+          "days": 27,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -1437,11 +1437,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -1464,7 +1459,7 @@
           }
         ]
       },
-      "reds": 11
+      "reds": 10
     },
     {
       "repo": "dotrino-autoball",
@@ -1547,8 +1542,8 @@
       "subdomain": "base64.dotrino.com",
       "package": "dotrino-base64",
       "version": "1.0.0",
-      "commit": "d50cc03",
-      "date": "2026-11-04",
+      "commit": "5b119d8",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Base64",
         "url": "https://base64.dotrino.com/",
@@ -1575,7 +1570,7 @@
           "exists": true,
           "date": "2026-07-13",
           "days": 114,
-          "commits": 23,
+          "commits": 24,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -1585,7 +1580,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 20,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -1594,7 +1589,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-13",
-          "days": 114,
+          "days": 118,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -1639,11 +1634,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -1680,7 +1670,7 @@
           }
         ]
       },
-      "reds": 12
+      "reds": 11
     },
     {
       "repo": "dotrino-bots",
@@ -1810,8 +1800,8 @@
       "subdomain": "chat.dotrino.com",
       "package": "simple-websocket-chat",
       "version": "0.0.0",
-      "commit": "c8e4d90",
-      "date": "2026-11-05",
+      "commit": "d383ebb",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Dotrino Chat",
         "url": "https://chat.dotrino.com/",
@@ -1840,7 +1830,7 @@
           "exists": true,
           "date": "2026-09-12",
           "days": 54,
-          "commits": 17,
+          "commits": 18,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -1850,7 +1840,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -1859,7 +1849,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 140,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -1914,11 +1904,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -1955,7 +1940,7 @@
           }
         ]
       },
-      "reds": 14
+      "reds": 13
     },
     {
       "repo": "dotrino-chess",
@@ -1966,8 +1951,8 @@
       "subdomain": "chess.dotrino.com",
       "package": "simple-websocket-chess",
       "version": "0.0.0",
-      "commit": "82675cb",
-      "date": "2026-11-05",
+      "commit": "bd5018b",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Dotrino Chess",
         "url": "https://chess.dotrino.com/",
@@ -1999,7 +1984,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 36,
+          "commits": 37,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -2009,7 +1994,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2018,7 +2003,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 140,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -2083,11 +2068,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/tutorial",
           "requested": "0.2.0",
           "published": "0.2.2"
@@ -2129,7 +2109,7 @@
           }
         ]
       },
-      "reds": 17
+      "reds": 16
     },
     {
       "repo": "dotrino-company",
@@ -2313,8 +2293,8 @@
       "subdomain": "content.dotrino.com",
       "package": "@dotrino/content",
       "version": "0.7.3",
-      "commit": "513bce1",
-      "date": "2026-11-05",
+      "commit": "d222c40",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Content",
         "url": "https://content.dotrino.com/",
@@ -2338,8 +2318,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-01",
-          "days": 4,
-          "commits": 3,
+          "days": 7,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2347,9 +2327,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-15",
-          "days": 21,
-          "commits": 19,
+          "date": "2026-11-08",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2358,7 +2338,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-08-25",
-          "days": 72,
+          "days": 75,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -2368,8 +2348,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 1,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -2438,8 +2418,8 @@
       "subdomain": "critters.dotrino.com",
       "package": "critters",
       "version": "0.1.0",
-      "commit": "4047612",
-      "date": "2026-11-05",
+      "commit": "6611021",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Critters",
         "url": "https://critters.dotrino.com/",
@@ -2471,7 +2451,7 @@
           "exists": true,
           "date": "2026-08-29",
           "days": 68,
-          "commits": 19,
+          "commits": 20,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -2481,7 +2461,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2490,7 +2470,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 140,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -2545,19 +2525,9 @@
           "published": "0.14.3"
         },
         {
-          "dep": "@dotrino/support",
-          "requested": "0.9.3",
-          "published": "0.10.1"
-        },
-        {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -2601,7 +2571,7 @@
           }
         ]
       },
-      "reds": 17
+      "reds": 15
     },
     {
       "repo": "dotrino-cuarenta",
@@ -2612,8 +2582,8 @@
       "subdomain": "cuarenta.dotrino.com",
       "package": "cuarenta",
       "version": "0.1.0",
-      "commit": "147433c",
-      "date": "2026-11-05",
+      "commit": "55d10ce",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Cuarenta (40)",
         "url": "https://cuarenta.dotrino.com/",
@@ -2646,7 +2616,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 32,
+          "commits": 33,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -2656,7 +2626,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2665,7 +2635,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-29",
-          "days": 99,
+          "days": 102,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -2735,11 +2705,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/tutorial",
           "requested": "0.2.0",
           "published": "0.2.2"
@@ -2788,7 +2753,7 @@
           }
         ]
       },
-      "reds": 19
+      "reds": 18
     },
     {
       "repo": "dotrino-demo-apple",
@@ -2974,8 +2939,8 @@
       "subdomain": "diamonds.dotrino.com",
       "package": "diamonds",
       "version": "0.1.0",
-      "commit": "6db63b3",
-      "date": "2026-11-05",
+      "commit": "d624b4e",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Diamonds",
         "url": "https://diamonds.dotrino.com/",
@@ -3005,7 +2970,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 30,
+          "commits": 31,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -3015,7 +2980,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3024,7 +2989,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 140,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -3084,11 +3049,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -3125,7 +3085,7 @@
           }
         ]
       },
-      "reds": 15
+      "reds": 14
     },
     {
       "repo": "dotrino-dictation",
@@ -3223,8 +3183,8 @@
       "subdomain": "eco.dotrino.com",
       "package": "eco",
       "version": "0.1.1",
-      "commit": "b07a6e4",
-      "date": "2026-11-07",
+      "commit": "6ea0585",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Eco",
         "url": "https://eco.dotrino.com/",
@@ -3258,7 +3218,7 @@
           "exists": true,
           "date": "2026-08-21",
           "days": 78,
-          "commits": 46,
+          "commits": 47,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -3268,7 +3228,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 2,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3277,7 +3237,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 142,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -3352,11 +3312,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -3400,7 +3355,7 @@
           }
         ]
       },
-      "reds": 19
+      "reds": 18
     },
     {
       "repo": "dotrino-ecuavoley-contador",
@@ -3411,8 +3366,8 @@
       "subdomain": "ecuavoley.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "514cb9a",
-      "date": "2026-10-22",
+      "commit": "c1af03b",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Contador Ecuavóley",
         "url": "https://ecuavoley.dotrino.com/",
@@ -3430,8 +3385,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-16",
-          "days": 98,
-          "commits": 8,
+          "days": 115,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -3439,9 +3394,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-18",
-          "days": 4,
-          "commits": 1,
+          "date": "2026-11-08",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3450,7 +3405,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 126,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -3460,8 +3415,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 0,
+          "days": 4,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -3489,8 +3444,8 @@
       "subdomain": "expenses.dotrino.com",
       "package": "expenses",
       "version": "0.1.0",
-      "commit": "654f3b9",
-      "date": "2026-11-05",
+      "commit": "deec390",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Expenses",
         "url": "https://expenses.dotrino.com/",
@@ -3522,7 +3477,7 @@
           "exists": true,
           "date": "2026-10-22",
           "days": 14,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3532,7 +3487,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3541,7 +3496,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-22",
-          "days": 14,
+          "days": 17,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -3611,11 +3566,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.3",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -3652,7 +3602,7 @@
           }
         ]
       },
-      "reds": 15
+      "reds": 14
     },
     {
       "repo": "dotrino-expenses-agent",
@@ -3849,8 +3799,8 @@
       "subdomain": "facturero.dotrino.com",
       "package": "facturero",
       "version": "0.1.0",
-      "commit": "2971d07",
-      "date": "2026-11-05",
+      "commit": "156cfbc",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Facturero",
         "url": "https://facturero.dotrino.com/",
@@ -3878,7 +3828,7 @@
           "exists": true,
           "date": "2026-09-28",
           "days": 38,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -3888,7 +3838,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -3897,7 +3847,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-16",
-          "days": 50,
+          "days": 53,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -3947,11 +3897,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -3981,7 +3926,7 @@
           }
         ]
       },
-      "reds": 12
+      "reds": 11
     },
     {
       "repo": "dotrino-favicon-generator",
@@ -3992,8 +3937,8 @@
       "subdomain": "favicon.dotrino.com",
       "package": "favicon-generator",
       "version": "1.0.0",
-      "commit": "5a92573",
-      "date": "2026-10-22",
+      "commit": "7fd842d",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Favicon Generator",
         "url": "https://favicon.dotrino.com/",
@@ -4019,7 +3964,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 98,
-          "commits": 19,
+          "commits": 20,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -4029,7 +3974,7 @@
           "exists": true,
           "date": "2026-10-18",
           "days": 4,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4038,7 +3983,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 126,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -4078,11 +4023,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -4097,7 +4037,7 @@
         "notes": "El repo es Vue + TypeScript, así que la regla typed no aplica. Abrí src/App.vue, src/i18n.ts, src/main.ts, los dos servicios e index.html (solo por Grep, no lo abrí). No miré tsconfig.json, package.json ni el workflow de CI: solo comprobé que existen. El comentario 'My PWA App' dentro del manifest del ZIP es contenido de plantilla para quien lo edite, no copy de la app, y no lo reporté.",
         "findings": []
       },
-      "reds": 8
+      "reds": 7
     },
     {
       "repo": "dotrino-feedback",
@@ -4317,8 +4257,8 @@
       "subdomain": "gridgame.dotrino.com",
       "package": "gridgame",
       "version": "0.0.0",
-      "commit": "0e0a5c0",
-      "date": "2026-11-05",
+      "commit": "badfa0d",
+      "date": "2026-11-08",
       "catalog": {
         "name": "GridGame",
         "url": "https://gridgame.dotrino.com/",
@@ -4347,7 +4287,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 1,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4357,7 +4297,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4366,7 +4306,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 140,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -4421,11 +4361,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.17.0",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -4462,7 +4397,7 @@
           }
         ]
       },
-      "reds": 13
+      "reds": 12
     },
     {
       "repo": "dotrino-gymbro",
@@ -4473,8 +4408,8 @@
       "subdomain": "gymbro.dotrino.com",
       "package": "dotrino-gymbro",
       "version": "1.0.0",
-      "commit": "938457e",
-      "date": "2026-11-04",
+      "commit": "9fd8df1",
+      "date": "2026-11-08",
       "catalog": {
         "name": "GymBro Timer",
         "url": "https://gymbro.dotrino.com/",
@@ -4492,8 +4427,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-16",
-          "days": 111,
-          "commits": 8,
+          "days": 115,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -4501,7 +4436,7 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-11-04",
+          "date": "2026-11-08",
           "days": 0,
           "commits": 0,
           "sinceStart": false,
@@ -4512,7 +4447,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 139,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -4522,8 +4457,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -4559,8 +4494,8 @@
       "subdomain": "here.dotrino.com",
       "package": "here",
       "version": "0.0.0",
-      "commit": "429d491",
-      "date": "2026-11-05",
+      "commit": "8216e4d",
+      "date": "2026-11-08",
       "catalog": {
         "name": "here",
         "url": "https://here.dotrino.com/",
@@ -4587,7 +4522,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 28,
+          "commits": 29,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -4597,7 +4532,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4606,7 +4541,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 140,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -4649,11 +4584,6 @@
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -4727,7 +4657,7 @@
           }
         ]
       },
-      "reds": 17
+      "reds": 16
     },
     {
       "repo": "dotrino-home",
@@ -4738,7 +4668,7 @@
       "subdomain": "dotrino.com",
       "package": "frontend",
       "version": "0.0.0",
-      "commit": "cfb59d2",
+      "commit": "95c328b",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [
@@ -4763,7 +4693,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 22,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4773,7 +4703,7 @@
           "exists": true,
           "date": "2026-10-20",
           "days": 19,
-          "commits": 9,
+          "commits": 10,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4837,19 +4767,9 @@
           "published": "0.14.3"
         },
         {
-          "dep": "@dotrino/support",
-          "requested": "0.9.3",
-          "published": "0.10.1"
-        },
-        {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         }
       ],
       "broken": [],
@@ -4861,7 +4781,7 @@
         "notes": "No encontré incumplimientos claros. Sobre `encrypted`: `src/lib/signedRequest.ts:37` manda por `fetch` a `feedback.dotrino.com` (por HTTPS) el mensaje, el correo, el teléfono y la tarjeta de perfil, firmados pero no sellados. No lo reporté porque el servidor tiene que leerlos para reenviarlos por correo, así que es una decisión del dueño. Sobre `typed`: el repo está en TypeScript con `strict: true` y la CI corre `vue-tsc -b` dentro de `npm run build`. Hay `any` en `catch (e: any)` y en `identity",
         "findings": []
       },
-      "reds": 10
+      "reds": 8
     },
     {
       "repo": "dotrino-ia",
@@ -4983,7 +4903,7 @@
         {
           "dep": "@dotrino/topbar",
           "requested": "0.16.1",
-          "published": "0.17.2"
+          "published": "0.17.3"
         }
       ],
       "broken": [],
@@ -5122,7 +5042,7 @@
       "subdomain": null,
       "package": "@dotrino/identity",
       "version": "0.138.0",
-      "commit": "a1c870b",
+      "commit": "ef313ae",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [
@@ -5138,7 +5058,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 22,
-          "commits": 60,
+          "commits": 61,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5168,10 +5088,10 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 9,
+          "commits": 10,
           "sinceStart": false,
           "unchecked": [],
-          "red": false
+          "red": true
         }
       },
       "missing": [],
@@ -5227,7 +5147,7 @@
           }
         ]
       },
-      "reds": 6
+      "reds": 7
     },
     {
       "repo": "dotrino-index",
@@ -5238,7 +5158,7 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "0935666",
+      "commit": "99ed1d1",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [],
@@ -5252,7 +5172,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 3,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5282,7 +5202,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -5381,8 +5301,8 @@
       "subdomain": "inspector.dotrino.com",
       "package": "@dotrino/inspector",
       "version": "0.2.3",
-      "commit": "2fff84b",
-      "date": "2026-11-04",
+      "commit": "87b4ba3",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Inspector",
         "url": "https://inspector.dotrino.com/",
@@ -5402,8 +5322,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-08-25",
-          "days": 71,
-          "commits": 11,
+          "days": 75,
+          "commits": 12,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -5412,8 +5332,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 0,
+          "days": 4,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5422,7 +5342,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-08-25",
-          "days": 71,
+          "days": 75,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -5432,8 +5352,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -5475,8 +5395,8 @@
       "subdomain": "install.dotrino.com",
       "package": "@dotrino/install",
       "version": "0.3.5",
-      "commit": "c6a9009",
-      "date": "2026-11-04",
+      "commit": "97e8c62",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Instalar",
         "url": "https://install.dotrino.com/",
@@ -5494,8 +5414,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-24",
-          "days": 11,
-          "commits": 2,
+          "days": 15,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5503,9 +5423,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-15",
-          "days": 20,
-          "commits": 3,
+          "date": "2026-11-08",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5514,7 +5434,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-27",
-          "days": 100,
+          "days": 104,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -5524,8 +5444,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -5707,8 +5627,8 @@
       "subdomain": "messenger.dotrino.com",
       "package": "dotrino-messenger",
       "version": "0.8.5",
-      "commit": "8143aa9",
-      "date": "2026-11-05",
+      "commit": "6ebf843",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Dotrino Messenger",
         "url": "https://messenger.dotrino.com/",
@@ -5742,7 +5662,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 21,
-          "commits": 30,
+          "commits": 31,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5752,7 +5672,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5761,7 +5681,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-30",
-          "days": 36,
+          "days": 39,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -5836,11 +5756,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/tutorial",
           "requested": "0.2.0",
           "published": "0.2.2"
@@ -5882,7 +5797,7 @@
           }
         ]
       },
-      "reds": 18
+      "reds": 17
     },
     {
       "repo": "dotrino-messenger-extension",
@@ -5982,8 +5897,8 @@
       "subdomain": "middlebot.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "987567b",
-      "date": "2026-10-15",
+      "commit": "bcaa65d",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Middlebot",
         "url": "https://middlebot.dotrino.com/",
@@ -6001,8 +5916,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-12",
-          "days": 33,
-          "commits": 2,
+          "days": 57,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -6010,7 +5925,7 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-15",
+          "date": "2026-11-08",
           "days": 0,
           "commits": 0,
           "sinceStart": false,
@@ -6021,7 +5936,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-31",
-          "days": 76,
+          "days": 100,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -6031,8 +5946,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 0,
+          "days": 4,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6060,8 +5975,8 @@
       "subdomain": "mundial.dotrino.com",
       "package": "dotrino-mundial",
       "version": "0.1.0",
-      "commit": "dd9458d",
-      "date": "2026-11-05",
+      "commit": "35d0140",
+      "date": "2026-11-08",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -6081,7 +5996,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 19,
+          "commits": 20,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -6091,7 +6006,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6143,11 +6058,6 @@
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         }
       ],
       "broken": [],
@@ -6202,7 +6112,7 @@
           }
         ]
       },
-      "reds": 13
+      "reds": 12
     },
     {
       "repo": "dotrino-myip",
@@ -6213,8 +6123,8 @@
       "subdomain": "myip.dotrino.com",
       "package": "myip",
       "version": "0.1.0",
-      "commit": "70cbb3e",
-      "date": "2026-11-04",
+      "commit": "bdb9940",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Mi IP",
         "url": "https://myip.dotrino.com/",
@@ -6241,7 +6151,7 @@
           "exists": true,
           "date": "2026-08-29",
           "days": 67,
-          "commits": 8,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -6251,7 +6161,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6260,7 +6170,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-15",
-          "days": 112,
+          "days": 116,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -6305,11 +6215,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -6346,7 +6251,7 @@
           }
         ]
       },
-      "reds": 12
+      "reds": 11
     },
     {
       "repo": "dotrino-names",
@@ -6636,12 +6541,12 @@
       "internal": false,
       "stack": "vite+vue",
       "platforms": {
-        "pwa": "0.2.0"
+        "pwa": "0.2.1"
       },
       "subdomain": "notes.dotrino.com",
       "package": "notes",
-      "version": "0.2.0",
-      "commit": "5504581",
+      "version": "0.2.1",
+      "commit": "17ace1e",
       "date": "2026-11-08",
       "catalog": {
         "name": "Notes",
@@ -6671,7 +6576,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6681,7 +6586,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6831,8 +6736,8 @@
       "subdomain": "offroad.dotrino.com",
       "package": "offroad",
       "version": "0.24.0",
-      "commit": "8df6a3f",
-      "date": "2026-11-05",
+      "commit": "96c32b0",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Offroad",
         "url": "https://offroad.dotrino.com/",
@@ -6862,7 +6767,7 @@
           "exists": true,
           "date": "2026-10-10",
           "days": 26,
-          "commits": 6,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6872,7 +6777,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6881,11 +6786,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-08",
-          "days": 28,
+          "days": 31,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "audit": {
           "applies": true,
@@ -6931,19 +6836,9 @@
           "published": "0.14.3"
         },
         {
-          "dep": "@dotrino/support",
-          "requested": "0.9.3",
-          "published": "0.10.1"
-        },
-        {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -6989,7 +6884,7 @@
           }
         ]
       },
-      "reds": 14
+      "reds": 13
     },
     {
       "repo": "dotrino-opaque",
@@ -7097,8 +6992,8 @@
       "subdomain": "padel.dotrino.com",
       "package": "padel",
       "version": "0.4.0",
-      "commit": "cf5785a",
-      "date": "2026-11-05",
+      "commit": "7a688ed",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Contador Pádel",
         "url": "https://padel.dotrino.com/",
@@ -7129,7 +7024,7 @@
           "exists": true,
           "date": "2026-09-28",
           "days": 38,
-          "commits": 18,
+          "commits": 19,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -7139,7 +7034,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7148,7 +7043,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-14",
-          "days": 52,
+          "days": 55,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -7213,11 +7108,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -7247,7 +7137,7 @@
           }
         ]
       },
-      "reds": 15
+      "reds": 14
     },
     {
       "repo": "dotrino-passmanager",
@@ -7268,7 +7158,7 @@
       "subdomain": "pass.dotrino.com",
       "package": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "e2deca1",
+      "commit": "861b0cf",
       "date": "2026-11-08",
       "catalog": {
         "name": "Contraseñas",
@@ -7294,7 +7184,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7304,7 +7194,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 4,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7324,7 +7214,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -7691,8 +7581,8 @@
       "subdomain": "profile.dotrino.com",
       "package": "dotrino-profile-page",
       "version": "0.1.0",
-      "commit": "1191ed3",
-      "date": "2026-11-05",
+      "commit": "b45d5f4",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Perfil",
         "url": "https://profile.dotrino.com/",
@@ -7720,7 +7610,7 @@
           "exists": true,
           "date": "2026-08-29",
           "days": 68,
-          "commits": 22,
+          "commits": 23,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -7730,7 +7620,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 21,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7739,7 +7629,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-07-26",
-          "days": 102,
+          "days": 105,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -7792,11 +7682,6 @@
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         }
       ],
       "broken": [],
@@ -7823,7 +7708,7 @@
           }
         ]
       },
-      "reds": 11
+      "reds": 10
     },
     {
       "repo": "dotrino-pronostico-mundialista",
@@ -7834,8 +7719,8 @@
       "subdomain": "pronostico.dotrino.com",
       "package": "pronostico-mundialista",
       "version": "0.1.0",
-      "commit": "bc1dfdb",
-      "date": "2026-11-05",
+      "commit": "de2e871",
+      "date": "2026-11-08",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -7862,7 +7747,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 40,
+          "commits": 41,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -7872,7 +7757,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 1,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7956,11 +7841,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/tutorial",
           "requested": "0.2.0",
           "published": "0.2.2"
@@ -7997,7 +7877,7 @@
           }
         ]
       },
-      "reds": 17
+      "reds": 16
     },
     {
       "repo": "dotrino-proxy",
@@ -8337,8 +8217,8 @@
       "subdomain": "qrgenerator.dotrino.com",
       "package": "dotrino-qrgenerator",
       "version": "0.1.0",
-      "commit": "c2ef1ec",
-      "date": "2026-11-04",
+      "commit": "6f8e319",
+      "date": "2026-11-08",
       "catalog": {
         "name": "QR Generator",
         "url": "https://qrgenerator.dotrino.com/",
@@ -8366,7 +8246,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 111,
-          "commits": 18,
+          "commits": 19,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -8376,7 +8256,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 20,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8385,7 +8265,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-22",
-          "days": 135,
+          "days": 139,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -8435,11 +8315,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -8476,7 +8351,7 @@
           }
         ]
       },
-      "reds": 13
+      "reds": 12
     },
     {
       "repo": "dotrino-qrreader",
@@ -8487,8 +8362,8 @@
       "subdomain": "qrreader.dotrino.com",
       "package": "dotrino-qrreader",
       "version": "0.1.0",
-      "commit": "117b1bc",
-      "date": "2026-11-05",
+      "commit": "7e4e7fc",
+      "date": "2026-11-08",
       "catalog": {
         "name": "QR Reader",
         "url": "https://qrreader.dotrino.com/",
@@ -8516,7 +8391,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 19,
+          "commits": 20,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -8526,7 +8401,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 21,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8535,7 +8410,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-19",
-          "days": 139,
+          "days": 142,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -8585,11 +8460,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -8633,7 +8503,7 @@
           }
         ]
       },
-      "reds": 14
+      "reds": 13
     },
     {
       "repo": "dotrino-qrshare",
@@ -8644,8 +8514,8 @@
       "subdomain": "qrshare.dotrino.com",
       "package": "dotrino-qrshare",
       "version": "0.2.0",
-      "commit": "9ed9c9c",
-      "date": "2026-11-04",
+      "commit": "3fa0289",
+      "date": "2026-11-08",
       "catalog": {
         "name": "QRShare",
         "url": "https://qrshare.dotrino.com/",
@@ -8663,8 +8533,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-12",
-          "days": 53,
-          "commits": 11,
+          "days": 57,
+          "commits": 12,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -8672,9 +8542,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-18",
-          "days": 17,
-          "commits": 3,
+          "date": "2026-11-08",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8683,7 +8553,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 139,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -8693,8 +8563,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -8740,8 +8610,8 @@
       "subdomain": "recorder.dotrino.com",
       "package": "dotrino-recorder",
       "version": "0.1.0",
-      "commit": "e9514e4",
-      "date": "2026-11-05",
+      "commit": "ec96b8a",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Grabadora",
         "url": "https://recorder.dotrino.com/",
@@ -8770,7 +8640,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 1,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8780,7 +8650,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 1,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8789,7 +8659,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 1,
+          "days": 4,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -8844,11 +8714,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.17.0",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -8863,7 +8728,7 @@
         "notes": "El repo es una app nativa de Android en Kotlin, sin JavaScript propio, así que la regla `typed` no aplica. No abrí `native/` porque es un submódulo con su propio repo (Swift). Solo busqué patrones en los demás archivos de `android/app/src`. El archivo `Sync.kt` usa el SDK nativo de Dotrino (`ProxyConnection`, `ContentNodeClient`) y cifra la ficha y el archivo antes de subirlos (`Crypto.sealAccount`, `SegmentCipher`). La copy de `i18n.json` va en tuteo y sin argot, y los logs y errores están en i",
         "findings": []
       },
-      "reds": 9
+      "reds": 8
     },
     {
       "repo": "dotrino-remote-agent",
@@ -9110,8 +8975,8 @@
       "subdomain": "reputation.dotrino.com",
       "package": "dotrino-reputation-app",
       "version": "0.1.0",
-      "commit": "ffcd628",
-      "date": "2026-11-04",
+      "commit": "9c0b0df",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Reputation",
         "url": "https://reputation.dotrino.com/",
@@ -9141,7 +9006,7 @@
           "exists": true,
           "date": "2026-08-29",
           "days": 67,
-          "commits": 18,
+          "commits": 19,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9151,7 +9016,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9160,7 +9025,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-26",
-          "days": 101,
+          "days": 105,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -9210,19 +9075,9 @@
           "published": "0.14.3"
         },
         {
-          "dep": "@dotrino/support",
-          "requested": "0.9.3",
-          "published": "0.10.1"
-        },
-        {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -9261,7 +9116,7 @@
           }
         ]
       },
-      "reds": 15
+      "reds": 13
     },
     {
       "repo": "dotrino-results",
@@ -9373,7 +9228,7 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.88",
-      "commit": "63cab0a",
+      "commit": "f906a9e",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [
@@ -9390,7 +9245,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 30,
-          "commits": 261,
+          "commits": 263,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9420,7 +9275,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 31,
+          "commits": 33,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -10022,8 +9877,8 @@
       "subdomain": "sso.dotrino.com",
       "package": "@dotrino/sso-client",
       "version": "0.1.0",
-      "commit": "e9d833a",
-      "date": "2026-11-04",
+      "commit": "0c3b913",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Entrar con Dotrino",
         "url": "https://sso.dotrino.com/",
@@ -10043,8 +9898,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-17",
-          "days": 48,
-          "commits": 12,
+          "days": 52,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -10052,9 +9907,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-18",
-          "days": 17,
-          "commits": 4,
+          "date": "2026-11-08",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10063,7 +9918,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-17",
-          "days": 48,
+          "days": 52,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -10073,8 +9928,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -10246,8 +10101,8 @@
       "subdomain": "sudoku.dotrino.com",
       "package": "sudoku",
       "version": "0.1.0",
-      "commit": "67f793f",
-      "date": "2026-11-05",
+      "commit": "aa867a3",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Sudoku",
         "url": "https://sudoku.dotrino.com/",
@@ -10278,7 +10133,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 27,
+          "commits": 28,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -10288,7 +10143,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10297,7 +10152,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 140,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -10347,19 +10202,9 @@
           "published": "0.14.3"
         },
         {
-          "dep": "@dotrino/support",
-          "requested": "0.9.3",
-          "published": "0.10.1"
-        },
-        {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -10403,7 +10248,7 @@
           }
         ]
       },
-      "reds": 16
+      "reds": 14
     },
     {
       "repo": "dotrino-support",
@@ -10413,9 +10258,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/support",
-      "version": "0.10.1",
-      "commit": "270674b",
-      "date": "2026-11-04",
+      "version": "0.10.2",
+      "commit": "27d8239",
+      "date": "2026-11-08",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -10427,8 +10272,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-18",
-          "days": 17,
-          "commits": 1,
+          "days": 21,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10457,8 +10302,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -10508,8 +10353,8 @@
       "subdomain": "telegram-bot.dotrino.com",
       "package": "@dotrino/telegram-bot",
       "version": "0.3.1",
-      "commit": "0278ba7",
-      "date": "2026-11-04",
+      "commit": "7e2e9f1",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Telegram Bot",
         "url": "https://telegram-bot.dotrino.com/",
@@ -10530,8 +10375,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-26",
-          "days": 9,
-          "commits": 1,
+          "days": 13,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10539,9 +10384,9 @@
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-15",
-          "days": 20,
-          "commits": 3,
+          "date": "2026-11-08",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10550,7 +10395,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-09",
-          "days": 118,
+          "days": 122,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -10560,8 +10405,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 4,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -10625,8 +10470,8 @@
       "subdomain": "terminal.dotrino.com",
       "package": "dotrino-terminal",
       "version": "0.15.1",
-      "commit": "3e0240d",
-      "date": "2026-11-05",
+      "commit": "bc37f51",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Dotrino Terminal",
         "url": "https://terminal.dotrino.com/",
@@ -10657,7 +10502,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 1,
-          "commits": 12,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10667,7 +10512,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 21,
-          "commits": 85,
+          "commits": 86,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10676,7 +10521,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-01",
-          "days": 4,
+          "days": 7,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -10741,11 +10586,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.3",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -10782,7 +10622,7 @@
           }
         ]
       },
-      "reds": 14
+      "reds": 13
     },
     {
       "repo": "dotrino-test",
@@ -10793,8 +10633,8 @@
       "subdomain": "test.dotrino.com",
       "package": "test",
       "version": "0.2.0",
-      "commit": "f24f621",
-      "date": "2026-11-04",
+      "commit": "cd040b2",
+      "date": "2026-11-08",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -10813,7 +10653,7 @@
           "exists": true,
           "date": "2026-10-19",
           "days": 16,
-          "commits": 7,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10823,7 +10663,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 20,
-          "commits": 22,
+          "commits": 23,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10870,11 +10710,6 @@
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         }
       ],
       "broken": [],
@@ -10901,7 +10736,7 @@
           }
         ]
       },
-      "reds": 7
+      "reds": 6
     },
     {
       "repo": "dotrino-theme",
@@ -10998,9 +10833,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/topbar",
-      "version": "0.17.2",
-      "commit": "51d7c7f",
-      "date": "2026-11-05",
+      "version": "0.17.3",
+      "commit": "6b1b954",
+      "date": "2026-11-08",
       "catalog": null,
       "deps": [
         "@dotrino/nav",
@@ -11017,7 +10852,7 @@
           "exists": true,
           "date": "2026-10-14",
           "days": 21,
-          "commits": 8,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11061,11 +10896,6 @@
           "published": "0.3.3"
         },
         {
-          "dep": "@dotrino/support",
-          "requested": "0.9.3",
-          "published": "0.10.1"
-        },
-        {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -11102,7 +10932,7 @@
           }
         ]
       },
-      "reds": 6
+      "reds": 5
     },
     {
       "repo": "dotrino-trivia",
@@ -11113,8 +10943,8 @@
       "subdomain": "trivia.dotrino.com",
       "package": "trivia",
       "version": "0.1.0",
-      "commit": "69a804f",
-      "date": "2026-11-04",
+      "commit": "166b3fa",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Trivia",
         "url": "https://trivia.dotrino.com/",
@@ -11143,7 +10973,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 111,
-          "commits": 26,
+          "commits": 27,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -11153,7 +10983,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11162,7 +10992,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 139,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -11207,19 +11037,9 @@
           "published": "0.14.3"
         },
         {
-          "dep": "@dotrino/support",
-          "requested": "0.9.3",
-          "published": "0.10.1"
-        },
-        {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
           "published": "0.1.1"
-        },
-        {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -11293,7 +11113,7 @@
           }
         ]
       },
-      "reds": 19
+      "reds": 17
     },
     {
       "repo": "dotrino-trueque",
@@ -11304,8 +11124,8 @@
       "subdomain": "trueque.dotrino.com",
       "package": "trueque",
       "version": "0.1.0",
-      "commit": "5bdecea",
-      "date": "2026-11-04",
+      "commit": "05950c0",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Trueque",
         "url": "https://trueque.dotrino.com/",
@@ -11336,7 +11156,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 111,
-          "commits": 34,
+          "commits": 35,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -11346,7 +11166,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11355,7 +11175,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-18",
-          "days": 139,
+          "days": 143,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -11420,11 +11240,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -11461,7 +11276,7 @@
           }
         ]
       },
-      "reds": 16
+      "reds": 15
     },
     {
       "repo": "dotrino-tunnel",
@@ -12141,8 +11956,8 @@
       "subdomain": "wallet.dotrino.com",
       "package": "wallet",
       "version": "0.2.0",
-      "commit": "bc04e19",
-      "date": "2026-11-04",
+      "commit": "224346d",
+      "date": "2026-11-08",
       "catalog": {
         "name": "Wallet",
         "url": "https://wallet.dotrino.com/",
@@ -12172,7 +11987,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 111,
-          "commits": 29,
+          "commits": 30,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -12182,7 +11997,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -12191,7 +12006,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-06-23",
-          "days": 134,
+          "days": 138,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -12251,11 +12066,6 @@
           "published": "0.1.1"
         },
         {
-          "dep": "@dotrino/topbar",
-          "requested": "0.16.1",
-          "published": "0.17.2"
-        },
-        {
           "dep": "@dotrino/prerender",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -12292,7 +12102,7 @@
           }
         ]
       },
-      "reds": 15
+      "reds": 14
     },
     {
       "repo": "dotrino-webrtc",
