@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-08T12:00:27-0500",
+  "generatedAt": "2026-11-08T15:55:50-0500",
   "date": "2026-11-08",
   "by": "seyacat",
-  "commit": "99ed1d1",
+  "commit": "b80d885",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -120,7 +120,7 @@
     "dotrino-gymbro": "1.0.0",
     "dotrino-index": null,
     "dotrino-messenger-extension": "0.0.0",
-    "notes": "0.2.1"
+    "notes": "0.3.0"
   },
   "onNpm": {
     "critters": "0.0.25",
@@ -5158,7 +5158,7 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "99ed1d1",
+      "commit": "b80d885",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [],
@@ -5172,7 +5172,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 3,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5202,7 +5202,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6541,12 +6541,20 @@
       "internal": false,
       "stack": "vite+vue",
       "platforms": {
-        "pwa": "0.2.1"
+        "pwa": "0.3.0",
+        "ios": {
+          "version": "0.3.0",
+          "state": "on-par"
+        },
+        "android": {
+          "version": "0.3.0",
+          "state": "on-par"
+        }
       },
       "subdomain": "notes.dotrino.com",
       "package": "notes",
-      "version": "0.2.1",
-      "commit": "17ace1e",
+      "version": "0.3.0",
+      "commit": "37c847c",
       "date": "2026-11-08",
       "catalog": {
         "name": "Notes",
@@ -6576,7 +6584,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6586,7 +6594,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 1,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6606,7 +6614,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -9228,7 +9236,7 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.88",
-      "commit": "f906a9e",
+      "commit": "f5661c7",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [
@@ -9245,7 +9253,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 30,
-          "commits": 263,
+          "commits": 264,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9275,7 +9283,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 33,
+          "commits": 34,
           "sinceStart": false,
           "unchecked": [],
           "red": true
