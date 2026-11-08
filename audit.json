@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T23:17:21-0500",
+  "generatedAt": "2026-11-08T10:29:54-0500",
   "rules": [
     "voseo",
     "english",
@@ -2046,6 +2046,27 @@
       "notes": "Repo pequeño (no pasan de 6 archivos propios), sin red, sin copy en español salvo 'Volver'/'Back' (correcto), así que no hay hallazgos de las otras reglas. No abrí src/*.d.ts, test/smoke.mjs ni README. No pude ejecutar tsc porque Bash está deshabilitado.",
       "costUsd": 0.1332263,
       "durationMs": 14192
+    },
+    "dotrino-notes": {
+      "commit": "1f30102",
+      "date": "2026-11-08",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "encrypted",
+        "typed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 14,
+      "notes": "No abrí App.vue, NoteList.vue, NoteEditor.vue, vite.config.js ni test/ por completo; los revisé solo con Grep (sin fetch, WebSocket, subtle, sendByPubkey, http://, ws://, @ts-ignore ni voseo). La app no manda mensajes por su cuenta: la sincronización la hace @dotrino/store, y el único enlace de red propio es https. Typed cumple: tsconfig con checkJs y strict, script type-check y CI que lo corre. En src/state.js, newNote, togglePin y deleteOpenNote son exports sin @param ni @returns, pero no reci",
+      "costUsd": 0.1803444,
+      "durationMs": 20533
     },
     "dotrino-notifications": {
       "commit": "3de309b",
