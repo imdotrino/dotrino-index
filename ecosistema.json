@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-09T10:16:14-0500",
+  "generatedAt": "2026-11-09T16:15:40-0500",
   "date": "2026-11-09",
   "by": "seyacat",
-  "commit": "7aa91dc",
+  "commit": "8b02ea5",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -5158,8 +5158,8 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "7aa91dc",
-      "date": "2026-11-08",
+      "commit": "8b02ea5",
+      "date": "2026-11-09",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -5171,8 +5171,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-05",
-          "days": 3,
-          "commits": 4,
+          "days": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5180,7 +5180,7 @@
         "frontPage": {
           "applies": false,
           "exists": true,
-          "date": "2026-11-08",
+          "date": "2026-11-09",
           "days": 0,
           "commits": 0,
           "sinceStart": false,
@@ -5201,8 +5201,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 4,
-          "commits": 7,
+          "days": 5,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6554,7 +6554,7 @@
       "subdomain": "notes.dotrino.com",
       "package": "notes",
       "version": "0.3.0",
-      "commit": "ff9c8c8",
+      "commit": "1852cbd",
       "date": "2026-11-09",
       "catalog": {
         "name": "Notes",
@@ -6584,7 +6584,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 1,
-          "commits": 1,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6594,7 +6594,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 1,
-          "commits": 2,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6614,10 +6614,10 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 1,
-          "commits": 4,
+          "commits": 10,
           "sinceStart": false,
           "unchecked": [],
-          "red": false
+          "red": true
         }
       },
       "missing": [],
@@ -6631,7 +6631,7 @@
         "notes": "No abrí App.vue, NoteList.vue, NoteEditor.vue, vite.config.js ni test/ por completo; los revisé solo con Grep (sin fetch, WebSocket, subtle, sendByPubkey, http://, ws://, @ts-ignore ni voseo). La app no manda mensajes por su cuenta: la sincronización la hace @dotrino/store, y el único enlace de red propio es https. Typed cumple: tsconfig con checkJs y strict, script type-check y CI que lo corre. En src/state.js, newNote, togglePin y deleteOpenNote son exports sin @param ni @returns, pero no reci",
         "findings": []
       },
-      "reds": 0
+      "reds": 1
     },
     {
       "repo": "dotrino-notifications",
@@ -12193,8 +12193,8 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "1653061",
-      "date": "2026-11-08",
+      "commit": "a2497e5",
+      "date": "2026-11-09",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -12206,8 +12206,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-08-23",
-          "days": 77,
-          "commits": 168,
+          "days": 78,
+          "commits": 170,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -12236,8 +12236,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 4,
-          "commits": 3,
+          "days": 5,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": [],
           "red": false
