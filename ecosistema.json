@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-08T15:55:50-0500",
-  "date": "2026-11-08",
+  "generatedAt": "2026-11-09T10:16:14-0500",
+  "date": "2026-11-09",
   "by": "seyacat",
-  "commit": "b80d885",
+  "commit": "7aa91dc",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -853,7 +853,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -970,7 +970,7 @@
         "@dotrino/verifier"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1073,7 +1073,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1173,7 +1173,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1245,7 +1245,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1349,7 +1349,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1475,7 +1475,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1561,7 +1561,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1692,7 +1692,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1821,7 +1821,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -1975,7 +1975,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2125,7 +2125,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2197,7 +2197,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2310,7 +2310,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2442,7 +2442,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2607,7 +2607,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2769,7 +2769,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2851,7 +2851,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -2961,7 +2961,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3101,7 +3101,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3209,7 +3209,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3377,7 +3377,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3468,7 +3468,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3622,7 +3622,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3732,7 +3732,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3819,7 +3819,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -3955,7 +3955,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4056,7 +4056,7 @@
         "@dotrino/reputation"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4168,7 +4168,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4278,7 +4278,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4419,7 +4419,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4513,7 +4513,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4684,7 +4684,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4813,7 +4813,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -4961,7 +4961,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5049,7 +5049,7 @@
         "@dotrino/opaque"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5158,12 +5158,12 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "b80d885",
+      "commit": "7aa91dc",
       "date": "2026-11-08",
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5172,7 +5172,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 3,
-          "commits": 3,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5202,7 +5202,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 6,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -5314,7 +5314,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5406,7 +5406,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5507,7 +5507,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5653,7 +5653,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5813,7 +5813,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5908,7 +5908,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -5987,7 +5987,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6142,7 +6142,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6275,7 +6275,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6368,7 +6368,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6448,7 +6448,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6554,8 +6554,8 @@
       "subdomain": "notes.dotrino.com",
       "package": "notes",
       "version": "0.3.0",
-      "commit": "37c847c",
-      "date": "2026-11-08",
+      "commit": "ff9c8c8",
+      "date": "2026-11-09",
       "catalog": {
         "name": "Notes",
         "url": "https://notes.dotrino.com/",
@@ -6575,7 +6575,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6583,8 +6583,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-08",
-          "days": 0,
-          "commits": 2,
+          "days": 1,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6593,8 +6593,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-08",
-          "days": 0,
-          "commits": 0,
+          "days": 1,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6603,7 +6603,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-08",
-          "days": 0,
+          "days": 1,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -6613,8 +6613,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-08",
-          "days": 0,
-          "commits": 2,
+          "days": 1,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -6649,7 +6649,7 @@
         "@dotrino/proxy-client"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6766,7 +6766,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -6908,7 +6908,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7023,7 +7023,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7183,7 +7183,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7284,7 +7284,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7378,7 +7378,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7482,7 +7482,7 @@
         "@dotrino/proxy-client"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7609,7 +7609,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7746,7 +7746,7 @@
         "@dotrino/tutorial"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -7906,7 +7906,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8024,7 +8024,7 @@
         "@dotrino/webrtc"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8143,7 +8143,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8245,7 +8245,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8390,7 +8390,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8533,7 +8533,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8639,7 +8639,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8757,7 +8757,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -8874,7 +8874,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9005,7 +9005,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9140,7 +9140,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9236,15 +9236,15 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.88",
-      "commit": "f5661c7",
-      "date": "2026-11-08",
+      "commit": "2866c2e",
+      "date": "2026-11-09",
       "catalog": null,
       "deps": [
         "@dotrino/update",
         "@dotrino/compat"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9252,8 +9252,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-09",
-          "days": 30,
-          "commits": 264,
+          "days": 31,
+          "commits": 265,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9282,8 +9282,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 4,
-          "commits": 34,
+          "days": 5,
+          "commits": 35,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9355,7 +9355,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9470,7 +9470,7 @@
         "@dotrino/qr"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9570,7 +9570,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9659,7 +9659,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9767,7 +9767,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9898,7 +9898,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -9993,7 +9993,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10132,7 +10132,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10272,7 +10272,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10375,7 +10375,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10501,7 +10501,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10652,7 +10652,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10760,7 +10760,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10851,7 +10851,7 @@
         "@dotrino/theme"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -10972,7 +10972,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11155,7 +11155,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11306,7 +11306,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11414,7 +11414,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11508,7 +11508,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11580,7 +11580,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11732,7 +11732,7 @@
         "@dotrino/remote-agent"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11869,7 +11869,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -11986,7 +11986,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -12126,7 +12126,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
@@ -12198,7 +12198,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-08",
+        "date": "2026-11-09",
         "by": "seyacat"
       },
       "freshness": {
