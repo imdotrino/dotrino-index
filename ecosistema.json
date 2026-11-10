@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-09T16:15:40-0500",
+  "generatedAt": "2026-11-09T22:26:52-0500",
   "date": "2026-11-09",
   "by": "seyacat",
-  "commit": "8b02ea5",
+  "commit": "29d6af7",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -106,7 +106,7 @@
     "@dotrino/names-server": "0.2.0",
     "@dotrino/names-web": "0.1.0",
     "@dotrino/iatosvg": "0.1.0",
-    "@dotrino/theme": "0.1.1",
+    "@dotrino/theme": "0.1.2",
     "@dotrino/accounts-server": "0.8.0",
     "expenses": "0.1.0",
     "@dotrino/ai": "0.1.2",
@@ -359,7 +359,7 @@
     },
     {
       "pillar": "@dotrino/theme",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "onNpm": true,
       "repos": [
         "dotrino-ar",
@@ -1434,7 +1434,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -1631,7 +1631,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -1901,7 +1901,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -2065,7 +2065,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -2527,7 +2527,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -2702,7 +2702,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -3046,7 +3046,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -3309,7 +3309,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -3563,7 +3563,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -3894,7 +3894,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -4020,7 +4020,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -4358,7 +4358,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -4583,7 +4583,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -4769,7 +4769,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         }
       ],
       "broken": [],
@@ -4898,7 +4898,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/topbar",
@@ -5158,7 +5158,7 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "8b02ea5",
+      "commit": "29d6af7",
       "date": "2026-11-09",
       "catalog": null,
       "deps": [],
@@ -5172,7 +5172,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 4,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5202,7 +5202,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 5,
-          "commits": 8,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -5753,7 +5753,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -6057,7 +6057,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         }
       ],
       "broken": [],
@@ -6212,7 +6212,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -6621,7 +6621,13 @@
         }
       },
       "missing": [],
-      "drifts": [],
+      "drifts": [
+        {
+          "dep": "@dotrino/theme",
+          "requested": "0.1.1",
+          "published": "0.1.2"
+        }
+      ],
       "broken": [],
       "npmPending": [],
       "live": null,
@@ -6631,7 +6637,7 @@
         "notes": "No abrí App.vue, NoteList.vue, NoteEditor.vue, vite.config.js ni test/ por completo; los revisé solo con Grep (sin fetch, WebSocket, subtle, sendByPubkey, http://, ws://, @ts-ignore ni voseo). La app no manda mensajes por su cuenta: la sincronización la hace @dotrino/store, y el único enlace de red propio es https. Typed cumple: tsconfig con checkJs y strict, script type-check y CI que lo corre. En src/state.js, newNote, togglePin y deleteOpenNote son exports sin @param ni @returns, pero no reci",
         "findings": []
       },
-      "reds": 1
+      "reds": 2
     },
     {
       "repo": "dotrino-notifications",
@@ -6846,7 +6852,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -7113,7 +7119,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -7589,8 +7595,8 @@
       "subdomain": "profile.dotrino.com",
       "package": "dotrino-profile-page",
       "version": "0.1.0",
-      "commit": "b45d5f4",
-      "date": "2026-11-08",
+      "commit": "55ddcd7",
+      "date": "2026-11-09",
       "catalog": {
         "name": "Perfil",
         "url": "https://profile.dotrino.com/",
@@ -7617,8 +7623,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-08-29",
-          "days": 68,
-          "commits": 23,
+          "days": 72,
+          "commits": 24,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -7627,8 +7633,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 21,
-          "commits": 6,
+          "days": 25,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7637,7 +7643,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-07-26",
-          "days": 105,
+          "days": 106,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -7647,8 +7653,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 1,
-          "commits": 1,
+          "days": 5,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -7685,11 +7691,6 @@
           "dep": "@dotrino/store",
           "requested": "0.12.3",
           "published": "0.14.3"
-        },
-        {
-          "dep": "@dotrino/theme",
-          "requested": "0.1.0",
-          "published": "0.1.1"
         }
       ],
       "broken": [],
@@ -7716,7 +7717,7 @@
           }
         ]
       },
-      "reds": 10
+      "reds": 9
     },
     {
       "repo": "dotrino-pronostico-mundialista",
@@ -7846,7 +7847,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -8320,7 +8321,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -8465,7 +8466,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -8719,7 +8720,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -9085,7 +9086,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -9236,7 +9237,7 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.88",
-      "commit": "2866c2e",
+      "commit": "065e5fc",
       "date": "2026-11-09",
       "catalog": null,
       "deps": [
@@ -9253,7 +9254,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 31,
-          "commits": 265,
+          "commits": 266,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9283,7 +9284,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 5,
-          "commits": 35,
+          "commits": 36,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -10212,7 +10213,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/tutorial",
@@ -10591,7 +10592,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -10717,7 +10718,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         }
       ],
       "broken": [],
@@ -10754,9 +10755,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/theme",
-      "version": "0.1.1",
-      "commit": "1270983",
-      "date": "2026-11-04",
+      "version": "0.1.2",
+      "commit": "025b9f6",
+      "date": "2026-11-09",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -10768,8 +10769,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-14",
-          "days": 21,
-          "commits": 1,
+          "days": 26,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10798,8 +10799,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 1,
+          "days": 5,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -10906,7 +10907,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         }
       ],
       "broken": [],
@@ -11047,7 +11048,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -11245,7 +11246,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
@@ -12071,7 +12072,7 @@
         {
           "dep": "@dotrino/theme",
           "requested": "0.1.0",
-          "published": "0.1.1"
+          "published": "0.1.2"
         },
         {
           "dep": "@dotrino/prerender",
