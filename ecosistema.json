@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-11T15:06:51-0500",
+  "generatedAt": "2026-11-11T15:20:06-0500",
   "date": "2026-11-11",
   "by": "seyacat",
-  "commit": "27bcc3e",
+  "commit": "0f8917d",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -5158,7 +5158,7 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "27bcc3e",
+      "commit": "0f8917d",
       "date": "2026-11-11",
       "catalog": null,
       "deps": [],
@@ -5172,7 +5172,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 6,
-          "commits": 8,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5202,7 +5202,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 7,
-          "commits": 11,
+          "commits": 12,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -7172,7 +7172,7 @@
       "subdomain": "pass.dotrino.com",
       "package": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "4418caa",
+      "commit": "2ccade0",
       "date": "2026-11-11",
       "catalog": {
         "name": "Contraseñas",
@@ -7198,7 +7198,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 3,
-          "commits": 8,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7208,7 +7208,7 @@
           "exists": true,
           "date": "2026-11-11",
           "days": 0,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7228,7 +7228,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 7,
-          "commits": 17,
+          "commits": 18,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9237,7 +9237,7 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.88",
-      "commit": "9229bd5",
+      "commit": "dfafe60",
       "date": "2026-11-11",
       "catalog": null,
       "deps": [
@@ -9254,7 +9254,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 33,
-          "commits": 268,
+          "commits": 269,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9284,7 +9284,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 7,
-          "commits": 38,
+          "commits": 39,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -12194,7 +12194,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "c0bfa7c",
+      "commit": "04c1980",
       "date": "2026-11-11",
       "catalog": null,
       "deps": [],
@@ -12208,7 +12208,7 @@
           "exists": true,
           "date": "2026-08-23",
           "days": 80,
-          "commits": 171,
+          "commits": 172,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -12238,7 +12238,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 7,
-          "commits": 6,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": [],
           "red": false
