@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-11T12:36:14-0500",
+  "generatedAt": "2026-11-11T15:06:51-0500",
   "date": "2026-11-11",
   "by": "seyacat",
-  "commit": "f4d3e78",
+  "commit": "27bcc3e",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -5158,8 +5158,8 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "f4d3e78",
-      "date": "2026-11-09",
+      "commit": "27bcc3e",
+      "date": "2026-11-11",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -5171,8 +5171,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-05",
-          "days": 4,
-          "commits": 7,
+          "days": 6,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5180,7 +5180,7 @@
         "frontPage": {
           "applies": false,
           "exists": true,
-          "date": "2026-11-09",
+          "date": "2026-11-11",
           "days": 0,
           "commits": 0,
           "sinceStart": false,
@@ -5201,8 +5201,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 5,
-          "commits": 10,
+          "days": 7,
+          "commits": 11,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -7172,7 +7172,7 @@
       "subdomain": "pass.dotrino.com",
       "package": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "8556ff5",
+      "commit": "4418caa",
       "date": "2026-11-11",
       "catalog": {
         "name": "Contraseñas",
@@ -7198,7 +7198,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 3,
-          "commits": 6,
+          "commits": 8,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7208,7 +7208,7 @@
           "exists": true,
           "date": "2026-11-11",
           "days": 0,
-          "commits": 0,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7228,7 +7228,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 7,
-          "commits": 15,
+          "commits": 17,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9237,7 +9237,7 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.88",
-      "commit": "f919fde",
+      "commit": "9229bd5",
       "date": "2026-11-11",
       "catalog": null,
       "deps": [
@@ -9254,7 +9254,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 33,
-          "commits": 267,
+          "commits": 268,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9284,7 +9284,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 7,
-          "commits": 37,
+          "commits": 38,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -12194,8 +12194,8 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "a2497e5",
-      "date": "2026-11-09",
+      "commit": "c0bfa7c",
+      "date": "2026-11-11",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -12207,8 +12207,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-08-23",
-          "days": 78,
-          "commits": 170,
+          "days": 80,
+          "commits": 171,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -12237,8 +12237,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 5,
-          "commits": 5,
+          "days": 7,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": [],
           "red": false
