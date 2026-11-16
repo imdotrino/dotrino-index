@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T10:29:54-0500",
+  "generatedAt": "2026-11-16T17:10:20-0500",
   "rules": [
     "voseo",
     "english",
@@ -2862,6 +2862,27 @@
       "notes": "No abrí todos los archivos de src/ (agent.js, client.js, protocol.js, record.js, membership.js, catch-up.js, discover.js), así que la falta de JSDoc en sus exportaciones queda sin confirmar. En sealed y encrypted no reporto nada: no hay sendSealed ni requireSealed, pero el repo cifra por su cuenta (e2e.js reexporta seal/open de @dotrino/identity/channel y los mensajes salen sellados). No comprobé campo por campo que los sobres no lleven datos en claro por fuera. Los mensajes de error y los logs ",
       "costUsd": 0.1403979,
       "durationMs": 21652
+    },
+    "dotrino-remote-desktop": {
+      "commit": "c7439ea",
+      "date": "2026-11-16",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "encrypted",
+        "typed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 11,
+      "notes": "No hay `sendByPubkey` ni `send` en el repo: el transporte va por `@dotrino/remote-agent`, que sella la sesión, y el sondeo usa `@dotrino/proxy-client`. `typed` cumple: `checkJs` y `strict` están activos en los dos tsconfig, y los dos workflows de CI ejecutan `npm run type-check`. Dejé sin reportar `identity()`, `getLink()` y `loadLink` por falta de `@returns` explícito, porque su tipo se infiere y lo dudoso no se reporta. No abrí `agent/desktop.js`, `agent/atspi.js`, `src/render.js` ni `agent/bi",
+      "costUsd": 0.19981310000000002,
+      "durationMs": 19045
     },
     "dotrino-reputation": {
       "commit": "d79e297",
