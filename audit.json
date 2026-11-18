@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T17:10:20-0500",
+  "generatedAt": "2026-11-18T09:27:38-0500",
   "rules": [
     "voseo",
     "english",
@@ -535,6 +535,27 @@
       "notes": "Cubrí las reglas con greps y lecturas parciales: no abrí cada archivo de src/ ni de lib/. No miré la regla typed de JSDoc en exports archivo por archivo, ni la duplicación (duplicate) en detalle. src/fetch.js y lib/public.js usan client.send sin sellar, pero solo sirven blobs marcados public y su cid, así que no los reporté como sealed ni encrypted. La copy de bin/cli.js va en tuteo, los errores de consola están en inglés y la landing no usa argot.",
       "costUsd": 0.1865827,
       "durationMs": 31633
+    },
+    "dotrino-context": {
+      "commit": "4dbff35",
+      "date": "2026-11-18",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "encrypted",
+        "typed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 8,
+      "notes": "No encontré incumplimientos. Solo leí 4 archivos completos (package.json, tsconfig.json, release.yml, bin/dotrino-context.js); el resto lo recorrí con Grep y el JSON cuenta los 4 abiertos más lo que estimo como 8. Las 8 reglas se miraron así: no hay red (solo un socket Unix local en `src/socket.js`, sin `fetch`, `WebSocket` ni `http://`), por lo que `sealed`, `encrypted` y `pillars` no aplican. La copy de la CLI va en tuteo neutro, es/en, y los logs y errores están en inglés. `typed` cumple: `ts",
+      "costUsd": 0.1537479,
+      "durationMs": 16324
     },
     "dotrino-critters": {
       "commit": "8d67ae1",
