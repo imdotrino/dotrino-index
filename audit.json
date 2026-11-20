@@ -884,27 +884,6 @@
       "costUsd": 0.12349890000000001,
       "durationMs": 7169
     },
-    "dotrino-efimeral": {
-      "commit": "813e5c5",
-      "date": "2026-11-20",
-      "by": "seyacat",
-      "model": "sonnet",
-      "rules": [
-        "voseo",
-        "english",
-        "plain",
-        "pillars",
-        "sealed",
-        "encrypted",
-        "typed",
-        "duplicate"
-      ],
-      "findings": [],
-      "reviewed": 10,
-      "notes": "No abrí public/sw.js ni src/style.css ni tsconfig.sw.json (solo comprobé que existe). room.js cifra todo con requireSealed + sendSealedTo, sin hallazgo. Hay varios `{any}` en room.js (p. ej. línea 38) con poca justificación; no los reporté por ser dudosos.",
-      "costUsd": 0.1689634,
-      "durationMs": 12760
-    },
     "dotrino-expenses": {
       "commit": "fd7784b",
       "date": "2026-11-04",
@@ -4280,6 +4259,27 @@
       "notes": "El repo es un wiki en Markdown con un único script de build (build.mjs, que trato como configuración y no como código de app). No hay voseo en content/es, ni http:// ni ws:// salvo los namespaces XML. Solo he abierto 4 archivos: el resto lo revisé con Grep y la regla 'plain' no se aplica a la documentación. Hay dudas que no reporto: build.mjs no tiene JSDoc, tsconfig ni script typecheck, y exporta md() sin tipos; y 'dale' aparece en apps/dotrino.md:34, herramientas/terminal.md:121 y apps/factura",
       "costUsd": 0.1048634,
       "durationMs": 15520
+    },
+    "dotrino-temp": {
+      "commit": "813e5c5",
+      "date": "2026-11-20",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "encrypted",
+        "typed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 10,
+      "notes": "No abrí public/sw.js ni src/style.css ni tsconfig.sw.json (solo comprobé que existe). room.js cifra todo con requireSealed + sendSealedTo, sin hallazgo. Hay varios `{any}` en room.js (p. ej. línea 38) con poca justificación; no los reporté por ser dudosos.",
+      "costUsd": 0.1689634,
+      "durationMs": 12760
     }
   }
 }

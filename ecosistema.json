@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-20T12:01:09-0500",
+  "generatedAt": "2026-11-20T13:32:03-0500",
   "date": "2026-11-20",
   "by": "seyacat",
-  "commit": "82ebdc4",
+  "commit": "5ff77d1",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -125,7 +125,8 @@
     "dotrino-remote-desktop": "0.17.0",
     "@dotrino/remote-desktop-agent": "0.10.3",
     "@dotrino/context": "0.1.6",
-    "dotrino-efimeral": "0.1.0"
+    "dotrino-efimeral": "0.1.0",
+    "dotrino-temp": "0.2.0"
   },
   "onNpm": {
     "critters": "0.0.25",
@@ -378,7 +379,6 @@
         "dotrino-cuarenta",
         "dotrino-diamonds",
         "dotrino-eco",
-        "dotrino-efimeral",
         "dotrino-expenses",
         "dotrino-facturero",
         "dotrino-favicon-generator",
@@ -400,6 +400,7 @@
         "dotrino-remote-desktop",
         "dotrino-reputation-app",
         "dotrino-sudoku",
+        "dotrino-temp",
         "dotrino-terminal",
         "dotrino-test",
         "dotrino-topbar",
@@ -421,7 +422,6 @@
         "dotrino-cuarenta",
         "dotrino-diamonds",
         "dotrino-eco",
-        "dotrino-efimeral",
         "dotrino-expenses",
         "dotrino-facturero",
         "dotrino-favicon-generator",
@@ -443,6 +443,7 @@
         "dotrino-remote-desktop",
         "dotrino-reputation-app",
         "dotrino-sudoku",
+        "dotrino-temp",
         "dotrino-terminal",
         "dotrino-test",
         "dotrino-trivia",
@@ -463,7 +464,6 @@
         "dotrino-cuarenta",
         "dotrino-diamonds",
         "dotrino-eco",
-        "dotrino-efimeral",
         "dotrino-expenses",
         "dotrino-facturero",
         "dotrino-favicon-generator",
@@ -480,6 +480,7 @@
         "dotrino-remote-desktop",
         "dotrino-reputation-app",
         "dotrino-sudoku",
+        "dotrino-temp",
         "dotrino-terminal",
         "dotrino-trivia",
         "dotrino-trueque",
@@ -499,7 +500,6 @@
         "dotrino-cuarenta",
         "dotrino-diamonds",
         "dotrino-eco",
-        "dotrino-efimeral",
         "dotrino-expenses",
         "dotrino-gridgame",
         "dotrino-home",
@@ -516,6 +516,7 @@
         "dotrino-remote-desktop",
         "dotrino-sealers",
         "dotrino-social-bot",
+        "dotrino-temp",
         "dotrino-terminal",
         "dotrino-trueque",
         "dotrino-vault"
@@ -686,11 +687,11 @@
       "onNpm": true,
       "repos": [
         "dotrino-critters",
-        "dotrino-efimeral",
         "dotrino-home",
         "dotrino-offroad",
         "dotrino-reputation-app",
         "dotrino-sudoku",
+        "dotrino-temp",
         "dotrino-topbar",
         "dotrino-trivia"
       ]
@@ -700,13 +701,13 @@
       "version": "0.5.1",
       "onNpm": true,
       "repos": [
-        "dotrino-efimeral",
         "dotrino-messenger",
         "dotrino-models",
         "dotrino-notes",
         "dotrino-recorder",
         "dotrino-remote-agent",
         "dotrino-roadmap",
+        "dotrino-temp",
         "dotrino-vault"
       ]
     },
@@ -3540,91 +3541,6 @@
       "reds": 2
     },
     {
-      "repo": "dotrino-efimeral",
-      "kind": "app",
-      "internal": true,
-      "stack": "vite",
-      "platforms": null,
-      "subdomain": "efimeral.dotrino.com",
-      "package": "dotrino-efimeral",
-      "version": "0.1.0",
-      "commit": "813e5c5",
-      "date": "2026-11-20",
-      "catalog": {
-        "name": "Efimeral",
-        "url": "https://efimeral.dotrino.com/",
-        "cat": "social",
-        "sub": null,
-        "wip": false
-      },
-      "deps": [
-        "@dotrino/compat",
-        "@dotrino/proxy-client",
-        "@dotrino/support",
-        "@dotrino/theme",
-        "@dotrino/topbar",
-        "@dotrino/prerender"
-      ],
-      "measured": {
-        "date": "2026-11-20",
-        "by": "seyacat"
-      },
-      "freshness": {
-        "readme": {
-          "applies": true,
-          "exists": true,
-          "date": "2026-11-20",
-          "days": 0,
-          "commits": 1,
-          "sinceStart": false,
-          "unchecked": null,
-          "red": false
-        },
-        "frontPage": {
-          "applies": true,
-          "exists": true,
-          "date": "2026-11-20",
-          "days": 0,
-          "commits": 0,
-          "sinceStart": false,
-          "unchecked": null,
-          "red": false
-        },
-        "catalog": {
-          "applies": false,
-          "exists": true,
-          "date": "2026-11-20",
-          "days": 0,
-          "commits": null,
-          "sinceStart": false,
-          "unchecked": null,
-          "red": false
-        },
-        "audit": {
-          "applies": true,
-          "exists": true,
-          "date": "2026-11-20",
-          "days": 0,
-          "commits": 0,
-          "sinceStart": false,
-          "unchecked": [],
-          "red": false
-        }
-      },
-      "missing": [],
-      "drifts": [],
-      "broken": [],
-      "npmPending": [],
-      "live": null,
-      "audit": {
-        "by": "seyacat",
-        "model": "sonnet",
-        "notes": "No abrí public/sw.js ni src/style.css ni tsconfig.sw.json (solo comprobé que existe). room.js cifra todo con requireSealed + sendSealedTo, sin hallazgo. Hay varios `{any}` en room.js (p. ej. línea 38) con poca justificación; no los reporté por ser dudosos.",
-        "findings": []
-      },
-      "reds": 0
-    },
-    {
       "repo": "dotrino-expenses",
       "kind": "app",
       "internal": false,
@@ -4857,7 +4773,7 @@
       "subdomain": "dotrino.com",
       "package": "frontend",
       "version": "0.0.0",
-      "commit": "325fce5",
+      "commit": "e537a5e",
       "date": "2026-11-20",
       "catalog": null,
       "deps": [
@@ -4882,7 +4798,7 @@
           "exists": true,
           "date": "2026-10-17",
           "days": 34,
-          "commits": 17,
+          "commits": 18,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -4892,7 +4808,7 @@
           "exists": true,
           "date": "2026-10-20",
           "days": 31,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -4912,7 +4828,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 16,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -5347,8 +5263,8 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "82ebdc4",
-      "date": "2026-11-18",
+      "commit": "5ff77d1",
+      "date": "2026-11-20",
       "catalog": null,
       "deps": [],
       "measured": {
@@ -5360,8 +5276,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-05",
-          "days": 13,
-          "commits": 13,
+          "days": 15,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5369,9 +5285,9 @@
         "frontPage": {
           "applies": false,
           "exists": true,
-          "date": "2026-11-16",
-          "days": 2,
-          "commits": 1,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": 0,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5390,8 +5306,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 14,
-          "commits": 16,
+          "days": 16,
+          "commits": 17,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9622,7 +9538,7 @@
       "subdomain": null,
       "package": "@dotrino/roadmap",
       "version": "0.4.97",
-      "commit": "79bb0e0",
+      "commit": "a0bea6d",
       "date": "2026-11-20",
       "catalog": null,
       "deps": [
@@ -9639,7 +9555,7 @@
           "exists": true,
           "date": "2026-10-09",
           "days": 42,
-          "commits": 306,
+          "commits": 307,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9669,7 +9585,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 16,
-          "commits": 75,
+          "commits": 76,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -10911,6 +10827,91 @@
         ]
       },
       "reds": 5
+    },
+    {
+      "repo": "dotrino-temp",
+      "kind": "app",
+      "internal": true,
+      "stack": "vite",
+      "platforms": null,
+      "subdomain": "temp.dotrino.com",
+      "package": "dotrino-temp",
+      "version": "0.2.0",
+      "commit": "46295dd",
+      "date": "2026-11-20",
+      "catalog": {
+        "name": "Temp",
+        "url": "https://temp.dotrino.com/",
+        "cat": "social",
+        "sub": null,
+        "wip": false
+      },
+      "deps": [
+        "@dotrino/compat",
+        "@dotrino/proxy-client",
+        "@dotrino/support",
+        "@dotrino/theme",
+        "@dotrino/topbar",
+        "@dotrino/prerender"
+      ],
+      "measured": {
+        "date": "2026-11-20",
+        "by": "seyacat"
+      },
+      "freshness": {
+        "readme": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": 0,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "frontPage": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": 0,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "catalog": {
+          "applies": false,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": null,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "audit": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": 1,
+          "sinceStart": false,
+          "unchecked": [],
+          "red": false
+        }
+      },
+      "missing": [],
+      "drifts": [],
+      "broken": [],
+      "npmPending": [],
+      "live": null,
+      "audit": {
+        "by": "seyacat",
+        "model": "sonnet",
+        "notes": "No abrí public/sw.js ni src/style.css ni tsconfig.sw.json (solo comprobé que existe). room.js cifra todo con requireSealed + sendSealedTo, sin hallazgo. Hay varios `{any}` en room.js (p. ej. línea 38) con poca justificación; no los reporté por ser dudosos.",
+        "findings": []
+      },
+      "reds": 0
     },
     {
       "repo": "dotrino-terminal",
@@ -12641,7 +12642,7 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "655e9d1",
+      "commit": "3de6996",
       "date": "2026-11-20",
       "catalog": null,
       "deps": [],
@@ -12655,7 +12656,7 @@
           "exists": true,
           "date": "2026-08-23",
           "days": 89,
-          "commits": 178,
+          "commits": 179,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -12685,7 +12686,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 16,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": [],
           "red": true
