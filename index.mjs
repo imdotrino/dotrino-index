@@ -1597,8 +1597,11 @@ function webData () {
   // Las versiones de los pilares también se heredan: quien solo tiene dos apps en
   // el disco no tiene los pilares, y sin esto su pasada daría por "sin publicar"
   // todo lo que consumen. Lo local pisa a lo heredado SOLO si el repo está aquí.
-  const webPillars = { ...(prior.pillars || {}), ...pillars }
-  const npmWeb = { ...(prior.onNpm || {}), ...onNpm }
+  // Con --podar no se hereda nada: una pieza renombrada o retirada dejaba su versión aquí
+  // para siempre (dotrino-efimeral siguió en `pillars` después de llamarse dotrino-temp).
+  const webPillars = PRUNE ? { ...pillars } : { ...(prior.pillars || {}), ...pillars }
+  // `onNpm` solo se mide con --vivo: sin él, podarlo vaciaría lo que dice el registro.
+  const npmWeb = PRUNE && LIVE ? { ...onNpm } : { ...(prior.onNpm || {}), ...onNpm }
   /** @param {Piece} p */
   const mismatches = (p) => Object.entries(p.dotrinoDeps)
     .filter(([, requested]) => !String(requested).startsWith('file:'))
