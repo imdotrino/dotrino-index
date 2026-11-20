@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-16T17:10:24-0500",
-  "date": "2026-11-16",
+  "generatedAt": "2026-11-20T12:01:09-0500",
+  "date": "2026-11-20",
   "by": "seyacat",
-  "commit": "d139ee1",
+  "commit": "82ebdc4",
   "live": false,
   "redDays": 30,
   "auditThreshold": {
@@ -20,7 +20,7 @@
     "duplicate": "código o funcionalidad duplicada en el repo (regla principal)"
   },
   "hidden": 1,
-  "measuredNow": 99,
+  "measuredNow": 101,
   "inherited": 0,
   "pillars": {
     "dotrino-base64": "1.0.0",
@@ -41,7 +41,7 @@
     "frontend": "0.0.0",
     "dotrino-ia": "0.2.0",
     "@dotrino/ia-agent": "0.9.2",
-    "@dotrino/identity": "0.138.0",
+    "@dotrino/identity": "0.139.0",
     "@dotrino/install": "0.3.5",
     "@dotrino/lobby": "0.10.5",
     "dotrino-messenger": "0.8.5",
@@ -53,10 +53,10 @@
     "dotrino-profile-page": "0.1.0",
     "pronostico-mundialista": "0.1.0",
     "websocket-proxy": "1.11.2",
-    "@dotrino/proxy-client": "0.49.0",
+    "@dotrino/proxy-client": "0.49.2",
     "dotrino-qrgenerator": "0.1.0",
     "dotrino-qrreader": "0.1.0",
-    "@dotrino/remote-agent": "0.36.0",
+    "@dotrino/remote-agent": "0.40.3",
     "@dotrino/reputation": "0.12.6",
     "dotrino-reputation-app": "0.1.0",
     "@dotrino/share": "0.3.2",
@@ -66,39 +66,39 @@
     "sudoku": "0.1.0",
     "@dotrino/support": "0.10.2",
     "dotrino-telegram-claude-bot": "0.1.6",
-    "dotrino-terminal": "0.15.1",
-    "@dotrino/terminal-agent": "0.54.1",
+    "dotrino-terminal": "0.16.0",
+    "@dotrino/terminal-agent": "0.56.5",
     "test": "0.2.0",
     "@dotrino/topbar": "0.17.3",
     "trivia": "0.1.0",
     "trueque": "0.1.0",
-    "@dotrino/tunnel": "0.5.3",
+    "@dotrino/tunnel": "0.5.5",
     "@dotrino/tutorial": "0.2.2",
-    "@dotrino/vaultd": "0.193.3",
-    "@dotrino/vault": "0.121.2",
+    "@dotrino/vaultd": "0.194.2",
+    "@dotrino/vault": "0.121.3",
     "@dotrino/verifier": "0.3.2",
     "wallet": "0.2.0",
     "@dotrino/content-client": "0.4.1",
     "dotrino-social-bot": "0.4.0",
-    "@dotrino/env": "0.121.2",
-    "@dotrino/inspector": "0.2.3",
+    "@dotrino/env": "0.121.3",
+    "@dotrino/inspector": "0.2.4",
     "dotrino-passmanager": "0.9.0",
     "@dotrino/passmanager-extension": "0.38.1",
     "@dotrino/passmanager": "0.18.6",
     "dotrino-ad-integration": "0.1.0",
     "@dotrino/compat": "0.5.1",
-    "@dotrino/content": "0.7.3",
+    "@dotrino/content": "0.7.5",
     "@dotrino/qr": "0.3.3",
     "dotrino-qrshare": "0.2.0",
-    "@dotrino/roadmap": "0.4.88",
-    "@dotrino/sealers": "0.11.1",
+    "@dotrino/roadmap": "0.4.97",
+    "@dotrino/sealers": "0.11.2",
     "@dotrino/sso-client": "0.1.0",
-    "@dotrino/telegram-bot": "0.3.1",
+    "@dotrino/telegram-bot": "0.3.2",
     "@dotrino/webrtc": "0.1.1",
     "facturero": "0.1.0",
     "padel": "0.4.0",
     "@dotrino/opaque": "0.1.1",
-    "@dotrino/update": "0.9.4",
+    "@dotrino/update": "0.12.2",
     "offroad": "0.24.0",
     "ar": "0.1.0",
     "@dotrino/prerender": "0.1.1",
@@ -113,7 +113,7 @@
     "@dotrino/pay": "0.2.1",
     "@dotrino/dictation": "0.1.2",
     "dotrino-explainer": "1.2.0",
-    "@dotrino/expenses-agent": "0.2.1",
+    "@dotrino/expenses-agent": "0.2.2",
     "com.dotrino.unity": "0.4.0",
     "dotrino-recorder": "0.1.0",
     "dotrino-demo-apple": null,
@@ -121,9 +121,11 @@
     "dotrino-index": null,
     "dotrino-messenger-extension": "0.0.0",
     "notes": "0.3.0",
-    "@dotrino/models": "0.1.1",
-    "dotrino-remote-desktop": "0.1.0",
-    "@dotrino/remote-desktop-agent": "0.1.0"
+    "@dotrino/models": "0.1.2",
+    "dotrino-remote-desktop": "0.17.0",
+    "@dotrino/remote-desktop-agent": "0.10.3",
+    "@dotrino/context": "0.1.6",
+    "dotrino-efimeral": "0.1.0"
   },
   "onNpm": {
     "critters": "0.0.25",
@@ -221,7 +223,7 @@
   "consumers": [
     {
       "pillar": "@dotrino/identity",
-      "version": "0.138.0",
+      "version": "0.139.0",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -376,6 +378,7 @@
         "dotrino-cuarenta",
         "dotrino-diamonds",
         "dotrino-eco",
+        "dotrino-efimeral",
         "dotrino-expenses",
         "dotrino-facturero",
         "dotrino-favicon-generator",
@@ -418,6 +421,7 @@
         "dotrino-cuarenta",
         "dotrino-diamonds",
         "dotrino-eco",
+        "dotrino-efimeral",
         "dotrino-expenses",
         "dotrino-facturero",
         "dotrino-favicon-generator",
@@ -459,6 +463,7 @@
         "dotrino-cuarenta",
         "dotrino-diamonds",
         "dotrino-eco",
+        "dotrino-efimeral",
         "dotrino-expenses",
         "dotrino-facturero",
         "dotrino-favicon-generator",
@@ -479,6 +484,41 @@
         "dotrino-trivia",
         "dotrino-trueque",
         "dotrino-wallet"
+      ]
+    },
+    {
+      "pillar": "@dotrino/proxy-client",
+      "version": "0.49.2",
+      "onNpm": true,
+      "repos": [
+        "dotrino-bots",
+        "dotrino-chat",
+        "dotrino-chess",
+        "dotrino-content",
+        "dotrino-critters",
+        "dotrino-cuarenta",
+        "dotrino-diamonds",
+        "dotrino-eco",
+        "dotrino-efimeral",
+        "dotrino-expenses",
+        "dotrino-gridgame",
+        "dotrino-home",
+        "dotrino-ia",
+        "dotrino-messenger",
+        "dotrino-notifications",
+        "dotrino-padel-contador",
+        "dotrino-passmanager",
+        "dotrino-profile",
+        "dotrino-profile-app",
+        "dotrino-pronostico-mundialista",
+        "dotrino-proxy",
+        "dotrino-remote-agent",
+        "dotrino-remote-desktop",
+        "dotrino-sealers",
+        "dotrino-social-bot",
+        "dotrino-terminal",
+        "dotrino-trueque",
+        "dotrino-vault"
       ]
     },
     {
@@ -516,40 +556,6 @@
       ]
     },
     {
-      "pillar": "@dotrino/proxy-client",
-      "version": "0.49.0",
-      "onNpm": true,
-      "repos": [
-        "dotrino-bots",
-        "dotrino-chat",
-        "dotrino-chess",
-        "dotrino-content",
-        "dotrino-critters",
-        "dotrino-cuarenta",
-        "dotrino-diamonds",
-        "dotrino-eco",
-        "dotrino-expenses",
-        "dotrino-gridgame",
-        "dotrino-home",
-        "dotrino-ia",
-        "dotrino-messenger",
-        "dotrino-notifications",
-        "dotrino-padel-contador",
-        "dotrino-passmanager",
-        "dotrino-profile",
-        "dotrino-profile-app",
-        "dotrino-pronostico-mundialista",
-        "dotrino-proxy",
-        "dotrino-remote-agent",
-        "dotrino-remote-desktop",
-        "dotrino-sealers",
-        "dotrino-social-bot",
-        "dotrino-terminal",
-        "dotrino-trueque",
-        "dotrino-vault"
-      ]
-    },
-    {
       "pillar": "@dotrino/nav",
       "version": "0.3.3",
       "onNpm": true,
@@ -583,13 +589,14 @@
     },
     {
       "pillar": "@dotrino/update",
-      "version": "0.9.4",
+      "version": "0.12.2",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
         "dotrino-ad-integration",
         "dotrino-bots",
         "dotrino-content",
+        "dotrino-context",
         "dotrino-deploy-listener",
         "dotrino-expenses-agent",
         "dotrino-iatosvg",
@@ -608,7 +615,7 @@
     },
     {
       "pillar": "@dotrino/remote-agent",
-      "version": "0.36.0",
+      "version": "0.40.3",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -660,7 +667,7 @@
     },
     {
       "pillar": "@dotrino/vault",
-      "version": "0.121.2",
+      "version": "0.121.3",
       "onNpm": true,
       "repos": [
         "dotrino-accounts",
@@ -671,6 +678,36 @@
         "dotrino-remote-agent",
         "dotrino-sealers",
         "dotrino-social-bot"
+      ]
+    },
+    {
+      "pillar": "@dotrino/support",
+      "version": "0.10.2",
+      "onNpm": true,
+      "repos": [
+        "dotrino-critters",
+        "dotrino-efimeral",
+        "dotrino-home",
+        "dotrino-offroad",
+        "dotrino-reputation-app",
+        "dotrino-sudoku",
+        "dotrino-topbar",
+        "dotrino-trivia"
+      ]
+    },
+    {
+      "pillar": "@dotrino/compat",
+      "version": "0.5.1",
+      "onNpm": true,
+      "repos": [
+        "dotrino-efimeral",
+        "dotrino-messenger",
+        "dotrino-models",
+        "dotrino-notes",
+        "dotrino-recorder",
+        "dotrino-remote-agent",
+        "dotrino-roadmap",
+        "dotrino-vault"
       ]
     },
     {
@@ -699,34 +736,6 @@
         "dotrino-messenger",
         "dotrino-pronostico-mundialista",
         "dotrino-terminal"
-      ]
-    },
-    {
-      "pillar": "@dotrino/support",
-      "version": "0.10.2",
-      "onNpm": true,
-      "repos": [
-        "dotrino-critters",
-        "dotrino-home",
-        "dotrino-offroad",
-        "dotrino-reputation-app",
-        "dotrino-sudoku",
-        "dotrino-topbar",
-        "dotrino-trivia"
-      ]
-    },
-    {
-      "pillar": "@dotrino/compat",
-      "version": "0.5.1",
-      "onNpm": true,
-      "repos": [
-        "dotrino-messenger",
-        "dotrino-models",
-        "dotrino-notes",
-        "dotrino-recorder",
-        "dotrino-remote-agent",
-        "dotrino-roadmap",
-        "dotrino-vault"
       ]
     },
     {
@@ -824,7 +833,7 @@
     },
     {
       "pillar": "@dotrino/tunnel",
-      "version": "0.5.3",
+      "version": "0.5.5",
       "onNpm": true,
       "repos": [
         "dotrino-telegram-claude-bot"
@@ -840,7 +849,7 @@
     },
     {
       "pillar": "@dotrino/roadmap",
-      "version": "0.4.88",
+      "version": "0.4.97",
       "onNpm": true,
       "repos": [
         "dotrino-vault"
@@ -857,8 +866,8 @@
       "subdomain": null,
       "package": "@dotrino/accounts-server",
       "version": "0.8.0",
-      "commit": "95c5fe3",
-      "date": "2026-11-04",
+      "commit": "84ce1c5",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -868,7 +877,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -877,7 +886,7 @@
           "exists": true,
           "date": "2026-10-19",
           "days": 16,
-          "commits": 8,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -918,7 +927,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.135.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/pay",
@@ -928,17 +937,17 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.32.1",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.2",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.116.0",
-          "published": "0.121.2"
+          "published": "0.121.3"
         }
       ],
       "broken": [],
@@ -976,8 +985,8 @@
       "subdomain": null,
       "package": "dotrino-ad-integration",
       "version": "0.1.0",
-      "commit": "1ef7446",
-      "date": "2026-11-04",
+      "commit": "89e57ee",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -985,7 +994,7 @@
         "@dotrino/verifier"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -994,7 +1003,7 @@
           "exists": true,
           "date": "2026-09-07",
           "days": 58,
-          "commits": 8,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -1035,12 +1044,12 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.8",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.2",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/verifier",
@@ -1088,7 +1097,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1188,7 +1197,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1260,7 +1269,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1364,7 +1373,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1419,7 +1428,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -1434,7 +1443,7 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1490,7 +1499,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1576,7 +1585,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1626,7 +1635,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -1696,8 +1705,8 @@
       "subdomain": null,
       "package": "@dotrino/bots",
       "version": "0.2.0",
-      "commit": "2a2978c",
-      "date": "2026-11-05",
+      "commit": "fb2b5a1",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -1707,7 +1716,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1716,7 +1725,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 17,
+          "commits": 18,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -1757,7 +1766,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -1767,7 +1776,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1776,8 +1785,8 @@
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.6.0",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         }
       ],
       "broken": [],
@@ -1836,7 +1845,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -1886,7 +1895,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/nav",
@@ -1901,7 +1910,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -1990,7 +1999,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2040,7 +2049,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/lobby",
@@ -2060,7 +2069,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2140,7 +2149,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2212,7 +2221,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2307,9 +2316,9 @@
       "platforms": null,
       "subdomain": "content.dotrino.com",
       "package": "@dotrino/content",
-      "version": "0.7.3",
-      "commit": "d222c40",
-      "date": "2026-11-08",
+      "version": "0.7.5",
+      "commit": "2fc2c7f",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Content",
         "url": "https://content.dotrino.com/",
@@ -2325,7 +2334,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2334,7 +2343,7 @@
           "exists": true,
           "date": "2026-11-01",
           "days": 7,
-          "commits": 4,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2344,7 +2353,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 0,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -2353,7 +2362,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-08-25",
-          "days": 75,
+          "days": 84,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -2375,27 +2384,27 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.135.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.45.3",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.30.0",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.2",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.115.0",
-          "published": "0.121.2"
+          "published": "0.121.3"
         }
       ],
       "broken": [],
@@ -2423,6 +2432,86 @@
         ]
       },
       "reds": 7
+    },
+    {
+      "repo": "dotrino-context",
+      "kind": "package",
+      "internal": false,
+      "stack": "—",
+      "platforms": null,
+      "subdomain": null,
+      "package": "@dotrino/context",
+      "version": "0.1.6",
+      "commit": "d7e4d35",
+      "date": "2026-11-18",
+      "catalog": null,
+      "deps": [
+        "@dotrino/update"
+      ],
+      "measured": {
+        "date": "2026-11-20",
+        "by": "seyacat"
+      },
+      "freshness": {
+        "readme": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-18",
+          "days": 0,
+          "commits": 1,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "frontPage": {
+          "applies": false,
+          "exists": false,
+          "date": null,
+          "days": null,
+          "commits": null,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "catalog": {
+          "applies": false,
+          "exists": false,
+          "date": null,
+          "days": null,
+          "commits": null,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "audit": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-18",
+          "days": 0,
+          "commits": 5,
+          "sinceStart": false,
+          "unchecked": [],
+          "red": false
+        }
+      },
+      "missing": [],
+      "drifts": [
+        {
+          "dep": "@dotrino/update",
+          "requested": "0.12.1",
+          "published": "0.12.2"
+        }
+      ],
+      "broken": [],
+      "npmPending": [],
+      "live": null,
+      "audit": {
+        "by": "seyacat",
+        "model": "sonnet",
+        "notes": "No encontré incumplimientos. Solo leí 4 archivos completos (package.json, tsconfig.json, release.yml, bin/dotrino-context.js); el resto lo recorrí con Grep y el JSON cuenta los 4 abiertos más lo que estimo como 8. Las 8 reglas se miraron así: no hay red (solo un socket Unix local en `src/socket.js`, sin `fetch`, `WebSocket` ni `http://`), por lo que `sealed`, `encrypted` y `pillars` no aplican. La copy de la CLI va en tuteo neutro, es/en, y los logs y errores están en inglés. `typed` cumple: `ts",
+        "findings": []
+      },
+      "reds": 1
     },
     {
       "repo": "dotrino-critters",
@@ -2457,7 +2546,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2507,7 +2596,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -2527,7 +2616,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2622,7 +2711,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2672,7 +2761,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -2697,7 +2786,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -2784,7 +2873,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2859,14 +2948,14 @@
       "subdomain": null,
       "package": "cc-deploy-listener",
       "version": "0.1.0",
-      "commit": "6c87d14",
-      "date": "2026-11-04",
+      "commit": "f647c1c",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -2875,7 +2964,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 111,
-          "commits": 9,
+          "commits": 10,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -2915,8 +3004,8 @@
       "drifts": [
         {
           "dep": "@dotrino/update",
-          "requested": "0.7.0",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         }
       ],
       "broken": [],
@@ -2976,7 +3065,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3026,7 +3115,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -3046,7 +3135,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3116,7 +3205,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3224,7 +3313,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3279,7 +3368,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -3304,12 +3393,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.42.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3392,7 +3481,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3451,6 +3540,91 @@
       "reds": 2
     },
     {
+      "repo": "dotrino-efimeral",
+      "kind": "app",
+      "internal": true,
+      "stack": "vite",
+      "platforms": null,
+      "subdomain": "efimeral.dotrino.com",
+      "package": "dotrino-efimeral",
+      "version": "0.1.0",
+      "commit": "813e5c5",
+      "date": "2026-11-20",
+      "catalog": {
+        "name": "Efimeral",
+        "url": "https://efimeral.dotrino.com/",
+        "cat": "social",
+        "sub": null,
+        "wip": false
+      },
+      "deps": [
+        "@dotrino/compat",
+        "@dotrino/proxy-client",
+        "@dotrino/support",
+        "@dotrino/theme",
+        "@dotrino/topbar",
+        "@dotrino/prerender"
+      ],
+      "measured": {
+        "date": "2026-11-20",
+        "by": "seyacat"
+      },
+      "freshness": {
+        "readme": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": 1,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "frontPage": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": 0,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "catalog": {
+          "applies": false,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": null,
+          "sinceStart": false,
+          "unchecked": null,
+          "red": false
+        },
+        "audit": {
+          "applies": true,
+          "exists": true,
+          "date": "2026-11-20",
+          "days": 0,
+          "commits": 0,
+          "sinceStart": false,
+          "unchecked": [],
+          "red": false
+        }
+      },
+      "missing": [],
+      "drifts": [],
+      "broken": [],
+      "npmPending": [],
+      "live": null,
+      "audit": {
+        "by": "seyacat",
+        "model": "sonnet",
+        "notes": "No abrí public/sw.js ni src/style.css ni tsconfig.sw.json (solo comprobé que existe). room.js cifra todo con requireSealed + sendSealedTo, sin hallazgo. Hay varios `{any}` en room.js (p. ej. línea 38) con poca justificación; no los reporté por ser dudosos.",
+        "findings": []
+      },
+      "reds": 0
+    },
+    {
       "repo": "dotrino-expenses",
       "kind": "app",
       "internal": false,
@@ -3483,7 +3657,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3543,7 +3717,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -3558,12 +3732,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.42.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -3627,9 +3801,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/expenses-agent",
-      "version": "0.2.1",
-      "commit": "8681523",
-      "date": "2026-11-05",
+      "version": "0.2.2",
+      "commit": "e7346ad",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/remote-agent",
@@ -3637,7 +3811,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3646,7 +3820,7 @@
           "exists": true,
           "date": "2026-10-22",
           "days": 14,
-          "commits": 6,
+          "commits": 10,
           "sinceStart": true,
           "unchecked": null,
           "red": false
@@ -3687,17 +3861,17 @@
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.32.1",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.2",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.116.0",
-          "published": "0.121.2"
+          "published": "0.121.3"
         }
       ],
       "broken": [],
@@ -3747,7 +3921,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3834,7 +4008,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -3884,7 +4058,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -3970,7 +4144,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4020,7 +4194,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4071,7 +4245,7 @@
         "@dotrino/reputation"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4121,7 +4295,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.119.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4178,12 +4352,12 @@
       "subdomain": null,
       "package": "@dotrino/geo",
       "version": "0.9.8",
-      "commit": "cd9ad47",
-      "date": "2026-11-05",
+      "commit": "e5038d2",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4192,7 +4366,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 27,
+          "commits": 28,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -4293,7 +4467,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4343,7 +4517,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.135.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/nav",
@@ -4358,7 +4532,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.45.3",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4434,7 +4608,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4528,7 +4702,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4578,7 +4752,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/qr",
@@ -4683,8 +4857,8 @@
       "subdomain": "dotrino.com",
       "package": "frontend",
       "version": "0.0.0",
-      "commit": "d66d84f",
-      "date": "2026-11-16",
+      "commit": "325fce5",
+      "date": "2026-11-20",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -4699,7 +4873,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4707,8 +4881,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 30,
-          "commits": 16,
+          "days": 34,
+          "commits": 17,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -4717,11 +4891,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-20",
-          "days": 27,
-          "commits": 12,
+          "days": 31,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "catalog": {
           "applies": false,
@@ -4737,8 +4911,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 12,
-          "commits": 4,
+          "days": 16,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -4749,7 +4923,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -4769,7 +4943,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4796,7 +4970,7 @@
         "notes": "No encontré incumplimientos claros. Sobre `encrypted`: `src/lib/signedRequest.ts:37` manda por `fetch` a `feedback.dotrino.com` (por HTTPS) el mensaje, el correo, el teléfono y la tarjeta de perfil, firmados pero no sellados. No lo reporté porque el servidor tiene que leerlos para reenviarlos por correo, así que es una decisión del dueño. Sobre `typed`: el repo está en TypeScript con `strict: true` y la CI corre `vue-tsc -b` dentro de `npm run build`. Hay `any` en `catch (e: any)` y en `identity",
         "findings": []
       },
-      "reds": 9
+      "reds": 10
     },
     {
       "repo": "dotrino-ia",
@@ -4807,8 +4981,8 @@
       "subdomain": "ia.dotrino.com",
       "package": "dotrino-ia",
       "version": "0.2.0",
-      "commit": "9c60e7b",
-      "date": "2026-10-23",
+      "commit": "2157766",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Dotrino IA",
         "url": "https://ia.dotrino.com/",
@@ -4828,7 +5002,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4837,7 +5011,7 @@
           "exists": true,
           "date": "2026-10-07",
           "days": 15,
-          "commits": 11,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4847,7 +5021,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 7,
-          "commits": 7,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4856,7 +5030,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-10-07",
-          "days": 16,
+          "days": 41,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -4878,7 +5052,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -4893,12 +5067,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.42.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -4963,8 +5137,8 @@
       "subdomain": "iatosvg.dotrino.com",
       "package": "@dotrino/iatosvg",
       "version": "0.1.0",
-      "commit": "25298d9",
-      "date": "2026-11-05",
+      "commit": "5ff6800",
+      "date": "2026-11-17",
       "catalog": {
         "name": "iatosvg",
         "url": "https://iatosvg.dotrino.com/",
@@ -4976,7 +5150,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -4985,7 +5159,7 @@
           "exists": true,
           "date": "2026-10-14",
           "days": 22,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -4995,7 +5169,7 @@
           "exists": true,
           "date": "2026-10-14",
           "days": 22,
-          "commits": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5004,11 +5178,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-14",
-          "days": 22,
+          "days": 34,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "audit": {
           "applies": true,
@@ -5025,8 +5199,8 @@
       "drifts": [
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.0",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         }
       ],
       "broken": [],
@@ -5046,7 +5220,7 @@
           }
         ]
       },
-      "reds": 2
+      "reds": 3
     },
     {
       "repo": "dotrino-identity",
@@ -5056,15 +5230,15 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/identity",
-      "version": "0.138.0",
-      "commit": "ef313ae",
-      "date": "2026-11-08",
+      "version": "0.139.0",
+      "commit": "0b359a4",
+      "date": "2026-11-16",
       "catalog": null,
       "deps": [
         "@dotrino/opaque"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5072,11 +5246,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 22,
-          "commits": 61,
+          "days": 30,
+          "commits": 62,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "frontPage": {
           "applies": false,
@@ -5102,8 +5276,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 4,
-          "commits": 10,
+          "days": 12,
+          "commits": 11,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -5162,7 +5336,7 @@
           }
         ]
       },
-      "reds": 7
+      "reds": 8
     },
     {
       "repo": "dotrino-index",
@@ -5173,12 +5347,12 @@
       "subdomain": "index.dotrino.com",
       "package": "dotrino-index",
       "version": null,
-      "commit": "d139ee1",
-      "date": "2026-11-11",
+      "commit": "82ebdc4",
+      "date": "2026-11-18",
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5186,8 +5360,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-05",
-          "days": 6,
-          "commits": 11,
+          "days": 13,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5195,9 +5369,9 @@
         "frontPage": {
           "applies": false,
           "exists": true,
-          "date": "2026-11-11",
-          "days": 0,
-          "commits": 0,
+          "date": "2026-11-16",
+          "days": 2,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5216,8 +5390,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 7,
-          "commits": 14,
+          "days": 14,
+          "commits": 16,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -5315,9 +5489,9 @@
       "platforms": null,
       "subdomain": "inspector.dotrino.com",
       "package": "@dotrino/inspector",
-      "version": "0.2.3",
-      "commit": "87b4ba3",
-      "date": "2026-11-08",
+      "version": "0.2.4",
+      "commit": "7074abf",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Inspector",
         "url": "https://inspector.dotrino.com/",
@@ -5329,7 +5503,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5338,7 +5512,7 @@
           "exists": true,
           "date": "2026-08-25",
           "days": 75,
-          "commits": 12,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -5348,7 +5522,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 4,
-          "commits": 1,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -5357,7 +5531,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-08-25",
-          "days": 75,
+          "days": 84,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -5378,8 +5552,8 @@
       "drifts": [
         {
           "dep": "@dotrino/update",
-          "requested": "0.6.1",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         }
       ],
       "broken": [],
@@ -5421,7 +5595,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5522,7 +5696,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5668,7 +5842,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5723,7 +5897,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -5748,7 +5922,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.45.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/qr",
@@ -5828,7 +6002,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5923,7 +6097,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -5989,16 +6163,16 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/models",
-      "version": "0.1.1",
-      "commit": "a8f7c2c",
-      "date": "2026-11-12",
+      "version": "0.1.2",
+      "commit": "fdd73cd",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/compat",
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6007,7 +6181,7 @@
           "exists": true,
           "date": "2026-11-12",
           "days": 0,
-          "commits": 5,
+          "commits": 9,
           "sinceStart": true,
           "unchecked": null,
           "red": false
@@ -6049,12 +6223,18 @@
           "label": "documentación en el wiki (§9.2)"
         }
       ],
-      "drifts": [],
+      "drifts": [
+        {
+          "dep": "@dotrino/update",
+          "requested": "0.12.1",
+          "published": "0.12.2"
+        }
+      ],
       "broken": [],
       "npmPending": [],
       "live": null,
       "audit": null,
-      "reds": 2
+      "reds": 3
     },
     {
       "repo": "dotrino-mundial",
@@ -6077,7 +6257,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6127,7 +6307,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -6232,7 +6412,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6282,7 +6462,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -6352,8 +6532,8 @@
       "subdomain": "names.dotrino.com",
       "package": "@dotrino/names",
       "version": "0.1.0",
-      "commit": "b5fd244",
-      "date": "2026-11-05",
+      "commit": "d69e166",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Nombres",
         "url": "https://names.dotrino.com/",
@@ -6365,7 +6545,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6374,7 +6554,7 @@
           "exists": true,
           "date": "2026-10-14",
           "days": 22,
-          "commits": 19,
+          "commits": 20,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6384,7 +6564,7 @@
           "exists": true,
           "date": "2026-11-05",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -6393,11 +6573,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 21,
+          "days": 33,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "audit": {
           "applies": true,
@@ -6415,7 +6595,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.114.1",
-          "published": "0.138.0"
+          "published": "0.139.0"
         }
       ],
       "broken": [],
@@ -6442,7 +6622,7 @@
           }
         ]
       },
-      "reds": 3
+      "reds": 4
     },
     {
       "repo": "dotrino-native",
@@ -6458,7 +6638,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6538,7 +6718,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6665,7 +6845,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6713,6 +6893,11 @@
       "missing": [],
       "drifts": [
         {
+          "dep": "@dotrino/identity",
+          "requested": "0.138.0",
+          "published": "0.139.0"
+        },
+        {
           "dep": "@dotrino/theme",
           "requested": "0.1.1",
           "published": "0.1.2"
@@ -6727,7 +6912,7 @@
         "notes": "No abrí App.vue, NoteList.vue, NoteEditor.vue, vite.config.js ni test/ por completo; los revisé solo con Grep (sin fetch, WebSocket, subtle, sendByPubkey, http://, ws://, @ts-ignore ni voseo). La app no manda mensajes por su cuenta: la sincronización la hace @dotrino/store, y el único enlace de red propio es https. Typed cumple: tsconfig con checkJs y strict, script type-check y CI que lo corre. En src/state.js, newNote, togglePin y deleteOpenNote son exports sin @param ni @returns, pero no reci",
         "findings": []
       },
-      "reds": 2
+      "reds": 3
     },
     {
       "repo": "dotrino-notifications",
@@ -6745,7 +6930,7 @@
         "@dotrino/proxy-client"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6795,7 +6980,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         }
       ],
       "broken": [],
@@ -6862,7 +7047,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -6912,7 +7097,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -7004,7 +7189,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7119,7 +7304,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7169,7 +7354,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -7189,7 +7374,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -7262,8 +7447,8 @@
       "subdomain": "pass.dotrino.com",
       "package": "dotrino-passmanager",
       "version": "0.9.0",
-      "commit": "f44b873",
-      "date": "2026-11-11",
+      "commit": "d8b19a4",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Contraseñas",
         "url": "https://pass.dotrino.com/",
@@ -7279,7 +7464,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7288,7 +7473,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 3,
-          "commits": 10,
+          "commits": 11,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7298,7 +7483,7 @@
           "exists": true,
           "date": "2026-11-11",
           "days": 0,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -7307,7 +7492,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-11-11",
-          "days": 0,
+          "days": 6,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -7329,12 +7514,12 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.137.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.47.0",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/store",
@@ -7343,8 +7528,13 @@
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.2",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
+        },
+        {
+          "dep": "@dotrino/vault",
+          "requested": "0.121.2",
+          "published": "0.121.3"
         }
       ],
       "broken": [],
@@ -7364,7 +7554,7 @@
           }
         ]
       },
-      "reds": 6
+      "reds": 7
     },
     {
       "repo": "dotrino-pay",
@@ -7380,7 +7570,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7474,7 +7664,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7578,7 +7768,7 @@
         "@dotrino/proxy-client"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7633,7 +7823,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "^0.44.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         }
       ],
       "broken": [],
@@ -7705,7 +7895,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7755,7 +7945,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/profile",
@@ -7765,7 +7955,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/qr",
@@ -7837,7 +8027,7 @@
         "@dotrino/tutorial"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -7887,7 +8077,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -7912,7 +8102,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/qr",
@@ -7987,8 +8177,8 @@
       "subdomain": null,
       "package": "websocket-proxy",
       "version": "1.11.2",
-      "commit": "a175b26",
-      "date": "2026-11-05",
+      "commit": "6c899d2",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -7997,7 +8187,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -8006,7 +8196,7 @@
           "exists": true,
           "date": "2026-10-15",
           "days": 21,
-          "commits": 21,
+          "commits": 22,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8047,22 +8237,22 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.120.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.2",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.0",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.90.3",
-          "published": "0.121.2"
+          "published": "0.121.3"
         }
       ],
       "broken": [],
@@ -8106,16 +8296,16 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/proxy-client",
-      "version": "0.49.0",
-      "commit": "4af1962",
-      "date": "2026-11-16",
+      "version": "0.49.2",
+      "commit": "bc68278",
+      "date": "2026-11-20",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
         "@dotrino/webrtc"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -8124,7 +8314,7 @@
           "exists": true,
           "date": "2026-11-16",
           "days": 0,
-          "commits": 0,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8154,7 +8344,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 12,
-          "commits": 4,
+          "commits": 5,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -8165,7 +8355,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/webrtc",
@@ -8234,7 +8424,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -8336,7 +8526,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -8386,7 +8576,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -8481,7 +8671,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -8531,7 +8721,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -8624,7 +8814,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -8730,7 +8920,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -8785,7 +8975,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.135.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -8837,28 +9027,28 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/remote-agent",
-      "version": "0.36.0",
-      "commit": "4c65b1f",
-      "date": "2026-11-16",
+      "version": "0.40.3",
+      "commit": "3ed0f73",
+      "date": "2026-11-19",
       "catalog": null,
       "deps": [
         "@dotrino/compat",
         "@dotrino/identity",
         "@dotrino/proxy-client",
-        "@dotrino/vault",
-        "@dotrino/update"
+        "@dotrino/update",
+        "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-11-16",
-          "days": 0,
-          "commits": 0,
+          "date": "2026-11-17",
+          "days": 2,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -8887,11 +9077,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 12,
-          "commits": 6,
+          "days": 15,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": [],
-          "red": false
+          "red": true
         }
       },
       "missing": [],
@@ -8902,9 +9092,9 @@
           "published": "0.5.1"
         },
         {
-          "dep": "@dotrino/identity",
-          "requested": "0.136.0",
-          "published": "0.138.0"
+          "dep": "@dotrino/proxy-client",
+          "requested": "0.49.0",
+          "published": "0.49.2"
         }
       ],
       "broken": [],
@@ -8938,7 +9128,7 @@
           }
         ]
       },
-      "reds": 5
+      "reds": 6
     },
     {
       "repo": "dotrino-remote-desktop",
@@ -8946,13 +9136,21 @@
       "internal": false,
       "stack": "vite",
       "platforms": {
-        "pwa": "0.1.0"
+        "pwa": "0.17.0",
+        "ios": {
+          "version": "0.11.1",
+          "state": "behind"
+        },
+        "android": {
+          "version": "0.11.0",
+          "state": "behind"
+        }
       },
       "subdomain": "remote-desktop.dotrino.com",
       "package": "dotrino-remote-desktop",
-      "version": "0.1.0",
-      "commit": "c7439ea",
-      "date": "2026-11-16",
+      "version": "0.17.0",
+      "commit": "3f234ac",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Escritorio remoto",
         "url": "https://remote-desktop.dotrino.com/",
@@ -8972,27 +9170,27 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-11-16",
+          "date": "2026-11-17",
           "days": 0,
-          "commits": 2,
-          "sinceStart": true,
+          "commits": 0,
+          "sinceStart": false,
           "unchecked": null,
           "red": false
         },
         "frontPage": {
           "applies": true,
           "exists": true,
-          "date": "2026-11-16",
+          "date": "2026-11-17",
           "days": 0,
-          "commits": 2,
-          "sinceStart": true,
+          "commits": 10,
+          "sinceStart": false,
           "unchecked": null,
           "red": false
         },
@@ -9000,7 +9198,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-16",
-          "days": 0,
+          "days": 1,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -9010,15 +9208,31 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-16",
-          "days": 0,
-          "commits": 0,
+          "days": 1,
+          "commits": 38,
           "sinceStart": false,
           "unchecked": [],
-          "red": false
+          "red": true
         }
       },
       "missing": [],
-      "drifts": [],
+      "drifts": [
+        {
+          "dep": "@dotrino/identity",
+          "requested": "0.138.0",
+          "published": "0.139.0"
+        },
+        {
+          "dep": "@dotrino/proxy-client",
+          "requested": "0.49.1",
+          "published": "0.49.2"
+        },
+        {
+          "dep": "@dotrino/remote-agent",
+          "requested": "0.36.0",
+          "published": "0.40.3"
+        }
+      ],
       "broken": [],
       "npmPending": [],
       "live": null,
@@ -9028,7 +9242,7 @@
         "notes": "No hay `sendByPubkey` ni `send` en el repo: el transporte va por `@dotrino/remote-agent`, que sella la sesión, y el sondeo usa `@dotrino/proxy-client`. `typed` cumple: `checkJs` y `strict` están activos en los dos tsconfig, y los dos workflows de CI ejecutan `npm run type-check`. Dejé sin reportar `identity()`, `getLink()` y `loadLink` por falta de `@returns` explícito, porque su tipo se infiere y lo dudoso no se reporta. No abrí `agent/desktop.js`, `agent/atspi.js`, `src/render.js` ni `agent/bi",
         "findings": []
       },
-      "reds": 0
+      "reds": 4
     },
     {
       "repo": "dotrino-reputation",
@@ -9039,14 +9253,14 @@
       "subdomain": null,
       "package": "@dotrino/reputation",
       "version": "0.12.6",
-      "commit": "2ee41a9",
-      "date": "2026-11-05",
+      "commit": "e6815b1",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9055,7 +9269,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 20,
+          "commits": 21,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9096,7 +9310,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.109.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         }
       ],
       "broken": [],
@@ -9177,7 +9391,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9227,7 +9441,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -9307,12 +9521,12 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "624a625",
-      "date": "2026-11-05",
+      "commit": "31e24af",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9321,7 +9535,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 112,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9407,16 +9621,16 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/roadmap",
-      "version": "0.4.88",
-      "commit": "addea25",
-      "date": "2026-11-16",
+      "version": "0.4.97",
+      "commit": "79bb0e0",
+      "date": "2026-11-20",
       "catalog": null,
       "deps": [
         "@dotrino/update",
         "@dotrino/compat"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9424,8 +9638,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-09",
-          "days": 38,
-          "commits": 271,
+          "days": 42,
+          "commits": 306,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9454,8 +9668,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 12,
-          "commits": 41,
+          "days": 16,
+          "commits": 75,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -9465,8 +9679,8 @@
       "drifts": [
         {
           "dep": "@dotrino/update",
-          "requested": "0.6.1",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/compat",
@@ -9515,9 +9729,9 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/sealers",
-      "version": "0.11.1",
-      "commit": "2b40b6a",
-      "date": "2026-11-04",
+      "version": "0.11.2",
+      "commit": "57c24f6",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -9527,7 +9741,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9536,7 +9750,7 @@
           "exists": true,
           "date": "2026-10-08",
           "days": 27,
-          "commits": 14,
+          "commits": 18,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -9577,27 +9791,27 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.135.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.46.0",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.32.1",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.9.2",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.116.0",
-          "published": "0.121.2"
+          "published": "0.121.3"
         }
       ],
       "broken": [],
@@ -9642,7 +9856,7 @@
         "@dotrino/qr"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9742,7 +9956,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9824,14 +10038,14 @@
       "subdomain": null,
       "package": "dotrino-signer",
       "version": "0.1.0",
-      "commit": "fbe1a63",
-      "date": "2026-11-04",
+      "commit": "c39d945",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9840,7 +10054,7 @@
           "exists": true,
           "date": "2026-07-16",
           "days": 111,
-          "commits": 5,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9880,8 +10094,8 @@
       "drifts": [
         {
           "dep": "@dotrino/update",
-          "requested": "0.7.0",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         }
       ],
       "broken": [],
@@ -9926,8 +10140,8 @@
       "subdomain": null,
       "package": "dotrino-social-bot",
       "version": "0.4.0",
-      "commit": "e802892",
-      "date": "2026-11-04",
+      "commit": "155af0a",
+      "date": "2026-11-17",
       "catalog": null,
       "deps": [
         "@dotrino/content-client",
@@ -9939,7 +10153,7 @@
         "@dotrino/vault"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -9948,7 +10162,7 @@
           "exists": true,
           "date": "2026-09-14",
           "days": 51,
-          "commits": 12,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -9999,27 +10213,27 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.135.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.46.0",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.32.1",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.7.0",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/vault",
           "requested": "0.116.0",
-          "published": "0.121.2"
+          "published": "0.121.3"
         }
       ],
       "broken": [],
@@ -10057,8 +10271,8 @@
       "subdomain": "sso.dotrino.com",
       "package": "@dotrino/sso-client",
       "version": "0.1.0",
-      "commit": "0c3b913",
-      "date": "2026-11-08",
+      "commit": "ae244fd",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Entrar con Dotrino",
         "url": "https://sso.dotrino.com/",
@@ -10070,7 +10284,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10079,7 +10293,7 @@
           "exists": true,
           "date": "2026-09-17",
           "days": 52,
-          "commits": 13,
+          "commits": 14,
           "sinceStart": false,
           "unchecked": null,
           "red": true
@@ -10089,7 +10303,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 0,
+          "commits": 1,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10098,7 +10312,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-09-17",
-          "days": 52,
+          "days": 61,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -10120,7 +10334,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.121.7",
-          "published": "0.138.0"
+          "published": "0.139.0"
         }
       ],
       "broken": [],
@@ -10165,7 +10379,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10215,7 +10429,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.119.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         }
       ],
       "broken": [],
@@ -10286,7 +10500,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10371,7 +10585,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10421,7 +10635,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -10511,7 +10725,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10599,9 +10813,9 @@
       "platforms": null,
       "subdomain": "telegram-bot.dotrino.com",
       "package": "@dotrino/telegram-bot",
-      "version": "0.3.1",
-      "commit": "7e2e9f1",
-      "date": "2026-11-08",
+      "version": "0.3.2",
+      "commit": "8f9442f",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Telegram Bot",
         "url": "https://telegram-bot.dotrino.com/",
@@ -10614,7 +10828,7 @@
         "@dotrino/update"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10623,7 +10837,7 @@
           "exists": true,
           "date": "2026-10-26",
           "days": 13,
-          "commits": 2,
+          "commits": 4,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10633,7 +10847,7 @@
           "exists": true,
           "date": "2026-11-08",
           "days": 0,
-          "commits": 0,
+          "commits": 2,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10642,7 +10856,7 @@
           "applies": true,
           "exists": true,
           "date": "2026-07-09",
-          "days": 122,
+          "days": 131,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -10664,12 +10878,12 @@
         {
           "dep": "@dotrino/tunnel",
           "requested": "0.3.0",
-          "published": "0.5.3"
+          "published": "0.5.5"
         },
         {
           "dep": "@dotrino/update",
-          "requested": "0.6.1",
-          "published": "0.9.4"
+          "requested": "0.12.1",
+          "published": "0.12.2"
         }
       ],
       "broken": [],
@@ -10704,21 +10918,21 @@
       "internal": false,
       "stack": "vite",
       "platforms": {
-        "pwa": "0.15.1",
+        "pwa": "0.16.0",
         "ios": {
           "version": "0.15.1",
-          "state": "on-par"
+          "state": "behind"
         },
         "android": {
           "version": "0.15.1",
-          "state": "on-par"
+          "state": "behind"
         }
       },
       "subdomain": "terminal.dotrino.com",
       "package": "dotrino-terminal",
-      "version": "0.15.1",
-      "commit": "bc37f51",
-      "date": "2026-11-08",
+      "version": "0.16.0",
+      "commit": "4c8dfd7",
+      "date": "2026-11-19",
       "catalog": {
         "name": "Dotrino Terminal",
         "url": "https://terminal.dotrino.com/",
@@ -10740,7 +10954,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10748,8 +10962,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 1,
-          "commits": 13,
+          "days": 15,
+          "commits": 25,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -10758,17 +10972,17 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 21,
-          "commits": 86,
+          "days": 35,
+          "commits": 98,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "catalog": {
           "applies": true,
           "exists": true,
           "date": "2026-11-01",
-          "days": 7,
+          "days": 18,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -10778,8 +10992,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 1,
-          "commits": 3,
+          "days": 15,
+          "commits": 7,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -10790,7 +11004,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.126.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -10810,12 +11024,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.45.0",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.1",
-          "published": "0.36.0"
+          "published": "0.40.3"
         },
         {
           "dep": "@dotrino/reputation",
@@ -10869,7 +11083,7 @@
           }
         ]
       },
-      "reds": 13
+      "reds": 14
     },
     {
       "repo": "dotrino-test",
@@ -10880,8 +11094,8 @@
       "subdomain": "test.dotrino.com",
       "package": "test",
       "version": "0.2.0",
-      "commit": "cd040b2",
-      "date": "2026-11-08",
+      "commit": "9b71aca",
+      "date": "2026-11-19",
       "catalog": null,
       "deps": [
         "@dotrino/identity",
@@ -10891,7 +11105,7 @@
         "@dotrino/topbar"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -10899,21 +11113,21 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-19",
-          "days": 16,
-          "commits": 8,
+          "days": 31,
+          "commits": 9,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "frontPage": {
           "applies": true,
           "exists": true,
           "date": "2026-10-15",
-          "days": 20,
-          "commits": 23,
+          "days": 35,
+          "commits": 24,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "catalog": {
           "applies": false,
@@ -10929,8 +11143,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 0,
-          "commits": 2,
+          "days": 15,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": [],
           "red": false
@@ -10941,7 +11155,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.114.1",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/reputation",
@@ -10983,7 +11197,7 @@
           }
         ]
       },
-      "reds": 6
+      "reds": 8
     },
     {
       "repo": "dotrino-theme",
@@ -10999,7 +11213,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11090,7 +11304,7 @@
         "@dotrino/theme"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11211,7 +11425,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11261,7 +11475,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -11394,7 +11608,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11449,7 +11663,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.117.2",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -11469,7 +11683,7 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "0.36.1",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/reputation",
@@ -11534,8 +11748,8 @@
       "subdomain": "r.dotrino.com",
       "package": null,
       "version": null,
-      "commit": "6e71007",
-      "date": "2026-11-04",
+      "commit": "d2a748d",
+      "date": "2026-11-17",
       "catalog": {
         "name": "Dotrino Tunnel",
         "url": "https://r.dotrino.com/",
@@ -11545,7 +11759,7 @@
       },
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11554,7 +11768,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 6,
+          "commits": 12,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11564,7 +11778,7 @@
           "exists": true,
           "date": "2026-11-04",
           "days": 0,
-          "commits": 0,
+          "commits": 6,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11573,7 +11787,7 @@
           "applies": false,
           "exists": true,
           "date": "2026-10-14",
-          "days": 21,
+          "days": 34,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
@@ -11653,7 +11867,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11747,7 +11961,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11813,22 +12027,22 @@
       "platforms": null,
       "subdomain": null,
       "package": "@dotrino/update",
-      "version": "0.9.4",
-      "commit": "5be4648",
-      "date": "2026-11-05",
+      "version": "0.12.2",
+      "commit": "2a0f798",
+      "date": "2026-11-19",
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
         "readme": {
           "applies": true,
           "exists": true,
-          "date": "2026-10-13",
-          "days": 23,
-          "commits": 5,
+          "date": "2026-11-17",
+          "days": 2,
+          "commits": 3,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11857,11 +12071,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 1,
-          "commits": 2,
+          "days": 15,
+          "commits": 11,
           "sinceStart": false,
           "unchecked": [],
-          "red": false
+          "red": true
         }
       },
       "missing": [],
@@ -11939,7 +12153,7 @@
           }
         ]
       },
-      "reds": 9
+      "reds": 10
     },
     {
       "repo": "dotrino-vault",
@@ -11949,9 +12163,9 @@
       "platforms": null,
       "subdomain": "vault.dotrino.com",
       "package": "@dotrino/vaultd",
-      "version": "0.193.3",
-      "commit": "5923008",
-      "date": "2026-11-11",
+      "version": "0.194.2",
+      "commit": "372941a",
+      "date": "2026-11-19",
       "catalog": {
         "name": "Dotrino Vault",
         "url": "https://vault.dotrino.com/",
@@ -11971,7 +12185,7 @@
         "@dotrino/remote-agent"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -11979,8 +12193,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-28",
-          "days": 14,
-          "commits": 27,
+          "days": 22,
+          "commits": 31,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11989,8 +12203,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-27",
-          "days": 15,
-          "commits": 42,
+          "days": 23,
+          "commits": 46,
           "sinceStart": false,
           "unchecked": null,
           "red": false
@@ -11999,18 +12213,18 @@
           "applies": true,
           "exists": true,
           "date": "2026-10-17",
-          "days": 25,
+          "days": 33,
           "commits": null,
           "sinceStart": false,
           "unchecked": null,
-          "red": false
+          "red": true
         },
         "audit": {
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 7,
-          "commits": 10,
+          "days": 15,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": [],
           "red": true
@@ -12024,11 +12238,6 @@
           "published": "0.5.1"
         },
         {
-          "dep": "@dotrino/identity",
-          "requested": "0.136.0",
-          "published": "0.138.0"
-        },
-        {
           "dep": "@dotrino/opaque",
           "requested": "0.1.0",
           "published": "0.1.1"
@@ -12036,12 +12245,12 @@
         {
           "dep": "@dotrino/proxy-client",
           "requested": "^0.47.0",
-          "published": "0.49.0"
+          "published": "0.49.2"
         },
         {
           "dep": "@dotrino/roadmap",
-          "requested": "0.4.63",
-          "published": "0.4.88"
+          "requested": "0.4.89",
+          "published": "0.4.97"
         },
         {
           "dep": "@dotrino/store",
@@ -12051,12 +12260,12 @@
         {
           "dep": "@dotrino/update",
           "requested": "0.9.0",
-          "published": "0.9.4"
+          "published": "0.12.2"
         },
         {
           "dep": "@dotrino/remote-agent",
           "requested": "0.24.0",
-          "published": "0.36.0"
+          "published": "0.40.3"
         }
       ],
       "broken": [],
@@ -12108,7 +12317,7 @@
         "@dotrino/identity"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -12158,7 +12367,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.109.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         }
       ],
       "broken": [],
@@ -12225,7 +12434,7 @@
         "@dotrino/prerender"
       ],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -12275,7 +12484,7 @@
         {
           "dep": "@dotrino/identity",
           "requested": "0.116.0",
-          "published": "0.138.0"
+          "published": "0.139.0"
         },
         {
           "dep": "@dotrino/install",
@@ -12365,7 +12574,7 @@
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -12432,12 +12641,12 @@
       "subdomain": null,
       "package": null,
       "version": null,
-      "commit": "e73c01d",
-      "date": "2026-11-16",
+      "commit": "655e9d1",
+      "date": "2026-11-20",
       "catalog": null,
       "deps": [],
       "measured": {
-        "date": "2026-11-16",
+        "date": "2026-11-20",
         "by": "seyacat"
       },
       "freshness": {
@@ -12445,8 +12654,8 @@
           "applies": true,
           "exists": true,
           "date": "2026-08-23",
-          "days": 85,
-          "commits": 174,
+          "days": 89,
+          "commits": 178,
           "sinceStart": true,
           "unchecked": null,
           "red": true
@@ -12475,11 +12684,11 @@
           "applies": true,
           "exists": true,
           "date": "2026-11-04",
-          "days": 12,
-          "commits": 9,
+          "days": 16,
+          "commits": 13,
           "sinceStart": false,
           "unchecked": [],
-          "red": false
+          "red": true
         }
       },
       "missing": [],
@@ -12493,7 +12702,7 @@
         "notes": "El repo es un wiki en Markdown con un único script de build (build.mjs, que trato como configuración y no como código de app). No hay voseo en content/es, ni http:// ni ws:// salvo los namespaces XML. Solo he abierto 4 archivos: el resto lo revisé con Grep y la regla 'plain' no se aplica a la documentación. Hay dudas que no reporto: build.mjs no tiene JSDoc, tsconfig ni script typecheck, y exporta md() sin tipos; y 'dale' aparece en apps/dotrino.md:34, herramientas/terminal.md:121 y apps/factura",
         "findings": []
       },
-      "reds": 1
+      "reds": 2
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T09:27:38-0500",
+  "generatedAt": "2026-11-20T12:00:57-0500",
   "rules": [
     "voseo",
     "english",
@@ -883,6 +883,27 @@
       "notes": "Es una app estática sin build: solo tiene index.html (con el script en línea) y sw.js. No hay red de datos del usuario: todo va en localStorage. Tampoco hay tsconfig ni JSDoc; lo dejé sin reportar porque es una app estática sin build con un script en línea, aunque el script es más largo que \"pequeño\". Solo pude leer, sin ejecutar nada.",
       "costUsd": 0.12349890000000001,
       "durationMs": 7169
+    },
+    "dotrino-efimeral": {
+      "commit": "813e5c5",
+      "date": "2026-11-20",
+      "by": "seyacat",
+      "model": "sonnet",
+      "rules": [
+        "voseo",
+        "english",
+        "plain",
+        "pillars",
+        "sealed",
+        "encrypted",
+        "typed",
+        "duplicate"
+      ],
+      "findings": [],
+      "reviewed": 10,
+      "notes": "No abrí public/sw.js ni src/style.css ni tsconfig.sw.json (solo comprobé que existe). room.js cifra todo con requireSealed + sendSealedTo, sin hallazgo. Hay varios `{any}` en room.js (p. ej. línea 38) con poca justificación; no los reporté por ser dudosos.",
+      "costUsd": 0.1689634,
+      "durationMs": 12760
     },
     "dotrino-expenses": {
       "commit": "fd7784b",
